@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExcelToSite - Конвертер Excel в сайт</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">ExcelTo<span>Site</span></div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#how-it-works">Как это работает</a></li>
+                        <li><a href="#pricing">Тарифы</a></li>
+                        <li><a href="#examples">Примеры</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline">Вход</button>
+                    <button class="btn">Регистрация</button>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Превратите ваш Excel в современный сайт</h1>
+                <p>Создайте профессиональный сайт-каталог из вашего Excel-файла с помощью AI технологий</p>
+                <button class="btn btn-large" id="startNowBtn">Начать сейчас</button>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-file-excel"></i>
+                    <h3>Excel файл</h3>
+                </div>
+                <div class="arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="floating-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI обработка</h3>
+                </div>
+                <div class="arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="floating-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Готовый сайт</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main">
+        <div class="container">
+            <section id="upload" class="section upload-section">
+                <div class="section-header">
+                    <h2>Конвертер Excel в сайт</h2>
+                    <p>Загрузите ваш прайс-лист и получите готовый сайт-каталог</p>
+                </div>
+
+                <div class="card upload-card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3>Загрузите прайс-лист</h3>
+                    <div class="drop-zone" id="dropZone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Перетащите Excel-файл или кликните для выбора</p>
+                        <input type="file" id="fileInput" accept=".xlsx, .xls, .csv">
+                    </div>
+                    <div class="file-info">
+                        <h4><i class="fas fa-info-circle"></i> Требования к файлу:</h4>
+                        <ul>
+                            <li>Первые 5 строк: информация о продавце (обязательно: Продавец, Телефон, Email)</li>
+                            <li>С 6-й строки: Категория, Название товара, Характеристики, Цена, Ссылка на изображение</li>
+                            <li>Пустая категория наследуется из предыдущей строки</li>
+                            <li>Данные на первом листе</li>
+                        </ul>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="#" class="btn btn-outline" id="downloadExample"><i class="fas fa-download"></i> Скачать шаблон</a>
+                        <button class="btn" id="generateBtn" disabled><i class="fas fa-eye"></i> Предпросмотр</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how-it-works" class="section features-section">
+                <div class="section-header">
+                    <h2>Как это работает</h2>
+                    <p>Простой процесс преобразования Excel в сайт с использованием AI</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h3>Загрузите Excel</h3>
+                        <p>Загрузите ваш прайс-лист в формате Excel или CSV через удобную форму</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>AI обработка</h3>
+                        <p>Наша система анализирует и структурирует данные с помощью AI алгоритмов</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Предпросмотр сайта</h3>
+                        <p>Просмотрите готовый сайт перед публикацией и внесите правки</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>Скачайте или опубликуйте</h3>
+                        <p>Скачайте код или разместите сайт онлайн одним кликом</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" class="section pricing-section">
+                <div class="section-header">
+                    <h2>Тарифные планы</h2>
+                    <p>Выберите подходящий вариант для вашего бизнеса</p>
+                </div>
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <h3>Базовый</h3>
+                        <div class="price">2 990 <span>₽/мес</span></div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Адаптивный дизайн</li>
+                            <li><i class="fas fa-check"></i> До 50 товаров</li>
+                            <li><i class="fas fa-check"></i> Контактная форма</li>
+                            <li><i class="fas fa-check"></i> Поддержка 7 дней</li>
+                            <li><i class="fas fa-check"></i> Скачивание кода</li>
+                        </ul>
+                        <button class="btn btn-outline">Выбрать</button>
+                    </div>
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Популярный</div>
+                        <h3>Про</h3>
+                        <div class="price">4 990 <span>₽/мес</span></div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Расширенный дизайн</li>
+                            <li><i class="fas fa-check"></i> До 200 товаров</li>
+                            <li><i class="fas fa-check"></i> Поиск по товарам</li>
+                            <li><i class="fas fa-check"></i> Корзина покупок</li>
+                            <li><i class="fas fa-check"></i> Поддержка 14 дней</li>
+                            <li><i class="fas fa-check"></i> Скачивание кода</li>
+                        </ul>
+                        <button class="btn">Выбрать</button>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Премиум</h3>
+                        <div class="price">8 990 <span>₽/мес</span></div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Индивидуальный дизайн</li>
+                            <li><i class="fas fa-check"></i> Неограниченно товаров</li>
+                            <li><i class="fas fa-check"></i> Система заказов</li>
+                            <li><i class="fas fa-check"></i> Интеграция с CMS</li>
+                            <li><i class="fas fa-check"></i> Поддержка 30 дней</li>
+                            <li><i class="fas fa-check"></i> Хостинг на 1 месяц</li>
+                        </ul>
+                        <button class="btn btn-outline">Выбрать</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section ai-section">
+                <div class="section-header">
+                    <h2>Мощный AI для вашего бизнеса</h2>
+                    <p>Используем передовые технологии для создания уникальных описаний товаров</p>
+                </div>
+                <div class="ai-content">
+                    <div class="ai-text">
+                        <div class="ai-feature">
+                            <i class="fas fa-brain"></i>
+                            <div>
+                                <h4>Локальный ИИ GPT4All</h4>
+                                <p>Генерация уникальных описаний товаров работает полностью офлайн. Ваши данные остаются в безопасности.</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Безопасность данных</h4>
+                                <p>Ваши прайс-листы не покидают сервер. Все описания генерируются локально без отправки в облако.</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Высокая скорость</h4>
+                                <p>Локальная обработка данных обеспечивает быструю генерацию описаний без задержек.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-image">
+                        <div class="ai-visual">
+                            <div class="ai-core">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="ai-waves">
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="contacts" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ExcelToSite</h3>
+                    <p>Профессиональный конвертер Excel-прайсов в современные сайты-каталоги с использованием AI технологий.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-envelope"></i> info@exceltosite.ru</p>
+                    <p><i class="fas fa-phone"></i> +7 (123) 456-78-90</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Примерная, 15</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ссылки</h3>
+                    <a href="#home">Главная</a>
+                    <a href="#how-it-works">Как это работает</a>
+                    <a href="#pricing">Тарифы</a>
+                    <a href="#contacts">Контакты</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 ExcelToSite. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Файл успешно загружен!</span>
+    </div>
+
+    <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
