@@ -1,0 +1,92 @@
+{
+  "format": "listpro-furniture-preview",
+  "version": 1,
+  "project": "Эталон: ручная карта Cutting 2, 26 деталей, без поворотов",
+  "material": "ЛДСП",
+  "thickness": 16,
+  "sheetW": 2750,
+  "sheetH": 1830,
+  "kerf": 5,
+  "trim": 10,
+  "grainDirection": "По длине листа",
+  "pieces": [
+    {
+      "id": 1,
+      "name": "Позиция 1",
+      "l": 966,
+      "w": 723,
+      "q": 1,
+      "grain": true
+    },
+    {
+      "id": 2,
+      "name": "Позиция 2",
+      "l": 1132,
+      "w": 398,
+      "q": 1,
+      "grain": true
+    },
+    {
+      "id": 3,
+      "name": "Позиция 3",
+      "l": 1132,
+      "w": 398,
+      "q": 1,
+      "grain": true
+    },
+    {
+      "id": 4,
+      "name": "Позиция 4",
+      "l": 966,
+      "w": 398,
+      "q": 1,
+      "grain": true
+    },
+    {
+      "id": 5,
+      "name": "Позиция 5",
+      "l": 966,
+      "w": 394,
+      "q": 1,
+      "grain": true
+    },
+    {
+      "id": 6,
+      "name": "Позиция 6",
+      "l": 1000,
+      "w": 219,
+      "q": 1,
+      "grain": true
+    },
+    {
+      "id": 7,
+      "name": "Позиция 7",
+      "l": 297,
+      "w": 297,
+      "q": 5,
+      "grain": true
+    },
+    {
+      "id": 8,
+      "name": "Позиция 8",
+      "l": 420,
+      "w": 270,
+      "q": 10,
+      "grain": true
+    },
+    {
+      "id": 9,
+      "name": "Позиция 9",
+      "l": 238,
+      "w": 180,
+      "q": 5,
+      "grain": true
+    }
+  ],
+  "selectedSheet": 0,
+  "activeTab": "layout",
+  "activeNav": "cutting",
+  "showDimensions": true,
+  "showCutNumbers": true,
+  "nextId": 10
+}
