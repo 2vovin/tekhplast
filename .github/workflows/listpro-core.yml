@@ -1,0 +1,24 @@
+name: ListPro Core tests
+on:
+  push:
+    branches: ['listpro-core']
+    paths:
+      - 'listpro-core/**'
+      - '.github/workflows/listpro-core.yml'
+  pull_request:
+    paths:
+      - 'listpro-core/**'
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run tests
+        run: npm test
+        working-directory: listpro-core
+      - name: Run baseline benchmark
+        run: npm run benchmark
+        working-directory: listpro-core
