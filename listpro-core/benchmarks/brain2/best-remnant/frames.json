@@ -1,0 +1,8907 @@
+[
+  {
+    "step": 2,
+    "cutIndex": 1,
+    "inputBlankId": "s0/raw",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 2750,
+      "h": 1830
+    },
+    "orientation": 0,
+    "stage": 1,
+    "start": {
+      "x": 5,
+      "y": 0
+    },
+    "end": {
+      "x": 5,
+      "y": 1830
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 10,
+        "w": 966,
+        "h": 398,
+        "id": 8,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 413,
+        "w": 966,
+        "h": 398,
+        "id": 9,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 816,
+        "w": 966,
+        "h": 719,
+        "id": 5,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1224,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/side0",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 5,
+          "h": 1830
+        }
+      },
+      {
+        "id": "s0/side-rem",
+        "rect": {
+          "x": 10,
+          "y": 0,
+          "w": 2740,
+          "h": 1830
+        }
+      }
+    ],
+    "previous": [],
+    "next": [
+      {
+        "blankId": "s0/side0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/side-rem",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 3,
+          "type": "feed",
+          "inputBlankId": "s0/side-rem",
+          "stage": 1,
+          "machineOrientation": 0,
+          "w": 2740,
+          "h": 1830,
+          "materialRect": {
+            "x": 10,
+            "y": 0,
+            "w": 2740,
+            "h": 1830
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 4,
+    "cutIndex": 2,
+    "inputBlankId": "s0/side-rem",
+    "rect": {
+      "x": 10,
+      "y": 0,
+      "w": 2740,
+      "h": 1830
+    },
+    "orientation": 0,
+    "stage": 1,
+    "start": {
+      "x": 2730,
+      "y": 0
+    },
+    "end": {
+      "x": 2730,
+      "y": 1830
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 10,
+        "w": 966,
+        "h": 398,
+        "id": 8,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 413,
+        "w": 966,
+        "h": 398,
+        "id": 9,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 816,
+        "w": 966,
+        "h": 719,
+        "id": 5,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1224,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/body",
+        "rect": {
+          "x": 10,
+          "y": 0,
+          "w": 2730,
+          "h": 1830
+        }
+      },
+      {
+        "id": "s0/side1",
+        "rect": {
+          "x": 2745,
+          "y": 0,
+          "w": 5,
+          "h": 1830
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 2,
+        "type": "cut",
+        "stage": 1,
+        "cutIndex": 1,
+        "inputBlankId": "s0/raw",
+        "axis": "V",
+        "start": {
+          "x": 5,
+          "y": 0
+        },
+        "end": {
+          "x": 5,
+          "y": 1830
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/side0",
+          "s0/side-rem"
+        ],
+        "materialAxis": "V",
+        "materialPos": 5,
+        "phase": "primary",
+        "geometryCutNumber": null,
+        "machineOrientation": 0,
+        "w": 2750,
+        "h": 1830,
+        "materialRect": {
+          "x": 0,
+          "y": 0,
+          "w": 2750,
+          "h": 1830
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 3,
+        "type": "feed",
+        "inputBlankId": "s0/side-rem",
+        "stage": 1,
+        "machineOrientation": 0,
+        "w": 2740,
+        "h": 1830,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2740,
+          "h": 1830
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/body",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 5,
+          "type": "feed",
+          "inputBlankId": "s0/body",
+          "stage": 1,
+          "machineOrientation": 0,
+          "w": 2730,
+          "h": 1830,
+          "materialRect": {
+            "x": 10,
+            "y": 0,
+            "w": 2730,
+            "h": 1830
+          }
+        }
+      },
+      {
+        "blankId": "s0/side1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 6,
+    "cutIndex": 3,
+    "inputBlankId": "s0/body",
+    "rect": {
+      "x": 10,
+      "y": 0,
+      "w": 2730,
+      "h": 1830
+    },
+    "orientation": 0,
+    "stage": 1,
+    "start": {
+      "x": 2720,
+      "y": 0
+    },
+    "end": {
+      "x": 2720,
+      "y": 1830
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 10,
+        "w": 966,
+        "h": 398,
+        "id": 8,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 413,
+        "w": 966,
+        "h": 398,
+        "id": 9,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 816,
+        "w": 966,
+        "h": 719,
+        "id": 5,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1224,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1",
+        "rect": {
+          "x": 10,
+          "y": 0,
+          "w": 2720,
+          "h": 1830
+        }
+      },
+      {
+        "id": "s0/rip-rem0",
+        "rect": {
+          "x": 2735,
+          "y": 0,
+          "w": 5,
+          "h": 1830
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 4,
+        "type": "cut",
+        "stage": 1,
+        "cutIndex": 2,
+        "inputBlankId": "s0/side-rem",
+        "axis": "V",
+        "start": {
+          "x": 2730,
+          "y": 0
+        },
+        "end": {
+          "x": 2730,
+          "y": 1830
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/body",
+          "s0/side1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2740,
+        "phase": "primary",
+        "geometryCutNumber": null,
+        "machineOrientation": 0,
+        "w": 2740,
+        "h": 1830,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2740,
+          "h": 1830
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 5,
+        "type": "feed",
+        "inputBlankId": "s0/body",
+        "stage": 1,
+        "machineOrientation": 0,
+        "w": 2730,
+        "h": 1830,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2730,
+          "h": 1830
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 8,
+          "type": "feed",
+          "inputBlankId": "s0/strip1",
+          "stage": 1,
+          "machineOrientation": 0,
+          "w": 2720,
+          "h": 1830,
+          "materialRect": {
+            "x": 10,
+            "y": 0,
+            "w": 2720,
+            "h": 1830
+          }
+        }
+      },
+      {
+        "blankId": "s0/rip-rem0",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 10,
+    "cutIndex": 4,
+    "inputBlankId": "s0/strip1",
+    "rect": {
+      "x": 10,
+      "y": 0,
+      "w": 2720,
+      "h": 1830
+    },
+    "orientation": 90,
+    "stage": 2,
+    "start": {
+      "x": 1820,
+      "y": 0
+    },
+    "end": {
+      "x": 1820,
+      "y": 2720
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 10,
+        "w": 966,
+        "h": 398,
+        "id": 8,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 413,
+        "w": 966,
+        "h": 398,
+        "id": 9,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 816,
+        "w": 966,
+        "h": 719,
+        "id": 5,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1224,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/top",
+        "rect": {
+          "x": 10,
+          "y": 0,
+          "w": 2720,
+          "h": 5
+        }
+      },
+      {
+        "id": "s0/strip1/after-top",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "w": 2720,
+          "h": 1820
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 6,
+        "type": "cut",
+        "stage": 1,
+        "cutIndex": 3,
+        "inputBlankId": "s0/body",
+        "axis": "V",
+        "start": {
+          "x": 2720,
+          "y": 0
+        },
+        "end": {
+          "x": 2720,
+          "y": 1830
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1",
+          "s0/rip-rem0"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2730,
+        "phase": "primary",
+        "geometryCutNumber": null,
+        "machineOrientation": 0,
+        "w": 2730,
+        "h": 1830,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2730,
+          "h": 1830
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 8,
+        "type": "feed",
+        "inputBlankId": "s0/strip1",
+        "stage": 1,
+        "machineOrientation": 0,
+        "w": 2720,
+        "h": 1830,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2720,
+          "h": 1830
+        }
+      },
+      {
+        "step": 9,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1",
+        "stage": 1,
+        "angle": 90,
+        "fromOrientation": 0,
+        "toOrientation": 90,
+        "w": 1830,
+        "h": 2720,
+        "machineGrain": [
+          0,
+          1
+        ],
+        "outputBlankIds": [
+          "s0/strip1"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 2720,
+          "h": 1830
+        },
+        "afterSize": {
+          "w": 1830,
+          "h": 2720
+        },
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2720,
+          "h": 1830
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/top",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/after-top",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 11,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/after-top",
+          "stage": 2,
+          "machineOrientation": 90,
+          "w": 1820,
+          "h": 2720,
+          "materialRect": {
+            "x": 10,
+            "y": 10,
+            "w": 2720,
+            "h": 1820
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 12,
+    "cutIndex": 5,
+    "inputBlankId": "s0/strip1/after-top",
+    "rect": {
+      "x": 10,
+      "y": 10,
+      "w": 2720,
+      "h": 1820
+    },
+    "orientation": 90,
+    "stage": 2,
+    "start": {
+      "x": 5,
+      "y": 0
+    },
+    "end": {
+      "x": 5,
+      "y": 2720
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 10,
+        "w": 966,
+        "h": 398,
+        "id": 8,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 413,
+        "w": 966,
+        "h": 398,
+        "id": 9,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 816,
+        "w": 966,
+        "h": 719,
+        "id": 5,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1224,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "w": 2720,
+          "h": 1810
+        }
+      },
+      {
+        "id": "s0/strip1/bottom",
+        "rect": {
+          "x": 10,
+          "y": 1825,
+          "w": 2720,
+          "h": 5
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 10,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 4,
+        "inputBlankId": "s0/strip1",
+        "axis": "V",
+        "start": {
+          "x": 1820,
+          "y": 0
+        },
+        "end": {
+          "x": 1820,
+          "y": 2720
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/after-top",
+          "s0/strip1/top"
+        ],
+        "materialAxis": "H",
+        "materialPos": 5,
+        "phase": "strip-trim",
+        "geometryCutNumber": null,
+        "machineOrientation": 90,
+        "w": 1830,
+        "h": 2720,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2720,
+          "h": 1830
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 11,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/after-top",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 1820,
+        "h": 2720,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 2720,
+          "h": 1820
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 13,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work",
+          "stage": 2,
+          "machineOrientation": 90,
+          "w": 1810,
+          "h": 2720,
+          "materialRect": {
+            "x": 10,
+            "y": 10,
+            "w": 2720,
+            "h": 1810
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/bottom",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 15,
+    "cutIndex": 6,
+    "inputBlankId": "s0/strip1/work",
+    "rect": {
+      "x": 10,
+      "y": 10,
+      "w": 2720,
+      "h": 1810
+    },
+    "orientation": 180,
+    "stage": 3,
+    "start": {
+      "x": 1749,
+      "y": 0
+    },
+    "end": {
+      "x": 1749,
+      "y": 1810
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 10,
+        "w": 966,
+        "h": 398,
+        "id": 8,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 413,
+        "w": 966,
+        "h": 398,
+        "id": 9,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 816,
+        "w": 966,
+        "h": 719,
+        "id": 5,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1224,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/0",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "w": 966,
+          "h": 1810
+        }
+      },
+      {
+        "id": "s0/strip1/work/1",
+        "rect": {
+          "x": 981,
+          "y": 10,
+          "w": 1749,
+          "h": 1810
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 12,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 5,
+        "inputBlankId": "s0/strip1/after-top",
+        "axis": "V",
+        "start": {
+          "x": 5,
+          "y": 0
+        },
+        "end": {
+          "x": 5,
+          "y": 2720
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/bottom",
+          "s0/strip1/work"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1820,
+        "phase": "strip-trim",
+        "geometryCutNumber": null,
+        "machineOrientation": 90,
+        "w": 1820,
+        "h": 2720,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 2720,
+          "h": 1820
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 13,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 1810,
+        "h": 2720,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 2720,
+          "h": 1810
+        }
+      },
+      {
+        "step": 14,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work",
+        "stage": 2,
+        "angle": 90,
+        "fromOrientation": 90,
+        "toOrientation": 180,
+        "w": 2720,
+        "h": 1810,
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 1810,
+          "h": 2720
+        },
+        "afterSize": {
+          "w": 2720,
+          "h": 1810
+        },
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 2720,
+          "h": 1810
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 16,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/0",
+          "stage": 3,
+          "machineOrientation": 180,
+          "w": 966,
+          "h": 1810,
+          "materialRect": {
+            "x": 10,
+            "y": 10,
+            "w": 966,
+            "h": 1810
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 30,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1",
+          "stage": 3,
+          "machineOrientation": 180,
+          "w": 1749,
+          "h": 1810,
+          "materialRect": {
+            "x": 981,
+            "y": 10,
+            "w": 1749,
+            "h": 1810
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 18,
+    "cutIndex": 7,
+    "inputBlankId": "s0/strip1/work/0",
+    "rect": {
+      "x": 10,
+      "y": 10,
+      "w": 966,
+      "h": 1810
+    },
+    "orientation": 270,
+    "stage": 4,
+    "start": {
+      "x": 398,
+      "y": 0
+    },
+    "end": {
+      "x": 398,
+      "y": 966
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 10,
+        "w": 966,
+        "h": 398,
+        "id": 8,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 413,
+        "w": 966,
+        "h": 398,
+        "id": 9,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 816,
+        "w": 966,
+        "h": 719,
+        "id": 5,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/0/0",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "w": 966,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/strip1/work/0/1",
+        "rect": {
+          "x": 10,
+          "y": 413,
+          "w": 966,
+          "h": 1407
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 15,
+        "type": "cut",
+        "stage": 3,
+        "cutIndex": 6,
+        "inputBlankId": "s0/strip1/work",
+        "axis": "V",
+        "start": {
+          "x": 1749,
+          "y": 0
+        },
+        "end": {
+          "x": 1749,
+          "y": 1810
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1",
+          "s0/strip1/work/0"
+        ],
+        "materialAxis": "V",
+        "materialPos": 976,
+        "phase": "layout",
+        "geometryCutNumber": 2,
+        "machineOrientation": 180,
+        "w": 2720,
+        "h": 1810,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 2720,
+          "h": 1810
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 16,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/0",
+        "stage": 3,
+        "machineOrientation": 180,
+        "w": 966,
+        "h": 1810,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 966,
+          "h": 1810
+        }
+      },
+      {
+        "step": 17,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/0",
+        "stage": 3,
+        "angle": 90,
+        "fromOrientation": 180,
+        "toOrientation": 270,
+        "w": 1810,
+        "h": 966,
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 966,
+          "h": 1810
+        },
+        "afterSize": {
+          "w": 1810,
+          "h": 966
+        },
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 966,
+          "h": 1810
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/0/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 19,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/0/1",
+          "stage": 4,
+          "machineOrientation": 270,
+          "w": 1407,
+          "h": 966,
+          "materialRect": {
+            "x": 10,
+            "y": 413,
+            "w": 966,
+            "h": 1407
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 20,
+    "cutIndex": 8,
+    "inputBlankId": "s0/strip1/work/0/1",
+    "rect": {
+      "x": 10,
+      "y": 413,
+      "w": 966,
+      "h": 1407
+    },
+    "orientation": 270,
+    "stage": 4,
+    "start": {
+      "x": 398,
+      "y": 0
+    },
+    "end": {
+      "x": 398,
+      "y": 966
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 413,
+        "w": 966,
+        "h": 398,
+        "id": 9,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 816,
+        "w": 966,
+        "h": 719,
+        "id": 5,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/0/1/0",
+        "rect": {
+          "x": 10,
+          "y": 413,
+          "w": 966,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/strip1/work/0/1/1",
+        "rect": {
+          "x": 10,
+          "y": 816,
+          "w": 966,
+          "h": 1004
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 18,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 7,
+        "inputBlankId": "s0/strip1/work/0",
+        "axis": "V",
+        "start": {
+          "x": 398,
+          "y": 0
+        },
+        "end": {
+          "x": 398,
+          "y": 966
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/0/0",
+          "s0/strip1/work/0/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 408,
+        "phase": "layout",
+        "geometryCutNumber": 3,
+        "machineOrientation": 270,
+        "w": 1810,
+        "h": 966,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 966,
+          "h": 1810
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 19,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/0/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 1407,
+        "h": 966,
+        "materialRect": {
+          "x": 10,
+          "y": 413,
+          "w": 966,
+          "h": 1407
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/0/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/0/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 21,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/0/1/1",
+          "stage": 4,
+          "machineOrientation": 270,
+          "w": 1004,
+          "h": 966,
+          "materialRect": {
+            "x": 10,
+            "y": 816,
+            "w": 966,
+            "h": 1004
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 22,
+    "cutIndex": 9,
+    "inputBlankId": "s0/strip1/work/0/1/1",
+    "rect": {
+      "x": 10,
+      "y": 816,
+      "w": 966,
+      "h": 1004
+    },
+    "orientation": 270,
+    "stage": 4,
+    "start": {
+      "x": 719,
+      "y": 0
+    },
+    "end": {
+      "x": 719,
+      "y": 966
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 816,
+        "w": 966,
+        "h": 719,
+        "id": 5,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/0/1/1/0",
+        "rect": {
+          "x": 10,
+          "y": 816,
+          "w": 966,
+          "h": 719
+        }
+      },
+      {
+        "id": "s0/strip1/work/0/1/1/1",
+        "rect": {
+          "x": 10,
+          "y": 1540,
+          "w": 966,
+          "h": 280
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 20,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 8,
+        "inputBlankId": "s0/strip1/work/0/1",
+        "axis": "V",
+        "start": {
+          "x": 398,
+          "y": 0
+        },
+        "end": {
+          "x": 398,
+          "y": 966
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/0/1/0",
+          "s0/strip1/work/0/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 811,
+        "phase": "layout",
+        "geometryCutNumber": 4,
+        "machineOrientation": 270,
+        "w": 1407,
+        "h": 966,
+        "materialRect": {
+          "x": 10,
+          "y": 413,
+          "w": 966,
+          "h": 1407
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 21,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/0/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 1004,
+        "h": 966,
+        "materialRect": {
+          "x": 10,
+          "y": 816,
+          "w": 966,
+          "h": 1004
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/0/1/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/0/1/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 23,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/0/1/1/1",
+          "stage": 4,
+          "machineOrientation": 270,
+          "w": 280,
+          "h": 966,
+          "materialRect": {
+            "x": 10,
+            "y": 1540,
+            "w": 966,
+            "h": 280
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 24,
+    "cutIndex": 10,
+    "inputBlankId": "s0/strip1/work/0/1/1/1",
+    "rect": {
+      "x": 10,
+      "y": 1540,
+      "w": 966,
+      "h": 280
+    },
+    "orientation": 270,
+    "stage": 4,
+    "start": {
+      "x": 270,
+      "y": 0
+    },
+    "end": {
+      "x": 270,
+      "y": 966
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/0/1/1/1/0",
+        "rect": {
+          "x": 10,
+          "y": 1540,
+          "w": 966,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/0/1/1/1/1",
+        "rect": {
+          "x": 10,
+          "y": 1815,
+          "w": 966,
+          "h": 5
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 22,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 9,
+        "inputBlankId": "s0/strip1/work/0/1/1",
+        "axis": "V",
+        "start": {
+          "x": 719,
+          "y": 0
+        },
+        "end": {
+          "x": 719,
+          "y": 966
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/0/1/1/0",
+          "s0/strip1/work/0/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1535,
+        "phase": "layout",
+        "geometryCutNumber": 5,
+        "machineOrientation": 270,
+        "w": 1004,
+        "h": 966,
+        "materialRect": {
+          "x": 10,
+          "y": 816,
+          "w": 966,
+          "h": 1004
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 23,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/0/1/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 280,
+        "h": 966,
+        "materialRect": {
+          "x": 10,
+          "y": 1540,
+          "w": 966,
+          "h": 280
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/0/1/1/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 25,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/0/1/1/1/0",
+          "stage": 4,
+          "machineOrientation": 270,
+          "w": 270,
+          "h": 966,
+          "materialRect": {
+            "x": 10,
+            "y": 1540,
+            "w": 966,
+            "h": 270
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/0/1/1/1/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 27,
+    "cutIndex": 11,
+    "inputBlankId": "s0/strip1/work/0/1/1/1/0",
+    "rect": {
+      "x": 10,
+      "y": 1540,
+      "w": 966,
+      "h": 270
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 420,
+      "y": 0
+    },
+    "end": {
+      "x": 420,
+      "y": 270
+    },
+    "parts": [
+      {
+        "x": 10,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/0/1/1/1/0/0",
+        "rect": {
+          "x": 10,
+          "y": 1540,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/0/1/1/1/0/1",
+        "rect": {
+          "x": 435,
+          "y": 1540,
+          "w": 541,
+          "h": 270
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 24,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 10,
+        "inputBlankId": "s0/strip1/work/0/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 966
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/0/1/1/1/0",
+          "s0/strip1/work/0/1/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1810,
+        "phase": "layout",
+        "geometryCutNumber": 6,
+        "machineOrientation": 270,
+        "w": 280,
+        "h": 966,
+        "materialRect": {
+          "x": 10,
+          "y": 1540,
+          "w": 966,
+          "h": 280
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 25,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/0/1/1/1/0",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 270,
+        "h": 966,
+        "materialRect": {
+          "x": 10,
+          "y": 1540,
+          "w": 966,
+          "h": 270
+        }
+      },
+      {
+        "step": 26,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/0/1/1/1/0",
+        "stage": 4,
+        "angle": 90,
+        "fromOrientation": 270,
+        "toOrientation": 0,
+        "w": 966,
+        "h": 270,
+        "machineGrain": [
+          1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/0/1/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 270,
+          "h": 966
+        },
+        "afterSize": {
+          "w": 966,
+          "h": 270
+        },
+        "materialRect": {
+          "x": 10,
+          "y": 1540,
+          "w": 966,
+          "h": 270
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/0/1/1/1/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/0/1/1/1/0/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 28,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/0/1/1/1/0/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 541,
+          "h": 270,
+          "materialRect": {
+            "x": 435,
+            "y": 1540,
+            "w": 541,
+            "h": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 29,
+    "cutIndex": 12,
+    "inputBlankId": "s0/strip1/work/0/1/1/1/0/1",
+    "rect": {
+      "x": 435,
+      "y": 1540,
+      "w": 541,
+      "h": 270
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 420,
+      "y": 0
+    },
+    "end": {
+      "x": 420,
+      "y": 270
+    },
+    "parts": [
+      {
+        "x": 435,
+        "y": 1540,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/0/1/1/1/0/1/0",
+        "rect": {
+          "x": 435,
+          "y": 1540,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/0/1/1/1/0/1/1",
+        "rect": {
+          "x": 860,
+          "y": 1540,
+          "w": 116,
+          "h": 270
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 27,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 11,
+        "inputBlankId": "s0/strip1/work/0/1/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/0/1/1/1/0/0",
+          "s0/strip1/work/0/1/1/1/0/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 430,
+        "phase": "layout",
+        "geometryCutNumber": 7,
+        "machineOrientation": 0,
+        "w": 966,
+        "h": 270,
+        "materialRect": {
+          "x": 10,
+          "y": 1540,
+          "w": 966,
+          "h": 270
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 28,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/0/1/1/1/0/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 541,
+        "h": 270,
+        "materialRect": {
+          "x": 435,
+          "y": 1540,
+          "w": 541,
+          "h": 270
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/0/1/1/1/0/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/0/1/1/1/0/1/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 32,
+    "cutIndex": 13,
+    "inputBlankId": "s0/strip1/work/1",
+    "rect": {
+      "x": 981,
+      "y": 10,
+      "w": 1749,
+      "h": 1810
+    },
+    "orientation": 270,
+    "stage": 4,
+    "start": {
+      "x": 219,
+      "y": 0
+    },
+    "end": {
+      "x": 219,
+      "y": 1749
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1224,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/0",
+        "rect": {
+          "x": 981,
+          "y": 10,
+          "w": 1749,
+          "h": 219
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1",
+        "rect": {
+          "x": 981,
+          "y": 234,
+          "w": 1749,
+          "h": 1586
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 15,
+        "type": "cut",
+        "stage": 3,
+        "cutIndex": 6,
+        "inputBlankId": "s0/strip1/work",
+        "axis": "V",
+        "start": {
+          "x": 1749,
+          "y": 0
+        },
+        "end": {
+          "x": 1749,
+          "y": 1810
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1",
+          "s0/strip1/work/0"
+        ],
+        "materialAxis": "V",
+        "materialPos": 976,
+        "phase": "layout",
+        "geometryCutNumber": 2,
+        "machineOrientation": 180,
+        "w": 2720,
+        "h": 1810,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 2720,
+          "h": 1810
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 30,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1",
+        "stage": 3,
+        "machineOrientation": 180,
+        "w": 1749,
+        "h": 1810,
+        "materialRect": {
+          "x": 981,
+          "y": 10,
+          "w": 1749,
+          "h": 1810
+        }
+      },
+      {
+        "step": 31,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1",
+        "stage": 3,
+        "angle": 90,
+        "fromOrientation": 180,
+        "toOrientation": 270,
+        "w": 1810,
+        "h": 1749,
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 1749,
+          "h": 1810
+        },
+        "afterSize": {
+          "w": 1810,
+          "h": 1749
+        },
+        "materialRect": {
+          "x": 981,
+          "y": 10,
+          "w": 1749,
+          "h": 1810
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 33,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/0",
+          "stage": 4,
+          "machineOrientation": 270,
+          "w": 219,
+          "h": 1749,
+          "materialRect": {
+            "x": 981,
+            "y": 10,
+            "w": 1749,
+            "h": 219
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 51,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1",
+          "stage": 4,
+          "machineOrientation": 270,
+          "w": 1586,
+          "h": 1749,
+          "materialRect": {
+            "x": 981,
+            "y": 234,
+            "w": 1749,
+            "h": 1586
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 35,
+    "cutIndex": 14,
+    "inputBlankId": "s0/strip1/work/1/0",
+    "rect": {
+      "x": 981,
+      "y": 10,
+      "w": 1749,
+      "h": 219
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 238,
+      "y": 0
+    },
+    "end": {
+      "x": 238,
+      "y": 219
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1224,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/0/0",
+        "rect": {
+          "x": 981,
+          "y": 10,
+          "w": 238,
+          "h": 219
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/0/1",
+        "rect": {
+          "x": 1224,
+          "y": 10,
+          "w": 1506,
+          "h": 219
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 32,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 13,
+        "inputBlankId": "s0/strip1/work/1",
+        "axis": "V",
+        "start": {
+          "x": 219,
+          "y": 0
+        },
+        "end": {
+          "x": 219,
+          "y": 1749
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/0",
+          "s0/strip1/work/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 229,
+        "phase": "layout",
+        "geometryCutNumber": 9,
+        "machineOrientation": 270,
+        "w": 1810,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 10,
+          "w": 1749,
+          "h": 1810
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 33,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/0",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 219,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 10,
+          "w": 1749,
+          "h": 219
+        }
+      },
+      {
+        "step": 34,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/0",
+        "stage": 4,
+        "angle": 90,
+        "fromOrientation": 270,
+        "toOrientation": 0,
+        "w": 1749,
+        "h": 219,
+        "machineGrain": [
+          1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 219,
+          "h": 1749
+        },
+        "afterSize": {
+          "w": 1749,
+          "h": 219
+        },
+        "materialRect": {
+          "x": 981,
+          "y": 10,
+          "w": 1749,
+          "h": 219
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/0/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 36,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/0/0",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 238,
+          "h": 219,
+          "materialRect": {
+            "x": 981,
+            "y": 10,
+            "w": 238,
+            "h": 219
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/0/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 39,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/0/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 1506,
+          "h": 219,
+          "materialRect": {
+            "x": 1224,
+            "y": 10,
+            "w": 1506,
+            "h": 219
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 38,
+    "cutIndex": 15,
+    "inputBlankId": "s0/strip1/work/1/0/0",
+    "rect": {
+      "x": 981,
+      "y": 10,
+      "w": 238,
+      "h": 219
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 34,
+      "y": 0
+    },
+    "end": {
+      "x": 34,
+      "y": 238
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/0/0/0",
+        "rect": {
+          "x": 981,
+          "y": 10,
+          "w": 238,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/0/0/1",
+        "rect": {
+          "x": 981,
+          "y": 195,
+          "w": 238,
+          "h": 34
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 35,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 14,
+        "inputBlankId": "s0/strip1/work/1/0",
+        "axis": "V",
+        "start": {
+          "x": 238,
+          "y": 0
+        },
+        "end": {
+          "x": 238,
+          "y": 219
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/0/0",
+          "s0/strip1/work/1/0/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1219,
+        "phase": "layout",
+        "geometryCutNumber": 10,
+        "machineOrientation": 0,
+        "w": 1749,
+        "h": 219,
+        "materialRect": {
+          "x": 981,
+          "y": 10,
+          "w": 1749,
+          "h": 219
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 36,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/0/0",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 238,
+        "h": 219,
+        "materialRect": {
+          "x": 981,
+          "y": 10,
+          "w": 238,
+          "h": 219
+        }
+      },
+      {
+        "step": 37,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/0/0",
+        "stage": 5,
+        "angle": 90,
+        "fromOrientation": 0,
+        "toOrientation": 90,
+        "w": 219,
+        "h": 238,
+        "machineGrain": [
+          0,
+          1
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/0/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 238,
+          "h": 219
+        },
+        "afterSize": {
+          "w": 219,
+          "h": 238
+        },
+        "materialRect": {
+          "x": 981,
+          "y": 10,
+          "w": 238,
+          "h": 219
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/0/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/0/0/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 40,
+    "cutIndex": 16,
+    "inputBlankId": "s0/strip1/work/1/0/1",
+    "rect": {
+      "x": 1224,
+      "y": 10,
+      "w": 1506,
+      "h": 219
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 238,
+      "y": 0
+    },
+    "end": {
+      "x": 238,
+      "y": 219
+    },
+    "parts": [
+      {
+        "x": 1224,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/0/1/0",
+        "rect": {
+          "x": 1224,
+          "y": 10,
+          "w": 238,
+          "h": 219
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/0/1/1",
+        "rect": {
+          "x": 1467,
+          "y": 10,
+          "w": 1263,
+          "h": 219
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 35,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 14,
+        "inputBlankId": "s0/strip1/work/1/0",
+        "axis": "V",
+        "start": {
+          "x": 238,
+          "y": 0
+        },
+        "end": {
+          "x": 238,
+          "y": 219
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/0/0",
+          "s0/strip1/work/1/0/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1219,
+        "phase": "layout",
+        "geometryCutNumber": 10,
+        "machineOrientation": 0,
+        "w": 1749,
+        "h": 219,
+        "materialRect": {
+          "x": 981,
+          "y": 10,
+          "w": 1749,
+          "h": 219
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 39,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/0/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 1506,
+        "h": 219,
+        "materialRect": {
+          "x": 1224,
+          "y": 10,
+          "w": 1506,
+          "h": 219
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/0/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 41,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/0/1/0",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 238,
+          "h": 219,
+          "materialRect": {
+            "x": 1224,
+            "y": 10,
+            "w": 238,
+            "h": 219
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/0/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 44,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/0/1/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 1263,
+          "h": 219,
+          "materialRect": {
+            "x": 1467,
+            "y": 10,
+            "w": 1263,
+            "h": 219
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 43,
+    "cutIndex": 17,
+    "inputBlankId": "s0/strip1/work/1/0/1/0",
+    "rect": {
+      "x": 1224,
+      "y": 10,
+      "w": 238,
+      "h": 219
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 34,
+      "y": 0
+    },
+    "end": {
+      "x": 34,
+      "y": 238
+    },
+    "parts": [
+      {
+        "x": 1224,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/0/1/0/0",
+        "rect": {
+          "x": 1224,
+          "y": 10,
+          "w": 238,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/0/1/0/1",
+        "rect": {
+          "x": 1224,
+          "y": 195,
+          "w": 238,
+          "h": 34
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 40,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 16,
+        "inputBlankId": "s0/strip1/work/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 238,
+          "y": 0
+        },
+        "end": {
+          "x": 238,
+          "y": 219
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/0/1/0",
+          "s0/strip1/work/1/0/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1462,
+        "phase": "layout",
+        "geometryCutNumber": 12,
+        "machineOrientation": 0,
+        "w": 1506,
+        "h": 219,
+        "materialRect": {
+          "x": 1224,
+          "y": 10,
+          "w": 1506,
+          "h": 219
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 41,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/0/1/0",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 238,
+        "h": 219,
+        "materialRect": {
+          "x": 1224,
+          "y": 10,
+          "w": 238,
+          "h": 219
+        }
+      },
+      {
+        "step": 42,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/0/1/0",
+        "stage": 5,
+        "angle": 90,
+        "fromOrientation": 0,
+        "toOrientation": 90,
+        "w": 219,
+        "h": 238,
+        "machineGrain": [
+          0,
+          1
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/0/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 238,
+          "h": 219
+        },
+        "afterSize": {
+          "w": 219,
+          "h": 238
+        },
+        "materialRect": {
+          "x": 1224,
+          "y": 10,
+          "w": 238,
+          "h": 219
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/0/1/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/0/1/0/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 45,
+    "cutIndex": 18,
+    "inputBlankId": "s0/strip1/work/1/0/1/1",
+    "rect": {
+      "x": 1467,
+      "y": 10,
+      "w": 1263,
+      "h": 219
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 238,
+      "y": 0
+    },
+    "end": {
+      "x": 238,
+      "y": 219
+    },
+    "parts": [
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/0/1/1/0",
+        "rect": {
+          "x": 1467,
+          "y": 10,
+          "w": 238,
+          "h": 219
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/0/1/1/1",
+        "rect": {
+          "x": 1710,
+          "y": 10,
+          "w": 1020,
+          "h": 219
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 40,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 16,
+        "inputBlankId": "s0/strip1/work/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 238,
+          "y": 0
+        },
+        "end": {
+          "x": 238,
+          "y": 219
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/0/1/0",
+          "s0/strip1/work/1/0/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1462,
+        "phase": "layout",
+        "geometryCutNumber": 12,
+        "machineOrientation": 0,
+        "w": 1506,
+        "h": 219,
+        "materialRect": {
+          "x": 1224,
+          "y": 10,
+          "w": 1506,
+          "h": 219
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 44,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/0/1/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 1263,
+        "h": 219,
+        "materialRect": {
+          "x": 1467,
+          "y": 10,
+          "w": 1263,
+          "h": 219
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/0/1/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 46,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/0/1/1/0",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 238,
+          "h": 219,
+          "materialRect": {
+            "x": 1467,
+            "y": 10,
+            "w": 238,
+            "h": 219
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/0/1/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 49,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/0/1/1/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 1020,
+          "h": 219,
+          "materialRect": {
+            "x": 1710,
+            "y": 10,
+            "w": 1020,
+            "h": 219
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 48,
+    "cutIndex": 19,
+    "inputBlankId": "s0/strip1/work/1/0/1/1/0",
+    "rect": {
+      "x": 1467,
+      "y": 10,
+      "w": 238,
+      "h": 219
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 34,
+      "y": 0
+    },
+    "end": {
+      "x": 34,
+      "y": 238
+    },
+    "parts": [
+      {
+        "x": 1467,
+        "y": 10,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/0/1/1/0/0",
+        "rect": {
+          "x": 1467,
+          "y": 10,
+          "w": 238,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/0/1/1/0/1",
+        "rect": {
+          "x": 1467,
+          "y": 195,
+          "w": 238,
+          "h": 34
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 45,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 18,
+        "inputBlankId": "s0/strip1/work/1/0/1/1",
+        "axis": "V",
+        "start": {
+          "x": 238,
+          "y": 0
+        },
+        "end": {
+          "x": 238,
+          "y": 219
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/0/1/1/0",
+          "s0/strip1/work/1/0/1/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1705,
+        "phase": "layout",
+        "geometryCutNumber": 14,
+        "machineOrientation": 0,
+        "w": 1263,
+        "h": 219,
+        "materialRect": {
+          "x": 1467,
+          "y": 10,
+          "w": 1263,
+          "h": 219
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 46,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/0/1/1/0",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 238,
+        "h": 219,
+        "materialRect": {
+          "x": 1467,
+          "y": 10,
+          "w": 238,
+          "h": 219
+        }
+      },
+      {
+        "step": 47,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/0/1/1/0",
+        "stage": 5,
+        "angle": 90,
+        "fromOrientation": 0,
+        "toOrientation": 90,
+        "w": 219,
+        "h": 238,
+        "machineGrain": [
+          0,
+          1
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/0/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 238,
+          "h": 219
+        },
+        "afterSize": {
+          "w": 219,
+          "h": 238
+        },
+        "materialRect": {
+          "x": 1467,
+          "y": 10,
+          "w": 238,
+          "h": 219
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/0/1/1/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/0/1/1/0/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 50,
+    "cutIndex": 20,
+    "inputBlankId": "s0/strip1/work/1/0/1/1/1",
+    "rect": {
+      "x": 1710,
+      "y": 10,
+      "w": 1020,
+      "h": 219
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 1000,
+      "y": 0
+    },
+    "end": {
+      "x": 1000,
+      "y": 219
+    },
+    "parts": [
+      {
+        "x": 1710,
+        "y": 10,
+        "w": 1000,
+        "h": 219,
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/0/1/1/1/0",
+        "rect": {
+          "x": 1710,
+          "y": 10,
+          "w": 1000,
+          "h": 219
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/0/1/1/1/1",
+        "rect": {
+          "x": 2715,
+          "y": 10,
+          "w": 15,
+          "h": 219
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 45,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 18,
+        "inputBlankId": "s0/strip1/work/1/0/1/1",
+        "axis": "V",
+        "start": {
+          "x": 238,
+          "y": 0
+        },
+        "end": {
+          "x": 238,
+          "y": 219
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/0/1/1/0",
+          "s0/strip1/work/1/0/1/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1705,
+        "phase": "layout",
+        "geometryCutNumber": 14,
+        "machineOrientation": 0,
+        "w": 1263,
+        "h": 219,
+        "materialRect": {
+          "x": 1467,
+          "y": 10,
+          "w": 1263,
+          "h": 219
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 49,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/0/1/1/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 1020,
+        "h": 219,
+        "materialRect": {
+          "x": 1710,
+          "y": 10,
+          "w": 1020,
+          "h": 219
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/0/1/1/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/0/1/1/1/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 52,
+    "cutIndex": 21,
+    "inputBlankId": "s0/strip1/work/1/1",
+    "rect": {
+      "x": 981,
+      "y": 234,
+      "w": 1749,
+      "h": 1586
+    },
+    "orientation": 270,
+    "stage": 4,
+    "start": {
+      "x": 270,
+      "y": 0
+    },
+    "end": {
+      "x": 270,
+      "y": 1749
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/0",
+        "rect": {
+          "x": 981,
+          "y": 234,
+          "w": 1749,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1",
+        "rect": {
+          "x": 981,
+          "y": 509,
+          "w": 1749,
+          "h": 1311
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 32,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 13,
+        "inputBlankId": "s0/strip1/work/1",
+        "axis": "V",
+        "start": {
+          "x": 219,
+          "y": 0
+        },
+        "end": {
+          "x": 219,
+          "y": 1749
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/0",
+          "s0/strip1/work/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 229,
+        "phase": "layout",
+        "geometryCutNumber": 9,
+        "machineOrientation": 270,
+        "w": 1810,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 10,
+          "w": 1749,
+          "h": 1810
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 51,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 1586,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 234,
+          "w": 1749,
+          "h": 1586
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 53,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/0",
+          "stage": 4,
+          "machineOrientation": 270,
+          "w": 270,
+          "h": 1749,
+          "materialRect": {
+            "x": 981,
+            "y": 234,
+            "w": 1749,
+            "h": 270
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 62,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1",
+          "stage": 4,
+          "machineOrientation": 270,
+          "w": 1311,
+          "h": 1749,
+          "materialRect": {
+            "x": 981,
+            "y": 509,
+            "w": 1749,
+            "h": 1311
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 55,
+    "cutIndex": 22,
+    "inputBlankId": "s0/strip1/work/1/1/0",
+    "rect": {
+      "x": 981,
+      "y": 234,
+      "w": 1749,
+      "h": 270
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 420,
+      "y": 0
+    },
+    "end": {
+      "x": 420,
+      "y": 270
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/0/0",
+        "rect": {
+          "x": 981,
+          "y": 234,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/0/1",
+        "rect": {
+          "x": 1406,
+          "y": 234,
+          "w": 1324,
+          "h": 270
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 52,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 21,
+        "inputBlankId": "s0/strip1/work/1/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 1749
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/0",
+          "s0/strip1/work/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 504,
+        "phase": "layout",
+        "geometryCutNumber": 17,
+        "machineOrientation": 270,
+        "w": 1586,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 234,
+          "w": 1749,
+          "h": 1586
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 53,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/0",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 270,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 234,
+          "w": 1749,
+          "h": 270
+        }
+      },
+      {
+        "step": 54,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/1/0",
+        "stage": 4,
+        "angle": 90,
+        "fromOrientation": 270,
+        "toOrientation": 0,
+        "w": 1749,
+        "h": 270,
+        "machineGrain": [
+          1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 270,
+          "h": 1749
+        },
+        "afterSize": {
+          "w": 1749,
+          "h": 270
+        },
+        "materialRect": {
+          "x": 981,
+          "y": 234,
+          "w": 1749,
+          "h": 270
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/0/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 56,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/0/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 1324,
+          "h": 270,
+          "materialRect": {
+            "x": 1406,
+            "y": 234,
+            "w": 1324,
+            "h": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 57,
+    "cutIndex": 23,
+    "inputBlankId": "s0/strip1/work/1/1/0/1",
+    "rect": {
+      "x": 1406,
+      "y": 234,
+      "w": 1324,
+      "h": 270
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 420,
+      "y": 0
+    },
+    "end": {
+      "x": 420,
+      "y": 270
+    },
+    "parts": [
+      {
+        "x": 1406,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/0/1/0",
+        "rect": {
+          "x": 1406,
+          "y": 234,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/0/1/1",
+        "rect": {
+          "x": 1831,
+          "y": 234,
+          "w": 899,
+          "h": 270
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 55,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 22,
+        "inputBlankId": "s0/strip1/work/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/0/0",
+          "s0/strip1/work/1/1/0/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1401,
+        "phase": "layout",
+        "geometryCutNumber": 18,
+        "machineOrientation": 0,
+        "w": 1749,
+        "h": 270,
+        "materialRect": {
+          "x": 981,
+          "y": 234,
+          "w": 1749,
+          "h": 270
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 56,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/0/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 1324,
+        "h": 270,
+        "materialRect": {
+          "x": 1406,
+          "y": 234,
+          "w": 1324,
+          "h": 270
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/0/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/0/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 58,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/0/1/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 899,
+          "h": 270,
+          "materialRect": {
+            "x": 1831,
+            "y": 234,
+            "w": 899,
+            "h": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 59,
+    "cutIndex": 24,
+    "inputBlankId": "s0/strip1/work/1/1/0/1/1",
+    "rect": {
+      "x": 1831,
+      "y": 234,
+      "w": 899,
+      "h": 270
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 420,
+      "y": 0
+    },
+    "end": {
+      "x": 420,
+      "y": 270
+    },
+    "parts": [
+      {
+        "x": 1831,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/0/1/1/0",
+        "rect": {
+          "x": 1831,
+          "y": 234,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/0/1/1/1",
+        "rect": {
+          "x": 2256,
+          "y": 234,
+          "w": 474,
+          "h": 270
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 57,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 23,
+        "inputBlankId": "s0/strip1/work/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/0/1/0",
+          "s0/strip1/work/1/1/0/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1826,
+        "phase": "layout",
+        "geometryCutNumber": 19,
+        "machineOrientation": 0,
+        "w": 1324,
+        "h": 270,
+        "materialRect": {
+          "x": 1406,
+          "y": 234,
+          "w": 1324,
+          "h": 270
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 58,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/0/1/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 899,
+        "h": 270,
+        "materialRect": {
+          "x": 1831,
+          "y": 234,
+          "w": 899,
+          "h": 270
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/0/1/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/0/1/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 60,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/0/1/1/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 474,
+          "h": 270,
+          "materialRect": {
+            "x": 2256,
+            "y": 234,
+            "w": 474,
+            "h": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 61,
+    "cutIndex": 25,
+    "inputBlankId": "s0/strip1/work/1/1/0/1/1/1",
+    "rect": {
+      "x": 2256,
+      "y": 234,
+      "w": 474,
+      "h": 270
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 420,
+      "y": 0
+    },
+    "end": {
+      "x": 420,
+      "y": 270
+    },
+    "parts": [
+      {
+        "x": 2256,
+        "y": 234,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/0/1/1/1/0",
+        "rect": {
+          "x": 2256,
+          "y": 234,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/0/1/1/1/1",
+        "rect": {
+          "x": 2681,
+          "y": 234,
+          "w": 49,
+          "h": 270
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 59,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 24,
+        "inputBlankId": "s0/strip1/work/1/1/0/1/1",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/0/1/1/0",
+          "s0/strip1/work/1/1/0/1/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2251,
+        "phase": "layout",
+        "geometryCutNumber": 20,
+        "machineOrientation": 0,
+        "w": 899,
+        "h": 270,
+        "materialRect": {
+          "x": 1831,
+          "y": 234,
+          "w": 899,
+          "h": 270
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 60,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/0/1/1/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 474,
+        "h": 270,
+        "materialRect": {
+          "x": 2256,
+          "y": 234,
+          "w": 474,
+          "h": 270
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/0/1/1/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/0/1/1/1/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 63,
+    "cutIndex": 26,
+    "inputBlankId": "s0/strip1/work/1/1/1",
+    "rect": {
+      "x": 981,
+      "y": 509,
+      "w": 1749,
+      "h": 1311
+    },
+    "orientation": 270,
+    "stage": 4,
+    "start": {
+      "x": 270,
+      "y": 0
+    },
+    "end": {
+      "x": 270,
+      "y": 1749
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/0",
+        "rect": {
+          "x": 981,
+          "y": 509,
+          "w": 1749,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1",
+        "rect": {
+          "x": 981,
+          "y": 784,
+          "w": 1749,
+          "h": 1036
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 52,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 21,
+        "inputBlankId": "s0/strip1/work/1/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 1749
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/0",
+          "s0/strip1/work/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 504,
+        "phase": "layout",
+        "geometryCutNumber": 17,
+        "machineOrientation": 270,
+        "w": 1586,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 234,
+          "w": 1749,
+          "h": 1586
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 62,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 1311,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 509,
+          "w": 1749,
+          "h": 1311
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 64,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/0",
+          "stage": 4,
+          "machineOrientation": 270,
+          "w": 270,
+          "h": 1749,
+          "materialRect": {
+            "x": 981,
+            "y": 509,
+            "w": 1749,
+            "h": 270
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 73,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1",
+          "stage": 4,
+          "machineOrientation": 270,
+          "w": 1036,
+          "h": 1749,
+          "materialRect": {
+            "x": 981,
+            "y": 784,
+            "w": 1749,
+            "h": 1036
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 66,
+    "cutIndex": 27,
+    "inputBlankId": "s0/strip1/work/1/1/1/0",
+    "rect": {
+      "x": 981,
+      "y": 509,
+      "w": 1749,
+      "h": 270
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 420,
+      "y": 0
+    },
+    "end": {
+      "x": 420,
+      "y": 270
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/0/0",
+        "rect": {
+          "x": 981,
+          "y": 509,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/0/1",
+        "rect": {
+          "x": 1406,
+          "y": 509,
+          "w": 1324,
+          "h": 270
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 63,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 26,
+        "inputBlankId": "s0/strip1/work/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 1749
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/0",
+          "s0/strip1/work/1/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 779,
+        "phase": "layout",
+        "geometryCutNumber": 22,
+        "machineOrientation": 270,
+        "w": 1311,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 509,
+          "w": 1749,
+          "h": 1311
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 64,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/0",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 270,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 509,
+          "w": 1749,
+          "h": 270
+        }
+      },
+      {
+        "step": 65,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/1/1/0",
+        "stage": 4,
+        "angle": 90,
+        "fromOrientation": 270,
+        "toOrientation": 0,
+        "w": 1749,
+        "h": 270,
+        "machineGrain": [
+          1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 270,
+          "h": 1749
+        },
+        "afterSize": {
+          "w": 1749,
+          "h": 270
+        },
+        "materialRect": {
+          "x": 981,
+          "y": 509,
+          "w": 1749,
+          "h": 270
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/0/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 67,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/0/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 1324,
+          "h": 270,
+          "materialRect": {
+            "x": 1406,
+            "y": 509,
+            "w": 1324,
+            "h": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 68,
+    "cutIndex": 28,
+    "inputBlankId": "s0/strip1/work/1/1/1/0/1",
+    "rect": {
+      "x": 1406,
+      "y": 509,
+      "w": 1324,
+      "h": 270
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 420,
+      "y": 0
+    },
+    "end": {
+      "x": 420,
+      "y": 270
+    },
+    "parts": [
+      {
+        "x": 1406,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/0/1/0",
+        "rect": {
+          "x": 1406,
+          "y": 509,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/0/1/1",
+        "rect": {
+          "x": 1831,
+          "y": 509,
+          "w": 899,
+          "h": 270
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 66,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 27,
+        "inputBlankId": "s0/strip1/work/1/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/0/0",
+          "s0/strip1/work/1/1/1/0/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1401,
+        "phase": "layout",
+        "geometryCutNumber": 23,
+        "machineOrientation": 0,
+        "w": 1749,
+        "h": 270,
+        "materialRect": {
+          "x": 981,
+          "y": 509,
+          "w": 1749,
+          "h": 270
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 67,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/0/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 1324,
+        "h": 270,
+        "materialRect": {
+          "x": 1406,
+          "y": 509,
+          "w": 1324,
+          "h": 270
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/0/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/0/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 69,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/0/1/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 899,
+          "h": 270,
+          "materialRect": {
+            "x": 1831,
+            "y": 509,
+            "w": 899,
+            "h": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 70,
+    "cutIndex": 29,
+    "inputBlankId": "s0/strip1/work/1/1/1/0/1/1",
+    "rect": {
+      "x": 1831,
+      "y": 509,
+      "w": 899,
+      "h": 270
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 420,
+      "y": 0
+    },
+    "end": {
+      "x": 420,
+      "y": 270
+    },
+    "parts": [
+      {
+        "x": 1831,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/0/1/1/0",
+        "rect": {
+          "x": 1831,
+          "y": 509,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/0/1/1/1",
+        "rect": {
+          "x": 2256,
+          "y": 509,
+          "w": 474,
+          "h": 270
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 68,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 28,
+        "inputBlankId": "s0/strip1/work/1/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/0/1/0",
+          "s0/strip1/work/1/1/1/0/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1826,
+        "phase": "layout",
+        "geometryCutNumber": 24,
+        "machineOrientation": 0,
+        "w": 1324,
+        "h": 270,
+        "materialRect": {
+          "x": 1406,
+          "y": 509,
+          "w": 1324,
+          "h": 270
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 69,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/0/1/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 899,
+        "h": 270,
+        "materialRect": {
+          "x": 1831,
+          "y": 509,
+          "w": 899,
+          "h": 270
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/0/1/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/0/1/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 71,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/0/1/1/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 474,
+          "h": 270,
+          "materialRect": {
+            "x": 2256,
+            "y": 509,
+            "w": 474,
+            "h": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 72,
+    "cutIndex": 30,
+    "inputBlankId": "s0/strip1/work/1/1/1/0/1/1/1",
+    "rect": {
+      "x": 2256,
+      "y": 509,
+      "w": 474,
+      "h": 270
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 420,
+      "y": 0
+    },
+    "end": {
+      "x": 420,
+      "y": 270
+    },
+    "parts": [
+      {
+        "x": 2256,
+        "y": 509,
+        "w": 420,
+        "h": 270,
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/0/1/1/1/0",
+        "rect": {
+          "x": 2256,
+          "y": 509,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/0/1/1/1/1",
+        "rect": {
+          "x": 2681,
+          "y": 509,
+          "w": 49,
+          "h": 270
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 70,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 29,
+        "inputBlankId": "s0/strip1/work/1/1/1/0/1/1",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/0/1/1/0",
+          "s0/strip1/work/1/1/1/0/1/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2251,
+        "phase": "layout",
+        "geometryCutNumber": 25,
+        "machineOrientation": 0,
+        "w": 899,
+        "h": 270,
+        "materialRect": {
+          "x": 1831,
+          "y": 509,
+          "w": 899,
+          "h": 270
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 71,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/0/1/1/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 474,
+        "h": 270,
+        "materialRect": {
+          "x": 2256,
+          "y": 509,
+          "w": 474,
+          "h": 270
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/0/1/1/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/0/1/1/1/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 75,
+    "cutIndex": 31,
+    "inputBlankId": "s0/strip1/work/1/1/1/1",
+    "rect": {
+      "x": 981,
+      "y": 784,
+      "w": 1749,
+      "h": 1036
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 297,
+      "y": 0
+    },
+    "end": {
+      "x": 297,
+      "y": 1036
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/0",
+        "rect": {
+          "x": 981,
+          "y": 784,
+          "w": 297,
+          "h": 1036
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/1",
+        "rect": {
+          "x": 1283,
+          "y": 784,
+          "w": 1447,
+          "h": 1036
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 63,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 26,
+        "inputBlankId": "s0/strip1/work/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 1749
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/0",
+          "s0/strip1/work/1/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 779,
+        "phase": "layout",
+        "geometryCutNumber": 22,
+        "machineOrientation": 270,
+        "w": 1311,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 509,
+          "w": 1749,
+          "h": 1311
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 73,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 1036,
+        "h": 1749,
+        "materialRect": {
+          "x": 981,
+          "y": 784,
+          "w": 1749,
+          "h": 1036
+        }
+      },
+      {
+        "step": 74,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/1/1/1",
+        "stage": 4,
+        "angle": 90,
+        "fromOrientation": 270,
+        "toOrientation": 0,
+        "w": 1749,
+        "h": 1036,
+        "machineGrain": [
+          1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 1036,
+          "h": 1749
+        },
+        "afterSize": {
+          "w": 1749,
+          "h": 1036
+        },
+        "materialRect": {
+          "x": 981,
+          "y": 784,
+          "w": 1749,
+          "h": 1036
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 76,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/0",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 297,
+          "h": 1036,
+          "materialRect": {
+            "x": 981,
+            "y": 784,
+            "w": 297,
+            "h": 1036
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 91,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 1447,
+          "h": 1036,
+          "materialRect": {
+            "x": 1283,
+            "y": 784,
+            "w": 1447,
+            "h": 1036
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 78,
+    "cutIndex": 32,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/0",
+    "rect": {
+      "x": 981,
+      "y": 784,
+      "w": 297,
+      "h": 1036
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 851,
+      "y": 0
+    },
+    "end": {
+      "x": 851,
+      "y": 297
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/0",
+        "rect": {
+          "x": 981,
+          "y": 784,
+          "w": 297,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/1",
+        "rect": {
+          "x": 981,
+          "y": 969,
+          "w": 297,
+          "h": 851
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 75,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 31,
+        "inputBlankId": "s0/strip1/work/1/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 297,
+          "y": 0
+        },
+        "end": {
+          "x": 297,
+          "y": 1036
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/0",
+          "s0/strip1/work/1/1/1/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1278,
+        "phase": "layout",
+        "geometryCutNumber": 27,
+        "machineOrientation": 0,
+        "w": 1749,
+        "h": 1036,
+        "materialRect": {
+          "x": 981,
+          "y": 784,
+          "w": 1749,
+          "h": 1036
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 76,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 297,
+        "h": 1036,
+        "materialRect": {
+          "x": 981,
+          "y": 784,
+          "w": 297,
+          "h": 1036
+        }
+      },
+      {
+        "step": 77,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0",
+        "stage": 5,
+        "angle": 90,
+        "fromOrientation": 0,
+        "toOrientation": 90,
+        "w": 1036,
+        "h": 297,
+        "machineGrain": [
+          0,
+          1
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 297,
+          "h": 1036
+        },
+        "afterSize": {
+          "w": 1036,
+          "h": 297
+        },
+        "materialRect": {
+          "x": 981,
+          "y": 784,
+          "w": 297,
+          "h": 1036
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 79,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/0/0",
+          "stage": 6,
+          "machineOrientation": 90,
+          "w": 180,
+          "h": 297,
+          "materialRect": {
+            "x": 981,
+            "y": 784,
+            "w": 297,
+            "h": 180
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 82,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/0/1",
+          "stage": 6,
+          "machineOrientation": 90,
+          "w": 851,
+          "h": 297,
+          "materialRect": {
+            "x": 981,
+            "y": 969,
+            "w": 297,
+            "h": 851
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 81,
+    "cutIndex": 33,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/0/0",
+    "rect": {
+      "x": 981,
+      "y": 784,
+      "w": 297,
+      "h": 180
+    },
+    "orientation": 180,
+    "stage": 7,
+    "start": {
+      "x": 54,
+      "y": 0
+    },
+    "end": {
+      "x": 54,
+      "y": 180
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 784,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/0/0",
+        "rect": {
+          "x": 981,
+          "y": 784,
+          "w": 238,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/0/1",
+        "rect": {
+          "x": 1224,
+          "y": 784,
+          "w": 54,
+          "h": 180
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 78,
+        "type": "cut",
+        "stage": 6,
+        "cutIndex": 32,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 851,
+          "y": 0
+        },
+        "end": {
+          "x": 851,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/0/1",
+          "s0/strip1/work/1/1/1/1/0/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 964,
+        "phase": "layout",
+        "geometryCutNumber": 28,
+        "machineOrientation": 90,
+        "w": 1036,
+        "h": 297,
+        "materialRect": {
+          "x": 981,
+          "y": 784,
+          "w": 297,
+          "h": 1036
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 79,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0/0",
+        "stage": 6,
+        "machineOrientation": 90,
+        "w": 180,
+        "h": 297,
+        "materialRect": {
+          "x": 981,
+          "y": 784,
+          "w": 297,
+          "h": 180
+        }
+      },
+      {
+        "step": 80,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0/0",
+        "stage": 6,
+        "angle": 90,
+        "fromOrientation": 90,
+        "toOrientation": 180,
+        "w": 297,
+        "h": 180,
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/0/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 180,
+          "h": 297
+        },
+        "afterSize": {
+          "w": 297,
+          "h": 180
+        },
+        "materialRect": {
+          "x": 981,
+          "y": 784,
+          "w": 297,
+          "h": 180
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/0/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 83,
+    "cutIndex": 34,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/0/1",
+    "rect": {
+      "x": 981,
+      "y": 969,
+      "w": 297,
+      "h": 851
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 666,
+      "y": 0
+    },
+    "end": {
+      "x": 666,
+      "y": 297
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/1/0",
+        "rect": {
+          "x": 981,
+          "y": 969,
+          "w": 297,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/1/1",
+        "rect": {
+          "x": 981,
+          "y": 1154,
+          "w": 297,
+          "h": 666
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 78,
+        "type": "cut",
+        "stage": 6,
+        "cutIndex": 32,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 851,
+          "y": 0
+        },
+        "end": {
+          "x": 851,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/0/1",
+          "s0/strip1/work/1/1/1/1/0/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 964,
+        "phase": "layout",
+        "geometryCutNumber": 28,
+        "machineOrientation": 90,
+        "w": 1036,
+        "h": 297,
+        "materialRect": {
+          "x": 981,
+          "y": 784,
+          "w": 297,
+          "h": 1036
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 82,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0/1",
+        "stage": 6,
+        "machineOrientation": 90,
+        "w": 851,
+        "h": 297,
+        "materialRect": {
+          "x": 981,
+          "y": 969,
+          "w": 297,
+          "h": 851
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 84,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/0",
+          "stage": 6,
+          "machineOrientation": 90,
+          "w": 180,
+          "h": 297,
+          "materialRect": {
+            "x": 981,
+            "y": 969,
+            "w": 297,
+            "h": 180
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 87,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/1",
+          "stage": 6,
+          "machineOrientation": 90,
+          "w": 666,
+          "h": 297,
+          "materialRect": {
+            "x": 981,
+            "y": 1154,
+            "w": 297,
+            "h": 666
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 86,
+    "cutIndex": 35,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/0",
+    "rect": {
+      "x": 981,
+      "y": 969,
+      "w": 297,
+      "h": 180
+    },
+    "orientation": 180,
+    "stage": 7,
+    "start": {
+      "x": 54,
+      "y": 0
+    },
+    "end": {
+      "x": 54,
+      "y": 180
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 969,
+        "w": 238,
+        "h": 180,
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/1/0/0",
+        "rect": {
+          "x": 981,
+          "y": 969,
+          "w": 238,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/1/0/1",
+        "rect": {
+          "x": 1224,
+          "y": 969,
+          "w": 54,
+          "h": 180
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 83,
+        "type": "cut",
+        "stage": 6,
+        "cutIndex": 34,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 666,
+          "y": 0
+        },
+        "end": {
+          "x": 666,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/0/1/1",
+          "s0/strip1/work/1/1/1/1/0/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1149,
+        "phase": "layout",
+        "geometryCutNumber": 30,
+        "machineOrientation": 90,
+        "w": 851,
+        "h": 297,
+        "materialRect": {
+          "x": 981,
+          "y": 969,
+          "w": 297,
+          "h": 851
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 84,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/0",
+        "stage": 6,
+        "machineOrientation": 90,
+        "w": 180,
+        "h": 297,
+        "materialRect": {
+          "x": 981,
+          "y": 969,
+          "w": 297,
+          "h": 180
+        }
+      },
+      {
+        "step": 85,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/0",
+        "stage": 6,
+        "angle": 90,
+        "fromOrientation": 90,
+        "toOrientation": 180,
+        "w": 297,
+        "h": 180,
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/0/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 180,
+          "h": 297
+        },
+        "afterSize": {
+          "w": 297,
+          "h": 180
+        },
+        "materialRect": {
+          "x": 981,
+          "y": 969,
+          "w": 297,
+          "h": 180
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/1/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/1/0/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 88,
+    "cutIndex": 36,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/1",
+    "rect": {
+      "x": 981,
+      "y": 1154,
+      "w": 297,
+      "h": 666
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 364,
+      "y": 0
+    },
+    "end": {
+      "x": 364,
+      "y": 297
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 1154,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/1/1/0",
+        "rect": {
+          "x": 981,
+          "y": 1154,
+          "w": 297,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/1/1/1",
+        "rect": {
+          "x": 981,
+          "y": 1456,
+          "w": 297,
+          "h": 364
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 83,
+        "type": "cut",
+        "stage": 6,
+        "cutIndex": 34,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 666,
+          "y": 0
+        },
+        "end": {
+          "x": 666,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/0/1/1",
+          "s0/strip1/work/1/1/1/1/0/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1149,
+        "phase": "layout",
+        "geometryCutNumber": 30,
+        "machineOrientation": 90,
+        "w": 851,
+        "h": 297,
+        "materialRect": {
+          "x": 981,
+          "y": 969,
+          "w": 297,
+          "h": 851
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 87,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/1",
+        "stage": 6,
+        "machineOrientation": 90,
+        "w": 666,
+        "h": 297,
+        "materialRect": {
+          "x": 981,
+          "y": 1154,
+          "w": 297,
+          "h": 666
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/1/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/1/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 89,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/1/1",
+          "stage": 6,
+          "machineOrientation": 90,
+          "w": 364,
+          "h": 297,
+          "materialRect": {
+            "x": 981,
+            "y": 1456,
+            "w": 297,
+            "h": 364
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 90,
+    "cutIndex": 37,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/1/1",
+    "rect": {
+      "x": 981,
+      "y": 1456,
+      "w": 297,
+      "h": 364
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 62,
+      "y": 0
+    },
+    "end": {
+      "x": 62,
+      "y": 297
+    },
+    "parts": [
+      {
+        "x": 981,
+        "y": 1456,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/1/1/1/0",
+        "rect": {
+          "x": 981,
+          "y": 1456,
+          "w": 297,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/0/1/1/1/1",
+        "rect": {
+          "x": 981,
+          "y": 1758,
+          "w": 297,
+          "h": 62
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 88,
+        "type": "cut",
+        "stage": 6,
+        "cutIndex": 36,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/1",
+        "axis": "V",
+        "start": {
+          "x": 364,
+          "y": 0
+        },
+        "end": {
+          "x": 364,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/0/1/1/1",
+          "s0/strip1/work/1/1/1/1/0/1/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1451,
+        "phase": "layout",
+        "geometryCutNumber": 32,
+        "machineOrientation": 90,
+        "w": 666,
+        "h": 297,
+        "materialRect": {
+          "x": 981,
+          "y": 1154,
+          "w": 297,
+          "h": 666
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 89,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/0/1/1/1",
+        "stage": 6,
+        "machineOrientation": 90,
+        "w": 364,
+        "h": 297,
+        "materialRect": {
+          "x": 981,
+          "y": 1456,
+          "w": 297,
+          "h": 364
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/1/1/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0/1/1/1/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 92,
+    "cutIndex": 38,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/1",
+    "rect": {
+      "x": 1283,
+      "y": 784,
+      "w": 1447,
+      "h": 1036
+    },
+    "orientation": 0,
+    "stage": 5,
+    "start": {
+      "x": 297,
+      "y": 0
+    },
+    "end": {
+      "x": 297,
+      "y": 1036
+    },
+    "parts": [
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/0",
+        "rect": {
+          "x": 1283,
+          "y": 784,
+          "w": 297,
+          "h": 1036
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/1",
+        "rect": {
+          "x": 1585,
+          "y": 784,
+          "w": 1145,
+          "h": 1036
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 75,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 31,
+        "inputBlankId": "s0/strip1/work/1/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 297,
+          "y": 0
+        },
+        "end": {
+          "x": 297,
+          "y": 1036
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/0",
+          "s0/strip1/work/1/1/1/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1278,
+        "phase": "layout",
+        "geometryCutNumber": 27,
+        "machineOrientation": 0,
+        "w": 1749,
+        "h": 1036,
+        "materialRect": {
+          "x": 981,
+          "y": 784,
+          "w": 1749,
+          "h": 1036
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 91,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 1447,
+        "h": 1036,
+        "materialRect": {
+          "x": 1283,
+          "y": 784,
+          "w": 1447,
+          "h": 1036
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 93,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/1/0",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 297,
+          "h": 1036,
+          "materialRect": {
+            "x": 1283,
+            "y": 784,
+            "w": 297,
+            "h": 1036
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 100,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/1/1",
+          "stage": 5,
+          "machineOrientation": 0,
+          "w": 1145,
+          "h": 1036,
+          "materialRect": {
+            "x": 1585,
+            "y": 784,
+            "w": 1145,
+            "h": 1036
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 95,
+    "cutIndex": 39,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/1/0",
+    "rect": {
+      "x": 1283,
+      "y": 784,
+      "w": 297,
+      "h": 1036
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 734,
+      "y": 0
+    },
+    "end": {
+      "x": 734,
+      "y": 297
+    },
+    "parts": [
+      {
+        "x": 1283,
+        "y": 784,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/0/0",
+        "rect": {
+          "x": 1283,
+          "y": 784,
+          "w": 297,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/0/1",
+        "rect": {
+          "x": 1283,
+          "y": 1086,
+          "w": 297,
+          "h": 734
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 92,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 38,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 297,
+          "y": 0
+        },
+        "end": {
+          "x": 297,
+          "y": 1036
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/0",
+          "s0/strip1/work/1/1/1/1/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1580,
+        "phase": "layout",
+        "geometryCutNumber": 34,
+        "machineOrientation": 0,
+        "w": 1447,
+        "h": 1036,
+        "materialRect": {
+          "x": 1283,
+          "y": 784,
+          "w": 1447,
+          "h": 1036
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 93,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/0",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 297,
+        "h": 1036,
+        "materialRect": {
+          "x": 1283,
+          "y": 784,
+          "w": 297,
+          "h": 1036
+        }
+      },
+      {
+        "step": 94,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/0",
+        "stage": 5,
+        "angle": 90,
+        "fromOrientation": 0,
+        "toOrientation": 90,
+        "w": 1036,
+        "h": 297,
+        "machineGrain": [
+          0,
+          1
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 297,
+          "h": 1036
+        },
+        "afterSize": {
+          "w": 1036,
+          "h": 297
+        },
+        "materialRect": {
+          "x": 1283,
+          "y": 784,
+          "w": 297,
+          "h": 1036
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/0/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 96,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/1/0/1",
+          "stage": 6,
+          "machineOrientation": 90,
+          "w": 734,
+          "h": 297,
+          "materialRect": {
+            "x": 1283,
+            "y": 1086,
+            "w": 297,
+            "h": 734
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 97,
+    "cutIndex": 40,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/1/0/1",
+    "rect": {
+      "x": 1283,
+      "y": 1086,
+      "w": 297,
+      "h": 734
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 432,
+      "y": 0
+    },
+    "end": {
+      "x": 432,
+      "y": 297
+    },
+    "parts": [
+      {
+        "x": 1283,
+        "y": 1086,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/0/1/0",
+        "rect": {
+          "x": 1283,
+          "y": 1086,
+          "w": 297,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/0/1/1",
+        "rect": {
+          "x": 1283,
+          "y": 1388,
+          "w": 297,
+          "h": 432
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 95,
+        "type": "cut",
+        "stage": 6,
+        "cutIndex": 39,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 734,
+          "y": 0
+        },
+        "end": {
+          "x": 734,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/0/1",
+          "s0/strip1/work/1/1/1/1/1/0/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1081,
+        "phase": "layout",
+        "geometryCutNumber": 35,
+        "machineOrientation": 90,
+        "w": 1036,
+        "h": 297,
+        "materialRect": {
+          "x": 1283,
+          "y": 784,
+          "w": 297,
+          "h": 1036
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 96,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/0/1",
+        "stage": 6,
+        "machineOrientation": 90,
+        "w": 734,
+        "h": 297,
+        "materialRect": {
+          "x": 1283,
+          "y": 1086,
+          "w": 297,
+          "h": 734
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/0/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/0/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 98,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/1/0/1/1",
+          "stage": 6,
+          "machineOrientation": 90,
+          "w": 432,
+          "h": 297,
+          "materialRect": {
+            "x": 1283,
+            "y": 1388,
+            "w": 297,
+            "h": 432
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 99,
+    "cutIndex": 41,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/1/0/1/1",
+    "rect": {
+      "x": 1283,
+      "y": 1388,
+      "w": 297,
+      "h": 432
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 130,
+      "y": 0
+    },
+    "end": {
+      "x": 130,
+      "y": 297
+    },
+    "parts": [
+      {
+        "x": 1283,
+        "y": 1388,
+        "w": 297,
+        "h": 297,
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/0/1/1/0",
+        "rect": {
+          "x": 1283,
+          "y": 1388,
+          "w": 297,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/0/1/1/1",
+        "rect": {
+          "x": 1283,
+          "y": 1690,
+          "w": 297,
+          "h": 130
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 97,
+        "type": "cut",
+        "stage": 6,
+        "cutIndex": 40,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 432,
+          "y": 0
+        },
+        "end": {
+          "x": 432,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/0/1/1",
+          "s0/strip1/work/1/1/1/1/1/0/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1383,
+        "phase": "layout",
+        "geometryCutNumber": 36,
+        "machineOrientation": 90,
+        "w": 734,
+        "h": 297,
+        "materialRect": {
+          "x": 1283,
+          "y": 1086,
+          "w": 297,
+          "h": 734
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 98,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/0/1/1",
+        "stage": 6,
+        "machineOrientation": 90,
+        "w": 432,
+        "h": 297,
+        "materialRect": {
+          "x": 1283,
+          "y": 1388,
+          "w": 297,
+          "h": 432
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/0/1/1/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/0/1/1/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 102,
+    "cutIndex": 42,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/1/1",
+    "rect": {
+      "x": 1585,
+      "y": 784,
+      "w": 1145,
+      "h": 1036
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 633,
+      "y": 0
+    },
+    "end": {
+      "x": 633,
+      "y": 1145
+    },
+    "parts": [
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/1/0",
+        "rect": {
+          "x": 1585,
+          "y": 784,
+          "w": 1145,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/1/1",
+        "rect": {
+          "x": 1585,
+          "y": 1187,
+          "w": 1145,
+          "h": 633
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 92,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 38,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 297,
+          "y": 0
+        },
+        "end": {
+          "x": 297,
+          "y": 1036
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/0",
+          "s0/strip1/work/1/1/1/1/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1580,
+        "phase": "layout",
+        "geometryCutNumber": 34,
+        "machineOrientation": 0,
+        "w": 1447,
+        "h": 1036,
+        "materialRect": {
+          "x": 1283,
+          "y": 784,
+          "w": 1447,
+          "h": 1036
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 100,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 1145,
+        "h": 1036,
+        "materialRect": {
+          "x": 1585,
+          "y": 784,
+          "w": 1145,
+          "h": 1036
+        }
+      },
+      {
+        "step": 101,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/1",
+        "stage": 5,
+        "angle": 90,
+        "fromOrientation": 0,
+        "toOrientation": 90,
+        "w": 1036,
+        "h": 1145,
+        "machineGrain": [
+          0,
+          1
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/1"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 1145,
+          "h": 1036
+        },
+        "afterSize": {
+          "w": 1036,
+          "h": 1145
+        },
+        "materialRect": {
+          "x": 1585,
+          "y": 784,
+          "w": 1145,
+          "h": 1036
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 103,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/0",
+          "stage": 6,
+          "machineOrientation": 90,
+          "w": 398,
+          "h": 1145,
+          "materialRect": {
+            "x": 1585,
+            "y": 784,
+            "w": 1145,
+            "h": 398
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/1/1",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 106,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/1",
+          "stage": 6,
+          "machineOrientation": 90,
+          "w": 633,
+          "h": 1145,
+          "materialRect": {
+            "x": 1585,
+            "y": 1187,
+            "w": 1145,
+            "h": 633
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": 105,
+    "cutIndex": 43,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/0",
+    "rect": {
+      "x": 1585,
+      "y": 784,
+      "w": 1145,
+      "h": 398
+    },
+    "orientation": 180,
+    "stage": 7,
+    "start": {
+      "x": 8,
+      "y": 0
+    },
+    "end": {
+      "x": 8,
+      "y": 398
+    },
+    "parts": [
+      {
+        "x": 1585,
+        "y": 784,
+        "w": 1132,
+        "h": 398,
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/1/0/0",
+        "rect": {
+          "x": 1585,
+          "y": 784,
+          "w": 1132,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/1/0/1",
+        "rect": {
+          "x": 2722,
+          "y": 784,
+          "w": 8,
+          "h": 398
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 102,
+        "type": "cut",
+        "stage": 6,
+        "cutIndex": 42,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 633,
+          "y": 0
+        },
+        "end": {
+          "x": 633,
+          "y": 1145
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/1/1",
+          "s0/strip1/work/1/1/1/1/1/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1182,
+        "phase": "layout",
+        "geometryCutNumber": 38,
+        "machineOrientation": 90,
+        "w": 1036,
+        "h": 1145,
+        "materialRect": {
+          "x": 1585,
+          "y": 784,
+          "w": 1145,
+          "h": 1036
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 103,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/0",
+        "stage": 6,
+        "machineOrientation": 90,
+        "w": 398,
+        "h": 1145,
+        "materialRect": {
+          "x": 1585,
+          "y": 784,
+          "w": 1145,
+          "h": 398
+        }
+      },
+      {
+        "step": 104,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/0",
+        "stage": 6,
+        "angle": 90,
+        "fromOrientation": 90,
+        "toOrientation": 180,
+        "w": 1145,
+        "h": 398,
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 398,
+          "h": 1145
+        },
+        "afterSize": {
+          "w": 1145,
+          "h": 398
+        },
+        "materialRect": {
+          "x": 1585,
+          "y": 784,
+          "w": 1145,
+          "h": 398
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/1/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/1/0/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 107,
+    "cutIndex": 44,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/1",
+    "rect": {
+      "x": 1585,
+      "y": 1187,
+      "w": 1145,
+      "h": 633
+    },
+    "orientation": 90,
+    "stage": 6,
+    "start": {
+      "x": 230,
+      "y": 0
+    },
+    "end": {
+      "x": 230,
+      "y": 1145
+    },
+    "parts": [
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/1/1/0",
+        "rect": {
+          "x": 1585,
+          "y": 1187,
+          "w": 1145,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/1/1/1",
+        "rect": {
+          "x": 1585,
+          "y": 1590,
+          "w": 1145,
+          "h": 230
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 102,
+        "type": "cut",
+        "stage": 6,
+        "cutIndex": 42,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 633,
+          "y": 0
+        },
+        "end": {
+          "x": 633,
+          "y": 1145
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/1/1",
+          "s0/strip1/work/1/1/1/1/1/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1182,
+        "phase": "layout",
+        "geometryCutNumber": 38,
+        "machineOrientation": 90,
+        "w": 1036,
+        "h": 1145,
+        "materialRect": {
+          "x": 1585,
+          "y": 784,
+          "w": 1145,
+          "h": 1036
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 106,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/1",
+        "stage": 6,
+        "machineOrientation": 90,
+        "w": 633,
+        "h": 1145,
+        "materialRect": {
+          "x": 1585,
+          "y": 1187,
+          "w": 1145,
+          "h": 633
+        }
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/1/1/0",
+        "turnCount": 0,
+        "nextOperation": {
+          "step": 108,
+          "type": "feed",
+          "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/1/0",
+          "stage": 6,
+          "machineOrientation": 90,
+          "w": 398,
+          "h": 1145,
+          "materialRect": {
+            "x": 1585,
+            "y": 1187,
+            "w": 1145,
+            "h": 398
+          }
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/1/1/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  },
+  {
+    "step": 110,
+    "cutIndex": 45,
+    "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/1/0",
+    "rect": {
+      "x": 1585,
+      "y": 1187,
+      "w": 1145,
+      "h": 398
+    },
+    "orientation": 180,
+    "stage": 7,
+    "start": {
+      "x": 8,
+      "y": 0
+    },
+    "end": {
+      "x": 8,
+      "y": 398
+    },
+    "parts": [
+      {
+        "x": 1585,
+        "y": 1187,
+        "w": 1132,
+        "h": 398,
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/1/1/0/0",
+        "rect": {
+          "x": 1585,
+          "y": 1187,
+          "w": 1132,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/strip1/work/1/1/1/1/1/1/1/0/1",
+        "rect": {
+          "x": 2722,
+          "y": 1187,
+          "w": 8,
+          "h": 398
+        }
+      }
+    ],
+    "previous": [
+      {
+        "step": 107,
+        "type": "cut",
+        "stage": 6,
+        "cutIndex": 44,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 230,
+          "y": 0
+        },
+        "end": {
+          "x": 230,
+          "y": 1145
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/1/1/1",
+          "s0/strip1/work/1/1/1/1/1/1/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1585,
+        "phase": "layout",
+        "geometryCutNumber": 40,
+        "machineOrientation": 90,
+        "w": 633,
+        "h": 1145,
+        "materialRect": {
+          "x": 1585,
+          "y": 1187,
+          "w": 1145,
+          "h": 633
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 108,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/1/0",
+        "stage": 6,
+        "machineOrientation": 90,
+        "w": 398,
+        "h": 1145,
+        "materialRect": {
+          "x": 1585,
+          "y": 1187,
+          "w": 1145,
+          "h": 398
+        }
+      },
+      {
+        "step": 109,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1/1/1/0",
+        "stage": 6,
+        "angle": 90,
+        "fromOrientation": 90,
+        "toOrientation": 180,
+        "w": 1145,
+        "h": 398,
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 398,
+          "h": 1145
+        },
+        "afterSize": {
+          "w": 1145,
+          "h": 398
+        },
+        "materialRect": {
+          "x": 1585,
+          "y": 1187,
+          "w": 1145,
+          "h": 398
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      }
+    ],
+    "next": [
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/1/1/0/0",
+        "turnCount": 0,
+        "nextOperation": null
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/1/1/0/1",
+        "turnCount": 0,
+        "nextOperation": null
+      }
+    ]
+  }
+]

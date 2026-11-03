@@ -30,3 +30,6 @@ require('./pss14-benchmark');
 require('./pss15-benchmark');
 
 require('./bazis-corrected-benchmark');
+
+// Independent Brain 2.0 experiment, keeps every historical benchmark.
+require('./recursive-strip-benchmark');

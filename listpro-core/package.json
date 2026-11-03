@@ -16,6 +16,7 @@
     "benchmark:pss14": "node scripts/pss14-benchmark.js",
     "benchmark:pss14:research": "node scripts/pss14-research.js",
     "benchmark:pss15": "node scripts/pss15-benchmark.js",
-    "benchmark:bazis-corrected": "node scripts/bazis-corrected-benchmark.js"
+    "benchmark:bazis-corrected": "node scripts/bazis-corrected-benchmark.js",
+    "benchmark:brain2": "node scripts/recursive-strip-benchmark.js"
   }
 }

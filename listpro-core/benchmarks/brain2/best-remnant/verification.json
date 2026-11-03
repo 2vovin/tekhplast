@@ -1,0 +1,196 @@
+{
+  "geometryValid": true,
+  "abstractStagedValid": true,
+  "machineFeasibility": "unknown",
+  "metrics": {
+    "sheets": 1,
+    "parts": 26,
+    "cuts": 45,
+    "cutLength": 33738,
+    "turns": 19,
+    "feeds": 44,
+    "stages": 7,
+    "operations": 110,
+    "largestWaste": 263350,
+    "wasteArea": 445403
+  },
+  "usableRemnants": [
+    {
+      "sheet": 0,
+      "blankId": "s0/rip-rem0",
+      "rect": {
+        "x": 2735,
+        "y": 10,
+        "w": 5,
+        "h": 1810
+      },
+      "area": 9050
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/0/1/1/1/0/1/1",
+      "rect": {
+        "x": 860,
+        "y": 1540,
+        "w": 116,
+        "h": 270
+      },
+      "area": 31320
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/0/1/1/1/1",
+      "rect": {
+        "x": 10,
+        "y": 1815,
+        "w": 966,
+        "h": 5
+      },
+      "area": 4830
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/0/0/1",
+      "rect": {
+        "x": 981,
+        "y": 195,
+        "w": 238,
+        "h": 34
+      },
+      "area": 8092
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/0/1/0/1",
+      "rect": {
+        "x": 1224,
+        "y": 195,
+        "w": 238,
+        "h": 34
+      },
+      "area": 8092
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/0/1/1/0/1",
+      "rect": {
+        "x": 1467,
+        "y": 195,
+        "w": 238,
+        "h": 34
+      },
+      "area": 8092
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/0/1/1/1/1",
+      "rect": {
+        "x": 2715,
+        "y": 10,
+        "w": 15,
+        "h": 219
+      },
+      "area": 3285
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/1/0/1/1/1/1",
+      "rect": {
+        "x": 2681,
+        "y": 234,
+        "w": 49,
+        "h": 270
+      },
+      "area": 13230
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/1/1/0/1/1/1/1",
+      "rect": {
+        "x": 2681,
+        "y": 509,
+        "w": 49,
+        "h": 270
+      },
+      "area": 13230
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/1/1/1/0/0/1",
+      "rect": {
+        "x": 1224,
+        "y": 784,
+        "w": 54,
+        "h": 180
+      },
+      "area": 9720
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/1/1/1/0/1/0/1",
+      "rect": {
+        "x": 1224,
+        "y": 969,
+        "w": 54,
+        "h": 180
+      },
+      "area": 9720
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/1/1/1/0/1/1/1/1",
+      "rect": {
+        "x": 981,
+        "y": 1758,
+        "w": 297,
+        "h": 62
+      },
+      "area": 18414
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/1/1/1/1/0/1/1/1",
+      "rect": {
+        "x": 1283,
+        "y": 1690,
+        "w": 297,
+        "h": 130
+      },
+      "area": 38610
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/1/1/1/1/1/0/1",
+      "rect": {
+        "x": 2722,
+        "y": 784,
+        "w": 8,
+        "h": 398
+      },
+      "area": 3184
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/1/1/1/1/1/1/0/1",
+      "rect": {
+        "x": 2722,
+        "y": 1187,
+        "w": 8,
+        "h": 398
+      },
+      "area": 3184
+    },
+    {
+      "sheet": 0,
+      "blankId": "s0/strip1/work/1/1/1/1/1/1/1/1",
+      "rect": {
+        "x": 1585,
+        "y": 1590,
+        "w": 1145,
+        "h": 230
+      },
+      "area": 263350
+    }
+  ],
+  "abstractCutPlanValid": true
+}

@@ -1,0 +1,45 @@
+{
+  "seed": 2026,
+  "iterations": 20000,
+  "rectangles": 592753,
+  "dpCalls": 52346,
+  "dpStates": 360736,
+  "prunedDP": 0,
+  "primaryDP": 2136,
+  "validated": 299,
+  "failedTrials": 0,
+  "byDelta": {
+    "0": {
+      "trials": 3334,
+      "minSheets": 1,
+      "minGeometryCuts": 39
+    },
+    "0.05": {
+      "trials": 3334,
+      "minSheets": 1,
+      "minGeometryCuts": 38
+    },
+    "0.1": {
+      "trials": 3333,
+      "minSheets": 1,
+      "minGeometryCuts": 37
+    },
+    "0.2": {
+      "trials": 3333,
+      "minSheets": 1,
+      "minGeometryCuts": 38
+    },
+    "0.5": {
+      "trials": 3333,
+      "minSheets": 1,
+      "minGeometryCuts": 38
+    },
+    "0.99": {
+      "trials": 3333,
+      "minSheets": 1,
+      "minGeometryCuts": 38
+    }
+  },
+  "areaLowerBound": 1,
+  "elapsedMs": 14881
+}

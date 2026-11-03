@@ -1,0 +1,255 @@
+[
+  {
+    "file": "solution-1.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 45,
+      "cutLength": 33738,
+      "turns": 19,
+      "feeds": 44,
+      "stages": 7,
+      "operations": 110,
+      "largestWaste": 263350,
+      "wasteArea": 445403
+    },
+    "configuration": {
+      "delta": 0.5,
+      "dp": true,
+      "vertical": 0.3333333333333333,
+      "choices": 2,
+      "reverse": true,
+      "primary": 0
+    }
+  },
+  {
+    "file": "solution-2.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 41,
+      "cutLength": 33045,
+      "turns": 16,
+      "feeds": 40,
+      "stages": 9,
+      "operations": 99,
+      "largestWaste": 239630,
+      "wasteArea": 448868
+    },
+    "configuration": {
+      "delta": 0.1,
+      "dp": false,
+      "vertical": 0.3333333333333333,
+      "choices": 3,
+      "reverse": true,
+      "primary": 0
+    }
+  },
+  {
+    "file": "solution-3.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 45,
+      "cutLength": 33893,
+      "turns": 15,
+      "feeds": 44,
+      "stages": 5,
+      "operations": 106,
+      "largestWaste": 164923,
+      "wasteArea": 444678
+    },
+    "configuration": {
+      "delta": 0.2,
+      "dp": false,
+      "vertical": 0.3333333333333333,
+      "choices": 1,
+      "reverse": false,
+      "primary": 1
+    }
+  },
+  {
+    "file": "solution-4.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 34368,
+      "turns": 15,
+      "feeds": 43,
+      "stages": 6,
+      "operations": 104,
+      "largestWaste": 150840,
+      "wasteArea": 442303
+    },
+    "configuration": {
+      "delta": 0.05,
+      "dp": false,
+      "vertical": 0.5,
+      "choices": 2,
+      "reverse": false,
+      "primary": 1
+    }
+  },
+  {
+    "file": "solution-5.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 34463,
+      "turns": 13,
+      "feeds": 43,
+      "stages": 5,
+      "operations": 102,
+      "largestWaste": 128940,
+      "wasteArea": 441828
+    },
+    "configuration": {
+      "delta": 0.5,
+      "dp": false,
+      "vertical": 0.5,
+      "choices": 2,
+      "reverse": true,
+      "primary": 1
+    }
+  },
+  {
+    "file": "solution-6.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 34313,
+      "turns": 15,
+      "feeds": 43,
+      "stages": 5,
+      "operations": 104,
+      "largestWaste": 126819,
+      "wasteArea": 442578
+    },
+    "configuration": {
+      "delta": 0.1,
+      "dp": false,
+      "vertical": 0.16666666666666666,
+      "choices": 3,
+      "reverse": true,
+      "primary": 1
+    }
+  },
+  {
+    "file": "solution-7.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 43,
+      "cutLength": 34046,
+      "turns": 15,
+      "feeds": 42,
+      "stages": 5,
+      "operations": 102,
+      "largestWaste": 107100,
+      "wasteArea": 443913
+    },
+    "configuration": {
+      "delta": 0.1,
+      "dp": false,
+      "vertical": 0.16666666666666666,
+      "choices": 3,
+      "reverse": true,
+      "primary": 1
+    }
+  },
+  {
+    "file": "solution-8.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 35401,
+      "turns": 12,
+      "feeds": 43,
+      "stages": 5,
+      "operations": 101,
+      "largestWaste": 79110,
+      "wasteArea": 437138
+    },
+    "configuration": {
+      "delta": 0.99,
+      "dp": false,
+      "vertical": 0,
+      "choices": 3,
+      "reverse": false,
+      "primary": 1
+    }
+  },
+  {
+    "file": "solution-9.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 33793,
+      "turns": 15,
+      "feeds": 43,
+      "stages": 6,
+      "operations": 104,
+      "largestWaste": 77198,
+      "wasteArea": 445178
+    },
+    "configuration": {
+      "delta": 0.05,
+      "dp": true,
+      "vertical": 0.6666666666666666,
+      "choices": 2,
+      "reverse": false,
+      "primary": 1
+    }
+  },
+  {
+    "file": "solution-10.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 43,
+      "cutLength": 33825,
+      "turns": 14,
+      "feeds": 42,
+      "stages": 5,
+      "operations": 101,
+      "largestWaste": 75276,
+      "wasteArea": 445018
+    },
+    "configuration": {
+      "delta": 0.1,
+      "dp": false,
+      "vertical": 0.16666666666666666,
+      "choices": 3,
+      "reverse": true,
+      "primary": 1
+    }
+  },
+  {
+    "file": "solution-11.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 41,
+      "cutLength": 33628,
+      "turns": 15,
+      "feeds": 40,
+      "stages": 7,
+      "operations": 98,
+      "largestWaste": 74426,
+      "wasteArea": 445953
+    },
+    "configuration": {
+      "delta": 0.1,
+      "dp": false,
+      "vertical": 0.16666666666666666,
+      "choices": 3,
+      "reverse": true,
+      "primary": 0
+    }
+  }
+]
