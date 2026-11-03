@@ -1,0 +1,28 @@
+{
+  "id": "abstract-fixed-xy-v1",
+  "description": "Условный двухосевой раскройный стол; не модель конкретного станка",
+  "allowSheetRotation": false,
+  "allowStripRotation": false,
+  "allowedCutAxes": [
+    "V",
+    "H"
+  ],
+  "coordinateSystem": "sheet-fixed-top-left-mm",
+  "workholding": {
+    "mode": "in-situ-independent-clamps",
+    "allowTranslation": false,
+    "minBlankWidth": 0,
+    "minBlankHeight": 0
+  },
+  "maxSheetW": 2750,
+  "maxSheetH": 1830,
+  "maxCutLength": 2750,
+  "kerf": 5,
+  "trimMode": "four-full-span-cuts",
+  "assumptions": [
+    "Две независимые оси пильного инструмента: V означает x=const, H означает y=const.",
+    "Каждая отделённая заготовка остаётся в исходных координатах и независимо фиксируется.",
+    "Инструмент имеет доступ к любому текущему прямоугольнику; допускаются нулевые остатки и полное расходование края на керф.",
+    "Толщина, зажимы, коллизии и механика подачи за рамками профиля; применимость к реальному оборудованию не подтверждена."
+  ]
+}

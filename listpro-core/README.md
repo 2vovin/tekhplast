@@ -19,3 +19,23 @@ npm run benchmark
 `src/core.js` — **намеренно слабый стартовый алгоритм**. Он демонстрирует базовую модель и API; не утверждает оптимальность или пригодность для реального станка. Codex должен улучшить / заменить его и внедрить независимый валидатор.
 
 Проект расположен в отдельной ветке `listpro-core` публичного репозитория `2vovin/tekhplast`. Исходный сайт в ветке `main` оставлен без изменений.
+
+
+## Проверка оборудования без вращений
+
+Профиль задаётся явно; без него результат имеет только геометрический статус.
+
+```js
+const {pack}=require('./src/core');
+const {validateTechnology}=require('./src/technology-validator');
+const profile=require('./profiles/abstract-fixed-xy-v1.json');
+const order=require('./benchmarks/manual-26-no-rotation.json');
+const result=pack(order,{seed:1,iterations:100000,profile});
+const checked=validateTechnology(order,result,result.machinePlan,profile);
+console.log(checked.geometry,checked.technology);
+// Продолжение: pack(order,{seed:2,iterations:100000,profile,previous:result})
+```
+
+Это условный двухосевой стол с независимой фиксацией заготовок на месте, не модель конкретного станка. Повороты листа и полос, перемещение и перебазирование запрещены. Ось V означает x=const, H означает y=const. Независимый replay начинает с сырого листа и включает обрезку краёв.
+Геометрическая корректность не подтверждает совместимость с ЧПУ/БАЗИС.
+[Карта и пошаговые операции](docs/CONTROL-26-TECHNOLOGY.md), [результаты и ограничения](docs/RESULTS.md).

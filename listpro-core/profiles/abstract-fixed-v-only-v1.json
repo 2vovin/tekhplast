@@ -1,0 +1,26 @@
+{
+  "id": "abstract-fixed-v-only-v1",
+  "description": "Условный одноосевой профиль: только V, вращения и перемещения запрещены",
+  "allowSheetRotation": false,
+  "allowStripRotation": false,
+  "allowedCutAxes": [
+    "V"
+  ],
+  "coordinateSystem": "sheet-fixed-top-left-mm",
+  "workholding": {
+    "mode": "in-situ-independent-clamps",
+    "allowTranslation": false,
+    "minBlankWidth": 0,
+    "minBlankHeight": 0
+  },
+  "maxSheetW": 2750,
+  "maxSheetH": 1830,
+  "maxCutLength": 2750,
+  "kerf": 5,
+  "trimMode": "four-full-span-cuts",
+  "assumptions": [
+    "Единственная доступная ось V: x=const.",
+    "Вращения листа и отделённых полос, перемещения и перебазирование запрещены.",
+    "Контрольный заказ несовместим с этим профилем: внутренние границы деталей по Y недостижимы."
+  ]
+}

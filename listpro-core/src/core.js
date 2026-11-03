@@ -1,5 +1,7 @@
 'use strict';
 const {validate}=require('./validator');
+const {makePlan}=require('./machine-plan');
+const {validateTechnology}=require('./technology-validator');
 function checkInput(p){
  // Use independent validation of input before allocating instances.
  if(!p||!Array.isArray(p.pieces)||!['sheetW','sheetH','kerf','trim'].every(k=>Number.isFinite(p[k]))||p.kerf<0||p.trim<0||p.sheetW<=2*p.trim||p.sheetH<=2*p.trim)throw Error('Invalid sheet or list');
@@ -69,17 +71,34 @@ function pack(p,options={}){
   best=JSON.parse(JSON.stringify(options.previous));best.metrics=m;
   score=[m.sheets,-m.largestWaste,m.cuts,m.cutLength];
  }
+ let rejected=0,lastRejection=null;
+ function machineCheck(s){
+  const plan=makePlan(p,s,options.profile);
+  const result=validateTechnology(p,s,plan,options.profile);
+  return {plan,status:result.technology};
+ }
+ if(best&&options.profile){const checked=machineCheck(best);best.machinePlan=checked.plan;best.technology=checked.status;}
  const start=Date.now(),distribution={};
  for(let i=0;i<iterations;i++){
   const order=jobs.map(j=>({j,key:i===0?-(j.l*j.w):-(j.l*j.w)*(0.15+random()*1.7)})).sort((a,b)=>a.key-b.key).map(x=>x.j);
   const s=trial(p,order,random,i),m=validate(p,s);
+
   distribution[m.sheets]=(distribution[m.sheets]??0)+1;
   const v=[m.sheets,-m.largestWaste,m.cuts,m.cutLength];
-  if(!score||v.some((x,n)=>x<score[n]&&v.slice(0,n).every((y,q)=>y===score[q]))){best=s;score=v;best.metrics=m;}
+  if(!score||v.some((x,n)=>x<score[n]&&v.slice(0,n).every((y,q)=>y===score[q]))){
+   if(options.profile){
+    try{const checked=machineCheck(s);s.machinePlan=checked.plan;s.technology=checked.status;}
+    catch(e){rejected++;lastRejection=e.message;continue;}
+   }
+   best=s;score=v;best.metrics=m;
+  }
  }
+ if(!best)throw Error('No technologically valid layout found in budget: '+lastRejection);
+ if(!options.profile){delete best.machinePlan;delete best.technology;delete best.equipmentProfile;}
  best.parameters=JSON.parse(JSON.stringify(p));
- best.search={seed,iterations,states:iterations,pruned:0,elapsedMs:Date.now()-start,distribution};
- best.validation={valid:true};
+ if(options.profile)best.equipmentProfile=JSON.parse(JSON.stringify(options.profile));
+ best.search={seed,iterations,states:iterations,pruned:0,technologyRejected:rejected,lastTechnologyRejection:lastRejection,elapsedMs:Date.now()-start,distribution};
+ best.validation={valid:true,geometry:{valid:true},technology:best.technology??{valid:null,reason:'No equipment profile supplied'}};
  return best;
 }
 module.exports={pack,checkInput};
