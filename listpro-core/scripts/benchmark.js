@@ -13,3 +13,6 @@ const rejected=assessTechnology(p,s,{...s.machinePlan,profileId:oneAxis.id},oneA
 console.log(JSON.stringify({geometry:validate(p,s),technology:result.technology,
  savedArtifact:savedResult.technology,singleAxis:rejected.technology,search:s.search,optimality:s.optimality},null,2));
 if(s.sheets.length!==1||s.partCount!==26||!result.technology.valid||rejected.technology.valid)throw Error('Control regression');
+
+// Keep fixed-coordinate regression and run the target staged panel saw as well.
+require('./staged-benchmark');

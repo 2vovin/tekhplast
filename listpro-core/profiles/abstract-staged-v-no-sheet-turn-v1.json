@@ -1,0 +1,33 @@
+{
+  "id": "abstract-staged-v-no-sheet-turn-v1",
+  "description": "Абстрактный полосный профиль: исходный лист не вращается; каждый дочерний blankId может повернуться один раз",
+  "allowSheetRotation": false,
+  "allowStripRotation": true,
+  "sheetRotationAllowed": false,
+  "stripReorientationAllowed": true,
+  "machineCutAxes": [
+    "V"
+  ],
+  "firstCutAxis": "V",
+  "kerf": 5,
+  "maxStripTurns": 1,
+  "maxStages": null,
+  "maxCutLength": null,
+  "maxFeedWidth": null,
+  "maxFeedHeight": null,
+  "minimumHoldWidth": 0,
+  "minimumHoldHeight": 0,
+  "feedPolicy": "independent-blank-local-origin",
+  "trimPolicy": "rip-side-margins-then-cross-trim-each-strip",
+  "assumptions": [
+    "Одна машинная ось V: x=const в локальной системе поданной заготовки.",
+    "Поиск выбирает первичный распуск вдоль V без вращения листа; обработка полос начинается после завершения первичного распуска.",
+    "Отделённые полосы и подполосы могут подаваться заново и поворачиваться на 90 градусов по часовой стрелке.",
+    "Боковые кромки снимаются при первичном распуске; верхняя/нижняя обрезка производится отдельно на каждой полосе после поворота.",
+    "Реальные пределы габаритов, стадий и поворотов неизвестны и заданы null, минимальные размеры удержания условно 0. Это не подтверждает реальную механику, коллизии, прижимы или совместимость с БАЗИС/ЧПУ.",
+    "Каждый blankId допускает 0/1 поворот. CUT создаёт два новых turnCount=0; машинная ориентация и текстура наследуются.",
+    "Профиль допускает не более одного предварительного поворота листа, но этот генератор выбирает 0; строгая регрессия maxSheetTurns=0 проверяется отдельно."
+  ],
+  "maxSheetTurns": 0,
+  "maxTurnsPerBlank": 1
+}
