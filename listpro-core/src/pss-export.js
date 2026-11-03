@@ -3,7 +3,7 @@ const esc=x=>String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'
 const txt=x=>String(x).replace(/\|/g,'&#124;').replace(/\n/g,' ');
 function mapSVG(result,primaryOnly=false){
  const p=result.parameters,W=p.sheetW,H=p.sheetH,gap=110;
- let svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25 -80 '+(W+50)+' '+(result.sheets.length*(H+gap)+80)+'" role="img" aria-label="PSS 1.2: все листы и первичные полосы"><text x="0" y="-35" font-size="32">PSS 1.2 — '+(primaryOnly?'первичный распуск с сохранением основного остатка':result.partCount+' деталей: технологически проверенный раскрой')+'</text>';
+ let svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25 -80 '+(W+50)+' '+(result.sheets.length*(H+gap)+80)+'" role="img" aria-label="PSS '+esc(result.version??'1.2')+': все листы и первичные полосы"><text x="0" y="-35" font-size="32">PSS '+esc(result.version??'1.2')+' — '+(primaryOnly?'первичный распуск с сохранением основного остатка':result.partCount+' деталей: технологически проверенный раскрой')+'</text>';
  const owners=new Map(result.verification.blanks.map(b=>[b.blankId,b.sheet]));
  result.sheets.forEach((sh,si)=>{
   const offset=si*(H+gap),count=sh.parts.length;
@@ -55,15 +55,15 @@ function treeSVG(result){
   svg+='<rect x="'+b.x+'" y="'+(b.y-29)+'" width="215" height="60" rx="4" fill="'+fill+'" stroke="#475569"/><text x="'+(b.x+6)+'" y="'+(b.y-11)+'" font-size="13">'+b.label+' '+(short[b.role]??b.role)+' '+r.w+'×'+r.h+'</text><text x="'+(b.x+6)+'" y="'+(b.y+12)+'" font-size="12">'+b.initialMachineOrientation+'°→'+b.machineOrientation+'°; turns='+b.turnCount+'</text><title>'+esc(b.blankId)+'</title>';
  }return svg+'</svg>\n';
 }
-function renderPSS(result){
+function renderPSS(result,options={}){
  const out={'manual-26-pss-map.svg':mapSVG(result),'manual-26-pss-primary.svg':mapSVG(result,true),'manual-26-pss-blanks.svg':treeSVG(result)};
  const tags=new Map(result.verification.blanks.map((b,i)=>[b.blankId,'B'+String(i+1).padStart(3,'0')]));
- let doc='# Brain 1.2 — PANEL_SAW_STAGED (PSS)\n\n'+(result.sheets.length>1?'**На одном листе допустимый PSS-план в этом поиске не найден.** ':'')+'Все '+result.partCount+' деталей размещены на '+result.sheets.length+' листах. Это не доказательство минимальности.\n\n'+
+ let doc='# Brain '+txt(result.version??'1.2')+' — PANEL_SAW_STAGED (PSS)\n\n'+(result.sheets.length===1?'**Найден допустимый PSS-план на одном листе.** ':'**На одном листе допустимый PSS-план не найден.** ')+'Все '+result.partCount+' деталей размещены на '+result.sheets.length+' листах. Это не доказательство минимальности.\n\n'+
  '![Общая карта](../benchmarks/manual-26-pss-map.svg)\n\n'+
  '![Первичные полосы](../benchmarks/manual-26-pss-primary.svg)\n\n'+
  '[Дерево всех заготовок](../benchmarks/manual-26-pss-blanks.svg) · [JSON](../benchmarks/manual-26-pss.json)\n\n'+
  'Режим PANEL_SAW_STAGED, профиль '+txt(result.equipmentProfile.id)+'. Геометрия, физическая последовательность и роли/якоря проверены независимо. Профиль абстрактный, применимость к реальному станку и БАЗИС не подтверждена.\n\n'+
- 'Сначала выполняется разрешённый предварительный поворот сырого листа, затем вся серия параллельных резов по основному остатку. Рабочие полосы снимаются с высокой стороны поперечной координаты; низкая часть остаётся PRIMARY_REMAINDER. endPrimary роли не меняет. Ширина каждой рабочей полосы равна одному реальному ведущему экземпляру; припуск 0. После каждого CUT новые дети имеют turnCount=0.\n\n'+
+ 'Если выбранная ось этого требует, выполняется разрешённый предварительный поворот сырого листа; затем вся серия параллельных резов по основному остатку. Рабочие полосы снимаются с высокой стороны поперечной координаты; низкая часть остаётся PRIMARY_REMAINDER. endPrimary роли не меняет. Ширина каждой рабочей полосы равна одному реальному ведущему экземпляру; припуск 0. После каждого CUT новые дети имеют turnCount=0.\n\n'+
  '## Первичные полосы и якоря\n\n| Лист | Полоса | Ось материала | Ширина | Якорь | Blank | Конверсия последнего остатка |\n|---:|---:|---|---:|---|---|---|\n';
  result.sheets.forEach((sh,si)=>sh.primaryStrips.forEach(a=>{
   const decl=result.plan.primaryStrips.find(d=>d.sheet===si&&d.stripIndex===a.index);
@@ -73,7 +73,7 @@ function renderPSS(result){
  result.sheets.forEach((sh,si)=>sh.primaryStrips.forEach(a=>{
   const name='manual-26-pss-strip-'+(si+1)+'-'+a.index+'.svg';out[name]=stripSVG(result,si,a);doc+='Лист '+(si+1)+', полоса '+a.index+': реальный якорь '+txt(a.anchor.id)+':'+a.anchor.instance+' первым; остальные детали находятся за ним по длине.\n\n![Полоса](../benchmarks/'+name+')\n\n';
  }));
- doc+='## Все операции\n\nМашинные координаты локальные для поданной заготовки, V=x const. Материальные координаты неизменны. Исходные листы повёрнуты только до первого реза. CUT №, шаги и номера деталей независимы.\n\n'+
+ doc+='## Все операции\n\nМашинные координаты локальные для поданной заготовки, V=x const. Материальные координаты неизменны. Поворот исходного листа, если он нужен, выполняется только до первого реза. CUT №, шаги и номера деталей независимы.\n\n'+
  '| Шаг | Действие | CUT № | Вход | Роль | Размер / ориентация | Машинный рез | Выходы |\n|---:|---|---:|---|---|---|---|---|\n';
  for(const op of result.plan.operations){let coords='—',orientation=op.machineOrientation??'—';
   if(op.type==='rotate'){coords='90°; 0→1';orientation=op.fromOrientation+'→'+op.toOrientation;}
@@ -84,6 +84,8 @@ function renderPSS(result){
  doc+='\n## Роли и родословная всех заготовок\n\n| B | Родитель | blankId | Материал X,Y,W,H | Роль при создании → итог | Машинная ориентация | turnCount |\n|---|---|---|---|---|---|---:|\n';
  for(const b of result.verification.blanks){const r=b.materialRect;doc+='| '+tags.get(b.blankId)+' | '+(tags.get(b.parentBlankId)??'—')+' | '+txt(b.blankId)+' | '+[r.x,r.y,r.w,r.h].join(', ')+' | '+b.roleAtCreation+' → '+b.role+' | '+b.initialMachineOrientation+'→'+b.machineOrientation+'° | '+b.turnCount+' |\n';}
  doc+='\n## Метрики\n\n'+result.metrics.cuts+' рез, '+result.metrics.cutLength+' мм, '+result.metrics.turns+' поворотов (включая предварительные повороты листов), '+result.metrics.operations+' операций. Включены реальные обрезки кромок; необработанный основной остаток не торцуется и не разворачивается. Полные размеры деталей, отдельные отходы, профили и replay находятся в JSON.\n';
- return {graphics:out,markdown:doc};
+ const prefix=options.prefix??'manual-26-pss';
+ const graphics=Object.fromEntries(Object.entries(out).map(([name,svg])=>[name.replaceAll('manual-26-pss',prefix),svg]));
+ return {graphics,markdown:doc.replaceAll('manual-26-pss',prefix)};
 }
 module.exports={renderPSS,mapSVG,stripSVG,treeSVG};

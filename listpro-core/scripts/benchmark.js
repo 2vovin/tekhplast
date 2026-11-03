@@ -22,3 +22,5 @@ require('./staged-benchmark');
 require('./industrial-benchmark');
 
 require('./pss-benchmark');
+
+require('./pss13-benchmark');

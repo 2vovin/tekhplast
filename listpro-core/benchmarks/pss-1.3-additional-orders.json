@@ -1,0 +1,613 @@
+[
+  {
+    "name": "kitchen-repeat",
+    "parameters": {
+      "name": "kitchen-repeat",
+      "sheetW": 2800,
+      "sheetH": 2070,
+      "trim": 10,
+      "kerf": 5,
+      "pieces": [
+        {
+          "id": 1,
+          "l": 980,
+          "w": 410,
+          "q": 12,
+          "grain": true
+        },
+        {
+          "id": 2,
+          "l": 540,
+          "w": 390,
+          "q": 8,
+          "grain": true
+        }
+      ]
+    },
+    "baseline": {
+      "metrics": {
+        "valid": true,
+        "partCount": 20,
+        "sheets": 2,
+        "cuts": 36,
+        "cutLength": 39150,
+        "wasteArea": 4772450,
+        "largestWaste": 3679750,
+        "parts": 20,
+        "turns": 7,
+        "feeds": 34,
+        "stages": 3,
+        "operations": 81,
+        "primaryStrips": 4,
+        "substrips": 24
+      },
+      "search": {
+        "seed": 1,
+        "iterations": 500,
+        "states": 500,
+        "geometryStates": 500,
+        "invalidCandidates": 0,
+        "technologyRejected": 0,
+        "lastError": null,
+        "distribution": {
+          "2": 440,
+          "3": 60
+        },
+        "oneSheetCandidates": 0,
+        "localStates": 125,
+        "anchorDPStates": 224,
+        "anchorDPPruned": 0,
+        "anchorPatterns": [
+          {
+            "axis": "V",
+            "count": 11
+          },
+          {
+            "axis": "H",
+            "count": 19
+          }
+        ],
+        "refinements": 2,
+        "tailDPStates": 62,
+        "elapsedMs": 237
+      }
+    },
+    "improved": {
+      "metrics": {
+        "valid": true,
+        "partCount": 20,
+        "sheets": 2,
+        "cuts": 36,
+        "cutLength": 39150,
+        "wasteArea": 4772450,
+        "largestWaste": 3679750,
+        "parts": 20,
+        "turns": 7,
+        "feeds": 34,
+        "stages": 3,
+        "operations": 81,
+        "primaryStrips": 4,
+        "substrips": 24
+      },
+      "search": {
+        "seed": 1,
+        "budget": {
+          "baselineIterations": 256,
+          "anchorLimit": 4096,
+          "maxPatterns": 256,
+          "dpStates": 20000,
+          "frontier": 32,
+          "dpPartitions": 1000000,
+          "dpCombinations": 10000000,
+          "allocationStates": 2000,
+          "subsetLimit": 20000,
+          "lnsIterations": 200,
+          "maxFamilies": 12
+        },
+        "baselineMs": 3,
+        "anchorStates": 32,
+        "anchorEnumerationExhausted": false,
+        "primaryPatterns": 0,
+        "configurationAttempts": 5,
+        "oneSheetAttempts": 0,
+        "oneSheetValid": 0,
+        "allocations": 203,
+        "allocationNodes": 611,
+        "allocationSubsets": 2087,
+        "allocationExhausted": 0,
+        "technologyRejected": 0,
+        "lastRejection": null,
+        "verifiedCandidates": 204,
+        "lnsAttempts": 200,
+        "destroyedParts": 2388,
+        "maxDestroyedParts": 16,
+        "maxDestroyedStrips": 4,
+        "crossStripMoves": 0,
+        "improvements": [
+          {
+            "origin": "previous independently replayed",
+            "score": [
+              2,
+              -3679750,
+              36,
+              7,
+              39150,
+              81
+            ],
+            "elapsedMs": 3
+          }
+        ],
+        "dp": {
+          "states": 19,
+          "partitions": 43,
+          "combinations": 205,
+          "pruned": 227,
+          "frontierPruned": 0,
+          "exhausted": false
+        },
+        "elapsedMs": 262
+      }
+    },
+    "valid": true
+  },
+  {
+    "name": "small-panels",
+    "parameters": {
+      "name": "small-panels",
+      "sheetW": 1200,
+      "sheetH": 800,
+      "trim": 10,
+      "kerf": 5,
+      "pieces": [
+        {
+          "id": 1,
+          "l": 350,
+          "w": 240,
+          "q": 15,
+          "grain": true
+        },
+        {
+          "id": 2,
+          "l": 180,
+          "w": 120,
+          "q": 20,
+          "grain": true
+        }
+      ]
+    },
+    "baseline": {
+      "metrics": {
+        "valid": true,
+        "partCount": 35,
+        "sheets": 3,
+        "cuts": 68,
+        "cutLength": 25790,
+        "wasteArea": 989850,
+        "largestWaste": 631800,
+        "parts": 35,
+        "turns": 9,
+        "feeds": 65,
+        "stages": 2,
+        "operations": 148,
+        "primaryStrips": 9,
+        "substrips": 44
+      },
+      "search": {
+        "seed": 1,
+        "iterations": 500,
+        "states": 500,
+        "geometryStates": 500,
+        "invalidCandidates": 0,
+        "technologyRejected": 0,
+        "lastError": null,
+        "distribution": {
+          "3": 499,
+          "4": 1
+        },
+        "oneSheetCandidates": 0,
+        "localStates": 125,
+        "anchorDPStates": 520,
+        "anchorDPPruned": 0,
+        "anchorPatterns": [
+          {
+            "axis": "V",
+            "count": 15
+          },
+          {
+            "axis": "H",
+            "count": 15
+          }
+        ],
+        "refinements": 2,
+        "tailDPStates": 122,
+        "elapsedMs": 431
+      }
+    },
+    "improved": {
+      "metrics": {
+        "valid": true,
+        "partCount": 35,
+        "sheets": 3,
+        "cuts": 68,
+        "cutLength": 25790,
+        "wasteArea": 989850,
+        "largestWaste": 631800,
+        "parts": 35,
+        "turns": 9,
+        "feeds": 65,
+        "stages": 2,
+        "operations": 148,
+        "primaryStrips": 9,
+        "substrips": 44
+      },
+      "search": {
+        "seed": 1,
+        "budget": {
+          "baselineIterations": 256,
+          "anchorLimit": 4096,
+          "maxPatterns": 256,
+          "dpStates": 20000,
+          "frontier": 32,
+          "dpPartitions": 1000000,
+          "dpCombinations": 10000000,
+          "allocationStates": 2000,
+          "subsetLimit": 20000,
+          "lnsIterations": 200,
+          "maxFamilies": 12
+        },
+        "baselineMs": 5,
+        "anchorStates": 32,
+        "anchorEnumerationExhausted": false,
+        "primaryPatterns": 0,
+        "configurationAttempts": 7,
+        "oneSheetAttempts": 0,
+        "oneSheetValid": 0,
+        "allocations": 207,
+        "allocationNodes": 1136,
+        "allocationSubsets": 6182,
+        "allocationExhausted": 0,
+        "technologyRejected": 0,
+        "lastRejection": null,
+        "verifiedCandidates": 208,
+        "lnsAttempts": 200,
+        "destroyedParts": 3072,
+        "maxDestroyedParts": 26,
+        "maxDestroyedStrips": 9,
+        "crossStripMoves": 292,
+        "improvements": [
+          {
+            "origin": "previous independently replayed",
+            "score": [
+              3,
+              -631800,
+              68,
+              9,
+              25790,
+              148
+            ],
+            "elapsedMs": 5
+          }
+        ],
+        "dp": {
+          "states": 17,
+          "partitions": 38,
+          "combinations": 211,
+          "pruned": 268,
+          "frontierPruned": 0,
+          "exhausted": false
+        },
+        "elapsedMs": 462
+      }
+    },
+    "valid": true
+  },
+  {
+    "name": "shelves",
+    "parameters": {
+      "name": "shelves",
+      "sheetW": 2750,
+      "sheetH": 1830,
+      "trim": 10,
+      "kerf": 5,
+      "pieces": [
+        {
+          "id": 1,
+          "l": 1200,
+          "w": 300,
+          "q": 8,
+          "grain": true
+        },
+        {
+          "id": 2,
+          "l": 600,
+          "w": 280,
+          "q": 12,
+          "grain": true
+        },
+        {
+          "id": 3,
+          "l": 400,
+          "w": 200,
+          "q": 10,
+          "grain": true
+        }
+      ]
+    },
+    "baseline": {
+      "metrics": {
+        "valid": true,
+        "partCount": 30,
+        "sheets": 2,
+        "cuts": 61,
+        "cutLength": 48390,
+        "wasteArea": 4024950,
+        "largestWaste": 3043950,
+        "parts": 30,
+        "turns": 11,
+        "feeds": 59,
+        "stages": 2,
+        "operations": 135,
+        "primaryStrips": 9,
+        "substrips": 39
+      },
+      "search": {
+        "seed": 1,
+        "iterations": 500,
+        "states": 500,
+        "geometryStates": 500,
+        "invalidCandidates": 0,
+        "technologyRejected": 0,
+        "lastError": null,
+        "distribution": {
+          "2": 455,
+          "3": 45
+        },
+        "oneSheetCandidates": 0,
+        "localStates": 125,
+        "anchorDPStates": 1093,
+        "anchorDPPruned": 0,
+        "anchorPatterns": [
+          {
+            "axis": "V",
+            "count": 28
+          },
+          {
+            "axis": "H",
+            "count": 32
+          }
+        ],
+        "refinements": 3,
+        "tailDPStates": 258,
+        "elapsedMs": 304
+      }
+    },
+    "improved": {
+      "metrics": {
+        "valid": true,
+        "partCount": 30,
+        "sheets": 2,
+        "cuts": 61,
+        "cutLength": 48390,
+        "wasteArea": 4024950,
+        "largestWaste": 3043950,
+        "parts": 30,
+        "turns": 11,
+        "feeds": 59,
+        "stages": 2,
+        "operations": 135,
+        "primaryStrips": 9,
+        "substrips": 39
+      },
+      "search": {
+        "seed": 1,
+        "budget": {
+          "baselineIterations": 256,
+          "anchorLimit": 4096,
+          "maxPatterns": 256,
+          "dpStates": 20000,
+          "frontier": 32,
+          "dpPartitions": 1000000,
+          "dpCombinations": 10000000,
+          "allocationStates": 2000,
+          "subsetLimit": 20000,
+          "lnsIterations": 200,
+          "maxFamilies": 12
+        },
+        "baselineMs": 4,
+        "anchorStates": 130,
+        "anchorEnumerationExhausted": false,
+        "primaryPatterns": 0,
+        "configurationAttempts": 5,
+        "oneSheetAttempts": 0,
+        "oneSheetValid": 0,
+        "allocations": 204,
+        "allocationNodes": 1104,
+        "allocationSubsets": 9449,
+        "allocationExhausted": 0,
+        "technologyRejected": 0,
+        "lastRejection": null,
+        "verifiedCandidates": 205,
+        "lnsAttempts": 200,
+        "destroyedParts": 2482,
+        "maxDestroyedParts": 21,
+        "maxDestroyedStrips": 9,
+        "crossStripMoves": 221,
+        "improvements": [
+          {
+            "origin": "previous independently replayed",
+            "score": [
+              2,
+              -3043950,
+              61,
+              11,
+              48390,
+              135
+            ],
+            "elapsedMs": 4
+          }
+        ],
+        "dp": {
+          "states": 56,
+          "partitions": 233,
+          "combinations": 2183,
+          "pruned": 3178,
+          "frontierPruned": 0,
+          "exhausted": false
+        },
+        "elapsedMs": 388
+      }
+    },
+    "valid": true
+  },
+  {
+    "name": "mixed-rotation-permission",
+    "parameters": {
+      "name": "mixed-rotation-permission",
+      "sheetW": 900,
+      "sheetH": 600,
+      "trim": 10,
+      "kerf": 5,
+      "pieces": [
+        {
+          "id": 1,
+          "l": 700,
+          "w": 180,
+          "q": 3,
+          "grain": false
+        },
+        {
+          "id": 2,
+          "l": 250,
+          "w": 150,
+          "q": 7,
+          "grain": true
+        }
+      ]
+    },
+    "baseline": {
+      "metrics": {
+        "valid": true,
+        "partCount": 10,
+        "sheets": 2,
+        "cuts": 26,
+        "cutLength": 11550,
+        "wasteArea": 349450,
+        "largestWaste": 106250,
+        "parts": 10,
+        "turns": 4,
+        "feeds": 24,
+        "stages": 2,
+        "operations": 58,
+        "primaryStrips": 4,
+        "substrips": 14
+      },
+      "search": {
+        "seed": 1,
+        "iterations": 500,
+        "states": 500,
+        "geometryStates": 500,
+        "invalidCandidates": 0,
+        "technologyRejected": 0,
+        "lastError": null,
+        "distribution": {
+          "2": 389,
+          "3": 111
+        },
+        "oneSheetCandidates": 0,
+        "localStates": 125,
+        "anchorDPStates": 65,
+        "anchorDPPruned": 0,
+        "anchorPatterns": [
+          {
+            "axis": "V",
+            "count": 4
+          },
+          {
+            "axis": "H",
+            "count": 9
+          }
+        ],
+        "refinements": 2,
+        "tailDPStates": 18,
+        "elapsedMs": 191
+      }
+    },
+    "improved": {
+      "metrics": {
+        "valid": true,
+        "partCount": 10,
+        "sheets": 2,
+        "cuts": 26,
+        "cutLength": 11550,
+        "wasteArea": 349450,
+        "largestWaste": 106250,
+        "parts": 10,
+        "turns": 4,
+        "feeds": 24,
+        "stages": 2,
+        "operations": 58,
+        "primaryStrips": 4,
+        "substrips": 14
+      },
+      "search": {
+        "seed": 1,
+        "budget": {
+          "baselineIterations": 256,
+          "anchorLimit": 4096,
+          "maxPatterns": 256,
+          "dpStates": 20000,
+          "frontier": 32,
+          "dpPartitions": 1000000,
+          "dpCombinations": 10000000,
+          "allocationStates": 2000,
+          "subsetLimit": 20000,
+          "lnsIterations": 200,
+          "maxFamilies": 12
+        },
+        "baselineMs": 2,
+        "anchorStates": 15,
+        "anchorEnumerationExhausted": false,
+        "primaryPatterns": 0,
+        "configurationAttempts": 5,
+        "oneSheetAttempts": 0,
+        "oneSheetValid": 0,
+        "allocations": 204,
+        "allocationNodes": 478,
+        "allocationSubsets": 1121,
+        "allocationExhausted": 0,
+        "technologyRejected": 0,
+        "lastRejection": null,
+        "verifiedCandidates": 205,
+        "lnsAttempts": 200,
+        "destroyedParts": 868,
+        "maxDestroyedParts": 6,
+        "maxDestroyedStrips": 4,
+        "crossStripMoves": 166,
+        "improvements": [
+          {
+            "origin": "previous independently replayed",
+            "score": [
+              2,
+              -106250,
+              26,
+              4,
+              11550,
+              58
+            ],
+            "elapsedMs": 2
+          }
+        ],
+        "dp": {
+          "states": 10,
+          "partitions": 15,
+          "combinations": 29,
+          "pruned": 11,
+          "frontierPruned": 0,
+          "exhausted": false
+        },
+        "elapsedMs": 192
+      }
+    },
+    "valid": true
+  }
+]
