@@ -19,6 +19,7 @@
     "benchmark:bazis-corrected": "node scripts/bazis-corrected-benchmark.js",
     "benchmark:brain2": "node scripts/recursive-strip-benchmark.js",
     "benchmark:brain21": "node scripts/brain21-benchmark.js",
-    "benchmark:bands": "node scripts/parallel-bands-benchmark.js"
+    "benchmark:bands": "node scripts/parallel-bands-benchmark.js",
+    "benchmark:held-strips": "node scripts/held-strips-benchmark.js"
   }
 }

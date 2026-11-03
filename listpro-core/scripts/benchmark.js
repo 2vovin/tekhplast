@@ -39,3 +39,6 @@ require('./brain21-benchmark');
 
 // Parallel primary bands: corrected target-role regression and new 26-part map.
 require('./parallel-bands-benchmark');
+
+// Current user rule: retained remainders stay in place at EVERY strip level.
+require('./held-strips-benchmark');

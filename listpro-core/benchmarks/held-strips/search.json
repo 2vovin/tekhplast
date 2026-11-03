@@ -1,0 +1,117 @@
+{
+  "horizontal": {
+    "seed": 42,
+    "iterations": 20000,
+    "axis": "H",
+    "rectangles": 863594,
+    "dpCalls": 139934,
+    "dpStates": 473733,
+    "prunedDP": 0,
+    "oneSheet": 157,
+    "elapsedMs": 19812
+  },
+  "accepted": 2,
+  "rejected": 129,
+  "vertical": {
+    "stats": {
+      "seed": 42,
+      "iterations": 3000,
+      "axis": "V",
+      "rectangles": 111927,
+      "dpCalls": 18974,
+      "dpStates": 79789,
+      "prunedDP": 0,
+      "oneSheet": 0,
+      "elapsedMs": 2481,
+      "heldTreeRejected": 2
+    },
+    "geometry": {
+      "valid": true,
+      "partCount": 26,
+      "sheets": 2,
+      "cuts": 39,
+      "cutLength": 29014,
+      "wasteArea": 5364723,
+      "largestWaste": 2048920
+    },
+    "technology": "NOT VALIDATED: geometric comparison only"
+  },
+  "preflight": [
+    {
+      "name": "held strips: all 26 unchanged instances, one sheet, 47 cuts, 12 turns",
+      "pass": true
+    },
+    {
+      "name": "step 78 regression: old 1334x719 retained strip cannot rotate",
+      "pass": true
+    },
+    {
+      "name": "compiler cannot silently rotate old retained substrip",
+      "pass": true
+    },
+    {
+      "name": "old full-height X1703 cut hits instances 4:2 and 10:1",
+      "pass": true
+    },
+    {
+      "name": "at every ordinary cut only LOW side is detached; retained ID inherits lock",
+      "pass": true
+    },
+    {
+      "name": "edge preparation preserves holding; last primary tail stays waste",
+      "pass": true
+    },
+    {
+      "name": "held feed cannot be labelled as unloading/reloading",
+      "pass": true
+    },
+    {
+      "name": "interior rip cannot be disguised as edge trim",
+      "pass": true
+    },
+    {
+      "name": "renaming IDs and injecting detached roles does not free the old remainder",
+      "pass": true
+    },
+    {
+      "name": "endPrimary does not promote a retained tail",
+      "pass": true
+    },
+    {
+      "name": "malformed kerf and duplicate physical IDs are rejected independently",
+      "pass": true
+    },
+    {
+      "name": "machine stroke and one-turn constraints are effective",
+      "pass": true
+    },
+    {
+      "name": "1000-wide substrip is cut out before any of its row cuts",
+      "pass": true
+    },
+    {
+      "name": "small order supports initial H rip without rotating sheet",
+      "pass": true
+    },
+    {
+      "name": "small order supports initial V rip without rotating sheet",
+      "pass": true
+    },
+    {
+      "name": "artifacts include every real CUT and held/detached child roles",
+      "pass": true
+    },
+    {
+      "name": "a detached band cannot interrupt an unfinished retained rip series",
+      "pass": true
+    },
+    {
+      "name": "unsupported retained-side policy cannot silently use the high-side validator",
+      "pass": true
+    },
+    {
+      "name": "20 varied orders replay with each initial direction and preserve instance counts",
+      "pass": true
+    }
+  ]
+}
