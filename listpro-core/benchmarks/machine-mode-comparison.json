@@ -1,0 +1,133 @@
+{
+  "oldCommit": "8a857e6c6ed64705f457d37651ff1f43a5e2d3fd",
+  "oldGeometryValid": true,
+  "oldPhysicalValid": true,
+  "oldPSSValid": false,
+  "violations": [
+    {
+      "step": 3,
+      "inputBlankId": "s0/side-rem",
+      "code": "PRIMARY_REMAINDER_FEED_AS_STRIP",
+      "detail": "Primary panel/remainder cannot be fed as a detached strip"
+    },
+    {
+      "step": 5,
+      "inputBlankId": "s0/body",
+      "code": "PRIMARY_REMAINDER_FEED_AS_STRIP",
+      "detail": "Primary panel/remainder cannot be fed as a detached strip"
+    },
+    {
+      "step": 6,
+      "inputBlankId": "s0/body",
+      "code": "MISSING_REAL_ANCHOR",
+      "detail": "Working strip needs partId/instanceId"
+    },
+    {
+      "step": 7,
+      "code": "IMPLICIT_REMAINDER_PROMOTION",
+      "detail": "endPrimary cannot promote PRIMARY_REMAINDER into a strip"
+    },
+    {
+      "step": 8,
+      "inputBlankId": "s0/strip1",
+      "code": "PRIMARY_REMAINDER_FEED_AS_STRIP",
+      "detail": "Primary panel/remainder cannot be fed as a detached strip"
+    },
+    {
+      "step": 9,
+      "inputBlankId": "s0/strip1",
+      "code": "ROTATE_PRIMARY_REMAINDER",
+      "detail": "Primary remainder cannot rotate after the first cut"
+    },
+    {
+      "step": 10,
+      "inputBlankId": "s0/strip1",
+      "code": "MAIN_SPINE",
+      "detail": "Primary cuts must continue on the unique main remainder before barrier"
+    },
+    {
+      "step": 10,
+      "inputBlankId": "s0/strip1",
+      "code": "TRANSVERSE_PRIMARY_CUT",
+      "detail": "Primary cuts must remain parallel"
+    },
+    {
+      "step": 10,
+      "inputBlankId": "s0/strip1",
+      "code": "PRIMARY_ORIENTATION_CHANGED",
+      "detail": "Main panel orientation changed after first cut"
+    },
+    {
+      "step": 10,
+      "inputBlankId": "s0/strip1",
+      "code": "WRONG_PRIMARY_PHASE",
+      "detail": "Cannot cut main remainder as secondary blank"
+    },
+    {
+      "step": 10,
+      "inputBlankId": "s0/strip1",
+      "code": "MISSING_REAL_ANCHOR",
+      "detail": "Working strip needs partId/instanceId"
+    }
+  ],
+  "oldFormatSawValid": true,
+  "formatMetrics": {
+    "sheets": 1,
+    "parts": 26,
+    "cuts": 40,
+    "cutLength": 32765,
+    "turns": 19,
+    "feeds": 39,
+    "stages": 7,
+    "operations": 99,
+    "largestWaste": 243495,
+    "wasteArea": 450268
+  },
+  "pssMetrics": {
+    "valid": true,
+    "partCount": 26,
+    "sheets": 2,
+    "cuts": 51,
+    "cutLength": 42794,
+    "wasteArea": 5371013,
+    "largestWaste": 4436250,
+    "parts": 26,
+    "turns": 16,
+    "feeds": 49,
+    "stages": 6,
+    "operations": 120,
+    "primaryStrips": 5,
+    "substrips": 37
+  },
+  "pssOneSheetFound": false,
+  "search": {
+    "seed": 1,
+    "iterations": 100000,
+    "states": 100000,
+    "geometryStates": 100000,
+    "invalidCandidates": 0,
+    "technologyRejected": 0,
+    "lastError": null,
+    "distribution": {
+      "2": 98823,
+      "3": 1177
+    },
+    "oneSheetCandidates": 0,
+    "localStates": 25000,
+    "anchorDPStates": 3991,
+    "anchorDPPruned": 0,
+    "anchorPatterns": [
+      {
+        "axis": "V",
+        "count": 32
+      },
+      {
+        "axis": "H",
+        "count": 32
+      }
+    ],
+    "refinements": 6,
+    "tailDPStates": 1087,
+    "elapsedMs": 46635
+  }
+}

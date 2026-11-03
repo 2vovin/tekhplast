@@ -1,14 +1,15 @@
 {
   "name": "listpro-core",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
-  "description": "ListPro furniture staged cutting research core with independent operation replay",
+  "description": "ListPro PSS real-anchor panel saw optimizer with independent role and physical replay",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
     "test": "node --test tests/*.test.js",
     "benchmark": "node scripts/benchmark.js",
-    "benchmark:industrial": "node scripts/industrial-benchmark.js"
+    "benchmark:industrial": "node scripts/industrial-benchmark.js",
+    "benchmark:pss": "node scripts/pss-benchmark.js"
   }
 }

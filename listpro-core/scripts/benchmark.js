@@ -1,3 +1,4 @@
+console.log('Historical NON-PSS regressions follow; only the final PANEL_SAW_STAGED 1.2 replay validates current PSS roles and real anchors.');
 'use strict';
 const {pack}=require('../src/core');
 const {validate}=require('../src/validator');
@@ -19,3 +20,5 @@ require('./staged-benchmark');
 
 // Brain 1.1 uses the same seed/start budget and independently replays the saved plan.
 require('./industrial-benchmark');
+
+require('./pss-benchmark');

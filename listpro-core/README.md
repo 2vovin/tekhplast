@@ -1,3 +1,36 @@
+# ЛистПро Мебель — Brain 1.2 / PSS
+
+Текущий целевой режим PANEL_SAW_STAGED использует реальные детали-якоря, роли первичного остатка и независимый replay.
+**Историческая однолистовая карта Brain 1.1 не проходит новые PSS-правила: шаг 9 поворачивает PRIMARY_REMAINDER 1754×1830.**
+В новом контрольном поиске все 26 деталей размещены на двух листах; допустимый один лист не найден, невозможность одного листа не доказана.
+
+```js
+const {searchPSS}=require('./src/pss');
+const {validatePSS}=require('./src/pss-validator');
+const profile=require('./profiles/pss-anchored-single-axis-v1.json');
+const order=require('./benchmarks/manual-26-no-rotation.json');
+const result=searchPSS(order,{profile,seed:1,iterations:100000});
+console.log(validatePSS(order,result,result.plan,profile));
+// Продолжение: searchPSS(order,{profile,seed:2,iterations:100000,previous:result});
+```
+
+PRIMARY_REMAINDER не вращается после первого реза. Каждая рабочая полоса имеет настоящую ведущую деталь той же поперечной ширины.
+FINAL_REMAINDER_AS_STRIP разрешён только при отдельном доказанном переходе с реальным якорем; endPrimary роли не меняет.
+FORMAT_SAW имеет отдельные планировщик/валидатор без PSS-якорей и универсального лимита поворотов.
+Общая точка выбора проверок: src/machine-modes.js.
+Профили абстрактные и не подтверждают совместимость с реальным станком или БАЗИС.
+
+[Карта всех листов, первичные полосы, все подполосы и операции](docs/CONTROL-26-PSS.md) · [RESULTS.md](docs/RESULTS.md).
+Команды: npm test; npm run benchmark:pss; npm run benchmark.
+Последняя команда также исполняет исторические NON-PSS регрессии.
+src/pss-export.js воспроизводит SVG и Markdown для результата.
+
+---
+
+## История API до PSS 1.2
+
+Следующие сведения относятся к старым моделям. Их valid=true не является доказательством строгого PANEL_SAW_STAGED.
+
 # ЛистПро Core — проект для Codex
 
 Это стартовый репозиторий **вычислительного ядра раскроя**, а не готовая Windows-программа. Основная задача Codex — создать и испытать качественный оптимизатор.

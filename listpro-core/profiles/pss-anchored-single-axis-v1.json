@@ -1,0 +1,31 @@
+{
+  "id": "pss-anchored-single-axis-v1",
+  "mode": "PANEL_SAW_STAGED",
+  "version": "1.2",
+  "machineCutAxes": [
+    "V"
+  ],
+  "allowedPrimaryAxes": [
+    "V",
+    "H"
+  ],
+  "maxSheetTurns": 1,
+  "maxTurnsPerBlank": 1,
+  "primarySide": "HIGH",
+  "anchorAllowance": 0,
+  "feedDirection": "LONG_POSITIVE",
+  "trimPolicy": "parallel-side-margins-then-strip-end-trim",
+  "maxCutLength": null,
+  "maxFeedWidth": null,
+  "maxFeedHeight": null,
+  "minHoldWidth": 0,
+  "minHoldHeight": 0,
+  "maxStages": null,
+  "assumptions": [
+    "Одна машинная ось V; допускается предварительный поворот сырого листа на 90 градусов до первого реза.",
+    "Основной остаток сохраняет роль и ориентацию; рабочие полосы снимаются с высокой стороны поперечной координаты.",
+    "Ширину каждой рабочей полосы задаёт один реальный экземпляр детали; якорь расположен первым по положительному продольному направлению.",
+    "Припуск якоря в этом профиле 0: ширина полосы точно равна поперечному габариту якоря. Другие припуски не предполагаются.",
+    "Неизвестные паспортные ограничения заданы null; минимальное удержание условно 0. Не сертифицировано для реального станка, БАЗИС или ЧПУ."
+  ]
+}

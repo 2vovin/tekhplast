@@ -1,0 +1,20 @@
+{
+  "id": "format-saw-physical-v1",
+  "mode": "FORMAT_SAW",
+  "machineCutAxes": [
+    "V"
+  ],
+  "maxSheetTurns": null,
+  "maxTurnsPerBlank": null,
+  "maxCutLength": null,
+  "maxFeedWidth": null,
+  "maxFeedHeight": null,
+  "minHoldWidth": 0,
+  "minHoldHeight": 0,
+  "maxStages": null,
+  "assumptions": [
+    "Абстрактный форматно-раскроечный процесс: заготовки могут подаваться и поворачиваться, без обязательных первичных полос и якоря.",
+    "Нет искусственного лимита количества физических поворотов; паспортные пределы задаются отдельно.",
+    "Текстура деталей и физическая гильотинность проверяются независимо; это не подтверждает реальную безопасность удержания/подачи."
+  ]
+}
