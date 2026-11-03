@@ -10,7 +10,7 @@ test('web: byte-for-byte reproducible single-file site and parsable browser scri
  assert(!built.modules.includes('src/order-held-artifacts.js'));
 });
 test('web: all three presets are independently replayed, including held remainders',()=>{
- for(const [key,sheets,cuts,turns]of [['26',1,47,12],['44',2,67,7],['171',11,349,99]]){
+ for(const [key,sheets,cuts,turns]of [['26',1,43,12],['44',2,60,7],['171',10,328,106]]){
   const e=examples[key],r=verify(clean(e.parameters),e.layout);
   assert.equal(r.partCount,Number(key));assert.equal(r.metrics.sheets,sheets);assert.equal(r.metrics.cuts,cuts);assert.equal(r.metrics.turns,turns);
   assert.equal(r.metrics.heldRemainderTurns,0);assert.equal(r.verification.targetPSSModelValid,true);assert.equal(r.verification.realMachineFeasibility,'unknown');
@@ -18,8 +18,8 @@ test('web: all three presets are independently replayed, including held remainde
 });
 test('web: actual calculation preserves the two 44-part objectives',()=>{
  const r=solve(examples['44'].parameters,{objective:'remnants'}),c=solve(examples['44'].parameters,{objective:'cuts'});
- assert.deepEqual(r.sheets.map(s=>s.parts.length),[28,16]);assert.equal(r.metrics.cuts,67);assert.equal(r.metrics.largestWaste,2730*800);
- assert.deepEqual(c.sheets.map(s=>s.parts.length),[24,20]);assert.equal(c.metrics.cuts,64);assert.equal(c.metrics.turns,6);
+ assert.deepEqual(r.sheets.map(s=>s.parts.length),[28,16]);assert.equal(r.metrics.cuts,60);assert.equal(r.metrics.largestWaste,2730*800);
+ assert.deepEqual(c.sheets.map(s=>s.parts.length),[24,20]);assert.equal(c.metrics.cuts,58);assert.equal(c.metrics.turns,6);
 });
 test('web: edited fractional order is recomputed; a preset cannot override quantities',()=>{
  const input={sheetW:1200,sheetH:800,kerf:5,trim:10,pieces:[{l:278.5,w:228,q:3,grain:false},{l:468,w:59,q:2,grain:true}]};
@@ -41,7 +41,7 @@ test('web: the bundled Web Worker executes the same calculation and reports inpu
  const prelude="const {parentPort}=require('node:worker_threads');global.self={postMessage:m=>parentPort.postMessage(m)};parentPort.on('message',data=>self.onmessage({data}));\n";
  async function run(message){const w=new Worker(prelude+built.worker,{eval:true});try{return await new Promise((resolve,reject)=>{w.on('error',reject);w.on('message',m=>{if(m.type!=='progress')resolve(m);});w.postMessage(message);});}finally{await w.terminate();}}
  const r=await run({action:'solve',input:examples['44'].parameters,options:{objective:'remnants'}});
- assert.equal(r.type,'result');assert.equal(r.result.metrics.cuts,67);assert.deepEqual(r.result.sheets.map(s=>s.parts.length),[28,16]);
+ assert.equal(r.type,'result');assert.equal(r.result.metrics.cuts,60);assert.deepEqual(r.result.sheets.map(s=>s.parts.length),[28,16]);
  const bad=await run({action:'solve',input:{pieces:[]}});assert.equal(bad.type,'error');
 });
 test('web: script-tag injection in imported strings stays data',()=>{

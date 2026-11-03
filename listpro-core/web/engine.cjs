@@ -5,6 +5,7 @@ const {searchAdaptive,repackAdaptive}=require('../src/adaptive-held-strip');
 const {solveIdenticalTwoSheets}=require('../src/identical-strip-patterns');
 const {makeHeldPlan}=require('../src/held-strip-plan');
 const {validateHeld}=require('../src/held-strip-validator');
+const {verifyDeferred,optimizeDeferred}=require('../src/deferred-strip-search');
 function clean(input){
  if(!input||!Array.isArray(input.pieces)||!input.pieces.length||input.pieces.length>500)throw Error('Добавьте от 1 до 500 строк деталей.');
  const num=(v,label)=>{const n=Number(String(v).replace(',','.'));if(!Number.isFinite(n))throw Error('Проверьте '+label);return n;};
@@ -17,6 +18,7 @@ function clean(input){
 }
 function profile(axis){return{id:'web-held-'+axis+'-v1',firstCutAxis:axis,machineCutAxes:[axis],maxTurnsPerBlank:1,maxSheetTurns:0,minHoldWidth:0,minHoldHeight:0,maxCutLength:null,maxFeedWidth:null,maxFeedHeight:null,maxStages:null,realMachineFeasibility:'unknown',retainedSide:'HIGH_MATERIAL',terminalPromotionAllowed:false};}
 function verify(p,layout,axis){
+ if(layout.model==='deferred-staged-v1')return verifyDeferred(p,JSON.parse(JSON.stringify(layout)));
  const s=collect(JSON.parse(JSON.stringify(layout))),pr=profile(axis||s.sheets[0].axis||'H'),plan=makeHeldPlan(p,s,pr);
  const verification=validateHeld(p,s,plan,pr);
  return{...s,parameters:p,equipmentProfile:pr,plan,verification,metrics:verification.metrics};
@@ -25,14 +27,15 @@ function equalOrder(a,b){return ['sheetW','sheetH','kerf','trim'].every(k=>a[k]=
 function solve(input,{objective='remnants',iterations=100,seed=42,examples=[],progress=()=>{}}={}){
  const p=clean(input);if(!['remnants','cuts'].includes(objective))throw Error('Неизвестная цель расчёта.');
  if(!Number.isInteger(iterations)||iterations<1||iterations>100)throw Error('Бюджет поиска: 1–100.');
- const started=Date.now(),bases=[],trials=[];let best=null,lastError='';
+ const started=Date.now(),bases=[],trials=[],patternBases=[];let best=null,lastError='';
  const score=s=>objective==='remnants'?[s.metrics.sheets,-s.metrics.largestWaste,s.metrics.cuts,s.metrics.turns]:[s.metrics.sheets,s.metrics.cuts,s.metrics.turns,-s.metrics.largestWaste];
  const keep=s=>{const a=score(s),b=best&&score(best);if(!b||a.some((v,i)=>v<b[i]&&a.slice(0,i).every((x,j)=>x===b[j])))best=s;};
- for(const e of examples)if(equalOrder(p,clean(e.parameters)))keep(verify(p,e.layout));
+ for(const e of examples)if(equalOrder(p,clean(e.parameters))){const s=verify(p,e.layout);keep(s);patternBases.push(s);}
+ const improve=()=>{progress({text:'Проверяем торцовку и смешанные направления листов',percent:94});const t=optimizeDeferred(p,patternBases,{objective,seed,accept:keep});trials.push(t.stats);};
  progress({text:'Проверяем детали и допустимые полосы',percent:5});
  if(p.pieces.length===1){try{
   const r=solveIdenticalTwoSheets(p,profile('H')),chosen=objective==='remnants'?r.remnantBest:r.cutsBest;
-  keep(verify(p,chosen,'H'));trials.push({kind:'uniform-strips',...r.stats});
+  const uniform=verify(p,chosen,'H');keep(uniform);patternBases.push(uniform);improve();trials.push({kind:'uniform-strips',...r.stats});
   // This exact row-family solver is sufficient for the two-sheet identical-order route.
   best.search={objective,seed,iterations:0,trials,elapsedMs:Date.now()-started,optimality:'sheet count only if area lower bound matches'};
   return best;
@@ -55,6 +58,7 @@ function solve(input,{objective='remnants',iterations=100,seed=42,examples=[],pr
    try{const t=repackAdaptive(p,base.s,{sheetIndices:ids,iterations,seed,axis:base.axis,accept:layout=>{try{keep(verify(p,layout,base.axis));return true;}catch{return false;}}});keep(verify(p,t.best,base.axis));trials.push(t.stats);}catch(e){lastError=e.message;}
   }
  }
+ patternBases.push(...bases.map(b=>b.s));improve();
  if(!best)throw Error('За этот бюджет допустимый раскрой не найден. '+lastError);
  best.search={objective,seed,iterations,trials,elapsedMs:Date.now()-started,optimality:'not proven'};
  return best;

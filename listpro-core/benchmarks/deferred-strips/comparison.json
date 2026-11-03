@@ -1,0 +1,50 @@
+{
+  "parameters": {
+    "sheetW": 2750,
+    "sheetH": 1830,
+    "kerf": 5,
+    "trim": 10
+  },
+  "previous": {
+    "sheets": 11,
+    "parts": 171,
+    "cuts": 349,
+    "cutLength": 287894,
+    "turns": 99,
+    "feeds": 338,
+    "stages": 5,
+    "operations": 808,
+    "largestWaste": 3194650,
+    "wasteArea": 7133927,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 4
+  },
+  "current": {
+    "sheets": 10,
+    "parts": 171,
+    "cuts": 328,
+    "turns": 106,
+    "feeds": 318,
+    "cutLength": 255322,
+    "stages": 5,
+    "operations": 772,
+    "largestWaste": 204006,
+    "wasteArea": 2222141,
+    "edgeFinishingCuts": 5,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 4
+  },
+  "search": {
+    "model": "deferred-staged-v1",
+    "attempts": 25,
+    "accepted": 25,
+    "rejected": 0,
+    "coverNodes": 20,
+    "elapsedMs": 223
+  },
+  "provenance": "Manual PDF topology warm start; dimensions taken exclusively from the original order. Not an unseeded discovery.",
+  "originalArea": 46160513,
+  "areaLowerBound": 10
+}

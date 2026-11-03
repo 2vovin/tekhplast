@@ -64,11 +64,11 @@
   if(op.type==='cut')s+='<line x1="'+op.start.x+'" y1="'+op.start.y+'" x2="'+op.end.x+'" y2="'+op.end.y+'" stroke="#e24a36" stroke-width="'+Math.max(4,op.kerf)+'"/>';
   return s+'</svg>';
  }
- const typeName=o=>({load:'Загрузка листа',feed:o.feedMode==='advance-in-place'?'Продвижение остатка':'Установка полосы',cut:'Пропил №'+o.cutIndex,rotate:'Поворот на 90°',endPrimary:'Первичные полосы отделены'}[o.type]||o.type);
+ const typeName=o=>({load:'Загрузка листа',feed:o.feedMode==='advance-in-place'?'Продвижение остатка':'Установка полосы',cut:(o.edgeFinish?'Торцовка №':'Пропил №')+o.cutIndex,rotate:'Поворот на 90°',endPrimary:'Первичные полосы отделены'}[o.type]||o.type);
  function draw(){  $('drawing').classList.toggle('empty',!result);
   if(!result){$('drawing').innerHTML='<div class="empty-state"><strong>Карта появится после расчёта</strong><p>Загрузите детали или выберите пример.</p></div>';$('physicalDrawing').innerHTML='';$('opDetails').textContent='';$('opLabel').textContent='Последовательность ещё не рассчитана';return;}
   const sh=result.sheets[sheet],p=result.parameters,op=operation();
-  $('drawing').innerHTML=mapSVG(sheet,true);$('drawing').firstElementChild.style.width=(zoom*100)+'%';
+  $('drawing').innerHTML=mapSVG(sheet,true);const picture=$('drawing').firstElementChild;picture.style.width=zoom===1?(document.fullscreenElement?'100%':'min(100%, 780px)'):(zoom*100)+'%';picture.style.maxHeight=zoom===1?(document.fullscreenElement?'78vh':'min(52vh, 520px)'):'none';
   $('sheetLabel').textContent='Лист '+(sheet+1)+' из '+result.sheets.length;$('prevSheet').disabled=sheet===0;$('nextSheet').disabled=sheet===result.sheets.length-1;
   $('materialBadge').textContent=project.material;$('sizeBadge').textContent=fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм';
   $('usageBadge').textContent='Использование: '+fmt(100*sh.parts.reduce((n,a)=>n+a.w*a.h,0)/(p.sheetW*p.sheetH))+'%';
@@ -78,7 +78,7 @@
   $('prevOp').disabled=step===0;$('nextOp').disabled=step===result.plan.operations.length-1;
   $('physicalDrawing').innerHTML=physicalSVG(op);
   const frame=result.verification.roleFrames.find(f=>f.step===op.step);
-  $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
+  $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(op.edgeFinish?'<p>Торцовка края: часть ширины диска проходит вне заготовки. Размер детали сохранён.</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(op.edgeFinish?'готовая деталь':c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
  }
  function renderResult(){
   const has=!!result;['print','export','prevSheet','nextSheet','prevOp','nextOp','opRange','exportOps','zoomIn','zoomOut','fit'].forEach(id=>$(id).disabled=!has);
@@ -145,6 +145,7 @@
  $('operationsBody').onclick=pickOp;$('operationsBody').onkeydown=e=>{if(e.key==='Enter')pickOp(e);};
  function pickPart(e){const g=e.target.closest('[data-part]');if(!g)return;all('#drawing [data-part] rect').forEach(r=>r.setAttribute('stroke-width','2'));g.querySelector('rect').setAttribute('stroke-width','8');const a=result.sheets[sheet].parts.find(a=>a.id+':'+a.instance===g.dataset.part);$('partHint').textContent='Деталь '+g.dataset.part+' · '+fmt(a.w)+' × '+fmt(a.h)+' мм · X '+fmt(a.x)+', Y '+fmt(a.y)+(a.rotated?' · повёрнута относительно исходных размеров':'');}
  $('drawing').onclick=pickPart;$('drawing').onkeydown=e=>{if(e.key==='Enter'||e.key===' ')pickPart(e);};
+ document.addEventListener('fullscreenchange',draw);
  $('zoomIn').onclick=()=>{zoom=Math.min(3,zoom+.25);draw();};$('zoomOut').onclick=()=>{zoom=Math.max(1,zoom-.25);draw();};$('fit').onclick=()=>{zoom=1;draw();};
  $('full').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('workspace').requestFullscreen();}catch{toast('Полноэкранный режим недоступен в этом браузере.');}};
  example('44');
