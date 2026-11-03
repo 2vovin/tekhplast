@@ -16,3 +16,6 @@ if(s.sheets.length!==1||s.partCount!==26||!result.technology.valid||rejected.tec
 
 // Keep fixed-coordinate regression and run the target staged panel saw as well.
 require('./staged-benchmark');
+
+// Brain 1.1 uses the same seed/start budget and independently replays the saved plan.
+require('./industrial-benchmark');

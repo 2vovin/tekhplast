@@ -67,3 +67,22 @@ console.log(validateStaged(order,result,result.plan,profile));
 CUT завершает жизнь родителя и создаёт двух детей с turnCount=0, сохраняя машинную ориентацию и текстуру.
 Повторный поворот того же blankId запрещён. Основной профиль допускает до одного поворота листа; генератор выбирает 0.
 Профиль abstract-staged-v-no-sheet-turn-v1 запрещает поворот исходного листа; тот же контрольный план проходит и его проверку.
+
+
+## Brain 1.1 — оптимизация полос и деревьев операций
+
+```js
+const {searchIndustrial}=require('./src/industrial');
+const {validateStaged}=require('./src/staged-validator');
+const profile=require('./profiles/abstract-staged-v-saw-v1.json');
+const order=require('./benchmarks/manual-26-no-rotation.json');
+const result=searchIndustrial(order,{profile,seed:1,iterations:100000,dpStates:12000});
+console.log(validateStaged(order,result,result.plan,profile));
+// Продолжение: searchIndustrial(order,{profile,seed:2,iterations:100000,previous:result});
+```
+
+Цель 1.1: листы → крупнейший цельный остаток → резы/операции → повороты → длина → стадии.
+Составные блоки и subset-sum DP дополняются перестройкой гильотинных деревьев внутри первичных полос; каждое улучшение проходит независимый replay.
+`src/industrial-export.js` экспортирует renderMap, renderBlankTree, renderOperations для проверенного результата.
+`npm run benchmark:industrial` пересчитывает контрольный заказ; `npm run benchmark` также сохраняет все прежние регрессии.
+[Карта, все подполосы и операции Brain 1.1](docs/CONTROL-26-BRAIN-1.1.md), [результаты и ограничения](docs/RESULTS.md).

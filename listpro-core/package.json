@@ -1,13 +1,14 @@
 {
   "name": "listpro-core",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
-  "description": "ListPro cutting optimizer research baseline for Codex",
+  "description": "ListPro furniture staged cutting research core with independent operation replay",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "benchmark": "node scripts/benchmark.js"
+    "benchmark": "node scripts/benchmark.js",
+    "benchmark:industrial": "node scripts/industrial-benchmark.js"
   }
 }
