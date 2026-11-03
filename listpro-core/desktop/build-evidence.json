@@ -1,0 +1,77 @@
+{
+  "version": "0.2.0",
+  "testedCommit": "80c75cda382d32a2acfbc22d4e1ad603e0571b77",
+  "windows": {
+    "runId": 41698360645,
+    "url": "https://github.com/2vovin/tekhplast/actions/runs/41698360645",
+    "jobId": 126134770838,
+    "conclusion": "success",
+    "tests": 12,
+    "smoke": {
+      "ok": true,
+      "packaged": true,
+      "platform": "win32",
+      "arch": "x64",
+      "version": "0.2.0",
+      "electron": "35.7.5",
+      "loaded": {
+        "parts": "171",
+        "sheets": "11",
+        "cuts": "349",
+        "turns": "99",
+        "rows": 98,
+        "tabs": 11
+      },
+      "recalculated": {
+        "parts": "171",
+        "sheets": "11",
+        "cuts": "349",
+        "turns": "99",
+        "rows": 98,
+        "tabs": 11
+      },
+      "imported": {
+        "rows": 2,
+        "length": "573.5",
+        "count": "14 шт."
+      },
+      "cancelVerified": true,
+      "lastSheet": "Лист 11. Карта Held-Strips, совместимость станка неизвестна.",
+      "screenshot": "D:\\a\\tekhplast\\tekhplast\\listpro-core\\desktop\\dist\\windows-smoke.json.png",
+      "commit": "80c75cda382d32a2acfbc22d4e1ad603e0571b77"
+    },
+    "executable": {
+      "file": "ListPro-Mebel-0.2.0-win-x64.exe",
+      "sha256": "583068a709ff5bca058f1e64d76ccbb89436cf1ab0ded213c30e2dbd0f629e82",
+      "bytes": 84161292
+    },
+    "artifact": {
+      "id": 13261923189,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI2MTkyMzE4OQ==",
+      "name": "ListPro-Mebel-Windows-portable",
+      "size_in_bytes": 84170318,
+      "url": "https://api.github.com/repos/2vovin/tekhplast/actions/artifacts/13261923189",
+      "archive_download_url": "https://api.github.com/repos/2vovin/tekhplast/actions/artifacts/13261923189/zip",
+      "expired": false,
+      "digest": "sha256:3b2ab0ab5beaaa7925257e39a2ab6a33573294e416381aaf20e298c072e1db05",
+      "created_at": "2026-11-03T18:59:09Z",
+      "updated_at": "2026-11-03T18:59:09Z",
+      "expires_at": "2026-11-17T18:59:06Z",
+      "workflow_run": {
+        "id": 41698360645,
+        "repository_id": 1057712328,
+        "head_repository_id": 1057712328,
+        "head_branch": "listpro-core",
+        "head_sha": "80c75cda382d32a2acfbc22d4e1ad603e0571b77"
+      }
+    }
+  },
+  "core": {
+    "runId": 41698360661,
+    "url": "https://github.com/2vovin/tekhplast/actions/runs/41698360661",
+    "conclusion": "success",
+    "tests": 10009,
+    "benchmark": "success"
+  },
+  "note": "Subsequent documentation commit changes no executable source. Binary is unsigned."
+}
