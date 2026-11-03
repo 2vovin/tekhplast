@@ -28,3 +28,5 @@ require('./pss13-benchmark');
 require('./pss14-benchmark');
 
 require('./pss15-benchmark');
+
+require('./bazis-corrected-benchmark');
