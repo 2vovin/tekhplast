@@ -46,14 +46,19 @@ function cleanProject(input){
 function candidateBandSets(p,axis='H'){
  const span=(axis==='H'?p.sheetH:p.sheetW)-2*p.trim,kerf=p.kerf;
  const dimension=axis==='H'?'w':'l';
- const values=[...new Set(p.pieces.map(x=>x[dimension]))].filter(x=>x+kerf<span).sort((a,b)=>b-a);
- const found=new Map();
+ const counts=new Map();
+ for(const row of p.pieces)counts.set(row[dimension],(counts.get(row[dimension])||0)+row.q);
+ // Bound the *candidate enumeration* for large real production lists.
+ const values=[...counts.keys()].filter(x=>x+kerf<span)
+  .sort((a,b)=>counts.get(b)-counts.get(a)||b-a).slice(0,10).sort((a,b)=>b-a);
+ const found=new Map();let visited=0;
  // Enumerate physically sized primary strips; never invent a composite "part".
  function walk(arr,sum,ix){
+  if(++visited>60000)return;
   if(arr.length){
    const key=arr.slice().sort((a,b)=>b-a).join(',');
    const unused=span-sum-kerf*arr.length;
-   if(unused>=0&&arr.length<=7)found.set(key,{bands:arr.slice(),unused});
+   if(unused>=0)found.set(key,{bands:arr.slice(),unused});
   }
   if(arr.length>=6)return;
   for(let i=ix;i<values.length;i++){
