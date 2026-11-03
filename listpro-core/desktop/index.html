@@ -12,7 +12,7 @@
  <aside class="sidebar">
   <div class="logo">
    <span class="logoMark" aria-hidden="true"><span></span><span></span><span></span></span>
-   <span><strong>ЛистПро</strong><small>МЕБЕЛЬ · 0.1</small></span>
+   <span><strong>ЛистПро</strong><small>МЕБЕЛЬ · 0.2</small></span>
   </div>
   <div class="navLabel">РАБОЧЕЕ МЕСТО</div>
   <nav aria-label="Разделы">
@@ -34,8 +34,10 @@
    <button type="button" class="btn ghost" id="newBtn">＋ Новый</button>
    <button type="button" class="btn ghost" id="openBtn">Открыть проект</button>
    <button type="button" class="btn ghost" id="exampleBtn">Контрольные 26 деталей</button>
+   <button type="button" class="btn ghost" id="example171Btn">Заказ 171 деталь</button>
    <span class="barSpace"></span>
    <button type="button" class="btn ghost" id="saveBtn">Сохранить проект</button>
+   <button type="button" class="btn ghost" id="cancelBtn" hidden>Остановить</button>
    <button type="button" class="btn primary" id="calculateBtn">▶ Раскроить</button>
   </div>
   <div class="content">
@@ -55,6 +57,7 @@
      <div class="panel tablePanel">
       <div class="tableScroll"><table aria-label="Детали для раскроя"><thead><tr><th>№</th><th>Длина</th><th>Ширина</th><th>Кол-во</th><th title="Фиксированная текстура">Текстура</th><th>Примечание</th><th></th></tr></thead><tbody id="partsBody"></tbody></table></div>
       <button type="button" class="addRow" id="addRowBtn">＋ Добавить деталь</button>
+      <div class="importActions"><button type="button" class="miniBtn" id="importBtn">Вставить таблицу</button><button type="button" class="miniBtn" id="allowTurnsBtn">Разрешить поворот всех</button></div>
      </div>
      <div class="infoPanel"><span class="infoDot">i</span><p>Текстура включена — направление размера «Длина» сохраняется. При расчёте можно физически поворачивать только <strong>отделённые</strong> заготовки. Удерживаемые остатки не разворачиваются.</p></div>
     </section>
@@ -100,6 +103,12 @@
   <button id="closeAbout" type="button" class="btn primary">Понятно</button>
  </div>
 </div>
-<script src="ui.js"></script>
+<div class="modalCover" id="importModal" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="importTitle">
+<h2 id="importTitle">Вставка таблицы деталей</h2><p>Три колонки: длина, ширина, количество. Можно вставить из Excel или таблицу с разделителями «;» и «|». Дробные размеры — с точкой или запятой.</p>
+<textarea id="importText" rows="12" aria-label="Таблица деталей" placeholder="573,5&#9;228&#9;2"></textarea>
+<label><input type="checkbox" id="importGrain"> Сохранять направление текстуры</label>
+<p id="importError" role="alert"></p><button class="btn primary" id="applyImport">Заменить список</button><button class="btn ghost" id="closeImport">Отмена</button>
+</div></div>
+<script src="table-import.js"></script><script src="ui.js"></script>
 </body>
 </html>

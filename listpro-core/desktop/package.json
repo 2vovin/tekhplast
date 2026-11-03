@@ -1,6 +1,6 @@
 {
   "name": "listpro-mebel-desktop",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "ListPro Mebel experimental held-strips Windows desktop application",
   "main": "main.cjs",
@@ -8,7 +8,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "electron .",
-    "build:win": "electron-builder --win portable --x64",
+    "build:win": "electron-builder --win portable --x64 && node scripts/smoke-windows.cjs",
     "test": "node --test tests/*.test.cjs"
   },
   "devDependencies": {
@@ -30,7 +30,8 @@
       "index.html",
       "ui.js",
       "style.css",
-      "package.json"
+      "package.json",
+      "table-import.js"
     ],
     "extraResources": [
       {
@@ -47,6 +48,14 @@
       {
         "from": "../benchmarks/held-strips/result.json",
         "to": "listpro-core/benchmarks/held-strips/result.json"
+      },
+      {
+        "from": "../benchmarks/order-171/input.json",
+        "to": "listpro-core/benchmarks/order-171/input.json"
+      },
+      {
+        "from": "../benchmarks/order-171/result.json",
+        "to": "listpro-core/benchmarks/order-171/result.json"
       }
     ],
     "win": {

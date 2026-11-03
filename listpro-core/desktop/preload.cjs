@@ -1,7 +1,8 @@
 'use strict';
 const {contextBridge,ipcRenderer}=require('electron');
 contextBridge.exposeInMainWorld('listpro',{
- example:()=>ipcRenderer.invoke('listpro:example'),
+ example:name=>ipcRenderer.invoke('listpro:example',name),
+ cancel:()=>ipcRenderer.invoke('listpro:cancel'),
  calculate:input=>ipcRenderer.invoke('listpro:calculate',input),
  open:()=>ipcRenderer.invoke('listpro:open'),
  save:(type,data)=>ipcRenderer.invoke('listpro:save',type,data),

@@ -8,6 +8,7 @@ const fs=require('node:fs');
 const coreDir=process.env.LISTPRO_CORE_DIR||path.resolve(__dirname,'../src');
 const {checkInput}=require(path.join(coreDir,'core.js'));
 const {validate}=require(path.join(coreDir,'validator.js'));
+const {searchAdaptive,repackAdaptive}=require(path.join(coreDir,'adaptive-held-strip.js'));
 const {searchHeldStrips}=require(path.join(coreDir,'held-strip-search.js'));
 const {makeHeldPlan}=require(path.join(coreDir,'held-strip-plan.js'));
 const {validateHeld}=require(path.join(coreDir,'held-strip-validator.js'));
@@ -83,7 +84,7 @@ function candidateBandSets(p,axis='H'){
 function profileFor(p,axis){
  return {
   id:'all-level-held-remainder-v1',mode:'PANEL_SAW_STAGED',
-  firstCutAxis:axis,machineCutAxes:['H'],maxSheetTurns:0,
+  firstCutAxis:axis,machineCutAxes:[axis],maxSheetTurns:0,
   maxTurnsPerBlank:1,retainedSide:'HIGH_MATERIAL',
   trimPolicy:'whole-sheet-primary-edge-then-detached-strip-side-trim',
   realMachineFeasibility:'unknown',terminalPromotionAllowed:false,
@@ -108,7 +109,7 @@ function better(a,b){
  for(let i=0;i<x.length;i++)if(x[i]!==y[i])return x[i]<y[i];
  return false;
 }
-function verifiedReferenceIncumbent(p){
+function oldReferenceIncumbent(p){
  // Warm-start ONLY an exactly matching order. No reuse across changed lengths,
  // widths, counts, texture flags, kerf, trims or sheet dimensions.
  const reference=cleanProject(JSON.parse(fs.readFileSync(bundledPath('bazis-26-corrected.json'),'utf8')));
@@ -121,10 +122,10 @@ function verifiedReferenceIncumbent(p){
  result.search={kind:'revalidated-known-solution',optimality:'not proven'};
  return result;
 }
-function calculate(input,{iterations=16000,seed=42,onProgress=()=>{}}={}){
+function calculateLegacy(input,{iterations=16000,seed=42,onProgress=()=>{}}={}){
  const p=cleanProject(input),axis='H',profile=profileFor(p,axis);
  const sets=candidateBandSets(p,axis);
- let best=verifiedReferenceIncumbent(p),attempts=0,searches=0,lastProblem='';
+ let best=oldReferenceIncumbent(p),attempts=0,searches=0,lastProblem='';
  if(!sets.length&&!best)throw Error('Нет допустимых первичных полос для этих размеров.');
  // Run several different primary-strip sets rather than fixing a single group.
  const selections=sets.slice(0,5);
@@ -183,11 +184,73 @@ function bundledPath(filename){
  const base=process.env.LISTPRO_CORE_RESOURCES;
  return base?path.join(base,filename):path.resolve(__dirname,'../benchmarks',filename);
 }
-function loadExample(){
- const p=JSON.parse(fs.readFileSync(bundledPath('bazis-26-corrected.json'),'utf8'));
- const saved=JSON.parse(fs.readFileSync(bundledPath('held-strips/result.json'),'utf8'));
- const pp=cleanProject(p);
- const result=validateLayout(pp,saved,saved.equipmentProfile);
- return {project:pp,result};
+
+const examples={
+ '26':{input:'bazis-26-corrected.json',result:'held-strips/result.json',name:'Контрольный заказ — 26 деталей'},
+ '171':{input:'order-171/input.json',result:'order-171/result.json',name:'Заказ пользователя — 171 деталь'}
+};
+function sameOrder(p,q){
+ return ['sheetW','sheetH','kerf','trim'].every(k=>p[k]===q[k])&&p.pieces.length===q.pieces.length&&
+ p.pieces.every((a,i)=>['l','w','q','grain'].every(k=>a[k]===q.pieces[i][k]));
 }
-module.exports={cleanProject,candidateBandSets,profileFor,validateLayout,calculate,loadExample};
+function verifiedReferenceIncumbent(p){
+ for(const spec of Object.values(examples)){
+  const reference=cleanProject(JSON.parse(fs.readFileSync(bundledPath(spec.input),'utf8')));
+  if(!sameOrder(p,reference))continue;
+  const saved=JSON.parse(fs.readFileSync(bundledPath(spec.result),'utf8'));
+  const r=validateLayout(p,saved,saved.equipmentProfile);
+  r.search={kind:'revalidated-known-solution',optimality:'not proven'};return r;
+ }return null;
+}
+function calculate(input,{iterations=100,seed=42,onProgress=()=>{},warmStart=true}={}){
+ const p=cleanProject(input);
+ if(!Number.isSafeInteger(iterations)||iterations<1||!Number.isSafeInteger(seed))throw Error('Некорректный бюджет поиска.');
+ const budget=Math.min(iterations,100),started=Date.now(),bases=[],trials=[];
+ let best=warmStart?verifiedReferenceIncumbent(p):null,lastProblem='',completed=0;
+ const progress=phase=>onProgress({phase,completed,total:6,found:!!best,bestSheets:best?.metrics.sheets??null});
+ const accept=profile=>layout=>{try{validateLayout(p,layout,profile);return true;}catch(e){lastProblem=e.message;return false;}};
+ progress('Проверка заказа');
+ for(const axis of ['H','V']){
+  const profile=profileFor(p,axis);
+  try{
+   const trial=searchAdaptive(p,{iterations:budget,seed,axis,candidates:12,accept:accept(profile)});
+   const r=validateLayout(p,trial.best,profile);
+   bases.push({axis,profile,result:r});trials.push({phase:axis,stats:trial.stats});
+   if(better(r,best))best=r;
+  }catch(e){lastProblem=e.message;}
+  completed++;progress('Первичный распуск '+axis);
+ }
+ for(const base of bases){
+  if(base.result.sheets.length<2)continue;
+  const ranked=base.result.sheets.map((s,i)=>({i,area:s.parts.reduce((n,a)=>n+a.w*a.h,0)})).sort((a,b)=>a.area-b.area);
+  const seen=new Set();
+  for(const size of [4,5]){
+   const ids=ranked.slice(0,Math.min(size,ranked.length)).map(a=>a.i).sort((a,b)=>a-b),key=ids.join(',');
+   if(seen.has(key))continue;seen.add(key);
+   try{
+    const t=repackAdaptive(p,base.result,{sheetIndices:ids,iterations:budget,seed,axis:base.axis,accept:accept(base.profile)});
+    const r=validateLayout(p,t.best,base.profile);
+    trials.push({phase:'repack-'+base.axis,stats:t.stats});
+    if(better(r,best))best=r;
+   }catch(e){lastProblem=e.message;}
+   completed++;progress('Перестройка '+ids.length+' листов · '+base.axis);
+  }
+ }
+ if(!best)throw Error('Допустимый раскрой не найден. Это не доказательство невозможности. '+lastProblem);
+ best.search={...best.search,algorithm:'adaptive-held-strips',seed,iterationsPerStage:budget,warmStart,trials,elapsedMs:Date.now()-started,optimality:'not proven'};
+ onProgress({phase:'Проверка завершена',completed:6,total:6,found:true,bestSheets:best.metrics.sheets});
+ return best;
+}
+function loadExample(name='26'){
+ const spec=examples[String(name)];if(!spec)throw Error('Неизвестный пример.');
+ const p=JSON.parse(fs.readFileSync(bundledPath(spec.input),'utf8'));
+ const saved=JSON.parse(fs.readFileSync(bundledPath(spec.result),'utf8'));
+ const pp=cleanProject({...p,project:spec.name});
+ return {project:pp,result:validateLayout(pp,saved,saved.equipmentProfile)};
+}
+function projectFromFile(j){
+ if(j&&typeof j.parameters==='object'&&j.parameters!==null)return cleanProject(j.parameters);
+ if(j&&typeof j.project==='object'&&j.project!==null)return cleanProject(j.project);
+ return cleanProject(j);
+}
+module.exports={cleanProject,candidateBandSets,profileFor,validateLayout,calculate,calculateLegacy,loadExample,verifiedReferenceIncumbent,projectFromFile};

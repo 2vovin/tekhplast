@@ -57,6 +57,10 @@ function renderRows(){
  });
  $('partCountCaption').textContent=fmt(project.pieces.reduce((s,x)=>s+Number(x.q||0),0))+' шт.';
 }
+function setBusy(value){
+ for(const e of document.querySelectorAll('.editor input,.editor button,#newBtn,#openBtn,#exampleBtn,#example171Btn,#saveBtn'))e.disabled=value;
+ $('cancelBtn').hidden=!value;$('calculateBtn').disabled=value;
+}
 function readInputs(){
  project.project=$('projectName').value||'Новый раскрой';
  for(const key of ['sheetW','sheetH','kerf','trim'])project[key]=Number($(key).value);
@@ -108,11 +112,15 @@ function renderMap(){
    stroke:chosen?'#cf5d2c':'#7a9fb9','stroke-width':chosen?6:2,rx:0},picture);
   rect.style.cursor='pointer';
   rect.addEventListener('click',()=>{selectedPart=part.id;renderMap();toast('Деталь №'+part.id+' · '+part.w+'×'+part.h+' мм')});
-  const idlabel=part.id+':'+part.instance,secondary=part.w+'×'+part.h;
+  const idlabel=part.id+':'+part.instance+(part.rotated?' ↻':''),secondary=part.w+'×'+part.h;
   if(part.w>90&&part.h>90){
    const font=Math.min(29,Math.max(15,Math.min(part.w/6,part.h/4)));
    const t=text(part.x+8,part.y+font+6,idlabel,font,picture);t.style.pointerEvents='none';
    if(part.w>=175&&part.h>=135){const tt=text(part.x+8,part.y+font+29,secondary,Math.min(19,font*.72),picture,{'font-weight':400,fill:'#4f738a'});tt.style.pointerEvents='none'}
+  }
+  if(part.w<=90||part.h<=90){
+   const cx=part.x+part.w/2,cy=part.y+part.h/2;
+   text(cx,cy,idlabel,Math.min(17,Math.min(part.w,part.h)*.28),picture,{'text-anchor':'middle','dominant-baseline':'middle',transform:part.w<part.h?'rotate(-90 '+cx+' '+cy+')':''});
   }
   const tip=svg('title',{},rect);tip.textContent='№'+part.id+' ('+part.instance+') '+secondary+' мм';
  }
@@ -129,7 +137,7 @@ function renderMap(){
  const tabbar=$('sheetTabs');tabbar.replaceChildren();
  result.sheets.forEach((sheet,i)=>{
   const b=document.createElement('button');b.type='button';b.textContent='Лист '+(i+1);b.className=selectedSheet===i?'active':'';
-  b.addEventListener('click',()=>{selectedSheet=i;renderMap()});tabbar.appendChild(b);
+  b.addEventListener('click',()=>{selectedSheet=i;selectedStep=result.plan.operations.findIndex(o=>o.type==='load'&&o.sheet===i);renderSteps();renderMap()});tabbar.appendChild(b);
  });
 }
 function detailsOf(op){
@@ -145,6 +153,8 @@ function detailsOf(op){
  return lines;
 }
 function renderSteps(){
+ const selected=result?.plan?.operations?.[selectedStep];
+ if(selected){const si=selected.sheet??Number((selected.inputBlankId||'').match(/^s(\d+)\//)?.[1]);if(Number.isInteger(si)&&si>=0&&si<result.sheets.length)selectedSheet=si;}
  const ops=result?.plan?.operations||[];
  const enabled=ops.length>0;
  for(const id of ['prevStepBtn','nextStepBtn','stepRange'])$(id).disabled=!enabled;
@@ -180,7 +190,7 @@ function showView(next){
  if(!cutting)renderOperations();
 }
 async function calculate(){
- if(computing)return;readInputs();computing=true;
+ if(computing)return;readInputs();computing=true;setBusy(true);const previous=result;
  const b=$('calculateBtn');b.disabled=true;b.textContent='◌ Рассчитывается...';
  status('Проверяем кандидатов и физическую последовательность распила...');
  try{
@@ -189,8 +199,8 @@ async function calculate(){
   renderEverything();
   toast('Раскрой рассчитан: '+result.metrics.sheets+' лист(ов), '+result.metrics.cuts+' резов. Технологическая модель проверена.');
   status('Расчёт готов · реальный станок не подтверждён · оптимальность не доказана');
- }catch(e){result=null;renderEverything();toast('Расчёт: '+String(e.message||e));status('Расчёт не завершён: '+String(e.message||e))}
- finally{computing=false;b.disabled=false;b.textContent='▶ Раскроить'}
+ }catch(e){result=previous;renderEverything();toast('Расчёт: '+String(e.message||e));status('Расчёт не завершён: '+String(e.message||e))}
+ finally{computing=false;setBusy(false);b.textContent='▶ Раскроить'}
 }
 async function save(type){
  try{
@@ -225,6 +235,15 @@ function bind(){
  $('newBtn').onclick=()=>{setProject(blankProject());status('Новый проект создан.')};
  $('exampleBtn').onclick=async()=>{try{const v=await window.listpro.example();setProject(v.project,v.result);status('Загружен проверенный контрольный раскрой 26 деталей.');toast('Пример Held-Strips загружен.')}catch(e){toast('Ошибка примера: '+e.message)}};
  $('openBtn').onclick=async()=>{try{const x=await window.listpro.open();if(x){setProject(x);status('Проект открыт. Для построения карты нажмите «Раскроить».')}}catch(e){toast('Ошибка открытия: '+e.message)}};
+ $('example171Btn').onclick=async()=>{try{const v=await window.listpro.example('171');setProject(v.project,v.result);status('Заказ 171 деталь · 11 листов · 349 резов');}catch(e){toast(e.message)}};
+ $('cancelBtn').onclick=async()=>{await window.listpro.cancel();};
+ $('importBtn').onclick=()=>{$('importModal').hidden=false;$('importError').textContent='';$('importText').focus();};
+ $('closeImport').onclick=()=>$('importModal').hidden=true;
+ $('applyImport').onclick=()=>{try{
+  const pieces=window.ListProTableImport.parseTable($('importText').value,$('importGrain').checked);
+  project.pieces=pieces;renderRows();changed();$('importModal').hidden=true;toast('Импортировано '+pieces.length+' строк.');
+ }catch(e){$('importError').textContent=e.message;}};
+ $('allowTurnsBtn').onclick=()=>{project.pieces.forEach(p=>p.grain=false);renderRows();changed();toast('Поворот разрешён для всех деталей.');};
  $('calculateBtn').onclick=calculate;$('saveBtn').onclick=()=>save('project');
  $('exportJsonBtn').onclick=()=>save('result');$('exportSvgBtn').onclick=()=>save('svg');
  $('showStrips').onchange=renderMap;
@@ -235,12 +254,12 @@ function bind(){
  $('aboutBtn').onclick=()=>$('aboutModal').hidden=false;$('closeAbout').onclick=()=>$('aboutModal').hidden=true;
  $('aboutModal').onclick=e=>{if(e.target===$('aboutModal'))$('aboutModal').hidden=true};
  document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){$('aboutModal').hidden=true;return}
+  if(e.key==='Escape'){$('aboutModal').hidden=true;$('importModal').hidden=true;return}
   if(['INPUT','TEXTAREA'].includes(e.target.tagName))return;
   if(e.key==='ArrowLeft')goStep(-1);if(e.key==='ArrowRight')goStep(1);
  });
- window.listpro.onProgress(({completed,total,bestSheets})=>{
-  status('Поиск групп полос '+completed+' / '+total+' · лучший найденный результат: '+(bestSheets||'—')+' лист(ов)');
+ window.listpro.onProgress(({phase,completed,total,bestSheets})=>{
+  status((phase||'Поиск')+' '+completed+' / '+total+' · лучший найденный результат: '+(bestSheets||'—')+' лист(ов)');
  });
 }
 async function boot(){
