@@ -48,3 +48,13 @@ test('маленький независимый заказ действител�
  assert.equal(result.verification.targetPSSModelValid,true);
  assert.equal(result.verification.metrics.heldRemainderTurns,0);
 });
+
+// Regression: clicking «Раскроить» immediately after loading the built-in
+// reference must work, not just opening the precomputed preview.
+test('повторный расчёт 26 деталей должен находить проверенный PSS-план',()=>{
+ const result=calculate(sample,{iterations:16000,seed:42});
+ assert.equal(result.metrics.sheets,1);
+ assert.equal(result.metrics.parts,26);
+ assert.equal(result.verification.targetPSSModelValid,true);
+ assert.equal(result.verification.metrics.heldRemainderTurns,0);
+});
