@@ -25,10 +25,12 @@ function auditReference(order,reference){
  }
  for(const p of order.pieces)if(totals.get(p.id)!==p.q||drawn.get(p.id)!==p.q)errors.push('Order quantity mismatch '+p.id);
  const partArea=order.pieces.reduce((s,p)=>s+p.l*p.w*p.q,0),usableArea=(order.sheetW-2*order.trim)*(order.sheetH-2*order.trim);
- return {inventoryMatches:errors.length===0,errors,parts:order.pieces.reduce((s,p)=>s+p.q,0),positions:order.pieces.length,sheets:reference.sheets.reduce((n,s)=>n+s.copies,0),
+ const referencedPartArea=reference.sheets.reduce((sum,s)=>sum+s.copies*s.inventory.reduce((n,a)=>n+a.l*a.w*a.q,0),0);
+ const differences=[...printDifferences.values()];
+ return {inputDimensionStatus:reference.dimensionRounding??'unknown',dimensionsMatch:differences.length===0,referencedPartArea,referenceAreaDifference:referencedPartArea-partArea,changedInstances:differences.reduce((n,a)=>n+a.quantity,0),allReferenceDimensionsAtLeastOriginal:reference.sheets.every(s=>s.inventory.every(a=>{const p=expected.get(a.id);return p&&a.l>=p.l&&a.w>=p.w;})),inventoryMatches:errors.length===0,errors,parts:order.pieces.reduce((s,p)=>s+p.q,0),positions:order.pieces.length,sheets:reference.sheets.reduce((n,s)=>n+s.copies,0),
   partArea,usableAreaPerSheet:usableArea,areaLowerBound:Math.ceil(partArea/usableArea),sheetProfiles:profiles,
   printedSizeDifferences:[...printDifferences.values()].sort((a,b)=>a.id-b.id),printedCutLengthM:Number(reference.sheets.reduce((s,a)=>s+a.printedCutLengthM*a.copies,0).toFixed(2)),
   exactGeometryVerified:false,physicalReplayVerified:false,realMachineFeasibility:'unknown',
-  limitations:['PDF coordinates describe the printed drawing, not an exact cutting plan.','Printed fractional dimensions and effective sheet size need confirmation.','Strip topology has no validated cut coordinates, clamp constraints or numbered physical operations.']};
+  limitations:['PDF coordinates describe the printed drawing, not an exact cutting plan.',reference.dimensionRounding?.startsWith('user-confirmed:')?'Actual rounding was confirmed by the user; effective sheet size still needs confirmation.':'Printed fractional dimensions and effective sheet size need confirmation.','Strip topology has no validated cut coordinates, clamp constraints or numbered physical operations.']};
 }
 module.exports={auditReference};

@@ -7,7 +7,7 @@
     "approx": "approximate millimetres; NOT manufacturing dimensions",
     "xy": "approximate millimetres; NOT verified coordinates"
   },
-  "dimensionRounding": "awaiting confirmation",
+  "dimensionRounding": "user-confirmed: input dimensions rounded up in Cutting 2",
   "sheetSizeMeaning": "awaiting confirmation: likely usable area after 10mm border",
   "sheets": [
     {
@@ -5873,5 +5873,7 @@
         }
       ]
     }
-  ]
+  ],
+  "dimensionRoundingSource": "User clarification: manually rounded the dimensions to avoid changing Cutting 2 settings",
+  "dimensionRoundingConfirmedAt": "2026-11-04 Asia/Irkutsk"
 }

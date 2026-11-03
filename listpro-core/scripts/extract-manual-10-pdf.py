@@ -58,5 +58,11 @@ for m,c in zip(allmaps,chunks):
   if p['id'] is None:raise ValueError('Unidentified diagram label on sheet '+str(m['sheet']))
   p.pop('candidates',None);p.pop('labels',None)
 ref={'source':Path(args.pdf).name,'sha256':hashlib.sha256(Path(args.pdf).read_bytes()).hexdigest(),'pages':len(D),'units':{'bbox':'PDF points, approximate drawing only','approx':'approximate millimetres; NOT manufacturing dimensions','xy':'approximate millimetres; NOT verified coordinates'},'dimensionRounding':'awaiting confirmation','sheetSizeMeaning':'awaiting confirmation: likely usable area after 10mm border','sheets':allmaps}
+# Preserve external user confirmation only for the exact same source PDF.
+if Path(args.output).exists():
+ prior=json.loads(Path(args.output).read_text())
+ if prior.get('sha256')==ref['sha256']:
+  for key in ['dimensionRounding','dimensionRoundingSource','dimensionRoundingConfirmedAt']:
+   if key in prior:ref[key]=prior[key]
 Path(args.output).write_text(json.dumps(ref,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'sheets':len(allmaps),'diagramParts':sum(len(s['parts']) for s in allmaps)}))

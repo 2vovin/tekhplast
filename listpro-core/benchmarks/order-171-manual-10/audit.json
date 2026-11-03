@@ -1,4 +1,10 @@
 {
+  "inputDimensionStatus": "user-confirmed: input dimensions rounded up in Cutting 2",
+  "dimensionsMatch": false,
+  "referencedPartArea": 46163188,
+  "referenceAreaDifference": 2675,
+  "changedInstances": 23,
+  "allReferenceDimensionsAtLeastOriginal": true,
   "inventoryMatches": true,
   "errors": [],
   "parts": 171,
@@ -139,7 +145,7 @@
   "realMachineFeasibility": "unknown",
   "limitations": [
     "PDF coordinates describe the printed drawing, not an exact cutting plan.",
-    "Printed fractional dimensions and effective sheet size need confirmation.",
+    "Actual rounding was confirmed by the user; effective sheet size still needs confirmation.",
     "Strip topology has no validated cut coordinates, clamp constraints or numbered physical operations."
   ]
 }
