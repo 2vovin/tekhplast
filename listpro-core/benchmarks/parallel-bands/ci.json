@@ -1,0 +1,454 @@
+{
+  "testedCommit": "f0dfb2b55b73b32c28c60f885d8e9de8df2b798f",
+  "runId": 41677571942,
+  "url": "https://github.com/2vovin/tekhplast/actions/runs/41677571942",
+  "conclusion": "success",
+  "tests": {
+    "total": 9980,
+    "passed": 9980,
+    "failed": 0
+  },
+  "report": {
+    "horizontal": {
+      "search": {
+        "seed": 42,
+        "iterations": 20000,
+        "axis": "H",
+        "rectangles": 713313,
+        "dpCalls": 97949,
+        "dpStates": 848339,
+        "prunedDP": 0,
+        "oneSheet": 56,
+        "elapsedMs": 2887
+      },
+      "acceptedImprovements": 4,
+      "rejectedImprovements": 702,
+      "verification": {
+        "geometryValid": true,
+        "abstractCutTreeValid": true,
+        "targetPSSModelValid": true,
+        "realMachineFeasibility": "unknown",
+        "profileId": "parallel-bands-terminal-real-span-v1",
+        "errors": [],
+        "limitations": [
+          "Machine feeding, clamps, stroke and hold dimensions are unspecified.",
+          "Conservative candidate profile: real spanning detail for every primary band; not a universal BAZIS restriction.",
+          "Explicit terminal band at stock edge, with declared border removal before any rotation."
+        ],
+        "metrics": {
+          "sheets": 1,
+          "parts": 26,
+          "cuts": 46,
+          "cutLength": 31450,
+          "turns": 12,
+          "feeds": 45,
+          "stages": 4,
+          "operations": 106,
+          "largestWaste": 72051,
+          "wasteArea": 443243,
+          "ancestryTurnsMax": 3,
+          "originalSheetTurns": 0
+        },
+        "partTurns": [
+          {
+            "part": {
+              "id": 6,
+              "instance": 1,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 7,
+              "instance": 1,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 1,
+              "instance": 1,
+              "rotated": false
+            },
+            "turns": 2
+          },
+          {
+            "part": {
+              "id": 8,
+              "instance": 1,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 9,
+              "instance": 1,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 1,
+              "instance": 2,
+              "rotated": false
+            },
+            "turns": 2
+          },
+          {
+            "part": {
+              "id": 3,
+              "instance": 1,
+              "rotated": false
+            },
+            "turns": 2
+          },
+          {
+            "part": {
+              "id": 1,
+              "instance": 3,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 1,
+              "instance": 4,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 1,
+              "instance": 5,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 2,
+              "instance": 1,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 2,
+              "instance": 2,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 2,
+              "instance": 3,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 5,
+              "instance": 1,
+              "rotated": false
+            },
+            "turns": 1
+          },
+          {
+            "part": {
+              "id": 2,
+              "instance": 4,
+              "rotated": false
+            },
+            "turns": 2
+          },
+          {
+            "part": {
+              "id": 2,
+              "instance": 5,
+              "rotated": false
+            },
+            "turns": 2
+          },
+          {
+            "part": {
+              "id": 3,
+              "instance": 2,
+              "rotated": false
+            },
+            "turns": 3
+          },
+          {
+            "part": {
+              "id": 3,
+              "instance": 3,
+              "rotated": false
+            },
+            "turns": 3
+          },
+          {
+            "part": {
+              "id": 3,
+              "instance": 4,
+              "rotated": false
+            },
+            "turns": 3
+          },
+          {
+            "part": {
+              "id": 3,
+              "instance": 5,
+              "rotated": false
+            },
+            "turns": 3
+          },
+          {
+            "part": {
+              "id": 4,
+              "instance": 1,
+              "rotated": false
+            },
+            "turns": 3
+          },
+          {
+            "part": {
+              "id": 4,
+              "instance": 2,
+              "rotated": false
+            },
+            "turns": 3
+          },
+          {
+            "part": {
+              "id": 4,
+              "instance": 3,
+              "rotated": false
+            },
+            "turns": 3
+          },
+          {
+            "part": {
+              "id": 4,
+              "instance": 4,
+              "rotated": false
+            },
+            "turns": 3
+          },
+          {
+            "part": {
+              "id": 4,
+              "instance": 5,
+              "rotated": false
+            },
+            "turns": 3
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 1,
+              "rotated": false
+            },
+            "turns": 3
+          }
+        ],
+        "primarySnapshots": [
+          {
+            "step": 2,
+            "cut": 1,
+            "input": "s0/raw",
+            "inputRole": "MAIN",
+            "outputs": [
+              {
+                "id": "s0/edge0",
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 2750,
+                  "h": 5
+                },
+                "role": "TRIM"
+              },
+              {
+                "id": "s0/main0",
+                "rect": {
+                  "x": 0,
+                  "y": 10,
+                  "w": 2750,
+                  "h": 1820
+                },
+                "role": "MAIN"
+              }
+            ]
+          },
+          {
+            "step": 4,
+            "cut": 2,
+            "input": "s0/main0",
+            "inputRole": "MAIN",
+            "outputs": [
+              {
+                "id": "s0/band1",
+                "rect": {
+                  "x": 0,
+                  "y": 10,
+                  "w": 2750,
+                  "h": 398
+                },
+                "role": "DETACHED"
+              },
+              {
+                "id": "s0/main1",
+                "rect": {
+                  "x": 0,
+                  "y": 413,
+                  "w": 2750,
+                  "h": 1417
+                },
+                "role": "MAIN"
+              }
+            ]
+          },
+          {
+            "step": 6,
+            "cut": 3,
+            "input": "s0/main1",
+            "inputRole": "MAIN",
+            "outputs": [
+              {
+                "id": "s0/band2",
+                "rect": {
+                  "x": 0,
+                  "y": 413,
+                  "w": 2750,
+                  "h": 398
+                },
+                "role": "DETACHED"
+              },
+              {
+                "id": "s0/main2",
+                "rect": {
+                  "x": 0,
+                  "y": 816,
+                  "w": 2750,
+                  "h": 1014
+                },
+                "role": "MAIN"
+              }
+            ]
+          },
+          {
+            "step": 8,
+            "cut": 4,
+            "input": "s0/main2",
+            "inputRole": "MAIN",
+            "outputs": [
+              {
+                "id": "s0/band3",
+                "rect": {
+                  "x": 0,
+                  "y": 816,
+                  "w": 2750,
+                  "h": 270
+                },
+                "role": "DETACHED"
+              },
+              {
+                "id": "s0/main3",
+                "rect": {
+                  "x": 0,
+                  "y": 1091,
+                  "w": 2750,
+                  "h": 739
+                },
+                "role": "MAIN"
+              }
+            ]
+          },
+          {
+            "step": 11,
+            "cut": 5,
+            "input": "s0/main3",
+            "inputRole": "TERMINAL_PENDING",
+            "outputs": [
+              {
+                "id": "s0/band4",
+                "rect": {
+                  "x": 0,
+                  "y": 1091,
+                  "w": 2750,
+                  "h": 719
+                },
+                "role": "DETACHED"
+              },
+              {
+                "id": "s0/edge1",
+                "rect": {
+                  "x": 0,
+                  "y": 1815,
+                  "w": 2750,
+                  "h": 15
+                },
+                "role": "TRIM"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "vertical": {
+      "search": {
+        "seed": 42,
+        "iterations": 3000,
+        "axis": "V",
+        "rectangles": 89682,
+        "dpCalls": 13459,
+        "dpStates": 121173,
+        "prunedDP": 0,
+        "oneSheet": 0,
+        "elapsedMs": 363
+      },
+      "geometry": {
+        "valid": true,
+        "partCount": 26,
+        "sheets": 2,
+        "cuts": 38,
+        "cutLength": 30486,
+        "wasteArea": 5357363,
+        "largestWaste": 2048920
+      },
+      "technology": "NOT VALIDATED: geometric comparison only"
+    },
+    "historical": {
+      "4": {
+        "geometryValid": true,
+        "targetPSSModelValid": false,
+        "needleRejections": [
+          {
+            "step": 8,
+            "reason": "Artificial primary tail no wider than kerf"
+          }
+        ]
+      },
+      "unlimited": {
+        "geometryValid": true,
+        "targetPSSModelValid": false,
+        "needleRejections": [
+          {
+            "step": 6,
+            "reason": "Artificial primary tail no wider than kerf"
+          }
+        ]
+      }
+    },
+    "optimality": "not proven",
+    "node": "v22.23.4"
+  }
+}

@@ -63,3 +63,11 @@ test('seeded band search is reproducible and leaves order dimensions untouched',
  const p=clone(saved.parameters),before=clone(p),opt={iterations:50,seed:42,bandSets:[[719,398,398,270]],axis:'H'};
  const a=searchBands(p,opt),b=searchBands(p,opt);assert.deepEqual(a.best,b.best);assert.deepEqual(p,before);
 });
+
+test('a physically consistent rotated sheet is still forbidden by the target roles',()=>{
+ const s=clone(saved);s.equipmentProfile.machineCutAxes=['V'];
+ s.plan=makeBandPlan(s.parameters,s,s.equipmentProfile);
+ const r=auditPrimary(s.parameters,s,s.plan,s.equipmentProfile);
+ assert.equal(r.targetPSSModelValid,false);assert.ok(r.errors.some(e=>e.reason.includes('Rotation of original sheet')));
+ assert.ok(r.metrics.originalSheetTurns>0);
+});

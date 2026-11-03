@@ -4,7 +4,7 @@
 const {replayPhysical}=require('./physical-replay');
 function auditPrimary(p,layout,plan,profile){
  const r=replayPhysical(p,layout,plan,profile),errors=[],roles=new Map(),terminal=new Map(),bands=new Map(),closed=new Set(),ancestry=new Map();
- const snapshots=[],partTurns=[];let maximum=0;
+ const snapshots=[],partTurns=[];let maximum=0,originalSheetTurns=0;
  const fail=(step,reason)=>errors.push({step,reason});
  const same=(a,b)=>a&&b&&['x','y','w','h'].every(k=>a[k]===b[k]);
  const A=profile.firstCutAxis,v=A==='V',span=z=>v?z.w:z.h,start=z=>v?z.x:z.y,far=p[v?'sheetW':'sheetH'];
@@ -33,6 +33,7 @@ function auditPrimary(p,layout,plan,profile){
   if(!b)continue;
   const role=roles.get(id);
   if(o.type==='rotate'){
+   if(role==='MAIN'||role==='TERMINAL_PENDING')originalSheetTurns++;
    if(role==='MAIN'||role==='TERMINAL_PENDING'||role==='TRIM'||!closed.has(b.sheet))fail(o.step,'Rotation of original sheet / main remainder or unfinished primary phase');
    if((r.blanks.find(a=>a.blankId===id)?.turnCount??0)>1)fail(o.step,'Second turn of one physical blank');
    const n=(ancestry.get(id)||0)+1;ancestry.set(id,n);maximum=Math.max(maximum,n);continue;
@@ -84,7 +85,7 @@ function auditPrimary(p,layout,plan,profile){
   limitations:['Machine feeding, clamps, stroke and hold dimensions are unspecified.',
    'Conservative candidate profile: real spanning detail for every primary band; not a universal BAZIS restriction.',
    'Explicit terminal band at stock edge, with declared border removal before any rotation.'],
-  metrics:{...r.metrics,ancestryTurnsMax:Math.max(0,...partTurns.map(a=>a.turns)),originalSheetTurns:0},
+  metrics:{...r.metrics,ancestryTurnsMax:Math.max(0,...partTurns.map(a=>a.turns)),originalSheetTurns},
   partTurns,primarySnapshots:snapshots.filter(a=>['MAIN','TERMINAL_PENDING'].includes(a.inputRole))};
 }
 function validateBands(p,layout,plan,profile){

@@ -17,7 +17,14 @@ function artifacts(s){
   files['primary-'+(si+1)+'.svg']=svg({x:0,y:0,w:p.sheetW,h:p.sheetH},[],'Первичные полосы · лист не поворачивается',lines);
   for(const b of bands)files['strip-'+(si+1)+'-'+b.index+'.svg']=svg(b.rect,sh.parts.filter(a=>inside(a,b.rect)),'Полоса '+b.index+' · '+b.rect.w+'×'+b.rect.h);
  }
+
+ for(const frame of report.primarySnapshots){
+  const children=frame.outputs.map(o=>{const a=o.rect,c=o.role==='DETACHED'?'#86efac':o.role==='MAIN'?'#fde68a':'#fecaca';
+   return '<rect x="'+a.x+'" y="'+a.y+'" width="'+a.w+'" height="'+a.h+'" fill="'+c+'" stroke="#333"/><text x="'+(a.x+20)+'" y="'+(a.y+Math.min(a.h-2,60))+'" font-size="28">'+esc(o.role+' '+a.w+'×'+a.h)+'</text>';}).join('');
+  files['primary-steps/cut-'+frame.cut+'.svg']=svg({x:0,y:0,w:p.sheetW,h:p.sheetH},[],'После CUT '+frame.cut+' · MAIN не поворачивается',children);
+ }
  const frames=[];
+
  for(const e of r.events.filter(a=>a.kind==='cut')){
   const b=e.before,o=e.op,q=b.q,W=q%2?b.rect.h:b.rect.w,H=q%2?b.rect.w:b.rect.h;
   const parts=s.sheets[b.sheet].parts.filter(a=>inside(a,b.rect)).map(a=>{
