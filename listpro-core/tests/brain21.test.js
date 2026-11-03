@@ -80,7 +80,8 @@ test('new saved profiles replay and all-level maps exist',()=>{
   const s=require('../benchmarks/brain21/'+key+'/result.json'),a=validateAncestryTurns(p,s,s.plan,s.technologyProfile);
   assert.equal(a.metrics.sheets,1);assert.equal(a.metrics.parts,26);
   assert.equal(a.metrics.cuts,key==='4'?43:41);if(key==='4')assert(a.metrics.ancestryTurnsMax<=4);
-  const files=exportTechnology(s);assert(files['levels/index.json']);assert(files['ancestry.html']);assert(files['operations.html'].includes('inherited path turns'));
+  const files=exportTechnology(s);assert(files['levels/index.json']);
+  const primary=JSON.parse(files['levels/index.json']).levels.filter(x=>x.level===1).flatMap(x=>x.blanks);assert(primary.length>0);assert(primary.every(b=>b.entryAncestryTurns===0));assert(files['ancestry.html']);assert(files['operations.html'].includes('inherited path turns'));
  }
 });
 test('published 43-cut profile cannot be relabelled zero-turn',()=>{

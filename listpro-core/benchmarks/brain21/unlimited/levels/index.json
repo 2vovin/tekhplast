@@ -26,7 +26,8 @@
             "h": 1830
           },
           "createdAt": 1,
-          "consumedAt": 2
+          "consumedAt": 2,
+          "entryAncestryTurns": 0
         }
       ]
     },
@@ -61,7 +62,8 @@
             "h": 1830
           },
           "createdAt": 6,
-          "consumedAt": 10
+          "consumedAt": 10,
+          "entryAncestryTurns": 0
         }
       ]
     },
@@ -96,7 +98,8 @@
             "w": 2720,
             "h": 5
           },
-          "createdAt": 10
+          "createdAt": 10,
+          "entryAncestryTurns": 1
         },
         {
           "label": 2,
@@ -125,7 +128,8 @@
             "h": 1820
           },
           "createdAt": 10,
-          "consumedAt": 12
+          "consumedAt": 12,
+          "entryAncestryTurns": 1
         }
       ]
     },
@@ -165,7 +169,8 @@
             "h": 1810
           },
           "createdAt": 15,
-          "consumedAt": 18
+          "consumedAt": 18,
+          "entryAncestryTurns": 2
         },
         {
           "label": 2,
@@ -198,7 +203,8 @@
             "h": 1810
           },
           "createdAt": 15,
-          "consumedAt": 27
+          "consumedAt": 27,
+          "entryAncestryTurns": 2
         }
       ]
     },
@@ -238,7 +244,8 @@
             "w": 966,
             "h": 719
           },
-          "createdAt": 18
+          "createdAt": 18,
+          "entryAncestryTurns": 3
         },
         {
           "label": 2,
@@ -272,7 +279,8 @@
             "h": 1086
           },
           "createdAt": 18,
-          "consumedAt": 20
+          "consumedAt": 20,
+          "entryAncestryTurns": 3
         },
         {
           "label": 3,
@@ -307,7 +315,8 @@
             "h": 270
           },
           "createdAt": 27,
-          "consumedAt": 35
+          "consumedAt": 35,
+          "entryAncestryTurns": 3
         },
         {
           "label": 4,
@@ -342,7 +351,8 @@
             "h": 1535
           },
           "createdAt": 27,
-          "consumedAt": 44
+          "consumedAt": 44,
+          "entryAncestryTurns": 3
         }
       ]
     },
@@ -387,7 +397,8 @@
             "w": 420,
             "h": 270
           },
-          "createdAt": 30
+          "createdAt": 30,
+          "entryAncestryTurns": 4
         },
         {
           "label": 2,
@@ -426,7 +437,8 @@
             "h": 270
           },
           "createdAt": 30,
-          "consumedAt": 32
+          "consumedAt": 32,
+          "entryAncestryTurns": 4
         },
         {
           "label": 3,
@@ -461,7 +473,8 @@
             "w": 420,
             "h": 270
           },
-          "createdAt": 35
+          "createdAt": 35,
+          "entryAncestryTurns": 4
         },
         {
           "label": 4,
@@ -497,7 +510,8 @@
             "h": 270
           },
           "createdAt": 35,
-          "consumedAt": 37
+          "consumedAt": 37,
+          "entryAncestryTurns": 4
         },
         {
           "label": 5,
@@ -534,7 +548,8 @@
             "h": 1535
           },
           "createdAt": 44,
-          "consumedAt": 47
+          "consumedAt": 47,
+          "entryAncestryTurns": 4
         },
         {
           "label": 6,
@@ -571,7 +586,8 @@
             "h": 1535
           },
           "createdAt": 44,
-          "consumedAt": 50
+          "consumedAt": 50,
+          "entryAncestryTurns": 4
         }
       ]
     },
@@ -615,7 +631,8 @@
             "w": 420,
             "h": 270
           },
-          "createdAt": 47
+          "createdAt": 47,
+          "entryAncestryTurns": 5
         },
         {
           "label": 2,
@@ -653,7 +670,8 @@
             "h": 1260
           },
           "createdAt": 47,
-          "consumedAt": 60
+          "consumedAt": 60,
+          "entryAncestryTurns": 5
         },
         {
           "label": 3,
@@ -692,7 +710,8 @@
             "h": 180
           },
           "createdAt": 50,
-          "consumedAt": 53
+          "consumedAt": 53,
+          "entryAncestryTurns": 5
         },
         {
           "label": 4,
@@ -730,7 +749,8 @@
             "h": 1350
           },
           "createdAt": 50,
-          "consumedAt": 55
+          "consumedAt": 55,
+          "entryAncestryTurns": 5
         }
       ]
     },
@@ -776,7 +796,8 @@
             "w": 238,
             "h": 180
           },
-          "createdAt": 53
+          "createdAt": 53,
+          "entryAncestryTurns": 6
         },
         {
           "label": 2,
@@ -816,7 +837,8 @@
             "h": 180
           },
           "createdAt": 53,
-          "consumedAt": 62
+          "consumedAt": 62,
+          "entryAncestryTurns": 6
         },
         {
           "label": 3,
@@ -856,7 +878,8 @@
             "w": 297,
             "h": 297
           },
-          "createdAt": 58
+          "createdAt": 58,
+          "entryAncestryTurns": 6
         },
         {
           "label": 4,
@@ -897,7 +920,8 @@
             "h": 297
           },
           "createdAt": 58,
-          "consumedAt": 64
+          "consumedAt": 64,
+          "entryAncestryTurns": 6
         },
         {
           "label": 5,
@@ -938,7 +962,8 @@
             "w": 1132,
             "h": 398
           },
-          "createdAt": 81
+          "createdAt": 81,
+          "entryAncestryTurns": 6
         },
         {
           "label": 6,
@@ -979,7 +1004,8 @@
             "w": 187,
             "h": 398
           },
-          "createdAt": 81
+          "createdAt": 81,
+          "entryAncestryTurns": 6
         },
         {
           "label": 7,
@@ -1021,7 +1047,8 @@
             "w": 1132,
             "h": 398
           },
-          "createdAt": 84
+          "createdAt": 84,
+          "entryAncestryTurns": 6
         },
         {
           "label": 8,
@@ -1063,7 +1090,8 @@
             "w": 187,
             "h": 398
           },
-          "createdAt": 84
+          "createdAt": 84,
+          "entryAncestryTurns": 6
         },
         {
           "label": 9,
@@ -1106,7 +1134,8 @@
             "w": 297,
             "h": 297
           },
-          "createdAt": 89
+          "createdAt": 89,
+          "entryAncestryTurns": 6
         },
         {
           "label": 10,
@@ -1149,7 +1178,8 @@
             "w": 118,
             "h": 297
           },
-          "createdAt": 89
+          "createdAt": 89,
+          "entryAncestryTurns": 6
         },
         {
           "label": 11,
@@ -1192,7 +1222,8 @@
             "w": 1000,
             "h": 219
           },
-          "createdAt": 98
+          "createdAt": 98,
+          "entryAncestryTurns": 6
         },
         {
           "label": 12,
@@ -1235,7 +1266,8 @@
             "w": 319,
             "h": 219
           },
-          "createdAt": 98
+          "createdAt": 98,
+          "entryAncestryTurns": 6
         }
       ]
     }

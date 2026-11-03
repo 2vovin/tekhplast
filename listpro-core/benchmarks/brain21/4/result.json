@@ -10294,6 +10294,15 @@
     "solverDepth": 2,
     "schedulerSearchNodes": 18060,
     "schedulerExhausted": false,
-    "elapsedMs": 14315
+    "elapsedMs": 5007,
+    "measurementHost": {
+      "node": "v22.23.4",
+      "platform": "linux",
+      "arch": "x64",
+      "cpu": "AMD EPYC 7763 64-Core Processor",
+      "cpuCount": 4,
+      "totalMemory": 16759439360
+    },
+    "runUrl": "https://github.com/2vovin/tekhplast/actions/runs/41667129121"
   }
 }

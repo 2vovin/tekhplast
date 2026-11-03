@@ -1,0 +1,22 @@
+{
+  "testedCommit": "781678457dae6b49d44c6ddd47e23d216379fbc3",
+  "runId": 41667129121,
+  "runUrl": "https://github.com/2vovin/tekhplast/actions/runs/41667129121",
+  "jobId": 126025336619,
+  "conclusion": "success",
+  "tests": {
+    "total": 9966,
+    "passed": 9966,
+    "failed": 0,
+    "durationMs": 37694.114292
+  },
+  "host": {
+    "node": "v22.23.4",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "cpuCount": 4,
+    "totalMemory": 16759439360
+  },
+  "benchmark": "All historical benchmarks plus Brain 2.1 controls, 25 order ablations, 50/100/200 parts under both profiles; success"
+}
