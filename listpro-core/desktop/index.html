@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; connect-src 'none'; frame-src 'none'">
+<title>ЛистПро Мебель</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+ <aside class="sidebar">
+  <div class="logo">
+   <span class="logoMark" aria-hidden="true"><span></span><span></span><span></span></span>
+   <span><strong>ЛистПро</strong><small>МЕБЕЛЬ · 0.1</small></span>
+  </div>
+  <div class="navLabel">РАБОЧЕЕ МЕСТО</div>
+  <nav aria-label="Разделы">
+   <button class="navbtn active" id="navCutting" type="button"><span class="navIcon">▦</span> Раскрой</button>
+   <button class="navbtn" id="navOperations" type="button"><span class="navIcon">≡</span> Операции</button>
+  </nav>
+  <div class="sidebarBottom">
+   <div class="profileInfo"><span class="profileDot"></span><div><strong>Пильный центр</strong><small>Held-Strips · PSS</small></div></div>
+   <p>Профиль оборудования не подтверждён. Не использовать карты как готовые программы ЧПУ.</p>
+   <button type="button" id="aboutBtn" class="aboutLink">О программе и ограничениях</button>
+  </div>
+ </aside>
+ <div class="workarea">
+  <header class="topbar">
+   <div><div class="crumb">ПРОИЗВОДСТВО / ОПТИМИЗАЦИЯ</div><h1>Раскрой листовых материалов</h1></div>
+   <div class="headerMeta"><span class="modePill"><span></span> Held-Strips PSS</span><span class="versionLabel">Экспериментальная версия</span></div>
+  </header>
+  <div class="actionbar">
+   <button type="button" class="btn ghost" id="newBtn">＋ Новый</button>
+   <button type="button" class="btn ghost" id="openBtn">Открыть проект</button>
+   <button type="button" class="btn ghost" id="exampleBtn">Контрольные 26 деталей</button>
+   <span class="barSpace"></span>
+   <button type="button" class="btn ghost" id="saveBtn">Сохранить проект</button>
+   <button type="button" class="btn primary" id="calculateBtn">▶ Раскроить</button>
+  </div>
+  <div class="content">
+   <div id="workspacePanel" class="split">
+    <section class="editor">
+     <div class="sectionTitle"><div><h2>Заказ и материалы</h2><p>Редактируйте исходные размеры в миллиметрах</p></div></div>
+     <div class="panel">
+      <label class="field full"><span>Название заказа</span><input type="text" id="projectName" maxlength="120" placeholder="Новый раскрой"></label>
+      <div class="fields">
+       <label class="field"><span>Длина листа, мм</span><input id="sheetW" inputmode="decimal" type="number" min="100" max="20000" step="1"></label>
+       <label class="field"><span>Ширина листа, мм</span><input id="sheetH" inputmode="decimal" type="number" min="100" max="20000" step="1"></label>
+       <label class="field"><span>Пропил, мм</span><input id="kerf" inputmode="decimal" type="number" min="0.1" max="30" step="0.1"></label>
+       <label class="field"><span>Обрезка края, мм</span><input id="trim" inputmode="decimal" type="number" min="0" max="200" step="1"></label>
+      </div>
+     </div>
+     <div class="sectionTitle partsTitle"><div><h2>Список деталей</h2><p>Номер детали назначается автоматически</p></div><span id="partCountCaption" class="smallPill">0 шт.</span></div>
+     <div class="panel tablePanel">
+      <div class="tableScroll"><table aria-label="Детали для раскроя"><thead><tr><th>№</th><th>Длина</th><th>Ширина</th><th>Кол-во</th><th title="Фиксированная текстура">Текстура</th><th>Примечание</th><th></th></tr></thead><tbody id="partsBody"></tbody></table></div>
+      <button type="button" class="addRow" id="addRowBtn">＋ Добавить деталь</button>
+     </div>
+     <div class="infoPanel"><span class="infoDot">i</span><p>Текстура включена — направление размера «Длина» сохраняется. При расчёте можно физически поворачивать только <strong>отделённые</strong> заготовки. Удерживаемые остатки не разворачиваются.</p></div>
+    </section>
+    <section class="visual">
+     <div class="kpis">
+      <div class="kpi"><small>Листов</small><strong id="statSheets">—</strong></div>
+      <div class="kpi"><small>Деталей</small><strong id="statParts">—</strong></div>
+      <div class="kpi"><small>Пропилов</small><strong id="statCuts">—</strong></div>
+      <div class="kpi"><small>Поворотов</small><strong id="statTurns">—</strong></div>
+     </div>
+     <div class="panel drawing">
+      <div class="drawingTop">
+       <div><h2>Карта раскроя</h2><p id="drawingSubtitle">Загрузите пример или нажмите «Раскроить»</p></div>
+       <div class="rightActions"><button id="exportSvgBtn" type="button" class="miniBtn" disabled>Экспорт SVG</button><button id="exportJsonBtn" type="button" class="miniBtn" disabled>JSON</button></div>
+      </div>
+      <div class="drawActions"><div id="sheetTabs" class="tabs"></div><label class="switch"><input type="checkbox" id="showStrips" checked> Полосы</label></div>
+      <div class="drawingViewport" id="drawingViewport"><svg id="mapSvg" role="img" aria-label="Карта раскроя"></svg><div id="emptyState" class="emptyState"><span>▦</span><strong>Карта ещё не рассчитана</strong><p>Загрузите контрольный пример или укажите свои детали</p></div></div>
+      <div class="drawingBottom"><span>Светлые области — неиспользованный материал</span><strong id="remnantText">Цельный остаток: —</strong></div>
+     </div>
+     <div id="validationBanner" class="validationBanner">Статус: ожидается расчёт</div>
+     <div class="panel operationsPreview">
+      <div class="drawingTop"><div><h2>Технологические операции</h2><p>Показывается реальная последовательность CUT / FEED / ROTATE</p></div><button id="showAllOpsBtn" class="miniBtn">Все операции</button></div>
+      <div class="stepControls"><button id="prevStepBtn" type="button" disabled>←</button><input id="stepRange" type="range" min="1" max="1" value="1" disabled><button id="nextStepBtn" type="button" disabled>→</button><span id="stepPosition">— / —</span></div>
+      <div class="stepDetails" id="stepDetails"><span class="muted">После расчёта здесь появятся резы, подачи и повороты.</span></div>
+     </div>
+    </section>
+   </div>
+   <section id="allOperations" class="panel allOperations" hidden>
+    <div class="drawingTop"><div><h2>Журнал физической обработки</h2><p>Нажмите на операцию, чтобы выделить её на карте</p></div><button id="backToCutting" class="btn ghost">← К раскрою</button></div>
+    <div class="tableScroll"><table><thead><tr><th>Шаг</th><th>Операция</th><th>Заготовка</th><th>Ось</th><th>Размер станка, мм</th><th>Примечание</th></tr></thead><tbody id="operationsBody"></tbody></table></div>
+   </section>
+  </div>
+  <footer><span id="statusLine">Готово. Демонстрационный режим PSS.</span><span>Модель станка: неизвестна · CNC не сформирован</span></footer>
+ </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div class="modalCover" id="aboutModal" hidden>
+ <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <h2 id="modalTitle">ЛистПро Мебель · первая версия</h2>
+  <p>Приложение использует экспериментальный алгоритм Held-Strips и независимую проверку физической последовательности резов. Раскрой выполняется локально на компьютере.</p>
+  <p>Тип станка сейчас один: <strong>пильный центр PSS</strong>. Требования по ходу пилы, прижимам, безопасному удержанию и подаче неизвестны — результат не является программой ЧПУ и не подтверждён для конкретного оборудования.</p>
+  <p>Сохранение проекта: JSON. Экспорт карты: SVG. Результат: проверенный JSON с операциями. Для промышленного использования необходима проверка технологом.</p>
+  <button id="closeAbout" type="button" class="btn primary">Понятно</button>
+ </div>
+</div>
+<script src="ui.js"></script>
+</body>
+</html>
