@@ -6,3 +6,5 @@
 #opDetails{font:12px/1.6 'Segoe UI',sans-serif;overflow-wrap:anywhere}#opDetails p{margin:6px 0 12px}.statusbar .passed{color:#007a45}.empty-state{padding:45px 20px;text-align:center}.empty-state strong{font-size:20px}#operationsBody tr{cursor:pointer}#operationsBody tr:hover{background:#edf9f3}
 
 @media print{.print-page{padding:0;break-inside:avoid}.print-page svg{height:165mm;width:100%}.print-page h2{margin:2mm 0}.print-page p{margin:2mm 0}}
+
+@media(max-width:700px){.work-actions{flex-wrap:wrap;justify-content:flex-start}.work-actions #importOpen,.work-actions #calculate{flex:1 0 calc(50% - 4px)}}

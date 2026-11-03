@@ -31,7 +31,7 @@
   worker.onerror=e=>{worker?.terminate();worker=null;setBusy(false);status('Ошибка расчёта. Изменения заказа сохранены в форме.');toast(e.message||'Не удалось выполнить расчёт.');};
   worker.postMessage({action,...payload});
  }
- function example(key){if(busy)return;const e=EX[key];project={...copy(e.parameters),name:e.name,material:'ЛДСП, 16 мм',objective:e.objective};result=null;fillForm();renderResult();modal('importModal',false);tab('map');request('validate',{input:project,layout:e.layout});}
+ function example(key){if(busy)return;clearTimeout(toastTimer);$('toast').classList.remove('visible');const e=EX[key];project={...copy(e.parameters),name:e.name,material:'ЛДСП, 16 мм',objective:e.objective};result=null;fillForm();renderResult();modal('importModal',false);tab('map');request('validate',{input:project,layout:e.layout});}
  const sheetOf=o=>o.sheet??Number((o.inputBlankId||o.blankId||'').match(/^s(\d+)/)?.[1]??0);
  function operation(){return result?.plan.operations[step];}
  function mapSVG(index,active=false){
@@ -78,7 +78,7 @@
   $('prevOp').disabled=step===0;$('nextOp').disabled=step===result.plan.operations.length-1;
   $('physicalDrawing').innerHTML=physicalSVG(op);
   const frame=result.verification.roleFrames.find(f=>f.step===op.step);
-  $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(c.rect.w)+' × '+fmt(c.rect.h)+' мм · '+(c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
+  $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
  }
  function renderResult(){
   const has=!!result;['print','export','prevSheet','nextSheet','prevOp','nextOp','opRange','exportOps','zoomIn','zoomOut','fit'].forEach(id=>$(id).disabled=!has);

@@ -8,6 +8,7 @@ test('web UI contract: verified initial map, full-width tabs, sheet and operatio
  h.elements.find(e=>e.dataset.tab==='parts').click();assert.equal(get('panel-map').hidden,true);assert.equal(get('panel-parts').hidden,false);
  get('nextSheet').click();assert.equal(get('sheetLabel').textContent,'Лист 2 из 2');
  get('nextOp').click();assert.match(get('opLabel').textContent,/Пропил/);assert.match(get('physicalDrawing').innerHTML,/<line/);
+ get('opRange').value=15;get('opRange').oninput();assert.match(get('opDetails').innerHTML,/500 × 2\s740 мм в станке/);assert.match(get('opDetails').innerHTML,/500 × 5 мм в станке · обрезок/);
 });
 test('web UI contract: objective changes invalidate the old map and actual worker recalculates',()=>{
  const h=start(),get=id=>h.ids.get(id);get('objective').value='cuts';get('objective').onchange();assert.equal(get('print').disabled,true);assert.equal(get('statCuts').textContent,'—');
