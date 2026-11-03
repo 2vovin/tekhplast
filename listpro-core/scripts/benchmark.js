@@ -33,3 +33,6 @@ require('./bazis-corrected-benchmark');
 
 // Independent Brain 2.0 experiment, keeps every historical benchmark.
 require('./recursive-strip-benchmark');
+
+// Brain 2.1 keeps all historical benchmarks and adds ancestry/stop models.
+require('./brain21-benchmark');

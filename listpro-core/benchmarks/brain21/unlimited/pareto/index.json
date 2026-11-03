@@ -1,0 +1,714 @@
+[
+  {
+    "file": "solution-1.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 41,
+      "cutLength": 33628,
+      "turns": 15,
+      "feeds": 40,
+      "stages": 7,
+      "operations": 98,
+      "largestWaste": 74426,
+      "wasteArea": 445953,
+      "totalHandlingTurns": 15,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 6,
+      "ancestryTurnsMaxAllBlanks": 6,
+      "stripLevelMax": 7,
+      "partStripLevelMax": 7,
+      "materialAxisStages": 7,
+      "sizeSettings": 32,
+      "distinctSettings": 31,
+      "stopTravel": 11386,
+      "stopDirectionReversals": 6,
+      "usefulRemnantArea": 74426
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "revalidated-incumbent"
+      },
+      "sorting": "utilization",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-2.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 41,
+      "cutLength": 33045,
+      "turns": 16,
+      "feeds": 40,
+      "stages": 9,
+      "operations": 99,
+      "largestWaste": 239630,
+      "wasteArea": 448868,
+      "totalHandlingTurns": 16,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 8,
+      "ancestryTurnsMaxAllBlanks": 8,
+      "stripLevelMax": 9,
+      "partStripLevelMax": 9,
+      "materialAxisStages": 9,
+      "sizeSettings": 26,
+      "distinctSettings": 25,
+      "stopTravel": 11013,
+      "stopDirectionReversals": 9,
+      "usefulRemnantArea": 239630
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "revalidated-incumbent"
+      },
+      "sorting": "size-asc",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-3.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 43,
+      "cutLength": 33825,
+      "turns": 14,
+      "feeds": 42,
+      "stages": 5,
+      "operations": 101,
+      "largestWaste": 75276,
+      "wasteArea": 445018,
+      "totalHandlingTurns": 14,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 4,
+      "ancestryTurnsMaxAllBlanks": 4,
+      "stripLevelMax": 5,
+      "partStripLevelMax": 5,
+      "materialAxisStages": 5,
+      "sizeSettings": 33,
+      "distinctSettings": 29,
+      "stopTravel": 13762,
+      "stopDirectionReversals": 17,
+      "usefulRemnantArea": 75276
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 5762,
+        "config": {
+          "delta": 0.1,
+          "dp": false,
+          "vertical": 0.16666666666666666,
+          "choices": 3,
+          "reverse": true,
+          "primary": 1
+        }
+      },
+      "sorting": "size-desc",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-4.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 43,
+      "cutLength": 34046,
+      "turns": 15,
+      "feeds": 42,
+      "stages": 5,
+      "operations": 102,
+      "largestWaste": 107100,
+      "wasteArea": 443913,
+      "totalHandlingTurns": 15,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 4,
+      "ancestryTurnsMaxAllBlanks": 4,
+      "stripLevelMax": 5,
+      "partStripLevelMax": 5,
+      "materialAxisStages": 5,
+      "sizeSettings": 32,
+      "distinctSettings": 28,
+      "stopTravel": 18939,
+      "stopDirectionReversals": 16,
+      "usefulRemnantArea": 107100
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 15422,
+        "config": {
+          "delta": 0.1,
+          "dp": false,
+          "vertical": 0.16666666666666666,
+          "choices": 3,
+          "reverse": true,
+          "primary": 1
+        }
+      },
+      "sorting": "original",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-5.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 43,
+      "cutLength": 34101,
+      "turns": 20,
+      "feeds": 42,
+      "stages": 7,
+      "operations": 107,
+      "largestWaste": 140494,
+      "wasteArea": 443588,
+      "totalHandlingTurns": 20,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 6,
+      "ancestryTurnsMaxAllBlanks": 6,
+      "stripLevelMax": 7,
+      "partStripLevelMax": 7,
+      "materialAxisStages": 7,
+      "sizeSettings": 31,
+      "distinctSettings": 26,
+      "stopTravel": 13708,
+      "stopDirectionReversals": 9,
+      "usefulRemnantArea": 140494
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 12512,
+        "config": {
+          "delta": 0.1,
+          "dp": false,
+          "vertical": 0.5,
+          "choices": 3,
+          "reverse": true,
+          "primary": 0
+        }
+      },
+      "sorting": "size-asc",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-6.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 35401,
+      "turns": 12,
+      "feeds": 43,
+      "stages": 5,
+      "operations": 101,
+      "largestWaste": 79110,
+      "wasteArea": 437138,
+      "totalHandlingTurns": 12,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 4,
+      "ancestryTurnsMaxAllBlanks": 4,
+      "stripLevelMax": 5,
+      "partStripLevelMax": 5,
+      "materialAxisStages": 5,
+      "sizeSettings": 35,
+      "distinctSettings": 32,
+      "stopTravel": 19706,
+      "stopDirectionReversals": 13,
+      "usefulRemnantArea": 79110
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 12131,
+        "config": {
+          "delta": 0.99,
+          "dp": false,
+          "vertical": 0,
+          "choices": 3,
+          "reverse": false,
+          "primary": 1
+        }
+      },
+      "sorting": "utilization",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-7.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 34463,
+      "turns": 13,
+      "feeds": 43,
+      "stages": 5,
+      "operations": 102,
+      "largestWaste": 128940,
+      "wasteArea": 441828,
+      "totalHandlingTurns": 13,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 4,
+      "ancestryTurnsMaxAllBlanks": 4,
+      "stripLevelMax": 5,
+      "partStripLevelMax": 5,
+      "materialAxisStages": 5,
+      "sizeSettings": 31,
+      "distinctSettings": 25,
+      "stopTravel": 15783,
+      "stopDirectionReversals": 14,
+      "usefulRemnantArea": 128940
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "revalidated-incumbent"
+      },
+      "sorting": "original",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-8.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 33793,
+      "turns": 15,
+      "feeds": 43,
+      "stages": 6,
+      "operations": 104,
+      "largestWaste": 77198,
+      "wasteArea": 445178,
+      "totalHandlingTurns": 15,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 5,
+      "ancestryTurnsMaxAllBlanks": 5,
+      "stripLevelMax": 6,
+      "partStripLevelMax": 6,
+      "materialAxisStages": 6,
+      "sizeSettings": 29,
+      "distinctSettings": 24,
+      "stopTravel": 13555,
+      "stopDirectionReversals": 9,
+      "usefulRemnantArea": 77198
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 5695,
+        "config": {
+          "delta": 0.05,
+          "dp": true,
+          "vertical": 0.6666666666666666,
+          "choices": 2,
+          "reverse": false,
+          "primary": 1
+        }
+      },
+      "sorting": "size-desc",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-9.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 34368,
+      "turns": 15,
+      "feeds": 43,
+      "stages": 6,
+      "operations": 104,
+      "largestWaste": 150840,
+      "wasteArea": 442303,
+      "totalHandlingTurns": 15,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 5,
+      "ancestryTurnsMaxAllBlanks": 5,
+      "stripLevelMax": 6,
+      "partStripLevelMax": 6,
+      "materialAxisStages": 6,
+      "sizeSettings": 32,
+      "distinctSettings": 30,
+      "stopTravel": 17161,
+      "stopDirectionReversals": 12,
+      "usefulRemnantArea": 150840
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 17167,
+        "config": {
+          "delta": 0.05,
+          "dp": false,
+          "vertical": 0.5,
+          "choices": 2,
+          "reverse": false,
+          "primary": 1
+        }
+      },
+      "sorting": "size-asc",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-10.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 34313,
+      "turns": 15,
+      "feeds": 43,
+      "stages": 5,
+      "operations": 104,
+      "largestWaste": 126819,
+      "wasteArea": 442578,
+      "totalHandlingTurns": 15,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 4,
+      "ancestryTurnsMaxAllBlanks": 4,
+      "stripLevelMax": 5,
+      "partStripLevelMax": 5,
+      "materialAxisStages": 5,
+      "sizeSettings": 32,
+      "distinctSettings": 29,
+      "stopTravel": 15126,
+      "stopDirectionReversals": 14,
+      "usefulRemnantArea": 126819
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 10214,
+        "config": {
+          "delta": 0.1,
+          "dp": false,
+          "vertical": 0.16666666666666666,
+          "choices": 3,
+          "reverse": true,
+          "primary": 1
+        }
+      },
+      "sorting": "utilization",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-11.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 33519,
+      "turns": 16,
+      "feeds": 43,
+      "stages": 7,
+      "operations": 105,
+      "largestWaste": 74426,
+      "wasteArea": 446548,
+      "totalHandlingTurns": 16,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 6,
+      "ancestryTurnsMaxAllBlanks": 6,
+      "stripLevelMax": 7,
+      "partStripLevelMax": 7,
+      "materialAxisStages": 7,
+      "sizeSettings": 34,
+      "distinctSettings": 31,
+      "stopTravel": 15742,
+      "stopDirectionReversals": 13,
+      "usefulRemnantArea": 74426
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 6106,
+        "config": {
+          "delta": 0.5,
+          "dp": false,
+          "vertical": 0.3333333333333333,
+          "choices": 2,
+          "reverse": true,
+          "primary": 1
+        }
+      },
+      "sorting": "original",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-12.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 33857,
+      "turns": 18,
+      "feeds": 43,
+      "stages": 7,
+      "operations": 107,
+      "largestWaste": 107312,
+      "wasteArea": 444858,
+      "totalHandlingTurns": 18,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 6,
+      "ancestryTurnsMaxAllBlanks": 6,
+      "stripLevelMax": 7,
+      "partStripLevelMax": 7,
+      "materialAxisStages": 7,
+      "sizeSettings": 36,
+      "distinctSettings": 35,
+      "stopTravel": 17219,
+      "stopDirectionReversals": 16,
+      "usefulRemnantArea": 107312
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 1478,
+        "config": {
+          "delta": 0.1,
+          "dp": false,
+          "vertical": 0.16666666666666666,
+          "choices": 3,
+          "reverse": true,
+          "primary": 1
+        }
+      },
+      "sorting": "size-asc",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-13.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 45,
+      "cutLength": 33893,
+      "turns": 15,
+      "feeds": 44,
+      "stages": 5,
+      "operations": 106,
+      "largestWaste": 164923,
+      "wasteArea": 444678,
+      "totalHandlingTurns": 15,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 4,
+      "ancestryTurnsMaxAllBlanks": 4,
+      "stripLevelMax": 5,
+      "partStripLevelMax": 5,
+      "materialAxisStages": 5,
+      "sizeSettings": 31,
+      "distinctSettings": 26,
+      "stopTravel": 17692,
+      "stopDirectionReversals": 13,
+      "usefulRemnantArea": 164923
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 16263,
+        "config": {
+          "delta": 0.2,
+          "dp": false,
+          "vertical": 0.3333333333333333,
+          "choices": 1,
+          "reverse": false,
+          "primary": 1
+        }
+      },
+      "sorting": "size-asc",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-14.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 45,
+      "cutLength": 34071,
+      "turns": 18,
+      "feeds": 44,
+      "stages": 7,
+      "operations": 109,
+      "largestWaste": 194832,
+      "wasteArea": 443788,
+      "totalHandlingTurns": 18,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 6,
+      "ancestryTurnsMaxAllBlanks": 6,
+      "stripLevelMax": 7,
+      "partStripLevelMax": 7,
+      "materialAxisStages": 7,
+      "sizeSettings": 33,
+      "distinctSettings": 29,
+      "stopTravel": 15695,
+      "stopDirectionReversals": 18,
+      "usefulRemnantArea": 194832
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 14206,
+        "config": {
+          "delta": 0.5,
+          "dp": false,
+          "vertical": 0.5,
+          "choices": 2,
+          "reverse": true,
+          "primary": 1
+        }
+      },
+      "sorting": "size-desc",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-15.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 45,
+      "cutLength": 33733,
+      "turns": 18,
+      "feeds": 44,
+      "stages": 7,
+      "operations": 109,
+      "largestWaste": 75180,
+      "wasteArea": 445478,
+      "totalHandlingTurns": 18,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 6,
+      "ancestryTurnsMaxAllBlanks": 6,
+      "stripLevelMax": 7,
+      "partStripLevelMax": 7,
+      "materialAxisStages": 7,
+      "sizeSettings": 37,
+      "distinctSettings": 35,
+      "stopTravel": 16877,
+      "stopDirectionReversals": 15,
+      "usefulRemnantArea": 75180
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 11418,
+        "config": {
+          "delta": 0,
+          "dp": false,
+          "vertical": 0.16666666666666666,
+          "choices": 1,
+          "reverse": true,
+          "primary": 1
+        }
+      },
+      "sorting": "original",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-16.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 45,
+      "cutLength": 33738,
+      "turns": 19,
+      "feeds": 44,
+      "stages": 7,
+      "operations": 110,
+      "largestWaste": 263350,
+      "wasteArea": 445403,
+      "totalHandlingTurns": 19,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 6,
+      "ancestryTurnsMaxAllBlanks": 6,
+      "stripLevelMax": 7,
+      "partStripLevelMax": 7,
+      "materialAxisStages": 7,
+      "sizeSettings": 26,
+      "distinctSettings": 23,
+      "stopTravel": 13853,
+      "stopDirectionReversals": 13,
+      "usefulRemnantArea": 263350
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "revalidated-incumbent"
+      },
+      "sorting": "utilization",
+      "strategy": "settings"
+    }
+  },
+  {
+    "file": "solution-17.json",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 46,
+      "cutLength": 33655,
+      "turns": 21,
+      "feeds": 45,
+      "stages": 8,
+      "operations": 114,
+      "largestWaste": 75180,
+      "wasteArea": 445868,
+      "totalHandlingTurns": 21,
+      "localTurnsMax": 1,
+      "ancestryTurnsMax": 7,
+      "ancestryTurnsMaxAllBlanks": 7,
+      "stripLevelMax": 8,
+      "partStripLevelMax": 8,
+      "materialAxisStages": 8,
+      "sizeSettings": 34,
+      "distinctSettings": 29,
+      "stopTravel": 17153,
+      "stopDirectionReversals": 13,
+      "usefulRemnantArea": 75180
+    },
+    "provenance": {
+      "kind": "sorted-scheduled",
+      "source": {
+        "kind": "new-trial",
+        "iteration": 9410,
+        "config": {
+          "delta": 0.1,
+          "dp": true,
+          "vertical": 0.3333333333333333,
+          "choices": 3,
+          "reverse": true,
+          "primary": 1
+        }
+      },
+      "sorting": "original",
+      "strategy": "settings"
+    }
+  }
+]

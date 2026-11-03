@@ -1,0 +1,52 @@
+{
+  "id": "brain-2.1-ancestry-4",
+  "mode": "PANEL_SAW_STAGED",
+  "abstract": true,
+  "machineFeasibility": "unknown",
+  "maxAncestryTurns": 4,
+  "maxLocalTurns": 1,
+  "initialLoadingTurns": 0,
+  "countTrimRotations": true,
+  "settingPersistence": "across-feeds",
+  "usefulRemnantMinWidth": 100,
+  "usefulRemnantMinHeight": 100,
+  "ranking": [
+    "sheets",
+    "cuts",
+    "totalHandlingTurns",
+    "sizeSettings",
+    "operations",
+    "usefulRemnantArea",
+    "cutLength"
+  ],
+  "baseProfile": {
+    "id": "abstract-staged-detached-strips-exam-v1",
+    "mode": "PANEL_SAW_STAGED",
+    "version": "1.2",
+    "machineCutAxes": [
+      "V"
+    ],
+    "allowedPrimaryAxes": [
+      "V",
+      "H"
+    ],
+    "maxSheetTurns": 0,
+    "maxTurnsPerBlank": 1,
+    "primarySide": "LOW",
+    "anchorAllowance": 0,
+    "feedDirection": "LONG_POSITIVE",
+    "trimPolicy": "parallel-side-margins-then-strip-end-trim",
+    "maxCutLength": null,
+    "maxFeedWidth": null,
+    "maxFeedHeight": null,
+    "minHoldWidth": 0,
+    "minHoldHeight": 0,
+    "maxStages": null,
+    "assumptions": [
+      "Primary strips must be physically cut off before processing. Final primary remainder remains waste; never promoted. Single real leading anchor is not required in this separate exam model. Machine feasibility unknown."
+    ],
+    "firstCutAxis": "V",
+    "anchorRequired": false,
+    "allowStripRotation": true
+  }
+}

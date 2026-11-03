@@ -1,0 +1,1243 @@
+{
+  "definition": "raw sheet 0; detached primary strip 1; a rotated strip advances one level on its next CUT; parallel cuts keep level",
+  "levels": [
+    {
+      "sheet": 0,
+      "level": 0,
+      "file": "levels/sheet-1-level-0.svg",
+      "blanks": [
+        {
+          "label": 1,
+          "blankId": "s0/raw",
+          "parentBlankId": null,
+          "localTurns": 0,
+          "ancestryTurns": 0,
+          "rotationSteps": [],
+          "ancestors": [],
+          "level": 0,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 0,
+          "machineOrientation": 0,
+          "materialRect": {
+            "x": 0,
+            "y": 0,
+            "w": 2750,
+            "h": 1830
+          },
+          "createdAt": 1,
+          "consumedAt": 2
+        }
+      ]
+    },
+    {
+      "sheet": 0,
+      "level": 1,
+      "file": "levels/sheet-1-level-1.svg",
+      "blanks": [
+        {
+          "label": 1,
+          "blankId": "s0/strip1",
+          "parentBlankId": "s0/body",
+          "localTurns": 1,
+          "ancestryTurns": 1,
+          "rotationSteps": [
+            9
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body"
+          ],
+          "level": 1,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 0,
+          "machineOrientation": 90,
+          "materialRect": {
+            "x": 10,
+            "y": 0,
+            "w": 2720,
+            "h": 1830
+          },
+          "createdAt": 6,
+          "consumedAt": 10
+        }
+      ]
+    },
+    {
+      "sheet": 0,
+      "level": 2,
+      "file": "levels/sheet-1-level-2.svg",
+      "blanks": [
+        {
+          "label": 1,
+          "blankId": "s0/strip1/top",
+          "parentBlankId": "s0/strip1",
+          "localTurns": 0,
+          "ancestryTurns": 1,
+          "rotationSteps": [
+            9
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1"
+          ],
+          "level": 2,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 90,
+          "machineOrientation": 90,
+          "materialRect": {
+            "x": 10,
+            "y": 0,
+            "w": 2720,
+            "h": 5
+          },
+          "createdAt": 10
+        },
+        {
+          "label": 2,
+          "blankId": "s0/strip1/after-top",
+          "parentBlankId": "s0/strip1",
+          "localTurns": 0,
+          "ancestryTurns": 1,
+          "rotationSteps": [
+            9
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1"
+          ],
+          "level": 2,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 90,
+          "machineOrientation": 90,
+          "materialRect": {
+            "x": 10,
+            "y": 10,
+            "w": 2720,
+            "h": 1820
+          },
+          "createdAt": 10,
+          "consumedAt": 12
+        }
+      ]
+    },
+    {
+      "sheet": 0,
+      "level": 3,
+      "file": "levels/sheet-1-level-3.svg",
+      "blanks": [
+        {
+          "label": 1,
+          "blankId": "s0/strip1/work/0",
+          "parentBlankId": "s0/strip1/work",
+          "localTurns": 1,
+          "ancestryTurns": 3,
+          "rotationSteps": [
+            9,
+            14,
+            17
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work"
+          ],
+          "level": 3,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 270,
+          "materialRect": {
+            "x": 10,
+            "y": 10,
+            "w": 966,
+            "h": 1810
+          },
+          "createdAt": 15,
+          "consumedAt": 18
+        },
+        {
+          "label": 2,
+          "blankId": "s0/strip1/work/1",
+          "parentBlankId": "s0/strip1/work",
+          "localTurns": 1,
+          "ancestryTurns": 3,
+          "rotationSteps": [
+            9,
+            14,
+            26
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work"
+          ],
+          "level": 3,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 270,
+          "materialRect": {
+            "x": 981,
+            "y": 10,
+            "w": 1749,
+            "h": 1810
+          },
+          "createdAt": 15,
+          "consumedAt": 27
+        }
+      ]
+    },
+    {
+      "sheet": 0,
+      "level": 4,
+      "file": "levels/sheet-1-level-4.svg",
+      "blanks": [
+        {
+          "label": 1,
+          "blankId": "s0/strip1/work/0/0",
+          "parentBlankId": "s0/strip1/work/0",
+          "localTurns": 0,
+          "ancestryTurns": 3,
+          "rotationSteps": [
+            9,
+            14,
+            17
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/0"
+          ],
+          "level": 4,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 270,
+          "machineOrientation": 270,
+          "materialRect": {
+            "x": 10,
+            "y": 10,
+            "w": 966,
+            "h": 719
+          },
+          "createdAt": 18
+        },
+        {
+          "label": 2,
+          "blankId": "s0/strip1/work/0/1",
+          "parentBlankId": "s0/strip1/work/0",
+          "localTurns": 0,
+          "ancestryTurns": 3,
+          "rotationSteps": [
+            9,
+            14,
+            17
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/0"
+          ],
+          "level": 4,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 270,
+          "machineOrientation": 270,
+          "materialRect": {
+            "x": 10,
+            "y": 734,
+            "w": 966,
+            "h": 1086
+          },
+          "createdAt": 18,
+          "consumedAt": 20
+        },
+        {
+          "label": 3,
+          "blankId": "s0/strip1/work/1/0",
+          "parentBlankId": "s0/strip1/work/1",
+          "localTurns": 1,
+          "ancestryTurns": 4,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            34
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1"
+          ],
+          "level": 4,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 270,
+          "machineOrientation": 0,
+          "materialRect": {
+            "x": 981,
+            "y": 10,
+            "w": 1749,
+            "h": 270
+          },
+          "createdAt": 27,
+          "consumedAt": 35
+        },
+        {
+          "label": 4,
+          "blankId": "s0/strip1/work/1/1",
+          "parentBlankId": "s0/strip1/work/1",
+          "localTurns": 1,
+          "ancestryTurns": 4,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1"
+          ],
+          "level": 4,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 270,
+          "machineOrientation": 0,
+          "materialRect": {
+            "x": 981,
+            "y": 285,
+            "w": 1749,
+            "h": 1535
+          },
+          "createdAt": 27,
+          "consumedAt": 44
+        }
+      ]
+    },
+    {
+      "sheet": 0,
+      "level": 5,
+      "file": "levels/sheet-1-level-5.svg",
+      "blanks": [
+        {
+          "label": 1,
+          "blankId": "s0/strip1/work/0/1/1/1/0/0",
+          "parentBlankId": "s0/strip1/work/0/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 4,
+          "rotationSteps": [
+            9,
+            14,
+            17,
+            29
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/0",
+            "s0/strip1/work/0/1",
+            "s0/strip1/work/0/1/1",
+            "s0/strip1/work/0/1/1/1",
+            "s0/strip1/work/0/1/1/1/0"
+          ],
+          "level": 5,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 0,
+          "machineOrientation": 0,
+          "materialRect": {
+            "x": 10,
+            "y": 1540,
+            "w": 420,
+            "h": 270
+          },
+          "createdAt": 30
+        },
+        {
+          "label": 2,
+          "blankId": "s0/strip1/work/0/1/1/1/0/1",
+          "parentBlankId": "s0/strip1/work/0/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 4,
+          "rotationSteps": [
+            9,
+            14,
+            17,
+            29
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/0",
+            "s0/strip1/work/0/1",
+            "s0/strip1/work/0/1/1",
+            "s0/strip1/work/0/1/1/1",
+            "s0/strip1/work/0/1/1/1/0"
+          ],
+          "level": 5,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 0,
+          "machineOrientation": 0,
+          "materialRect": {
+            "x": 435,
+            "y": 1540,
+            "w": 541,
+            "h": 270
+          },
+          "createdAt": 30,
+          "consumedAt": 32
+        },
+        {
+          "label": 3,
+          "blankId": "s0/strip1/work/1/0/0",
+          "parentBlankId": "s0/strip1/work/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 4,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            34
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/0"
+          ],
+          "level": 5,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 0,
+          "machineOrientation": 0,
+          "materialRect": {
+            "x": 981,
+            "y": 10,
+            "w": 420,
+            "h": 270
+          },
+          "createdAt": 35
+        },
+        {
+          "label": 4,
+          "blankId": "s0/strip1/work/1/0/1",
+          "parentBlankId": "s0/strip1/work/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 4,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            34
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/0"
+          ],
+          "level": 5,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 0,
+          "machineOrientation": 0,
+          "materialRect": {
+            "x": 1406,
+            "y": 10,
+            "w": 1324,
+            "h": 270
+          },
+          "createdAt": 35,
+          "consumedAt": 37
+        },
+        {
+          "label": 5,
+          "blankId": "s0/strip1/work/1/1/0",
+          "parentBlankId": "s0/strip1/work/1/1",
+          "localTurns": 1,
+          "ancestryTurns": 5,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            46
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1"
+          ],
+          "level": 5,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 0,
+          "machineOrientation": 90,
+          "materialRect": {
+            "x": 981,
+            "y": 285,
+            "w": 420,
+            "h": 1535
+          },
+          "createdAt": 44,
+          "consumedAt": 47
+        },
+        {
+          "label": 6,
+          "blankId": "s0/strip1/work/1/1/1",
+          "parentBlankId": "s0/strip1/work/1/1",
+          "localTurns": 1,
+          "ancestryTurns": 5,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1"
+          ],
+          "level": 5,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 0,
+          "machineOrientation": 90,
+          "materialRect": {
+            "x": 1406,
+            "y": 285,
+            "w": 1324,
+            "h": 1535
+          },
+          "createdAt": 44,
+          "consumedAt": 50
+        }
+      ]
+    },
+    {
+      "sheet": 0,
+      "level": 6,
+      "file": "levels/sheet-1-level-6.svg",
+      "blanks": [
+        {
+          "label": 1,
+          "blankId": "s0/strip1/work/1/1/0/0",
+          "parentBlankId": "s0/strip1/work/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 5,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            46
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/0"
+          ],
+          "level": 6,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 90,
+          "machineOrientation": 90,
+          "materialRect": {
+            "x": 981,
+            "y": 285,
+            "w": 420,
+            "h": 270
+          },
+          "createdAt": 47
+        },
+        {
+          "label": 2,
+          "blankId": "s0/strip1/work/1/1/0/1",
+          "parentBlankId": "s0/strip1/work/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 5,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            46
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/0"
+          ],
+          "level": 6,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 90,
+          "machineOrientation": 90,
+          "materialRect": {
+            "x": 981,
+            "y": 560,
+            "w": 420,
+            "h": 1260
+          },
+          "createdAt": 47,
+          "consumedAt": 60
+        },
+        {
+          "label": 3,
+          "blankId": "s0/strip1/work/1/1/1/0",
+          "parentBlankId": "s0/strip1/work/1/1/1",
+          "localTurns": 1,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            52
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1"
+          ],
+          "level": 6,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 90,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 1406,
+            "y": 285,
+            "w": 1324,
+            "h": 180
+          },
+          "createdAt": 50,
+          "consumedAt": 53
+        },
+        {
+          "label": 4,
+          "blankId": "s0/strip1/work/1/1/1/1",
+          "parentBlankId": "s0/strip1/work/1/1/1",
+          "localTurns": 0,
+          "ancestryTurns": 5,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1"
+          ],
+          "level": 6,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 90,
+          "machineOrientation": 90,
+          "materialRect": {
+            "x": 1406,
+            "y": 470,
+            "w": 1324,
+            "h": 1350
+          },
+          "createdAt": 50,
+          "consumedAt": 55
+        }
+      ]
+    },
+    {
+      "sheet": 0,
+      "level": 7,
+      "file": "levels/sheet-1-level-7.svg",
+      "blanks": [
+        {
+          "label": 1,
+          "blankId": "s0/strip1/work/1/1/1/0/0",
+          "parentBlankId": "s0/strip1/work/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            52
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1",
+            "s0/strip1/work/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 1406,
+            "y": 285,
+            "w": 238,
+            "h": 180
+          },
+          "createdAt": 53
+        },
+        {
+          "label": 2,
+          "blankId": "s0/strip1/work/1/1/1/0/1",
+          "parentBlankId": "s0/strip1/work/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            52
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1",
+            "s0/strip1/work/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 1649,
+            "y": 285,
+            "w": 1081,
+            "h": 180
+          },
+          "createdAt": 53,
+          "consumedAt": 62
+        },
+        {
+          "label": 3,
+          "blankId": "s0/strip1/work/1/1/1/1/0/0",
+          "parentBlankId": "s0/strip1/work/1/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            57
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1",
+            "s0/strip1/work/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 1406,
+            "y": 470,
+            "w": 297,
+            "h": 297
+          },
+          "createdAt": 58
+        },
+        {
+          "label": 4,
+          "blankId": "s0/strip1/work/1/1/1/1/0/1",
+          "parentBlankId": "s0/strip1/work/1/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            57
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1",
+            "s0/strip1/work/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 1708,
+            "y": 470,
+            "w": 1022,
+            "h": 297
+          },
+          "createdAt": 58,
+          "consumedAt": 64
+        },
+        {
+          "label": 5,
+          "blankId": "s0/strip1/work/1/1/1/1/1/0/0",
+          "parentBlankId": "s0/strip1/work/1/1/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            80
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1",
+            "s0/strip1/work/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 1406,
+            "y": 772,
+            "w": 1132,
+            "h": 398
+          },
+          "createdAt": 81
+        },
+        {
+          "label": 6,
+          "blankId": "s0/strip1/work/1/1/1/1/1/0/1",
+          "parentBlankId": "s0/strip1/work/1/1/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            80
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1",
+            "s0/strip1/work/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 2543,
+            "y": 772,
+            "w": 187,
+            "h": 398
+          },
+          "createdAt": 81
+        },
+        {
+          "label": 7,
+          "blankId": "s0/strip1/work/1/1/1/1/1/1/0/0",
+          "parentBlankId": "s0/strip1/work/1/1/1/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            83
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1",
+            "s0/strip1/work/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 1406,
+            "y": 1175,
+            "w": 1132,
+            "h": 398
+          },
+          "createdAt": 84
+        },
+        {
+          "label": 8,
+          "blankId": "s0/strip1/work/1/1/1/1/1/1/0/1",
+          "parentBlankId": "s0/strip1/work/1/1/1/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            83
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1",
+            "s0/strip1/work/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 2543,
+            "y": 1175,
+            "w": 187,
+            "h": 398
+          },
+          "createdAt": 84
+        },
+        {
+          "label": 9,
+          "blankId": "s0/strip1/work/1/1/0/1/1/1/1/0/0",
+          "parentBlankId": "s0/strip1/work/1/1/0/1/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            46,
+            88
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/0",
+            "s0/strip1/work/1/1/0/1",
+            "s0/strip1/work/1/1/0/1/1",
+            "s0/strip1/work/1/1/0/1/1/1",
+            "s0/strip1/work/1/1/0/1/1/1/1",
+            "s0/strip1/work/1/1/0/1/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 981,
+            "y": 1385,
+            "w": 297,
+            "h": 297
+          },
+          "createdAt": 89
+        },
+        {
+          "label": 10,
+          "blankId": "s0/strip1/work/1/1/0/1/1/1/1/0/1",
+          "parentBlankId": "s0/strip1/work/1/1/0/1/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            46,
+            88
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/0",
+            "s0/strip1/work/1/1/0/1",
+            "s0/strip1/work/1/1/0/1/1",
+            "s0/strip1/work/1/1/0/1/1/1",
+            "s0/strip1/work/1/1/0/1/1/1/1",
+            "s0/strip1/work/1/1/0/1/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 1283,
+            "y": 1385,
+            "w": 118,
+            "h": 297
+          },
+          "createdAt": 89
+        },
+        {
+          "label": 11,
+          "blankId": "s0/strip1/work/1/1/1/1/1/1/1/0/0",
+          "parentBlankId": "s0/strip1/work/1/1/1/1/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            97
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1",
+            "s0/strip1/work/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 1406,
+            "y": 1578,
+            "w": 1000,
+            "h": 219
+          },
+          "createdAt": 98
+        },
+        {
+          "label": 12,
+          "blankId": "s0/strip1/work/1/1/1/1/1/1/1/0/1",
+          "parentBlankId": "s0/strip1/work/1/1/1/1/1/1/1/0",
+          "localTurns": 0,
+          "ancestryTurns": 6,
+          "rotationSteps": [
+            9,
+            14,
+            26,
+            43,
+            49,
+            97
+          ],
+          "ancestors": [
+            "s0/raw",
+            "s0/side-rem",
+            "s0/body",
+            "s0/strip1",
+            "s0/strip1/after-top",
+            "s0/strip1/work",
+            "s0/strip1/work/1",
+            "s0/strip1/work/1/1",
+            "s0/strip1/work/1/1/1",
+            "s0/strip1/work/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/1/1",
+            "s0/strip1/work/1/1/1/1/1/1/1/0"
+          ],
+          "level": 7,
+          "pendingLevel": false,
+          "sheet": 0,
+          "initialMachineOrientation": 180,
+          "machineOrientation": 180,
+          "materialRect": {
+            "x": 2411,
+            "y": 1578,
+            "w": 319,
+            "h": 219
+          },
+          "createdAt": 98
+        }
+      ]
+    }
+  ]
+}
