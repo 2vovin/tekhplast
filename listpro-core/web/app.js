@@ -3,7 +3,7 @@
  const $=id=>document.getElementById(id),all=s=>Array.from(document.querySelectorAll(s)),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const EX=JSON.parse($('examples').textContent),copy=o=>JSON.parse(JSON.stringify(o)),fmt=n=>Number(n).toLocaleString('ru-RU',{maximumFractionDigits:2});
  const colors=['#bedcf8','#c6ead7','#e1d5f9','#ffe2aa','#f6cddd','#b8e7ed'];
- let project,result=null,sheet=0,step=0,zoom=1,worker=null,busy=false,toastTimer,focusBefore;
+ let project,result=null,sheet=0,step=0,zoom=1,columns=2,worker=null,busy=false,toastTimer,focusBefore;
  function toast(s){$('toast').textContent=s;$('toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),4500);}
  function tab(key){all('[data-tab]').forEach(b=>{const on=b.dataset.tab===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on);});all('[role="tabpanel"]').forEach(p=>p.hidden=p.id!=='panel-'+key);}
  function modal(id,on){if(on){focusBefore=document.activeElement;$(id).hidden=false;$(id).querySelector('button,textarea,input')?.focus();}else{$(id).hidden=true;focusBefore?.focus();}}
@@ -34,9 +34,9 @@
  function example(key){if(busy)return;clearTimeout(toastTimer);$('toast').classList.remove('visible');const e=EX[key];project={...copy(e.parameters),name:e.name,material:'ЛДСП, 16 мм',objective:e.objective};result=null;fillForm();renderResult();modal('importModal',false);tab('map');request('validate',{input:project,layout:e.layout});}
  const sheetOf=o=>o.sheet??Number((o.inputBlankId||o.blankId||'').match(/^s(\d+)/)?.[1]??0);
  function operation(){return result?.plan.operations[step];}
- function mapSVG(index,active=false){
+ function mapSVG(index,active=false,thumbnail=false){
   const p=result.parameters,sh=result.sheets[index],W=p.sheetW,H=p.sheetH,margin=Math.max(W*.045,90),fs=W*.014;
-  const id='hatch-'+index+'-'+(active?'active':'print'),op=active?operation():null;
+  const id='hatch-'+index+'-'+(thumbnail?'grid':active?'active':'print'),op=active?operation():null;
   let out='<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+(-margin)+' '+(-margin)+' '+(W+margin*1.4)+' '+(H+margin*1.4)+'" role="img" aria-label="Карта раскроя, лист '+(index+1)+'" style="font-family:Segoe UI,Arial,sans-serif;background:#fff"><defs><pattern id="'+id+'" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="22" height="22" fill="#f4f6f8"/><line x1="0" y1="0" x2="0" y2="22" stroke="#dae1e9" stroke-width="3"/></pattern></defs>';
   out+='<rect width="'+W+'" height="'+H+'" fill="url(#'+id+')" stroke="#52647b" stroke-width="3"/>';
   out+='<path d="M0 -25v-22M'+W+' -25v-22M0 -36H'+W+' M-25 0h-22M-25 '+H+'h-22M-36 0V'+H+'" fill="none" stroke="#53647b" stroke-width="2"/><text x="'+W/2+'" y="-55" text-anchor="middle" font-size="'+fs+'" font-weight="600">'+fmt(W)+' мм</text><text transform="translate(-65 '+H/2+') rotate(-90)" text-anchor="middle" font-size="'+fs+'" font-weight="600">'+fmt(H)+' мм</text>';
@@ -50,7 +50,7 @@
   if(op?.materialRect){const r=op.materialRect;out+='<rect x="'+r.x+'" y="'+r.y+'" width="'+r.w+'" height="'+r.h+'" fill="none" stroke="#0b9061" stroke-width="5" stroke-dasharray="18 10"/>';
    if(op.type==='cut'){const v=op.materialAxis==='V';out+='<rect x="'+(v?op.materialPos:r.x)+'" y="'+(v?r.y:op.materialPos)+'" width="'+(v?p.kerf:r.w)+'" height="'+(v?r.h:p.kerf)+'" fill="#e24a36"/><line x1="'+(v?op.materialPos:r.x)+'" y1="'+(v?r.y:op.materialPos)+'" x2="'+(v?op.materialPos:r.x+r.w)+'" y2="'+(v?r.y+r.h:op.materialPos)+'" stroke="#dc3e2b" stroke-width="5"/>';}
   }
-  return out+'</svg>';
+  return thumbnail?(out+'</svg>').replace(/ tabindex="0" role="button"/g,''):out+'</svg>';
  }
  function physicalSVG(op){
   if(!op?.materialRect)return '';
@@ -65,13 +65,27 @@
   return s+'</svg>';
  }
  const typeName=o=>({load:'Загрузка листа',feed:o.feedMode==='advance-in-place'?'Продвижение остатка':'Установка полосы',cut:(o.edgeFinish?'Торцовка №':'Пропил №')+o.cutIndex,rotate:'Поворот на 90°',endPrimary:'Первичные полосы отделены'}[o.type]||o.type);
- function draw(){  $('drawing').classList.toggle('empty',!result);
-  if(!result){$('drawing').innerHTML='<div class="empty-state"><strong>Карта появится после расчёта</strong><p>Загрузите детали или выберите пример.</p></div>';$('physicalDrawing').innerHTML='';$('opDetails').textContent='';$('opLabel').textContent='Последовательность ещё не рассчитана';return;}
+ function draw(){
+  const gallery=!!result&&columns>1;
+  $('sheetGallery').hidden=!gallery;$('drawing').hidden=gallery;$('sheetTabs').hidden=gallery;$('sheetReplay').hidden=!result||gallery;
+  $('prevSheet').hidden=gallery;$('nextSheet').hidden=gallery;
+  for(const [id,n]of [['viewSingle',1],['viewTwo',2],['viewThree',3]])$(id).setAttribute('aria-pressed',String(columns===n));
+  for(const id of ['zoomIn','zoomOut','fit'])$(id).disabled=!result||gallery;
+  $('partHint').textContent=gallery?'Нажмите на лист, чтобы открыть крупную карту и шаги распила':'Нажмите на деталь, чтобы узнать размеры';
+  $('drawing').classList.toggle('empty',!result);
+  if(!result){$('sheetGallery').innerHTML='';$('drawing').innerHTML='<div class="empty-state"><strong>Карта появится после расчёта</strong><p>Загрузите детали или выберите пример.</p></div>';$('physicalDrawing').innerHTML='';$('opDetails').textContent='';$('opLabel').textContent='Последовательность ещё не рассчитана';return;}
   const sh=result.sheets[sheet],p=result.parameters,op=operation();
+  if(gallery){
+   $('sheetGallery').setAttribute('data-columns',String(columns));
+   $('sheetGallery').innerHTML=result.sheets.map((sh,i)=>{
+    const usage=fmt(100*sh.parts.reduce((n,a)=>n+a.w*a.h,0)/(p.sheetW*p.sheetH));
+    return '<button class="sheet-card" data-open-sheet="'+i+'" aria-label="Открыть лист '+(i+1)+' крупно"><span class="sheet-card-header"><strong>Лист '+(i+1)+'</strong><span>'+sh.parts.length+' дет. · '+usage+'%</span></span>'+mapSVG(i,false,true)+'<span class="sheet-card-footer">'+fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм<span>Открыть лист</span></span></button>';
+   }).join('');
+  }
   $('drawing').innerHTML=mapSVG(sheet,true);const picture=$('drawing').firstElementChild;picture.style.width=zoom===1?(document.fullscreenElement?'100%':'min(100%, 780px)'):(zoom*100)+'%';picture.style.maxHeight=zoom===1?(document.fullscreenElement?'78vh':'min(52vh, 520px)'):'none';
-  $('sheetLabel').textContent='Лист '+(sheet+1)+' из '+result.sheets.length;$('prevSheet').disabled=sheet===0;$('nextSheet').disabled=sheet===result.sheets.length-1;
+  $('sheetLabel').textContent=gallery?'Все листы · '+result.sheets.length:'Лист '+(sheet+1)+' из '+result.sheets.length;$('prevSheet').disabled=sheet===0;$('nextSheet').disabled=sheet===result.sheets.length-1;
   $('materialBadge').textContent=project.material;$('sizeBadge').textContent=fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм';
-  $('usageBadge').textContent='Использование: '+fmt(100*sh.parts.reduce((n,a)=>n+a.w*a.h,0)/(p.sheetW*p.sheetH))+'%';
+  $('usageBadge').textContent='Использование: '+fmt(100*(gallery?result.sheets.flatMap(s=>s.parts):sh.parts).reduce((n,a)=>n+a.w*a.h,0)/(p.sheetW*p.sheetH*(gallery?result.sheets.length:1)))+'%';
   $('sheetTabs').innerHTML=result.sheets.map((s,i)=>'<button class="sheet-chip '+(i===sheet?'active':'')+'" data-sheet="'+i+'">Лист '+(i+1)+' <span>'+s.parts.length+' дет.</span></button>').join('');
   $('opRange').max=result.plan.operations.length-1;$('opRange').value=step;
   $('opLabel').textContent='Шаг '+op.step+' / '+result.plan.operations.length+' · '+typeName(op);
@@ -90,7 +104,7 @@
   $('operationsBody').innerHTML=result.plan.operations.map((o,i)=>'<tr data-step="'+i+'" tabindex="0"><td>'+o.step+'</td><td>'+(sheetOf(o)+1)+'</td><td>'+esc(typeName(o))+'</td><td>'+esc(o.inputBlankId||o.blankId||'—')+'</td><td>'+(o.w?fmt(o.w)+' × '+fmt(o.h):'—')+'</td><td>'+(o.fromOrientation??o.machineOrientation??0)+'°</td><td>'+esc(o.axis||'—')+'</td><td>'+(o.type==='cut'?fmt(o.axis==='V'?o.start.x:o.start.y):'—')+'</td></tr>').join('');
   draw();
  }
- function gotoStep(n){if(!result)return;step=Math.max(0,Math.min(n,result.plan.operations.length-1));sheet=sheetOf(operation());draw();}
+ function gotoStep(n){if(!result)return;columns=1;step=Math.max(0,Math.min(n,result.plan.operations.length-1));sheet=sheetOf(operation());draw();}
  function gotoSheet(n){if(!result)return;sheet=Math.max(0,Math.min(n,result.sheets.length-1));step=result.plan.operations.findIndex(o=>o.type==='load'&&o.sheet===sheet);draw();}
  function download(name,text,type){const u=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
  function json(name,data){download(name,JSON.stringify(data,null,2),'application/json;charset=utf-8');}
@@ -138,6 +152,8 @@
  $('downloadCsv').onclick=()=>{if(result)csv('listpro-parts.csv',[['Лист','Деталь','Экземпляр','X','Y','Ширина','Высота','Поворот'],...result.sheets.flatMap((s,i)=>s.parts.map(a=>[i+1,a.id,a.instance,a.x,a.y,a.w,a.h,a.rotated?'Да':'Нет']))]);};
  $('exportOps').onclick=()=>{if(result)csv('listpro-operations.csv',[['Шаг','Лист','Операция','Заготовка','Ширина','Высота','Ось','Позиция'],...result.plan.operations.map(o=>[o.step,sheetOf(o)+1,typeName(o),o.inputBlankId||o.blankId,o.w,o.h,o.axis,o.type==='cut'?(o.axis==='V'?o.start.x:o.start.y):''])]);};
  $('print').onclick=()=>{if(!result)return;$('printPages').innerHTML=result.sheets.map((s,i)=>'<section class="print-page"><h2>'+esc(project.name)+' · лист '+(i+1)+'</h2>'+mapSVG(i)+'<p>Пропил '+result.parameters.kerf+' мм · обрезка '+result.parameters.trim+' мм · '+s.parts.length+' деталей. PSS проверен. Совместимость со станком не подтверждена.</p></section>').join('');window.print();};
+ for(const [id,n]of [['viewSingle',1],['viewTwo',2],['viewThree',3]])$(id).onclick=()=>{columns=n;zoom=1;draw();};
+ $('sheetGallery').onclick=e=>{const card=e.target.closest('[data-open-sheet]');if(!card||!result)return;columns=1;zoom=1;gotoSheet(Number(card.dataset.openSheet));$('panel-map').scrollIntoView({block:'start',behavior:'smooth'});$('viewSingle').focus();};
  $('prevSheet').onclick=()=>gotoSheet(sheet-1);$('nextSheet').onclick=()=>gotoSheet(sheet+1);
  $('sheetTabs').onclick=e=>{const b=e.target.closest('[data-sheet]');if(b)gotoSheet(Number(b.dataset.sheet));};
  $('prevOp').onclick=()=>gotoStep(step-1);$('nextOp').onclick=()=>gotoStep(step+1);$('opRange').oninput=()=>gotoStep(Number($('opRange').value));
