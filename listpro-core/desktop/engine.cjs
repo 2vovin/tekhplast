@@ -147,7 +147,34 @@ function calculate(input,{iterations=16000,seed=42,onProgress=()=>{}}={}){
   }catch(e){lastProblem=e.message}
   onProgress({completed:i+1,total:selections.length,found:!!best,bestSheets:best?.metrics.sheets??null});
  }
- if(!best)throw Error('Подходящий раскрой не найден за выбранный бюджет. Это не доказательство невозможности. '+lastProblem);
+ // A one-band fallback is intentionally inefficient, but it prevents a valid
+ // ordinary order from failing just because the five densest strip sets cannot
+ // accommodate every size. It is still compiled and independently replayed.
+ if(!best){
+  const availableW=p.sheetW-2*p.trim,availableH=p.sheetH-2*p.trim;
+  const maxWidth=Math.max(...p.pieces.map(x=>x.w));
+  const allFit=p.pieces.every(x=>x.l<=availableW&&x.w<=availableH);
+  if(allFit&&maxWidth+p.kerf<=availableH){
+   const fallback=[maxWidth];
+   try{
+    const backup=searchHeldStrips(p,{
+     iterations:Math.max(25,Math.min(180,Math.ceil(iterations*.015))),
+     seed:seed+997,bandSets:[fallback],axis,
+     accept:layout=>{
+      attempts++;
+      try{validateLayout(p,layout,profile);return true}
+      catch(e){lastProblem=e.message;return false}
+     }
+    });
+    const candidate=validateLayout(p,backup.best,profile);
+    if(better(candidate,best))best=candidate;
+    searches++;
+    selections.push(fallback);
+   }catch(e){lastProblem=e.message}
+   onProgress({completed:selections.length,total:selections.length,found:!!best,bestSheets:best?.metrics.sheets??null});
+  }
+ }
+ if(!best)throw Error('Не найден допустимый раскрой в текущем поиске. Это не доказательство невозможности. '+lastProblem);
  best.search={...best.search,seed,iterations,axis,bandGroups:selections,
   checkedCandidateImprovements:attempts,completedSearches:searches,optimality:'not proven'};
  return best;
