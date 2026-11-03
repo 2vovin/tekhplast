@@ -1,0 +1,1520 @@
+[
+  {
+    "step": 2,
+    "cut": 1,
+    "input": "s0/raw",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 2750,
+      "h": 1830
+    },
+    "orientation": 0,
+    "outputs": [
+      {
+        "id": "s0/edge0",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 2750,
+          "h": 5
+        }
+      },
+      {
+        "id": "s0/main0",
+        "rect": {
+          "x": 0,
+          "y": 10,
+          "w": 2750,
+          "h": 1820
+        }
+      }
+    ],
+    "file": "cuts/cut-001.svg"
+  },
+  {
+    "step": 4,
+    "cut": 2,
+    "input": "s0/main0",
+    "rect": {
+      "x": 0,
+      "y": 10,
+      "w": 2750,
+      "h": 1820
+    },
+    "orientation": 0,
+    "outputs": [
+      {
+        "id": "s0/band1",
+        "rect": {
+          "x": 0,
+          "y": 10,
+          "w": 2750,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/main1",
+        "rect": {
+          "x": 0,
+          "y": 413,
+          "w": 2750,
+          "h": 1417
+        }
+      }
+    ],
+    "file": "cuts/cut-002.svg"
+  },
+  {
+    "step": 6,
+    "cut": 3,
+    "input": "s0/main1",
+    "rect": {
+      "x": 0,
+      "y": 413,
+      "w": 2750,
+      "h": 1417
+    },
+    "orientation": 0,
+    "outputs": [
+      {
+        "id": "s0/band2",
+        "rect": {
+          "x": 0,
+          "y": 413,
+          "w": 2750,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/main2",
+        "rect": {
+          "x": 0,
+          "y": 816,
+          "w": 2750,
+          "h": 1014
+        }
+      }
+    ],
+    "file": "cuts/cut-003.svg"
+  },
+  {
+    "step": 8,
+    "cut": 4,
+    "input": "s0/main2",
+    "rect": {
+      "x": 0,
+      "y": 816,
+      "w": 2750,
+      "h": 1014
+    },
+    "orientation": 0,
+    "outputs": [
+      {
+        "id": "s0/band3",
+        "rect": {
+          "x": 0,
+          "y": 816,
+          "w": 2750,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/main3",
+        "rect": {
+          "x": 0,
+          "y": 1091,
+          "w": 2750,
+          "h": 739
+        }
+      }
+    ],
+    "file": "cuts/cut-004.svg"
+  },
+  {
+    "step": 11,
+    "cut": 5,
+    "input": "s0/main3",
+    "rect": {
+      "x": 0,
+      "y": 1091,
+      "w": 2750,
+      "h": 739
+    },
+    "orientation": 0,
+    "outputs": [
+      {
+        "id": "s0/band4",
+        "rect": {
+          "x": 0,
+          "y": 1091,
+          "w": 2750,
+          "h": 719
+        }
+      },
+      {
+        "id": "s0/edge1",
+        "rect": {
+          "x": 0,
+          "y": 1815,
+          "w": 2750,
+          "h": 15
+        }
+      }
+    ],
+    "file": "cuts/cut-005.svg"
+  },
+  {
+    "step": 15,
+    "cut": 6,
+    "input": "s0/band1",
+    "rect": {
+      "x": 0,
+      "y": 10,
+      "w": 2750,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band1/edge0",
+        "rect": {
+          "x": 0,
+          "y": 10,
+          "w": 5,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band1/trimmed0",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "w": 2740,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-006.svg"
+  },
+  {
+    "step": 17,
+    "cut": 7,
+    "input": "s0/band1/trimmed0",
+    "rect": {
+      "x": 10,
+      "y": 10,
+      "w": 2740,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band1/work",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "w": 2730,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band1/edge1",
+        "rect": {
+          "x": 2745,
+          "y": 10,
+          "w": 5,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-007.svg"
+  },
+  {
+    "step": 19,
+    "cut": 8,
+    "input": "s0/band1/work",
+    "rect": {
+      "x": 10,
+      "y": 10,
+      "w": 2730,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band1/work/0",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "w": 1132,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band1/work/1",
+        "rect": {
+          "x": 1147,
+          "y": 10,
+          "w": 1593,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-008.svg"
+  },
+  {
+    "step": 21,
+    "cut": 9,
+    "input": "s0/band1/work/1",
+    "rect": {
+      "x": 1147,
+      "y": 10,
+      "w": 1593,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band1/work/1/0",
+        "rect": {
+          "x": 1147,
+          "y": 10,
+          "w": 1132,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band1/work/1/1",
+        "rect": {
+          "x": 2284,
+          "y": 10,
+          "w": 456,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-009.svg"
+  },
+  {
+    "step": 23,
+    "cut": 10,
+    "input": "s0/band1/work/1/1",
+    "rect": {
+      "x": 2284,
+      "y": 10,
+      "w": 456,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band1/work/1/1/0",
+        "rect": {
+          "x": 2284,
+          "y": 10,
+          "w": 420,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band1/work/1/1/1",
+        "rect": {
+          "x": 2709,
+          "y": 10,
+          "w": 31,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-010.svg"
+  },
+  {
+    "step": 26,
+    "cut": 11,
+    "input": "s0/band1/work/1/1/0",
+    "rect": {
+      "x": 2284,
+      "y": 10,
+      "w": 420,
+      "h": 398
+    },
+    "orientation": 180,
+    "outputs": [
+      {
+        "id": "s0/band1/work/1/1/0/0",
+        "rect": {
+          "x": 2284,
+          "y": 10,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band1/work/1/1/0/1",
+        "rect": {
+          "x": 2284,
+          "y": 285,
+          "w": 420,
+          "h": 123
+        }
+      }
+    ],
+    "file": "cuts/cut-011.svg"
+  },
+  {
+    "step": 29,
+    "cut": 12,
+    "input": "s0/band2",
+    "rect": {
+      "x": 0,
+      "y": 413,
+      "w": 2750,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band2/edge0",
+        "rect": {
+          "x": 0,
+          "y": 413,
+          "w": 5,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band2/trimmed0",
+        "rect": {
+          "x": 10,
+          "y": 413,
+          "w": 2740,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-012.svg"
+  },
+  {
+    "step": 31,
+    "cut": 13,
+    "input": "s0/band2/trimmed0",
+    "rect": {
+      "x": 10,
+      "y": 413,
+      "w": 2740,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band2/work",
+        "rect": {
+          "x": 10,
+          "y": 413,
+          "w": 2730,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band2/edge1",
+        "rect": {
+          "x": 2745,
+          "y": 413,
+          "w": 5,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-013.svg"
+  },
+  {
+    "step": 33,
+    "cut": 14,
+    "input": "s0/band2/work",
+    "rect": {
+      "x": 10,
+      "y": 413,
+      "w": 2730,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band2/work/0",
+        "rect": {
+          "x": 10,
+          "y": 413,
+          "w": 966,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band2/work/1",
+        "rect": {
+          "x": 981,
+          "y": 413,
+          "w": 1759,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-014.svg"
+  },
+  {
+    "step": 35,
+    "cut": 15,
+    "input": "s0/band2/work/1",
+    "rect": {
+      "x": 981,
+      "y": 413,
+      "w": 1759,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band2/work/1/0",
+        "rect": {
+          "x": 981,
+          "y": 413,
+          "w": 966,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band2/work/1/1",
+        "rect": {
+          "x": 1952,
+          "y": 413,
+          "w": 788,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-015.svg"
+  },
+  {
+    "step": 37,
+    "cut": 16,
+    "input": "s0/band2/work/1/1",
+    "rect": {
+      "x": 1952,
+      "y": 413,
+      "w": 788,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band2/work/1/1/0",
+        "rect": {
+          "x": 1952,
+          "y": 413,
+          "w": 420,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band2/work/1/1/1",
+        "rect": {
+          "x": 2377,
+          "y": 413,
+          "w": 363,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-016.svg"
+  },
+  {
+    "step": 39,
+    "cut": 17,
+    "input": "s0/band2/work/1/1/1",
+    "rect": {
+      "x": 2377,
+      "y": 413,
+      "w": 363,
+      "h": 398
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band2/work/1/1/1/0",
+        "rect": {
+          "x": 2377,
+          "y": 413,
+          "w": 297,
+          "h": 398
+        }
+      },
+      {
+        "id": "s0/band2/work/1/1/1/1",
+        "rect": {
+          "x": 2679,
+          "y": 413,
+          "w": 61,
+          "h": 398
+        }
+      }
+    ],
+    "file": "cuts/cut-017.svg"
+  },
+  {
+    "step": 42,
+    "cut": 18,
+    "input": "s0/band2/work/1/1/0",
+    "rect": {
+      "x": 1952,
+      "y": 413,
+      "w": 420,
+      "h": 398
+    },
+    "orientation": 180,
+    "outputs": [
+      {
+        "id": "s0/band2/work/1/1/0/0",
+        "rect": {
+          "x": 1952,
+          "y": 413,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band2/work/1/1/0/1",
+        "rect": {
+          "x": 1952,
+          "y": 688,
+          "w": 420,
+          "h": 123
+        }
+      }
+    ],
+    "file": "cuts/cut-018.svg"
+  },
+  {
+    "step": 45,
+    "cut": 19,
+    "input": "s0/band2/work/1/1/1/0",
+    "rect": {
+      "x": 2377,
+      "y": 413,
+      "w": 297,
+      "h": 398
+    },
+    "orientation": 180,
+    "outputs": [
+      {
+        "id": "s0/band2/work/1/1/1/0/0",
+        "rect": {
+          "x": 2377,
+          "y": 413,
+          "w": 297,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/band2/work/1/1/1/0/1",
+        "rect": {
+          "x": 2377,
+          "y": 715,
+          "w": 297,
+          "h": 96
+        }
+      }
+    ],
+    "file": "cuts/cut-019.svg"
+  },
+  {
+    "step": 48,
+    "cut": 20,
+    "input": "s0/band3",
+    "rect": {
+      "x": 0,
+      "y": 816,
+      "w": 2750,
+      "h": 270
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band3/edge0",
+        "rect": {
+          "x": 0,
+          "y": 816,
+          "w": 5,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band3/trimmed0",
+        "rect": {
+          "x": 10,
+          "y": 816,
+          "w": 2740,
+          "h": 270
+        }
+      }
+    ],
+    "file": "cuts/cut-020.svg"
+  },
+  {
+    "step": 50,
+    "cut": 21,
+    "input": "s0/band3/trimmed0",
+    "rect": {
+      "x": 10,
+      "y": 816,
+      "w": 2740,
+      "h": 270
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band3/work",
+        "rect": {
+          "x": 10,
+          "y": 816,
+          "w": 2730,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band3/edge1",
+        "rect": {
+          "x": 2745,
+          "y": 816,
+          "w": 5,
+          "h": 270
+        }
+      }
+    ],
+    "file": "cuts/cut-021.svg"
+  },
+  {
+    "step": 52,
+    "cut": 22,
+    "input": "s0/band3/work",
+    "rect": {
+      "x": 10,
+      "y": 816,
+      "w": 2730,
+      "h": 270
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band3/work/0",
+        "rect": {
+          "x": 10,
+          "y": 816,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band3/work/1",
+        "rect": {
+          "x": 435,
+          "y": 816,
+          "w": 2305,
+          "h": 270
+        }
+      }
+    ],
+    "file": "cuts/cut-022.svg"
+  },
+  {
+    "step": 54,
+    "cut": 23,
+    "input": "s0/band3/work/1",
+    "rect": {
+      "x": 435,
+      "y": 816,
+      "w": 2305,
+      "h": 270
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band3/work/1/0",
+        "rect": {
+          "x": 435,
+          "y": 816,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band3/work/1/1",
+        "rect": {
+          "x": 860,
+          "y": 816,
+          "w": 1880,
+          "h": 270
+        }
+      }
+    ],
+    "file": "cuts/cut-023.svg"
+  },
+  {
+    "step": 56,
+    "cut": 24,
+    "input": "s0/band3/work/1/1",
+    "rect": {
+      "x": 860,
+      "y": 816,
+      "w": 1880,
+      "h": 270
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band3/work/1/1/0",
+        "rect": {
+          "x": 860,
+          "y": 816,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band3/work/1/1/1",
+        "rect": {
+          "x": 1285,
+          "y": 816,
+          "w": 1455,
+          "h": 270
+        }
+      }
+    ],
+    "file": "cuts/cut-024.svg"
+  },
+  {
+    "step": 58,
+    "cut": 25,
+    "input": "s0/band3/work/1/1/1",
+    "rect": {
+      "x": 1285,
+      "y": 816,
+      "w": 1455,
+      "h": 270
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band3/work/1/1/1/0",
+        "rect": {
+          "x": 1285,
+          "y": 816,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band3/work/1/1/1/1",
+        "rect": {
+          "x": 1710,
+          "y": 816,
+          "w": 1030,
+          "h": 270
+        }
+      }
+    ],
+    "file": "cuts/cut-025.svg"
+  },
+  {
+    "step": 60,
+    "cut": 26,
+    "input": "s0/band3/work/1/1/1/1",
+    "rect": {
+      "x": 1710,
+      "y": 816,
+      "w": 1030,
+      "h": 270
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band3/work/1/1/1/1/0",
+        "rect": {
+          "x": 1710,
+          "y": 816,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band3/work/1/1/1/1/1",
+        "rect": {
+          "x": 2135,
+          "y": 816,
+          "w": 605,
+          "h": 270
+        }
+      }
+    ],
+    "file": "cuts/cut-026.svg"
+  },
+  {
+    "step": 62,
+    "cut": 27,
+    "input": "s0/band3/work/1/1/1/1/1",
+    "rect": {
+      "x": 2135,
+      "y": 816,
+      "w": 605,
+      "h": 270
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band3/work/1/1/1/1/1/0",
+        "rect": {
+          "x": 2135,
+          "y": 816,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band3/work/1/1/1/1/1/1",
+        "rect": {
+          "x": 2560,
+          "y": 816,
+          "w": 180,
+          "h": 270
+        }
+      }
+    ],
+    "file": "cuts/cut-027.svg"
+  },
+  {
+    "step": 65,
+    "cut": 28,
+    "input": "s0/band4",
+    "rect": {
+      "x": 0,
+      "y": 1091,
+      "w": 2750,
+      "h": 719
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band4/edge0",
+        "rect": {
+          "x": 0,
+          "y": 1091,
+          "w": 5,
+          "h": 719
+        }
+      },
+      {
+        "id": "s0/band4/trimmed0",
+        "rect": {
+          "x": 10,
+          "y": 1091,
+          "w": 2740,
+          "h": 719
+        }
+      }
+    ],
+    "file": "cuts/cut-028.svg"
+  },
+  {
+    "step": 67,
+    "cut": 29,
+    "input": "s0/band4/trimmed0",
+    "rect": {
+      "x": 10,
+      "y": 1091,
+      "w": 2740,
+      "h": 719
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band4/work",
+        "rect": {
+          "x": 10,
+          "y": 1091,
+          "w": 2730,
+          "h": 719
+        }
+      },
+      {
+        "id": "s0/band4/edge1",
+        "rect": {
+          "x": 2745,
+          "y": 1091,
+          "w": 5,
+          "h": 719
+        }
+      }
+    ],
+    "file": "cuts/cut-029.svg"
+  },
+  {
+    "step": 69,
+    "cut": 30,
+    "input": "s0/band4/work",
+    "rect": {
+      "x": 10,
+      "y": 1091,
+      "w": 2730,
+      "h": 719
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band4/work/0",
+        "rect": {
+          "x": 10,
+          "y": 1091,
+          "w": 966,
+          "h": 719
+        }
+      },
+      {
+        "id": "s0/band4/work/1",
+        "rect": {
+          "x": 981,
+          "y": 1091,
+          "w": 1759,
+          "h": 719
+        }
+      }
+    ],
+    "file": "cuts/cut-030.svg"
+  },
+  {
+    "step": 71,
+    "cut": 31,
+    "input": "s0/band4/work/1",
+    "rect": {
+      "x": 981,
+      "y": 1091,
+      "w": 1759,
+      "h": 719
+    },
+    "orientation": 90,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/0",
+        "rect": {
+          "x": 981,
+          "y": 1091,
+          "w": 420,
+          "h": 719
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1",
+        "rect": {
+          "x": 1406,
+          "y": 1091,
+          "w": 1334,
+          "h": 719
+        }
+      }
+    ],
+    "file": "cuts/cut-031.svg"
+  },
+  {
+    "step": 74,
+    "cut": 32,
+    "input": "s0/band4/work/1/0",
+    "rect": {
+      "x": 981,
+      "y": 1091,
+      "w": 420,
+      "h": 719
+    },
+    "orientation": 180,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/0/0",
+        "rect": {
+          "x": 981,
+          "y": 1091,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band4/work/1/0/1",
+        "rect": {
+          "x": 981,
+          "y": 1366,
+          "w": 420,
+          "h": 444
+        }
+      }
+    ],
+    "file": "cuts/cut-032.svg"
+  },
+  {
+    "step": 76,
+    "cut": 33,
+    "input": "s0/band4/work/1/0/1",
+    "rect": {
+      "x": 981,
+      "y": 1366,
+      "w": 420,
+      "h": 444
+    },
+    "orientation": 180,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/0/1/0",
+        "rect": {
+          "x": 981,
+          "y": 1366,
+          "w": 420,
+          "h": 270
+        }
+      },
+      {
+        "id": "s0/band4/work/1/0/1/1",
+        "rect": {
+          "x": 981,
+          "y": 1641,
+          "w": 420,
+          "h": 169
+        }
+      }
+    ],
+    "file": "cuts/cut-033.svg"
+  },
+  {
+    "step": 79,
+    "cut": 34,
+    "input": "s0/band4/work/1/1",
+    "rect": {
+      "x": 1406,
+      "y": 1091,
+      "w": 1334,
+      "h": 719
+    },
+    "orientation": 180,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/0",
+        "rect": {
+          "x": 1406,
+          "y": 1091,
+          "w": 1334,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/1",
+        "rect": {
+          "x": 1406,
+          "y": 1393,
+          "w": 1334,
+          "h": 417
+        }
+      }
+    ],
+    "file": "cuts/cut-034.svg"
+  },
+  {
+    "step": 81,
+    "cut": 35,
+    "input": "s0/band4/work/1/1/1",
+    "rect": {
+      "x": 1406,
+      "y": 1393,
+      "w": 1334,
+      "h": 417
+    },
+    "orientation": 180,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/1/0",
+        "rect": {
+          "x": 1406,
+          "y": 1393,
+          "w": 1334,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/1/1",
+        "rect": {
+          "x": 1406,
+          "y": 1578,
+          "w": 1334,
+          "h": 232
+        }
+      }
+    ],
+    "file": "cuts/cut-035.svg"
+  },
+  {
+    "step": 83,
+    "cut": 36,
+    "input": "s0/band4/work/1/1/1/1",
+    "rect": {
+      "x": 1406,
+      "y": 1578,
+      "w": 1334,
+      "h": 232
+    },
+    "orientation": 180,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/1/1/0",
+        "rect": {
+          "x": 1406,
+          "y": 1578,
+          "w": 1334,
+          "h": 219
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/1/1/1",
+        "rect": {
+          "x": 1406,
+          "y": 1802,
+          "w": 1334,
+          "h": 8
+        }
+      }
+    ],
+    "file": "cuts/cut-036.svg"
+  },
+  {
+    "step": 86,
+    "cut": 37,
+    "input": "s0/band4/work/1/1/0",
+    "rect": {
+      "x": 1406,
+      "y": 1091,
+      "w": 1334,
+      "h": 297
+    },
+    "orientation": 270,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/0/0",
+        "rect": {
+          "x": 1406,
+          "y": 1091,
+          "w": 297,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/0/1",
+        "rect": {
+          "x": 1708,
+          "y": 1091,
+          "w": 1032,
+          "h": 297
+        }
+      }
+    ],
+    "file": "cuts/cut-037.svg"
+  },
+  {
+    "step": 88,
+    "cut": 38,
+    "input": "s0/band4/work/1/1/0/1",
+    "rect": {
+      "x": 1708,
+      "y": 1091,
+      "w": 1032,
+      "h": 297
+    },
+    "orientation": 270,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/0/1/0",
+        "rect": {
+          "x": 1708,
+          "y": 1091,
+          "w": 297,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/0/1/1",
+        "rect": {
+          "x": 2010,
+          "y": 1091,
+          "w": 730,
+          "h": 297
+        }
+      }
+    ],
+    "file": "cuts/cut-038.svg"
+  },
+  {
+    "step": 90,
+    "cut": 39,
+    "input": "s0/band4/work/1/1/0/1/1",
+    "rect": {
+      "x": 2010,
+      "y": 1091,
+      "w": 730,
+      "h": 297
+    },
+    "orientation": 270,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/0/1/1/0",
+        "rect": {
+          "x": 2010,
+          "y": 1091,
+          "w": 297,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/0/1/1/1",
+        "rect": {
+          "x": 2312,
+          "y": 1091,
+          "w": 428,
+          "h": 297
+        }
+      }
+    ],
+    "file": "cuts/cut-039.svg"
+  },
+  {
+    "step": 92,
+    "cut": 40,
+    "input": "s0/band4/work/1/1/0/1/1/1",
+    "rect": {
+      "x": 2312,
+      "y": 1091,
+      "w": 428,
+      "h": 297
+    },
+    "orientation": 270,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/0/1/1/1/0",
+        "rect": {
+          "x": 2312,
+          "y": 1091,
+          "w": 297,
+          "h": 297
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/0/1/1/1/1",
+        "rect": {
+          "x": 2614,
+          "y": 1091,
+          "w": 126,
+          "h": 297
+        }
+      }
+    ],
+    "file": "cuts/cut-040.svg"
+  },
+  {
+    "step": 95,
+    "cut": 41,
+    "input": "s0/band4/work/1/1/1/0",
+    "rect": {
+      "x": 1406,
+      "y": 1393,
+      "w": 1334,
+      "h": 180
+    },
+    "orientation": 270,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/1/0/0",
+        "rect": {
+          "x": 1406,
+          "y": 1393,
+          "w": 238,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/1/0/1",
+        "rect": {
+          "x": 1649,
+          "y": 1393,
+          "w": 1091,
+          "h": 180
+        }
+      }
+    ],
+    "file": "cuts/cut-041.svg"
+  },
+  {
+    "step": 97,
+    "cut": 42,
+    "input": "s0/band4/work/1/1/1/0/1",
+    "rect": {
+      "x": 1649,
+      "y": 1393,
+      "w": 1091,
+      "h": 180
+    },
+    "orientation": 270,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/1/0/1/0",
+        "rect": {
+          "x": 1649,
+          "y": 1393,
+          "w": 238,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/1/0/1/1",
+        "rect": {
+          "x": 1892,
+          "y": 1393,
+          "w": 848,
+          "h": 180
+        }
+      }
+    ],
+    "file": "cuts/cut-042.svg"
+  },
+  {
+    "step": 99,
+    "cut": 43,
+    "input": "s0/band4/work/1/1/1/0/1/1",
+    "rect": {
+      "x": 1892,
+      "y": 1393,
+      "w": 848,
+      "h": 180
+    },
+    "orientation": 270,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/1/0/1/1/0",
+        "rect": {
+          "x": 1892,
+          "y": 1393,
+          "w": 238,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/1/0/1/1/1",
+        "rect": {
+          "x": 2135,
+          "y": 1393,
+          "w": 605,
+          "h": 180
+        }
+      }
+    ],
+    "file": "cuts/cut-043.svg"
+  },
+  {
+    "step": 101,
+    "cut": 44,
+    "input": "s0/band4/work/1/1/1/0/1/1/1",
+    "rect": {
+      "x": 2135,
+      "y": 1393,
+      "w": 605,
+      "h": 180
+    },
+    "orientation": 270,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/1/0/1/1/1/0",
+        "rect": {
+          "x": 2135,
+          "y": 1393,
+          "w": 238,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/1/0/1/1/1/1",
+        "rect": {
+          "x": 2378,
+          "y": 1393,
+          "w": 362,
+          "h": 180
+        }
+      }
+    ],
+    "file": "cuts/cut-044.svg"
+  },
+  {
+    "step": 103,
+    "cut": 45,
+    "input": "s0/band4/work/1/1/1/0/1/1/1/1",
+    "rect": {
+      "x": 2378,
+      "y": 1393,
+      "w": 362,
+      "h": 180
+    },
+    "orientation": 270,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/1/0/1/1/1/1/0",
+        "rect": {
+          "x": 2378,
+          "y": 1393,
+          "w": 238,
+          "h": 180
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/1/0/1/1/1/1/1",
+        "rect": {
+          "x": 2621,
+          "y": 1393,
+          "w": 119,
+          "h": 180
+        }
+      }
+    ],
+    "file": "cuts/cut-045.svg"
+  },
+  {
+    "step": 106,
+    "cut": 46,
+    "input": "s0/band4/work/1/1/1/1/0",
+    "rect": {
+      "x": 1406,
+      "y": 1578,
+      "w": 1334,
+      "h": 219
+    },
+    "orientation": 270,
+    "outputs": [
+      {
+        "id": "s0/band4/work/1/1/1/1/0/0",
+        "rect": {
+          "x": 1406,
+          "y": 1578,
+          "w": 1000,
+          "h": 219
+        }
+      },
+      {
+        "id": "s0/band4/work/1/1/1/1/0/1",
+        "rect": {
+          "x": 2411,
+          "y": 1578,
+          "w": 329,
+          "h": 219
+        }
+      }
+    ],
+    "file": "cuts/cut-046.svg"
+  }
+]

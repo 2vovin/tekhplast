@@ -1,0 +1,39 @@
+{
+  "horizontal": {
+    "seed": 42,
+    "iterations": 20000,
+    "axis": "H",
+    "rectangles": 713313,
+    "dpCalls": 97949,
+    "dpStates": 848339,
+    "prunedDP": 0,
+    "oneSheet": 56,
+    "elapsedMs": 17309,
+    "acceptedImprovements": 4,
+    "rejectedImprovements": 702
+  },
+  "vertical": {
+    "search": {
+      "seed": 42,
+      "iterations": 3000,
+      "axis": "V",
+      "rectangles": 89682,
+      "dpCalls": 13459,
+      "dpStates": 121173,
+      "prunedDP": 0,
+      "oneSheet": 0,
+      "elapsedMs": 2224
+    },
+    "geometry": {
+      "valid": true,
+      "partCount": 26,
+      "sheets": 2,
+      "cuts": 38,
+      "cutLength": 30486,
+      "wasteArea": 5357363,
+      "largestWaste": 2048920
+    },
+    "technology": "NOT VALIDATED: geometric comparison only"
+  },
+  "environment": "V8 tool preflight; CI timings reported separately"
+}

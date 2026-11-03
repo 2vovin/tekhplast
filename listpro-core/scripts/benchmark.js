@@ -36,3 +36,6 @@ require('./recursive-strip-benchmark');
 
 // Brain 2.1 keeps all historical benchmarks and adds ancestry/stop models.
 require('./brain21-benchmark');
+
+// Parallel primary bands: corrected target-role regression and new 26-part map.
+require('./parallel-bands-benchmark');

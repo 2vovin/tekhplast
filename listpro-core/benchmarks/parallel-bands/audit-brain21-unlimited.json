@@ -1,0 +1,484 @@
+{
+  "geometryValid": true,
+  "abstractCutTreeValid": true,
+  "targetPSSModelValid": false,
+  "realMachineFeasibility": "unknown",
+  "profileId": "abstract-staged-detached-strips-exam-v1",
+  "errors": [
+    {
+      "step": 6,
+      "reason": "Artificial primary tail no wider than kerf"
+    },
+    {
+      "step": 6,
+      "reason": "No real spanning detail for this conservative band policy"
+    },
+    {
+      "step": 7,
+      "reason": "Primary phase not completed"
+    },
+    {
+      "step": 98,
+      "reason": "Unfinished primary remainder s0/rip-rem0"
+    },
+    {
+      "step": 15,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 18,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 20,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 22,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 24,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 27,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 30,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 32,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 35,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 37,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 39,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 41,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 44,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 47,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 50,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 53,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 55,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 58,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 60,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 62,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 64,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 66,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 68,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 70,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 72,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 74,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 76,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 78,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 81,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 84,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 86,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 89,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 91,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 93,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 95,
+      "reason": "Ungrouped layout cut"
+    },
+    {
+      "step": 98,
+      "reason": "Ungrouped layout cut"
+    }
+  ],
+  "limitations": [
+    "Machine feeding, clamps, stroke and hold dimensions are unspecified.",
+    "Conservative candidate profile: real spanning detail for every primary band; not a universal BAZIS restriction.",
+    "Explicit terminal band at stock edge, with declared border removal before any rotation."
+  ],
+  "metrics": {
+    "sheets": 1,
+    "parts": 26,
+    "cuts": 41,
+    "cutLength": 33628,
+    "turns": 15,
+    "feeds": 40,
+    "stages": 7,
+    "operations": 98,
+    "largestWaste": 74426,
+    "wasteArea": 445953,
+    "ancestryTurnsMax": 6,
+    "originalSheetTurns": 0
+  },
+  "partTurns": [
+    {
+      "part": {
+        "id": 5,
+        "instance": 1,
+        "rotated": false
+      },
+      "turns": 3
+    },
+    {
+      "part": {
+        "id": 8,
+        "instance": 1,
+        "rotated": false
+      },
+      "turns": 3
+    },
+    {
+      "part": {
+        "id": 9,
+        "instance": 1,
+        "rotated": false
+      },
+      "turns": 3
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 1,
+        "rotated": false
+      },
+      "turns": 4
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 2,
+        "rotated": false
+      },
+      "turns": 4
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 3,
+        "rotated": false
+      },
+      "turns": 4
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 4,
+        "rotated": false
+      },
+      "turns": 4
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 5,
+        "rotated": false
+      },
+      "turns": 4
+    },
+    {
+      "part": {
+        "id": 2,
+        "instance": 1,
+        "rotated": false
+      },
+      "turns": 4
+    },
+    {
+      "part": {
+        "id": 2,
+        "instance": 2,
+        "rotated": false
+      },
+      "turns": 5
+    },
+    {
+      "part": {
+        "id": 2,
+        "instance": 3,
+        "rotated": false
+      },
+      "turns": 5
+    },
+    {
+      "part": {
+        "id": 2,
+        "instance": 4,
+        "rotated": false
+      },
+      "turns": 5
+    },
+    {
+      "part": {
+        "id": 2,
+        "instance": 5,
+        "rotated": false
+      },
+      "turns": 5
+    },
+    {
+      "part": {
+        "id": 3,
+        "instance": 1,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 4,
+        "instance": 1,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 4,
+        "instance": 2,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 4,
+        "instance": 3,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 4,
+        "instance": 4,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 4,
+        "instance": 5,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 3,
+        "instance": 2,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 3,
+        "instance": 3,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 3,
+        "instance": 4,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 3,
+        "instance": 5,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 6,
+        "instance": 1,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 7,
+        "instance": 1,
+        "rotated": false
+      },
+      "turns": 6
+    },
+    {
+      "part": {
+        "id": 10,
+        "instance": 1,
+        "rotated": false
+      },
+      "turns": 6
+    }
+  ],
+  "primarySnapshots": [
+    {
+      "step": 2,
+      "cut": 1,
+      "input": "s0/raw",
+      "inputRole": "MAIN",
+      "outputs": [
+        {
+          "id": "s0/side0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 5,
+            "h": 1830
+          },
+          "role": "TRIM"
+        },
+        {
+          "id": "s0/side-rem",
+          "rect": {
+            "x": 10,
+            "y": 0,
+            "w": 2740,
+            "h": 1830
+          },
+          "role": "MAIN"
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "cut": 2,
+      "input": "s0/side-rem",
+      "inputRole": "MAIN",
+      "outputs": [
+        {
+          "id": "s0/body",
+          "rect": {
+            "x": 10,
+            "y": 0,
+            "w": 2730,
+            "h": 1830
+          },
+          "role": "MAIN"
+        },
+        {
+          "id": "s0/side1",
+          "rect": {
+            "x": 2745,
+            "y": 0,
+            "w": 5,
+            "h": 1830
+          },
+          "role": "TRIM"
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "cut": 3,
+      "input": "s0/body",
+      "inputRole": "MAIN",
+      "outputs": [
+        {
+          "id": "s0/strip1",
+          "rect": {
+            "x": 10,
+            "y": 0,
+            "w": 2720,
+            "h": 1830
+          },
+          "role": "DETACHED"
+        },
+        {
+          "id": "s0/rip-rem0",
+          "rect": {
+            "x": 2735,
+            "y": 0,
+            "w": 5,
+            "h": 1830
+          },
+          "role": "MAIN"
+        }
+      ]
+    }
+  ]
+}
