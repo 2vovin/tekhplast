@@ -1,0 +1,43 @@
+name: ListPro Desktop Windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [listpro-core]
+    paths:
+      - '.github/workflows/listpro-desktop-windows.yml'
+      - 'listpro-core/desktop/**'
+      - 'listpro-core/src/**'
+      - 'listpro-core/benchmarks/held-strips/result.json'
+      - 'listpro-core/benchmarks/bazis-26-corrected.json'
+
+jobs:
+  windows-portable:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: listpro-core/desktop
+    steps:
+      - name: Checkout listpro-core branch
+        uses: actions/checkout@v4
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Electron packaging dependencies
+        run: npm install --no-audit --no-fund
+      - name: Verify desktop core and reference layout
+        run: npm test
+      - name: Build portable Windows x64 application
+        run: npm run build:win
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Upload Windows portable exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: ListPro-Mebel-Windows-portable
+          path: listpro-core/desktop/dist/*.exe
+          if-no-files-found: error
+          retention-days: 14
