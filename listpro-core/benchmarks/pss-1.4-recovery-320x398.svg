@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -65 445 530" role="img" aria-label="PSS 1.4: проверенный перенос двух деталей в отход 320 на 398">
+<rect x="-30" y="-65" width="445" height="530" fill="white"/>
+<text x="0" y="-39" font-size="16">PSS 1.4 · CUT 13 → ROTATE → CUT 14 → CUT 15</text>
+<text x="0" y="-15" font-size="13">Материал: X=2420, Y=1422; 320×398 мм</text>
+<rect width="320" height="398" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+<rect width="238" height="180" fill="#bbf7d0" stroke="#166534"/><rect y="185" width="238" height="180" fill="#bbf7d0" stroke="#166534"/>
+<rect x="238" width="5" height="398" fill="#dc2626"/><rect y="180" width="238" height="5" fill="#dc2626"/><rect y="365" width="238" height="5" fill="#dc2626"/>
+<text x="70" y="80" font-size="20">№9:1</text><text x="60" y="108" font-size="17">238×180</text>
+<text x="70" y="265" font-size="20">№9:2</text><text x="60" y="293" font-size="17">238×180</text>
+<text x="253" y="180" font-size="14">77×398</text><text x="80" y="389" font-size="12">238×28</text>
+<text x="326" y="183" font-size="13">CUT 15</text><text x="326" y="369" font-size="13">CUT 14</text>
+<text x="210" y="418" font-size="13">CUT 13: X=2658</text>
+<text x="0" y="443" font-size="12">Шаги полного плана: 30, 32 (поворот), 33, 35.</text>
+</svg>

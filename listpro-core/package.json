@@ -1,8 +1,8 @@
 {
   "name": "listpro-core",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": true,
-  "description": "ListPro PSS multi-strip count-vector DP and large-neighborhood optimization with independent replay",
+  "description": "ListPro PSS physical waste recovery and multi-strip repacking with independent replay",
   "engines": {
     "node": ">=20"
   },
@@ -12,6 +12,8 @@
     "benchmark:industrial": "node scripts/industrial-benchmark.js",
     "benchmark:pss": "node scripts/pss-benchmark.js",
     "benchmark:pss13": "node scripts/pss13-benchmark.js",
-    "benchmark:pss13:research": "node scripts/pss13-research.js"
+    "benchmark:pss13:research": "node scripts/pss13-research.js",
+    "benchmark:pss14": "node scripts/pss14-benchmark.js",
+    "benchmark:pss14:research": "node scripts/pss14-research.js"
   }
 }

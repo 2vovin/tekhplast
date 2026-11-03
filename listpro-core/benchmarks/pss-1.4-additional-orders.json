@@ -1,0 +1,1040 @@
+[
+  {
+    "name": "kitchen-repeat",
+    "parameters": {
+      "name": "kitchen-repeat",
+      "sheetW": 2800,
+      "sheetH": 2070,
+      "trim": 10,
+      "kerf": 5,
+      "pieces": [
+        {
+          "id": 1,
+          "l": 980,
+          "w": 410,
+          "q": 12,
+          "grain": true
+        },
+        {
+          "id": 2,
+          "l": 540,
+          "w": 390,
+          "q": 8,
+          "grain": true
+        }
+      ]
+    },
+    "baseline": {
+      "metrics": {
+        "valid": true,
+        "partCount": 20,
+        "sheets": 2,
+        "cuts": 36,
+        "cutLength": 39150,
+        "wasteArea": 4772450,
+        "largestWaste": 3679750,
+        "parts": 20,
+        "turns": 7,
+        "feeds": 34,
+        "stages": 3,
+        "operations": 81,
+        "primaryStrips": 4,
+        "substrips": 24
+      },
+      "loads": [
+        15,
+        5
+      ],
+      "elapsedMs": 145
+    },
+    "improved": {
+      "metrics": {
+        "valid": true,
+        "partCount": 20,
+        "sheets": 2,
+        "cuts": 36,
+        "cutLength": 39150,
+        "wasteArea": 4772450,
+        "largestWaste": 3679750,
+        "parts": 20,
+        "turns": 7,
+        "feeds": 34,
+        "stages": 3,
+        "operations": 81,
+        "primaryStrips": 4,
+        "substrips": 24
+      },
+      "recovery": {
+        "budget": {
+          "donorTrials": 12,
+          "candidates": 8,
+          "passes": 20,
+          "dpStates": 3000,
+          "combinations": 500000,
+          "subsets": 2000,
+          "frontier": 32
+        },
+        "initialSheetLoads": [
+          15,
+          5
+        ],
+        "options": {
+          "multiCombinations": 500000,
+          "multiFrontier": 24,
+          "multiAttempts": 24,
+          "deep": true,
+          "multiStrip": true
+        },
+        "inventories": [
+          [
+            {
+              "sheet": 0,
+              "path": "r/0/0/0",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "w": 265,
+                "h": 2050
+              },
+              "strip": null,
+              "blankId": null,
+              "machineOrientation": null,
+              "turnCount": null,
+              "eligible": false,
+              "reason": "PRIMARY_REMAINDER: not a detached working strip"
+            },
+            {
+              "sheet": 0,
+              "path": "r/0/0/1/1/1/1/1/1",
+              "rect": {
+                "x": 280,
+                "y": 1985,
+                "w": 540,
+                "h": 75
+              },
+              "strip": 3,
+              "blankId": "s0/strip3/work/1/1/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 0,
+              "path": "r/0/1/1/1/1/1/1",
+              "rect": {
+                "x": 1370,
+                "y": 1670,
+                "w": 435,
+                "h": 390
+              },
+              "strip": 2,
+              "blankId": "s0/strip2/work/1/1/1/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 0,
+              "path": "r/1/1/1/1/1/1",
+              "rect": {
+                "x": 2355,
+                "y": 1670,
+                "w": 435,
+                "h": 390
+              },
+              "strip": 1,
+              "blankId": "s0/strip1/work/1/1/1/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "w": 1795,
+                "h": 2050
+              },
+              "strip": null,
+              "blankId": null,
+              "machineOrientation": null,
+              "turnCount": null,
+              "eligible": false,
+              "reason": "PRIMARY_REMAINDER: not a detached working strip"
+            },
+            {
+              "sheet": 1,
+              "path": "r/1/1/1/1/1/1",
+              "rect": {
+                "x": 2355,
+                "y": 1670,
+                "w": 435,
+                "h": 390
+              },
+              "strip": 1,
+              "blankId": "s1/strip1/work/1/1/1/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            }
+          ]
+        ],
+        "leafAttempts": 3,
+        "deepAttempts": 12,
+        "multiStripAttempts": 24,
+        "multiStripDP": {
+          "states": 8,
+          "partitions": 8,
+          "combinations": 16,
+          "pruned": 10,
+          "frontierPruned": 0,
+          "exhausted": false
+        },
+        "multiStripNodes": 25,
+        "multiStripBudgetExhausted": 0,
+        "localStates": 0,
+        "localExhausted": 0,
+        "donorCandidates": 0,
+        "replayRejected": 0,
+        "lastRejection": null,
+        "accepted": [],
+        "elapsedMs": 5,
+        "finalSheetLoads": [
+          15,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "name": "small-panels",
+    "parameters": {
+      "name": "small-panels",
+      "sheetW": 1200,
+      "sheetH": 800,
+      "trim": 10,
+      "kerf": 5,
+      "pieces": [
+        {
+          "id": 1,
+          "l": 350,
+          "w": 240,
+          "q": 15,
+          "grain": true
+        },
+        {
+          "id": 2,
+          "l": 180,
+          "w": 120,
+          "q": 20,
+          "grain": true
+        }
+      ]
+    },
+    "baseline": {
+      "metrics": {
+        "valid": true,
+        "partCount": 35,
+        "sheets": 3,
+        "cuts": 68,
+        "cutLength": 25790,
+        "wasteArea": 989850,
+        "largestWaste": 631800,
+        "parts": 35,
+        "turns": 9,
+        "feeds": 65,
+        "stages": 2,
+        "operations": 148,
+        "primaryStrips": 9,
+        "substrips": 44
+      },
+      "loads": [
+        9,
+        18,
+        8
+      ],
+      "elapsedMs": 242
+    },
+    "improved": {
+      "metrics": {
+        "valid": true,
+        "partCount": 35,
+        "sheets": 3,
+        "cuts": 68,
+        "cutLength": 25790,
+        "wasteArea": 989850,
+        "largestWaste": 631800,
+        "parts": 35,
+        "turns": 9,
+        "feeds": 65,
+        "stages": 2,
+        "operations": 148,
+        "primaryStrips": 9,
+        "substrips": 44
+      },
+      "recovery": {
+        "budget": {
+          "donorTrials": 12,
+          "candidates": 8,
+          "passes": 35,
+          "dpStates": 3000,
+          "combinations": 500000,
+          "subsets": 2000,
+          "frontier": 32
+        },
+        "initialSheetLoads": [
+          9,
+          18,
+          8
+        ],
+        "options": {
+          "multiCombinations": 500000,
+          "multiFrontier": 24,
+          "multiAttempts": 24,
+          "deep": true,
+          "multiStrip": true
+        },
+        "inventories": [
+          [
+            {
+              "sheet": 0,
+              "path": "r/0/0/0",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "w": 115,
+                "h": 780
+              },
+              "strip": null,
+              "blankId": null,
+              "machineOrientation": null,
+              "turnCount": null,
+              "eligible": false,
+              "reason": "PRIMARY_REMAINDER: not a detached working strip"
+            },
+            {
+              "sheet": 0,
+              "path": "r/0/0/1/1/1/1",
+              "rect": {
+                "x": 130,
+                "y": 745,
+                "w": 350,
+                "h": 45
+              },
+              "strip": 3,
+              "blankId": "s0/strip3/work/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 0,
+              "path": "r/0/1/1/1/1",
+              "rect": {
+                "x": 485,
+                "y": 745,
+                "w": 350,
+                "h": 45
+              },
+              "strip": 2,
+              "blankId": "s0/strip2/work/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 0,
+              "path": "r/1/1/1/1",
+              "rect": {
+                "x": 840,
+                "y": 745,
+                "w": 350,
+                "h": 45
+              },
+              "strip": 1,
+              "blankId": "s0/strip1/work/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0/0/0/0",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "w": 100,
+                "h": 780
+              },
+              "strip": null,
+              "blankId": null,
+              "machineOrientation": null,
+              "turnCount": null,
+              "eligible": false,
+              "reason": "PRIMARY_REMAINDER: not a detached working strip"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0/0/0/1/1/1/1/1/1/1",
+              "rect": {
+                "x": 115,
+                "y": 760,
+                "w": 180,
+                "h": 30
+              },
+              "strip": 4,
+              "blankId": "s1/strip4/work/1/1/1/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0/0/1/1/1/1/1/1/1",
+              "rect": {
+                "x": 300,
+                "y": 760,
+                "w": 180,
+                "h": 30
+              },
+              "strip": 3,
+              "blankId": "s1/strip3/work/1/1/1/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0/1/1/1/1",
+              "rect": {
+                "x": 485,
+                "y": 745,
+                "w": 350,
+                "h": 45
+              },
+              "strip": 2,
+              "blankId": "s1/strip2/work/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/1/1/1/1",
+              "rect": {
+                "x": 840,
+                "y": 745,
+                "w": 350,
+                "h": 45
+              },
+              "strip": 1,
+              "blankId": "s1/strip1/work/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 2,
+              "path": "r/0/0",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "w": 810,
+                "h": 780
+              },
+              "strip": null,
+              "blankId": null,
+              "machineOrientation": null,
+              "turnCount": null,
+              "eligible": false,
+              "reason": "PRIMARY_REMAINDER: not a detached working strip"
+            },
+            {
+              "sheet": 2,
+              "path": "r/0/1/1/1",
+              "rect": {
+                "x": 825,
+                "y": 260,
+                "w": 180,
+                "h": 530
+              },
+              "strip": 2,
+              "blankId": "s2/strip2/work/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 2,
+              "path": "r/1/1/1/1/1/1/1",
+              "rect": {
+                "x": 1010,
+                "y": 760,
+                "w": 180,
+                "h": 30
+              },
+              "strip": 1,
+              "blankId": "s2/strip1/work/1/1/1/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            }
+          ]
+        ],
+        "leafAttempts": 7,
+        "deepAttempts": 20,
+        "multiStripAttempts": 24,
+        "multiStripDP": {
+          "states": 0,
+          "partitions": 0,
+          "combinations": 0,
+          "pruned": 0,
+          "frontierPruned": 0,
+          "exhausted": false
+        },
+        "multiStripNodes": 24,
+        "multiStripBudgetExhausted": 0,
+        "localStates": 0,
+        "localExhausted": 0,
+        "donorCandidates": 0,
+        "replayRejected": 0,
+        "lastRejection": null,
+        "accepted": [],
+        "elapsedMs": 5,
+        "finalSheetLoads": [
+          9,
+          18,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "name": "shelves",
+    "parameters": {
+      "name": "shelves",
+      "sheetW": 2750,
+      "sheetH": 1830,
+      "trim": 10,
+      "kerf": 5,
+      "pieces": [
+        {
+          "id": 1,
+          "l": 1200,
+          "w": 300,
+          "q": 8,
+          "grain": true
+        },
+        {
+          "id": 2,
+          "l": 600,
+          "w": 280,
+          "q": 12,
+          "grain": true
+        },
+        {
+          "id": 3,
+          "l": 400,
+          "w": 200,
+          "q": 10,
+          "grain": true
+        }
+      ]
+    },
+    "baseline": {
+      "metrics": {
+        "valid": true,
+        "partCount": 30,
+        "sheets": 2,
+        "cuts": 61,
+        "cutLength": 48390,
+        "wasteArea": 4024950,
+        "largestWaste": 3043950,
+        "parts": 30,
+        "turns": 11,
+        "feeds": 59,
+        "stages": 2,
+        "operations": 135,
+        "primaryStrips": 9,
+        "substrips": 39
+      },
+      "loads": [
+        16,
+        14
+      ],
+      "elapsedMs": 256
+    },
+    "improved": {
+      "metrics": {
+        "valid": true,
+        "partCount": 30,
+        "sheets": 2,
+        "cuts": 61,
+        "cutLength": 48390,
+        "wasteArea": 4024950,
+        "largestWaste": 3043950,
+        "parts": 30,
+        "turns": 11,
+        "feeds": 59,
+        "stages": 2,
+        "operations": 135,
+        "primaryStrips": 9,
+        "substrips": 39
+      },
+      "recovery": {
+        "budget": {
+          "donorTrials": 12,
+          "candidates": 8,
+          "passes": 30,
+          "dpStates": 3000,
+          "combinations": 500000,
+          "subsets": 2000,
+          "frontier": 32
+        },
+        "initialSheetLoads": [
+          16,
+          14
+        ],
+        "options": {
+          "multiCombinations": 500000,
+          "multiFrontier": 24,
+          "multiAttempts": 24,
+          "deep": true,
+          "multiStrip": true
+        },
+        "inventories": [
+          [
+            {
+              "sheet": 0,
+              "path": "r/0/0/0/0/0/0",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "w": 2730,
+                "h": 20
+              },
+              "strip": null,
+              "blankId": null,
+              "machineOrientation": null,
+              "turnCount": null,
+              "eligible": false,
+              "reason": "PRIMARY_REMAINDER: not a detached working strip"
+            },
+            {
+              "sheet": 0,
+              "path": "r/0/0/0/0/0/1/1/1/1/1",
+              "rect": {
+                "x": 2430,
+                "y": 35,
+                "w": 310,
+                "h": 280
+              },
+              "strip": 6,
+              "blankId": "s0/strip6/work/1/1/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 0,
+              "path": "r/0/0/0/0/1/1/1/1/1",
+              "rect": {
+                "x": 2430,
+                "y": 320,
+                "w": 310,
+                "h": 280
+              },
+              "strip": 5,
+              "blankId": "s0/strip5/work/1/1/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 0,
+              "path": "r/0/0/0/1/1/1",
+              "rect": {
+                "x": 2420,
+                "y": 605,
+                "w": 320,
+                "h": 300
+              },
+              "strip": 4,
+              "blankId": "s0/strip4/work/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 0,
+              "path": "r/0/0/1/1/1",
+              "rect": {
+                "x": 2420,
+                "y": 910,
+                "w": 320,
+                "h": 300
+              },
+              "strip": 3,
+              "blankId": "s0/strip3/work/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 0,
+              "path": "r/0/1/1/1",
+              "rect": {
+                "x": 2420,
+                "y": 1215,
+                "w": 320,
+                "h": 300
+              },
+              "strip": 2,
+              "blankId": "s0/strip2/work/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 0,
+              "path": "r/1/1/1",
+              "rect": {
+                "x": 2420,
+                "y": 1520,
+                "w": 320,
+                "h": 300
+              },
+              "strip": 1,
+              "blankId": "s0/strip1/work/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0/0/0",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "w": 2730,
+                "h": 1115
+              },
+              "strip": null,
+              "blankId": null,
+              "machineOrientation": null,
+              "turnCount": null,
+              "eligible": false,
+              "reason": "PRIMARY_REMAINDER: not a detached working strip"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0/0/1/1/1/1/1",
+              "rect": {
+                "x": 1630,
+                "y": 1130,
+                "w": 1110,
+                "h": 200
+              },
+              "strip": 3,
+              "blankId": "s1/strip3/work/1/1/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0/1/1/1/1/1",
+              "rect": {
+                "x": 2430,
+                "y": 1335,
+                "w": 310,
+                "h": 280
+              },
+              "strip": 2,
+              "blankId": "s1/strip2/work/1/1/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/1/1/1/1/1/1/1",
+              "rect": {
+                "x": 2440,
+                "y": 1620,
+                "w": 300,
+                "h": 200
+              },
+              "strip": 1,
+              "blankId": "s1/strip1/work/1/1/1/1/1/1",
+              "machineOrientation": 180,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            }
+          ]
+        ],
+        "leafAttempts": 6,
+        "deepAttempts": 10,
+        "multiStripAttempts": 24,
+        "multiStripDP": {
+          "states": 0,
+          "partitions": 0,
+          "combinations": 0,
+          "pruned": 0,
+          "frontierPruned": 0,
+          "exhausted": false
+        },
+        "multiStripNodes": 24,
+        "multiStripBudgetExhausted": 0,
+        "localStates": 48,
+        "localExhausted": 0,
+        "donorCandidates": 0,
+        "replayRejected": 0,
+        "lastRejection": null,
+        "accepted": [],
+        "elapsedMs": 5,
+        "finalSheetLoads": [
+          16,
+          14
+        ]
+      }
+    }
+  },
+  {
+    "name": "mixed-rotation-permission",
+    "parameters": {
+      "name": "mixed-rotation-permission",
+      "sheetW": 900,
+      "sheetH": 600,
+      "trim": 10,
+      "kerf": 5,
+      "pieces": [
+        {
+          "id": 1,
+          "l": 700,
+          "w": 180,
+          "q": 3,
+          "grain": false
+        },
+        {
+          "id": 2,
+          "l": 250,
+          "w": 150,
+          "q": 7,
+          "grain": true
+        }
+      ]
+    },
+    "baseline": {
+      "metrics": {
+        "valid": true,
+        "partCount": 10,
+        "sheets": 2,
+        "cuts": 26,
+        "cutLength": 11550,
+        "wasteArea": 349450,
+        "largestWaste": 106250,
+        "parts": 10,
+        "turns": 4,
+        "feeds": 24,
+        "stages": 2,
+        "operations": 58,
+        "primaryStrips": 4,
+        "substrips": 14
+      },
+      "loads": [
+        3,
+        7
+      ],
+      "elapsedMs": 103
+    },
+    "improved": {
+      "metrics": {
+        "valid": true,
+        "partCount": 10,
+        "sheets": 2,
+        "cuts": 26,
+        "cutLength": 11550,
+        "wasteArea": 349450,
+        "largestWaste": 106250,
+        "parts": 10,
+        "turns": 4,
+        "feeds": 24,
+        "stages": 2,
+        "operations": 58,
+        "primaryStrips": 4,
+        "substrips": 14
+      },
+      "recovery": {
+        "budget": {
+          "donorTrials": 12,
+          "candidates": 8,
+          "passes": 10,
+          "dpStates": 3000,
+          "combinations": 500000,
+          "subsets": 2000,
+          "frontier": 32
+        },
+        "initialSheetLoads": [
+          3,
+          7
+        ],
+        "options": {
+          "multiCombinations": 500000,
+          "multiFrontier": 24,
+          "multiAttempts": 24,
+          "deep": true,
+          "multiStrip": true
+        },
+        "inventories": [
+          [
+            {
+              "sheet": 0,
+              "path": "r/0",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "w": 175,
+                "h": 580
+              },
+              "strip": null,
+              "blankId": null,
+              "machineOrientation": null,
+              "turnCount": null,
+              "eligible": false,
+              "reason": "PRIMARY_REMAINDER: not a detached working strip"
+            },
+            {
+              "sheet": 0,
+              "path": "r/1/1/1/1",
+              "rect": {
+                "x": 190,
+                "y": 565,
+                "w": 700,
+                "h": 25
+              },
+              "strip": 1,
+              "blankId": "s0/strip1/work/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0/0/0",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "w": 115,
+                "h": 580
+              },
+              "strip": null,
+              "blankId": null,
+              "machineOrientation": null,
+              "turnCount": null,
+              "eligible": false,
+              "reason": "PRIMARY_REMAINDER: not a detached working strip"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0/0/1/1",
+              "rect": {
+                "x": 130,
+                "y": 165,
+                "w": 250,
+                "h": 425
+              },
+              "strip": 3,
+              "blankId": "s1/strip3/work/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/0/1/1/1/1",
+              "rect": {
+                "x": 385,
+                "y": 475,
+                "w": 250,
+                "h": 115
+              },
+              "strip": 2,
+              "blankId": "s1/strip2/work/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            },
+            {
+              "sheet": 1,
+              "path": "r/1/1/1/1",
+              "rect": {
+                "x": 640,
+                "y": 475,
+                "w": 250,
+                "h": 115
+              },
+              "strip": 1,
+              "blankId": "s1/strip1/work/1/1/1",
+              "machineOrientation": 90,
+              "turnCount": 0,
+              "eligible": true,
+              "reason": "Detached strip terminal waste"
+            }
+          ]
+        ],
+        "leafAttempts": 1,
+        "deepAttempts": 2,
+        "multiStripAttempts": 0,
+        "multiStripDP": {
+          "states": 0,
+          "partitions": 0,
+          "combinations": 0,
+          "pruned": 0,
+          "frontierPruned": 0,
+          "exhausted": false
+        },
+        "multiStripNodes": 0,
+        "multiStripBudgetExhausted": 0,
+        "localStates": 0,
+        "localExhausted": 0,
+        "donorCandidates": 0,
+        "replayRejected": 0,
+        "lastRejection": null,
+        "accepted": [],
+        "elapsedMs": 2,
+        "finalSheetLoads": [
+          3,
+          7
+        ]
+      }
+    }
+  }
+]
