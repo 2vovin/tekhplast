@@ -1,0 +1,34 @@
+[
+  {
+    "sheet": 1,
+    "parts": 28,
+    "primaryStrips": 5,
+    "cuts": 44,
+    "turns": 5,
+    "cutLength": 29900,
+    "largestRemnant": {
+      "x": 10,
+      "y": 1735,
+      "w": 2730,
+      "h": 85
+    },
+    "largestWaste": 232050,
+    "usedArea": 4200000
+  },
+  {
+    "sheet": 2,
+    "parts": 16,
+    "primaryStrips": 2,
+    "cuts": 23,
+    "turns": 2,
+    "cutLength": 18250,
+    "largestRemnant": {
+      "x": 10,
+      "y": 1020,
+      "w": 2730,
+      "h": 800
+    },
+    "largestWaste": 2184000,
+    "usedArea": 2400000
+  }
+]

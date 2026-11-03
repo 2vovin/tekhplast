@@ -1,0 +1,15 @@
+{
+  "sheetW": 2750,
+  "sheetH": 1830,
+  "kerf": 5,
+  "trim": 10,
+  "pieces": [
+    {
+      "id": 1,
+      "l": 500,
+      "w": 300,
+      "q": 44,
+      "grain": false
+    }
+  ]
+}

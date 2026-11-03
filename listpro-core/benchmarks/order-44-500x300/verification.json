@@ -1,0 +1,2742 @@
+{
+  "geometryValid": true,
+  "abstractCutTreeValid": true,
+  "targetPSSModelValid": true,
+  "realMachineFeasibility": "unknown",
+  "errors": [],
+  "metrics": {
+    "sheets": 2,
+    "parts": 44,
+    "cuts": 67,
+    "cutLength": 48150,
+    "turns": 7,
+    "feeds": 65,
+    "stages": 2,
+    "operations": 143,
+    "largestWaste": 2184000,
+    "wasteArea": 3097050,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 1
+  },
+  "partTurns": [
+    {
+      "part": {
+        "id": 1,
+        "instance": 1,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 2,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 3,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 4,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 5,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 6,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 7,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 8,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 9,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 10,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 11,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 12,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 13,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 14,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 15,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 16,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 17,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 18,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 19,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 20,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 21,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 22,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 23,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 24,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 25,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 26,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 27,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 28,
+        "rotated": false
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 29,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 30,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 31,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 32,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 33,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 34,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 35,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 36,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 37,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 38,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 39,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 40,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 41,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 42,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 43,
+        "rotated": true
+      },
+      "turns": 1
+    },
+    {
+      "part": {
+        "id": 1,
+        "instance": 44,
+        "rotated": true
+      },
+      "turns": 1
+    }
+  ],
+  "roleFrames": [
+    {
+      "step": 2,
+      "cut": 1,
+      "input": "s0/raw",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/edge0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 2750,
+            "h": 5
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s0/main0",
+          "rect": {
+            "x": 0,
+            "y": 10,
+            "w": 2750,
+            "h": 1820
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "cut": 2,
+      "input": "s0/main0",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/band1",
+          "rect": {
+            "x": 0,
+            "y": 10,
+            "w": 2750,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/main1",
+          "rect": {
+            "x": 0,
+            "y": 515,
+            "w": 2750,
+            "h": 1315
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "cut": 3,
+      "input": "s0/main1",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/band2",
+          "rect": {
+            "x": 0,
+            "y": 515,
+            "w": 2750,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/main2",
+          "rect": {
+            "x": 0,
+            "y": 820,
+            "w": 2750,
+            "h": 1010
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "cut": 4,
+      "input": "s0/main2",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/band3",
+          "rect": {
+            "x": 0,
+            "y": 820,
+            "w": 2750,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/main3",
+          "rect": {
+            "x": 0,
+            "y": 1125,
+            "w": 2750,
+            "h": 705
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "cut": 5,
+      "input": "s0/main3",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/band4",
+          "rect": {
+            "x": 0,
+            "y": 1125,
+            "w": 2750,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/main4",
+          "rect": {
+            "x": 0,
+            "y": 1430,
+            "w": 2750,
+            "h": 400
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 12,
+      "cut": 6,
+      "input": "s0/main4",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/band5",
+          "rect": {
+            "x": 0,
+            "y": 1430,
+            "w": 2750,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/main5",
+          "rect": {
+            "x": 0,
+            "y": 1735,
+            "w": 2750,
+            "h": 95
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 16,
+      "cut": 7,
+      "input": "s0/band1",
+      "inputRole": "DETACHED",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band1/edge0",
+          "rect": {
+            "x": 0,
+            "y": 10,
+            "w": 5,
+            "h": 500
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s0/band1/trimmed0",
+          "rect": {
+            "x": 10,
+            "y": 10,
+            "w": 2740,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 18,
+      "cut": 8,
+      "input": "s0/band1/trimmed0",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band1/work",
+          "rect": {
+            "x": 10,
+            "y": 10,
+            "w": 2730,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        },
+        {
+          "id": "s0/band1/edge1",
+          "rect": {
+            "x": 2745,
+            "y": 10,
+            "w": 5,
+            "h": 500
+          },
+          "role": "TRIM",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 20,
+      "cut": 9,
+      "input": "s0/band1/work",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band1/work/0",
+          "rect": {
+            "x": 10,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band1/work/1",
+          "rect": {
+            "x": 315,
+            "y": 10,
+            "w": 2425,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 22,
+      "cut": 10,
+      "input": "s0/band1/work/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band1/work/1/0",
+          "rect": {
+            "x": 315,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band1/work/1/1",
+          "rect": {
+            "x": 620,
+            "y": 10,
+            "w": 2120,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 24,
+      "cut": 11,
+      "input": "s0/band1/work/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band1/work/1/1/0",
+          "rect": {
+            "x": 620,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band1/work/1/1/1",
+          "rect": {
+            "x": 925,
+            "y": 10,
+            "w": 1815,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 26,
+      "cut": 12,
+      "input": "s0/band1/work/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band1/work/1/1/1/0",
+          "rect": {
+            "x": 925,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band1/work/1/1/1/1",
+          "rect": {
+            "x": 1230,
+            "y": 10,
+            "w": 1510,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 28,
+      "cut": 13,
+      "input": "s0/band1/work/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band1/work/1/1/1/1/0",
+          "rect": {
+            "x": 1230,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band1/work/1/1/1/1/1",
+          "rect": {
+            "x": 1535,
+            "y": 10,
+            "w": 1205,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 30,
+      "cut": 14,
+      "input": "s0/band1/work/1/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band1/work/1/1/1/1/1/0",
+          "rect": {
+            "x": 1535,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band1/work/1/1/1/1/1/1",
+          "rect": {
+            "x": 1840,
+            "y": 10,
+            "w": 900,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 32,
+      "cut": 15,
+      "input": "s0/band1/work/1/1/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band1/work/1/1/1/1/1/1/0",
+          "rect": {
+            "x": 1840,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band1/work/1/1/1/1/1/1/1",
+          "rect": {
+            "x": 2145,
+            "y": 10,
+            "w": 595,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 34,
+      "cut": 16,
+      "input": "s0/band1/work/1/1/1/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band1/work/1/1/1/1/1/1/1/0",
+          "rect": {
+            "x": 2145,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band1/work/1/1/1/1/1/1/1/1",
+          "rect": {
+            "x": 2450,
+            "y": 10,
+            "w": 290,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 37,
+      "cut": 17,
+      "input": "s0/band2",
+      "inputRole": "DETACHED",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band2/edge0",
+          "rect": {
+            "x": 0,
+            "y": 515,
+            "w": 5,
+            "h": 300
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s0/band2/trimmed0",
+          "rect": {
+            "x": 10,
+            "y": 515,
+            "w": 2740,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 39,
+      "cut": 18,
+      "input": "s0/band2/trimmed0",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band2/work",
+          "rect": {
+            "x": 10,
+            "y": 515,
+            "w": 2730,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        },
+        {
+          "id": "s0/band2/edge1",
+          "rect": {
+            "x": 2745,
+            "y": 515,
+            "w": 5,
+            "h": 300
+          },
+          "role": "TRIM",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 41,
+      "cut": 19,
+      "input": "s0/band2/work",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band2/work/0",
+          "rect": {
+            "x": 10,
+            "y": 515,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band2/work/1",
+          "rect": {
+            "x": 515,
+            "y": 515,
+            "w": 2225,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 43,
+      "cut": 20,
+      "input": "s0/band2/work/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band2/work/1/0",
+          "rect": {
+            "x": 515,
+            "y": 515,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band2/work/1/1",
+          "rect": {
+            "x": 1020,
+            "y": 515,
+            "w": 1720,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 45,
+      "cut": 21,
+      "input": "s0/band2/work/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band2/work/1/1/0",
+          "rect": {
+            "x": 1020,
+            "y": 515,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band2/work/1/1/1",
+          "rect": {
+            "x": 1525,
+            "y": 515,
+            "w": 1215,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 47,
+      "cut": 22,
+      "input": "s0/band2/work/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band2/work/1/1/1/0",
+          "rect": {
+            "x": 1525,
+            "y": 515,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band2/work/1/1/1/1",
+          "rect": {
+            "x": 2030,
+            "y": 515,
+            "w": 710,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 49,
+      "cut": 23,
+      "input": "s0/band2/work/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band2/work/1/1/1/1/0",
+          "rect": {
+            "x": 2030,
+            "y": 515,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band2/work/1/1/1/1/1",
+          "rect": {
+            "x": 2535,
+            "y": 515,
+            "w": 205,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 52,
+      "cut": 24,
+      "input": "s0/band3",
+      "inputRole": "DETACHED",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band3/edge0",
+          "rect": {
+            "x": 0,
+            "y": 820,
+            "w": 5,
+            "h": 300
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s0/band3/trimmed0",
+          "rect": {
+            "x": 10,
+            "y": 820,
+            "w": 2740,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 54,
+      "cut": 25,
+      "input": "s0/band3/trimmed0",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band3/work",
+          "rect": {
+            "x": 10,
+            "y": 820,
+            "w": 2730,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        },
+        {
+          "id": "s0/band3/edge1",
+          "rect": {
+            "x": 2745,
+            "y": 820,
+            "w": 5,
+            "h": 300
+          },
+          "role": "TRIM",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 56,
+      "cut": 26,
+      "input": "s0/band3/work",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band3/work/0",
+          "rect": {
+            "x": 10,
+            "y": 820,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band3/work/1",
+          "rect": {
+            "x": 515,
+            "y": 820,
+            "w": 2225,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 58,
+      "cut": 27,
+      "input": "s0/band3/work/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band3/work/1/0",
+          "rect": {
+            "x": 515,
+            "y": 820,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band3/work/1/1",
+          "rect": {
+            "x": 1020,
+            "y": 820,
+            "w": 1720,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 60,
+      "cut": 28,
+      "input": "s0/band3/work/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band3/work/1/1/0",
+          "rect": {
+            "x": 1020,
+            "y": 820,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band3/work/1/1/1",
+          "rect": {
+            "x": 1525,
+            "y": 820,
+            "w": 1215,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 62,
+      "cut": 29,
+      "input": "s0/band3/work/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band3/work/1/1/1/0",
+          "rect": {
+            "x": 1525,
+            "y": 820,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band3/work/1/1/1/1",
+          "rect": {
+            "x": 2030,
+            "y": 820,
+            "w": 710,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 64,
+      "cut": 30,
+      "input": "s0/band3/work/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band3/work/1/1/1/1/0",
+          "rect": {
+            "x": 2030,
+            "y": 820,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band3/work/1/1/1/1/1",
+          "rect": {
+            "x": 2535,
+            "y": 820,
+            "w": 205,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 67,
+      "cut": 31,
+      "input": "s0/band4",
+      "inputRole": "DETACHED",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band4/edge0",
+          "rect": {
+            "x": 0,
+            "y": 1125,
+            "w": 5,
+            "h": 300
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s0/band4/trimmed0",
+          "rect": {
+            "x": 10,
+            "y": 1125,
+            "w": 2740,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 69,
+      "cut": 32,
+      "input": "s0/band4/trimmed0",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band4/work",
+          "rect": {
+            "x": 10,
+            "y": 1125,
+            "w": 2730,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        },
+        {
+          "id": "s0/band4/edge1",
+          "rect": {
+            "x": 2745,
+            "y": 1125,
+            "w": 5,
+            "h": 300
+          },
+          "role": "TRIM",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 71,
+      "cut": 33,
+      "input": "s0/band4/work",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band4/work/0",
+          "rect": {
+            "x": 10,
+            "y": 1125,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band4/work/1",
+          "rect": {
+            "x": 515,
+            "y": 1125,
+            "w": 2225,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 73,
+      "cut": 34,
+      "input": "s0/band4/work/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band4/work/1/0",
+          "rect": {
+            "x": 515,
+            "y": 1125,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band4/work/1/1",
+          "rect": {
+            "x": 1020,
+            "y": 1125,
+            "w": 1720,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 75,
+      "cut": 35,
+      "input": "s0/band4/work/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band4/work/1/1/0",
+          "rect": {
+            "x": 1020,
+            "y": 1125,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band4/work/1/1/1",
+          "rect": {
+            "x": 1525,
+            "y": 1125,
+            "w": 1215,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 77,
+      "cut": 36,
+      "input": "s0/band4/work/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band4/work/1/1/1/0",
+          "rect": {
+            "x": 1525,
+            "y": 1125,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band4/work/1/1/1/1",
+          "rect": {
+            "x": 2030,
+            "y": 1125,
+            "w": 710,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 79,
+      "cut": 37,
+      "input": "s0/band4/work/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band4/work/1/1/1/1/0",
+          "rect": {
+            "x": 2030,
+            "y": 1125,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band4/work/1/1/1/1/1",
+          "rect": {
+            "x": 2535,
+            "y": 1125,
+            "w": 205,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 82,
+      "cut": 38,
+      "input": "s0/band5",
+      "inputRole": "DETACHED",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band5/edge0",
+          "rect": {
+            "x": 0,
+            "y": 1430,
+            "w": 5,
+            "h": 300
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s0/band5/trimmed0",
+          "rect": {
+            "x": 10,
+            "y": 1430,
+            "w": 2740,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 84,
+      "cut": 39,
+      "input": "s0/band5/trimmed0",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band5/work",
+          "rect": {
+            "x": 10,
+            "y": 1430,
+            "w": 2730,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        },
+        {
+          "id": "s0/band5/edge1",
+          "rect": {
+            "x": 2745,
+            "y": 1430,
+            "w": 5,
+            "h": 300
+          },
+          "role": "TRIM",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 86,
+      "cut": 40,
+      "input": "s0/band5/work",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band5/work/0",
+          "rect": {
+            "x": 10,
+            "y": 1430,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band5/work/1",
+          "rect": {
+            "x": 515,
+            "y": 1430,
+            "w": 2225,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 88,
+      "cut": 41,
+      "input": "s0/band5/work/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band5/work/1/0",
+          "rect": {
+            "x": 515,
+            "y": 1430,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band5/work/1/1",
+          "rect": {
+            "x": 1020,
+            "y": 1430,
+            "w": 1720,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 90,
+      "cut": 42,
+      "input": "s0/band5/work/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band5/work/1/1/0",
+          "rect": {
+            "x": 1020,
+            "y": 1430,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band5/work/1/1/1",
+          "rect": {
+            "x": 1525,
+            "y": 1430,
+            "w": 1215,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 92,
+      "cut": 43,
+      "input": "s0/band5/work/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band5/work/1/1/1/0",
+          "rect": {
+            "x": 1525,
+            "y": 1430,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band5/work/1/1/1/1",
+          "rect": {
+            "x": 2030,
+            "y": 1430,
+            "w": 710,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 94,
+      "cut": 44,
+      "input": "s0/band5/work/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s0/band5/work/1/1/1/1/0",
+          "rect": {
+            "x": 2030,
+            "y": 1430,
+            "w": 500,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/band5/work/1/1/1/1/1",
+          "rect": {
+            "x": 2535,
+            "y": 1430,
+            "w": 205,
+            "h": 300
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 96,
+      "cut": 45,
+      "input": "s1/raw",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s1/edge0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 2750,
+            "h": 5
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s1/main0",
+          "rect": {
+            "x": 0,
+            "y": 10,
+            "w": 2750,
+            "h": 1820
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 98,
+      "cut": 46,
+      "input": "s1/main0",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s1/band1",
+          "rect": {
+            "x": 0,
+            "y": 10,
+            "w": 2750,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/main1",
+          "rect": {
+            "x": 0,
+            "y": 515,
+            "w": 2750,
+            "h": 1315
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 100,
+      "cut": 47,
+      "input": "s1/main1",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s1/band2",
+          "rect": {
+            "x": 0,
+            "y": 515,
+            "w": 2750,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/main2",
+          "rect": {
+            "x": 0,
+            "y": 1020,
+            "w": 2750,
+            "h": 810
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 104,
+      "cut": 48,
+      "input": "s1/band1",
+      "inputRole": "DETACHED",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band1/edge0",
+          "rect": {
+            "x": 0,
+            "y": 10,
+            "w": 5,
+            "h": 500
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s1/band1/trimmed0",
+          "rect": {
+            "x": 10,
+            "y": 10,
+            "w": 2740,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 106,
+      "cut": 49,
+      "input": "s1/band1/trimmed0",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band1/work",
+          "rect": {
+            "x": 10,
+            "y": 10,
+            "w": 2730,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        },
+        {
+          "id": "s1/band1/edge1",
+          "rect": {
+            "x": 2745,
+            "y": 10,
+            "w": 5,
+            "h": 500
+          },
+          "role": "TRIM",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 108,
+      "cut": 50,
+      "input": "s1/band1/work",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band1/work/0",
+          "rect": {
+            "x": 10,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band1/work/1",
+          "rect": {
+            "x": 315,
+            "y": 10,
+            "w": 2425,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 110,
+      "cut": 51,
+      "input": "s1/band1/work/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band1/work/1/0",
+          "rect": {
+            "x": 315,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band1/work/1/1",
+          "rect": {
+            "x": 620,
+            "y": 10,
+            "w": 2120,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 112,
+      "cut": 52,
+      "input": "s1/band1/work/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band1/work/1/1/0",
+          "rect": {
+            "x": 620,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band1/work/1/1/1",
+          "rect": {
+            "x": 925,
+            "y": 10,
+            "w": 1815,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 114,
+      "cut": 53,
+      "input": "s1/band1/work/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band1/work/1/1/1/0",
+          "rect": {
+            "x": 925,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band1/work/1/1/1/1",
+          "rect": {
+            "x": 1230,
+            "y": 10,
+            "w": 1510,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 116,
+      "cut": 54,
+      "input": "s1/band1/work/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band1/work/1/1/1/1/0",
+          "rect": {
+            "x": 1230,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band1/work/1/1/1/1/1",
+          "rect": {
+            "x": 1535,
+            "y": 10,
+            "w": 1205,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 118,
+      "cut": 55,
+      "input": "s1/band1/work/1/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band1/work/1/1/1/1/1/0",
+          "rect": {
+            "x": 1535,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band1/work/1/1/1/1/1/1",
+          "rect": {
+            "x": 1840,
+            "y": 10,
+            "w": 900,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 120,
+      "cut": 56,
+      "input": "s1/band1/work/1/1/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band1/work/1/1/1/1/1/1/0",
+          "rect": {
+            "x": 1840,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band1/work/1/1/1/1/1/1/1",
+          "rect": {
+            "x": 2145,
+            "y": 10,
+            "w": 595,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 122,
+      "cut": 57,
+      "input": "s1/band1/work/1/1/1/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band1/work/1/1/1/1/1/1/1/0",
+          "rect": {
+            "x": 2145,
+            "y": 10,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band1/work/1/1/1/1/1/1/1/1",
+          "rect": {
+            "x": 2450,
+            "y": 10,
+            "w": 290,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 125,
+      "cut": 58,
+      "input": "s1/band2",
+      "inputRole": "DETACHED",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band2/edge0",
+          "rect": {
+            "x": 0,
+            "y": 515,
+            "w": 5,
+            "h": 500
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s1/band2/trimmed0",
+          "rect": {
+            "x": 10,
+            "y": 515,
+            "w": 2740,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 127,
+      "cut": 59,
+      "input": "s1/band2/trimmed0",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band2/work",
+          "rect": {
+            "x": 10,
+            "y": 515,
+            "w": 2730,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        },
+        {
+          "id": "s1/band2/edge1",
+          "rect": {
+            "x": 2745,
+            "y": 515,
+            "w": 5,
+            "h": 500
+          },
+          "role": "TRIM",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 129,
+      "cut": 60,
+      "input": "s1/band2/work",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band2/work/0",
+          "rect": {
+            "x": 10,
+            "y": 515,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band2/work/1",
+          "rect": {
+            "x": 315,
+            "y": 515,
+            "w": 2425,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 131,
+      "cut": 61,
+      "input": "s1/band2/work/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band2/work/1/0",
+          "rect": {
+            "x": 315,
+            "y": 515,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band2/work/1/1",
+          "rect": {
+            "x": 620,
+            "y": 515,
+            "w": 2120,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 133,
+      "cut": 62,
+      "input": "s1/band2/work/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band2/work/1/1/0",
+          "rect": {
+            "x": 620,
+            "y": 515,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band2/work/1/1/1",
+          "rect": {
+            "x": 925,
+            "y": 515,
+            "w": 1815,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 135,
+      "cut": 63,
+      "input": "s1/band2/work/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band2/work/1/1/1/0",
+          "rect": {
+            "x": 925,
+            "y": 515,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band2/work/1/1/1/1",
+          "rect": {
+            "x": 1230,
+            "y": 515,
+            "w": 1510,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 137,
+      "cut": 64,
+      "input": "s1/band2/work/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band2/work/1/1/1/1/0",
+          "rect": {
+            "x": 1230,
+            "y": 515,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band2/work/1/1/1/1/1",
+          "rect": {
+            "x": 1535,
+            "y": 515,
+            "w": 1205,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 139,
+      "cut": 65,
+      "input": "s1/band2/work/1/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band2/work/1/1/1/1/1/0",
+          "rect": {
+            "x": 1535,
+            "y": 515,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band2/work/1/1/1/1/1/1",
+          "rect": {
+            "x": 1840,
+            "y": 515,
+            "w": 900,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 141,
+      "cut": 66,
+      "input": "s1/band2/work/1/1/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band2/work/1/1/1/1/1/1/0",
+          "rect": {
+            "x": 1840,
+            "y": 515,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band2/work/1/1/1/1/1/1/1",
+          "rect": {
+            "x": 2145,
+            "y": 515,
+            "w": 595,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 143,
+      "cut": 67,
+      "input": "s1/band2/work/1/1/1/1/1/1/1",
+      "inputRole": "HELD_STRIP",
+      "axis": "V",
+      "outputs": [
+        {
+          "id": "s1/band2/work/1/1/1/1/1/1/1/0",
+          "rect": {
+            "x": 2145,
+            "y": 515,
+            "w": 300,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/band2/work/1/1/1/1/1/1/1/1",
+          "rect": {
+            "x": 2450,
+            "y": 515,
+            "w": 290,
+            "h": 500
+          },
+          "role": "HELD_STRIP",
+          "held": true
+        }
+      ]
+    }
+  ],
+  "primarySnapshots": [
+    {
+      "step": 2,
+      "cut": 1,
+      "input": "s0/raw",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/edge0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 2750,
+            "h": 5
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s0/main0",
+          "rect": {
+            "x": 0,
+            "y": 10,
+            "w": 2750,
+            "h": 1820
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "cut": 2,
+      "input": "s0/main0",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/band1",
+          "rect": {
+            "x": 0,
+            "y": 10,
+            "w": 2750,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/main1",
+          "rect": {
+            "x": 0,
+            "y": 515,
+            "w": 2750,
+            "h": 1315
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "cut": 3,
+      "input": "s0/main1",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/band2",
+          "rect": {
+            "x": 0,
+            "y": 515,
+            "w": 2750,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/main2",
+          "rect": {
+            "x": 0,
+            "y": 820,
+            "w": 2750,
+            "h": 1010
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "cut": 4,
+      "input": "s0/main2",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/band3",
+          "rect": {
+            "x": 0,
+            "y": 820,
+            "w": 2750,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/main3",
+          "rect": {
+            "x": 0,
+            "y": 1125,
+            "w": 2750,
+            "h": 705
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "cut": 5,
+      "input": "s0/main3",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/band4",
+          "rect": {
+            "x": 0,
+            "y": 1125,
+            "w": 2750,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/main4",
+          "rect": {
+            "x": 0,
+            "y": 1430,
+            "w": 2750,
+            "h": 400
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 12,
+      "cut": 6,
+      "input": "s0/main4",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s0/band5",
+          "rect": {
+            "x": 0,
+            "y": 1430,
+            "w": 2750,
+            "h": 300
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s0/main5",
+          "rect": {
+            "x": 0,
+            "y": 1735,
+            "w": 2750,
+            "h": 95
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 96,
+      "cut": 45,
+      "input": "s1/raw",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s1/edge0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 2750,
+            "h": 5
+          },
+          "role": "TRIM",
+          "held": true
+        },
+        {
+          "id": "s1/main0",
+          "rect": {
+            "x": 0,
+            "y": 10,
+            "w": 2750,
+            "h": 1820
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 98,
+      "cut": 46,
+      "input": "s1/main0",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s1/band1",
+          "rect": {
+            "x": 0,
+            "y": 10,
+            "w": 2750,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/main1",
+          "rect": {
+            "x": 0,
+            "y": 515,
+            "w": 2750,
+            "h": 1315
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    },
+    {
+      "step": 100,
+      "cut": 47,
+      "input": "s1/main1",
+      "inputRole": "HELD_SHEET",
+      "axis": "H",
+      "outputs": [
+        {
+          "id": "s1/band2",
+          "rect": {
+            "x": 0,
+            "y": 515,
+            "w": 2750,
+            "h": 500
+          },
+          "role": "DETACHED",
+          "held": false
+        },
+        {
+          "id": "s1/main2",
+          "rect": {
+            "x": 0,
+            "y": 1020,
+            "w": 2750,
+            "h": 810
+          },
+          "role": "HELD_SHEET",
+          "held": true
+        }
+      ]
+    }
+  ],
+  "assumptions": [
+    "Material LOW side is detached, HIGH side remains in place in every rip series.",
+    "Every working strip width has a real detail span; this is the conservative tested profile.",
+    "Feed advance-in-place means indexing the retained piece, not unloading it.",
+    "Physical stroke, clamp and feeding limits remain unspecified."
+  ]
+}
