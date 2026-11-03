@@ -17,7 +17,7 @@
         "12": 12,
         "13": 1
       },
-      "elapsedMs": 37560
+      "elapsedMs": 7896
     },
     "V": {
       "iterations": 100,
@@ -36,7 +36,7 @@
         "12": 33,
         "13": 4
       },
-      "elapsedMs": 38335
+      "elapsedMs": 7886
     }
   },
   "neighborhoods": [
@@ -56,7 +56,7 @@
         "4": 90,
         "5": 10
       },
-      "elapsedMs": 5024,
+      "elapsedMs": 1004,
       "removedSheets": [
         5,
         7,
@@ -65,7 +65,22 @@
       ],
       "removedParts": 59,
       "oldSheetCount": 11,
-      "newSheetCount": 11
+      "newSheetCount": 11,
+      "metrics": {
+        "sheets": 11,
+        "parts": 171,
+        "cuts": 352,
+        "cutLength": 290880.5,
+        "turns": 101,
+        "feeds": 341,
+        "stages": 4,
+        "operations": 816,
+        "largestWaste": 2819980,
+        "wasteArea": 7120824.5,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
     },
     {
       "iterations": 100,
@@ -83,7 +98,7 @@
         "5": 91,
         "6": 9
       },
-      "elapsedMs": 12760,
+      "elapsedMs": 2816,
       "removedSheets": [
         5,
         7,
@@ -93,7 +108,22 @@
       ],
       "removedParts": 87,
       "oldSheetCount": 11,
-      "newSheetCount": 11
+      "newSheetCount": 11,
+      "metrics": {
+        "sheets": 11,
+        "parts": 171,
+        "cuts": 349,
+        "cutLength": 287894,
+        "turns": 99,
+        "feeds": 338,
+        "stages": 5,
+        "operations": 808,
+        "largestWaste": 3194650,
+        "wasteArea": 7133927,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 4
+      }
     },
     {
       "iterations": 100,
@@ -111,7 +141,7 @@
         "4": 64,
         "5": 36
       },
-      "elapsedMs": 2610,
+      "elapsedMs": 552,
       "removedSheets": [
         6,
         7,
@@ -120,7 +150,22 @@
       ],
       "removedParts": 46,
       "oldSheetCount": 11,
-      "newSheetCount": 11
+      "newSheetCount": 11,
+      "metrics": {
+        "sheets": 11,
+        "parts": 171,
+        "cuts": 354,
+        "cutLength": 288293,
+        "turns": 101,
+        "feeds": 343,
+        "stages": 5,
+        "operations": 820,
+        "largestWaste": 3605520,
+        "wasteArea": 7131232,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 4
+      }
     }
   ],
   "alternatives": {
@@ -184,6 +229,7 @@
   },
   "areaLowerBound": 10,
   "tenSheetsFound": false,
+  "realMachineFeasibility": "unknown",
   "optimality": "not proven",
-  "realMachineFeasibility": "unknown"
+  "node": "v22.23.4"
 }
