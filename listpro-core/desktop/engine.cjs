@@ -86,10 +86,10 @@ function profileFor(p,axis){
   firstCutAxis:axis,machineCutAxes:['H'],maxSheetTurns:0,
   maxTurnsPerBlank:1,retainedSide:'HIGH_MATERIAL',
   trimPolicy:'whole-sheet-primary-edge-then-detached-strip-side-trim',
-  machineFeasibility:'unknown',
-  maxCutLength:null,maxFeedWidth:null,maxFeedHeight:null,
-  minHoldWidth:null,minHoldHeight:null,
-  assumptions:['Held remainder stays in the saw and never rotates. Concrete machine limits are unknown.']
+  realMachineFeasibility:'unknown',terminalPromotionAllowed:false,
+  maxCutLength:null,maxFeedWidth:null,maxFeedHeight:null,maxStages:null,
+  minHoldWidth:0,minHoldHeight:0,
+  assumptions:['Held remainder stays in the saw and never rotates. Machine limits are not known.']
  };
 }
 function validateLayout(p,layout,profile){
