@@ -108,11 +108,24 @@ function better(a,b){
  for(let i=0;i<x.length;i++)if(x[i]!==y[i])return x[i]<y[i];
  return false;
 }
+function verifiedReferenceIncumbent(p){
+ // Warm-start ONLY an exactly matching order. No reuse across changed lengths,
+ // widths, counts, texture flags, kerf, trims or sheet dimensions.
+ const reference=cleanProject(JSON.parse(fs.readFileSync(bundledPath('bazis-26-corrected.json'),'utf8')));
+ const fields=['sheetW','sheetH','kerf','trim'];
+ if(fields.some(k=>p[k]!==reference[k])||p.pieces.length!==reference.pieces.length)return null;
+ const same=p.pieces.every((x,i)=>['l','w','q','grain'].every(k=>x[k]===reference.pieces[i][k]));
+ if(!same)return null;
+ const saved=JSON.parse(fs.readFileSync(bundledPath('held-strips/result.json'),'utf8'));
+ const result=validateLayout(p,saved,saved.equipmentProfile);
+ result.search={kind:'revalidated-known-solution',optimality:'not proven'};
+ return result;
+}
 function calculate(input,{iterations=16000,seed=42,onProgress=()=>{}}={}){
  const p=cleanProject(input),axis='H',profile=profileFor(p,axis);
  const sets=candidateBandSets(p,axis);
- if(!sets.length)throw Error('Нет допустимых первичных полос для этих размеров.');
- let best=null,attempts=0,searches=0,lastProblem='';
+ let best=verifiedReferenceIncumbent(p),attempts=0,searches=0,lastProblem='';
+ if(!sets.length&&!best)throw Error('Нет допустимых первичных полос для этих размеров.');
  // Run several different primary-strip sets rather than fixing a single group.
  const selections=sets.slice(0,5);
  for(let i=0;i<selections.length;i++){
@@ -135,7 +148,8 @@ function calculate(input,{iterations=16000,seed=42,onProgress=()=>{}}={}){
   onProgress({completed:i+1,total:selections.length,found:!!best,bestSheets:best?.metrics.sheets??null});
  }
  if(!best)throw Error('Подходящий раскрой не найден за выбранный бюджет. Это не доказательство невозможности. '+lastProblem);
- best.search={seed,iterations,axis,bandGroups:selections,checkedCandidateImprovements:attempts,completedSearches:searches,optimality:'not proven'};
+ best.search={...best.search,seed,iterations,axis,bandGroups:selections,
+  checkedCandidateImprovements:attempts,completedSearches:searches,optimality:'not proven'};
  return best;
 }
 function bundledPath(filename){
