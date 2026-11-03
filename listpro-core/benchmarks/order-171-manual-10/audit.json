@@ -1,0 +1,145 @@
+{
+  "inventoryMatches": true,
+  "errors": [],
+  "parts": 171,
+  "positions": 98,
+  "sheets": 10,
+  "partArea": 46160513,
+  "usableAreaPerSheet": 4941300,
+  "areaLowerBound": 10,
+  "sheetProfiles": [
+    {
+      "sheet": 1,
+      "firstAxis": "H",
+      "parts": 15
+    },
+    {
+      "sheet": 2,
+      "firstAxis": "H",
+      "parts": 12
+    },
+    {
+      "sheet": 3,
+      "firstAxis": "H",
+      "parts": 9
+    },
+    {
+      "sheet": 4,
+      "firstAxis": "H",
+      "parts": 11
+    },
+    {
+      "sheet": 5,
+      "firstAxis": "H",
+      "parts": 16
+    },
+    {
+      "sheet": 6,
+      "firstAxis": "H",
+      "parts": 16
+    },
+    {
+      "sheet": 7,
+      "firstAxis": "H",
+      "parts": 13
+    },
+    {
+      "sheet": 8,
+      "firstAxis": "V",
+      "parts": 18
+    },
+    {
+      "sheet": 9,
+      "firstAxis": "V",
+      "parts": 18
+    },
+    {
+      "sheet": 10,
+      "firstAxis": "V",
+      "parts": 43
+    }
+  ],
+  "printedSizeDifferences": [
+    {
+      "id": 60,
+      "original": [
+        573.5,
+        228
+      ],
+      "printed": [
+        574,
+        228
+      ],
+      "quantity": 1
+    },
+    {
+      "id": 61,
+      "original": [
+        573.5,
+        228
+      ],
+      "printed": [
+        574,
+        228
+      ],
+      "quantity": 1
+    },
+    {
+      "id": 79,
+      "original": [
+        278.5,
+        228
+      ],
+      "printed": [
+        279,
+        228
+      ],
+      "quantity": 3
+    },
+    {
+      "id": 80,
+      "original": [
+        278.5,
+        228
+      ],
+      "printed": [
+        279,
+        228
+      ],
+      "quantity": 4
+    },
+    {
+      "id": 82,
+      "original": [
+        273.5,
+        224
+      ],
+      "printed": [
+        274,
+        224
+      ],
+      "quantity": 2
+    },
+    {
+      "id": 98,
+      "original": [
+        118.5,
+        118.5
+      ],
+      "printed": [
+        119,
+        119
+      ],
+      "quantity": 12
+    }
+  ],
+  "printedCutLengthM": 314.68,
+  "exactGeometryVerified": false,
+  "physicalReplayVerified": false,
+  "realMachineFeasibility": "unknown",
+  "limitations": [
+    "PDF coordinates describe the printed drawing, not an exact cutting plan.",
+    "Printed fractional dimensions and effective sheet size need confirmation.",
+    "Strip topology has no validated cut coordinates, clamp constraints or numbered physical operations."
+  ]
+}
