@@ -10,7 +10,7 @@ process.env.LISTPRO_CORE_RESOURCES=path.join(coreBase,'benchmarks');
 const {cleanProject,loadExample,projectFromFile}=require('./engine.cjs');
 let mainWindow=null,busy=false,activeWorker=null;
 const smokeReport=process.argv.find(a=>a.startsWith('--smoke-report='))?.slice('--smoke-report='.length);
-if(smokeReport){app.setPath('userData',path.join(require('node:os').tmpdir(),'listpro-smoke-'+process.pid));app.disableHardwareAcceleration();}
+if(smokeReport){const dir=path.join(require('node:os').tmpdir(),'listpro-smoke-'+process.pid);require('node:fs').mkdirSync(dir,{recursive:true});app.setPath('userData',dir);app.disableHardwareAcceleration();}
 
 function createWindow(){
  mainWindow=new BrowserWindow({
