@@ -41,7 +41,15 @@ function executable(dir){
  if(hash!==PIN.sha256)throw Error('PackingSolver release changed: pinned SHA256 mismatch; never execute an unpinned binary');
  execFileSync('tar',['-xzf',archive,'-C',dir],{timeout:30000});
  function find(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){const f=path.join(d,e.name);if(e.isDirectory()){const r=find(f);if(r)return r;}else if(e.name==='packingsolver_rectangleguillotine')return f;}}
- const bin=find(dir);if(!bin)throw Error('Executable missing');fs.chmodSync(bin,0o755);return bin;
+ const bin=find(dir);if(!bin)throw Error('Executable missing');fs.chmodSync(bin,0o755);
+ const dependencies=()=>execFileSync('ldd',[bin],{encoding:'utf8'});
+ if(/not found/.test(dependencies())&&process.env.CI==='true'&&process.env.GITHUB_ACTIONS==='true'){
+  // Ephemeral GitHub runner only. Local users install their own runtime dependencies.
+  execFileSync('sudo',['apt-get','update','-qq'],{timeout:180000,stdio:'pipe'});
+  execFileSync('sudo',['apt-get','install','-y','--no-install-recommends','liblapack3','libblas3','libgfortran5'],{timeout:180000,stdio:'pipe'});
+ }
+ const linked=dependencies();if(/not found/.test(linked))throw Error('PackingSolver runtime dependencies missing: '+linked);
+ return bin;
 }
 function runExternal(cases,{mainSeconds=20,otherSeconds=3}={}){
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'listpro-packingsolver-')),records=[];

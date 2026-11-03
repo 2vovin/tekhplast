@@ -79,3 +79,28 @@ test('validated incumbent survives a short resumed search',()=>{
  const bad=copy(saved);bad.plan.operations.find(o=>o.type==='cut').kerf=1;
  assert.throws(()=>searchRecursive(p,profile,{iterations:1,previous:bad}));
 });
+
+test('two real rotations of the SAME terminal blank pass geometry but fail staged replay',()=>{
+ const s=copy(saved),o=s.plan.outputs.find(o=>o.kind==='waste'&&o.blankId.includes('/strip')&&o.turnCount===0&&o.materialRect.w>0&&o.materialRect.h>0);
+ assert(o);const r=o.materialRect;let q=o.machineOrientation/90;
+ const dim=()=>q%2?{w:r.h,h:r.w}:{w:r.w,h:r.h};
+ const add=op=>s.plan.operations.push({step:s.plan.operations.length+1,...op});
+ add({type:'feed',inputBlankId:o.blankId,machineOrientation:q*90,materialRect:r,...dim()});
+ for(let turn=0;turn<2;turn++){
+  const from=q*90;q=(q+1)%4;
+  add({type:'rotate',inputBlankId:o.blankId,outputBlankIds:[o.blankId],angle:90,fromOrientation:from,toOrientation:q*90,turnCountBefore:turn,turnCountAfter:turn+1,materialRect:r,...dim()});
+ }
+ o.machineOrientation=q*90;o.turnCount=2;o.machineGrain=[[1,0],[0,1],[-1,0],[0,-1]][q];
+ // Raw geometric/coordinate replay deliberately has no staged role policy.
+ assert.equal(require('../src/physical-replay').replayPhysical(p,s,s.plan,profile).physicalValid,true);
+ assert.throws(()=>validateRecursive(p,s,s.plan,profile),/Illegal main\/double\/early turn/);
+});
+test('real rotation of primary remainder is rejected despite coherent coordinates',()=>{
+ const s=copy(saved),index=s.plan.operations.findIndex(o=>o.type==='endPrimary'),barrier=s.plan.operations[index],o=s.plan.outputs.find(o=>o.blankId===barrier.remainderBlankId),r=o.materialRect;
+ const ops=[{type:'feed',inputBlankId:o.blankId,machineOrientation:0,w:r.w,h:r.h,materialRect:r},
+ {type:'rotate',inputBlankId:o.blankId,outputBlankIds:[o.blankId],angle:90,fromOrientation:0,toOrientation:90,turnCountBefore:0,turnCountAfter:1,w:r.h,h:r.w,materialRect:r}];
+ s.plan.operations.splice(index,0,...ops);s.plan.operations.forEach((op,i)=>op.step=i+1);
+ o.machineOrientation=90;o.turnCount=1;o.machineGrain=[0,1];
+ assert.equal(require('../src/physical-replay').replayPhysical(p,s,s.plan,profile).physicalValid,true);
+ assert.throws(()=>validateRecursive(p,s,s.plan,profile),/Illegal main\/double\/early turn/);
+});
