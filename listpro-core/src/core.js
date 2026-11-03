@@ -1,119 +1,85 @@
 'use strict';
-// STARTER: simple deterministic guillotine shelf packer. Intentionally NOT a high-quality optimizer.
-// All dimensions in millimetres. This implementation is for research only.
-function checkInput(p) {
-  if (!p || !Number.isFinite(p.sheetW) || !Number.isFinite(p.sheetH) ||
-      !Number.isFinite(p.kerf) || !Number.isFinite(p.trim) ||
-      p.sheetW <= 0 || p.sheetH <= 0 || p.kerf < 0 || p.trim < 0 ||
-      !Array.isArray(p.pieces)) throw Error('Invalid sheet or list');
-  const w=p.sheetW-2*p.trim, h=p.sheetH-2*p.trim;
-  if(w<=0||h<=0) throw Error('No cutting area');
-  const jobs=[];
-  for(const [rowIndex,part] of p.pieces.entries()){
-    if(!Number.isFinite(part.l)||!Number.isFinite(part.w)||
-       part.l<=0||part.w<=0||!Number.isSafeInteger(part.q)||part.q<1)
-      throw Error('Invalid part');
-    for(let i=0;i<part.q;i++) jobs.push({id:part.id??rowIndex+1,instance:i+1,
-      l:part.l,w:part.w,grain:part.grain!==false,name:part.name||''});
-  }
-  return {w,h,jobs};
+const {validate}=require('./validator');
+function checkInput(p){
+ // Use independent validation of input before allocating instances.
+ if(!p||!Array.isArray(p.pieces)||!['sheetW','sheetH','kerf','trim'].every(k=>Number.isFinite(p[k]))||p.kerf<0||p.trim<0||p.sheetW<=2*p.trim||p.sheetH<=2*p.trim)throw Error('Invalid sheet or list');
+ const jobs=[],ids=new Set();
+ p.pieces.forEach((a,i)=>{
+  const id=a.id??i+1;
+  if(ids.has(JSON.stringify(id))||!Number.isFinite(a.l)||!Number.isFinite(a.w)||a.l<=0||a.w<=0||!Number.isSafeInteger(a.q)||a.q<1)throw Error('Invalid part');
+  ids.add(JSON.stringify(id));
+  for(let j=1;j<=a.q;j++)jobs.push({...a,id,instance:j});
+ });
+ return {w:p.sheetW-2*p.trim,h:p.sheetH-2*p.trim,jobs};
 }
-function leaf(rect, kind='waste', part=null){return {kind,rect,part};}
-function cut(rect,axis,pos,kerf,left,right){
-  return {kind:'cut',rect,axis,pos,kerf,first:left,second:right};
+function rng(seed){let x=seed>>>0;return ()=>((x=(Math.imul(x,1664525)+1013904223)>>>0)/4294967296);}
+function trial(p,jobs,random,mode){
+ const W=p.sheetW-2*p.trim,H=p.sheetH-2*p.trim,k=p.kerf;
+ const sheets=[],free=[];
+ const leaf=r=>({kind:'waste',rect:r});
+ for(const j of jobs){
+  let best=null;
+  const orientations=[{w:j.l,h:j.w,rotated:false},...(j.grain===false?[{w:j.w,h:j.l,rotated:true}]:[])];
+  const fit=(r,o)=>o.w<=r.w&&o.h<=r.h&&(r.w===o.w||r.w-o.w>=k)&&(r.h===o.h||r.h-o.h>=k);
+  for(let i=0;i<free.length;i++)for(const o of orientations)if(fit(free[i].rect,o)){
+   const r=free[i].rect,dw=r.w-o.w,dh=r.h-o.h;
+   const score=mode%3===0?r.w*r.h-o.w*o.h:mode%3===1?Math.min(dw,dh):Math.max(dw,dh);
+   if(!best||score<best.score)best={i,o,score};
+  }
+  if(!best){
+   const r={x:p.trim,y:p.trim,w:W,h:H},o=orientations.find(o=>fit(r,o));
+   if(!o)throw Error('Part does not fit');
+   const tree=leaf(r);sheets.push({tree,parts:[]});free.push(tree);best={i:free.length-1,o};
+  }
+  const node=free.splice(best.i,1)[0],r=node.rect,o=best.o;
+  const part={id:j.id,instance:j.instance,rotated:o.rotated,x:r.x,y:r.y,w:o.w,h:o.h};
+  // Split in either order; every cut spans its entire current rectangle.
+  function split(n,axis,size){
+   const a=axis==='V',rr=n.rect,span=a?rr.w:rr.h;
+   if(span===size)return n;
+   n.kind='cut';n.axis=axis;n.pos=(a?rr.x:rr.y)+size;n.kerf=k;
+   n.first=leaf(a?{...rr,w:size}:{...rr,h:size});
+   n.second=leaf(a?{...rr,x:n.pos+k,w:span-size-k}:{...rr,y:n.pos+k,h:span-size-k});
+   if(n.second.rect.w>0&&n.second.rect.h>0)free.push(n.second);
+   return n.first;
+  }
+  const vertical=random()<0.5;
+  let n=split(node,vertical?'V':'H',vertical?o.w:o.h);
+  n=split(n,vertical?'H':'V',vertical?o.h:o.w);
+  n.kind='part';n.part={id:j.id,instance:j.instance,rotated:o.rotated};
+ }
+ let num=0;
+ function collect(n,sh){
+  if(n.kind==='cut'){n.number=++num;collect(n.first,sh);collect(n.second,sh);}
+  else if(n.kind==='part')sh.parts.push({...n.rect,...n.part});
+ }
+ sheets.forEach(sh=>{
+  collect(sh.tree,sh);sh.remnants=[];sh.cuts=[];
+  function exportNode(n){if(n.kind==='cut'){sh.cuts.push({number:n.number,axis:n.axis,pos:n.pos,kerf:n.kerf,rect:{...n.rect}});exportNode(n.first);exportNode(n.second);}else if(n.kind==='waste')sh.remnants.push({...n.rect,area:n.rect.w*n.rect.h});}
+  exportNode(sh.tree);
+ });
+ return {sheets,partCount:jobs.length,method:'seeded-guillotine-multistart',optimality:'not proven'};
 }
-function makeRowTree(row, x0, y0, W, k){
-  // Built from right to left so every vertical cut splits the CURRENT piece.
-  let subtree=null;
-  for(let i=row.parts.length-1;i>=0;i--){
-    const item=row.parts[i], width=W-(item.x-x0), r={x:item.x,y:y0,w:width,h:row.h};
-    const partRect={x:item.x,y:y0,w:item.w,h:item.h};
-    const partNode=leaf(partRect,'part',{id:item.id,instance:item.instance,rotated:item.rotated});
-    let block=partNode;
-    if(row.h-item.h>=k){
-      const bottom={x:item.x,y:y0+item.h+k,w:item.w,h:row.h-item.h-k};
-      block=cut({x:item.x,y:y0,w:item.w,h:row.h},'H',y0+item.h,k,partNode,leaf(bottom));
-    }
-    if(subtree){
-      block=cut(r,'V',item.x+item.w,k,block,subtree);
-    } else {
-      const rem=width-item.w;
-      if(rem>=k)block=cut(r,'V',item.x+item.w,k,block,
-        leaf({x:item.x+item.w+k,y:y0,w:rem-k,h:row.h}));
-    }
-    subtree=block;
-  }
-  return subtree;
-}
-function pack(problem){
-  const {w:W,h:H,jobs}=checkInput(problem),k=problem.kerf,t=problem.trim;
-  const sorted=jobs.slice().sort((a,b)=>Math.max(b.l,b.w)-Math.max(a.l,a.w));
-  const sheets=[];
-  function newSheet(){return {rows:[],parts:[],height:0};}
-  for(const job of sorted){
-    let choice=null;
-    // Choose a pre-existing row only if the height fits and the width/kerf permit.
-    for(let si=0;si<sheets.length;si++){
-      const sheet=sheets[si];
-      for(let ri=0;ri<sheet.rows.length;ri++){
-        const row=sheet.rows[ri];
-        for(const candidate of [{w:job.l,h:job.w,rotated:false},
-                                ...(job.grain?[]:[{w:job.w,h:job.l,rotated:true}])]){
-          const nextX=row.width+(row.parts.length?k:0);
-          if(candidate.h<=row.h && nextX+candidate.w<=W &&
-             (row.h-candidate.h===0||row.h-candidate.h>=k) &&
-             ((W-nextX-candidate.w)===0||W-nextX-candidate.w>=k)){
-            const waste=W-(nextX+candidate.w);
-            if(!choice||waste<choice.waste)
-              choice={si,ri,candidate,waste,nextX};
-          }
-        }
-      }
-    }
-    if(!choice){
-      for(let si=0;si<=sheets.length;si++){
-        const sh=si===sheets.length?newSheet():sheets[si];
-        for(const candidate of [{w:job.l,h:job.w,rotated:false},
-                         ...(job.grain?[]:[{w:job.w,h:job.l,rotated:true}])]){
-          const startY=sh.height+(sh.rows.length?k:0);
-          if(candidate.w<=W&&candidate.h<=H-startY &&
-             ((H-startY-candidate.h)===0||H-startY-candidate.h>=k) &&
-             ((W-candidate.w)===0||W-candidate.w>=k)){
-            choice={si,ri:sh.rows.length,candidate,nextX:0,waste:W-candidate.w};
-            break;
-          }
-        }
-        if(choice)break;
-      }
-    }
-    if(!choice)throw Error('Part does not fit');
-    if(choice.si===sheets.length)sheets.push(newSheet());
-    const sh=sheets[choice.si];
-    if(choice.ri===sh.rows.length){
-      const y=t+sh.height+(sh.rows.length?k:0);
-      sh.rows.push({y,h:choice.candidate.h,width:0,parts:[]});
-      sh.height=y-t+choice.candidate.h;
-    }
-    const row=sh.rows[choice.ri], x=t+choice.nextX;
-    const part={id:job.id,instance:job.instance,name:job.name,x,y:row.y,
-      w:choice.candidate.w,h:choice.candidate.h,rotated:choice.candidate.rotated};
-    row.parts.push(part);row.width=choice.nextX+part.w;sh.parts.push(part);
-  }
-  for(const sh of sheets){
-    let body=null;
-    for(let i=sh.rows.length-1;i>=0;i--){
-      const row=sh.rows[i], y=row.y, rr={x:t,y,w:W,h:H-(y-t)};
-      const rowTree=makeRowTree(row,t,y,W,k);
-      if(body)body=cut(rr,'H',y+row.h,k,rowTree,body);
-      else {
-        const remaining=H-(y-t)-row.h;
-        body=remaining>=k?cut(rr,'H',y+row.h,k,rowTree,
-          leaf({x:t,y:y+row.h+k,w:W,h:remaining-k})):rowTree;
-      }
-    }
-    sh.tree=body;
-  }
-  return {sheets:sheets.map(s=>({parts:s.parts,tree:s.tree})),
-    partCount:jobs.length,method:'starter-guillotine-shelf',optimality:'not proven'};
+function pack(p,options={}){
+ const {jobs}=checkInput(p),iterations=options.iterations??2000,seed=options.seed??1;
+ if(!Number.isSafeInteger(iterations)||iterations<1)throw Error('Invalid budget');
+ const random=rng(seed);let best=null,score=null;
+ if(options.previous){
+  const m=validate(p,options.previous);
+  best=JSON.parse(JSON.stringify(options.previous));best.metrics=m;
+  score=[m.sheets,-m.largestWaste,m.cuts,m.cutLength];
+ }
+ const start=Date.now(),distribution={};
+ for(let i=0;i<iterations;i++){
+  const order=jobs.map(j=>({j,key:i===0?-(j.l*j.w):-(j.l*j.w)*(0.15+random()*1.7)})).sort((a,b)=>a.key-b.key).map(x=>x.j);
+  const s=trial(p,order,random,i),m=validate(p,s);
+  distribution[m.sheets]=(distribution[m.sheets]??0)+1;
+  const v=[m.sheets,-m.largestWaste,m.cuts,m.cutLength];
+  if(!score||v.some((x,n)=>x<score[n]&&v.slice(0,n).every((y,q)=>y===score[q]))){best=s;score=v;best.metrics=m;}
+ }
+ best.parameters=JSON.parse(JSON.stringify(p));
+ best.search={seed,iterations,states:iterations,pruned:0,elapsedMs:Date.now()-start,distribution};
+ best.validation={valid:true};
+ return best;
 }
 module.exports={pack,checkInput};

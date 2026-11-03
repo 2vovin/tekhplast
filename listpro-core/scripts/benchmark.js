@@ -1,8 +1,7 @@
 'use strict';
-const fs=require('node:fs');
 const {pack}=require('../src/core');
-const filename=process.argv[2]||'benchmarks/manual-26-no-rotation.json';
-const p=JSON.parse(fs.readFileSync(filename,'utf8'));
-const t=performance.now(),r=pack(p);
-console.log(JSON.stringify({filename,sheets:r.sheets.length,parts:r.partCount,
-  elapsedMs:+(performance.now()-t).toFixed(2),status:'baseline only (not validated)'},null,2));
+const {validate}=require('../src/validator');
+const p=require('../benchmarks/manual-26-no-rotation.json');
+const s=pack(p,{seed:1,iterations:100000});
+console.log(JSON.stringify({metrics:validate(p,s),search:s.search,optimality:s.optimality},null,2));
+if(s.sheets.length!==1)throw Error('Control order regression');
