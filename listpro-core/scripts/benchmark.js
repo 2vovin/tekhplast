@@ -42,3 +42,6 @@ require('./parallel-bands-benchmark');
 
 // Current user rule: retained remainders stay in place at EVERY strip level.
 require('./held-strips-benchmark');
+
+// 98 source rows / 171 freely rotatable parts, adaptive primary strips and sheet neighborhoods.
+require('./order-171-benchmark');

@@ -1,0 +1,178 @@
+[
+  {
+    "sheet": 1,
+    "parts": 16,
+    "primaryStrips": 3,
+    "cuts": 31,
+    "turns": 8,
+    "cutLength": 27051,
+    "largestRemnant": {
+      "x": 10,
+      "y": 1783,
+      "w": 2183,
+      "h": 37
+    },
+    "largestWaste": 80771,
+    "usedArea": 4721792
+  },
+  {
+    "sheet": 2,
+    "parts": 15,
+    "primaryStrips": 3,
+    "cuts": 31,
+    "turns": 9,
+    "cutLength": 28401,
+    "largestRemnant": {
+      "x": 10,
+      "y": 1803,
+      "w": 2198,
+      "h": 17
+    },
+    "largestWaste": 37366,
+    "usedArea": 4715560
+  },
+  {
+    "sheet": 3,
+    "parts": 19,
+    "primaryStrips": 4,
+    "cuts": 43,
+    "turns": 16,
+    "cutLength": 27869,
+    "largestRemnant": {
+      "x": 1520,
+      "y": 1770,
+      "w": 1199,
+      "h": 50
+    },
+    "largestWaste": 59950,
+    "usedArea": 4675605.5
+  },
+  {
+    "sheet": 4,
+    "parts": 13,
+    "primaryStrips": 2,
+    "cuts": 27,
+    "turns": 9,
+    "cutLength": 25156.5,
+    "largestRemnant": {
+      "x": 2682,
+      "y": 10,
+      "w": 58,
+      "h": 1810
+    },
+    "largestWaste": 104980,
+    "usedArea": 4603818.75
+  },
+  {
+    "sheet": 5,
+    "parts": 8,
+    "primaryStrips": 2,
+    "cuts": 17,
+    "turns": 4,
+    "cutLength": 24170,
+    "largestRemnant": {
+      "x": 494,
+      "y": 1773,
+      "w": 2198,
+      "h": 47
+    },
+    "largestWaste": 103306,
+    "usedArea": 4624537
+  },
+  {
+    "sheet": 6,
+    "parts": 13,
+    "primaryStrips": 2,
+    "cuts": 26,
+    "turns": 8,
+    "cutLength": 28347,
+    "largestRemnant": {
+      "x": 10,
+      "y": 1787,
+      "w": 2198,
+      "h": 33
+    },
+    "largestWaste": 72534,
+    "usedArea": 4506954
+  },
+  {
+    "sheet": 7,
+    "parts": 23,
+    "primaryStrips": 5,
+    "cuts": 47,
+    "turns": 13,
+    "cutLength": 31175.5,
+    "largestRemnant": {
+      "x": 2643,
+      "y": 10,
+      "w": 97,
+      "h": 1810
+    },
+    "largestWaste": 175570,
+    "usedArea": 4361127.75
+  },
+  {
+    "sheet": 8,
+    "parts": 23,
+    "primaryStrips": 5,
+    "cuts": 44,
+    "turns": 10,
+    "cutLength": 30140,
+    "largestRemnant": {
+      "x": 518,
+      "y": 10,
+      "w": 60,
+      "h": 1084
+    },
+    "largestWaste": 65040,
+    "usedArea": 4528455
+  },
+  {
+    "sheet": 9,
+    "parts": 19,
+    "primaryStrips": 5,
+    "cuts": 41,
+    "turns": 12,
+    "cutLength": 27485,
+    "largestRemnant": {
+      "x": 2568,
+      "y": 10,
+      "w": 172,
+      "h": 1810
+    },
+    "largestWaste": 311320,
+    "usedArea": 4229827
+  },
+  {
+    "sheet": 10,
+    "parts": 17,
+    "primaryStrips": 2,
+    "cuts": 30,
+    "turns": 8,
+    "cutLength": 28313,
+    "largestRemnant": {
+      "x": 10,
+      "y": 1702,
+      "w": 2118,
+      "h": 118
+    },
+    "largestWaste": 249924,
+    "usedArea": 4052816
+  },
+  {
+    "sheet": 11,
+    "parts": 5,
+    "primaryStrips": 2,
+    "cuts": 12,
+    "turns": 2,
+    "cutLength": 9786,
+    "largestRemnant": {
+      "x": 975,
+      "y": 10,
+      "w": 1765,
+      "h": 1810
+    },
+    "largestWaste": 3194650,
+    "usedArea": 1140020
+  }
+]
