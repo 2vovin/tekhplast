@@ -1,0 +1,8 @@
+{
+  "geometryValid": true,
+  "abstractCutPlanValid": null,
+  "machineFeasibility": "unknown",
+  "parts": 26,
+  "sheets": 1,
+  "reason": "External geometric certificate checked; no PSS CUT/ROTATE/FEED replay conversion"
+}

@@ -1,0 +1,5685 @@
+{
+  "sheets": [
+    {
+      "tree": {
+        "kind": "cut",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "w": 2730,
+          "h": 1810
+        },
+        "axis": "V",
+        "pos": 307,
+        "kerf": 5,
+        "first": {
+          "kind": "cut",
+          "rect": {
+            "x": 10,
+            "y": 10,
+            "w": 297,
+            "h": 1810
+          },
+          "axis": "H",
+          "pos": 190,
+          "kerf": 5,
+          "first": {
+            "kind": "cut",
+            "rect": {
+              "x": 10,
+              "y": 10,
+              "w": 297,
+              "h": 180
+            },
+            "axis": "V",
+            "pos": 248,
+            "kerf": 5,
+            "first": {
+              "kind": "part",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "w": 238,
+                "h": 180
+              },
+              "part": {
+                "id": 4,
+                "instance": 1,
+                "rotated": false
+              }
+            },
+            "second": {
+              "kind": "waste",
+              "rect": {
+                "x": 253,
+                "y": 10,
+                "w": 54,
+                "h": 180
+              }
+            },
+            "number": 3
+          },
+          "second": {
+            "kind": "cut",
+            "rect": {
+              "x": 10,
+              "y": 195,
+              "w": 297,
+              "h": 1625
+            },
+            "axis": "H",
+            "pos": 492,
+            "kerf": 5,
+            "first": {
+              "kind": "part",
+              "rect": {
+                "x": 10,
+                "y": 195,
+                "w": 297,
+                "h": 297
+              },
+              "part": {
+                "id": 3,
+                "instance": 1,
+                "rotated": false
+              }
+            },
+            "second": {
+              "kind": "cut",
+              "rect": {
+                "x": 10,
+                "y": 497,
+                "w": 297,
+                "h": 1323
+              },
+              "axis": "H",
+              "pos": 794,
+              "kerf": 5,
+              "first": {
+                "kind": "part",
+                "rect": {
+                  "x": 10,
+                  "y": 497,
+                  "w": 297,
+                  "h": 297
+                },
+                "part": {
+                  "id": 3,
+                  "instance": 2,
+                  "rotated": false
+                }
+              },
+              "second": {
+                "kind": "cut",
+                "rect": {
+                  "x": 10,
+                  "y": 799,
+                  "w": 297,
+                  "h": 1021
+                },
+                "axis": "H",
+                "pos": 1096,
+                "kerf": 5,
+                "first": {
+                  "kind": "part",
+                  "rect": {
+                    "x": 10,
+                    "y": 799,
+                    "w": 297,
+                    "h": 297
+                  },
+                  "part": {
+                    "id": 3,
+                    "instance": 3,
+                    "rotated": false
+                  }
+                },
+                "second": {
+                  "kind": "cut",
+                  "rect": {
+                    "x": 10,
+                    "y": 1101,
+                    "w": 297,
+                    "h": 719
+                  },
+                  "axis": "H",
+                  "pos": 1398,
+                  "kerf": 5,
+                  "first": {
+                    "kind": "part",
+                    "rect": {
+                      "x": 10,
+                      "y": 1101,
+                      "w": 297,
+                      "h": 297
+                    },
+                    "part": {
+                      "id": 3,
+                      "instance": 4,
+                      "rotated": false
+                    }
+                  },
+                  "second": {
+                    "kind": "cut",
+                    "rect": {
+                      "x": 10,
+                      "y": 1403,
+                      "w": 297,
+                      "h": 417
+                    },
+                    "axis": "H",
+                    "pos": 1700,
+                    "kerf": 5,
+                    "first": {
+                      "kind": "part",
+                      "rect": {
+                        "x": 10,
+                        "y": 1403,
+                        "w": 297,
+                        "h": 297
+                      },
+                      "part": {
+                        "id": 3,
+                        "instance": 5,
+                        "rotated": false
+                      }
+                    },
+                    "second": {
+                      "kind": "waste",
+                      "rect": {
+                        "x": 10,
+                        "y": 1705,
+                        "w": 297,
+                        "h": 115
+                      }
+                    },
+                    "number": 8
+                  },
+                  "number": 7
+                },
+                "number": 6
+              },
+              "number": 5
+            },
+            "number": 4
+          },
+          "number": 2
+        },
+        "second": {
+          "kind": "cut",
+          "rect": {
+            "x": 312,
+            "y": 10,
+            "w": 2428,
+            "h": 1810
+          },
+          "axis": "V",
+          "pos": 2730,
+          "kerf": 5,
+          "first": {
+            "kind": "cut",
+            "rect": {
+              "x": 312,
+              "y": 10,
+              "w": 2418,
+              "h": 1810
+            },
+            "axis": "H",
+            "pos": 408,
+            "kerf": 5,
+            "first": {
+              "kind": "cut",
+              "rect": {
+                "x": 312,
+                "y": 10,
+                "w": 2418,
+                "h": 398
+              },
+              "axis": "V",
+              "pos": 1444,
+              "kerf": 5,
+              "first": {
+                "kind": "part",
+                "rect": {
+                  "x": 312,
+                  "y": 10,
+                  "w": 1132,
+                  "h": 398
+                },
+                "part": {
+                  "id": 6,
+                  "instance": 1,
+                  "rotated": false
+                }
+              },
+              "second": {
+                "kind": "cut",
+                "rect": {
+                  "x": 1449,
+                  "y": 10,
+                  "w": 1281,
+                  "h": 398
+                },
+                "axis": "V",
+                "pos": 2581,
+                "kerf": 5,
+                "first": {
+                  "kind": "part",
+                  "rect": {
+                    "x": 1449,
+                    "y": 10,
+                    "w": 1132,
+                    "h": 398
+                  },
+                  "part": {
+                    "id": 7,
+                    "instance": 1,
+                    "rotated": false
+                  }
+                },
+                "second": {
+                  "kind": "waste",
+                  "rect": {
+                    "x": 2586,
+                    "y": 10,
+                    "w": 144,
+                    "h": 398
+                  }
+                },
+                "number": 12
+              },
+              "number": 11
+            },
+            "second": {
+              "kind": "cut",
+              "rect": {
+                "x": 312,
+                "y": 413,
+                "w": 2418,
+                "h": 1407
+              },
+              "axis": "V",
+              "pos": 1278,
+              "kerf": 5,
+              "first": {
+                "kind": "cut",
+                "rect": {
+                  "x": 312,
+                  "y": 413,
+                  "w": 966,
+                  "h": 1407
+                },
+                "axis": "H",
+                "pos": 811,
+                "kerf": 5,
+                "first": {
+                  "kind": "part",
+                  "rect": {
+                    "x": 312,
+                    "y": 413,
+                    "w": 966,
+                    "h": 398
+                  },
+                  "part": {
+                    "id": 8,
+                    "instance": 1,
+                    "rotated": false
+                  }
+                },
+                "second": {
+                  "kind": "cut",
+                  "rect": {
+                    "x": 312,
+                    "y": 816,
+                    "w": 966,
+                    "h": 1004
+                  },
+                  "axis": "H",
+                  "pos": 1535,
+                  "kerf": 5,
+                  "first": {
+                    "kind": "part",
+                    "rect": {
+                      "x": 312,
+                      "y": 816,
+                      "w": 966,
+                      "h": 719
+                    },
+                    "part": {
+                      "id": 5,
+                      "instance": 1,
+                      "rotated": false
+                    }
+                  },
+                  "second": {
+                    "kind": "cut",
+                    "rect": {
+                      "x": 312,
+                      "y": 1540,
+                      "w": 966,
+                      "h": 280
+                    },
+                    "axis": "H",
+                    "pos": 1810,
+                    "kerf": 5,
+                    "first": {
+                      "kind": "cut",
+                      "rect": {
+                        "x": 312,
+                        "y": 1540,
+                        "w": 966,
+                        "h": 270
+                      },
+                      "axis": "V",
+                      "pos": 732,
+                      "kerf": 5,
+                      "first": {
+                        "kind": "part",
+                        "rect": {
+                          "x": 312,
+                          "y": 1540,
+                          "w": 420,
+                          "h": 270
+                        },
+                        "part": {
+                          "id": 1,
+                          "instance": 1,
+                          "rotated": false
+                        }
+                      },
+                      "second": {
+                        "kind": "cut",
+                        "rect": {
+                          "x": 737,
+                          "y": 1540,
+                          "w": 541,
+                          "h": 270
+                        },
+                        "axis": "V",
+                        "pos": 1157,
+                        "kerf": 5,
+                        "first": {
+                          "kind": "part",
+                          "rect": {
+                            "x": 737,
+                            "y": 1540,
+                            "w": 420,
+                            "h": 270
+                          },
+                          "part": {
+                            "id": 1,
+                            "instance": 2,
+                            "rotated": false
+                          }
+                        },
+                        "second": {
+                          "kind": "waste",
+                          "rect": {
+                            "x": 1162,
+                            "y": 1540,
+                            "w": 116,
+                            "h": 270
+                          }
+                        },
+                        "number": 18
+                      },
+                      "number": 17
+                    },
+                    "second": {
+                      "kind": "waste",
+                      "rect": {
+                        "x": 312,
+                        "y": 1815,
+                        "w": 966,
+                        "h": 5
+                      }
+                    },
+                    "number": 16
+                  },
+                  "number": 15
+                },
+                "number": 14
+              },
+              "second": {
+                "kind": "cut",
+                "rect": {
+                  "x": 1283,
+                  "y": 413,
+                  "w": 1447,
+                  "h": 1407
+                },
+                "axis": "V",
+                "pos": 2283,
+                "kerf": 5,
+                "first": {
+                  "kind": "cut",
+                  "rect": {
+                    "x": 1283,
+                    "y": 413,
+                    "w": 1000,
+                    "h": 1407
+                  },
+                  "axis": "H",
+                  "pos": 632,
+                  "kerf": 5,
+                  "first": {
+                    "kind": "part",
+                    "rect": {
+                      "x": 1283,
+                      "y": 413,
+                      "w": 1000,
+                      "h": 219
+                    },
+                    "part": {
+                      "id": 10,
+                      "instance": 1,
+                      "rotated": false
+                    }
+                  },
+                  "second": {
+                    "kind": "cut",
+                    "rect": {
+                      "x": 1283,
+                      "y": 637,
+                      "w": 1000,
+                      "h": 1183
+                    },
+                    "axis": "H",
+                    "pos": 1035,
+                    "kerf": 5,
+                    "first": {
+                      "kind": "cut",
+                      "rect": {
+                        "x": 1283,
+                        "y": 637,
+                        "w": 1000,
+                        "h": 398
+                      },
+                      "axis": "V",
+                      "pos": 2249,
+                      "kerf": 5,
+                      "first": {
+                        "kind": "part",
+                        "rect": {
+                          "x": 1283,
+                          "y": 637,
+                          "w": 966,
+                          "h": 398
+                        },
+                        "part": {
+                          "id": 9,
+                          "instance": 1,
+                          "rotated": false
+                        }
+                      },
+                      "second": {
+                        "kind": "waste",
+                        "rect": {
+                          "x": 2254,
+                          "y": 637,
+                          "w": 29,
+                          "h": 398
+                        }
+                      },
+                      "number": 22
+                    },
+                    "second": {
+                      "kind": "cut",
+                      "rect": {
+                        "x": 1283,
+                        "y": 1040,
+                        "w": 1000,
+                        "h": 780
+                      },
+                      "axis": "H",
+                      "pos": 1310,
+                      "kerf": 5,
+                      "first": {
+                        "kind": "cut",
+                        "rect": {
+                          "x": 1283,
+                          "y": 1040,
+                          "w": 1000,
+                          "h": 270
+                        },
+                        "axis": "V",
+                        "pos": 1703,
+                        "kerf": 5,
+                        "first": {
+                          "kind": "part",
+                          "rect": {
+                            "x": 1283,
+                            "y": 1040,
+                            "w": 420,
+                            "h": 270
+                          },
+                          "part": {
+                            "id": 1,
+                            "instance": 3,
+                            "rotated": false
+                          }
+                        },
+                        "second": {
+                          "kind": "cut",
+                          "rect": {
+                            "x": 1708,
+                            "y": 1040,
+                            "w": 575,
+                            "h": 270
+                          },
+                          "axis": "V",
+                          "pos": 2128,
+                          "kerf": 5,
+                          "first": {
+                            "kind": "part",
+                            "rect": {
+                              "x": 1708,
+                              "y": 1040,
+                              "w": 420,
+                              "h": 270
+                            },
+                            "part": {
+                              "id": 1,
+                              "instance": 4,
+                              "rotated": false
+                            }
+                          },
+                          "second": {
+                            "kind": "waste",
+                            "rect": {
+                              "x": 2133,
+                              "y": 1040,
+                              "w": 150,
+                              "h": 270
+                            }
+                          },
+                          "number": 25
+                        },
+                        "number": 24
+                      },
+                      "second": {
+                        "kind": "cut",
+                        "rect": {
+                          "x": 1283,
+                          "y": 1315,
+                          "w": 1000,
+                          "h": 505
+                        },
+                        "axis": "H",
+                        "pos": 1585,
+                        "kerf": 5,
+                        "first": {
+                          "kind": "cut",
+                          "rect": {
+                            "x": 1283,
+                            "y": 1315,
+                            "w": 1000,
+                            "h": 270
+                          },
+                          "axis": "V",
+                          "pos": 1703,
+                          "kerf": 5,
+                          "first": {
+                            "kind": "part",
+                            "rect": {
+                              "x": 1283,
+                              "y": 1315,
+                              "w": 420,
+                              "h": 270
+                            },
+                            "part": {
+                              "id": 1,
+                              "instance": 5,
+                              "rotated": false
+                            }
+                          },
+                          "second": {
+                            "kind": "cut",
+                            "rect": {
+                              "x": 1708,
+                              "y": 1315,
+                              "w": 575,
+                              "h": 270
+                            },
+                            "axis": "V",
+                            "pos": 2128,
+                            "kerf": 5,
+                            "first": {
+                              "kind": "part",
+                              "rect": {
+                                "x": 1708,
+                                "y": 1315,
+                                "w": 420,
+                                "h": 270
+                              },
+                              "part": {
+                                "id": 2,
+                                "instance": 1,
+                                "rotated": false
+                              }
+                            },
+                            "second": {
+                              "kind": "waste",
+                              "rect": {
+                                "x": 2133,
+                                "y": 1315,
+                                "w": 150,
+                                "h": 270
+                              }
+                            },
+                            "number": 28
+                          },
+                          "number": 27
+                        },
+                        "second": {
+                          "kind": "cut",
+                          "rect": {
+                            "x": 1283,
+                            "y": 1590,
+                            "w": 1000,
+                            "h": 230
+                          },
+                          "axis": "H",
+                          "pos": 1770,
+                          "kerf": 5,
+                          "first": {
+                            "kind": "cut",
+                            "rect": {
+                              "x": 1283,
+                              "y": 1590,
+                              "w": 1000,
+                              "h": 180
+                            },
+                            "axis": "V",
+                            "pos": 1521,
+                            "kerf": 5,
+                            "first": {
+                              "kind": "part",
+                              "rect": {
+                                "x": 1283,
+                                "y": 1590,
+                                "w": 238,
+                                "h": 180
+                              },
+                              "part": {
+                                "id": 4,
+                                "instance": 2,
+                                "rotated": false
+                              }
+                            },
+                            "second": {
+                              "kind": "cut",
+                              "rect": {
+                                "x": 1526,
+                                "y": 1590,
+                                "w": 757,
+                                "h": 180
+                              },
+                              "axis": "V",
+                              "pos": 1764,
+                              "kerf": 5,
+                              "first": {
+                                "kind": "part",
+                                "rect": {
+                                  "x": 1526,
+                                  "y": 1590,
+                                  "w": 238,
+                                  "h": 180
+                                },
+                                "part": {
+                                  "id": 4,
+                                  "instance": 3,
+                                  "rotated": false
+                                }
+                              },
+                              "second": {
+                                "kind": "cut",
+                                "rect": {
+                                  "x": 1769,
+                                  "y": 1590,
+                                  "w": 514,
+                                  "h": 180
+                                },
+                                "axis": "V",
+                                "pos": 2007,
+                                "kerf": 5,
+                                "first": {
+                                  "kind": "part",
+                                  "rect": {
+                                    "x": 1769,
+                                    "y": 1590,
+                                    "w": 238,
+                                    "h": 180
+                                  },
+                                  "part": {
+                                    "id": 4,
+                                    "instance": 4,
+                                    "rotated": false
+                                  }
+                                },
+                                "second": {
+                                  "kind": "cut",
+                                  "rect": {
+                                    "x": 2012,
+                                    "y": 1590,
+                                    "w": 271,
+                                    "h": 180
+                                  },
+                                  "axis": "V",
+                                  "pos": 2250,
+                                  "kerf": 5,
+                                  "first": {
+                                    "kind": "part",
+                                    "rect": {
+                                      "x": 2012,
+                                      "y": 1590,
+                                      "w": 238,
+                                      "h": 180
+                                    },
+                                    "part": {
+                                      "id": 4,
+                                      "instance": 5,
+                                      "rotated": false
+                                    }
+                                  },
+                                  "second": {
+                                    "kind": "waste",
+                                    "rect": {
+                                      "x": 2255,
+                                      "y": 1590,
+                                      "w": 28,
+                                      "h": 180
+                                    }
+                                  },
+                                  "number": 33
+                                },
+                                "number": 32
+                              },
+                              "number": 31
+                            },
+                            "number": 30
+                          },
+                          "second": {
+                            "kind": "waste",
+                            "rect": {
+                              "x": 1283,
+                              "y": 1775,
+                              "w": 1000,
+                              "h": 45
+                            }
+                          },
+                          "number": 29
+                        },
+                        "number": 26
+                      },
+                      "number": 23
+                    },
+                    "number": 21
+                  },
+                  "number": 20
+                },
+                "second": {
+                  "kind": "cut",
+                  "rect": {
+                    "x": 2288,
+                    "y": 413,
+                    "w": 442,
+                    "h": 1407
+                  },
+                  "axis": "V",
+                  "pos": 2708,
+                  "kerf": 5,
+                  "first": {
+                    "kind": "cut",
+                    "rect": {
+                      "x": 2288,
+                      "y": 413,
+                      "w": 420,
+                      "h": 1407
+                    },
+                    "axis": "H",
+                    "pos": 683,
+                    "kerf": 5,
+                    "first": {
+                      "kind": "part",
+                      "rect": {
+                        "x": 2288,
+                        "y": 413,
+                        "w": 420,
+                        "h": 270
+                      },
+                      "part": {
+                        "id": 2,
+                        "instance": 2,
+                        "rotated": false
+                      }
+                    },
+                    "second": {
+                      "kind": "cut",
+                      "rect": {
+                        "x": 2288,
+                        "y": 688,
+                        "w": 420,
+                        "h": 1132
+                      },
+                      "axis": "H",
+                      "pos": 958,
+                      "kerf": 5,
+                      "first": {
+                        "kind": "part",
+                        "rect": {
+                          "x": 2288,
+                          "y": 688,
+                          "w": 420,
+                          "h": 270
+                        },
+                        "part": {
+                          "id": 2,
+                          "instance": 3,
+                          "rotated": false
+                        }
+                      },
+                      "second": {
+                        "kind": "cut",
+                        "rect": {
+                          "x": 2288,
+                          "y": 963,
+                          "w": 420,
+                          "h": 857
+                        },
+                        "axis": "H",
+                        "pos": 1233,
+                        "kerf": 5,
+                        "first": {
+                          "kind": "part",
+                          "rect": {
+                            "x": 2288,
+                            "y": 963,
+                            "w": 420,
+                            "h": 270
+                          },
+                          "part": {
+                            "id": 2,
+                            "instance": 4,
+                            "rotated": false
+                          }
+                        },
+                        "second": {
+                          "kind": "cut",
+                          "rect": {
+                            "x": 2288,
+                            "y": 1238,
+                            "w": 420,
+                            "h": 582
+                          },
+                          "axis": "H",
+                          "pos": 1508,
+                          "kerf": 5,
+                          "first": {
+                            "kind": "part",
+                            "rect": {
+                              "x": 2288,
+                              "y": 1238,
+                              "w": 420,
+                              "h": 270
+                            },
+                            "part": {
+                              "id": 2,
+                              "instance": 5,
+                              "rotated": false
+                            }
+                          },
+                          "second": {
+                            "kind": "waste",
+                            "rect": {
+                              "x": 2288,
+                              "y": 1513,
+                              "w": 420,
+                              "h": 307
+                            }
+                          },
+                          "number": 38
+                        },
+                        "number": 37
+                      },
+                      "number": 36
+                    },
+                    "number": 35
+                  },
+                  "second": {
+                    "kind": "waste",
+                    "rect": {
+                      "x": 2713,
+                      "y": 413,
+                      "w": 17,
+                      "h": 1407
+                    }
+                  },
+                  "number": 34
+                },
+                "number": 19
+              },
+              "number": 13
+            },
+            "number": 10
+          },
+          "second": {
+            "kind": "waste",
+            "rect": {
+              "x": 2735,
+              "y": 10,
+              "w": 5,
+              "h": 1810
+            }
+          },
+          "number": 9
+        },
+        "number": 1
+      },
+      "primaryStrips": [
+        {
+          "index": 1,
+          "rect": {
+            "x": 10,
+            "y": 10,
+            "w": 297,
+            "h": 1810
+          },
+          "path": "r/0"
+        },
+        {
+          "index": 2,
+          "rect": {
+            "x": 312,
+            "y": 10,
+            "w": 2418,
+            "h": 1810
+          },
+          "path": "r/1/0"
+        },
+        {
+          "index": 3,
+          "rect": {
+            "x": 2735,
+            "y": 10,
+            "w": 5,
+            "h": 1810
+          },
+          "path": "r/1/1"
+        }
+      ],
+      "parts": [
+        {
+          "x": 10,
+          "y": 10,
+          "w": 238,
+          "h": 180,
+          "id": 4,
+          "instance": 1,
+          "rotated": false
+        },
+        {
+          "x": 10,
+          "y": 195,
+          "w": 297,
+          "h": 297,
+          "id": 3,
+          "instance": 1,
+          "rotated": false
+        },
+        {
+          "x": 10,
+          "y": 497,
+          "w": 297,
+          "h": 297,
+          "id": 3,
+          "instance": 2,
+          "rotated": false
+        },
+        {
+          "x": 10,
+          "y": 799,
+          "w": 297,
+          "h": 297,
+          "id": 3,
+          "instance": 3,
+          "rotated": false
+        },
+        {
+          "x": 10,
+          "y": 1101,
+          "w": 297,
+          "h": 297,
+          "id": 3,
+          "instance": 4,
+          "rotated": false
+        },
+        {
+          "x": 10,
+          "y": 1403,
+          "w": 297,
+          "h": 297,
+          "id": 3,
+          "instance": 5,
+          "rotated": false
+        },
+        {
+          "x": 312,
+          "y": 10,
+          "w": 1132,
+          "h": 398,
+          "id": 6,
+          "instance": 1,
+          "rotated": false
+        },
+        {
+          "x": 1449,
+          "y": 10,
+          "w": 1132,
+          "h": 398,
+          "id": 7,
+          "instance": 1,
+          "rotated": false
+        },
+        {
+          "x": 312,
+          "y": 413,
+          "w": 966,
+          "h": 398,
+          "id": 8,
+          "instance": 1,
+          "rotated": false
+        },
+        {
+          "x": 312,
+          "y": 816,
+          "w": 966,
+          "h": 719,
+          "id": 5,
+          "instance": 1,
+          "rotated": false
+        },
+        {
+          "x": 312,
+          "y": 1540,
+          "w": 420,
+          "h": 270,
+          "id": 1,
+          "instance": 1,
+          "rotated": false
+        },
+        {
+          "x": 737,
+          "y": 1540,
+          "w": 420,
+          "h": 270,
+          "id": 1,
+          "instance": 2,
+          "rotated": false
+        },
+        {
+          "x": 1283,
+          "y": 413,
+          "w": 1000,
+          "h": 219,
+          "id": 10,
+          "instance": 1,
+          "rotated": false
+        },
+        {
+          "x": 1283,
+          "y": 637,
+          "w": 966,
+          "h": 398,
+          "id": 9,
+          "instance": 1,
+          "rotated": false
+        },
+        {
+          "x": 1283,
+          "y": 1040,
+          "w": 420,
+          "h": 270,
+          "id": 1,
+          "instance": 3,
+          "rotated": false
+        },
+        {
+          "x": 1708,
+          "y": 1040,
+          "w": 420,
+          "h": 270,
+          "id": 1,
+          "instance": 4,
+          "rotated": false
+        },
+        {
+          "x": 1283,
+          "y": 1315,
+          "w": 420,
+          "h": 270,
+          "id": 1,
+          "instance": 5,
+          "rotated": false
+        },
+        {
+          "x": 1708,
+          "y": 1315,
+          "w": 420,
+          "h": 270,
+          "id": 2,
+          "instance": 1,
+          "rotated": false
+        },
+        {
+          "x": 1283,
+          "y": 1590,
+          "w": 238,
+          "h": 180,
+          "id": 4,
+          "instance": 2,
+          "rotated": false
+        },
+        {
+          "x": 1526,
+          "y": 1590,
+          "w": 238,
+          "h": 180,
+          "id": 4,
+          "instance": 3,
+          "rotated": false
+        },
+        {
+          "x": 1769,
+          "y": 1590,
+          "w": 238,
+          "h": 180,
+          "id": 4,
+          "instance": 4,
+          "rotated": false
+        },
+        {
+          "x": 2012,
+          "y": 1590,
+          "w": 238,
+          "h": 180,
+          "id": 4,
+          "instance": 5,
+          "rotated": false
+        },
+        {
+          "x": 2288,
+          "y": 413,
+          "w": 420,
+          "h": 270,
+          "id": 2,
+          "instance": 2,
+          "rotated": false
+        },
+        {
+          "x": 2288,
+          "y": 688,
+          "w": 420,
+          "h": 270,
+          "id": 2,
+          "instance": 3,
+          "rotated": false
+        },
+        {
+          "x": 2288,
+          "y": 963,
+          "w": 420,
+          "h": 270,
+          "id": 2,
+          "instance": 4,
+          "rotated": false
+        },
+        {
+          "x": 2288,
+          "y": 1238,
+          "w": 420,
+          "h": 270,
+          "id": 2,
+          "instance": 5,
+          "rotated": false
+        }
+      ],
+      "remnants": [
+        {
+          "x": 253,
+          "y": 10,
+          "w": 54,
+          "h": 180,
+          "area": 9720
+        },
+        {
+          "x": 10,
+          "y": 1705,
+          "w": 297,
+          "h": 115,
+          "area": 34155
+        },
+        {
+          "x": 2586,
+          "y": 10,
+          "w": 144,
+          "h": 398,
+          "area": 57312
+        },
+        {
+          "x": 1162,
+          "y": 1540,
+          "w": 116,
+          "h": 270,
+          "area": 31320
+        },
+        {
+          "x": 312,
+          "y": 1815,
+          "w": 966,
+          "h": 5,
+          "area": 4830
+        },
+        {
+          "x": 2254,
+          "y": 637,
+          "w": 29,
+          "h": 398,
+          "area": 11542
+        },
+        {
+          "x": 2133,
+          "y": 1040,
+          "w": 150,
+          "h": 270,
+          "area": 40500
+        },
+        {
+          "x": 2133,
+          "y": 1315,
+          "w": 150,
+          "h": 270,
+          "area": 40500
+        },
+        {
+          "x": 2255,
+          "y": 1590,
+          "w": 28,
+          "h": 180,
+          "area": 5040
+        },
+        {
+          "x": 1283,
+          "y": 1775,
+          "w": 1000,
+          "h": 45,
+          "area": 45000
+        },
+        {
+          "x": 2288,
+          "y": 1513,
+          "w": 420,
+          "h": 307,
+          "area": 128940
+        },
+        {
+          "x": 2713,
+          "y": 413,
+          "w": 17,
+          "h": 1407,
+          "area": 23919
+        },
+        {
+          "x": 2735,
+          "y": 10,
+          "w": 5,
+          "h": 1810,
+          "area": 9050
+        }
+      ]
+    }
+  ],
+  "method": "recursive-strip-brain-2.0",
+  "optimality": "not proven",
+  "partCount": 26,
+  "parameters": {
+    "format": "listpro-furniture-preview",
+    "version": 1,
+    "project": "BAZIS: исправленный список пользователя, 10 строк / 26 деталей",
+    "material": "ЛДСП",
+    "thickness": 16,
+    "sheetW": 2750,
+    "sheetH": 1830,
+    "kerf": 5,
+    "trim": 10,
+    "grainDirection": "По длине листа",
+    "pieces": [
+      {
+        "id": 1,
+        "name": "Позиция 1",
+        "l": 420,
+        "w": 270,
+        "q": 5,
+        "grain": true
+      },
+      {
+        "id": 2,
+        "name": "Позиция 2",
+        "l": 420,
+        "w": 270,
+        "q": 5,
+        "grain": true
+      },
+      {
+        "id": 3,
+        "name": "Позиция 3",
+        "l": 297,
+        "w": 297,
+        "q": 5,
+        "grain": true
+      },
+      {
+        "id": 4,
+        "name": "Позиция 4",
+        "l": 238,
+        "w": 180,
+        "q": 5,
+        "grain": true
+      },
+      {
+        "id": 5,
+        "name": "Позиция 5",
+        "l": 966,
+        "w": 719,
+        "q": 1,
+        "grain": true
+      },
+      {
+        "id": 6,
+        "name": "Позиция 6",
+        "l": 1132,
+        "w": 398,
+        "q": 1,
+        "grain": true
+      },
+      {
+        "id": 7,
+        "name": "Позиция 7",
+        "l": 1132,
+        "w": 398,
+        "q": 1,
+        "grain": true
+      },
+      {
+        "id": 8,
+        "name": "Позиция 8",
+        "l": 966,
+        "w": 398,
+        "q": 1,
+        "grain": true
+      },
+      {
+        "id": 9,
+        "name": "Позиция 9",
+        "l": 966,
+        "w": 398,
+        "q": 1,
+        "grain": true
+      },
+      {
+        "id": 10,
+        "name": "Позиция 10",
+        "l": 1000,
+        "w": 219,
+        "q": 1,
+        "grain": true
+      }
+    ],
+    "selectedSheet": 0,
+    "activeTab": "layout",
+    "activeNav": "cutting",
+    "showDimensions": true,
+    "showCutNumbers": true,
+    "nextId": 11,
+    "benchmarkNotes": {
+      "source": "Последняя таблица пользователя 2026-11-03",
+      "correction": "Позиция 4: 238×180, количество 5 (не 180×238)",
+      "sizesAndQuantitiesConfirmed": true,
+      "sheetSizeFromPriorContext": true,
+      "kerfAndTrimAssumedFromPriorControlCase": true,
+      "rotationPolicy": "grain=true — без поворота детали относительно материала; подтвердить для данного референса при производственной приемке",
+      "notSameAs": "benchmarks/manual-26-no-rotation.json и исторический БАЗИС-25"
+    }
+  },
+  "equipmentProfile": {
+    "id": "abstract-staged-detached-strips-exam-v1",
+    "mode": "PANEL_SAW_STAGED",
+    "version": "1.2",
+    "machineCutAxes": [
+      "V"
+    ],
+    "allowedPrimaryAxes": [
+      "V",
+      "H"
+    ],
+    "maxSheetTurns": 0,
+    "maxTurnsPerBlank": 1,
+    "primarySide": "LOW",
+    "anchorAllowance": 0,
+    "feedDirection": "LONG_POSITIVE",
+    "trimPolicy": "parallel-side-margins-then-strip-end-trim",
+    "maxCutLength": null,
+    "maxFeedWidth": null,
+    "maxFeedHeight": null,
+    "minHoldWidth": 0,
+    "minHoldHeight": 0,
+    "maxStages": null,
+    "assumptions": [
+      "Primary strips must be physically cut off before processing. Final primary remainder remains waste; never promoted. Single real leading anchor is not required in this separate exam model. Machine feasibility unknown."
+    ],
+    "firstCutAxis": "V",
+    "anchorRequired": false,
+    "allowStripRotation": true
+  },
+  "plan": {
+    "version": 1,
+    "profileId": "abstract-staged-detached-strips-exam-v1",
+    "model": "staged-panel-saw",
+    "operations": [
+      {
+        "step": 1,
+        "type": "load",
+        "sheet": 0,
+        "blankId": "s0/raw",
+        "stage": 1,
+        "machineOrientation": 0,
+        "w": 2750,
+        "h": 1830
+      },
+      {
+        "step": 2,
+        "type": "cut",
+        "stage": 1,
+        "cutIndex": 1,
+        "inputBlankId": "s0/raw",
+        "axis": "V",
+        "start": {
+          "x": 5,
+          "y": 0
+        },
+        "end": {
+          "x": 5,
+          "y": 1830
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/side0",
+          "s0/side-rem"
+        ],
+        "materialAxis": "V",
+        "materialPos": 5,
+        "phase": "primary",
+        "geometryCutNumber": null,
+        "machineOrientation": 0,
+        "w": 2750,
+        "h": 1830,
+        "materialRect": {
+          "x": 0,
+          "y": 0,
+          "w": 2750,
+          "h": 1830
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 3,
+        "type": "feed",
+        "inputBlankId": "s0/side-rem",
+        "stage": 1,
+        "machineOrientation": 0,
+        "w": 2740,
+        "h": 1830,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2740,
+          "h": 1830
+        }
+      },
+      {
+        "step": 4,
+        "type": "cut",
+        "stage": 1,
+        "cutIndex": 2,
+        "inputBlankId": "s0/side-rem",
+        "axis": "V",
+        "start": {
+          "x": 2730,
+          "y": 0
+        },
+        "end": {
+          "x": 2730,
+          "y": 1830
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/body",
+          "s0/side1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2740,
+        "phase": "primary",
+        "geometryCutNumber": null,
+        "machineOrientation": 0,
+        "w": 2740,
+        "h": 1830,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2740,
+          "h": 1830
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 5,
+        "type": "feed",
+        "inputBlankId": "s0/body",
+        "stage": 1,
+        "machineOrientation": 0,
+        "w": 2730,
+        "h": 1830,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2730,
+          "h": 1830
+        }
+      },
+      {
+        "step": 6,
+        "type": "cut",
+        "stage": 1,
+        "cutIndex": 3,
+        "inputBlankId": "s0/body",
+        "axis": "V",
+        "start": {
+          "x": 297,
+          "y": 0
+        },
+        "end": {
+          "x": 297,
+          "y": 1830
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1",
+          "s0/rip-rem0"
+        ],
+        "materialAxis": "V",
+        "materialPos": 307,
+        "phase": "primary",
+        "geometryCutNumber": null,
+        "machineOrientation": 0,
+        "w": 2730,
+        "h": 1830,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 2730,
+          "h": 1830
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 7,
+        "type": "feed",
+        "inputBlankId": "s0/rip-rem0",
+        "stage": 1,
+        "machineOrientation": 0,
+        "w": 2428,
+        "h": 1830,
+        "materialRect": {
+          "x": 312,
+          "y": 0,
+          "w": 2428,
+          "h": 1830
+        }
+      },
+      {
+        "step": 8,
+        "type": "cut",
+        "stage": 1,
+        "cutIndex": 4,
+        "inputBlankId": "s0/rip-rem0",
+        "axis": "V",
+        "start": {
+          "x": 2418,
+          "y": 0
+        },
+        "end": {
+          "x": 2418,
+          "y": 1830
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2",
+          "s0/rip-rem1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2730,
+        "phase": "primary",
+        "geometryCutNumber": null,
+        "machineOrientation": 0,
+        "w": 2428,
+        "h": 1830,
+        "materialRect": {
+          "x": 312,
+          "y": 0,
+          "w": 2428,
+          "h": 1830
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 9,
+        "type": "endPrimary",
+        "sheet": 0,
+        "stage": 1,
+        "stripBlankIds": [
+          "s0/strip1",
+          "s0/strip2"
+        ],
+        "remainderBlankId": "s0/rip-rem1"
+      },
+      {
+        "step": 10,
+        "type": "feed",
+        "inputBlankId": "s0/strip1",
+        "stage": 1,
+        "machineOrientation": 0,
+        "w": 297,
+        "h": 1830,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 297,
+          "h": 1830
+        }
+      },
+      {
+        "step": 11,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1",
+        "stage": 1,
+        "angle": 90,
+        "fromOrientation": 0,
+        "toOrientation": 90,
+        "w": 1830,
+        "h": 297,
+        "machineGrain": [
+          0,
+          1
+        ],
+        "outputBlankIds": [
+          "s0/strip1"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 297,
+          "h": 1830
+        },
+        "afterSize": {
+          "w": 1830,
+          "h": 297
+        },
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 297,
+          "h": 1830
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 12,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 5,
+        "inputBlankId": "s0/strip1",
+        "axis": "V",
+        "start": {
+          "x": 1820,
+          "y": 0
+        },
+        "end": {
+          "x": 1820,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/after-top",
+          "s0/strip1/top"
+        ],
+        "materialAxis": "H",
+        "materialPos": 5,
+        "phase": "strip-trim",
+        "geometryCutNumber": null,
+        "machineOrientation": 90,
+        "w": 1830,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 297,
+          "h": 1830
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 13,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/after-top",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 1820,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 297,
+          "h": 1820
+        }
+      },
+      {
+        "step": 14,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 6,
+        "inputBlankId": "s0/strip1/after-top",
+        "axis": "V",
+        "start": {
+          "x": 5,
+          "y": 0
+        },
+        "end": {
+          "x": 5,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/bottom",
+          "s0/strip1/work"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1820,
+        "phase": "strip-trim",
+        "geometryCutNumber": null,
+        "machineOrientation": 90,
+        "w": 1820,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 297,
+          "h": 1820
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 15,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 1810,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 297,
+          "h": 1810
+        }
+      },
+      {
+        "step": 16,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 7,
+        "inputBlankId": "s0/strip1/work",
+        "axis": "V",
+        "start": {
+          "x": 1625,
+          "y": 0
+        },
+        "end": {
+          "x": 1625,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1",
+          "s0/strip1/work/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 190,
+        "phase": "layout",
+        "geometryCutNumber": 2,
+        "machineOrientation": 90,
+        "w": 1810,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 297,
+          "h": 1810
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 17,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/0",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 180,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 297,
+          "h": 180
+        }
+      },
+      {
+        "step": 18,
+        "type": "rotate",
+        "inputBlankId": "s0/strip1/work/0",
+        "stage": 2,
+        "angle": 90,
+        "fromOrientation": 90,
+        "toOrientation": 180,
+        "w": 297,
+        "h": 180,
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip1/work/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 180,
+          "h": 297
+        },
+        "afterSize": {
+          "w": 297,
+          "h": 180
+        },
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 297,
+          "h": 180
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 19,
+        "type": "cut",
+        "stage": 3,
+        "cutIndex": 8,
+        "inputBlankId": "s0/strip1/work/0",
+        "axis": "V",
+        "start": {
+          "x": 54,
+          "y": 0
+        },
+        "end": {
+          "x": 54,
+          "y": 180
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/0/1",
+          "s0/strip1/work/0/0"
+        ],
+        "materialAxis": "V",
+        "materialPos": 248,
+        "phase": "layout",
+        "geometryCutNumber": 3,
+        "machineOrientation": 180,
+        "w": 297,
+        "h": 180,
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 297,
+          "h": 180
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 20,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 1625,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 195,
+          "w": 297,
+          "h": 1625
+        }
+      },
+      {
+        "step": 21,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 9,
+        "inputBlankId": "s0/strip1/work/1",
+        "axis": "V",
+        "start": {
+          "x": 1323,
+          "y": 0
+        },
+        "end": {
+          "x": 1323,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1",
+          "s0/strip1/work/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 492,
+        "phase": "layout",
+        "geometryCutNumber": 4,
+        "machineOrientation": 90,
+        "w": 1625,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 195,
+          "w": 297,
+          "h": 1625
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 22,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 1323,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 497,
+          "w": 297,
+          "h": 1323
+        }
+      },
+      {
+        "step": 23,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 10,
+        "inputBlankId": "s0/strip1/work/1/1",
+        "axis": "V",
+        "start": {
+          "x": 1021,
+          "y": 0
+        },
+        "end": {
+          "x": 1021,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1",
+          "s0/strip1/work/1/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 794,
+        "phase": "layout",
+        "geometryCutNumber": 5,
+        "machineOrientation": 90,
+        "w": 1323,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 497,
+          "w": 297,
+          "h": 1323
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 24,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 1021,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 799,
+          "w": 297,
+          "h": 1021
+        }
+      },
+      {
+        "step": 25,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 11,
+        "inputBlankId": "s0/strip1/work/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 719,
+          "y": 0
+        },
+        "end": {
+          "x": 719,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1",
+          "s0/strip1/work/1/1/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1096,
+        "phase": "layout",
+        "geometryCutNumber": 6,
+        "machineOrientation": 90,
+        "w": 1021,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 799,
+          "w": 297,
+          "h": 1021
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 26,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 719,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 1101,
+          "w": 297,
+          "h": 719
+        }
+      },
+      {
+        "step": 27,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 12,
+        "inputBlankId": "s0/strip1/work/1/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 417,
+          "y": 0
+        },
+        "end": {
+          "x": 417,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1",
+          "s0/strip1/work/1/1/1/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1398,
+        "phase": "layout",
+        "geometryCutNumber": 7,
+        "machineOrientation": 90,
+        "w": 719,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 1101,
+          "w": 297,
+          "h": 719
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 28,
+        "type": "feed",
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 417,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 1403,
+          "w": 297,
+          "h": 417
+        }
+      },
+      {
+        "step": 29,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 13,
+        "inputBlankId": "s0/strip1/work/1/1/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 115,
+          "y": 0
+        },
+        "end": {
+          "x": 115,
+          "y": 297
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip1/work/1/1/1/1/1/1",
+          "s0/strip1/work/1/1/1/1/1/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1700,
+        "phase": "layout",
+        "geometryCutNumber": 8,
+        "machineOrientation": 90,
+        "w": 417,
+        "h": 297,
+        "materialRect": {
+          "x": 10,
+          "y": 1403,
+          "w": 297,
+          "h": 417
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 30,
+        "type": "feed",
+        "inputBlankId": "s0/strip2",
+        "stage": 1,
+        "machineOrientation": 0,
+        "w": 2418,
+        "h": 1830,
+        "materialRect": {
+          "x": 312,
+          "y": 0,
+          "w": 2418,
+          "h": 1830
+        }
+      },
+      {
+        "step": 31,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2",
+        "stage": 1,
+        "angle": 90,
+        "fromOrientation": 0,
+        "toOrientation": 90,
+        "w": 1830,
+        "h": 2418,
+        "machineGrain": [
+          0,
+          1
+        ],
+        "outputBlankIds": [
+          "s0/strip2"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 2418,
+          "h": 1830
+        },
+        "afterSize": {
+          "w": 1830,
+          "h": 2418
+        },
+        "materialRect": {
+          "x": 312,
+          "y": 0,
+          "w": 2418,
+          "h": 1830
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 32,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 14,
+        "inputBlankId": "s0/strip2",
+        "axis": "V",
+        "start": {
+          "x": 1820,
+          "y": 0
+        },
+        "end": {
+          "x": 1820,
+          "y": 2418
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/after-top",
+          "s0/strip2/top"
+        ],
+        "materialAxis": "H",
+        "materialPos": 5,
+        "phase": "strip-trim",
+        "geometryCutNumber": null,
+        "machineOrientation": 90,
+        "w": 1830,
+        "h": 2418,
+        "materialRect": {
+          "x": 312,
+          "y": 0,
+          "w": 2418,
+          "h": 1830
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 33,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/after-top",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 1820,
+        "h": 2418,
+        "materialRect": {
+          "x": 312,
+          "y": 10,
+          "w": 2418,
+          "h": 1820
+        }
+      },
+      {
+        "step": 34,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 15,
+        "inputBlankId": "s0/strip2/after-top",
+        "axis": "V",
+        "start": {
+          "x": 5,
+          "y": 0
+        },
+        "end": {
+          "x": 5,
+          "y": 2418
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/bottom",
+          "s0/strip2/work"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1820,
+        "phase": "strip-trim",
+        "geometryCutNumber": null,
+        "machineOrientation": 90,
+        "w": 1820,
+        "h": 2418,
+        "materialRect": {
+          "x": 312,
+          "y": 10,
+          "w": 2418,
+          "h": 1820
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 35,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 1810,
+        "h": 2418,
+        "materialRect": {
+          "x": 312,
+          "y": 10,
+          "w": 2418,
+          "h": 1810
+        }
+      },
+      {
+        "step": 36,
+        "type": "cut",
+        "stage": 2,
+        "cutIndex": 16,
+        "inputBlankId": "s0/strip2/work",
+        "axis": "V",
+        "start": {
+          "x": 1407,
+          "y": 0
+        },
+        "end": {
+          "x": 1407,
+          "y": 2418
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1",
+          "s0/strip2/work/0"
+        ],
+        "materialAxis": "H",
+        "materialPos": 408,
+        "phase": "layout",
+        "geometryCutNumber": 10,
+        "machineOrientation": 90,
+        "w": 1810,
+        "h": 2418,
+        "materialRect": {
+          "x": 312,
+          "y": 10,
+          "w": 2418,
+          "h": 1810
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 37,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/0",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 398,
+        "h": 2418,
+        "materialRect": {
+          "x": 312,
+          "y": 10,
+          "w": 2418,
+          "h": 398
+        }
+      },
+      {
+        "step": 38,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2/work/0",
+        "stage": 2,
+        "angle": 90,
+        "fromOrientation": 90,
+        "toOrientation": 180,
+        "w": 2418,
+        "h": 398,
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip2/work/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 398,
+          "h": 2418
+        },
+        "afterSize": {
+          "w": 2418,
+          "h": 398
+        },
+        "materialRect": {
+          "x": 312,
+          "y": 10,
+          "w": 2418,
+          "h": 398
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 39,
+        "type": "cut",
+        "stage": 3,
+        "cutIndex": 17,
+        "inputBlankId": "s0/strip2/work/0",
+        "axis": "V",
+        "start": {
+          "x": 1281,
+          "y": 0
+        },
+        "end": {
+          "x": 1281,
+          "y": 398
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/0/1",
+          "s0/strip2/work/0/0"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1444,
+        "phase": "layout",
+        "geometryCutNumber": 11,
+        "machineOrientation": 180,
+        "w": 2418,
+        "h": 398,
+        "materialRect": {
+          "x": 312,
+          "y": 10,
+          "w": 2418,
+          "h": 398
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 40,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/0/1",
+        "stage": 3,
+        "machineOrientation": 180,
+        "w": 1281,
+        "h": 398,
+        "materialRect": {
+          "x": 1449,
+          "y": 10,
+          "w": 1281,
+          "h": 398
+        }
+      },
+      {
+        "step": 41,
+        "type": "cut",
+        "stage": 3,
+        "cutIndex": 18,
+        "inputBlankId": "s0/strip2/work/0/1",
+        "axis": "V",
+        "start": {
+          "x": 144,
+          "y": 0
+        },
+        "end": {
+          "x": 144,
+          "y": 398
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/0/1/1",
+          "s0/strip2/work/0/1/0"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2581,
+        "phase": "layout",
+        "geometryCutNumber": 12,
+        "machineOrientation": 180,
+        "w": 1281,
+        "h": 398,
+        "materialRect": {
+          "x": 1449,
+          "y": 10,
+          "w": 1281,
+          "h": 398
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 42,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1",
+        "stage": 2,
+        "machineOrientation": 90,
+        "w": 1407,
+        "h": 2418,
+        "materialRect": {
+          "x": 312,
+          "y": 413,
+          "w": 2418,
+          "h": 1407
+        }
+      },
+      {
+        "step": 43,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2/work/1",
+        "stage": 2,
+        "angle": 90,
+        "fromOrientation": 90,
+        "toOrientation": 180,
+        "w": 2418,
+        "h": 1407,
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip2/work/1"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 1407,
+          "h": 2418
+        },
+        "afterSize": {
+          "w": 2418,
+          "h": 1407
+        },
+        "materialRect": {
+          "x": 312,
+          "y": 413,
+          "w": 2418,
+          "h": 1407
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 44,
+        "type": "cut",
+        "stage": 3,
+        "cutIndex": 19,
+        "inputBlankId": "s0/strip2/work/1",
+        "axis": "V",
+        "start": {
+          "x": 1447,
+          "y": 0
+        },
+        "end": {
+          "x": 1447,
+          "y": 1407
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1",
+          "s0/strip2/work/1/0"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1278,
+        "phase": "layout",
+        "geometryCutNumber": 13,
+        "machineOrientation": 180,
+        "w": 2418,
+        "h": 1407,
+        "materialRect": {
+          "x": 312,
+          "y": 413,
+          "w": 2418,
+          "h": 1407
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 45,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/0",
+        "stage": 3,
+        "machineOrientation": 180,
+        "w": 966,
+        "h": 1407,
+        "materialRect": {
+          "x": 312,
+          "y": 413,
+          "w": 966,
+          "h": 1407
+        }
+      },
+      {
+        "step": 46,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2/work/1/0",
+        "stage": 3,
+        "angle": 90,
+        "fromOrientation": 180,
+        "toOrientation": 270,
+        "w": 1407,
+        "h": 966,
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "outputBlankIds": [
+          "s0/strip2/work/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 966,
+          "h": 1407
+        },
+        "afterSize": {
+          "w": 1407,
+          "h": 966
+        },
+        "materialRect": {
+          "x": 312,
+          "y": 413,
+          "w": 966,
+          "h": 1407
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 47,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 20,
+        "inputBlankId": "s0/strip2/work/1/0",
+        "axis": "V",
+        "start": {
+          "x": 398,
+          "y": 0
+        },
+        "end": {
+          "x": 398,
+          "y": 966
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/0/0",
+          "s0/strip2/work/1/0/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 811,
+        "phase": "layout",
+        "geometryCutNumber": 14,
+        "machineOrientation": 270,
+        "w": 1407,
+        "h": 966,
+        "materialRect": {
+          "x": 312,
+          "y": 413,
+          "w": 966,
+          "h": 1407
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 48,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/0/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 1004,
+        "h": 966,
+        "materialRect": {
+          "x": 312,
+          "y": 816,
+          "w": 966,
+          "h": 1004
+        }
+      },
+      {
+        "step": 49,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 21,
+        "inputBlankId": "s0/strip2/work/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 719,
+          "y": 0
+        },
+        "end": {
+          "x": 719,
+          "y": 966
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/0/1/0",
+          "s0/strip2/work/1/0/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1535,
+        "phase": "layout",
+        "geometryCutNumber": 15,
+        "machineOrientation": 270,
+        "w": 1004,
+        "h": 966,
+        "materialRect": {
+          "x": 312,
+          "y": 816,
+          "w": 966,
+          "h": 1004
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 50,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/0/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 280,
+        "h": 966,
+        "materialRect": {
+          "x": 312,
+          "y": 1540,
+          "w": 966,
+          "h": 280
+        }
+      },
+      {
+        "step": 51,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 22,
+        "inputBlankId": "s0/strip2/work/1/0/1/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 966
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/0/1/1/0",
+          "s0/strip2/work/1/0/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1810,
+        "phase": "layout",
+        "geometryCutNumber": 16,
+        "machineOrientation": 270,
+        "w": 280,
+        "h": 966,
+        "materialRect": {
+          "x": 312,
+          "y": 1540,
+          "w": 966,
+          "h": 280
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 52,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/0/1/1/0",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 270,
+        "h": 966,
+        "materialRect": {
+          "x": 312,
+          "y": 1540,
+          "w": 966,
+          "h": 270
+        }
+      },
+      {
+        "step": 53,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2/work/1/0/1/1/0",
+        "stage": 4,
+        "angle": 90,
+        "fromOrientation": 270,
+        "toOrientation": 0,
+        "w": 966,
+        "h": 270,
+        "machineGrain": [
+          1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip2/work/1/0/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 270,
+          "h": 966
+        },
+        "afterSize": {
+          "w": 966,
+          "h": 270
+        },
+        "materialRect": {
+          "x": 312,
+          "y": 1540,
+          "w": 966,
+          "h": 270
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 54,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 23,
+        "inputBlankId": "s0/strip2/work/1/0/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/0/1/1/0/0",
+          "s0/strip2/work/1/0/1/1/0/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 732,
+        "phase": "layout",
+        "geometryCutNumber": 17,
+        "machineOrientation": 0,
+        "w": 966,
+        "h": 270,
+        "materialRect": {
+          "x": 312,
+          "y": 1540,
+          "w": 966,
+          "h": 270
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 55,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/0/1/1/0/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 541,
+        "h": 270,
+        "materialRect": {
+          "x": 737,
+          "y": 1540,
+          "w": 541,
+          "h": 270
+        }
+      },
+      {
+        "step": 56,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 24,
+        "inputBlankId": "s0/strip2/work/1/0/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/0/1/1/0/1/0",
+          "s0/strip2/work/1/0/1/1/0/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1157,
+        "phase": "layout",
+        "geometryCutNumber": 18,
+        "machineOrientation": 0,
+        "w": 541,
+        "h": 270,
+        "materialRect": {
+          "x": 737,
+          "y": 1540,
+          "w": 541,
+          "h": 270
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 57,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1",
+        "stage": 3,
+        "machineOrientation": 180,
+        "w": 1447,
+        "h": 1407,
+        "materialRect": {
+          "x": 1283,
+          "y": 413,
+          "w": 1447,
+          "h": 1407
+        }
+      },
+      {
+        "step": 58,
+        "type": "cut",
+        "stage": 3,
+        "cutIndex": 25,
+        "inputBlankId": "s0/strip2/work/1/1",
+        "axis": "V",
+        "start": {
+          "x": 442,
+          "y": 0
+        },
+        "end": {
+          "x": 442,
+          "y": 1407
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/1",
+          "s0/strip2/work/1/1/0"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2283,
+        "phase": "layout",
+        "geometryCutNumber": 19,
+        "machineOrientation": 180,
+        "w": 1447,
+        "h": 1407,
+        "materialRect": {
+          "x": 1283,
+          "y": 413,
+          "w": 1447,
+          "h": 1407
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 59,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0",
+        "stage": 3,
+        "machineOrientation": 180,
+        "w": 1000,
+        "h": 1407,
+        "materialRect": {
+          "x": 1283,
+          "y": 413,
+          "w": 1000,
+          "h": 1407
+        }
+      },
+      {
+        "step": 60,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2/work/1/1/0",
+        "stage": 3,
+        "angle": 90,
+        "fromOrientation": 180,
+        "toOrientation": 270,
+        "w": 1407,
+        "h": 1000,
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 1000,
+          "h": 1407
+        },
+        "afterSize": {
+          "w": 1407,
+          "h": 1000
+        },
+        "materialRect": {
+          "x": 1283,
+          "y": 413,
+          "w": 1000,
+          "h": 1407
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 61,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 26,
+        "inputBlankId": "s0/strip2/work/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 219,
+          "y": 0
+        },
+        "end": {
+          "x": 219,
+          "y": 1000
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/0",
+          "s0/strip2/work/1/1/0/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 632,
+        "phase": "layout",
+        "geometryCutNumber": 20,
+        "machineOrientation": 270,
+        "w": 1407,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 413,
+          "w": 1000,
+          "h": 1407
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 62,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 1183,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 637,
+          "w": 1000,
+          "h": 1183
+        }
+      },
+      {
+        "step": 63,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 27,
+        "inputBlankId": "s0/strip2/work/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 398,
+          "y": 0
+        },
+        "end": {
+          "x": 398,
+          "y": 1000
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/0",
+          "s0/strip2/work/1/1/0/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1035,
+        "phase": "layout",
+        "geometryCutNumber": 21,
+        "machineOrientation": 270,
+        "w": 1183,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 637,
+          "w": 1000,
+          "h": 1183
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 64,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/0",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 398,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 637,
+          "w": 1000,
+          "h": 398
+        }
+      },
+      {
+        "step": 65,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/0",
+        "stage": 4,
+        "angle": 90,
+        "fromOrientation": 270,
+        "toOrientation": 0,
+        "w": 1000,
+        "h": 398,
+        "machineGrain": [
+          1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 398,
+          "h": 1000
+        },
+        "afterSize": {
+          "w": 1000,
+          "h": 398
+        },
+        "materialRect": {
+          "x": 1283,
+          "y": 637,
+          "w": 1000,
+          "h": 398
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 66,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 28,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/0",
+        "axis": "V",
+        "start": {
+          "x": 966,
+          "y": 0
+        },
+        "end": {
+          "x": 966,
+          "y": 398
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/0/0",
+          "s0/strip2/work/1/1/0/1/0/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2249,
+        "phase": "layout",
+        "geometryCutNumber": 22,
+        "machineOrientation": 0,
+        "w": 1000,
+        "h": 398,
+        "materialRect": {
+          "x": 1283,
+          "y": 637,
+          "w": 1000,
+          "h": 398
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 67,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 780,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 1040,
+          "w": 1000,
+          "h": 780
+        }
+      },
+      {
+        "step": 68,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 29,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 1000
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/0",
+          "s0/strip2/work/1/1/0/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1310,
+        "phase": "layout",
+        "geometryCutNumber": 23,
+        "machineOrientation": 270,
+        "w": 780,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 1040,
+          "w": 1000,
+          "h": 780
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 69,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/0",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 270,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 1040,
+          "w": 1000,
+          "h": 270
+        }
+      },
+      {
+        "step": 70,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/0",
+        "stage": 4,
+        "angle": 90,
+        "fromOrientation": 270,
+        "toOrientation": 0,
+        "w": 1000,
+        "h": 270,
+        "machineGrain": [
+          1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 270,
+          "h": 1000
+        },
+        "afterSize": {
+          "w": 1000,
+          "h": 270
+        },
+        "materialRect": {
+          "x": 1283,
+          "y": 1040,
+          "w": 1000,
+          "h": 270
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 71,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 30,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/0/0",
+          "s0/strip2/work/1/1/0/1/1/0/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1703,
+        "phase": "layout",
+        "geometryCutNumber": 24,
+        "machineOrientation": 0,
+        "w": 1000,
+        "h": 270,
+        "materialRect": {
+          "x": 1283,
+          "y": 1040,
+          "w": 1000,
+          "h": 270
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 72,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/0/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 575,
+        "h": 270,
+        "materialRect": {
+          "x": 1708,
+          "y": 1040,
+          "w": 575,
+          "h": 270
+        }
+      },
+      {
+        "step": 73,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 31,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/0/1/0",
+          "s0/strip2/work/1/1/0/1/1/0/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2128,
+        "phase": "layout",
+        "geometryCutNumber": 25,
+        "machineOrientation": 0,
+        "w": 575,
+        "h": 270,
+        "materialRect": {
+          "x": 1708,
+          "y": 1040,
+          "w": 575,
+          "h": 270
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 74,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 505,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 1315,
+          "w": 1000,
+          "h": 505
+        }
+      },
+      {
+        "step": 75,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 32,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 1000
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/1/0",
+          "s0/strip2/work/1/1/0/1/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1585,
+        "phase": "layout",
+        "geometryCutNumber": 26,
+        "machineOrientation": 270,
+        "w": 505,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 1315,
+          "w": 1000,
+          "h": 505
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 76,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/0",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 270,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 1315,
+          "w": 1000,
+          "h": 270
+        }
+      },
+      {
+        "step": 77,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/0",
+        "stage": 4,
+        "angle": 90,
+        "fromOrientation": 270,
+        "toOrientation": 0,
+        "w": 1000,
+        "h": 270,
+        "machineGrain": [
+          1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 270,
+          "h": 1000
+        },
+        "afterSize": {
+          "w": 1000,
+          "h": 270
+        },
+        "materialRect": {
+          "x": 1283,
+          "y": 1315,
+          "w": 1000,
+          "h": 270
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 78,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 33,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/1/0/0",
+          "s0/strip2/work/1/1/0/1/1/1/0/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1703,
+        "phase": "layout",
+        "geometryCutNumber": 27,
+        "machineOrientation": 0,
+        "w": 1000,
+        "h": 270,
+        "materialRect": {
+          "x": 1283,
+          "y": 1315,
+          "w": 1000,
+          "h": 270
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 79,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/0/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 575,
+        "h": 270,
+        "materialRect": {
+          "x": 1708,
+          "y": 1315,
+          "w": 575,
+          "h": 270
+        }
+      },
+      {
+        "step": 80,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 34,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 420,
+          "y": 0
+        },
+        "end": {
+          "x": 420,
+          "y": 270
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/1/0/1/0",
+          "s0/strip2/work/1/1/0/1/1/1/0/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2128,
+        "phase": "layout",
+        "geometryCutNumber": 28,
+        "machineOrientation": 0,
+        "w": 575,
+        "h": 270,
+        "materialRect": {
+          "x": 1708,
+          "y": 1315,
+          "w": 575,
+          "h": 270
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 81,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 230,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 1590,
+          "w": 1000,
+          "h": 230
+        }
+      },
+      {
+        "step": 82,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 35,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 180,
+          "y": 0
+        },
+        "end": {
+          "x": 180,
+          "y": 1000
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/1/1/0",
+          "s0/strip2/work/1/1/0/1/1/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1770,
+        "phase": "layout",
+        "geometryCutNumber": 29,
+        "machineOrientation": 270,
+        "w": 230,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 1590,
+          "w": 1000,
+          "h": 230
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 83,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 180,
+        "h": 1000,
+        "materialRect": {
+          "x": 1283,
+          "y": 1590,
+          "w": 1000,
+          "h": 180
+        }
+      },
+      {
+        "step": 84,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0",
+        "stage": 4,
+        "angle": 90,
+        "fromOrientation": 270,
+        "toOrientation": 0,
+        "w": 1000,
+        "h": 180,
+        "machineGrain": [
+          1,
+          0
+        ],
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 180,
+          "h": 1000
+        },
+        "afterSize": {
+          "w": 1000,
+          "h": 180
+        },
+        "materialRect": {
+          "x": 1283,
+          "y": 1590,
+          "w": 1000,
+          "h": 180
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 85,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 36,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 238,
+          "y": 0
+        },
+        "end": {
+          "x": 238,
+          "y": 180
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/1/1/0/0",
+          "s0/strip2/work/1/1/0/1/1/1/1/0/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1521,
+        "phase": "layout",
+        "geometryCutNumber": 30,
+        "machineOrientation": 0,
+        "w": 1000,
+        "h": 180,
+        "materialRect": {
+          "x": 1283,
+          "y": 1590,
+          "w": 1000,
+          "h": 180
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 86,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 757,
+        "h": 180,
+        "materialRect": {
+          "x": 1526,
+          "y": 1590,
+          "w": 757,
+          "h": 180
+        }
+      },
+      {
+        "step": 87,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 37,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 238,
+          "y": 0
+        },
+        "end": {
+          "x": 238,
+          "y": 180
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/1/1/0/1/0",
+          "s0/strip2/work/1/1/0/1/1/1/1/0/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 1764,
+        "phase": "layout",
+        "geometryCutNumber": 31,
+        "machineOrientation": 0,
+        "w": 757,
+        "h": 180,
+        "materialRect": {
+          "x": 1526,
+          "y": 1590,
+          "w": 757,
+          "h": 180
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 88,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 514,
+        "h": 180,
+        "materialRect": {
+          "x": 1769,
+          "y": 1590,
+          "w": 514,
+          "h": 180
+        }
+      },
+      {
+        "step": 89,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 38,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1",
+        "axis": "V",
+        "start": {
+          "x": 238,
+          "y": 0
+        },
+        "end": {
+          "x": 238,
+          "y": 180
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/0",
+          "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2007,
+        "phase": "layout",
+        "geometryCutNumber": 32,
+        "machineOrientation": 0,
+        "w": 514,
+        "h": 180,
+        "materialRect": {
+          "x": 1769,
+          "y": 1590,
+          "w": 514,
+          "h": 180
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 90,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/1",
+        "stage": 5,
+        "machineOrientation": 0,
+        "w": 271,
+        "h": 180,
+        "materialRect": {
+          "x": 2012,
+          "y": 1590,
+          "w": 271,
+          "h": 180
+        }
+      },
+      {
+        "step": 91,
+        "type": "cut",
+        "stage": 5,
+        "cutIndex": 39,
+        "inputBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 238,
+          "y": 0
+        },
+        "end": {
+          "x": 238,
+          "y": 180
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/1/0",
+          "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/1/1"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2250,
+        "phase": "layout",
+        "geometryCutNumber": 33,
+        "machineOrientation": 0,
+        "w": 271,
+        "h": 180,
+        "materialRect": {
+          "x": 2012,
+          "y": 1590,
+          "w": 271,
+          "h": 180
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 92,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/1",
+        "stage": 3,
+        "machineOrientation": 180,
+        "w": 442,
+        "h": 1407,
+        "materialRect": {
+          "x": 2288,
+          "y": 413,
+          "w": 442,
+          "h": 1407
+        }
+      },
+      {
+        "step": 93,
+        "type": "cut",
+        "stage": 3,
+        "cutIndex": 40,
+        "inputBlankId": "s0/strip2/work/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 17,
+          "y": 0
+        },
+        "end": {
+          "x": 17,
+          "y": 1407
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/1/1",
+          "s0/strip2/work/1/1/1/0"
+        ],
+        "materialAxis": "V",
+        "materialPos": 2708,
+        "phase": "layout",
+        "geometryCutNumber": 34,
+        "machineOrientation": 180,
+        "w": 442,
+        "h": 1407,
+        "materialRect": {
+          "x": 2288,
+          "y": 413,
+          "w": 442,
+          "h": 1407
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 94,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/1/0",
+        "stage": 3,
+        "machineOrientation": 180,
+        "w": 420,
+        "h": 1407,
+        "materialRect": {
+          "x": 2288,
+          "y": 413,
+          "w": 420,
+          "h": 1407
+        }
+      },
+      {
+        "step": 95,
+        "type": "rotate",
+        "inputBlankId": "s0/strip2/work/1/1/1/0",
+        "stage": 3,
+        "angle": 90,
+        "fromOrientation": 180,
+        "toOrientation": 270,
+        "w": 1407,
+        "h": 420,
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/1/0"
+        ],
+        "turnCountBefore": 0,
+        "turnCountAfter": 1,
+        "beforeSize": {
+          "w": 420,
+          "h": 1407
+        },
+        "afterSize": {
+          "w": 1407,
+          "h": 420
+        },
+        "materialRect": {
+          "x": 2288,
+          "y": 413,
+          "w": 420,
+          "h": 1407
+        },
+        "axis": null,
+        "start": null,
+        "end": null
+      },
+      {
+        "step": 96,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 41,
+        "inputBlankId": "s0/strip2/work/1/1/1/0",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 420
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/1/0/0",
+          "s0/strip2/work/1/1/1/0/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 683,
+        "phase": "layout",
+        "geometryCutNumber": 35,
+        "machineOrientation": 270,
+        "w": 1407,
+        "h": 420,
+        "materialRect": {
+          "x": 2288,
+          "y": 413,
+          "w": 420,
+          "h": 1407
+        },
+        "turnCount": 1,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 97,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/1/0/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 1132,
+        "h": 420,
+        "materialRect": {
+          "x": 2288,
+          "y": 688,
+          "w": 420,
+          "h": 1132
+        }
+      },
+      {
+        "step": 98,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 42,
+        "inputBlankId": "s0/strip2/work/1/1/1/0/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 420
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/1/0/1/0",
+          "s0/strip2/work/1/1/1/0/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 958,
+        "phase": "layout",
+        "geometryCutNumber": 36,
+        "machineOrientation": 270,
+        "w": 1132,
+        "h": 420,
+        "materialRect": {
+          "x": 2288,
+          "y": 688,
+          "w": 420,
+          "h": 1132
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 99,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/1/0/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 857,
+        "h": 420,
+        "materialRect": {
+          "x": 2288,
+          "y": 963,
+          "w": 420,
+          "h": 857
+        }
+      },
+      {
+        "step": 100,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 43,
+        "inputBlankId": "s0/strip2/work/1/1/1/0/1/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 420
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/1/0/1/1/0",
+          "s0/strip2/work/1/1/1/0/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1233,
+        "phase": "layout",
+        "geometryCutNumber": 37,
+        "machineOrientation": 270,
+        "w": 857,
+        "h": 420,
+        "materialRect": {
+          "x": 2288,
+          "y": 963,
+          "w": 420,
+          "h": 857
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      },
+      {
+        "step": 101,
+        "type": "feed",
+        "inputBlankId": "s0/strip2/work/1/1/1/0/1/1/1",
+        "stage": 4,
+        "machineOrientation": 270,
+        "w": 582,
+        "h": 420,
+        "materialRect": {
+          "x": 2288,
+          "y": 1238,
+          "w": 420,
+          "h": 582
+        }
+      },
+      {
+        "step": 102,
+        "type": "cut",
+        "stage": 4,
+        "cutIndex": 44,
+        "inputBlankId": "s0/strip2/work/1/1/1/0/1/1/1",
+        "axis": "V",
+        "start": {
+          "x": 270,
+          "y": 0
+        },
+        "end": {
+          "x": 270,
+          "y": 420
+        },
+        "kerf": 5,
+        "outputBlankIds": [
+          "s0/strip2/work/1/1/1/0/1/1/1/0",
+          "s0/strip2/work/1/1/1/0/1/1/1/1"
+        ],
+        "materialAxis": "H",
+        "materialPos": 1508,
+        "phase": "layout",
+        "geometryCutNumber": 38,
+        "machineOrientation": 270,
+        "w": 582,
+        "h": 420,
+        "materialRect": {
+          "x": 2288,
+          "y": 1238,
+          "w": 420,
+          "h": 582
+        },
+        "turnCount": 0,
+        "outputTurnCounts": [
+          0,
+          0
+        ]
+      }
+    ],
+    "primaryStrips": [
+      {
+        "sheet": 0,
+        "stripIndex": 1,
+        "blankId": "s0/strip1",
+        "geometryPath": "r/0",
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 297,
+          "h": 1830
+        }
+      },
+      {
+        "sheet": 0,
+        "stripIndex": 2,
+        "blankId": "s0/strip2",
+        "geometryPath": "r/1/0",
+        "materialRect": {
+          "x": 312,
+          "y": 0,
+          "w": 2418,
+          "h": 1830
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "blankId": "s0/side0",
+        "parentBlankId": "s0/raw",
+        "kind": "trim-waste",
+        "materialRect": {
+          "x": 0,
+          "y": 0,
+          "w": 5,
+          "h": 1830
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/side1",
+        "parentBlankId": "s0/side-rem",
+        "kind": "trim-waste",
+        "materialRect": {
+          "x": 2745,
+          "y": 0,
+          "w": 5,
+          "h": 1830
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/rip-rem1",
+        "parentBlankId": "s0/rip-rem0",
+        "kind": "waste",
+        "materialRect": {
+          "x": 2735,
+          "y": 0,
+          "w": 5,
+          "h": 1830
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip1/top",
+        "parentBlankId": "s0/strip1",
+        "kind": "trim-waste",
+        "materialRect": {
+          "x": 10,
+          "y": 0,
+          "w": 297,
+          "h": 5
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 90,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          1
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip1/bottom",
+        "parentBlankId": "s0/strip1/after-top",
+        "kind": "trim-waste",
+        "materialRect": {
+          "x": 10,
+          "y": 1825,
+          "w": 297,
+          "h": 5
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 90,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          1
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip1/work/0/0",
+        "parentBlankId": "s0/strip1/work/0",
+        "kind": "part",
+        "materialRect": {
+          "x": 10,
+          "y": 10,
+          "w": 238,
+          "h": 180
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 180,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 4,
+          "instance": 1,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/0/1",
+        "parentBlankId": "s0/strip1/work/0",
+        "kind": "waste",
+        "materialRect": {
+          "x": 253,
+          "y": 10,
+          "w": 54,
+          "h": 180
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 180,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip1/work/1/0",
+        "parentBlankId": "s0/strip1/work/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 10,
+          "y": 195,
+          "w": 297,
+          "h": 297
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 90,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 3,
+          "instance": 1,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/0",
+        "parentBlankId": "s0/strip1/work/1/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 10,
+          "y": 497,
+          "w": 297,
+          "h": 297
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 90,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 3,
+          "instance": 2,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/0",
+        "parentBlankId": "s0/strip1/work/1/1/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 10,
+          "y": 799,
+          "w": 297,
+          "h": 297
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 90,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 3,
+          "instance": 3,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/0",
+        "parentBlankId": "s0/strip1/work/1/1/1/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 10,
+          "y": 1101,
+          "w": 297,
+          "h": 297
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 90,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 3,
+          "instance": 4,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/0",
+        "parentBlankId": "s0/strip1/work/1/1/1/1/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 10,
+          "y": 1403,
+          "w": 297,
+          "h": 297
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 90,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 3,
+          "instance": 5,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip1/work/1/1/1/1/1/1",
+        "parentBlankId": "s0/strip1/work/1/1/1/1/1",
+        "kind": "waste",
+        "materialRect": {
+          "x": 10,
+          "y": 1705,
+          "w": 297,
+          "h": 115
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 90,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          1
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/top",
+        "parentBlankId": "s0/strip2",
+        "kind": "trim-waste",
+        "materialRect": {
+          "x": 312,
+          "y": 0,
+          "w": 2418,
+          "h": 5
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 90,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          1
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/bottom",
+        "parentBlankId": "s0/strip2/after-top",
+        "kind": "trim-waste",
+        "materialRect": {
+          "x": 312,
+          "y": 1825,
+          "w": 2418,
+          "h": 5
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 90,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          1
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/work/0/0",
+        "parentBlankId": "s0/strip2/work/0",
+        "kind": "part",
+        "materialRect": {
+          "x": 312,
+          "y": 10,
+          "w": 1132,
+          "h": 398
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 180,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 6,
+          "instance": 1,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/0/1/0",
+        "parentBlankId": "s0/strip2/work/0/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 1449,
+          "y": 10,
+          "w": 1132,
+          "h": 398
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 180,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 7,
+          "instance": 1,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/0/1/1",
+        "parentBlankId": "s0/strip2/work/0/1",
+        "kind": "waste",
+        "materialRect": {
+          "x": 2586,
+          "y": 10,
+          "w": 144,
+          "h": 398
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 180,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/work/1/0/0",
+        "parentBlankId": "s0/strip2/work/1/0",
+        "kind": "part",
+        "materialRect": {
+          "x": 312,
+          "y": 413,
+          "w": 966,
+          "h": 398
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 270,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 8,
+          "instance": 1,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/0/1/0",
+        "parentBlankId": "s0/strip2/work/1/0/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 312,
+          "y": 816,
+          "w": 966,
+          "h": 719
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 270,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 5,
+          "instance": 1,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/0/1/1/0/0",
+        "parentBlankId": "s0/strip2/work/1/0/1/1/0",
+        "kind": "part",
+        "materialRect": {
+          "x": 312,
+          "y": 1540,
+          "w": 420,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 1,
+          "instance": 1,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/0/1/1/0/1/0",
+        "parentBlankId": "s0/strip2/work/1/0/1/1/0/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 737,
+          "y": 1540,
+          "w": 420,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 1,
+          "instance": 2,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/0/1/1/0/1/1",
+        "parentBlankId": "s0/strip2/work/1/0/1/1/0/1",
+        "kind": "waste",
+        "materialRect": {
+          "x": 1162,
+          "y": 1540,
+          "w": 116,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/work/1/0/1/1/1",
+        "parentBlankId": "s0/strip2/work/1/0/1/1",
+        "kind": "waste",
+        "materialRect": {
+          "x": 312,
+          "y": 1815,
+          "w": 966,
+          "h": 5
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 270,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/0",
+        "parentBlankId": "s0/strip2/work/1/1/0",
+        "kind": "part",
+        "materialRect": {
+          "x": 1283,
+          "y": 413,
+          "w": 1000,
+          "h": 219
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 270,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 10,
+          "instance": 1,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/0/0",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/0",
+        "kind": "part",
+        "materialRect": {
+          "x": 1283,
+          "y": 637,
+          "w": 966,
+          "h": 398
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 9,
+          "instance": 1,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/0/1",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/0",
+        "kind": "waste",
+        "materialRect": {
+          "x": 2254,
+          "y": 637,
+          "w": 29,
+          "h": 398
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/0/0",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/0",
+        "kind": "part",
+        "materialRect": {
+          "x": 1283,
+          "y": 1040,
+          "w": 420,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 1,
+          "instance": 3,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/0/1/0",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/0/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 1708,
+          "y": 1040,
+          "w": 420,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 1,
+          "instance": 4,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/0/1/1",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/0/1",
+        "kind": "waste",
+        "materialRect": {
+          "x": 2133,
+          "y": 1040,
+          "w": 150,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/0/0",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/1/0",
+        "kind": "part",
+        "materialRect": {
+          "x": 1283,
+          "y": 1315,
+          "w": 420,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 1,
+          "instance": 5,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/0/1/0",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/1/0/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 1708,
+          "y": 1315,
+          "w": 420,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 2,
+          "instance": 1,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/0/1/1",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/1/0/1",
+        "kind": "waste",
+        "materialRect": {
+          "x": 2133,
+          "y": 1315,
+          "w": 150,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/1/0/0",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0",
+        "kind": "part",
+        "materialRect": {
+          "x": 1283,
+          "y": 1590,
+          "w": 238,
+          "h": 180
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 4,
+          "instance": 2,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/0",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 1526,
+          "y": 1590,
+          "w": 238,
+          "h": 180
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 4,
+          "instance": 3,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/0",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 1769,
+          "y": 1590,
+          "w": 238,
+          "h": 180
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 4,
+          "instance": 4,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/1/0",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 2012,
+          "y": 1590,
+          "w": 238,
+          "h": 180
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 4,
+          "instance": 5,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/1/1",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/1",
+        "kind": "waste",
+        "materialRect": {
+          "x": 2255,
+          "y": 1590,
+          "w": 28,
+          "h": 180
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 0,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          1,
+          0
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/1/1",
+        "parentBlankId": "s0/strip2/work/1/1/0/1/1/1/1",
+        "kind": "waste",
+        "materialRect": {
+          "x": 1283,
+          "y": 1775,
+          "w": 1000,
+          "h": 45
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 270,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/1/0/0",
+        "parentBlankId": "s0/strip2/work/1/1/1/0",
+        "kind": "part",
+        "materialRect": {
+          "x": 2288,
+          "y": 413,
+          "w": 420,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 270,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 2,
+          "instance": 2,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/1/0/1/0",
+        "parentBlankId": "s0/strip2/work/1/1/1/0/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 2288,
+          "y": 688,
+          "w": 420,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 270,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 2,
+          "instance": 3,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/1/0/1/1/0",
+        "parentBlankId": "s0/strip2/work/1/1/1/0/1/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 2288,
+          "y": 963,
+          "w": 420,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 270,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 2,
+          "instance": 4,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/1/0/1/1/1/0",
+        "parentBlankId": "s0/strip2/work/1/1/1/0/1/1/1",
+        "kind": "part",
+        "materialRect": {
+          "x": 2288,
+          "y": 1238,
+          "w": 420,
+          "h": 270
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 270,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "turnCount": 0,
+        "part": {
+          "id": 2,
+          "instance": 5,
+          "rotated": false
+        }
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/1/0/1/1/1/1",
+        "parentBlankId": "s0/strip2/work/1/1/1/0/1/1/1",
+        "kind": "waste",
+        "materialRect": {
+          "x": 2288,
+          "y": 1513,
+          "w": 420,
+          "h": 307
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 270,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          0,
+          -1
+        ],
+        "turnCount": 0
+      },
+      {
+        "blankId": "s0/strip2/work/1/1/1/1",
+        "parentBlankId": "s0/strip2/work/1/1/1",
+        "kind": "waste",
+        "materialRect": {
+          "x": 2713,
+          "y": 413,
+          "w": 17,
+          "h": 1407
+        },
+        "materialOrientation": 0,
+        "machineOrientation": 180,
+        "materialGrain": [
+          1,
+          0
+        ],
+        "machineGrain": [
+          -1,
+          0
+        ],
+        "turnCount": 0
+      }
+    ]
+  },
+  "verification": {
+    "geometryValid": true,
+    "abstractStagedValid": true,
+    "machineFeasibility": "unknown",
+    "metrics": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 44,
+      "cutLength": 34463,
+      "turns": 13,
+      "feeds": 43,
+      "stages": 5,
+      "operations": 102,
+      "largestWaste": 128940,
+      "wasteArea": 441828
+    },
+    "usableRemnants": [
+      {
+        "sheet": 0,
+        "blankId": "s0/rip-rem1",
+        "rect": {
+          "x": 2735,
+          "y": 10,
+          "w": 5,
+          "h": 1810
+        },
+        "area": 9050
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip1/work/0/1",
+        "rect": {
+          "x": 253,
+          "y": 10,
+          "w": 54,
+          "h": 180
+        },
+        "area": 9720
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip1/work/1/1/1/1/1/1",
+        "rect": {
+          "x": 10,
+          "y": 1705,
+          "w": 297,
+          "h": 115
+        },
+        "area": 34155
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip2/work/0/1/1",
+        "rect": {
+          "x": 2586,
+          "y": 10,
+          "w": 144,
+          "h": 398
+        },
+        "area": 57312
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip2/work/1/0/1/1/0/1/1",
+        "rect": {
+          "x": 1162,
+          "y": 1540,
+          "w": 116,
+          "h": 270
+        },
+        "area": 31320
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip2/work/1/0/1/1/1",
+        "rect": {
+          "x": 312,
+          "y": 1815,
+          "w": 966,
+          "h": 5
+        },
+        "area": 4830
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip2/work/1/1/0/1/0/1",
+        "rect": {
+          "x": 2254,
+          "y": 637,
+          "w": 29,
+          "h": 398
+        },
+        "area": 11542
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip2/work/1/1/0/1/1/0/1/1",
+        "rect": {
+          "x": 2133,
+          "y": 1040,
+          "w": 150,
+          "h": 270
+        },
+        "area": 40500
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/0/1/1",
+        "rect": {
+          "x": 2133,
+          "y": 1315,
+          "w": 150,
+          "h": 270
+        },
+        "area": 40500
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/1/0/1/1/1/1",
+        "rect": {
+          "x": 2255,
+          "y": 1590,
+          "w": 28,
+          "h": 180
+        },
+        "area": 5040
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip2/work/1/1/0/1/1/1/1/1",
+        "rect": {
+          "x": 1283,
+          "y": 1775,
+          "w": 1000,
+          "h": 45
+        },
+        "area": 45000
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip2/work/1/1/1/0/1/1/1/1",
+        "rect": {
+          "x": 2288,
+          "y": 1513,
+          "w": 420,
+          "h": 307
+        },
+        "area": 128940
+      },
+      {
+        "sheet": 0,
+        "blankId": "s0/strip2/work/1/1/1/1",
+        "rect": {
+          "x": 2713,
+          "y": 413,
+          "w": 17,
+          "h": 1407
+        },
+        "area": 23919
+      }
+    ],
+    "abstractCutPlanValid": true
+  },
+  "metrics": {
+    "sheets": 1,
+    "parts": 26,
+    "cuts": 44,
+    "cutLength": 34463,
+    "turns": 13,
+    "feeds": 43,
+    "stages": 5,
+    "operations": 102,
+    "largestWaste": 128940,
+    "wasteArea": 441828
+  },
+  "configuration": {
+    "delta": 0.5,
+    "dp": false,
+    "vertical": 0.5,
+    "choices": 2,
+    "reverse": true,
+    "primary": 1
+  }
+}

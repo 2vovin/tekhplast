@@ -1,0 +1,77 @@
+{
+  "testedCommit": "c5c14320173de8292140943c9419bb2759037ad8",
+  "runId": 41655491626,
+  "runUrl": "https://github.com/2vovin/tekhplast/actions/runs/41655491626",
+  "jobId": 125984544034,
+  "conclusion": "success",
+  "tests": {
+    "total": 8922,
+    "passed": 8922,
+    "failed": 0,
+    "durationMs": 36653.532058
+  },
+  "host": {
+    "node": "v22.23.4",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "cpuCount": 4,
+    "totalMemory": 16759443456
+  },
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success",
+      "startedAt": "2026-11-03T14:37:20Z",
+      "completedAt": "2026-11-03T14:37:21Z"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "conclusion": "success",
+      "startedAt": "2026-11-03T14:37:21Z",
+      "completedAt": "2026-11-03T14:37:22Z"
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "conclusion": "success",
+      "startedAt": "2026-11-03T14:37:22Z",
+      "completedAt": "2026-11-03T14:37:23Z"
+    },
+    {
+      "name": "Run tests",
+      "conclusion": "success",
+      "startedAt": "2026-11-03T14:37:23Z",
+      "completedAt": "2026-11-03T14:38:01Z"
+    },
+    {
+      "name": "Run baseline benchmark",
+      "conclusion": "success",
+      "startedAt": "2026-11-03T14:38:01Z",
+      "completedAt": "2026-11-03T14:40:14Z"
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "conclusion": "success",
+      "startedAt": "2026-11-03T14:40:14Z",
+      "completedAt": "2026-11-03T14:40:14Z"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "conclusion": "success",
+      "startedAt": "2026-11-03T14:40:14Z",
+      "completedAt": "2026-11-03T14:40:14Z"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success",
+      "startedAt": "2026-11-03T14:40:14Z",
+      "completedAt": "2026-11-03T14:40:14Z"
+    }
+  ],
+  "earlierAttempt": {
+    "commit": "b7d0be2cbf4310aaea53c26c1a4e46391c64273b",
+    "runId": 41655046589,
+    "testsPassed": 8920,
+    "benchmarkFailure": "PackingSolver binary required liblapack.so.3; runtime provisioning fixed in tested commit"
+  }
+}

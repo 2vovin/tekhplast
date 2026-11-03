@@ -41,5 +41,14 @@
     }
   },
   "areaLowerBound": 1,
-  "elapsedMs": 14881
+  "elapsedMs": 4493,
+  "measurementHost": {
+    "node": "v22.23.4",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "cpuCount": 4,
+    "totalMemory": 16759443456
+  },
+  "runUrl": "https://github.com/2vovin/tekhplast/actions/runs/41655491626"
 }

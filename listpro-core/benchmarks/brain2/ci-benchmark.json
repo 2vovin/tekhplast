@@ -1,0 +1,1607 @@
+{
+  "testedCommit": "c5c14320173de8292140943c9419bb2759037ad8",
+  "runUrl": "https://github.com/2vovin/tekhplast/actions/runs/41655491626",
+  "host": {
+    "node": "v22.23.4",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "cpuCount": 4,
+    "totalMemory": 16759443456
+  },
+  "records": [
+    {
+      "name": "corrected-26",
+      "iterations": 20000,
+      "metrics": {
+        "sheets": 1,
+        "parts": 26,
+        "cuts": 45,
+        "cutLength": 33738,
+        "turns": 19,
+        "feeds": 44,
+        "stages": 7,
+        "operations": 110,
+        "largestWaste": 263350,
+        "wasteArea": 445403
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 20000,
+        "rectangles": 592753,
+        "dpCalls": 52346,
+        "dpStates": 360736,
+        "prunedDP": 0,
+        "primaryDP": 2136,
+        "validated": 299,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 3334,
+            "minSheets": 1,
+            "minGeometryCuts": 39
+          },
+          "0.05": {
+            "trials": 3334,
+            "minSheets": 1,
+            "minGeometryCuts": 38
+          },
+          "0.1": {
+            "trials": 3333,
+            "minSheets": 1,
+            "minGeometryCuts": 37
+          },
+          "0.2": {
+            "trials": 3333,
+            "minSheets": 1,
+            "minGeometryCuts": 38
+          },
+          "0.5": {
+            "trials": 3333,
+            "minSheets": 1,
+            "minGeometryCuts": 38
+          },
+          "0.99": {
+            "trials": 3333,
+            "minSheets": 1,
+            "minGeometryCuts": 38
+          }
+        },
+        "areaLowerBound": 1,
+        "elapsedMs": 4493
+      },
+      "partArea": 4372807,
+      "primaryWidths": [
+        [
+          2720
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 0,
+          "blankId": "s0/strip1/work/1/1/1/1/1/1/1/1",
+          "rect": {
+            "x": 1585,
+            "y": 1590,
+            "w": 1145,
+            "h": 230
+          },
+          "area": 263350
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip1/work/1/1/1/1/1/0/1/1/1",
+          "rect": {
+            "x": 1283,
+            "y": 1690,
+            "w": 297,
+            "h": 130
+          },
+          "area": 38610
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip1/work/0/1/1/1/0/1/1",
+          "rect": {
+            "x": 860,
+            "y": 1540,
+            "w": 116,
+            "h": 270
+          },
+          "area": 31320
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 1,
+          "parts": 26,
+          "cuts": 45,
+          "cutLength": 34502,
+          "turns": 14,
+          "feeds": 44,
+          "stages": 5,
+          "operations": 105,
+          "largestWaste": 75180,
+          "wasteArea": 441633
+        },
+        "elapsedMs": 1473,
+        "iterations": 20000
+      },
+      "pareto": [
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 45,
+            "cutLength": 33738,
+            "turns": 19,
+            "feeds": 44,
+            "stages": 7,
+            "operations": 110,
+            "largestWaste": 263350,
+            "wasteArea": 445403
+          },
+          "configuration": {
+            "delta": 0.5,
+            "dp": true,
+            "vertical": 0.3333333333333333,
+            "choices": 2,
+            "reverse": true,
+            "primary": 0
+          }
+        },
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 41,
+            "cutLength": 33045,
+            "turns": 16,
+            "feeds": 40,
+            "stages": 9,
+            "operations": 99,
+            "largestWaste": 239630,
+            "wasteArea": 448868
+          },
+          "configuration": {
+            "delta": 0.1,
+            "dp": false,
+            "vertical": 0.3333333333333333,
+            "choices": 3,
+            "reverse": true,
+            "primary": 0
+          }
+        },
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 45,
+            "cutLength": 33893,
+            "turns": 15,
+            "feeds": 44,
+            "stages": 5,
+            "operations": 106,
+            "largestWaste": 164923,
+            "wasteArea": 444678
+          },
+          "configuration": {
+            "delta": 0.2,
+            "dp": false,
+            "vertical": 0.3333333333333333,
+            "choices": 1,
+            "reverse": false,
+            "primary": 1
+          }
+        },
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 44,
+            "cutLength": 34368,
+            "turns": 15,
+            "feeds": 43,
+            "stages": 6,
+            "operations": 104,
+            "largestWaste": 150840,
+            "wasteArea": 442303
+          },
+          "configuration": {
+            "delta": 0.05,
+            "dp": false,
+            "vertical": 0.5,
+            "choices": 2,
+            "reverse": false,
+            "primary": 1
+          }
+        },
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 44,
+            "cutLength": 34463,
+            "turns": 13,
+            "feeds": 43,
+            "stages": 5,
+            "operations": 102,
+            "largestWaste": 128940,
+            "wasteArea": 441828
+          },
+          "configuration": {
+            "delta": 0.5,
+            "dp": false,
+            "vertical": 0.5,
+            "choices": 2,
+            "reverse": true,
+            "primary": 1
+          }
+        },
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 44,
+            "cutLength": 34313,
+            "turns": 15,
+            "feeds": 43,
+            "stages": 5,
+            "operations": 104,
+            "largestWaste": 126819,
+            "wasteArea": 442578
+          },
+          "configuration": {
+            "delta": 0.1,
+            "dp": false,
+            "vertical": 0.16666666666666666,
+            "choices": 3,
+            "reverse": true,
+            "primary": 1
+          }
+        },
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 43,
+            "cutLength": 34046,
+            "turns": 15,
+            "feeds": 42,
+            "stages": 5,
+            "operations": 102,
+            "largestWaste": 107100,
+            "wasteArea": 443913
+          },
+          "configuration": {
+            "delta": 0.1,
+            "dp": false,
+            "vertical": 0.16666666666666666,
+            "choices": 3,
+            "reverse": true,
+            "primary": 1
+          }
+        },
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 44,
+            "cutLength": 35401,
+            "turns": 12,
+            "feeds": 43,
+            "stages": 5,
+            "operations": 101,
+            "largestWaste": 79110,
+            "wasteArea": 437138
+          },
+          "configuration": {
+            "delta": 0.99,
+            "dp": false,
+            "vertical": 0,
+            "choices": 3,
+            "reverse": false,
+            "primary": 1
+          }
+        },
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 44,
+            "cutLength": 33793,
+            "turns": 15,
+            "feeds": 43,
+            "stages": 6,
+            "operations": 104,
+            "largestWaste": 77198,
+            "wasteArea": 445178
+          },
+          "configuration": {
+            "delta": 0.05,
+            "dp": true,
+            "vertical": 0.6666666666666666,
+            "choices": 2,
+            "reverse": false,
+            "primary": 1
+          }
+        },
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 43,
+            "cutLength": 33825,
+            "turns": 14,
+            "feeds": 42,
+            "stages": 5,
+            "operations": 101,
+            "largestWaste": 75276,
+            "wasteArea": 445018
+          },
+          "configuration": {
+            "delta": 0.1,
+            "dp": false,
+            "vertical": 0.16666666666666666,
+            "choices": 3,
+            "reverse": true,
+            "primary": 1
+          }
+        },
+        {
+          "metrics": {
+            "sheets": 1,
+            "parts": 26,
+            "cuts": 41,
+            "cutLength": 33628,
+            "turns": 15,
+            "feeds": 40,
+            "stages": 7,
+            "operations": 98,
+            "largestWaste": 74426,
+            "wasteArea": 445953
+          },
+          "configuration": {
+            "delta": 0.1,
+            "dp": false,
+            "vertical": 0.16666666666666666,
+            "choices": 3,
+            "reverse": true,
+            "primary": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "corrected-doubled-52",
+      "iterations": 100,
+      "metrics": {
+        "sheets": 2,
+        "parts": 52,
+        "cuts": 86,
+        "cutLength": 68636,
+        "turns": 28,
+        "feeds": 84,
+        "stages": 5,
+        "operations": 202,
+        "largestWaste": 238140,
+        "wasteArea": 885106
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 100,
+        "rectangles": 5033,
+        "dpCalls": 466,
+        "dpStates": 3711,
+        "prunedDP": 0,
+        "primaryDP": 15,
+        "validated": 8,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 17,
+            "minSheets": 3,
+            "minGeometryCuts": 70
+          },
+          "0.05": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 74
+          },
+          "0.1": {
+            "trials": 17,
+            "minSheets": 3,
+            "minGeometryCuts": 73
+          },
+          "0.2": {
+            "trials": 17,
+            "minSheets": 3,
+            "minGeometryCuts": 72
+          },
+          "0.5": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 81
+          },
+          "0.99": {
+            "trials": 16,
+            "minSheets": 3,
+            "minGeometryCuts": 67
+          }
+        },
+        "areaLowerBound": 2,
+        "elapsedMs": 95
+      },
+      "partArea": 8745614,
+      "primaryWidths": [
+        [
+          297,
+          2418
+        ],
+        [
+          420,
+          2295
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 1,
+          "blankId": "s1/strip2/work/1/1/1/1/1/0/1/1/1/1",
+          "rect": {
+            "x": 1407,
+            "y": 1617,
+            "w": 1323,
+            "h": 180
+          },
+          "area": 238140
+        },
+        {
+          "sheet": 1,
+          "blankId": "s1/strip2/work/1/1/1/1/0/1/1/1/1/1/1",
+          "rect": {
+            "x": 1945,
+            "y": 1500,
+            "w": 785,
+            "h": 112
+          },
+          "area": 87920
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip2/work/0/1/1/1/1",
+          "rect": {
+            "x": 2254,
+            "y": 560,
+            "w": 476,
+            "h": 169
+          },
+          "area": 80444
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 3,
+          "parts": 52,
+          "cuts": 94,
+          "cutLength": 83436,
+          "turns": 30,
+          "feeds": 91,
+          "stages": 7,
+          "operations": 221,
+          "largestWaste": 2625948,
+          "wasteArea": 5798056
+        },
+        "elapsedMs": 31,
+        "iterations": 100
+      }
+    },
+    {
+      "name": "varied-30",
+      "iterations": 100,
+      "metrics": {
+        "sheets": 1,
+        "parts": 30,
+        "cuts": 66,
+        "cutLength": 39242,
+        "turns": 36,
+        "feeds": 65,
+        "stages": 7,
+        "operations": 169,
+        "largestWaste": 1167696,
+        "wasteArea": 1782210
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 100,
+        "rectangles": 5245,
+        "dpCalls": 406,
+        "dpStates": 19302,
+        "prunedDP": 0,
+        "primaryDP": 11,
+        "validated": 42,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 17,
+            "minSheets": 1,
+            "minGeometryCuts": 60
+          },
+          "0.05": {
+            "trials": 17,
+            "minSheets": 1,
+            "minGeometryCuts": 60
+          },
+          "0.1": {
+            "trials": 17,
+            "minSheets": 1,
+            "minGeometryCuts": 60
+          },
+          "0.2": {
+            "trials": 17,
+            "minSheets": 1,
+            "minGeometryCuts": 60
+          },
+          "0.5": {
+            "trials": 16,
+            "minSheets": 1,
+            "minGeometryCuts": 59
+          },
+          "0.99": {
+            "trials": 16,
+            "minSheets": 1,
+            "minGeometryCuts": 61
+          }
+        },
+        "areaLowerBound": 1,
+        "elapsedMs": 172
+      },
+      "partArea": 3008530,
+      "primaryWidths": [
+        [
+          254,
+          2461
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 0,
+          "blankId": "s0/strip2/work/1/1/1/1/1",
+          "rect": {
+            "x": 1506,
+            "y": 866,
+            "w": 1224,
+            "h": 954
+          },
+          "area": 1167696
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip2/work/1/1/1/0/1/1/0/1",
+          "rect": {
+            "x": 1207,
+            "y": 1281,
+            "w": 294,
+            "h": 238
+          },
+          "area": 69972
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip2/work/1/1/1/0/1/1/1/0/1",
+          "rect": {
+            "x": 1276,
+            "y": 1524,
+            "w": 225,
+            "h": 264
+          },
+          "area": 59400
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 1,
+          "parts": 30,
+          "cuts": 64,
+          "cutLength": 42421,
+          "turns": 39,
+          "feeds": 63,
+          "stages": 11,
+          "operations": 168,
+          "largestWaste": 417428,
+          "wasteArea": 1766315
+        },
+        "elapsedMs": 16,
+        "iterations": 100
+      }
+    },
+    {
+      "name": "varied-50",
+      "iterations": 100,
+      "metrics": {
+        "sheets": 2,
+        "parts": 50,
+        "cuts": 113,
+        "cutLength": 68488,
+        "turns": 64,
+        "feeds": 111,
+        "stages": 10,
+        "operations": 292,
+        "largestWaste": 3356406,
+        "wasteArea": 4355893
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 100,
+        "rectangles": 8566,
+        "dpCalls": 642,
+        "dpStates": 45433,
+        "prunedDP": 0,
+        "primaryDP": 16,
+        "validated": 78,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 100
+          },
+          "0.05": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 100
+          },
+          "0.1": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 99
+          },
+          "0.2": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 98
+          },
+          "0.5": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 101
+          },
+          "0.99": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 102
+          }
+        },
+        "areaLowerBound": 2,
+        "elapsedMs": 348
+      },
+      "partArea": 5275467,
+      "primaryWidths": [
+        [
+          2720
+        ],
+        [
+          2720
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 1,
+          "blankId": "s1/strip1/work/1/1",
+          "rect": {
+            "x": 363,
+            "y": 402,
+            "w": 2367,
+            "h": 1418
+          },
+          "area": 3356406
+        },
+        {
+          "sheet": 1,
+          "blankId": "s1/strip1/work/1/0/1/1/1/1",
+          "rect": {
+            "x": 2105,
+            "y": 10,
+            "w": 625,
+            "h": 387
+          },
+          "area": 241875
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip1/work/1/1/1/1/1",
+          "rect": {
+            "x": 2657,
+            "y": 358,
+            "w": 73,
+            "h": 1462
+          },
+          "area": 106726
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 2,
+          "parts": 50,
+          "cuts": 112,
+          "cutLength": 74548,
+          "turns": 82,
+          "feeds": 110,
+          "stages": 13,
+          "operations": 308,
+          "largestWaste": 1542120,
+          "wasteArea": 4325693
+        },
+        "elapsedMs": 24,
+        "iterations": 100
+      }
+    },
+    {
+      "name": "varied-100",
+      "iterations": 100,
+      "metrics": {
+        "sheets": 3,
+        "parts": 100,
+        "cuts": 215,
+        "cutLength": 139697,
+        "turns": 129,
+        "feeds": 212,
+        "stages": 11,
+        "operations": 562,
+        "largestWaste": 1861577,
+        "wasteArea": 3568583
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 100,
+        "rectangles": 16225,
+        "dpCalls": 1127,
+        "dpStates": 111424,
+        "prunedDP": 0,
+        "primaryDP": 23,
+        "validated": 50,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 17,
+            "minSheets": 3,
+            "minGeometryCuts": 199
+          },
+          "0.05": {
+            "trials": 17,
+            "minSheets": 3,
+            "minGeometryCuts": 203
+          },
+          "0.1": {
+            "trials": 17,
+            "minSheets": 3,
+            "minGeometryCuts": 200
+          },
+          "0.2": {
+            "trials": 17,
+            "minSheets": 3,
+            "minGeometryCuts": 201
+          },
+          "0.5": {
+            "trials": 16,
+            "minSheets": 3,
+            "minGeometryCuts": 202
+          },
+          "0.99": {
+            "trials": 16,
+            "minSheets": 3,
+            "minGeometryCuts": 205
+          }
+        },
+        "areaLowerBound": 3,
+        "elapsedMs": 900
+      },
+      "partArea": 10693632,
+      "primaryWidths": [
+        [
+          2720
+        ],
+        [
+          2720
+        ],
+        [
+          2720
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 2,
+          "blankId": "s2/strip1/work/1/1/1/1",
+          "rect": {
+            "x": 479,
+            "y": 993,
+            "w": 2251,
+            "h": 827
+          },
+          "area": 1861577
+        },
+        {
+          "sheet": 2,
+          "blankId": "s2/strip1/work/0/1/1/1",
+          "rect": {
+            "x": 746,
+            "y": 132,
+            "w": 1984,
+            "h": 73
+          },
+          "area": 144832
+        },
+        {
+          "sheet": 2,
+          "blankId": "s2/strip1/work/1/0/1/1/1/0/1",
+          "rect": {
+            "x": 1312,
+            "y": 531,
+            "w": 1418,
+            "h": 92
+          },
+          "area": 130456
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 3,
+          "parts": 100,
+          "cuts": 215,
+          "cutLength": 142742,
+          "turns": 148,
+          "feeds": 212,
+          "stages": 13,
+          "operations": 581,
+          "largestWaste": 495940,
+          "wasteArea": 3553508
+        },
+        "elapsedMs": 54,
+        "iterations": 100
+      }
+    },
+    {
+      "name": "varied-200",
+      "iterations": 100,
+      "metrics": {
+        "sheets": 5,
+        "parts": 200,
+        "cuts": 441,
+        "cutLength": 241840,
+        "turns": 257,
+        "feeds": 436,
+        "stages": 11,
+        "operations": 1144,
+        "largestWaste": 2350878,
+        "wasteArea": 4778282
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 100,
+        "rectangles": 30608,
+        "dpCalls": 1910,
+        "dpStates": 267357,
+        "prunedDP": 0,
+        "primaryDP": 35,
+        "validated": 50,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 17,
+            "minSheets": 5,
+            "minGeometryCuts": 391
+          },
+          "0.05": {
+            "trials": 17,
+            "minSheets": 5,
+            "minGeometryCuts": 398
+          },
+          "0.1": {
+            "trials": 17,
+            "minSheets": 5,
+            "minGeometryCuts": 393
+          },
+          "0.2": {
+            "trials": 17,
+            "minSheets": 5,
+            "minGeometryCuts": 401
+          },
+          "0.5": {
+            "trials": 16,
+            "minSheets": 5,
+            "minGeometryCuts": 401
+          },
+          "0.99": {
+            "trials": 16,
+            "minSheets": 5,
+            "minGeometryCuts": 411
+          }
+        },
+        "areaLowerBound": 4,
+        "elapsedMs": 2783
+      },
+      "partArea": 18947268,
+      "primaryWidths": [
+        [
+          624,
+          2091
+        ],
+        [
+          201,
+          2514
+        ],
+        [
+          673,
+          2042
+        ],
+        [
+          377,
+          2338
+        ],
+        [
+          370,
+          2345
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 4,
+          "blankId": "s4/strip2/work/1/1/1",
+          "rect": {
+            "x": 1052,
+            "y": 419,
+            "w": 1678,
+            "h": 1401
+          },
+          "area": 2350878
+        },
+        {
+          "sheet": 4,
+          "blankId": "s4/strip2/work/1/0/1/1/1/1",
+          "rect": {
+            "x": 836,
+            "y": 1033,
+            "w": 211,
+            "h": 787
+          },
+          "area": 166057
+        },
+        {
+          "sheet": 4,
+          "blankId": "s4/strip2/work/1/1/0/1",
+          "rect": {
+            "x": 1502,
+            "y": 289,
+            "w": 1228,
+            "h": 125
+          },
+          "area": 153500
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 5,
+          "parts": 200,
+          "cuts": 426,
+          "cutLength": 261887,
+          "turns": 303,
+          "feeds": 421,
+          "stages": 15,
+          "operations": 1160,
+          "largestWaste": 314940,
+          "wasteArea": 4678047
+        },
+        "elapsedMs": 144,
+        "iterations": 100
+      }
+    },
+    {
+      "name": "narrow-60",
+      "iterations": 100,
+      "metrics": {
+        "sheets": 2,
+        "parts": 60,
+        "cuts": 148,
+        "cutLength": 126393,
+        "turns": 76,
+        "feeds": 146,
+        "stages": 6,
+        "operations": 374,
+        "largestWaste": 2062015,
+        "wasteArea": 3662011
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 100,
+        "rectangles": 9771,
+        "dpCalls": 610,
+        "dpStates": 36490,
+        "prunedDP": 0,
+        "primaryDP": 36,
+        "validated": 11,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 115
+          },
+          "0.05": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 121
+          },
+          "0.1": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 118
+          },
+          "0.2": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 123
+          },
+          "0.5": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 119
+          },
+          "0.99": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 136
+          }
+        },
+        "areaLowerBound": 2,
+        "elapsedMs": 182
+      },
+      "partArea": 5679924,
+      "primaryWidths": [
+        [
+          1288,
+          1427
+        ],
+        [
+          1288,
+          1427
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 1,
+          "blankId": "s1/strip2/work/1/1/1/1/1",
+          "rect": {
+            "x": 1303,
+            "y": 375,
+            "w": 1427,
+            "h": 1445
+          },
+          "area": 2062015
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip2/work/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+          "rect": {
+            "x": 2208,
+            "y": 1236,
+            "w": 522,
+            "h": 129
+          },
+          "area": 67338
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip2/work/1/1/1/1/1/1/0/1",
+          "rect": {
+            "x": 2214,
+            "y": 613,
+            "w": 516,
+            "h": 119
+          },
+          "area": 61404
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 4,
+          "parts": 60,
+          "cuts": 151,
+          "cutLength": 174469,
+          "turns": 103,
+          "feeds": 147,
+          "stages": 14,
+          "operations": 409,
+          "largestWaste": 2243220,
+          "wasteArea": 13395531
+        },
+        "elapsedMs": 30,
+        "iterations": 100
+      }
+    },
+    {
+      "name": "square-80",
+      "iterations": 100,
+      "metrics": {
+        "sheets": 2,
+        "parts": 80,
+        "cuts": 110,
+        "cutLength": 63735,
+        "turns": 32,
+        "feeds": 108,
+        "stages": 8,
+        "operations": 254,
+        "largestWaste": 4642650,
+        "wasteArea": 5082625
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 100,
+        "rectangles": 5349,
+        "dpCalls": 459,
+        "dpStates": 6895,
+        "prunedDP": 0,
+        "primaryDP": 10,
+        "validated": 100,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 97
+          },
+          "0.05": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 95
+          },
+          "0.1": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 98
+          },
+          "0.2": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 99
+          },
+          "0.5": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 108
+          },
+          "0.99": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 103
+          }
+        },
+        "areaLowerBound": 1,
+        "elapsedMs": 360
+      },
+      "partArea": 4572500,
+      "primaryWidths": [
+        [
+          2720
+        ],
+        [
+          2720
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 1,
+          "blankId": "s1/strip1/work/1",
+          "rect": {
+            "x": 165,
+            "y": 10,
+            "w": 2565,
+            "h": 1810
+          },
+          "area": 4642650
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip1/work/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1",
+          "rect": {
+            "x": 2605,
+            "y": 640,
+            "w": 100,
+            "h": 1180
+          },
+          "area": 118000
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip1/work/1/1/1/1/0/1/1/1",
+          "rect": {
+            "x": 1635,
+            "y": 620,
+            "w": 45,
+            "h": 1200
+          },
+          "area": 54000
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 2,
+          "parts": 80,
+          "cuts": 125,
+          "cutLength": 72535,
+          "turns": 48,
+          "feeds": 123,
+          "stages": 11,
+          "operations": 300,
+          "largestWaste": 3909600,
+          "wasteArea": 5038725
+        },
+        "elapsedMs": 36,
+        "iterations": 100
+      }
+    },
+    {
+      "name": "small-200",
+      "iterations": 100,
+      "metrics": {
+        "sheets": 1,
+        "parts": 200,
+        "cuts": 218,
+        "cutLength": 54180,
+        "turns": 15,
+        "feeds": 217,
+        "stages": 6,
+        "operations": 452,
+        "largestWaste": 2521050,
+        "wasteArea": 2556050
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 100,
+        "rectangles": 2756,
+        "dpCalls": 72,
+        "dpStates": 1134,
+        "prunedDP": 0,
+        "primaryDP": 5,
+        "validated": 100,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 17,
+            "minSheets": 1,
+            "minGeometryCuts": 211
+          },
+          "0.05": {
+            "trials": 17,
+            "minSheets": 1,
+            "minGeometryCuts": 212
+          },
+          "0.1": {
+            "trials": 17,
+            "minSheets": 1,
+            "minGeometryCuts": 211
+          },
+          "0.2": {
+            "trials": 17,
+            "minSheets": 1,
+            "minGeometryCuts": 212
+          },
+          "0.5": {
+            "trials": 16,
+            "minSheets": 1,
+            "minGeometryCuts": 211
+          },
+          "0.99": {
+            "trials": 16,
+            "minSheets": 1,
+            "minGeometryCuts": 212
+          }
+        },
+        "areaLowerBound": 1,
+        "elapsedMs": 624
+      },
+      "partArea": 2160000,
+      "primaryWidths": [
+        [
+          120,
+          2595
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 0,
+          "blankId": "s0/strip2/work/1/1/1/1/1/1/1/1/1/1",
+          "rect": {
+            "x": 1260,
+            "y": 105,
+            "w": 1470,
+            "h": 1715
+          },
+          "area": 2521050
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/strip2/work/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+          "rect": {
+            "x": 1135,
+            "y": 1720,
+            "w": 120,
+            "h": 100
+          },
+          "area": 12000
+        },
+        {
+          "sheet": 0,
+          "blankId": "s0/rip-rem1",
+          "rect": {
+            "x": 2735,
+            "y": 10,
+            "w": 5,
+            "h": 1810
+          },
+          "area": 9050
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 1,
+          "parts": 200,
+          "cuts": 218,
+          "cutLength": 54810,
+          "turns": 15,
+          "feeds": 217,
+          "stages": 6,
+          "operations": 452,
+          "largestWaste": 2462250,
+          "wasteArea": 2552900
+        },
+        "elapsedMs": 50,
+        "iterations": 100
+      }
+    },
+    {
+      "name": "rotation-50",
+      "iterations": 100,
+      "metrics": {
+        "sheets": 2,
+        "parts": 50,
+        "cuts": 113,
+        "cutLength": 69883,
+        "turns": 58,
+        "feeds": 111,
+        "stages": 8,
+        "operations": 286,
+        "largestWaste": 4276818,
+        "wasteArea": 5136192
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 100,
+        "rectangles": 8390,
+        "dpCalls": 603,
+        "dpStates": 51154,
+        "prunedDP": 0,
+        "primaryDP": 11,
+        "validated": 99,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 94
+          },
+          "0.05": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 99
+          },
+          "0.1": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 97
+          },
+          "0.2": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 100
+          },
+          "0.5": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 102
+          },
+          "0.99": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 103
+          }
+        },
+        "areaLowerBound": 1,
+        "elapsedMs": 457
+      },
+      "partArea": 4488293,
+      "primaryWidths": [
+        [
+          342,
+          2373
+        ],
+        [
+          104,
+          2611
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 1,
+          "blankId": "s1/strip2/work/1",
+          "rect": {
+            "x": 119,
+            "y": 182,
+            "w": 2611,
+            "h": 1638
+          },
+          "area": 4276818
+        },
+        {
+          "sheet": 1,
+          "blankId": "s1/strip1/work/1",
+          "rect": {
+            "x": 10,
+            "y": 454,
+            "w": 104,
+            "h": 1366
+          },
+          "area": 142064
+        },
+        {
+          "sheet": 1,
+          "blankId": "s1/strip2/work/0/1/1/1/0/1",
+          "rect": {
+            "x": 1796,
+            "y": 10,
+            "w": 934,
+            "h": 113
+          },
+          "area": 105542
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 2,
+          "parts": 50,
+          "cuts": 109,
+          "cutLength": 74756,
+          "turns": 73,
+          "feeds": 107,
+          "stages": 13,
+          "operations": 293,
+          "largestWaste": 3943990,
+          "wasteArea": 5111827
+        },
+        "elapsedMs": 27,
+        "iterations": 100
+      }
+    },
+    {
+      "name": "mixed-65",
+      "iterations": 100,
+      "metrics": {
+        "sheets": 2,
+        "parts": 65,
+        "cuts": 143,
+        "cutLength": 87812,
+        "turns": 79,
+        "feeds": 141,
+        "stages": 9,
+        "operations": 367,
+        "largestWaste": 702815,
+        "wasteArea": 1921774
+      },
+      "search": {
+        "seed": 2026,
+        "iterations": 100,
+        "rectangles": 10823,
+        "dpCalls": 770,
+        "dpStates": 71022,
+        "prunedDP": 0,
+        "primaryDP": 17,
+        "validated": 29,
+        "failedTrials": 0,
+        "byDelta": {
+          "0": {
+            "trials": 17,
+            "minSheets": 3,
+            "minGeometryCuts": 126
+          },
+          "0.05": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 132
+          },
+          "0.1": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 133
+          },
+          "0.2": {
+            "trials": 17,
+            "minSheets": 2,
+            "minGeometryCuts": 131
+          },
+          "0.5": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 131
+          },
+          "0.99": {
+            "trials": 16,
+            "minSheets": 2,
+            "minGeometryCuts": 137
+          }
+        },
+        "areaLowerBound": 2,
+        "elapsedMs": 416
+      },
+      "partArea": 7613066,
+      "primaryWidths": [
+        [
+          402,
+          2313
+        ],
+        [
+          355,
+          2360
+        ]
+      ],
+      "largestRemnants": [
+        {
+          "sheet": 1,
+          "blankId": "s1/strip2/work/1/1/1/1/1",
+          "rect": {
+            "x": 2075,
+            "y": 747,
+            "w": 655,
+            "h": 1073
+          },
+          "area": 702815
+        },
+        {
+          "sheet": 1,
+          "blankId": "s1/strip2/work/1/1/1/1/0/1",
+          "rect": {
+            "x": 2308,
+            "y": 306,
+            "w": 422,
+            "h": 436
+          },
+          "area": 183992
+        },
+        {
+          "sheet": 1,
+          "blankId": "s1/strip2/work/1/1/1/0/1",
+          "rect": {
+            "x": 2238,
+            "y": 10,
+            "w": 492,
+            "h": 291
+          },
+          "area": 143172
+        }
+      ],
+      "previousPSS": {
+        "metrics": {
+          "sheets": 2,
+          "parts": 65,
+          "cuts": 142,
+          "cutLength": 88853,
+          "turns": 93,
+          "feeds": 140,
+          "stages": 11,
+          "operations": 379,
+          "largestWaste": 423152,
+          "wasteArea": 1916569
+        },
+        "elapsedMs": 47,
+        "iterations": 100
+      }
+    }
+  ]
+}

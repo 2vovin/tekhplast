@@ -6091,35 +6091,35 @@
       "0": {
         "trials": 3334,
         "minSheets": 1,
-        "minGeometryCuts": 36
+        "minGeometryCuts": 39
       },
       "0.05": {
         "trials": 3334,
         "minSheets": 1,
-        "minGeometryCuts": 36
+        "minGeometryCuts": 38
       },
       "0.1": {
         "trials": 3333,
         "minSheets": 1,
-        "minGeometryCuts": 36
+        "minGeometryCuts": 37
       },
       "0.2": {
         "trials": 3333,
         "minSheets": 1,
-        "minGeometryCuts": 36
+        "minGeometryCuts": 38
       },
       "0.5": {
         "trials": 3333,
         "minSheets": 1,
-        "minGeometryCuts": 36
+        "minGeometryCuts": 38
       },
       "0.99": {
         "trials": 3333,
         "minSheets": 1,
-        "minGeometryCuts": 36
+        "minGeometryCuts": 38
       }
     },
     "areaLowerBound": 1,
-    "elapsedMs": 14139
+    "elapsedMs": 4493
   }
 }
