@@ -1,0 +1,66 @@
+{
+  "name": "listpro-mebel-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ListPro Mebel experimental held-strips Windows desktop application",
+  "main": "main.cjs",
+  "author": "ListPro",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win portable --x64",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "devDependencies": {
+    "electron": "^35.7.5",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "ru.listpro.mebel",
+    "productName": "ЛистПро Мебель",
+    "asar": false,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "worker.cjs",
+      "engine.cjs",
+      "index.html",
+      "ui.js",
+      "style.css",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../src",
+        "to": "listpro-core/src",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "../benchmarks/bazis-26-corrected.json",
+        "to": "listpro-core/benchmarks/bazis-26-corrected.json"
+      },
+      {
+        "from": "../benchmarks/held-strips/result.json",
+        "to": "listpro-core/benchmarks/held-strips/result.json"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "ListPro-Mebel-${version}-win-x64.${ext}"
+    },
+    "compression": "normal",
+    "publish": null
+  }
+}
