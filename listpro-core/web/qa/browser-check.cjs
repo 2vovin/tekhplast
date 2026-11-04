@@ -7,7 +7,7 @@ const qa=process.env.LISTPRO_QA_OUTPUT||__dirname,url=process.env.LISTPRO_BASE_U
  page.on('pageerror',e=>errors.push(e.message));
  await page.goto(url);
  await page.waitForFunction(()=>document.getElementById('statCuts').textContent==='60 / 7');
- assert.equal(await page.locator('.sheet-card').count(),2);const twoColumnMap=await page.locator('.sheet-card svg').first().boundingBox();await page.locator('#viewSingle').click();
+ assert.equal(await page.locator('.sheet-card').count(),2);assert.deepEqual(await page.locator('.sheet-card .compact-parts tbody tr td:last-child').allTextContents(),['28','16']);const twoColumnMap=await page.locator('.sheet-card svg').first().boundingBox();await page.locator('#viewSingle').click();
  const width=await page.locator('#drawing').boundingBox();assert(width.width>800);const sidebar=await page.locator('#sheetParts').boundingBox();assert(sidebar.x>=width.x+width.width);
  const graphic=await page.locator('#drawing > svg').boundingBox();assert(graphic.height<=1080*.8+1);assert(graphic.width<=width.width);
  await page.locator('#zoomIn').click();const larger=await page.locator('#drawing > svg').boundingBox();assert(larger.width>graphic.width);await page.locator('#fit').click();const fitted=await page.locator('#drawing > svg').boundingBox();assert.equal(fitted.width,graphic.width);
@@ -49,7 +49,7 @@ const qa=process.env.LISTPRO_QA_OUTPUT||__dirname,url=process.env.LISTPRO_BASE_U
 
  await page.locator('#viewTwo').click();assert.equal(await page.locator('.sheet-card').count(),10);
  const positions=()=>page.locator('.sheet-card').evaluateAll(list=>list.map(el=>{const r=el.getBoundingClientRect();return{x:r.x,y:r.y,w:r.width};}));
- const two=await positions();assert(two[0].y===two[1].y&&two[2].y>two[0].y);
+ const inventories=await page.locator('.sheet-card').evaluateAll(cards=>cards.map(c=>{const m=c.querySelector('svg').getBoundingClientRect(),t=c.querySelector('.compact-parts').getBoundingClientRect();return t.x>=m.right;}));assert(inventories.every(Boolean));assert.equal(await page.locator('.sheet-card .compact-parts').count(),10);const two=await positions();assert(two[0].y===two[1].y&&two[2].y>two[0].y);
  await page.screenshot({path:path.join(qa,'grid-two.png'),fullPage:true});
  await page.locator('#viewThree').click();const three=await positions();assert(three[0].y===three[2].y&&three[3].y>three[0].y);
  assert.equal(await page.locator('#sheetGallery [tabindex="0"]').count(),0);
@@ -59,14 +59,17 @@ const qa=process.env.LISTPRO_QA_OUTPUT||__dirname,url=process.env.LISTPRO_BASE_U
  await page.locator('#viewThree').click();assert.equal(await page.locator('.sheet-card').count(),10);
  await page.locator('[data-tab="parts"]').click();await page.locator('[data-example="171-legacy"]').click();await page.waitForFunction(()=>document.getElementById('statSheets').textContent==='11');assert.equal(await page.locator('#statCuts').textContent(),'349 / 99');
  await page.locator('[data-tab="parts"]').click();await page.locator('#panel-parts [data-example="44"]').click();await page.waitForFunction(()=>document.getElementById('statParts').textContent==='44');
- await page.evaluate(()=>window.print=()=>{});await page.locator('#print').click();await page.pdf({path:path.join(qa,'print.pdf'),preferCSSPageSize:true});
+ await page.evaluate(()=>window.print=()=>{});await page.locator('#print').click();await page.emulateMedia({media:'print'});
+ assert.equal(await page.locator('.print-page').count(),2);assert.deepEqual(await page.locator('.print-page .compact-parts tbody td:last-child').allTextContents(),['28','16']);
+ const printed=await page.locator('.print-sheet-body').evaluateAll(els=>els.map(el=>{const m=el.querySelector('svg').getBoundingClientRect(),t=el.querySelector('.compact-parts').getBoundingClientRect();return t.x>=m.right;}));assert(printed.every(Boolean));
+ await page.pdf({path:path.join(qa,'print.pdf'),preferCSSPageSize:true});await page.emulateMedia({media:'screen'});
  await page.setViewportSize({width:390,height:844});await page.reload();await page.waitForFunction(()=>document.getElementById('statCuts').textContent==='60 / 7');
  const mobileCards=await page.locator('.sheet-card').evaluateAll(list=>list.map(el=>{const r=el.getBoundingClientRect();return{x:r.x,y:r.y};}));assert.equal(mobileCards.length,2);assert(mobileCards[1].y>mobileCards[0].y);
  const actions=await page.locator('.work-actions button').evaluateAll(list=>list.map(el=>{const r=el.getBoundingClientRect();return{x:r.x,right:r.right};}));assert(actions.every(r=>r.x>=0&&r.right<=390));
  await page.locator('#workspace').scrollIntoViewIfNeeded();
  await page.screenshot({path:path.join(qa,'mobile.png'),fullPage:true});
- await page.locator('#viewSingle').click();const mobileMap=await page.locator('#drawing').boundingBox(),mobileList=await page.locator('#sheetParts').boundingBox();assert(mobileList.y>=mobileMap.y+mobileMap.height);await page.screenshot({path:path.join(qa,'mobile-list.png'),fullPage:true});
+ await page.locator('#viewSingle').click();const mobileMap=await page.locator('#drawing').boundingBox(),mobileList=await page.locator('#sheetParts').boundingBox();assert(mobileList.x>=mobileMap.x+mobileMap.width);await page.screenshot({path:path.join(qa,'mobile-list.png'),fullPage:true});
  const mobileWidth=await page.evaluate(()=>({w:innerWidth,doc:document.documentElement.scrollWidth}));assert.equal(mobileWidth.doc,mobileWidth.w);
- assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,desktopContainerWidth:width.width,singleSheetGraphic:graphic,twoColumnMap,mobileWidth,errors,scenarios:['single sheet fits 80 percent of viewport height at two desktop sizes','short part numbers','dimensions follow placed sides','small parts show only ID','per-sheet grouped quantities and selection','44 initial','navigation','physical orientation','58-cut recalculation','SVG download','fractional import','26 descending parts and original-order setting','26 and 171 replay','ten sheets in 2/3 columns','keyboard opens sheet 10 and replay','mobile single column','mobile no overflow']}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,desktopContainerWidth:width.width,singleSheetGraphic:graphic,twoColumnMap,mobileWidth,errors,scenarios:['single sheet fits 80 percent of viewport height at two desktop sizes','short part numbers','dimensions follow placed sides','small parts show only ID','per-sheet grouped quantities and selection','44 initial','navigation','physical orientation','58-cut recalculation','SVG download','fractional import','26 descending parts and original-order setting','26 and 171 replay','ten sheets in 2/3 columns','keyboard opens sheet 10 and replay','inventory beside every gallery sheet and in print','mobile inventory stays beside map','mobile no overflow']}));
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

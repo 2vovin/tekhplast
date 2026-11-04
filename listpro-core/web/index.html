@@ -17,8 +17,13 @@
 .strip-order-note{font-size:12px;color:#64768b;padding:0 24px;margin:0 0 16px}.strip-order-note:empty{display:none}
 
 .sheet-detail{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:18px;padding:0 22px 16px;align-items:start}.sheet-detail .drawing{padding:0;min-width:0}.sheet-parts{min-width:0;border:1px solid #dfe7ef;border-radius:12px;background:#f9fbfd;overflow:hidden}.sheet-parts-heading{padding:15px 14px 12px}.sheet-parts-heading h3{font-size:15px;margin:0 0 4px}.sheet-parts-heading span{font-size:11px;color:#738499}.sheet-parts-scroll{max-height:calc(80vh - 160px);overflow:auto}.sheet-parts table{font-size:12px}.sheet-parts th{padding:10px 12px;font-size:10px}.sheet-parts td{padding:9px 12px;white-space:nowrap}.sheet-parts td:last-child,.sheet-parts th:last-child{text-align:right}.sheet-parts tbody tr{cursor:pointer}.sheet-parts tr.selected{background:#dff4e8}.sheet-parts p{font-size:11px;line-height:1.5;color:#738499;padding:12px 14px;margin:0;border-top:1px solid #e3ebf1}.part-link{display:inline-flex;align-items:center;gap:7px;border:0;padding:3px 0;background:none;font-weight:700;color:#244057}.part-link i{display:inline-block;width:10px;height:10px;border:1px solid #6f899b55;border-radius:2px}
-@media(max-width:900px){.sheet-detail{grid-template-columns:minmax(0,1fr)}.sheet-parts-scroll{max-height:320px}.sheet-parts{width:100%}}
+@media(max-width:900px){.sheet-detail{grid-template-columns:minmax(0,1fr) 180px;gap:10px}.sheet-parts-scroll{max-height:none}.sheet-parts{width:100%}}
 @media(max-width:600px){.sheet-detail{padding:0 12px 12px}}
+
+/* Keep the inventory beside its own sheet in every view. */
+.sheet-parts-scroll{max-height:none;overflow:visible}.sheet-card{cursor:default}.sheet-card-body{display:grid;grid-template-columns:minmax(0,1fr) 152px;gap:10px;align-items:start}.sheet-card-map{display:block;width:100%;min-width:0;border:0;padding:0;background:none;cursor:pointer}.sheet-card-map:focus-visible{outline:3px solid #00995b;outline-offset:2px}.compact-parts{min-width:0;text-align:left;color:#263b4d}.compact-parts>strong{display:block;font-size:11px;margin:2px 0 7px}.compact-parts table{width:100%;font-size:10px;line-height:1.4}.compact-parts th{font-size:9px;padding:4px 2px;white-space:nowrap}.compact-parts td{padding:4px 2px;white-space:nowrap}.compact-parts td:last-child,.compact-parts th:last-child{text-align:right}
+@media(max-width:600px){.sheet-detail{grid-template-columns:minmax(0,1fr) 142px;gap:8px}.sheet-parts-heading{padding:8px}.sheet-parts-heading h3{font-size:12px}.sheet-parts th,.sheet-parts td{padding:5px 3px;font-size:9px}.sheet-parts p{padding:8px;font-size:9px}.part-link{gap:3px}.part-link i{width:6px;height:6px}.sheet-card-body{grid-template-columns:minmax(0,1fr) 134px;gap:6px}}
+@media print{.print-sheet-body{display:grid;grid-template-columns:minmax(0,1fr) 47mm;gap:3mm;align-items:start}.print-sheet-body>svg{width:100%;height:auto;max-height:170mm}.print-sheet-body .compact-parts{color:#000}.print-sheet-body .compact-parts>strong{font-size:10pt;margin:0 0 2mm}.print-sheet-body table{font-size:8pt;line-height:1.25}.print-sheet-body th{font-size:7pt;padding:1mm .5mm}.print-sheet-body td{padding:.8mm .5mm}.print-page{break-inside:avoid}.print-page:last-child{page-break-after:auto}}
 </style></head><body><noscript><p style="padding:20px">Для расчёта и просмотра карт включите JavaScript в браузере.</p></noscript>
 <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true"><defs>
 <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol><symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol><symbol id="i-save" viewBox="0 0 24 24"><path d="M4 3h13l3 3v15H4Z M8 3v6h8V3M8 21v-8h8v8"/></symbol><symbol id="i-print" viewBox="0 0 24 24"><path d="M7 8V3h10v5M6 18H3V9h18v9h-3M7 14h10v7H7ZM17 11h1"/></symbol><symbol id="i-left" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 11h18M12 3v18"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M8 5h13M8 12h13M8 19h13M3 5h1M3 12h1M3 19h1"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="m3 6 9-4 9 4-9 5Zm0 0v12l9 4 9-4V6M12 11v11"/></symbol><symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 4v16M12 4v16M20 4v16M1 8h6M9 16h6M17 10h6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L20 5"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M4 12h16"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M5 19 19 5"/></symbol><symbol id="i-expand" viewBox="0 0 24 24"><path d="M3 9V3h6M15 3h6v6M21 15v6h-6M9 21H3v-6"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Zm-5 10 3 3 7-7"/></symbol><symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V3h8v3M5 6l1 15h12l1-15M9 10v7M15 10v7"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M3 20C0 4 15 3 21 3c0 14-6 19-14 14M3 21 16 8"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
@@ -2008,7 +2013,7 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
    $('sheetGallery').setAttribute('data-columns',String(columns));
    $('sheetGallery').innerHTML=result.sheets.map((sh,i)=>{
     const usage=fmt(100*sh.parts.reduce((n,a)=>n+a.w*a.h,0)/(p.sheetW*p.sheetH));
-    return '<button class="sheet-card" data-open-sheet="'+i+'" aria-label="Открыть лист '+(i+1)+' крупно"><span class="sheet-card-header"><strong>Лист '+(i+1)+'</strong><span>'+sh.parts.length+' дет. · '+usage+'%</span></span>'+mapSVG(i,false,true)+'<span class="sheet-card-footer">'+fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм<span>Открыть лист</span></span></button>';
+    return '<article class="sheet-card"><span class="sheet-card-header"><strong>Лист '+(i+1)+'</strong><span>'+sh.parts.length+' дет. · '+usage+'%</span></span><div class="sheet-card-body"><button class="sheet-card-map" data-open-sheet="'+i+'" aria-label="Открыть лист '+(i+1)+' крупно">'+mapSVG(i,false,true)+'</button>'+sheetList(i)+'</div><span class="sheet-card-footer">'+fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм<span>Открыть лист</span></span></article>';
    }).join('');
   }
   $('drawing').innerHTML=mapSVG(sheet,true);const picture=$('drawing').firstElementChild,margin=Math.max(p.sheetW*.045,90),ratio=(p.sheetW+margin*1.4)/(p.sheetH+margin*1.4);picture.style.width='min('+(zoom*100)+'%, '+(80*ratio*zoom)+'vh)';picture.style.maxHeight=(80*zoom)+'vh';
@@ -2024,14 +2029,21 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
   const frame=result.verification.roleFrames.find(f=>f.step===op.step);
   $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(op.edgeFinish?'<p>Торцовка края: часть ширины диска проходит вне заготовки. Размер детали сохранён.</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(op.edgeFinish?'готовая деталь':c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
  }
+ function sheetRows(index){
+  const counts=new Map();result.sheets[index].parts.forEach(a=>counts.set(a.id,(counts.get(a.id)||0)+1));
+  return [...counts].sort((a,b)=>a[0]-b[0]).map(([id,q])=>({...result.parameters.pieces.find(p=>p.id===id),q}));
+ }
+ function partsRows(rows,interactive=false){
+  return rows.map(a=>'<tr data-sheet-part="'+a.id+'"><td>'+(interactive?'<button class="part-link" data-highlight-part="'+a.id+'" aria-label="Показать детали №'+a.id+' на карте"><i style="background:'+colors[(a.id-1)%colors.length]+'"></i>'+a.id+'</button>':a.id)+'</td><td>'+fmt(a.l)+' × '+fmt(a.w)+'</td><td>'+a.q+'</td></tr>').join('');
+ }
+ function sheetList(index,rows=sheetRows(index)){
+  return '<aside class="compact-parts" aria-label="Детали листа '+(index+1)+'"><strong>Детали</strong><table><thead><tr><th>№</th><th>Размер, мм</th><th>Шт.</th></tr></thead><tbody>'+partsRows(rows)+'</tbody></table></aside>';
+ }
  function renderSheetParts(){
-  const sh=result.sheets[sheet],counts=new Map();sh.parts.forEach(a=>counts.set(a.id,(counts.get(a.id)||0)+1));
+  const rows=sheetRows(sheet);
   $('sheetPartsTitle').textContent='Детали листа '+(sheet+1);
-  $('sheetPartsCount').textContent=sh.parts.length+' шт. · '+counts.size+' позиций';
-  $('sheetPartsBody').innerHTML=[...counts].sort((a,b)=>a[0]-b[0]).map(([id,q])=>{
-   const a=result.parameters.pieces.find(p=>p.id===id);
-   return '<tr data-sheet-part="'+id+'"><td><button class="part-link" data-highlight-part="'+id+'" aria-label="Показать детали №'+id+' на карте"><i style="background:'+colors[(id-1)%colors.length]+'"></i>'+id+'</button></td><td>'+fmt(a.l)+' × '+fmt(a.w)+'</td><td>'+q+'</td></tr>';
-  }).join('');
+  $('sheetPartsCount').textContent=result.sheets[sheet].parts.length+' шт. · '+rows.length+' позиций';
+  $('sheetPartsBody').innerHTML=partsRows(rows,true);
  }
  function renderResult(){
   const has=!!result,order=result?.ordering;
@@ -2091,7 +2103,18 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
  $('downloadJson').onclick=()=>{if(result)json('listpro-result.json',result);};
  $('downloadCsv').onclick=()=>{if(result)csv('listpro-parts.csv',[['Лист','Деталь','Экземпляр','X','Y','Ширина','Высота','Поворот'],...result.sheets.flatMap((s,i)=>s.parts.map(a=>[i+1,a.id,a.instance,a.x,a.y,a.w,a.h,a.rotated?'Да':'Нет']))]);};
  $('exportOps').onclick=()=>{if(result)csv('listpro-operations.csv',[['Шаг','Лист','Операция','Заготовка','Ширина','Высота','Ось','Позиция'],...result.plan.operations.map(o=>[o.step,sheetOf(o)+1,typeName(o),o.inputBlankId||o.blankId,o.w,o.h,o.axis,o.type==='cut'?(o.axis==='V'?o.start.x:o.start.y):''])]);};
- $('print').onclick=()=>{if(!result)return;$('printPages').innerHTML=result.sheets.map((s,i)=>'<section class="print-page"><h2>'+esc(project.name)+' · лист '+(i+1)+'</h2>'+mapSVG(i)+'<p>Пропил '+result.parameters.kerf+' мм · обрезка '+result.parameters.trim+' мм · '+s.parts.length+' деталей. PSS проверен. Совместимость со станком не подтверждена.</p></section>').join('');window.print();};
+ function preparePrint(){
+  if(!result){$('printPages').innerHTML='';return;}
+  $('printPages').innerHTML=result.sheets.flatMap((s,i)=>{
+   const rows=sheetRows(i),pages=[];
+   for(let start=0;start<rows.length;start+=30){
+    pages.push('<section class="print-page"><h2>'+esc(project.name)+' · лист '+(i+1)+(rows.length>30?' · список '+(start/30+1)+' из '+Math.ceil(rows.length/30):'')+'</h2><p>'+esc(project.material)+' · '+fmt(result.parameters.sheetW)+' × '+fmt(result.parameters.sheetH)+' мм · '+s.parts.length+' деталей</p><div class="print-sheet-body">'+mapSVG(i)+sheetList(i,rows.slice(start,start+30))+'</div><p>Пропил '+result.parameters.kerf+' мм · обрезка '+result.parameters.trim+' мм. Размеры в списке — исходные. PSS проверен. Совместимость со станком не подтверждена.</p></section>');
+   }
+   return pages;
+  }).join('');
+ }
+ window.onbeforeprint=preparePrint;
+ $('print').onclick=()=>{if(!result)return;preparePrint();window.print();};
  for(const [id,n]of [['viewSingle',1],['viewTwo',2],['viewThree',3]])$(id).onclick=()=>{columns=n;zoom=1;draw();};
  $('sheetGallery').onclick=e=>{const card=e.target.closest('[data-open-sheet]');if(!card||!result)return;columns=1;zoom=1;gotoSheet(Number(card.dataset.openSheet));$('panel-map').scrollIntoView({block:'start',behavior:'smooth'});$('viewSingle').focus();};
  $('prevSheet').onclick=()=>gotoSheet(sheet-1);$('nextSheet').onclick=()=>gotoSheet(sheet+1);

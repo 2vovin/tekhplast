@@ -85,7 +85,7 @@
    $('sheetGallery').setAttribute('data-columns',String(columns));
    $('sheetGallery').innerHTML=result.sheets.map((sh,i)=>{
     const usage=fmt(100*sh.parts.reduce((n,a)=>n+a.w*a.h,0)/(p.sheetW*p.sheetH));
-    return '<button class="sheet-card" data-open-sheet="'+i+'" aria-label="Открыть лист '+(i+1)+' крупно"><span class="sheet-card-header"><strong>Лист '+(i+1)+'</strong><span>'+sh.parts.length+' дет. · '+usage+'%</span></span>'+mapSVG(i,false,true)+'<span class="sheet-card-footer">'+fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм<span>Открыть лист</span></span></button>';
+    return '<article class="sheet-card"><span class="sheet-card-header"><strong>Лист '+(i+1)+'</strong><span>'+sh.parts.length+' дет. · '+usage+'%</span></span><div class="sheet-card-body"><button class="sheet-card-map" data-open-sheet="'+i+'" aria-label="Открыть лист '+(i+1)+' крупно">'+mapSVG(i,false,true)+'</button>'+sheetList(i)+'</div><span class="sheet-card-footer">'+fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм<span>Открыть лист</span></span></article>';
    }).join('');
   }
   $('drawing').innerHTML=mapSVG(sheet,true);const picture=$('drawing').firstElementChild,margin=Math.max(p.sheetW*.045,90),ratio=(p.sheetW+margin*1.4)/(p.sheetH+margin*1.4);picture.style.width='min('+(zoom*100)+'%, '+(80*ratio*zoom)+'vh)';picture.style.maxHeight=(80*zoom)+'vh';
@@ -101,14 +101,21 @@
   const frame=result.verification.roleFrames.find(f=>f.step===op.step);
   $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(op.edgeFinish?'<p>Торцовка края: часть ширины диска проходит вне заготовки. Размер детали сохранён.</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(op.edgeFinish?'готовая деталь':c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
  }
+ function sheetRows(index){
+  const counts=new Map();result.sheets[index].parts.forEach(a=>counts.set(a.id,(counts.get(a.id)||0)+1));
+  return [...counts].sort((a,b)=>a[0]-b[0]).map(([id,q])=>({...result.parameters.pieces.find(p=>p.id===id),q}));
+ }
+ function partsRows(rows,interactive=false){
+  return rows.map(a=>'<tr data-sheet-part="'+a.id+'"><td>'+(interactive?'<button class="part-link" data-highlight-part="'+a.id+'" aria-label="Показать детали №'+a.id+' на карте"><i style="background:'+colors[(a.id-1)%colors.length]+'"></i>'+a.id+'</button>':a.id)+'</td><td>'+fmt(a.l)+' × '+fmt(a.w)+'</td><td>'+a.q+'</td></tr>').join('');
+ }
+ function sheetList(index,rows=sheetRows(index)){
+  return '<aside class="compact-parts" aria-label="Детали листа '+(index+1)+'"><strong>Детали</strong><table><thead><tr><th>№</th><th>Размер, мм</th><th>Шт.</th></tr></thead><tbody>'+partsRows(rows)+'</tbody></table></aside>';
+ }
  function renderSheetParts(){
-  const sh=result.sheets[sheet],counts=new Map();sh.parts.forEach(a=>counts.set(a.id,(counts.get(a.id)||0)+1));
+  const rows=sheetRows(sheet);
   $('sheetPartsTitle').textContent='Детали листа '+(sheet+1);
-  $('sheetPartsCount').textContent=sh.parts.length+' шт. · '+counts.size+' позиций';
-  $('sheetPartsBody').innerHTML=[...counts].sort((a,b)=>a[0]-b[0]).map(([id,q])=>{
-   const a=result.parameters.pieces.find(p=>p.id===id);
-   return '<tr data-sheet-part="'+id+'"><td><button class="part-link" data-highlight-part="'+id+'" aria-label="Показать детали №'+id+' на карте"><i style="background:'+colors[(id-1)%colors.length]+'"></i>'+id+'</button></td><td>'+fmt(a.l)+' × '+fmt(a.w)+'</td><td>'+q+'</td></tr>';
-  }).join('');
+  $('sheetPartsCount').textContent=result.sheets[sheet].parts.length+' шт. · '+rows.length+' позиций';
+  $('sheetPartsBody').innerHTML=partsRows(rows,true);
  }
  function renderResult(){
   const has=!!result,order=result?.ordering;
@@ -168,7 +175,18 @@
  $('downloadJson').onclick=()=>{if(result)json('listpro-result.json',result);};
  $('downloadCsv').onclick=()=>{if(result)csv('listpro-parts.csv',[['Лист','Деталь','Экземпляр','X','Y','Ширина','Высота','Поворот'],...result.sheets.flatMap((s,i)=>s.parts.map(a=>[i+1,a.id,a.instance,a.x,a.y,a.w,a.h,a.rotated?'Да':'Нет']))]);};
  $('exportOps').onclick=()=>{if(result)csv('listpro-operations.csv',[['Шаг','Лист','Операция','Заготовка','Ширина','Высота','Ось','Позиция'],...result.plan.operations.map(o=>[o.step,sheetOf(o)+1,typeName(o),o.inputBlankId||o.blankId,o.w,o.h,o.axis,o.type==='cut'?(o.axis==='V'?o.start.x:o.start.y):''])]);};
- $('print').onclick=()=>{if(!result)return;$('printPages').innerHTML=result.sheets.map((s,i)=>'<section class="print-page"><h2>'+esc(project.name)+' · лист '+(i+1)+'</h2>'+mapSVG(i)+'<p>Пропил '+result.parameters.kerf+' мм · обрезка '+result.parameters.trim+' мм · '+s.parts.length+' деталей. PSS проверен. Совместимость со станком не подтверждена.</p></section>').join('');window.print();};
+ function preparePrint(){
+  if(!result){$('printPages').innerHTML='';return;}
+  $('printPages').innerHTML=result.sheets.flatMap((s,i)=>{
+   const rows=sheetRows(i),pages=[];
+   for(let start=0;start<rows.length;start+=30){
+    pages.push('<section class="print-page"><h2>'+esc(project.name)+' · лист '+(i+1)+(rows.length>30?' · список '+(start/30+1)+' из '+Math.ceil(rows.length/30):'')+'</h2><p>'+esc(project.material)+' · '+fmt(result.parameters.sheetW)+' × '+fmt(result.parameters.sheetH)+' мм · '+s.parts.length+' деталей</p><div class="print-sheet-body">'+mapSVG(i)+sheetList(i,rows.slice(start,start+30))+'</div><p>Пропил '+result.parameters.kerf+' мм · обрезка '+result.parameters.trim+' мм. Размеры в списке — исходные. PSS проверен. Совместимость со станком не подтверждена.</p></section>');
+   }
+   return pages;
+  }).join('');
+ }
+ window.onbeforeprint=preparePrint;
+ $('print').onclick=()=>{if(!result)return;preparePrint();window.print();};
  for(const [id,n]of [['viewSingle',1],['viewTwo',2],['viewThree',3]])$(id).onclick=()=>{columns=n;zoom=1;draw();};
  $('sheetGallery').onclick=e=>{const card=e.target.closest('[data-open-sheet]');if(!card||!result)return;columns=1;zoom=1;gotoSheet(Number(card.dataset.openSheet));$('panel-map').scrollIntoView({block:'start',behavior:'smooth'});$('viewSingle').focus();};
  $('prevSheet').onclick=()=>gotoSheet(sheet-1);$('nextSheet').onclick=()=>gotoSheet(sheet+1);
