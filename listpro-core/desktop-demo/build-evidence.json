@@ -2,13 +2,13 @@
   "ok": true,
   "platform": "win32",
   "packaged": true,
-  "version": "0.1.0",
-  "commit": "a547fc70cb41d9f748194b26628c8a9ccfb76ce1",
-  "runId": 41820513054,
-  "artifactId": 13317430539,
-  "file": "ListPro-Demo-0.1.0-win-x64.exe",
-  "sha256": "48a814f03ab76e515f7750131f0a1be1f3e8c0a97852272ebe2cb320ce075b82",
-  "bytes": 84083197,
+  "version": "0.2.0",
+  "commit": "ebdc808c09ded0665d873d7084877cfb578b2d02",
+  "runId": 41823370355,
+  "artifactId": 13317633447,
+  "file": "ListPro-Demo-0.2.0-win-x64.exe",
+  "sha256": "54aee0dc50a8f2335a80885dbd189baf7db84abbb7a98fe3236316d2d72bf69a",
+  "bytes": 84103956,
   "emptyStart": true,
   "blankNewRow": true,
   "presetCount": 0,
@@ -19,5 +19,6 @@
   "visibleSheets": 2,
   "thirdSheetRedacted": true,
   "printBlocked": true,
-  "exportBlocked": true
+  "exportBlocked": true,
+  "experienceSavedAndReused": true
 }
