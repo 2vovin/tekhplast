@@ -1,0 +1,68 @@
+{
+  "admission": "independent replay of saved verified solutions; no private bank shipped",
+  "solves": 2,
+  "patterns": 18,
+  "books": 2,
+  "records": [
+    {
+      "order": "128",
+      "elapsedMs": 20,
+      "metrics": {
+        "sheets": 8,
+        "parts": 128,
+        "cuts": 230,
+        "turns": 63,
+        "feeds": 222,
+        "cutLength": 213667,
+        "stages": 4,
+        "operations": 531,
+        "largestWaste": 472410,
+        "wasteArea": 1827407.5,
+        "edgeFinishingCuts": 1,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      },
+      "experience": {
+        "patterns": 18,
+        "solves": 2,
+        "matched": 0,
+        "rejected": 2,
+        "used": true,
+        "nearMatches": 0,
+        "recipeUsed": false,
+        "booksMatched": 1
+      }
+    },
+    {
+      "order": "171",
+      "elapsedMs": 16,
+      "metrics": {
+        "sheets": 10,
+        "parts": 171,
+        "cuts": 338,
+        "turns": 114,
+        "feeds": 328,
+        "cutLength": 262505,
+        "stages": 4,
+        "operations": 800,
+        "largestWaste": 365820,
+        "wasteArea": 2190415,
+        "edgeFinishingCuts": 6,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      },
+      "experience": {
+        "patterns": 18,
+        "solves": 2,
+        "matched": 0,
+        "rejected": 2,
+        "used": true,
+        "nearMatches": 0,
+        "recipeUsed": false,
+        "booksMatched": 1
+      }
+    }
+  ]
+}

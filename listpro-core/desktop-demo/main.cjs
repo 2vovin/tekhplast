@@ -14,7 +14,7 @@ app.whenReady().then(()=>{
  ipcMain.handle('demo:calculate',(e,input)=>{
   if(e.sender!==win.webContents)throw Error('Недоступно');if(active)throw Error('Расчёт уже выполняется.');
   return new Promise((resolve,reject)=>{
-   const worker=new Worker(path.join(__dirname,'worker.cjs'),{workerData:{input,coreBase:app.isPackaged?path.join(__dirname,'core'):path.resolve(__dirname,'..')}});active=worker;let settled=false;
+   const worker=new Worker(path.join(__dirname,'worker.cjs'),{workerData:{input,memoryPath:path.join(app.getPath('userData'),'experience-v1.json'),coreBase:app.isPackaged?path.join(__dirname,'core'):path.resolve(__dirname,'..')}});active=worker;let settled=false;
    const done=(error,value)=>{if(settled)return;settled=true;if(active===worker)active=null;error?reject(error):resolve(value);};
    worker.on('message',m=>{if(m.type==='progress'){if(!win.isDestroyed())win.webContents.send('demo:progress',m.data);}else{done(m.type==='error'?Error(m.message):null,m.result);worker.terminate();}});
    worker.on('error',e=>done(e));worker.on('exit',()=>done(Error('Расчёт остановлен.')));

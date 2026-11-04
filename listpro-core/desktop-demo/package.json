@@ -1,6 +1,6 @@
 {
   "name": "listpro-windows-demo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "ListPro offline Windows demo: two detailed sheets",
   "author": "ListPro",
@@ -26,7 +26,8 @@
       "package.json",
       "renderer/**",
       "scripts/gui-smoke.cjs",
-      "core/**"
+      "core/**",
+      "experience-store.cjs"
     ],
     "win": {
       "target": [

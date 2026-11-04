@@ -345,6 +345,83 @@ function pack(p,options={}){
 module.exports={pack,checkInput};
 
 },
+"src/cutting-experience.js":function(module,exports,require){
+'use strict';
+const {fromTree,buildRawLayout}=require('./deferred-strip-patterns'),{verifyDeferred}=require('./deferred-strip-search'),{estimateSheets}=require('./sheet-area-estimate'),{searchDeferredMargins}=require('./deferred-margin-search');
+const VERSION=1,PROFILE='deferred-held-strip-v1';
+const empty=()=>({version:VERSION,profile:PROFILE,solves:0,patterns:[],recipes:[],books:[]});
+function features(p){const area=(p.sheetW-2*p.trim)*(p.sheetH-2*p.trim),n=p.pieces.reduce((s,a)=>s+a.q,0);return [p.sheetW/p.sheetH,n,p.pieces.reduce((s,a)=>s+a.l*a.w*a.q,0)/area, p.pieces.reduce((s,a)=>s+Math.max(a.l/a.w,a.w/a.l)*a.q,0)/n];}
+function similarity(a,b){return a.reduce((s,v,i)=>s+Math.abs(v-b[i])/Math.max(1,Math.abs(v),Math.abs(b[i])),0)/a.length;}
+function safePattern(n,depth=0,counter={n:0}){
+ if(!n||depth>32||++counter.n>10000)throw Error('Invalid experience pattern');
+ if(n.leaf){if(![n.l,n.w].every(x=>Number.isFinite(x)&&x>0&&x<=20000)||typeof n.rotated!=='boolean')throw Error('Invalid experience leaf');return {leaf:true,l:n.l,w:n.w,rotated:n.rotated};}
+ if(!['H','V'].includes(n.axis)||!Array.isArray(n.children)||!n.children.length||n.children.length>2500)throw Error('Invalid experience branch');
+ return {axis:n.axis,children:n.children.map(c=>safePattern(c,depth+1,counter))};
+}
+function normalize(value){
+ if(!value||value.version!==VERSION||value.profile!==PROFILE)return empty();
+ const bank=empty();bank.solves=Number.isSafeInteger(value.solves)&&value.solves>=0?value.solves:0;
+ for(const r of (Array.isArray(value.patterns)?value.patterns:[]).slice(0,128))try{const pattern=safePattern(r.pattern);bank.patterns.push({pattern,uses:Math.min(1000000,Math.max(1,Number(r.uses)||1))});}catch{}
+ bank.recipes=(Array.isArray(value.recipes)?value.recipes:[]).filter(r=>r.move==='wide-48'&&Array.isArray(r.features)&&r.features.length===4&&r.features.every(Number.isFinite)).slice(0,64).map(r=>({move:r.move,features:r.features,uses:Math.max(1,Number(r.uses)||1)}));
+ for(const b of (Array.isArray(value.books)?value.books:[]).slice(0,16))try{if(!Array.isArray(b.patterns)||b.patterns.length>64)continue;bank.books.push({patterns:b.patterns.map(p=>safePattern(p))});}catch{}
+ return bank;
+}
+function patternsOf(p,result){return result.sheets.map(sh=>fromTree(sh.tree,p.kerf));}
+function remember(bank,p,result){
+ // Recompile and replay before admitting any move into the database.
+ const raw=patternsOf(p,result);verifyDeferred(p,buildRawLayout(p,raw));const next=normalize(bank);next.solves++;
+ function encode(n){if(n.part){const a=p.pieces.find(a=>a.id===n.part.id);return{leaf:true,l:a.l,w:a.w,rotated:!!n.part.rotated};}return{axis:n.axis,children:n.children.map(encode)};}
+ for(const n of raw){const pattern=encode(n),key=JSON.stringify(pattern),old=next.patterns.find(r=>JSON.stringify(r.pattern)===key);if(old)old.uses++;else next.patterns.push({pattern,uses:1});}
+ next.patterns.sort((a,b)=>b.uses-a.uses);next.patterns=next.patterns.slice(0,128);
+ if(result.learningMove==='wide-48'&&result.metrics.sheets===estimateSheets(p).minimumSheets){const f=features(p),old=next.recipes.find(r=>similarity(f,r.features)<.05);if(old)old.uses++;else next.recipes.push({move:'wide-48',features:f,uses:1});next.recipes.sort((a,b)=>b.uses-a.uses);next.recipes=next.recipes.slice(0,64);}
+ const book={patterns:raw.map(encode)},bookKey=JSON.stringify(book);next.books=next.books.filter(b=>JSON.stringify(b)!==bookKey);next.books.unshift(book);next.books=next.books.slice(0,16);
+ while(JSON.stringify(next).length>6*1024*1024&&(next.patterns.length>1||next.books.length>1)){if(next.books.length>1)next.books.pop();else next.patterns.pop();}
+ return next;
+}
+function score(r,objective){return objective==='cuts'?[r.metrics.sheets,r.metrics.cuts,r.metrics.turns,-r.metrics.largestWaste]:[r.metrics.sheets,-r.metrics.largestWaste,r.metrics.cuts,r.metrics.turns];}
+const better=(a,b)=>!b||a.some((v,i)=>v<b[i]&&a.slice(0,i).every((x,j)=>x===b[j]));
+function solveWithExperience(p,value,baseSolve,options={}){
+ const bank=normalize(value),objective=options.objective||'remnants',min=estimateSheets(p).minimumSheets,stats={patterns:bank.patterns.length,solves:bank.solves,matched:0,rejected:0,used:false,nearMatches:0,recipeUsed:false,booksMatched:0};let best=null;
+ const keep=r=>{if(better(score(r,objective),best&&score(best,objective)))best=r;};
+ const available=p.pieces.map(a=>a.q),prefix=[];
+ function bind(n,counts,near){if(!n.leaf)return {axis:n.axis,children:n.children.map(c=>bind(c,counts,near))};
+  const matches=p.pieces.map((a,i)=>({a,i,d:Math.abs(a.l/n.l-1)+Math.abs(a.w/n.w-1)})).filter(({a,i,d})=>counts[i]>0&&(!n.rotated||a.grain===false)&&(near?d<=.08:d<1e-10)).sort((a,b)=>a.d-b.d);
+  if(!matches.length)throw Error('No matching physical part');const {a,i,d}=matches[0];counts[i]--;if(d>1e-10)stats.nearMatches++;return {part:{id:a.id,rotated:n.rotated},w:n.rotated?a.w:a.l,h:n.rotated?a.l:a.w};
+ }
+ function finish(r){stats.used=!!r.experienceOrigin;r.sheetEstimate=estimateSheets(p,r.metrics.sheets);r.experienceInfo=stats;return r;}
+ function candidate(patterns,counts){
+  const sub={...p,pieces:p.pieces.map((a,i)=>({...a,q:counts[i]})).filter(a=>a.q)};let tail=[];
+  if(sub.pieces.length){const remaining=baseSolve(sub,{iterations:Math.min(options.iterations||100,30),examples:[]});tail=patternsOf(remaining.parameters,remaining);const rebind=n=>{if(n.part)n.part.id=sub.pieces[n.part.id-1].id;else n.children.forEach(rebind);};tail.forEach(rebind);}
+  const r=verifyDeferred(p,buildRawLayout(p,[...patterns,...tail]));r.learningMove='stored-strip-tree';r.experienceOrigin=true;keep(r);
+ }
+ // A complete opening book preserves combinations between complementary sheets.
+ // It avoids greedily using a common pattern twice and starving another sheet.
+ for(const book of bank.books)for(const near of [false,true]){
+  const counts=p.pieces.map(a=>a.q);try{const patterns=book.patterns.map(n=>bind(n,counts,near));candidate(patterns,counts);stats.booksMatched++;break;}catch{stats.rejected++;}
+ }
+ if(best&&best.metrics.sheets===min&&!options.forceSearch)return finish(best);
+ // Prefer exact openings, then try the same tree with nearby actual dimensions.
+ for(const near of [false,true])for(const rec of bank.patterns){
+  for(let repeats=0;repeats<2500;repeats++){
+   const counts=available.slice();let pattern;try{pattern=bind(rec.pattern,counts,near);}catch{break;}
+   const sub={...p,pieces:p.pieces.map((a,i)=>({...a,q:available[i]-counts[i]})).filter(a=>a.q)};
+   try{verifyDeferred(sub,buildRawLayout(sub,[pattern]));}catch{stats.rejected++;break;}
+   prefix.push(pattern);available.splice(0,available.length,...counts);stats.matched++;
+  }
+ }
+ if(prefix.length)try{
+  const sub={...p,pieces:p.pieces.map((a,i)=>({...a,q:available[i]})).filter(a=>a.q)};
+  let tail=[];if(sub.pieces.length){const remaining=baseSolve(sub,{iterations:Math.min(options.iterations||100,30),examples:[]});tail=patternsOf(remaining.parameters,remaining);const rebind=n=>{if(n.part)n.part.id=sub.pieces[n.part.id-1].id;else n.children.forEach(rebind);};tail.forEach(rebind);}
+  const r=verifyDeferred(p,buildRawLayout(p,[...prefix,...tail]));r.learningMove='stored-strip-tree';r.experienceOrigin=true;keep(r);
+ }catch{stats.rejected++;}
+ const recipe=bank.recipes.find(r=>similarity(features(p),r.features)<.2);
+ if((!best||best.metrics.sheets>min)&&recipe){stats.recipeUsed=true;options.progress?.({text:'База опыта: пробуем ранее удачный широкий перебор полос',percent:5});searchDeferredMargins(p,{seed:options.seed??42,iterations:options.iterations||100,candidates:48,accept:r=>{r.learningMove='wide-48';r.experienceOrigin=true;keep(r);}});}
+ if(!best||best.metrics.sheets>min||options.forceSearch)keep(baseSolve(p,options));
+ if(!best)throw Error('No accepted cutting plan');return finish(best);
+}
+module.exports={empty,normalize,remember,solveWithExperience,VERSION,PROFILE};
+
+},
 "src/deferred-margin-search.js":function(module,exports,require){
 'use strict';
 const {estimateSheets}=require('./sheet-area-estimate');
@@ -1907,11 +1984,13 @@ module.exports={validate};
 },
 "web/engine.cjs":function(module,exports,require){
 'use strict';
+const {solveWithExperience}=require('../src/cutting-experience');
 const {searchDominantStrips}=require('../src/dominant-strip-search');
 const {estimateSheets}=require('../src/sheet-area-estimate');
 const {searchDeferredMargins}=require('../src/deferred-margin-search');
 const {checkInput}=require('../src/core');
-const {arrange}=require('../src/ordered-strip-layout');
+const {arrange:arrangeLayout}=require('../src/ordered-strip-layout');
+function arrange(result,mode){return {...arrangeLayout(result,mode),sheetEstimate:result.sheetEstimate,experienceInfo:result.experienceInfo,learningMove:result.learningMove};}
 const {collect}=require('../src/pss-waste-local');
 const {searchAdaptive,repackAdaptive}=require('../src/adaptive-held-strip');
 const {solveIdenticalTwoSheets}=require('../src/identical-strip-patterns');
@@ -1936,14 +2015,14 @@ function verify(p,layout,axis){
  return{...s,parameters:p,equipmentProfile:pr,plan,verification,metrics:verification.metrics};
 }
 function equalOrder(a,b){return ['sheetW','sheetH','kerf','trim'].every(k=>a[k]===b[k])&&a.pieces.length===b.pieces.length&&a.pieces.every((p,i)=>['l','w','q','grain'].every(k=>p[k]===b.pieces[i][k]));}
-function solve(input,{objective='remnants',iterations=100,seed=42,examples=[],progress=()=>{}}={}){
+function solveBase(input,{objective='remnants',iterations=100,seed=42,examples=[],progress=()=>{}}={}){
  const p=clean(input);if(!['remnants','cuts'].includes(objective))throw Error('Неизвестная цель расчёта.');
  if(!Number.isInteger(iterations)||iterations<1||iterations>100)throw Error('Бюджет поиска: 1–100.');
  const started=Date.now(),bases=[],trials=[],patternBases=[];let best=null,lastError='';
  const score=s=>objective==='remnants'?[s.metrics.sheets,-s.metrics.largestWaste,s.metrics.cuts,s.metrics.turns]:[s.metrics.sheets,s.metrics.cuts,s.metrics.turns,-s.metrics.largestWaste];
  const keep=s=>{s.sheetEstimate=estimateSheets(p,s.metrics.sheets);const a=score(s),b=best&&score(best);if(!b||a.some((v,i)=>v<b[i]&&a.slice(0,i).every((x,j)=>x===b[j])))best=s;};
  for(const e of examples)if(equalOrder(p,clean(e.parameters))){const s=verify(p,e.layout);keep(s);patternBases.push(s);}
- const improve=()=>{if(best&&best.metrics.sheets>estimateSheets(p).minimumSheets){progress({text:'По площади минимум '+estimateSheets(p).minimumSheets+' листов. Перестраиваем весь заказ с отложенной обрезкой',percent:90});const extra=searchDeferredMargins(p,{iterations,seed,accept:keep});patternBases.push(...extra.layouts);trials.push(extra.stats);if(best.metrics.sheets>estimateSheets(p).minimumSheets){progress({text:'Группируем повторяющиеся длинные детали и заполняем соседние полосы',percent:92});const grouped=searchDominantStrips(p,{iterations,seed,accept:keep});patternBases.push(...grouped.layouts);trials.push(grouped.stats);}if(best.metrics.sheets>estimateSheets(p).minimumSheets){progress({text:'Расширяем перебор размеров первичных полос до 48 кандидатов',percent:93});const wide=searchDeferredMargins(p,{iterations,seed,candidates:48,accept:keep});patternBases.push(...wide.layouts);trials.push(wide.stats);}}progress({text:'Проверяем торцовку и смешанные направления листов',percent:94});const t=optimizeDeferred(p,patternBases,{objective,seed,accept:keep});trials.push(t.stats);};
+ const improve=()=>{if(best&&best.metrics.sheets>estimateSheets(p).minimumSheets){progress({text:'По площади минимум '+estimateSheets(p).minimumSheets+' листов. Перестраиваем весь заказ с отложенной обрезкой',percent:90});const extra=searchDeferredMargins(p,{iterations,seed,accept:keep});patternBases.push(...extra.layouts);trials.push(extra.stats);if(best.metrics.sheets>estimateSheets(p).minimumSheets){progress({text:'Группируем повторяющиеся длинные детали и заполняем соседние полосы',percent:92});const grouped=searchDominantStrips(p,{iterations,seed,accept:keep});patternBases.push(...grouped.layouts);trials.push(grouped.stats);}if(best.metrics.sheets>estimateSheets(p).minimumSheets){progress({text:'Расширяем перебор размеров первичных полос до 48 кандидатов',percent:93});const wide=searchDeferredMargins(p,{iterations,seed,candidates:48,accept:s=>{s.learningMove='wide-48';keep(s);}});patternBases.push(...wide.layouts);trials.push(wide.stats);}}progress({text:'Проверяем торцовку и смешанные направления листов',percent:94});const t=optimizeDeferred(p,patternBases,{objective,seed,accept:keep});trials.push(t.stats);};
  progress({text:'Проверяем детали и допустимые полосы',percent:5});
  if(p.pieces.length===1){try{
   const r=solveIdenticalTwoSheets(p,profile('H')),chosen=objective==='remnants'?r.remnantBest:r.cutsBest;
@@ -1975,6 +2054,7 @@ function solve(input,{objective='remnants',iterations=100,seed=42,examples=[],pr
  best.search={objective,seed,iterations,trials,elapsedMs:Date.now()-started,optimality:'not proven'};
  return best;
 }
+function solve(input,options={}){if(!options.experience)return solveBase(input,options);return solveWithExperience(clean(input),options.experience,(p,extra)=>solveBase(p,{...options,...extra}),options);}
 module.exports={clean,verify,solve,equalOrder,arrange};
 
 }};
@@ -2168,7 +2248,7 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
  }
  function renderResult(){
   const has=!!result,order=result?.ordering;
-  $('orderHint').textContent=!has?'':order?.mode==='optimized'?'Порядок деталей выбран оптимизатором.':order?.applied===false?'Сохранён прежний порядок: сортировка этой карты не прошла технологическую проверку.':order?.exceptions?.length?'Крупные детали сначала. В '+order.exceptions.length+' группах последняя деталь оставлена для завершения распуска.':'Внутри полос — сначала крупные детали, затем меньшие (по площади).';if(result?.sheetEstimate){const e=result.sheetEstimate;$('orderHint').textContent+=' По площади минимум '+e.minimumSheets+' лист(а), найдено '+e.foundSheets+'.'+(e.gap>0?' Меньшее число листов в этом поиске не найдено.':'');}['print','export','prevSheet','nextSheet','prevOp','nextOp','opRange','exportOps','zoomIn','zoomOut','fit'].forEach(id=>$(id).disabled=!has);
+  $('orderHint').textContent=!has?'':order?.mode==='optimized'?'Порядок деталей выбран оптимизатором.':order?.applied===false?'Сохранён прежний порядок: сортировка этой карты не прошла технологическую проверку.':order?.exceptions?.length?'Крупные детали сначала. В '+order.exceptions.length+' группах последняя деталь оставлена для завершения распуска.':'Внутри полос — сначала крупные детали, затем меньшие (по площади).';if(result?.sheetEstimate){const e=result.sheetEstimate;$('orderHint').textContent+=' По площади минимум '+e.minimumSheets+' лист(а), найдено '+e.foundSheets+'.'+(e.gap>0?' Меньшее число листов в этом поиске не найдено.':'');}if(result?.experienceInfo){const e=result.experienceInfo;$('orderHint').textContent+=' База опыта — приёмы: '+e.patterns+', расчёты: '+e.solves+'.'+(e.used?' Использован накопленный опыт.':'')+(e.saved===false?' Изменения базы не сохранены.':'');}['print','export','prevSheet','nextSheet','prevOp','nextOp','opRange','exportOps','zoomIn','zoomOut','fit'].forEach(id=>$(id).disabled=!has);
   if(!has){['statSheets','statParts','statCuts','statRemnant','sheetLabel','usageBadge'].forEach(id=>$(id).textContent='—');$('sheetTabs').innerHTML='';$('remnantsBody').innerHTML='';$('operationsBody').innerHTML='';$('remnantTotal').textContent='Нет рассчитанной карты';draw();return;}
   const m=result.metrics;$('statSheets').textContent=m.sheets;$('statParts').textContent=result.partCount;$('statCuts').textContent=m.cuts+' / '+m.turns;$('statRemnant').textContent=fmt(m.largestWaste/1e6)+' м²';
   const remnants=result.sheets.flatMap((s,i)=>s.remnants.map(r=>({...r,sheet:i}))).sort((a,b)=>b.area-a.area);
