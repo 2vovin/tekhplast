@@ -1,0 +1,55 @@
+{
+  "estimate": {
+    "partArea": 46160513,
+    "usableArea": 4941300,
+    "minimumSheets": 10,
+    "foundSheets": 10,
+    "gap": 0,
+    "target": null,
+    "basis": "area-only; kerf, orientation and staged feasibility still require replay"
+  },
+  "metrics": {
+    "sheets": 10,
+    "parts": 171,
+    "cuts": 338,
+    "turns": 114,
+    "feeds": 328,
+    "cutLength": 262505,
+    "stages": 4,
+    "operations": 800,
+    "largestWaste": 365820,
+    "wasteArea": 2190415,
+    "edgeFinishingCuts": 6,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 3
+  },
+  "stats": {
+    "candidates": 48,
+    "attempts": 3,
+    "accepted": 3,
+    "rejected": 0,
+    "axes": [
+      {
+        "iterations": 100,
+        "seed": 42,
+        "axis": "H",
+        "rectangles": 867787,
+        "dpCalls": 135160,
+        "dpStates": 2393213,
+        "prunedDP": 0,
+        "rejectedBands": 58954,
+        "fallbackBands": 9,
+        "accepted": 3,
+        "rejected": 0,
+        "distribution": {
+          "10": 1,
+          "11": 98,
+          "12": 1
+        },
+        "elapsedMs": 30994
+      }
+    ]
+  },
+  "elapsedMs": 30999
+}

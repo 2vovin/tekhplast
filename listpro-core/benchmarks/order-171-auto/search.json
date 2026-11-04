@@ -1,0 +1,129 @@
+[
+  {
+    "iterations": 100,
+    "seed": 42,
+    "axis": "H",
+    "rectangles": 593310,
+    "dpCalls": 90248,
+    "dpStates": 1236288,
+    "prunedDP": 0,
+    "rejectedBands": 39593,
+    "fallbackBands": 10,
+    "accepted": 3,
+    "rejected": 1,
+    "distribution": {
+      "11": 100
+    },
+    "elapsedMs": 22678
+  },
+  {
+    "iterations": 100,
+    "seed": 73,
+    "axis": "H",
+    "rectangles": 594758,
+    "dpCalls": 91342,
+    "dpStates": 1329993,
+    "prunedDP": 0,
+    "rejectedBands": 39683,
+    "fallbackBands": 9,
+    "accepted": 3,
+    "rejected": 1,
+    "distribution": {
+      "11": 100
+    },
+    "elapsedMs": 19928
+  },
+  {
+    "iterations": 100,
+    "seed": 2026,
+    "axis": "H",
+    "rectangles": 580855,
+    "dpCalls": 90704,
+    "dpStates": 1230933,
+    "prunedDP": 0,
+    "rejectedBands": 39249,
+    "fallbackBands": 11,
+    "accepted": 3,
+    "rejected": 1,
+    "distribution": {
+      "11": 99,
+      "12": 1
+    },
+    "elapsedMs": 18050
+  },
+  {
+    "iterations": 100,
+    "seed": 42,
+    "axis": "V",
+    "rectangles": 529905,
+    "dpCalls": 78780,
+    "dpStates": 2098117,
+    "prunedDP": 0,
+    "rejectedBands": 39333,
+    "fallbackBands": 8,
+    "accepted": 3,
+    "rejected": 7,
+    "distribution": {
+      "11": 86,
+      "12": 13,
+      "13": 1
+    },
+    "elapsedMs": 20138
+  },
+  {
+    "iterations": 100,
+    "seed": 73,
+    "axis": "V",
+    "rectangles": 528779,
+    "dpCalls": 77662,
+    "dpStates": 2071674,
+    "prunedDP": 0,
+    "rejectedBands": 39668,
+    "fallbackBands": 6,
+    "accepted": 4,
+    "rejected": 8,
+    "distribution": {
+      "10": 1,
+      "11": 84,
+      "12": 15
+    },
+    "elapsedMs": 18816
+  },
+  {
+    "iterations": 100,
+    "seed": 2026,
+    "axis": "V",
+    "rectangles": 524677,
+    "dpCalls": 78008,
+    "dpStates": 2113494,
+    "prunedDP": 0,
+    "rejectedBands": 39294,
+    "fallbackBands": 7,
+    "accepted": 2,
+    "rejected": 11,
+    "distribution": {
+      "11": 79,
+      "12": 21
+    },
+    "elapsedMs": 19742
+  },
+  {
+    "iterations": 100,
+    "seed": 42,
+    "axis": "H",
+    "rectangles": 867787,
+    "dpCalls": 135160,
+    "dpStates": 2393213,
+    "prunedDP": 0,
+    "rejectedBands": 58954,
+    "fallbackBands": 9,
+    "accepted": 3,
+    "rejected": 0,
+    "distribution": {
+      "10": 1,
+      "11": 98,
+      "12": 1
+    },
+    "elapsedMs": 32684
+  }
+]
