@@ -28,3 +28,5 @@
 [Обзор всех 10 карт](overview.svg). Отдельные карты: [1](sheet-1.svg), [2](sheet-2.svg), [3](sheet-3.svg), [4](sheet-4.svg), [5](sheet-5.svg), [6](sheet-6.svg), [7](sheet-7.svg), [8](sheet-8.svg), [9](sheet-9.svg), [10](sheet-10.svg). Полная нумерованная последовательность — `best.json/plan/operations`. Независимые метрики — `verification.json`; статистика широкого этапа — `wide-search.json`.
 
 Воспроизведение: `node scripts/order-171-auto.js`, затем `node scripts/order-171-auto-artifacts.js`. Регрессия `tests/order-171-auto.test.js` ищет решение заново, не читает `best.json` и не загружает ручной эталон. Веб-проверки и проверки демо прошли; прежний восьмилистовой контроль также проверяется повторно.
+
+Полный штатный маршрут `web/engine.solve(input, {seed:42, iterations:100})`, без examples и без загрузки готовых карт, также получил **10 листов / 338 резов / 114 поворотов** за **106 916 мс** на текущем исполнителе. Возвращаемая оценка: minimumSheets=10, foundSheets=10, gap=0. Прежний контроль на 128 деталей повторно прошёл на 8 листах.
