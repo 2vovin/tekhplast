@@ -41,9 +41,15 @@
   out+='<rect width="'+W+'" height="'+H+'" fill="url(#'+id+')" stroke="#52647b" stroke-width="3"/>';
   out+='<path d="M0 -25v-22M'+W+' -25v-22M0 -36H'+W+' M-25 0h-22M-25 '+H+'h-22M-36 0V'+H+'" fill="none" stroke="#53647b" stroke-width="2"/><text x="'+W/2+'" y="-55" text-anchor="middle" font-size="'+fs+'" font-weight="600">'+fmt(W)+' мм</text><text transform="translate(-65 '+H/2+') rotate(-90)" text-anchor="middle" font-size="'+fs+'" font-weight="600">'+fmt(H)+' мм</text>';
   for(const a of sh.parts){
-   const cx=a.x+a.w/2,cy=a.y+a.h/2,vertical=a.w<a.h*.65,tw=vertical?a.h:a.w,th=vertical?a.w:a.h;
-   const f=Math.min(fs,tw/8,th/4),label=a.id+':'+a.instance;
-   out+='<g class="piece" data-part="'+label+'" tabindex="0" role="button" aria-label="Деталь '+label+', '+a.w+' на '+a.h+' миллиметров"><title>Деталь '+label+' · '+a.w+' × '+a.h+' мм'+(a.rotated?' · повёрнута':'')+'</title><rect x="'+a.x+'" y="'+a.y+'" width="'+a.w+'" height="'+a.h+'" fill="'+colors[(a.id-1)%colors.length]+'" stroke="#66869b" stroke-width="2"/><text transform="translate('+cx+' '+cy+')'+(vertical?' rotate(-90)':'')+'" text-anchor="middle" fill="#183249" font-size="'+f+'"><tspan x="0" dy="-0.2em" font-weight="650">Деталь '+label+'</tspan><tspan x="0" dy="1.4em">'+fmt(a.w)+' × '+fmt(a.h)+'</tspan></text></g>';
+   const cx=a.x+a.w/2,cy=a.y+a.h/2,vertical=a.w<a.h*.65,short=Math.min(a.w,a.h),span=vertical?a.h:a.w;
+   const f=Math.min(fs,short*.65,span/(String(a.id).length*.7+1)),key=a.id+':'+a.instance,small=short<fs*4;
+   out+='<g class="piece" data-part="'+key+'" data-part-id="'+a.id+'" tabindex="0" role="button" aria-label="Деталь №'+a.id+', '+a.w+' на '+a.h+' миллиметров"><title>№'+a.id+' · '+a.w+' × '+a.h+' мм'+(a.rotated?' · повёрнута':'')+'</title><rect x="'+a.x+'" y="'+a.y+'" width="'+a.w+'" height="'+a.h+'" fill="'+colors[(a.id-1)%colors.length]+'" stroke="#66869b" stroke-width="2"/>';
+   out+='<text class="part-number" transform="translate('+cx+' '+cy+')'+(small&&vertical?' rotate(-90)':'')+'" text-anchor="middle" dominant-baseline="central" fill="#183249" font-size="'+f+'" font-weight="700">'+a.id+'</text>';
+   if(!small){const df=fs*.72,inset=df*.55;
+    out+='<text class="part-dimension part-width" x="'+cx+'" y="'+(a.y+inset)+'" text-anchor="middle" dominant-baseline="hanging" fill="#354f63" font-size="'+df+'">'+fmt(a.w)+'</text>';
+    out+='<text class="part-dimension part-height" transform="translate('+(a.x+inset)+' '+cy+') rotate(-90)" text-anchor="middle" dominant-baseline="hanging" fill="#354f63" font-size="'+df+'">'+fmt(a.h)+'</text>';
+   }
+   out+='</g>';
   }
   const largest=sh.remnants.slice().sort((a,b)=>b.area-a.area)[0];
   if(largest&&largest.w>250&&largest.h>120)out+='<text x="'+(largest.x+largest.w/2)+'" y="'+(largest.y+largest.h/2)+'" text-anchor="middle" fill="#6a7c8e" font-size="'+Math.min(fs,largest.h/4)+'">Остаток '+fmt(largest.w)+' × '+fmt(largest.h)+'</text>';
@@ -59,7 +65,7 @@
   for(const a of result.sheets[sheet].parts.filter(a=>a.x>=r.x-.001&&a.y>=r.y-.001&&a.x+a.w<=r.x+r.w+.001&&a.y+a.h<=r.y+r.h+.001)){
    const x=a.x-r.x,y=a.y-r.y,w=a.w,h=a.h;
    const t=[[x,y,w,h],[r.h-y-h,x,h,w],[r.w-x-w,r.h-y-h,w,h],[y,r.w-x-w,h,w]][q];
-   s+='<rect x="'+t[0]+'" y="'+t[1]+'" width="'+t[2]+'" height="'+t[3]+'" fill="'+colors[(a.id-1)%6]+'" stroke="#7c97aa" stroke-width="2"/><text x="'+(t[0]+t[2]/2)+'" y="'+(t[1]+t[3]/2)+'" text-anchor="middle" font-size="'+Math.min(34,t[2]/5,t[3]/3)+'">'+a.id+':'+a.instance+'</text>';
+   s+='<rect x="'+t[0]+'" y="'+t[1]+'" width="'+t[2]+'" height="'+t[3]+'" fill="'+colors[(a.id-1)%6]+'" stroke="#7c97aa" stroke-width="2"/><text x="'+(t[0]+t[2]/2)+'" y="'+(t[1]+t[3]/2)+'" text-anchor="middle" font-size="'+Math.min(34,t[2]/5,t[3]/3)+'">'+a.id+'</text>';
   }
   if(op.type==='cut')s+='<line x1="'+op.start.x+'" y1="'+op.start.y+'" x2="'+op.end.x+'" y2="'+op.end.y+'" stroke="#e24a36" stroke-width="'+Math.max(4,op.kerf)+'"/>';
   return s+'</svg>';
@@ -67,13 +73,13 @@
  const typeName=o=>({load:'Загрузка листа',feed:o.feedMode==='advance-in-place'?'Продвижение остатка':'Установка полосы',cut:(o.edgeFinish?'Торцовка №':'Пропил №')+o.cutIndex,rotate:'Поворот на 90°',endPrimary:'Первичные полосы отделены'}[o.type]||o.type);
  function draw(){
   const gallery=!!result&&columns>1;
-  $('sheetGallery').hidden=!gallery;$('drawing').hidden=gallery;$('sheetTabs').hidden=gallery;$('sheetReplay').hidden=!result||gallery;
+  $('sheetGallery').hidden=!gallery;$('sheetDetail').hidden=gallery;$('drawing').hidden=gallery;$('sheetParts').hidden=!result;$('sheetTabs').hidden=gallery;$('sheetReplay').hidden=!result||gallery;
   $('prevSheet').hidden=gallery;$('nextSheet').hidden=gallery;
   for(const [id,n]of [['viewSingle',1],['viewTwo',2],['viewThree',3]])$(id).setAttribute('aria-pressed',String(columns===n));
   for(const id of ['zoomIn','zoomOut','fit'])$(id).disabled=!result||gallery;
   $('partHint').textContent=gallery?'Нажмите на лист, чтобы открыть крупную карту и шаги распила':'Нажмите на деталь, чтобы узнать размеры';
   $('drawing').classList.toggle('empty',!result);
-  if(!result){$('sheetGallery').innerHTML='';$('drawing').innerHTML='<div class="empty-state"><strong>Карта появится после расчёта</strong><p>Загрузите детали или выберите пример.</p></div>';$('physicalDrawing').innerHTML='';$('opDetails').textContent='';$('opLabel').textContent='Последовательность ещё не рассчитана';return;}
+  if(!result){$('sheetPartsBody').innerHTML='';$('sheetGallery').innerHTML='';$('drawing').innerHTML='<div class="empty-state"><strong>Карта появится после расчёта</strong><p>Загрузите детали или выберите пример.</p></div>';$('physicalDrawing').innerHTML='';$('opDetails').textContent='';$('opLabel').textContent='Последовательность ещё не рассчитана';return;}
   const sh=result.sheets[sheet],p=result.parameters,op=operation();
   if(gallery){
    $('sheetGallery').setAttribute('data-columns',String(columns));
@@ -83,6 +89,7 @@
    }).join('');
   }
   $('drawing').innerHTML=mapSVG(sheet,true);const picture=$('drawing').firstElementChild,margin=Math.max(p.sheetW*.045,90),ratio=(p.sheetW+margin*1.4)/(p.sheetH+margin*1.4);picture.style.width='min('+(zoom*100)+'%, '+(80*ratio*zoom)+'vh)';picture.style.maxHeight=(80*zoom)+'vh';
+  renderSheetParts();
   $('sheetLabel').textContent=gallery?'Все листы · '+result.sheets.length:'Лист '+(sheet+1)+' из '+result.sheets.length;$('prevSheet').disabled=sheet===0;$('nextSheet').disabled=sheet===result.sheets.length-1;
   $('materialBadge').textContent=project.material;$('sizeBadge').textContent=fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм';
   $('usageBadge').textContent='Использование: '+fmt(100*(gallery?result.sheets.flatMap(s=>s.parts):sh.parts).reduce((n,a)=>n+a.w*a.h,0)/(p.sheetW*p.sheetH*(gallery?result.sheets.length:1)))+'%';
@@ -93,6 +100,15 @@
   $('physicalDrawing').innerHTML=physicalSVG(op);
   const frame=result.verification.roleFrames.find(f=>f.step===op.step);
   $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(op.edgeFinish?'<p>Торцовка края: часть ширины диска проходит вне заготовки. Размер детали сохранён.</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(op.edgeFinish?'готовая деталь':c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
+ }
+ function renderSheetParts(){
+  const sh=result.sheets[sheet],counts=new Map();sh.parts.forEach(a=>counts.set(a.id,(counts.get(a.id)||0)+1));
+  $('sheetPartsTitle').textContent='Детали листа '+(sheet+1);
+  $('sheetPartsCount').textContent=sh.parts.length+' шт. · '+counts.size+' позиций';
+  $('sheetPartsBody').innerHTML=[...counts].sort((a,b)=>a[0]-b[0]).map(([id,q])=>{
+   const a=result.parameters.pieces.find(p=>p.id===id);
+   return '<tr data-sheet-part="'+id+'"><td><button class="part-link" data-highlight-part="'+id+'" aria-label="Показать детали №'+id+' на карте"><i style="background:'+colors[(id-1)%colors.length]+'"></i>'+id+'</button></td><td>'+fmt(a.l)+' × '+fmt(a.w)+'</td><td>'+q+'</td></tr>';
+  }).join('');
  }
  function renderResult(){
   const has=!!result,order=result?.ordering;
@@ -160,8 +176,16 @@
  $('prevOp').onclick=()=>gotoStep(step-1);$('nextOp').onclick=()=>gotoStep(step+1);$('opRange').oninput=()=>gotoStep(Number($('opRange').value));
  function pickOp(e){const row=e.target.closest('[data-step]');if(row){gotoStep(Number(row.dataset.step));tab('map');$('drawing').scrollIntoView({block:'center',behavior:'smooth'});}}
  $('operationsBody').onclick=pickOp;$('operationsBody').onkeydown=e=>{if(e.key==='Enter')pickOp(e);};
- function pickPart(e){const g=e.target.closest('[data-part]');if(!g)return;all('#drawing [data-part] rect').forEach(r=>r.setAttribute('stroke-width','2'));g.querySelector('rect').setAttribute('stroke-width','8');const a=result.sheets[sheet].parts.find(a=>a.id+':'+a.instance===g.dataset.part);$('partHint').textContent='Деталь '+g.dataset.part+' · '+fmt(a.w)+' × '+fmt(a.h)+' мм · X '+fmt(a.x)+', Y '+fmt(a.y)+(a.rotated?' · повёрнута относительно исходных размеров':'');}
- $('drawing').onclick=pickPart;$('drawing').onkeydown=e=>{if(e.key==='Enter'||e.key===' ')pickPart(e);};
+ function highlightPart(id,key=null){
+  if(!result)return;const parts=result.sheets[sheet].parts.filter(a=>a.id===id);if(!parts.length)return;
+  all('#drawing [data-part]').forEach(g=>{const on=key?g.dataset.part===key:Number(g.dataset.partId)===id;g.querySelector('rect').setAttribute('stroke-width',on?'8':'2');g.querySelector('rect').setAttribute('stroke',on?'#00864f':'#66869b');});
+  all('#sheetPartsBody tr').forEach(row=>row.classList.toggle('selected',Number(row.dataset.sheetPart)===id));
+  const a=key?parts.find(a=>a.id+':'+a.instance===key):result.parameters.pieces.find(a=>a.id===id);
+  $('partHint').textContent='№ '+id+' · '+fmt(key?a.w:a.l)+' × '+fmt(key?a.h:a.w)+' мм · на листе '+parts.length+' шт.';
+ }
+ function pickPart(e){const g=e.target.closest('[data-part]');if(!g)return;highlightPart(Number(g.dataset.partId),g.dataset.part);const row=$('sheetPartsBody').querySelector('[data-sheet-part="'+g.dataset.partId+'"]');row?.scrollIntoView({block:'nearest'});}
+ $('drawing').onclick=pickPart;$('drawing').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pickPart(e);}};
+ $('sheetPartsBody').onclick=e=>{const row=e.target.closest('[data-sheet-part]');if(row)highlightPart(Number(row.dataset.sheetPart));};
  document.addEventListener('fullscreenchange',draw);
  $('zoomIn').onclick=()=>{zoom=Math.min(3,zoom+.25);draw();};$('zoomOut').onclick=()=>{zoom=Math.max(1,zoom-.25);draw();};$('fit').onclick=()=>{zoom=1;draw();};
  $('full').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('workspace').requestFullscreen();}catch{toast('Полноэкранный режим недоступен в этом браузере.');}};
