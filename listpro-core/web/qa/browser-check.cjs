@@ -9,8 +9,9 @@ const qa=process.env.LISTPRO_QA_OUTPUT||__dirname,url=process.env.LISTPRO_BASE_U
  await page.waitForFunction(()=>document.getElementById('statCuts').textContent==='60 / 7');
  assert.equal(await page.locator('.sheet-card').count(),2);const twoColumnMap=await page.locator('.sheet-card svg').first().boundingBox();await page.locator('#viewSingle').click();
  const width=await page.locator('#drawing').boundingBox();assert(width.width>1320);
- const graphic=await page.locator('#drawing > svg').boundingBox();assert(graphic.width>twoColumnMap.width*1.8&&graphic.height>twoColumnMap.height*1.8);assert(graphic.width>width.width*.95);
+ const graphic=await page.locator('#drawing > svg').boundingBox();assert(Math.abs(graphic.height-1080*.8)<1);assert(graphic.width<=width.width);
  await page.locator('#zoomIn').click();const larger=await page.locator('#drawing > svg').boundingBox();assert(larger.width>graphic.width);await page.locator('#fit').click();const fitted=await page.locator('#drawing > svg').boundingBox();assert.equal(fitted.width,graphic.width);
+ await page.setViewportSize({width:1920,height:900});const wide=await page.locator('#drawing > svg').boundingBox();assert(Math.abs(wide.height-720)<1);assert(Math.abs(wide.width/wide.height-graphic.width/graphic.height)<.001);await page.setViewportSize({width:1440,height:1080});
  await page.screenshot({path:path.join(qa,'desktop.png'),fullPage:true});
  await page.locator('#nextSheet').click();assert.equal(await page.locator('#sheetLabel').textContent(),'Лист 2 из 2');
  await page.locator('#prevSheet').click();
@@ -55,6 +56,6 @@ const qa=process.env.LISTPRO_QA_OUTPUT||__dirname,url=process.env.LISTPRO_BASE_U
  await page.locator('#workspace').scrollIntoViewIfNeeded();
  await page.screenshot({path:path.join(qa,'mobile.png'),fullPage:true});
  const mobileWidth=await page.evaluate(()=>({w:innerWidth,doc:document.documentElement.scrollWidth}));assert.equal(mobileWidth.doc,mobileWidth.w);
- assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,desktopContainerWidth:width.width,singleSheetGraphic:graphic,twoColumnMap,mobileWidth,errors,scenarios:['single sheet larger than two-column map','44 initial','navigation','physical orientation','58-cut recalculation','SVG download','fractional import','26 descending parts and original-order setting','26 and 171 replay','ten sheets in 2/3 columns','keyboard opens sheet 10 and replay','mobile single column','mobile no overflow']}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,desktopContainerWidth:width.width,singleSheetGraphic:graphic,twoColumnMap,mobileWidth,errors,scenarios:['single sheet fits 80 percent of viewport height at two desktop sizes','44 initial','navigation','physical orientation','58-cut recalculation','SVG download','fractional import','26 descending parts and original-order setting','26 and 171 replay','ten sheets in 2/3 columns','keyboard opens sheet 10 and replay','mobile single column','mobile no overflow']}));
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});
