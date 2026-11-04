@@ -18,3 +18,15 @@ test('edge bands: physical blank turns compose with the part rotation and stay i
  const [x0,y0,x1,y1]=edges.segments(r,e)[0].points;assert(x0>=0&&x1<=4&&y0>=0&&y1<=20);
  assert.deepEqual(r,{x:0,y:0,w:4,h:20});assert.deepEqual(e,{top:2});
 });
+test('edge underline counts represent sides, independent of thickness',()=>{
+ assert.deepEqual(edges.counts({top:2}),{l:1,w:0});
+ assert.deepEqual(edges.counts({top:.4,bottom:2,right:.8}),{l:2,w:1});
+ assert.deepEqual(edges.counts({left:1,right:2}),{l:0,w:2});
+});
+test('quick edge choice cycles zero, one, two, zero without changing other sides',()=>{
+ const start={left:.8};const one=edges.cycle(start,'l',2),two=edges.cycle(one,'l',2),zero=edges.cycle(two,'l',2);
+ assert.deepEqual(edges.counts(one),{l:1,w:1});assert.equal(one.top,2);
+ assert.deepEqual(edges.counts(two),{l:2,w:1});assert.equal(two.bottom,2);
+ assert.deepEqual(edges.counts(zero),{l:0,w:1});assert.equal(zero.left,.8);
+ assert.deepEqual(edges.cycle({bottom:.4},'l',1),{top:1,right:0,bottom:.4,left:0});
+});

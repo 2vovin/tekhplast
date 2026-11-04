@@ -5,6 +5,7 @@ const assert=require('node:assert/strict'),path=require('node:path'),fs=require(
  const page=await browser.newPage({viewport:{width:1440,height:1080}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto(process.env.LISTPRO_BASE_URL||'http://127.0.0.1:4173');await page.waitForFunction(()=>document.getElementById('statParts').textContent==='44');
  await page.locator('[data-tab="parts"]').click();
+ await page.locator('#partsBody [data-row="0"] .edge-advanced summary').click();
  const band={top:'.4',right:'.8',bottom:'1',left:'2'};
  for(const [side,value]of Object.entries(band))await page.locator('#partsBody [data-row="0"] [data-edge="'+side+'"]').selectOption(String(Number(value)));
  assert.equal(await page.locator('#statCuts').textContent(),'60 / 7');assert.equal(await page.locator('#drawing .edge-band').count(),112);
@@ -23,7 +24,7 @@ const assert=require('node:assert/strict'),path=require('node:path'),fs=require(
  await page.waitForFunction(()=>document.getElementById('importModal').hidden);
  for(const [side,value]of Object.entries(band))assert.equal(await page.locator('#partsBody [data-row="0"] [data-edge="'+side+'"]').inputValue(),String(Number(value)));
  await page.locator('#calculate').click();await page.waitForFunction(()=>!document.getElementById('calculate').disabled,{},{timeout:60000});assert.equal(await page.locator('#drawing .edge-band').count(),112);
- await page.locator('[data-tab="parts"]').click();await page.locator('#partsBody [data-row="0"] [data-edge="top"]').selectOption('0');assert.equal(await page.locator('#drawing .edge-band').count(),84);
+ await page.locator('[data-tab="parts"]').click();await page.locator('#partsBody [data-row="0"] .edge-advanced summary').click();await page.locator('#partsBody [data-row="0"] [data-edge="top"]').selectOption('0');assert.equal(await page.locator('#drawing .edge-band').count(),84);
  // Long per-sheet inventory remains compact and immediately beside the fitted map.
  await page.locator('#panel-parts [data-example="171"]').click();await page.waitForFunction(()=>document.getElementById('statParts').textContent==='171');
  for(let i=0;i<9;i++)await page.locator('#nextSheet').click();
