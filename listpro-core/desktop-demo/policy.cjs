@@ -3,7 +3,7 @@ const VISIBLE_SHEETS=2;
 function present(result,metadata={}){
  const p=result.parameters,W=p.sheetW,H=p.sheetH;
  return {
-  partCount:result.partCount,usagePercent:100*result.sheets.flatMap(s=>s.parts).reduce((n,a)=>n+a.w*a.h,0)/(W*H*result.sheets.length),parameters:JSON.parse(JSON.stringify(p)),metrics:{...result.metrics},ordering:result.ordering,
+  sheetEstimate:result.sheetEstimate,partCount:result.partCount,usagePercent:100*result.sheets.flatMap(s=>s.parts).reduce((n,a)=>n+a.w*a.h,0)/(W*H*result.sheets.length),parameters:JSON.parse(JSON.stringify(p)),metrics:{...result.metrics},ordering:result.ordering,
   material:String(metadata.material||'Листовой материал'),thickness:Number(metadata.thickness),demo:true,
   sheets:result.sheets.map((s,i)=>i<VISIBLE_SHEETS?{locked:false,parts:s.parts,partCount:s.parts.length,remnants:s.remnants}:{
    locked:true,parts:[],partCount:s.parts.length,remnants:[],

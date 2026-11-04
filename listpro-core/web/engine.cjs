@@ -1,4 +1,6 @@
 'use strict';
+const {estimateSheets}=require('../src/sheet-area-estimate');
+const {searchDeferredMargins}=require('../src/deferred-margin-search');
 const {checkInput}=require('../src/core');
 const {arrange}=require('../src/ordered-strip-layout');
 const {collect}=require('../src/pss-waste-local');
@@ -30,9 +32,9 @@ function solve(input,{objective='remnants',iterations=100,seed=42,examples=[],pr
  if(!Number.isInteger(iterations)||iterations<1||iterations>100)throw Error('Бюджет поиска: 1–100.');
  const started=Date.now(),bases=[],trials=[],patternBases=[];let best=null,lastError='';
  const score=s=>objective==='remnants'?[s.metrics.sheets,-s.metrics.largestWaste,s.metrics.cuts,s.metrics.turns]:[s.metrics.sheets,s.metrics.cuts,s.metrics.turns,-s.metrics.largestWaste];
- const keep=s=>{const a=score(s),b=best&&score(best);if(!b||a.some((v,i)=>v<b[i]&&a.slice(0,i).every((x,j)=>x===b[j])))best=s;};
+ const keep=s=>{s.sheetEstimate=estimateSheets(p,s.metrics.sheets);const a=score(s),b=best&&score(best);if(!b||a.some((v,i)=>v<b[i]&&a.slice(0,i).every((x,j)=>x===b[j])))best=s;};
  for(const e of examples)if(equalOrder(p,clean(e.parameters))){const s=verify(p,e.layout);keep(s);patternBases.push(s);}
- const improve=()=>{progress({text:'Проверяем торцовку и смешанные направления листов',percent:94});const t=optimizeDeferred(p,patternBases,{objective,seed,accept:keep});trials.push(t.stats);};
+ const improve=()=>{if(best&&best.metrics.sheets>estimateSheets(p).minimumSheets){progress({text:'По площади минимум '+estimateSheets(p).minimumSheets+' листов. Перестраиваем весь заказ с отложенной обрезкой',percent:90});const extra=searchDeferredMargins(p,{iterations,seed,accept:keep});patternBases.push(...extra.layouts);trials.push(extra.stats);}progress({text:'Проверяем торцовку и смешанные направления листов',percent:94});const t=optimizeDeferred(p,patternBases,{objective,seed,accept:keep});trials.push(t.stats);};
  progress({text:'Проверяем детали и допустимые полосы',percent:5});
  if(p.pieces.length===1){try{
   const r=solveIdenticalTwoSheets(p,profile('H')),chosen=objective==='remnants'?r.remnantBest:r.cutsBest;
