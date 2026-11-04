@@ -82,7 +82,7 @@
     return '<button class="sheet-card" data-open-sheet="'+i+'" aria-label="Открыть лист '+(i+1)+' крупно"><span class="sheet-card-header"><strong>Лист '+(i+1)+'</strong><span>'+sh.parts.length+' дет. · '+usage+'%</span></span>'+mapSVG(i,false,true)+'<span class="sheet-card-footer">'+fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм<span>Открыть лист</span></span></button>';
    }).join('');
   }
-  $('drawing').innerHTML=mapSVG(sheet,true);const picture=$('drawing').firstElementChild;picture.style.width=zoom===1?(document.fullscreenElement?'100%':'min(100%, 780px)'):(zoom*100)+'%';picture.style.maxHeight=zoom===1?(document.fullscreenElement?'78vh':'min(52vh, 520px)'):'none';
+  $('drawing').innerHTML=mapSVG(sheet,true);const picture=$('drawing').firstElementChild;picture.style.width=(zoom*100)+'%';picture.style.maxHeight='none';
   $('sheetLabel').textContent=gallery?'Все листы · '+result.sheets.length:'Лист '+(sheet+1)+' из '+result.sheets.length;$('prevSheet').disabled=sheet===0;$('nextSheet').disabled=sheet===result.sheets.length-1;
   $('materialBadge').textContent=project.material;$('sizeBadge').textContent=fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм';
   $('usageBadge').textContent='Использование: '+fmt(100*(gallery?result.sheets.flatMap(s=>s.parts):sh.parts).reduce((n,a)=>n+a.w*a.h,0)/(p.sheetW*p.sheetH*(gallery?result.sheets.length:1)))+'%';
