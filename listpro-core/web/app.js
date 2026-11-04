@@ -7,14 +7,24 @@
  function toast(s){$('toast').textContent=s;$('toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),4500);}
  function tab(key){all('[data-tab]').forEach(b=>{const on=b.dataset.tab===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on);});all('[role="tabpanel"]').forEach(p=>p.hidden=p.id!=='panel-'+key);}
  function modal(id,on){if(on){focusBefore=document.activeElement;$(id).hidden=false;$(id).querySelector('button,textarea,input')?.focus();}else{$(id).hidden=true;focusBefore?.focus();}}
- function setBusy(on){busy=on;$('progress').hidden=!on;all('#calculate,#addRow,#allowAll,#importOpen,#applyImport,#chooseFile,[data-example],#partsBody input,#partsBody button,#panel-settings input,#panel-settings select').forEach(b=>b.disabled=on);}
+ function setBusy(on){busy=on;$('progress').hidden=!on;all('#calculate,#addRow,#allowAll,#importOpen,#applyImport,#chooseFile,[data-example],#partsBody input,#partsBody select,#partsBody button,#panel-settings input,#panel-settings select').forEach(b=>b.disabled=on);}
  function status(s,valid=false){$('validation').textContent=s;$('validation').classList.toggle('passed',valid);}
  function invalidate(){result=null;sheet=0;step=0;status('Заказ изменён. Рассчитайте новую карту.');renderResult();}
  function updateCount(){const q=project.pieces.reduce((s,p)=>s+(Number(p.q)||0),0);$('orderCount').textContent=fmt(q)+' деталей · '+project.pieces.length+' строк';$('partsBadge').textContent=q;$('orderTitle').textContent=project.name;}
+ function edgeControls(p,i){
+  const e=ListProEdges.normalize(p.edges);
+  return '<div class="edge-controls">'+ListProEdges.sides.map(side=>'<label><span>'+ListProEdges.labels[side]+'</span><select data-edge="'+side+'" aria-label="Кромка '+ListProEdges.labels[side].toLowerCase()+' детали '+(i+1)+'">'+ListProEdges.thicknesses.map(t=>'<option value="'+t+'"'+(e[side]===t?' selected':'')+'>'+(t?fmt(t)+' мм':'—')+'</option>').join('')+'</select></label>').join('')+'</div>';
+ }
+ function syncEdges(){
+  if(result)result.parameters.pieces.forEach((p,i)=>p.edges=ListProEdges.normalize(project.pieces[i]?.edges));
+ }
+ function edgeSVG(rect,edges,turns=0){
+  return ListProEdges.segments(rect,edges,turns).map(e=>'<line class="edge-band" data-edge-source="'+e.source+'" data-edge-side="'+e.side+'" data-thickness="'+e.thickness+'" x1="'+e.points[0]+'" y1="'+e.points[1]+'" x2="'+e.points[2]+'" y2="'+e.points[3]+'" stroke="#243e55" stroke-width="2" stroke-linecap="round" stroke-dasharray="0 5" vector-effect="non-scaling-stroke" pointer-events="none"><title>Кромка '+fmt(e.thickness)+' мм · '+ListProEdges.labels[e.source]+'</title></line>').join('');
+ }
  function fillForm(){
   updateCount();$('projectName').value=project.name;$('materialName').value=project.material;
   for(const k of ['sheetW','sheetH','kerf','trim','objective','partOrder'])$(k).value=project[k];
-  $('partsBody').innerHTML=project.pieces.map((p,i)=>'<tr data-row="'+i+'"><td class="row-number">'+(i+1)+'</td><td><input data-field="name" aria-label="Название '+(i+1)+'" value="'+esc(p.name||'Деталь '+(i+1))+'"></td>'+['l','w','q'].map(k=>'<td><input data-field="'+k+'" type="number" min="'+(k==='q'?1:.1)+'" step="'+(k==='q'?1:.1)+'" aria-label="'+({l:'Длина',w:'Ширина',q:'Количество'}[k])+' '+(i+1)+'" value="'+p[k]+'"></td>').join('')+'<td><input type="checkbox" data-field="rotate" aria-label="Разрешить поворот '+(i+1)+'" '+(!p.grain?'checked':'')+'></td><td><button class="btn icon-btn" data-delete="'+i+'" aria-label="Удалить строку '+(i+1)+'">×</button></td></tr>').join('');
+  $('partsBody').innerHTML=project.pieces.map((p,i)=>'<tr data-row="'+i+'"><td class="row-number">'+(i+1)+'</td><td><input data-field="name" aria-label="Название '+(i+1)+'" value="'+esc(p.name||'Деталь '+(i+1))+'"></td>'+['l','w','q'].map(k=>'<td><input data-field="'+k+'" type="number" min="'+(k==='q'?1:.1)+'" step="'+(k==='q'?1:.1)+'" aria-label="'+({l:'Длина',w:'Ширина',q:'Количество'}[k])+' '+(i+1)+'" value="'+p[k]+'"></td>').join('')+'<td>'+edgeControls(p,i)+'</td><td><input type="checkbox" data-field="rotate" aria-label="Разрешить поворот '+(i+1)+'" '+(!p.grain?'checked':'')+'></td><td><button class="btn icon-btn" data-delete="'+i+'" aria-label="Удалить строку '+(i+1)+'">×</button></td></tr>').join('');
  }
  function request(action,payload){
   if(worker)worker.terminate();setBusy(true);$('progressText').textContent=action==='validate'?'Проверяем сохранённую карту':'Ищем допустимый раскрой';$('progressFill').style.width='5%';
@@ -24,7 +34,7 @@
    const m=e.data;if(m.type==='progress'){$('progressText').textContent=m.data.text;$('progressFill').style.width=Math.min(98,m.data.percent)+'%';return;}
    worker.terminate();worker=null;setBusy(false);
    if(m.type==='error'){status('Расчёт не завершён: '+m.message);toast(m.message);return;}
-   result=m.result;sheet=0;step=0;
+   result=m.result;syncEdges();sheet=0;step=0;
    status('✓ Геометрия и PSS проверены · удерживаемые остатки не поворачиваются',true);renderResult();
    if(action==='solve')toast('Расчёт готов: '+result.sheets.length+' лист(а). Все операции прошли проверку.');
   };
@@ -49,6 +59,7 @@
     out+='<text class="part-dimension part-width" x="'+cx+'" y="'+(a.y+inset)+'" text-anchor="middle" dominant-baseline="hanging" fill="#354f63" font-size="'+df+'">'+fmt(a.w)+'</text>';
     out+='<text class="part-dimension part-height" transform="translate('+(a.x+inset)+' '+cy+') rotate(-90)" text-anchor="middle" dominant-baseline="hanging" fill="#354f63" font-size="'+df+'">'+fmt(a.h)+'</text>';
    }
+   out+=edgeSVG(a,p.pieces.find(p=>p.id===a.id)?.edges,a.rotated?1:0);
    out+='</g>';
   }
   const largest=sh.remnants.slice().sort((a,b)=>b.area-a.area)[0];
@@ -66,6 +77,7 @@
    const x=a.x-r.x,y=a.y-r.y,w=a.w,h=a.h;
    const t=[[x,y,w,h],[r.h-y-h,x,h,w],[r.w-x-w,r.h-y-h,w,h],[y,r.w-x-w,h,w]][q];
    s+='<rect x="'+t[0]+'" y="'+t[1]+'" width="'+t[2]+'" height="'+t[3]+'" fill="'+colors[(a.id-1)%6]+'" stroke="#7c97aa" stroke-width="2"/><text x="'+(t[0]+t[2]/2)+'" y="'+(t[1]+t[3]/2)+'" text-anchor="middle" font-size="'+Math.min(34,t[2]/5,t[3]/3)+'">'+a.id+'</text>';
+   s+=edgeSVG({x:t[0],y:t[1],w:t[2],h:t[3]},result.parameters.pieces.find(p=>p.id===a.id)?.edges,(a.rotated?1:0)+q);
   }
   if(op.type==='cut')s+='<line x1="'+op.start.x+'" y1="'+op.start.y+'" x2="'+op.end.x+'" y2="'+op.end.y+'" stroke="#e24a36" stroke-width="'+Math.max(4,op.kerf)+'"/>';
   return s+'</svg>';
@@ -89,6 +101,7 @@
    }).join('');
   }
   $('drawing').innerHTML=mapSVG(sheet,true);const picture=$('drawing').firstElementChild,margin=Math.max(p.sheetW*.045,90),ratio=(p.sheetW+margin*1.4)/(p.sheetH+margin*1.4);picture.style.width='min('+(zoom*100)+'%, '+(80*ratio*zoom)+'vh)';picture.style.maxHeight=(80*zoom)+'vh';
+  $('sheetDetail').style.maxWidth='calc('+(80*ratio)+'vh + 266px)';
   renderSheetParts();
   $('sheetLabel').textContent=gallery?'Все листы · '+result.sheets.length:'Лист '+(sheet+1)+' из '+result.sheets.length;$('prevSheet').disabled=sheet===0;$('nextSheet').disabled=sheet===result.sheets.length-1;
   $('materialBadge').textContent=project.material;$('sizeBadge').textContent=fmt(p.sheetW)+' × '+fmt(p.sheetH)+' мм';
@@ -106,7 +119,7 @@
   return [...counts].sort((a,b)=>a[0]-b[0]).map(([id,q])=>({...result.parameters.pieces.find(p=>p.id===id),q}));
  }
  function partsRows(rows,interactive=false){
-  return rows.map(a=>'<tr data-sheet-part="'+a.id+'"><td>'+(interactive?'<button class="part-link" data-highlight-part="'+a.id+'" aria-label="Показать детали №'+a.id+' на карте"><i style="background:'+colors[(a.id-1)%colors.length]+'"></i>'+a.id+'</button>':a.id)+'</td><td>'+fmt(a.l)+' × '+fmt(a.w)+'</td><td>'+a.q+'</td></tr>').join('');
+  return rows.map(a=>'<tr data-sheet-part="'+a.id+'"><td>'+(interactive?'<button class="part-link" data-highlight-part="'+a.id+'" aria-label="Показать детали №'+a.id+' на карте"><i style="background:'+colors[(a.id-1)%colors.length]+'"></i>'+a.id+'</button>':a.id)+'</td><td>'+fmt(a.l)+' × '+fmt(a.w)+(ListProEdges.describe(a.edges)?'<small class="edge-summary">'+ListProEdges.describe(a.edges)+'</small>':'')+'</td><td>'+a.q+'</td></tr>').join('');
  }
  function sheetList(index,rows=sheetRows(index)){
   return '<aside class="compact-parts" aria-label="Детали листа '+(index+1)+'"><strong>Детали</strong><table><thead><tr><th>№</th><th>Размер, мм</th><th>Шт.</th></tr></thead><tbody>'+partsRows(rows)+'</tbody></table></aside>';
@@ -147,7 +160,8 @@
  $('importOpen').onclick=()=>modal('importModal',true);
  $('calculate').onclick=()=>{if(busy)return;tab('map');request('solve',{input:project,options:{objective:project.objective,iterations:100,seed:42,examples:Object.values(EX)}});};
  $('cancel').onclick=()=>{worker?.terminate();worker=null;setBusy(false);toast('Расчёт остановлен.');if(!result)status('Расчёт остановлен. Нажмите «Рассчитать», чтобы повторить.');};
- $('partsBody').addEventListener('input',e=>{const tr=e.target.closest('[data-row]'),k=e.target.dataset.field;if(!tr||!k)return;const p=project.pieces[Number(tr.dataset.row)];if(k==='rotate')p.grain=!e.target.checked;else p[k]=k==='name'?e.target.value:Number(e.target.value);invalidate();updateCount();});
+ $('partsBody').addEventListener('input',e=>{if(e.target.dataset.edge)return;const tr=e.target.closest('[data-row]'),k=e.target.dataset.field;if(!tr||!k)return;const p=project.pieces[Number(tr.dataset.row)];if(k==='rotate')p.grain=!e.target.checked;else p[k]=k==='name'?e.target.value:Number(e.target.value);invalidate();updateCount();});
+ $('partsBody').addEventListener('change',e=>{const side=e.target.dataset.edge,tr=e.target.closest('[data-row]');if(!side||!tr||busy)return;const p=project.pieces[Number(tr.dataset.row)];p.edges=ListProEdges.normalize({...p.edges,[side]:Number(e.target.value)});syncEdges();if(result)draw();});
  $('partsBody').onclick=e=>{const b=e.target.closest('[data-delete]');if(!b)return;project.pieces.splice(Number(b.dataset.delete),1);project.pieces.forEach((p,i)=>p.id=i+1);invalidate();fillForm();};
  $('addRow').onclick=()=>{if(project.pieces.length>=500){toast('Не более 500 строк.');return;}project.pieces.push({id:project.pieces.length+1,name:'',l:500,w:300,q:1,grain:false});invalidate();fillForm();};
  $('allowAll').onclick=()=>{project.pieces.forEach(p=>p.grain=false);invalidate();fillForm();};
@@ -160,7 +174,7 @@
    if(f.size>5e6)throw Error('Файл больше 5 МБ.');const text=await f.text();
    if(f.name.toLowerCase().endsWith('.json')){const o=JSON.parse(text),p=o.project||o.parameters||o;
     if(!Array.isArray(p.pieces)||p.pieces.length>500)throw Error('В JSON нужен список pieces (до 500 строк).');
-    const pieces=p.pieces.map((a,i)=>({id:i+1,name:String(a.name||''),l:Number(a.l),w:Number(a.w),q:Number(a.q),grain:a.grain!==false}));
+    const pieces=p.pieces.map((a,i)=>({id:i+1,name:String(a.name||''),l:Number(a.l),w:Number(a.w),q:Number(a.q),grain:a.grain!==false,edges:ListProEdges.normalize(a.edges)}));
     if(pieces.some(a=>!Number.isFinite(a.l)||a.l<=0||!Number.isFinite(a.w)||a.w<=0||!Number.isSafeInteger(a.q)||a.q<=0)||pieces.reduce((s,a)=>s+a.q,0)>2500)throw Error('Некорректные размеры или количества.');
     for(const k of ['sheetW','sheetH','kerf','trim'])if(p[k]!==undefined){if(!Number.isFinite(Number(p[k])))throw Error('Некорректный параметр '+k);}
     for(const k of ['sheetW','sheetH','kerf','trim'])if(p[k]!==undefined)project[k]=Number(p[k]);
@@ -173,14 +187,14 @@
  $('export').onclick=()=>{if(result)modal('exportModal',true);};
  $('downloadSvg').onclick=()=>{if(result)download('listpro-sheet-'+(sheet+1)+'.svg',mapSVG(sheet),'image/svg+xml;charset=utf-8');};
  $('downloadJson').onclick=()=>{if(result)json('listpro-result.json',result);};
- $('downloadCsv').onclick=()=>{if(result)csv('listpro-parts.csv',[['Лист','Деталь','Экземпляр','X','Y','Ширина','Высота','Поворот'],...result.sheets.flatMap((s,i)=>s.parts.map(a=>[i+1,a.id,a.instance,a.x,a.y,a.w,a.h,a.rotated?'Да':'Нет']))]);};
+ $('downloadCsv').onclick=()=>{if(result)csv('listpro-parts.csv',[['Лист','Деталь','Экземпляр','X','Y','Ширина','Высота','Поворот','Кромка верх, мм','Кромка право, мм','Кромка низ, мм','Кромка лево, мм'],...result.sheets.flatMap((s,i)=>s.parts.map(a=>[i+1,a.id,a.instance,a.x,a.y,a.w,a.h,a.rotated?'Да':'Нет',...ListProEdges.sides.map(side=>ListProEdges.normalize(result.parameters.pieces.find(p=>p.id===a.id)?.edges)[side])]))]);};
  $('exportOps').onclick=()=>{if(result)csv('listpro-operations.csv',[['Шаг','Лист','Операция','Заготовка','Ширина','Высота','Ось','Позиция'],...result.plan.operations.map(o=>[o.step,sheetOf(o)+1,typeName(o),o.inputBlankId||o.blankId,o.w,o.h,o.axis,o.type==='cut'?(o.axis==='V'?o.start.x:o.start.y):''])]);};
  function preparePrint(){
   if(!result){$('printPages').innerHTML='';return;}
   $('printPages').innerHTML=result.sheets.flatMap((s,i)=>{
-   const rows=sheetRows(i),pages=[];
-   for(let start=0;start<rows.length;start+=30){
-    pages.push('<section class="print-page"><h2>'+esc(project.name)+' · лист '+(i+1)+(rows.length>30?' · список '+(start/30+1)+' из '+Math.ceil(rows.length/30):'')+'</h2><p>'+esc(project.material)+' · '+fmt(result.parameters.sheetW)+' × '+fmt(result.parameters.sheetH)+' мм · '+s.parts.length+' деталей</p><div class="print-sheet-body">'+mapSVG(i)+sheetList(i,rows.slice(start,start+30))+'</div><p>Пропил '+result.parameters.kerf+' мм · обрезка '+result.parameters.trim+' мм. Размеры в списке — исходные. PSS проверен. Совместимость со станком не подтверждена.</p></section>');
+   const rows=sheetRows(i),pages=[],limit=rows.some(a=>ListProEdges.describe(a.edges))?12:30;
+   for(let start=0;start<rows.length;start+=limit){
+    pages.push('<section class="print-page"><h2>'+esc(project.name)+' · лист '+(i+1)+(rows.length>limit?' · список '+(start/limit+1)+' из '+Math.ceil(rows.length/limit):'')+'</h2><p>'+esc(project.material)+' · '+fmt(result.parameters.sheetW)+' × '+fmt(result.parameters.sheetH)+' мм · '+s.parts.length+' деталей</p><div class="print-sheet-body">'+mapSVG(i)+sheetList(i,rows.slice(start,start+limit))+'</div><p>Пропил '+result.parameters.kerf+' мм · обрезка '+result.parameters.trim+' мм. Точки — кромка. Размеры заготовок без вычета кромки. PSS проверен. Совместимость со станком не подтверждена.</p></section>');
    }
    return pages;
   }).join('');
