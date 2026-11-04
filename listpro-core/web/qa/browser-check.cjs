@@ -28,6 +28,12 @@ const qa=process.env.LISTPRO_QA_OUTPUT||__dirname,url=process.env.LISTPRO_BASE_U
  await page.locator('#importOpen').click();await page.locator('#importText').fill('278,5;228;3\n468;59;2');await page.locator('#applyImport').click();await page.locator('#calculate').click();
  await page.waitForFunction(()=>document.getElementById('statParts').textContent==='5');
  await page.locator('[data-tab="parts"]').click();await page.locator('#panel-parts [data-example="26"]').click();await page.waitForFunction(()=>document.getElementById('statParts').textContent==='26');
+ assert.equal(await page.locator('#drawing [data-part="5:1"] rect').getAttribute('x'),'10');
+ assert.equal(await page.locator('#drawing [data-part="7:1"] rect').getAttribute('x'),'1147');
+ assert.match(await page.locator('#orderHint').textContent(),/сначала крупные/);
+ await page.screenshot({path:path.join(qa,'ordered-26.png'),fullPage:true});
+ await page.locator('[data-tab="settings"]').click();await page.locator('#partOrder').selectOption('optimized');assert(await page.locator('#print').isDisabled());
+ await page.locator('#calculate').click();await page.waitForFunction(()=>!document.getElementById('calculate').disabled,{},{timeout:60000});assert.equal(await page.locator('#statParts').textContent(),'26');assert.match(await page.locator('#orderHint').textContent(),/выбран оптимизатором/);
  await page.locator('[data-tab="parts"]').click();await page.locator('#panel-parts [data-example="171"]').click();await page.waitForFunction(()=>document.getElementById('statParts').textContent==='171');
  assert.equal(await page.locator('#statCuts').textContent(),'328 / 106');assert.equal(await page.locator('#statSheets').textContent(),'10');
  await page.locator('#viewTwo').click();assert.equal(await page.locator('.sheet-card').count(),10);
@@ -49,6 +55,6 @@ const qa=process.env.LISTPRO_QA_OUTPUT||__dirname,url=process.env.LISTPRO_BASE_U
  await page.locator('#workspace').scrollIntoViewIfNeeded();
  await page.screenshot({path:path.join(qa,'mobile.png'),fullPage:true});
  const mobileWidth=await page.evaluate(()=>({w:innerWidth,doc:document.documentElement.scrollWidth}));assert.equal(mobileWidth.doc,mobileWidth.w);
- assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,desktopContainerWidth:width.width,compactGraphic:graphic,mobileWidth,errors,scenarios:['44 initial','navigation','physical orientation','58-cut recalculation','SVG download','fractional import','26 and 171 replay','ten sheets in 2/3 columns','keyboard opens sheet 10 and replay','mobile single column','mobile no overflow']}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,desktopContainerWidth:width.width,compactGraphic:graphic,mobileWidth,errors,scenarios:['44 initial','navigation','physical orientation','58-cut recalculation','SVG download','fractional import','26 descending parts and original-order setting','26 and 171 replay','ten sheets in 2/3 columns','keyboard opens sheet 10 and replay','mobile single column','mobile no overflow']}));
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

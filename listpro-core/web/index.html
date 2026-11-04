@@ -13,6 +13,8 @@
 .view-switch{display:flex;gap:3px;flex-wrap:wrap;padding:3px;border:1px solid #dce7ef;border-radius:9px;background:#f6f9fb}.view-switch .btn{font-size:12px;padding:6px 10px;border:0;background:transparent;white-space:nowrap}.view-switch .btn[aria-pressed="true"]{background:#e0f5e9;color:#007b47;box-shadow:0 1px 3px #17462b15}.sheet-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:0 22px 20px}.sheet-gallery[data-columns="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}.sheet-card{display:block;min-width:0;width:100%;text-align:left;background:#fff;border:1px solid #dfe7ef;border-radius:12px;padding:13px;cursor:pointer;box-shadow:0 3px 12px #273b5207;color:#20354b}.sheet-card:hover{border-color:#53b38b;background:#fcfffd}.sheet-card:focus-visible{outline:3px solid #00995b;outline-offset:3px}.sheet-card-header,.sheet-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px}.sheet-card-header{font-size:13px;padding:0 2px 10px}.sheet-card-header>span{font-size:11px;color:#738499}.sheet-card svg{display:block;width:100%;height:auto;pointer-events:none}.sheet-card-footer{padding:10px 2px 0;font-size:10px;color:#8591a1}.sheet-card-footer span{color:#00824d}.sheet-gallery[hidden]{display:none}
 @media(max-width:900px){.sheet-gallery[data-columns="3"]{grid-template-columns:repeat(2,minmax(0,1fr))}.view-switch{order:4}}
 @media(max-width:600px){.sheet-gallery,.sheet-gallery[data-columns="3"]{grid-template-columns:minmax(0,1fr);padding:0 12px 14px;gap:12px}.view-switch{width:100%;justify-content:center}.view-switch .btn{flex:1}.sheet-card{padding:10px}}
+
+.strip-order-note{font-size:12px;color:#64768b;padding:0 24px;margin:0 0 16px}.strip-order-note:empty{display:none}
 </style></head><body><noscript><p style="padding:20px">Для расчёта и просмотра карт включите JavaScript в браузере.</p></noscript>
 <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true"><defs>
 <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol><symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol><symbol id="i-save" viewBox="0 0 24 24"><path d="M4 3h13l3 3v15H4Z M8 3v6h8V3M8 21v-8h8v8"/></symbol><symbol id="i-print" viewBox="0 0 24 24"><path d="M7 8V3h10v5M6 18H3V9h18v9h-3M7 14h10v7H7ZM17 11h1"/></symbol><symbol id="i-left" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 11h18M12 3v18"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M8 5h13M8 12h13M8 19h13M3 5h1M3 12h1M3 19h1"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="m3 6 9-4 9 4-9 5Zm0 0v12l9 4 9-4V6M12 11v11"/></symbol><symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 4v16M12 4v16M20 4v16M1 8h6M9 16h6M17 10h6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L20 5"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M4 12h16"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M5 19 19 5"/></symbol><symbol id="i-expand" viewBox="0 0 24 24"><path d="M3 9V3h6M15 3h6v6M21 15v6h-6M9 21H3v-6"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Zm-5 10 3 3 7-7"/></symbol><symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V3h8v3M5 6l1 15h12l1-15M9 10v7M15 10v7"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M3 20C0 4 15 3 21 3c0 14-6 19-14 14M3 21 16 8"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
@@ -25,6 +27,7 @@
 <nav class="tabs" role="tablist" aria-label="Данные заказа"><button class="tab active" data-tab="map" role="tab" aria-selected="true"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>Карта раскроя</button><button class="tab" data-tab="parts" role="tab" aria-selected="false"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Список деталей <span class="count" id="partsBadge"></span></button><button class="tab" data-tab="settings" role="tab" aria-selected="false"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Материал и настройки</button><button class="tab" data-tab="remnants" role="tab" aria-selected="false"><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg>Остатки</button><button class="tab" data-tab="operations" role="tab" aria-selected="false"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Последовательность резов</button></nav>
 <div class="panel map-panel" id="panel-map" role="tabpanel">
 <div class="map-toolbar"><div class="sheet-nav"><button class="btn" id="prevSheet" aria-label="Предыдущий лист"><svg class="ico" aria-hidden="true"><use href="#i-left"/></svg></button><span id="sheetLabel">Лист 1 из 2</span><button class="btn" id="nextSheet" aria-label="Следующий лист"><svg class="ico" aria-hidden="true"><use href="#i-right"/></svg></button></div><div class="map-meta"><span class="pill" id="materialBadge">Листовой материал</span><span class="pill" id="sizeBadge">2750 × 1830 мм</span><span class="pill green" id="usageBadge">Использование: —</span></div><div class="view-switch" role="group" aria-label="Режим просмотра листов"><button class="btn" id="viewSingle" aria-pressed="false">Один лист</button><button class="btn" id="viewTwo" aria-pressed="true">По 2 в ряд</button><button class="btn" id="viewThree" aria-pressed="false">По 3 в ряд</button></div><div class="map-tools"><button class="btn" id="zoomOut" aria-label="Уменьшить"><svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg></button><button class="btn" title="Вписать компактную карту" id="fit">Вписать</button><button class="btn" id="zoomIn" aria-label="Увеличить"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button><button class="btn" id="full" aria-label="Открыть карту на весь экран" title="На весь экран"><svg class="ico" aria-hidden="true"><use href="#i-expand"/></svg></button></div></div>
+<p class="strip-order-note" id="orderHint" role="status"></p>
 <div class="sheet-gallery" id="sheetGallery" aria-label="Карты всех листов" hidden></div>
 <div class="drawing" id="drawing" aria-label="Карта выбранного листа"></div>
 <div class="legend"><div class="legend-items"><span class="legend-item"><i class="swatch"></i>Детали</span><span class="legend-item"><i class="swatch waste"></i>Остатки</span><span class="legend-item"><i class="swatch cut"></i>Текущий пропил</span></div><span id="partHint">Нажмите на деталь, чтобы узнать размеры</span></div>
@@ -34,7 +37,7 @@
 <details class="blank-detail"><summary>Текущая физическая заготовка и операция</summary><div class="blank-grid"><div id="physicalDrawing"></div><div id="opDetails"></div></div></details></div>
 </div>
 <div class="panel" id="panel-parts" role="tabpanel" hidden><div class="panel-heading"><div><h2>Список деталей</h2><p>Размеры в миллиметрах. Каждая строка сохраняет свой номер.</p></div><div class="panel-actions"><button class="btn small" id="allowAll"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Разрешить поворот всех</button><button class="btn small" id="addRow"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>Добавить деталь</button></div></div><div class="table-scroll"><table><thead><tr><th>№</th><th>Наименование</th><th>Длина, мм</th><th>Ширина, мм</th><th>Количество</th><th>Поворот 90°</th><th></th></tr></thead><tbody id="partsBody"></tbody></table></div><p class="hint">При изменении размеров или количества выполните расчёт заново. Поворот детали и физический поворот отделённой полосы учитываются отдельно.</p><div class="examples"><button class="example" data-example="44"><b>44 одинаковые детали</b><span>500 × 300 мм · 2 листа</span></button><button class="example" data-example="26"><b>Контрольный заказ</b><span>26 деталей · фиксированная текстура</span></button><button class="example" data-example="171"><b>Мебельный заказ</b><span>171 деталь · 10 листов · по вашей схеме</span></button><button class="btn" data-example="171-legacy">171 деталь · прежние 11 листов</button></div></div>
-<div class="panel" id="panel-settings" role="tabpanel" hidden><div class="panel-heading"><div><h2>Материал и параметры раскроя</h2><p>Эти значения используются и при расчёте, и при независимой проверке.</p></div></div><div class="settings-grid"><label class="wide">Название проекта<input id="projectName" maxlength="100"></label><label>Материал<input id="materialName" value="Листовой материал" maxlength="60"></label><label>Длина листа, мм<input id="sheetW" type="number" min="100" max="20000" step="0.5"></label><label>Ширина листа, мм<input id="sheetH" type="number" min="100" max="20000" step="0.5"></label><label>Ширина пропила, мм<input id="kerf" type="number" min="0.1" max="30" step="0.1"></label><label>Обрезка с каждой стороны, мм<input id="trim" type="number" min="0" max="200" step="0.5"></label><label>Приоритет после количества листов<select id="objective"><option value="remnants">Крупные цельные остатки</option><option value="cuts">Меньше резов и поворотов</option></select></label></div><div class="note"><b>Многостадийный полосный раскрой.</b> Удерживаемый остаток продолжает распуск без поворота. Разворачивать можно отделённые заготовки. Новый расчёт использует торцовку в конце серии; в пяти операциях примера на 10 листах диск частично выходит за край заготовки. Возможность такой торцовки, параметры прижимов, подачи и хода пилы необходимо сверить с конкретным станком.</div></div>
+<div class="panel" id="panel-settings" role="tabpanel" hidden><div class="panel-heading"><div><h2>Материал и параметры раскроя</h2><p>Эти значения используются и при расчёте, и при независимой проверке.</p></div></div><div class="settings-grid"><label class="wide">Название проекта<input id="projectName" maxlength="100"></label><label>Материал<input id="materialName" value="Листовой материал" maxlength="60"></label><label>Длина листа, мм<input id="sheetW" type="number" min="100" max="20000" step="0.5"></label><label>Ширина листа, мм<input id="sheetH" type="number" min="100" max="20000" step="0.5"></label><label>Ширина пропила, мм<input id="kerf" type="number" min="0.1" max="30" step="0.1"></label><label>Обрезка с каждой стороны, мм<input id="trim" type="number" min="0" max="200" step="0.5"></label><label>Порядок деталей внутри полос<select id="partOrder"><option value="descending">Крупные сначала — по площади</option><option value="optimized">Порядок оптимизатора</option></select></label><label>Приоритет после количества листов<select id="objective"><option value="remnants">Крупные цельные остатки</option><option value="cuts">Меньше резов и поворотов</option></select></label></div><div class="note"><b>Многостадийный полосный раскрой.</b> Удерживаемый остаток продолжает распуск без поворота. Разворачивать можно отделённые заготовки. Новый расчёт использует торцовку в конце серии; в пяти операциях примера на 10 листах диск частично выходит за край заготовки. Возможность такой торцовки, параметры прижимов, подачи и хода пилы необходимо сверить с конкретным станком.</div></div>
 <div class="panel" id="panel-remnants" role="tabpanel" hidden><div class="panel-heading"><div><h2>Цельные остатки</h2><p>Прямоугольные участки внутри полезной области листа. Пропилы исключены.</p></div><span class="pill" id="remnantTotal"></span></div><div class="table-scroll"><table><thead><tr><th>Лист</th><th>Размер, мм</th><th>Площадь, м²</th><th>X, мм</th><th>Y, мм</th></tr></thead><tbody id="remnantsBody"></tbody></table></div><p class="hint">Остатки рассчитаны для текущего заказа. Общий склад материалов между заказами пока не подключён.</p></div>
 <div class="panel" id="panel-operations" role="tabpanel" hidden><div class="panel-heading"><div><h2>Последовательность обработки</h2><p>Нажмите на операцию, чтобы увидеть её на карте.</p></div><button class="btn small" id="exportOps"><svg class="ico" aria-hidden="true"><use href="#i-down"/></svg>CSV операций</button></div><div class="table-scroll"><table><thead><tr><th>Шаг</th><th>Лист</th><th>Операция</th><th>Заготовка</th><th>Размер, мм</th><th>Ориентация</th><th>Ось</th><th>Позиция, мм</th></tr></thead><tbody id="operationsBody"></tbody></table></div></div>
 <div class="statusbar"><span class="status-left"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><span id="validation">Загружаем проверенный пример</span></span><span class="muted">Совместимость с конкретным станком не подтверждена</span></div>
@@ -1039,6 +1042,89 @@ function makePlan(p,layout,profile){
 module.exports={makePlan};
 
 },
+"src/ordered-strip-layout.js":function(module,exports,require){
+'use strict';
+// New arrangement pass. Historical search/builders and the independent replay
+// are unchanged. Groups stay together; only siblings inside a strip move.
+const {dimensions,fromTree}=require('./deferred-strip-patterns');
+const {collect}=require('./pss-waste-local');
+const {verifyDeferred}=require('./deferred-strip-search');
+function rank(n){
+ if(n.part)return[n.w*n.h,Math.max(n.w,n.h),Math.min(n.w,n.h)];
+ return n.children.map(rank).sort((a,b)=>b[0]-a[0]||b[1]-a[1]||b[2]-a[2])[0];
+}
+function compareParts(a,b){const x=rank(a),y=rank(b);return y[0]-x[0]||y[1]-x[1]||y[2]-x[2];}
+function buildOrderedLayout(p,patterns){
+ const k=p.kerf,counters=new Map(),exceptions=[];let sheetIndex=0,orderedGroups=0;
+ const waste=rect=>({kind:'waste',rect:{...rect}});
+ function split(r,axis,size,first,second,phase='layout',allowFinish=false){
+  const v=axis==='V',span=v?r.w:r.h;if(size<=0||size>=span)throw Error('Invalid separation span');
+  const used=Math.min(k,span-size),edgeFinish=span-size<=k;
+  if(edgeFinish&&!allowFinish)throw Error('A retained remainder cannot be promoted to a strip');
+  const pos=(v?r.x:r.y)+size,a=v?{...r,w:size}:{...r,h:size},b=v?{...r,x:pos+used,w:span-size-used}:{...r,y:pos+used,h:span-size-used};
+  const node={kind:'cut',rect:{...r},axis,pos,kerf:k,kerfUsed:used,edgeFinish,phase,first:first(a),second:second(b)};
+  if(edgeFinish&&node.first.kind!=='part')throw Error('Overhanging blade allowed only for terminal part sizing');return node;
+ }
+ function leaf(n,r,held){
+  if(r.w===n.w&&r.h===n.h){const instance=n.part.instance??((counters.get(n.part.id)||0)+1);counters.set(n.part.id,instance);return{kind:'part',rect:{...r},part:{...n.part,instance}};}
+  const axis=r.w!==n.w?'V':'H';if(held&&held!==axis)throw Error('Retained leaf cannot change direction');
+  return split(r,axis,axis==='V'?n.w:n.h,rr=>leaf(n,rr,null),waste,'layout',true);
+ }
+ function place(n,r,held=null){
+  if(n.w>r.w||n.h>r.h)throw Error('Pattern exceeds blank');if(n.part)return leaf(n,r,held);
+  const axis=n.axis,dim=axis==='V'?'w':'h',cross=axis==='V'?'h':'w';
+  if(held&&held!==axis)throw Error('Retained group cannot change direction');
+  const kids=n.children.slice().sort(compareParts);orderedGroups++;
+  // A terminal child with no positive far-side offcut stays held. It must be
+  // a full-cross-span finished part, not a group needing another direction.
+  const spare=r[dim]-(kids.reduce((s,c)=>s+c[dim],0)+k*(kids.length-1));
+  const last=kids.at(-1),terminal=c=>c.part&&c[cross]===r[cross];
+  if(spare<=k&&!terminal(last)){
+   const index=kids.findLastIndex(terminal);
+   if(index<0)throw Error('No finished terminal anchor for the sorted rip');
+   const anchor=kids.splice(index,1)[0];kids.push(anchor);
+   exceptions.push({sheet:sheetIndex,axis,rect:{...r},part:{...anchor.part},reason:'Retained final piece must finish without another turn.'});
+  }
+  function line(i,rr){
+   if(i===kids.length)return waste(rr);const c=kids[i],size=c[dim];
+   if(rr[dim]===size){if(i!==kids.length-1)throw Error('Missing strip space');return place(c,rr,axis);}
+   return split(rr,axis,size,a=>place(c,a),b=>line(i+1,b),'layout',!!c.part&&c[cross]===rr[cross]&&i===kids.length-1);
+  }return line(0,r);
+ }
+ const sheets=patterns.map((pattern,si)=>{sheetIndex=si;
+  let n=dimensions(pattern,p.kerf);if(n.part)n={axis:'H',children:[n],w:n.w,h:n.h};
+  const A=n.axis,P=A==='H'?'V':'H',dim=A==='H'?'h':'w',primaryStrips=[];
+  if(n.w>p.sheetW-2*p.trim||n.h>p.sheetH-2*p.trim)throw Error('Pattern exceeds usable sheet');
+  const children=n.children.slice(); // Keep primary strips in their original order.
+  function series(i,r,path){
+   if(i===children.length)return waste(r);const c=children[i];
+   function band(rr){primaryStrips.push({index:i+1,rect:{...rr},path:path+'/0'});return p.trim?split(rr,P,p.trim-k,waste,a=>place(c,a,P),'leading-trim'):place(c,rr);}
+   return split(r,A,c[dim],band,b=>series(i+1,b,path+'/1'),'primary');
+  }
+  const rect={x:0,y:0,w:p.sheetW,h:p.sheetH},tree=p.trim?split(rect,A,p.trim-k,waste,r=>series(0,r,'r/1'),'leading-trim'):series(0,rect,'r');
+  return {axis:A,tree,primaryStrips};
+ });
+ const layout=collect({model:'deferred-staged-v1',sheets,method:'descending-parts-within-existing-strips',optimality:'not proven',ordering:{mode:'descending',criterion:'largest real part area, then longest side',orderedGroups,exceptions}});
+ // Remnants exposed in the UI are useful intersections, not raw edge trimmings.
+ for(const sh of layout.sheets)sh.remnants=sh.remnants.map(a=>{const x=Math.max(p.trim,a.x),y=Math.max(p.trim,a.y),w=Math.max(0,Math.min(p.sheetW-p.trim,a.x+a.w)-x),h=Math.max(0,Math.min(p.sheetH-p.trim,a.y+a.h)-y);return{x,y,w,h,area:w*h};}).filter(a=>a.area>0);
+ return layout;
+}
+
+function arrange(result,mode='descending'){
+ if(!['descending','optimized'].includes(mode))throw Error('Unknown strip ordering');
+ if(mode==='optimized')return {...result,ordering:{mode}};
+ const p=result.parameters,patterns=result.sheets.map(sh=>{const n=fromTree(sh.tree,p.kerf);return n.axis===sh.axis?n:{axis:sh.axis,children:[n]};});
+ try{
+  const s=verifyDeferred(p,buildOrderedLayout(p,patterns));
+  // Sheet allocations and original per-copy identities must remain unchanged.
+  const identities=sh=>sh.parts.map(a=>a.id+':'+a.instance+':'+a.w+':'+a.h+':'+!!a.rotated).sort().join('|');
+  if(s.sheets.length!==result.sheets.length||s.sheets.some((sh,i)=>identities(sh)!==identities(result.sheets[i])))throw Error('Sorting changed sheet allocation');
+  return {...s,search:result.search};
+ }catch(e){return {...result,ordering:{mode,applied:false,reason:e.message}};}
+}
+module.exports={arrange,buildOrderedLayout,compareParts};
+
+},
 "src/physical-replay.js":function(module,exports,require){
 'use strict';
 const {validate}=require('./validator');
@@ -1742,6 +1828,7 @@ module.exports={validate};
 "web/engine.cjs":function(module,exports,require){
 'use strict';
 const {checkInput}=require('../src/core');
+const {arrange}=require('../src/ordered-strip-layout');
 const {collect}=require('../src/pss-waste-local');
 const {searchAdaptive,repackAdaptive}=require('../src/adaptive-held-strip');
 const {solveIdenticalTwoSheets}=require('../src/identical-strip-patterns');
@@ -1805,11 +1892,11 @@ function solve(input,{objective='remnants',iterations=100,seed=42,examples=[],pr
  best.search={objective,seed,iterations,trials,elapsedMs:Date.now()-started,optimality:'not proven'};
  return best;
 }
-module.exports={clean,verify,solve,equalOrder};
+module.exports={clean,verify,solve,equalOrder,arrange};
 
 }};
 const cache={};function load(id){if(cache[id])return cache[id].exports;const module={exports:{}};cache[id]=module;factories[id](module,module.exports,rel=>{const bits=id.split("/");bits.pop();for(const b of rel.split("/")){if(b==="..")bits.pop();else if(b!==".")bits.push(b);}let k=bits.join("/");if(!factories[k])k+=".js";return load(k);});return module.exports;}
-const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;if(m.action==="validate")result=engine.verify(engine.clean(m.input),m.layout);else if(m.action==="solve")result=engine.solve(m.input,{...m.options,progress:data=>self.postMessage({type:"progress",data})});else throw Error("Unknown worker action");self.postMessage({type:"result",result});}catch(e){self.postMessage({type:"error",message:e.message});}};</script><script>'use strict';
+const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;if(m.action==="validate")result=engine.verify(engine.clean(m.input),m.layout);else if(m.action==="solve")result=engine.solve(m.input,{...m.options,progress:data=>self.postMessage({type:"progress",data})});else throw Error("Unknown worker action");if(m.partOrder!==undefined)result=engine.arrange(result,m.partOrder);self.postMessage({type:"result",result});}catch(e){self.postMessage({type:"error",message:e.message});}};</script><script>'use strict';
 (function(root){
  function parseTable(text,grain=false){
   const pieces=[];
@@ -1845,7 +1932,7 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
  function updateCount(){const q=project.pieces.reduce((s,p)=>s+(Number(p.q)||0),0);$('orderCount').textContent=fmt(q)+' деталей · '+project.pieces.length+' строк';$('partsBadge').textContent=q;$('orderTitle').textContent=project.name;}
  function fillForm(){
   updateCount();$('projectName').value=project.name;$('materialName').value=project.material;
-  for(const k of ['sheetW','sheetH','kerf','trim','objective'])$(k).value=project[k];
+  for(const k of ['sheetW','sheetH','kerf','trim','objective','partOrder'])$(k).value=project[k];
   $('partsBody').innerHTML=project.pieces.map((p,i)=>'<tr data-row="'+i+'"><td class="row-number">'+(i+1)+'</td><td><input data-field="name" aria-label="Название '+(i+1)+'" value="'+esc(p.name||'Деталь '+(i+1))+'"></td>'+['l','w','q'].map(k=>'<td><input data-field="'+k+'" type="number" min="'+(k==='q'?1:.1)+'" step="'+(k==='q'?1:.1)+'" aria-label="'+({l:'Длина',w:'Ширина',q:'Количество'}[k])+' '+(i+1)+'" value="'+p[k]+'"></td>').join('')+'<td><input type="checkbox" data-field="rotate" aria-label="Разрешить поворот '+(i+1)+'" '+(!p.grain?'checked':'')+'></td><td><button class="btn icon-btn" data-delete="'+i+'" aria-label="Удалить строку '+(i+1)+'">×</button></td></tr>').join('');
  }
  function request(action,payload){
@@ -1861,9 +1948,9 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
    if(action==='solve')toast('Расчёт готов: '+result.sheets.length+' лист(а). Все операции прошли проверку.');
   };
   worker.onerror=e=>{worker?.terminate();worker=null;setBusy(false);status('Ошибка расчёта. Изменения заказа сохранены в форме.');toast(e.message||'Не удалось выполнить расчёт.');};
-  worker.postMessage({action,...payload});
+  worker.postMessage({action,...payload,partOrder:project.partOrder||'descending'});
  }
- function example(key){if(busy)return;clearTimeout(toastTimer);$('toast').classList.remove('visible');const e=EX[key];project={...copy(e.parameters),name:e.name,material:'ЛДСП, 16 мм',objective:e.objective};result=null;fillForm();renderResult();modal('importModal',false);tab('map');request('validate',{input:project,layout:e.layout});}
+ function example(key){if(busy)return;clearTimeout(toastTimer);$('toast').classList.remove('visible');const e=EX[key];project={...copy(e.parameters),name:e.name,material:'ЛДСП, 16 мм',objective:e.objective,partOrder:key.endsWith('-legacy')?'optimized':'descending'};result=null;fillForm();renderResult();modal('importModal',false);tab('map');request('validate',{input:project,layout:e.layout});}
  const sheetOf=o=>o.sheet??Number((o.inputBlankId||o.blankId||'').match(/^s(\d+)/)?.[1]??0);
  function operation(){return result?.plan.operations[step];}
  function mapSVG(index,active=false,thumbnail=false){
@@ -1927,7 +2014,8 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
   $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(op.edgeFinish?'<p>Торцовка края: часть ширины диска проходит вне заготовки. Размер детали сохранён.</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(op.edgeFinish?'готовая деталь':c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
  }
  function renderResult(){
-  const has=!!result;['print','export','prevSheet','nextSheet','prevOp','nextOp','opRange','exportOps','zoomIn','zoomOut','fit'].forEach(id=>$(id).disabled=!has);
+  const has=!!result,order=result?.ordering;
+  $('orderHint').textContent=!has?'':order?.mode==='optimized'?'Порядок деталей выбран оптимизатором.':order?.applied===false?'Сохранён прежний порядок: сортировка этой карты не прошла технологическую проверку.':order?.exceptions?.length?'Крупные детали сначала. В '+order.exceptions.length+' группах последняя деталь оставлена для завершения распуска.':'Внутри полос — сначала крупные детали, затем меньшие (по площади).';['print','export','prevSheet','nextSheet','prevOp','nextOp','opRange','exportOps','zoomIn','zoomOut','fit'].forEach(id=>$(id).disabled=!has);
   if(!has){['statSheets','statParts','statCuts','statRemnant','sheetLabel','usageBadge'].forEach(id=>$(id).textContent='—');$('sheetTabs').innerHTML='';$('remnantsBody').innerHTML='';$('operationsBody').innerHTML='';$('remnantTotal').textContent='Нет рассчитанной карты';draw();return;}
   const m=result.metrics;$('statSheets').textContent=m.sheets;$('statParts').textContent=result.partCount;$('statCuts').textContent=m.cuts+' / '+m.turns;$('statRemnant').textContent=fmt(m.largestWaste/1e6)+' м²';
   const remnants=result.sheets.flatMap((s,i)=>s.remnants.map(r=>({...r,sheet:i}))).sort((a,b)=>b.area-a.area);
@@ -1959,7 +2047,7 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
  $('partsBody').onclick=e=>{const b=e.target.closest('[data-delete]');if(!b)return;project.pieces.splice(Number(b.dataset.delete),1);project.pieces.forEach((p,i)=>p.id=i+1);invalidate();fillForm();};
  $('addRow').onclick=()=>{if(project.pieces.length>=500){toast('Не более 500 строк.');return;}project.pieces.push({id:project.pieces.length+1,name:'',l:500,w:300,q:1,grain:false});invalidate();fillForm();};
  $('allowAll').onclick=()=>{project.pieces.forEach(p=>p.grain=false);invalidate();fillForm();};
- for(const k of ['sheetW','sheetH','kerf','trim','objective'])$(k).onchange=()=>{project[k]=k==='objective'?$(k).value:Number($(k).value);invalidate();};
+ for(const k of ['sheetW','sheetH','kerf','trim','objective','partOrder'])$(k).onchange=()=>{project[k]=['objective','partOrder'].includes(k)?$(k).value:Number($(k).value);invalidate();};
  $('projectName').oninput=()=>{project.name=$('projectName').value;updateCount();};$('materialName').oninput=()=>{project.material=$('materialName').value;if(result)draw();};
  $('applyImport').onclick=()=>{try{applyPieces(ListProTableImport.parseTable($('importText').value,!$('importRotate').checked));$('importError').textContent='';}catch(e){$('importError').textContent=e.message;}};
  $('chooseFile').onclick=()=>$('fileInput').click();
@@ -1972,7 +2060,7 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
     if(pieces.some(a=>!Number.isFinite(a.l)||a.l<=0||!Number.isFinite(a.w)||a.w<=0||!Number.isSafeInteger(a.q)||a.q<=0)||pieces.reduce((s,a)=>s+a.q,0)>2500)throw Error('Некорректные размеры или количества.');
     for(const k of ['sheetW','sheetH','kerf','trim'])if(p[k]!==undefined){if(!Number.isFinite(Number(p[k])))throw Error('Некорректный параметр '+k);}
     for(const k of ['sheetW','sheetH','kerf','trim'])if(p[k]!==undefined)project[k]=Number(p[k]);
-    if(typeof p.name==='string')project.name=p.name;if(typeof p.material==='string')project.material=p.material;if(['cuts','remnants'].includes(p.objective))project.objective=p.objective;
+    if(typeof p.name==='string')project.name=p.name;if(typeof p.material==='string')project.material=p.material;if(['cuts','remnants'].includes(p.objective))project.objective=p.objective;if(['descending','optimized'].includes(p.partOrder))project.partOrder=p.partOrder;
     applyPieces(pieces);
    }else{$('importText').value=text;$('importError').textContent='Таблица прочитана. Проверьте данные и нажмите «Заменить список».';}
   }catch(e){$('importError').textContent=e.message;}finally{$('fileInput').value='';}

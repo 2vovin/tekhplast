@@ -1,5 +1,6 @@
 'use strict';
 const {checkInput}=require('../src/core');
+const {arrange}=require('../src/ordered-strip-layout');
 const {collect}=require('../src/pss-waste-local');
 const {searchAdaptive,repackAdaptive}=require('../src/adaptive-held-strip');
 const {solveIdenticalTwoSheets}=require('../src/identical-strip-patterns');
@@ -63,4 +64,4 @@ function solve(input,{objective='remnants',iterations=100,seed=42,examples=[],pr
  best.search={objective,seed,iterations,trials,elapsedMs:Date.now()-started,optimality:'not proven'};
  return best;
 }
-module.exports={clean,verify,solve,equalOrder};
+module.exports={clean,verify,solve,equalOrder,arrange};

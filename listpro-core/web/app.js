@@ -13,7 +13,7 @@
  function updateCount(){const q=project.pieces.reduce((s,p)=>s+(Number(p.q)||0),0);$('orderCount').textContent=fmt(q)+' деталей · '+project.pieces.length+' строк';$('partsBadge').textContent=q;$('orderTitle').textContent=project.name;}
  function fillForm(){
   updateCount();$('projectName').value=project.name;$('materialName').value=project.material;
-  for(const k of ['sheetW','sheetH','kerf','trim','objective'])$(k).value=project[k];
+  for(const k of ['sheetW','sheetH','kerf','trim','objective','partOrder'])$(k).value=project[k];
   $('partsBody').innerHTML=project.pieces.map((p,i)=>'<tr data-row="'+i+'"><td class="row-number">'+(i+1)+'</td><td><input data-field="name" aria-label="Название '+(i+1)+'" value="'+esc(p.name||'Деталь '+(i+1))+'"></td>'+['l','w','q'].map(k=>'<td><input data-field="'+k+'" type="number" min="'+(k==='q'?1:.1)+'" step="'+(k==='q'?1:.1)+'" aria-label="'+({l:'Длина',w:'Ширина',q:'Количество'}[k])+' '+(i+1)+'" value="'+p[k]+'"></td>').join('')+'<td><input type="checkbox" data-field="rotate" aria-label="Разрешить поворот '+(i+1)+'" '+(!p.grain?'checked':'')+'></td><td><button class="btn icon-btn" data-delete="'+i+'" aria-label="Удалить строку '+(i+1)+'">×</button></td></tr>').join('');
  }
  function request(action,payload){
@@ -29,9 +29,9 @@
    if(action==='solve')toast('Расчёт готов: '+result.sheets.length+' лист(а). Все операции прошли проверку.');
   };
   worker.onerror=e=>{worker?.terminate();worker=null;setBusy(false);status('Ошибка расчёта. Изменения заказа сохранены в форме.');toast(e.message||'Не удалось выполнить расчёт.');};
-  worker.postMessage({action,...payload});
+  worker.postMessage({action,...payload,partOrder:project.partOrder||'descending'});
  }
- function example(key){if(busy)return;clearTimeout(toastTimer);$('toast').classList.remove('visible');const e=EX[key];project={...copy(e.parameters),name:e.name,material:'ЛДСП, 16 мм',objective:e.objective};result=null;fillForm();renderResult();modal('importModal',false);tab('map');request('validate',{input:project,layout:e.layout});}
+ function example(key){if(busy)return;clearTimeout(toastTimer);$('toast').classList.remove('visible');const e=EX[key];project={...copy(e.parameters),name:e.name,material:'ЛДСП, 16 мм',objective:e.objective,partOrder:key.endsWith('-legacy')?'optimized':'descending'};result=null;fillForm();renderResult();modal('importModal',false);tab('map');request('validate',{input:project,layout:e.layout});}
  const sheetOf=o=>o.sheet??Number((o.inputBlankId||o.blankId||'').match(/^s(\d+)/)?.[1]??0);
  function operation(){return result?.plan.operations[step];}
  function mapSVG(index,active=false,thumbnail=false){
@@ -95,7 +95,8 @@
   $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(op.edgeFinish?'<p>Торцовка края: часть ширины диска проходит вне заготовки. Размер детали сохранён.</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(op.edgeFinish?'готовая деталь':c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
  }
  function renderResult(){
-  const has=!!result;['print','export','prevSheet','nextSheet','prevOp','nextOp','opRange','exportOps','zoomIn','zoomOut','fit'].forEach(id=>$(id).disabled=!has);
+  const has=!!result,order=result?.ordering;
+  $('orderHint').textContent=!has?'':order?.mode==='optimized'?'Порядок деталей выбран оптимизатором.':order?.applied===false?'Сохранён прежний порядок: сортировка этой карты не прошла технологическую проверку.':order?.exceptions?.length?'Крупные детали сначала. В '+order.exceptions.length+' группах последняя деталь оставлена для завершения распуска.':'Внутри полос — сначала крупные детали, затем меньшие (по площади).';['print','export','prevSheet','nextSheet','prevOp','nextOp','opRange','exportOps','zoomIn','zoomOut','fit'].forEach(id=>$(id).disabled=!has);
   if(!has){['statSheets','statParts','statCuts','statRemnant','sheetLabel','usageBadge'].forEach(id=>$(id).textContent='—');$('sheetTabs').innerHTML='';$('remnantsBody').innerHTML='';$('operationsBody').innerHTML='';$('remnantTotal').textContent='Нет рассчитанной карты';draw();return;}
   const m=result.metrics;$('statSheets').textContent=m.sheets;$('statParts').textContent=result.partCount;$('statCuts').textContent=m.cuts+' / '+m.turns;$('statRemnant').textContent=fmt(m.largestWaste/1e6)+' м²';
   const remnants=result.sheets.flatMap((s,i)=>s.remnants.map(r=>({...r,sheet:i}))).sort((a,b)=>b.area-a.area);
@@ -127,7 +128,7 @@
  $('partsBody').onclick=e=>{const b=e.target.closest('[data-delete]');if(!b)return;project.pieces.splice(Number(b.dataset.delete),1);project.pieces.forEach((p,i)=>p.id=i+1);invalidate();fillForm();};
  $('addRow').onclick=()=>{if(project.pieces.length>=500){toast('Не более 500 строк.');return;}project.pieces.push({id:project.pieces.length+1,name:'',l:500,w:300,q:1,grain:false});invalidate();fillForm();};
  $('allowAll').onclick=()=>{project.pieces.forEach(p=>p.grain=false);invalidate();fillForm();};
- for(const k of ['sheetW','sheetH','kerf','trim','objective'])$(k).onchange=()=>{project[k]=k==='objective'?$(k).value:Number($(k).value);invalidate();};
+ for(const k of ['sheetW','sheetH','kerf','trim','objective','partOrder'])$(k).onchange=()=>{project[k]=['objective','partOrder'].includes(k)?$(k).value:Number($(k).value);invalidate();};
  $('projectName').oninput=()=>{project.name=$('projectName').value;updateCount();};$('materialName').oninput=()=>{project.material=$('materialName').value;if(result)draw();};
  $('applyImport').onclick=()=>{try{applyPieces(ListProTableImport.parseTable($('importText').value,!$('importRotate').checked));$('importError').textContent='';}catch(e){$('importError').textContent=e.message;}};
  $('chooseFile').onclick=()=>$('fileInput').click();
@@ -140,7 +141,7 @@
     if(pieces.some(a=>!Number.isFinite(a.l)||a.l<=0||!Number.isFinite(a.w)||a.w<=0||!Number.isSafeInteger(a.q)||a.q<=0)||pieces.reduce((s,a)=>s+a.q,0)>2500)throw Error('Некорректные размеры или количества.');
     for(const k of ['sheetW','sheetH','kerf','trim'])if(p[k]!==undefined){if(!Number.isFinite(Number(p[k])))throw Error('Некорректный параметр '+k);}
     for(const k of ['sheetW','sheetH','kerf','trim'])if(p[k]!==undefined)project[k]=Number(p[k]);
-    if(typeof p.name==='string')project.name=p.name;if(typeof p.material==='string')project.material=p.material;if(['cuts','remnants'].includes(p.objective))project.objective=p.objective;
+    if(typeof p.name==='string')project.name=p.name;if(typeof p.material==='string')project.material=p.material;if(['cuts','remnants'].includes(p.objective))project.objective=p.objective;if(['descending','optimized'].includes(p.partOrder))project.partOrder=p.partOrder;
     applyPieces(pieces);
    }else{$('importText').value=text;$('importError').textContent='Таблица прочитана. Проверьте данные и нажмите «Заменить список».';}
   }catch(e){$('importError').textContent=e.message;}finally{$('fileInput').value='';}

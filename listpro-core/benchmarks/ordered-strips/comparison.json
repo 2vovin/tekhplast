@@ -1,0 +1,177 @@
+[
+  {
+    "order": "26",
+    "before": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 43,
+      "turns": 12,
+      "feeds": 42,
+      "cutLength": 29940,
+      "stages": 4,
+      "operations": 99,
+      "largestWaste": 70980,
+      "wasteArea": 441868,
+      "edgeFinishingCuts": 0,
+      "heldRemainderTurns": 0,
+      "originalSheetTurns": 0,
+      "ancestryTurnsMax": 3
+    },
+    "after": {
+      "sheets": 1,
+      "parts": 26,
+      "cuts": 43,
+      "turns": 12,
+      "feeds": 42,
+      "cutLength": 29940,
+      "stages": 4,
+      "operations": 99,
+      "largestWaste": 70980,
+      "wasteArea": 441868,
+      "edgeFinishingCuts": 0,
+      "heldRemainderTurns": 0,
+      "originalSheetTurns": 0,
+      "ancestryTurnsMax": 3
+    },
+    "ordering": {
+      "mode": "descending",
+      "criterion": "largest real part area, then longest side",
+      "orderedGroups": 9,
+      "exceptions": []
+    },
+    "elapsedMs": 3.693336000000002
+  },
+  {
+    "order": "44",
+    "before": {
+      "sheets": 2,
+      "parts": 44,
+      "cuts": 60,
+      "turns": 7,
+      "feeds": 58,
+      "cutLength": 45450,
+      "stages": 2,
+      "operations": 129,
+      "largestWaste": 2184000,
+      "wasteArea": 3097050,
+      "edgeFinishingCuts": 0,
+      "heldRemainderTurns": 0,
+      "originalSheetTurns": 0,
+      "ancestryTurnsMax": 1
+    },
+    "after": {
+      "sheets": 2,
+      "parts": 44,
+      "cuts": 60,
+      "turns": 7,
+      "feeds": 58,
+      "cutLength": 45450,
+      "stages": 2,
+      "operations": 129,
+      "largestWaste": 2184000,
+      "wasteArea": 3097050,
+      "edgeFinishingCuts": 0,
+      "heldRemainderTurns": 0,
+      "originalSheetTurns": 0,
+      "ancestryTurnsMax": 1
+    },
+    "ordering": {
+      "mode": "descending",
+      "criterion": "largest real part area, then longest side",
+      "orderedGroups": 7,
+      "exceptions": []
+    },
+    "elapsedMs": 2.2420609999999996
+  },
+  {
+    "order": "171",
+    "before": {
+      "sheets": 10,
+      "parts": 171,
+      "cuts": 328,
+      "turns": 106,
+      "feeds": 318,
+      "cutLength": 255322,
+      "stages": 5,
+      "operations": 772,
+      "largestWaste": 204006,
+      "wasteArea": 2222141,
+      "edgeFinishingCuts": 5,
+      "heldRemainderTurns": 0,
+      "originalSheetTurns": 0,
+      "ancestryTurnsMax": 4
+    },
+    "after": {
+      "sheets": 10,
+      "parts": 171,
+      "cuts": 328,
+      "turns": 106,
+      "feeds": 318,
+      "cutLength": 255322,
+      "stages": 5,
+      "operations": 772,
+      "largestWaste": 204006,
+      "wasteArea": 2222141,
+      "edgeFinishingCuts": 5,
+      "heldRemainderTurns": 0,
+      "originalSheetTurns": 0,
+      "ancestryTurnsMax": 4
+    },
+    "ordering": {
+      "mode": "descending",
+      "criterion": "largest real part area, then longest side",
+      "orderedGroups": 59,
+      "exceptions": [
+        {
+          "sheet": 5,
+          "axis": "H",
+          "rect": {
+            "x": 10,
+            "y": 513,
+            "w": 999,
+            "h": 562
+          },
+          "part": {
+            "id": 27,
+            "rotated": false,
+            "instance": 1
+          },
+          "reason": "Retained final piece must finish without another turn."
+        },
+        {
+          "sheet": 5,
+          "axis": "H",
+          "rect": {
+            "x": 1014,
+            "y": 513,
+            "w": 968,
+            "h": 562
+          },
+          "part": {
+            "id": 31,
+            "rotated": false,
+            "instance": 2
+          },
+          "reason": "Retained final piece must finish without another turn."
+        },
+        {
+          "sheet": 5,
+          "axis": "H",
+          "rect": {
+            "x": 10,
+            "y": 1080,
+            "w": 999,
+            "h": 562
+          },
+          "part": {
+            "id": 28,
+            "rotated": false,
+            "instance": 1
+          },
+          "reason": "Retained final piece must finish without another turn."
+        }
+      ]
+    },
+    "elapsedMs": 15.414935
+  }
+]

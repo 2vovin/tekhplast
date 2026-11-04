@@ -42,6 +42,10 @@ test('web: the bundled Web Worker executes the same calculation and reports inpu
  async function run(message){const w=new Worker(prelude+built.worker,{eval:true});try{return await new Promise((resolve,reject)=>{w.on('error',reject);w.on('message',m=>{if(m.type!=='progress')resolve(m);});w.postMessage(message);});}finally{await w.terminate();}}
  const r=await run({action:'solve',input:examples['44'].parameters,options:{objective:'remnants'}});
  assert.equal(r.type,'result');assert.equal(r.result.metrics.cuts,60);assert.deepEqual(r.result.sheets.map(s=>s.parts.length),[28,16]);
+ const sorted=await run({action:'validate',input:examples['26'].parameters,layout:examples['26'].layout,partOrder:'descending'});
+ assert.equal(sorted.result.sheets[0].parts[0].id,5);assert.equal(sorted.result.metrics.cuts,43);
+ const original=await run({action:'validate',input:examples['26'].parameters,layout:examples['26'].layout,partOrder:'optimized'});
+ assert.equal(original.result.sheets[0].parts[0].id,3);
  const bad=await run({action:'solve',input:{pieces:[]}});assert.equal(bad.type,'error');
 });
 test('web: script-tag injection in imported strings stays data',()=>{
