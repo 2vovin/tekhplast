@@ -16,6 +16,6 @@ test('native print, save, source and devtools shortcuts blocked',()=>{
  for(const key of ['p','P','s','u'])assert(blocksShortcut({key,control:true}));assert(blocksShortcut({key:'F12'}));assert(blocksShortcut({key:'I',control:true,shift:true}));assert(!blocksShortcut({key:'a',control:true}));
 });
 test('actual demo worker solves a new three-sheet glass order without embedded examples',async()=>{
- const result=await new Promise((resolve,reject)=>{const w=new Worker(path.resolve(__dirname,'../worker.cjs'),{workerData:{coreBase:path.resolve(__dirname,'../..'),input:{sheetW:1200,sheetH:900,kerf:5,trim:10,thickness:4,material:'Стекло',objective:'cuts',partOrder:'descending',pieces:[{id:1,l:900,w:700,q:3,grain:false}]}}});w.on('error',reject);w.on('message',m=>{if(m.type==='progress')return;w.terminate();m.type==='error'?reject(Error(m.message)):resolve(m.result);});});
+ const result=await new Promise((resolve,reject)=>{const w=new Worker(path.resolve(__dirname,'../worker.cjs'),{workerData:{coreBase:path.resolve(__dirname,'../core'),input:{sheetW:1200,sheetH:900,kerf:5,trim:10,thickness:4,material:'Стекло',objective:'cuts',partOrder:'descending',pieces:[{id:1,l:900,w:700,q:3,grain:false}]}}});w.on('error',reject);w.on('message',m=>{if(m.type==='progress')return;w.terminate();m.type==='error'?reject(Error(m.message)):resolve(m.result);});});
  assert.equal(result.metrics.sheets,3);assert.equal(result.material,'Стекло');assert.equal(result.thickness,4);assert.equal(result.sheets[2].locked,true);assert.equal(result.sheets[0].parts[0].w,900);
 });
