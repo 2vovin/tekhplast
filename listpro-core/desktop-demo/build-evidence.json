@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "platform": "win32",
+  "packaged": true,
+  "version": "0.1.0",
+  "commit": "2d4250dd26978c78d05d7ab78c1f14ff6a21e851",
+  "runId": 41791020707,
+  "artifactId": 13303302019,
+  "file": "ListPro-Demo-0.1.0-win-x64.exe",
+  "sha256": "f4035b0d663eeb3b5a0b1692aaf855e563ae7e65f7bac38d78e2138dbabc6a71",
+  "bytes": 84080206,
+  "emptyStart": true,
+  "blankNewRow": true,
+  "presetCount": 0,
+  "customSheet": "1200x900",
+  "material": "Стекло",
+  "thickness": 4,
+  "sheets": 3,
+  "visibleSheets": 2,
+  "thirdSheetRedacted": true,
+  "printBlocked": true,
+  "exportBlocked": true
+}
