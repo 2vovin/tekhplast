@@ -11,31 +11,27 @@
  function status(s,valid=false){$('validation').textContent=s;$('validation').classList.toggle('passed',valid);}
  function invalidate(){result=null;sheet=0;step=0;status('Заказ изменён. Рассчитайте новую карту.');renderResult();}
  function updateCount(){const q=project.pieces.reduce((s,p)=>s+(Number(p.q)||0),0);$('orderCount').textContent=fmt(q)+' деталей · '+project.pieces.length+' строк';$('partsBadge').textContent=q;$('orderTitle').textContent=project.name;}
- function edgeThickness(p){const ts=[...new Set(Object.values(ListProEdges.normalize(p.edges)).filter(Boolean))];return ts.length===1?ts[0]:ListProEdges.thicknesses.includes(p.edgeThickness)&&p.edgeThickness>0?p.edgeThickness:ts[0]||2;}
- function sizeHTML(value,count){return '<span class="edge-size edge-count-'+count+'" data-edge-count="'+count+'" title="Кромка: '+count+' сторон">'+fmt(value)+'</span>';}
- function edgeButton(p,axis){const n=ListProEdges.counts(p.edges)[axis];return '<span>'+(axis==='l'?'По длине':'По ширине')+'</span> '+sizeHTML(p[axis],n)+' <small>'+(n===0?'без кромки':n===1?'1 сторона':'2 стороны')+'</small>';}
- function edgeControls(p,i){
-  const e=ListProEdges.normalize(p.edges),ts=[...new Set(Object.values(e).filter(Boolean))],t=ts.length>1?'':edgeThickness(p);
-  return '<div class="edge-editor"><div class="edge-quick">'+['l','w'].map(axis=>'<button type="button" class="edge-cycle" data-edge-axis="'+axis+'" aria-label="Кромка '+(axis==='l'?'по длине':'по ширине')+' детали '+(i+1)+': '+ListProEdges.counts(e)[axis]+' сторон. Нажмите для переключения">'+edgeButton(p,axis)+'</button>').join('')+'</div><label class="edge-thickness">Толщина <select data-edge-thickness aria-label="Толщина кромки детали '+(i+1)+'"><option value="" disabled'+(t===''?' selected':'')+'>Разная</option>'+ListProEdges.thicknesses.filter(Boolean).map(v=>'<option value="'+v+'"'+(t===v?' selected':'')+'>'+fmt(v)+' мм</option>').join('')+'</select></label><details class="edge-advanced"><summary>По сторонам</summary><div class="edge-controls">'+ListProEdges.sides.map(side=>'<label><span>'+ListProEdges.labels[side]+'</span><select data-edge="'+side+'" aria-label="Кромка '+ListProEdges.labels[side].toLowerCase()+' детали '+(i+1)+'">'+ListProEdges.thicknesses.map(v=>'<option value="'+v+'"'+(e[side]===v?' selected':'')+'>'+(v?fmt(v)+' мм':'—')+'</option>').join('')+'</select></label>').join('')+'</div></details></div>';
+ function sizeHTML(value,count){return '<span class="edge-size edge-count-'+count+'" data-edge-count="'+count+'">'+fmt(value)+'</span>';}
+ function edgeChecks(p,axis,i){
+  const edges=ListProEdges.normalize(p.edges),sides=axis==='l'?['top','bottom']:['left','right'];
+  return '<span class="edge-checkboxes">'+sides.map((side,j)=>'<input type="checkbox" data-edge="'+side+'" aria-label="Кромка '+(axis==='l'?'по длине':'по ширине')+' детали '+(i+1)+', сторона '+(j+1)+'"'+(edges[side]?' checked':'')+'>').join('')+'</span>';
  }
  function refreshEdges(row,p){
   const counts=ListProEdges.counts(p.edges);
-  for(const axis of ['l','w']){const input=row.querySelector('[data-field="'+axis+'"]');input.className='edge-input edge-count-'+counts[axis];const b=row.querySelector('[data-edge-axis="'+axis+'"]');b.innerHTML=edgeButton(p,axis);b.setAttribute('aria-label','Кромка '+(axis==='l'?'по длине':'по ширине')+' детали '+p.id+': '+counts[axis]+' сторон. Нажмите для переключения');}
-  for(const side of ListProEdges.sides)row.querySelector('[data-edge="'+side+'"]').value=ListProEdges.normalize(p.edges)[side];
-  const ts=[...new Set(Object.values(ListProEdges.normalize(p.edges)).filter(Boolean))];
-  row.querySelector('[data-edge-thickness]').value=ts.length>1?'':edgeThickness(p);
+  for(const axis of ['l','w'])row.querySelector('[data-field="'+axis+'"]').className='edge-input edge-count-'+counts[axis];
+  for(const side of ListProEdges.sides)row.querySelector('[data-edge="'+side+'"]').checked=!!ListProEdges.normalize(p.edges)[side];
   syncEdges();if(result)draw();
  }
  function syncEdges(){
   if(result)result.parameters.pieces.forEach((p,i)=>p.edges=ListProEdges.normalize(project.pieces[i]?.edges));
  }
  function edgeSVG(rect,edges,turns=0){
-  return ListProEdges.segments(rect,edges,turns).map(e=>'<line class="edge-band" data-edge-source="'+e.source+'" data-edge-side="'+e.side+'" data-thickness="'+e.thickness+'" x1="'+e.points[0]+'" y1="'+e.points[1]+'" x2="'+e.points[2]+'" y2="'+e.points[3]+'" stroke="#243e55" stroke-width="2" stroke-linecap="round" stroke-dasharray="0 5" vector-effect="non-scaling-stroke" pointer-events="none"><title>Кромка '+fmt(e.thickness)+' мм · '+ListProEdges.labels[e.source]+'</title></line>').join('');
+  return ListProEdges.segments(rect,edges,turns).map(e=>'<line class="edge-band" data-edge-source="'+e.source+'" data-edge-side="'+e.side+'" x1="'+e.points[0]+'" y1="'+e.points[1]+'" x2="'+e.points[2]+'" y2="'+e.points[3]+'" stroke="#243e55" stroke-width="2" stroke-linecap="round" stroke-dasharray="0 5" vector-effect="non-scaling-stroke" pointer-events="none"><title>Кромка</title></line>').join('');
  }
  function fillForm(){
   updateCount();$('projectName').value=project.name;$('materialName').value=project.material;
   for(const k of ['sheetW','sheetH','kerf','trim','objective','partOrder'])$(k).value=project[k];
-  $('partsBody').innerHTML=project.pieces.map((p,i)=>'<tr data-row="'+i+'"><td class="row-number">'+(i+1)+'</td><td><input data-field="name" aria-label="Название '+(i+1)+'" value="'+esc(p.name||'Деталь '+(i+1))+'"></td>'+['l','w','q'].map(k=>'<td><input class="edge-input edge-count-'+(ListProEdges.counts(p.edges)[k]||0)+'" data-field="'+k+'" type="number" min="'+(k==='q'?1:.1)+'" step="'+(k==='q'?1:.1)+'" aria-label="'+({l:'Длина',w:'Ширина',q:'Количество'}[k])+' '+(i+1)+'" value="'+p[k]+'"></td>').join('')+'<td>'+edgeControls(p,i)+'</td><td><input type="checkbox" data-field="rotate" aria-label="Разрешить поворот '+(i+1)+'" '+(!p.grain?'checked':'')+'></td><td><button class="btn icon-btn" data-delete="'+i+'" aria-label="Удалить строку '+(i+1)+'">×</button></td></tr>').join('');
+  $('partsBody').innerHTML=project.pieces.map((p,i)=>'<tr data-row="'+i+'"><td class="row-number">'+(i+1)+'</td><td><input data-field="name" aria-label="Название '+(i+1)+'" value="'+esc(p.name||'Деталь '+(i+1))+'"></td>'+['l','w','q'].map(k=>'<td><div class="size-editor"><input class="edge-input edge-count-'+(ListProEdges.counts(p.edges)[k]||0)+'" data-field="'+k+'" type="number" min="'+(k==='q'?1:.1)+'" step="'+(k==='q'?1:.1)+'" aria-label="'+({l:'Длина',w:'Ширина',q:'Количество'}[k])+' '+(i+1)+'" value="'+p[k]+'">'+(k==='q'?'':edgeChecks(p,k,i))+'</div></td>').join('')+'<td><input type="checkbox" data-field="rotate" aria-label="Разрешить поворот '+(i+1)+'" '+(!p.grain?'checked':'')+'></td><td><button class="btn icon-btn" data-delete="'+i+'" aria-label="Удалить строку '+(i+1)+'">×</button></td></tr>').join('');
  }
  function request(action,payload){
   if(worker)worker.terminate();setBusy(true);$('progressText').textContent=action==='validate'?'Проверяем сохранённую карту':'Ищем допустимый раскрой';$('progressFill').style.width='5%';
@@ -130,7 +126,7 @@
   return [...counts].sort((a,b)=>a[0]-b[0]).map(([id,q])=>({...result.parameters.pieces.find(p=>p.id===id),q}));
  }
  function partsRows(rows,interactive=false){
-  return rows.map(a=>'<tr data-sheet-part="'+a.id+'"><td>'+(interactive?'<button class="part-link" data-highlight-part="'+a.id+'" aria-label="Показать детали №'+a.id+' на карте"><i style="background:'+colors[(a.id-1)%colors.length]+'"></i>'+a.id+'</button>':a.id)+'</td><td>'+sizeHTML(a.l,ListProEdges.counts(a.edges).l)+' × '+sizeHTML(a.w,ListProEdges.counts(a.edges).w)+(ListProEdges.describe(a.edges)?'<small class="edge-summary">'+ListProEdges.describe(a.edges)+'</small>':'')+'</td><td>'+a.q+'</td></tr>').join('');
+  return rows.map(a=>'<tr data-sheet-part="'+a.id+'"><td>'+(interactive?'<button class="part-link" data-highlight-part="'+a.id+'" aria-label="Показать детали №'+a.id+' на карте"><i style="background:'+colors[(a.id-1)%colors.length]+'"></i>'+a.id+'</button>':a.id)+'</td><td>'+sizeHTML(a.l,ListProEdges.counts(a.edges).l)+' × '+sizeHTML(a.w,ListProEdges.counts(a.edges).w)+'</td><td>'+a.q+'</td></tr>').join('');
  }
  function sheetList(index,rows=sheetRows(index)){
   return '<aside class="compact-parts" aria-label="Детали листа '+(index+1)+'"><strong>Детали</strong><table><thead><tr><th>№</th><th>Размер, мм</th><th>Шт.</th></tr></thead><tbody>'+partsRows(rows)+'</tbody></table></aside>';
@@ -171,14 +167,9 @@
  $('importOpen').onclick=()=>modal('importModal',true);
  $('calculate').onclick=()=>{if(busy)return;tab('map');request('solve',{input:project,options:{objective:project.objective,iterations:100,seed:42,examples:Object.values(EX)}});};
  $('cancel').onclick=()=>{worker?.terminate();worker=null;setBusy(false);toast('Расчёт остановлен.');if(!result)status('Расчёт остановлен. Нажмите «Рассчитать», чтобы повторить.');};
- $('partsBody').addEventListener('input',e=>{if(e.target.dataset.edge||e.target.hasAttribute('data-edge-thickness'))return;const tr=e.target.closest('[data-row]'),k=e.target.dataset.field;if(!tr||!k)return;const p=project.pieces[Number(tr.dataset.row)];if(k==='rotate')p.grain=!e.target.checked;else p[k]=k==='name'?e.target.value:Number(e.target.value);invalidate();updateCount();if(k==='l'||k==='w')refreshEdges(tr,p);});
- $('partsBody').addEventListener('change',e=>{const tr=e.target.closest('[data-row]');if(!tr||busy)return;const p=project.pieces[Number(tr.dataset.row)],side=e.target.dataset.edge;
-  if(side)p.edges=ListProEdges.normalize({...p.edges,[side]:Number(e.target.value)});
-  else if(e.target.hasAttribute('data-edge-thickness')){p.edgeThickness=Number(e.target.value);p.edges=ListProEdges.normalize(p.edges);for(const s of ListProEdges.sides)if(p.edges[s])p.edges[s]=p.edgeThickness;}
-  else return;refreshEdges(tr,p);
- });
- $('partsBody').onclick=e=>{const toggle=e.target.closest('[data-edge-axis]');if(toggle&&!busy){const tr=toggle.closest('[data-row]'),p=project.pieces[Number(tr.dataset.row)];p.edges=ListProEdges.cycle(p.edges,toggle.dataset.edgeAxis,edgeThickness(p));refreshEdges(tr,p);return;}
-  const b=e.target.closest('[data-delete]');if(!b)return;project.pieces.splice(Number(b.dataset.delete),1);project.pieces.forEach((p,i)=>p.id=i+1);invalidate();fillForm();};
+ $('partsBody').addEventListener('input',e=>{if(e.target.dataset.edge)return;const tr=e.target.closest('[data-row]'),k=e.target.dataset.field;if(!tr||!k)return;const p=project.pieces[Number(tr.dataset.row)];if(k==='rotate')p.grain=!e.target.checked;else p[k]=k==='name'?e.target.value:Number(e.target.value);invalidate();updateCount();if(k==='l'||k==='w')refreshEdges(tr,p);});
+ $('partsBody').addEventListener('change',e=>{const tr=e.target.closest('[data-row]'),side=e.target.dataset.edge;if(!tr||!side||busy)return;const p=project.pieces[Number(tr.dataset.row)];p.edges=ListProEdges.normalize(p.edges);p.edges[side]=e.target.checked?(p.edges[side]||1):0;refreshEdges(tr,p);});
+ $('partsBody').onclick=e=>{const b=e.target.closest('[data-delete]');if(!b)return;project.pieces.splice(Number(b.dataset.delete),1);project.pieces.forEach((p,i)=>p.id=i+1);invalidate();fillForm();};
  $('addRow').onclick=()=>{if(project.pieces.length>=500){toast('Не более 500 строк.');return;}project.pieces.push({id:project.pieces.length+1,name:'',l:500,w:300,q:1,grain:false});invalidate();fillForm();};
  $('allowAll').onclick=()=>{project.pieces.forEach(p=>p.grain=false);invalidate();fillForm();};
  for(const k of ['sheetW','sheetH','kerf','trim','objective','partOrder'])$(k).onchange=()=>{project[k]=['objective','partOrder'].includes(k)?$(k).value:Number($(k).value);invalidate();};
@@ -190,7 +181,7 @@
    if(f.size>5e6)throw Error('Файл больше 5 МБ.');const text=await f.text();
    if(f.name.toLowerCase().endsWith('.json')){const o=JSON.parse(text),p=o.project||o.parameters||o;
     if(!Array.isArray(p.pieces)||p.pieces.length>500)throw Error('В JSON нужен список pieces (до 500 строк).');
-    const pieces=p.pieces.map((a,i)=>({id:i+1,name:String(a.name||''),l:Number(a.l),w:Number(a.w),q:Number(a.q),grain:a.grain!==false,edges:ListProEdges.normalize(a.edges),edgeThickness:ListProEdges.thicknesses.includes(a.edgeThickness)&&a.edgeThickness>0?a.edgeThickness:undefined}));
+    const pieces=p.pieces.map((a,i)=>({id:i+1,name:String(a.name||''),l:Number(a.l),w:Number(a.w),q:Number(a.q),grain:a.grain!==false,edges:ListProEdges.normalize(a.edges)}));
     if(pieces.some(a=>!Number.isFinite(a.l)||a.l<=0||!Number.isFinite(a.w)||a.w<=0||!Number.isSafeInteger(a.q)||a.q<=0)||pieces.reduce((s,a)=>s+a.q,0)>2500)throw Error('Некорректные размеры или количества.');
     for(const k of ['sheetW','sheetH','kerf','trim'])if(p[k]!==undefined){if(!Number.isFinite(Number(p[k])))throw Error('Некорректный параметр '+k);}
     for(const k of ['sheetW','sheetH','kerf','trim'])if(p[k]!==undefined)project[k]=Number(p[k]);
@@ -203,12 +194,12 @@
  $('export').onclick=()=>{if(result)modal('exportModal',true);};
  $('downloadSvg').onclick=()=>{if(result)download('listpro-sheet-'+(sheet+1)+'.svg',mapSVG(sheet),'image/svg+xml;charset=utf-8');};
  $('downloadJson').onclick=()=>{if(result)json('listpro-result.json',result);};
- $('downloadCsv').onclick=()=>{if(result)csv('listpro-parts.csv',[['Лист','Деталь','Экземпляр','X','Y','Ширина','Высота','Поворот','Кромка верх, мм','Кромка право, мм','Кромка низ, мм','Кромка лево, мм'],...result.sheets.flatMap((s,i)=>s.parts.map(a=>[i+1,a.id,a.instance,a.x,a.y,a.w,a.h,a.rotated?'Да':'Нет',...ListProEdges.sides.map(side=>ListProEdges.normalize(result.parameters.pieces.find(p=>p.id===a.id)?.edges)[side])]))]);};
+ $('downloadCsv').onclick=()=>{if(result)csv('listpro-parts.csv',[['Лист','Деталь','Экземпляр','X','Y','Ширина','Высота','Поворот','Кромка по длине, сторон','Кромка по ширине, сторон'],...result.sheets.flatMap((s,i)=>s.parts.map(a=>[i+1,a.id,a.instance,a.x,a.y,a.w,a.h,a.rotated?'Да':'Нет',...['l','w'].map(axis=>ListProEdges.counts(result.parameters.pieces.find(p=>p.id===a.id)?.edges)[axis])]))]);};
  $('exportOps').onclick=()=>{if(result)csv('listpro-operations.csv',[['Шаг','Лист','Операция','Заготовка','Ширина','Высота','Ось','Позиция'],...result.plan.operations.map(o=>[o.step,sheetOf(o)+1,typeName(o),o.inputBlankId||o.blankId,o.w,o.h,o.axis,o.type==='cut'?(o.axis==='V'?o.start.x:o.start.y):''])]);};
  function preparePrint(){
   if(!result){$('printPages').innerHTML='';return;}
   $('printPages').innerHTML=result.sheets.flatMap((s,i)=>{
-   const rows=sheetRows(i),pages=[],limit=rows.some(a=>ListProEdges.describe(a.edges))?12:30;
+   const rows=sheetRows(i),pages=[],limit=30;
    for(let start=0;start<rows.length;start+=limit){
     pages.push('<section class="print-page"><h2>'+esc(project.name)+' · лист '+(i+1)+(rows.length>limit?' · список '+(start/limit+1)+' из '+Math.ceil(rows.length/limit):'')+'</h2><p>'+esc(project.material)+' · '+fmt(result.parameters.sheetW)+' × '+fmt(result.parameters.sheetH)+' мм · '+s.parts.length+' деталей</p><div class="print-sheet-body">'+mapSVG(i)+sheetList(i,rows.slice(start,start+limit))+'</div><p>Пропил '+result.parameters.kerf+' мм · обрезка '+result.parameters.trim+' мм. Точки — кромка; 1/2 черты под размером — 1/2 стороны. Размеры заготовок без вычета кромки. PSS проверен. Совместимость со станком не подтверждена.</p></section>');
    }
