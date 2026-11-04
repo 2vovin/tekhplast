@@ -1,0 +1,45 @@
+{
+  "families": 1,
+  "attempts": 12,
+  "accepted": 10,
+  "rejected": 2,
+  "axes": [
+    {
+      "iterations": 100,
+      "seed": 42,
+      "axis": "H",
+      "rectangles": 170818,
+      "dpCalls": 27355,
+      "dpStates": 214497,
+      "prunedDP": 0,
+      "rejectedBands": 12297,
+      "fallbackBands": 26,
+      "accepted": 3,
+      "rejected": 0,
+      "distribution": {
+        "6": 93,
+        "7": 7
+      },
+      "elapsedMs": 5192
+    },
+    {
+      "iterations": 100,
+      "seed": 42,
+      "axis": "V",
+      "rectangles": 189808,
+      "dpCalls": 28804,
+      "dpStates": 205979,
+      "prunedDP": 0,
+      "rejectedBands": 18983,
+      "fallbackBands": 65,
+      "accepted": 7,
+      "rejected": 2,
+      "distribution": {
+        "5": 1,
+        "6": 92,
+        "7": 7
+      },
+      "elapsedMs": 5386
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "metrics": {
+    "sheets": 8,
+    "parts": 128,
+    "cuts": 230,
+    "turns": 63,
+    "feeds": 222,
+    "cutLength": 213667,
+    "stages": 4,
+    "operations": 531,
+    "largestWaste": 472410,
+    "wasteArea": 1827407.5,
+    "edgeFinishingCuts": 1,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 3
+  },
+  "profile": {
+    "id": "deferred-held-strip-v1",
+    "retainedSide": "HIGH_MATERIAL",
+    "terminalPromotionAllowed": false,
+    "maxTurnsPerBlank": 1,
+    "maxSheetTurns": 0,
+    "initialCutAxes": [
+      "H",
+      "V"
+    ],
+    "allowTerminalBladeOverhang": true,
+    "realMachineFeasibility": "unknown"
+  },
+  "geometryAndAbstractStagedValid": true,
+  "realMachineFeasibility": "unknown"
+}

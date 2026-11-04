@@ -1,0 +1,167 @@
+{
+  "estimate": {
+    "partArea": 36840847.5,
+    "usableArea": 4941300,
+    "minimumSheets": 8,
+    "foundSheets": 9,
+    "gap": 1,
+    "target": 8,
+    "basis": "area-only; kerf, orientation and staged feasibility still require replay"
+  },
+  "metrics": {
+    "sheets": 9,
+    "parts": 128,
+    "cuts": 225,
+    "turns": 57,
+    "feeds": 216,
+    "cutLength": 218450,
+    "stages": 5,
+    "operations": 516,
+    "largestWaste": 2725860,
+    "wasteArea": 6749593.5,
+    "edgeFinishingCuts": 0,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 4
+  },
+  "trials": [
+    {
+      "attempts": 19,
+      "accepted": 16,
+      "rejected": 3,
+      "axes": [
+        {
+          "iterations": 100,
+          "seed": 42,
+          "axis": "H",
+          "rectangles": 248351,
+          "dpCalls": 39144,
+          "dpStates": 246247,
+          "prunedDP": 0,
+          "rejectedBands": 23395,
+          "fallbackBands": 75,
+          "accepted": 4,
+          "rejected": 0,
+          "distribution": {
+            "9": 8,
+            "10": 79,
+            "11": 13
+          },
+          "elapsedMs": 7936
+        },
+        {
+          "iterations": 100,
+          "seed": 42,
+          "axis": "V",
+          "rectangles": 229636,
+          "dpCalls": 34025,
+          "dpStates": 258253,
+          "prunedDP": 0,
+          "rejectedBands": 24460,
+          "fallbackBands": 96,
+          "accepted": 12,
+          "rejected": 3,
+          "distribution": {
+            "9": 81,
+            "10": 18,
+            "11": 1
+          },
+          "elapsedMs": 7673
+        }
+      ]
+    },
+    {
+      "attempts": 10,
+      "accepted": 9,
+      "rejected": 1,
+      "axes": [
+        {
+          "iterations": 100,
+          "seed": 2026,
+          "axis": "H",
+          "rectangles": 248000,
+          "dpCalls": 38142,
+          "dpStates": 214900,
+          "prunedDP": 0,
+          "rejectedBands": 24119,
+          "fallbackBands": 86,
+          "accepted": 3,
+          "rejected": 1,
+          "distribution": {
+            "9": 8,
+            "10": 83,
+            "11": 9
+          },
+          "elapsedMs": 7482
+        },
+        {
+          "iterations": 100,
+          "seed": 2026,
+          "axis": "V",
+          "rectangles": 231529,
+          "dpCalls": 35109,
+          "dpStates": 266084,
+          "prunedDP": 0,
+          "rejectedBands": 24723,
+          "fallbackBands": 118,
+          "accepted": 6,
+          "rejected": 0,
+          "distribution": {
+            "9": 73,
+            "10": 19,
+            "11": 5,
+            "12": 3
+          },
+          "elapsedMs": 7437
+        }
+      ]
+    },
+    {
+      "attempts": 16,
+      "accepted": 12,
+      "rejected": 4,
+      "axes": [
+        {
+          "iterations": 100,
+          "seed": 73,
+          "axis": "H",
+          "rectangles": 249217,
+          "dpCalls": 39021,
+          "dpStates": 263471,
+          "prunedDP": 0,
+          "rejectedBands": 24189,
+          "fallbackBands": 84,
+          "accepted": 4,
+          "rejected": 3,
+          "distribution": {
+            "9": 7,
+            "10": 85,
+            "11": 8
+          },
+          "elapsedMs": 7630
+        },
+        {
+          "iterations": 100,
+          "seed": 73,
+          "axis": "V",
+          "rectangles": 233827,
+          "dpCalls": 35084,
+          "dpStates": 263881,
+          "prunedDP": 0,
+          "rejectedBands": 24493,
+          "fallbackBands": 84,
+          "accepted": 8,
+          "rejected": 1,
+          "distribution": {
+            "9": 75,
+            "10": 23,
+            "11": 1,
+            "12": 1
+          },
+          "elapsedMs": 7729
+        }
+      ]
+    }
+  ],
+  "elapsedMs": 45892
+}
