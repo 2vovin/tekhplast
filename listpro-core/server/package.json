@@ -1,0 +1,1 @@
+{"name":"listpro-server","version":"0.1.0","private":true,"engines":{"node":">=22"},"scripts":{"build":"node scripts/build.cjs","start":"node main.cjs","test":"node --test tests/*.test.cjs"}}
