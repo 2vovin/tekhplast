@@ -1,0 +1,476 @@
+{
+  "inventory": {
+    "inputDimensionStatus": "not inferred: exact printed dimensions must be compared with the order",
+    "dimensionsMatch": true,
+    "referencedPartArea": 70581440,
+    "referenceAreaDifference": 0,
+    "changedInstances": 0,
+    "allReferenceDimensionsAtLeastOriginal": true,
+    "inventoryMatches": true,
+    "errors": [],
+    "parts": 229,
+    "positions": 100,
+    "sheets": 15,
+    "partArea": 70581440,
+    "usableAreaPerSheet": 4941300,
+    "areaLowerBound": 15,
+    "sheetProfiles": [
+      {
+        "sheet": 1,
+        "firstAxis": "V",
+        "parts": 19
+      },
+      {
+        "sheet": 2,
+        "firstAxis": "V",
+        "parts": 18
+      },
+      {
+        "sheet": 3,
+        "firstAxis": "V",
+        "parts": 23
+      },
+      {
+        "sheet": 4,
+        "firstAxis": "V",
+        "parts": 13
+      },
+      {
+        "sheet": 5,
+        "firstAxis": "V",
+        "parts": 15
+      },
+      {
+        "sheet": 6,
+        "firstAxis": "V",
+        "parts": 22
+      },
+      {
+        "sheet": 7,
+        "firstAxis": "V",
+        "parts": 11
+      },
+      {
+        "sheet": 8,
+        "firstAxis": "H",
+        "parts": 11
+      },
+      {
+        "sheet": 9,
+        "firstAxis": "V",
+        "parts": 15
+      },
+      {
+        "sheet": 10,
+        "firstAxis": "V",
+        "parts": 16
+      },
+      {
+        "sheet": 11,
+        "firstAxis": "V",
+        "parts": 12
+      },
+      {
+        "sheet": 12,
+        "firstAxis": "V",
+        "parts": 6
+      },
+      {
+        "sheet": 13,
+        "firstAxis": "V",
+        "parts": 12
+      },
+      {
+        "sheet": 14,
+        "firstAxis": "H",
+        "parts": 17
+      },
+      {
+        "sheet": 15,
+        "firstAxis": "H",
+        "parts": 19
+      }
+    ],
+    "printedSizeDifferences": [],
+    "printedCutLengthM": 428.99,
+    "exactGeometryVerified": false,
+    "physicalReplayVerified": false,
+    "realMachineFeasibility": "unknown",
+    "limitations": [
+      "PDF coordinates describe the printed drawing, not an exact cutting plan.",
+      "Printed fractional dimensions and effective sheet size need confirmation.",
+      "Strip topology has no validated cut coordinates, clamp constraints or numbered physical operations."
+    ]
+  },
+  "settingsMatch": true,
+  "reconstructedGeometry": {
+    "valid": true,
+    "parts": 229
+  },
+  "sourceCoordinatesExact": false,
+  "sourceSequenceKnown": false,
+  "targetPSSModelValid": false,
+  "realMachineFeasibility": "unknown",
+  "sheets": [
+    {
+      "sourceSheet": 1,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 25,
+      "targetPSSModelValid": true,
+      "metrics": {
+        "sheets": 1,
+        "parts": 19,
+        "cuts": 33,
+        "turns": 10,
+        "feeds": 32,
+        "cutLength": 23280,
+        "stages": 4,
+        "operations": 77,
+        "largestWaste": 27150,
+        "wasteArea": 43375,
+        "edgeFinishingCuts": 2,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "sourceSheet": 2,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 5,
+      "targetPSSModelValid": false,
+      "reason": "Retained group cannot change direction"
+    },
+    {
+      "sourceSheet": 3,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 10,
+      "targetPSSModelValid": true,
+      "metrics": {
+        "sheets": 1,
+        "parts": 23,
+        "cuts": 42,
+        "turns": 14,
+        "feeds": 41,
+        "cutLength": 26455,
+        "stages": 4,
+        "operations": 99,
+        "largestWaste": 35750,
+        "wasteArea": 51120,
+        "edgeFinishingCuts": 3,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "sourceSheet": 4,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 10,
+      "targetPSSModelValid": true,
+      "metrics": {
+        "sheets": 1,
+        "parts": 13,
+        "cuts": 28,
+        "turns": 12,
+        "feeds": 27,
+        "cutLength": 22830,
+        "stages": 4,
+        "operations": 69,
+        "largestWaste": 8800,
+        "wasteArea": 55690,
+        "edgeFinishingCuts": 0,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "sourceSheet": 5,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 5,
+      "targetPSSModelValid": false,
+      "reason": "Deferred replay: artificial primary tail"
+    },
+    {
+      "sourceSheet": 6,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 15,
+      "targetPSSModelValid": true,
+      "metrics": {
+        "sheets": 1,
+        "parts": 22,
+        "cuts": 43,
+        "turns": 17,
+        "feeds": 42,
+        "cutLength": 26980,
+        "stages": 5,
+        "operations": 104,
+        "largestWaste": 13800,
+        "wasteArea": 42850,
+        "edgeFinishingCuts": 7,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 4
+      }
+    },
+    {
+      "sourceSheet": 7,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 5,
+      "targetPSSModelValid": false,
+      "reason": "Deferred replay: artificial primary tail"
+    },
+    {
+      "sourceSheet": 8,
+      "copy": 1,
+      "firstAxis": "H",
+      "terminalPrimaryTail": 15,
+      "targetPSSModelValid": true,
+      "metrics": {
+        "sheets": 1,
+        "parts": 11,
+        "cuts": 22,
+        "turns": 8,
+        "feeds": 21,
+        "cutLength": 21265,
+        "stages": 4,
+        "operations": 53,
+        "largestWaste": 36000,
+        "wasteArea": 99075,
+        "edgeFinishingCuts": 1,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "sourceSheet": 9,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 5,
+      "targetPSSModelValid": false,
+      "reason": "Deferred replay: artificial primary tail"
+    },
+    {
+      "sourceSheet": 10,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 5,
+      "targetPSSModelValid": false,
+      "reason": "Deferred replay: artificial primary tail"
+    },
+    {
+      "sourceSheet": 11,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 5,
+      "targetPSSModelValid": false,
+      "reason": "Deferred replay: artificial primary tail"
+    },
+    {
+      "sourceSheet": 12,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 20,
+      "targetPSSModelValid": true,
+      "metrics": {
+        "sheets": 1,
+        "parts": 6,
+        "cuts": 14,
+        "turns": 5,
+        "feeds": 13,
+        "cutLength": 17870,
+        "stages": 3,
+        "operations": 34,
+        "largestWaste": 132000,
+        "wasteArea": 178550,
+        "edgeFinishingCuts": 0,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      }
+    },
+    {
+      "sourceSheet": 13,
+      "copy": 1,
+      "firstAxis": "V",
+      "terminalPrimaryTail": 5,
+      "targetPSSModelValid": false,
+      "reason": "Deferred replay: artificial primary tail"
+    },
+    {
+      "sourceSheet": 14,
+      "copy": 1,
+      "firstAxis": "H",
+      "terminalPrimaryTail": 5,
+      "targetPSSModelValid": false,
+      "reason": "Deferred replay: artificial primary tail"
+    },
+    {
+      "sourceSheet": 15,
+      "copy": 1,
+      "firstAxis": "H",
+      "terminalPrimaryTail": 15,
+      "targetPSSModelValid": true,
+      "metrics": {
+        "sheets": 1,
+        "parts": 19,
+        "cuts": 43,
+        "turns": 17,
+        "feeds": 42,
+        "cutLength": 34295,
+        "stages": 3,
+        "operations": 104,
+        "largestWaste": 121000,
+        "wasteArea": 693950,
+        "edgeFinishingCuts": 0,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      }
+    }
+  ],
+  "admitted": [
+    {
+      "sourceSheet": 1,
+      "metrics": {
+        "sheets": 1,
+        "parts": 19,
+        "cuts": 33,
+        "turns": 10,
+        "feeds": 32,
+        "cutLength": 23280,
+        "stages": 4,
+        "operations": 77,
+        "largestWaste": 27150,
+        "wasteArea": 43375,
+        "edgeFinishingCuts": 2,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "sourceSheet": 3,
+      "metrics": {
+        "sheets": 1,
+        "parts": 23,
+        "cuts": 42,
+        "turns": 14,
+        "feeds": 41,
+        "cutLength": 26455,
+        "stages": 4,
+        "operations": 99,
+        "largestWaste": 35750,
+        "wasteArea": 51120,
+        "edgeFinishingCuts": 3,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "sourceSheet": 4,
+      "metrics": {
+        "sheets": 1,
+        "parts": 13,
+        "cuts": 28,
+        "turns": 12,
+        "feeds": 27,
+        "cutLength": 22830,
+        "stages": 4,
+        "operations": 69,
+        "largestWaste": 8800,
+        "wasteArea": 55690,
+        "edgeFinishingCuts": 0,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "sourceSheet": 6,
+      "metrics": {
+        "sheets": 1,
+        "parts": 22,
+        "cuts": 43,
+        "turns": 17,
+        "feeds": 42,
+        "cutLength": 26980,
+        "stages": 5,
+        "operations": 104,
+        "largestWaste": 13800,
+        "wasteArea": 42850,
+        "edgeFinishingCuts": 7,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 4
+      }
+    },
+    {
+      "sourceSheet": 8,
+      "metrics": {
+        "sheets": 1,
+        "parts": 11,
+        "cuts": 22,
+        "turns": 8,
+        "feeds": 21,
+        "cutLength": 21265,
+        "stages": 4,
+        "operations": 53,
+        "largestWaste": 36000,
+        "wasteArea": 99075,
+        "edgeFinishingCuts": 1,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "sourceSheet": 12,
+      "metrics": {
+        "sheets": 1,
+        "parts": 6,
+        "cuts": 14,
+        "turns": 5,
+        "feeds": 13,
+        "cutLength": 17870,
+        "stages": 3,
+        "operations": 34,
+        "largestWaste": 132000,
+        "wasteArea": 178550,
+        "edgeFinishingCuts": 0,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      }
+    },
+    {
+      "sourceSheet": 15,
+      "metrics": {
+        "sheets": 1,
+        "parts": 19,
+        "cuts": 43,
+        "turns": 17,
+        "feeds": 42,
+        "cutLength": 34295,
+        "stages": 3,
+        "operations": 104,
+        "largestWaste": 121000,
+        "wasteArea": 693950,
+        "edgeFinishingCuts": 0,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      }
+    }
+  ]
+}

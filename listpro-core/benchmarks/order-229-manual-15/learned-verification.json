@@ -1,0 +1,34 @@
+{
+  "elapsedMs": 191085,
+  "iterations": 10,
+  "seed": 42,
+  "experienceInfo": {
+    "patterns": 7,
+    "solves": 7,
+    "matched": 7,
+    "rejected": 0,
+    "used": true,
+    "nearMatches": 2,
+    "recipeUsed": false,
+    "booksMatched": 7
+  },
+  "geometryValid": true,
+  "targetPSSModelValid": true,
+  "realMachineFeasibility": "unknown",
+  "metrics": {
+    "sheets": 16,
+    "parts": 229,
+    "cuts": 471,
+    "turns": 175,
+    "feeds": 455,
+    "cutLength": 380420,
+    "stages": 5,
+    "operations": 1133,
+    "largestWaste": 3402800,
+    "wasteArea": 7004810,
+    "edgeFinishingCuts": 21,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 4
+  }
+}
