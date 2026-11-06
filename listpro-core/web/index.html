@@ -238,6 +238,292 @@ module.exports={searchAdaptive,repackAdaptive};
 
 
 },
+"src/completed-rip-layout.js":function(module,exports,require){
+'use strict';
+// Separate model: edge preparation, parallel rip, explicit last-blank release.
+const {dimensions}=require('./deferred-strip-patterns');
+const {collect}=require('./pss-waste-local');
+const {compareParts}=require('./ordered-strip-layout');
+function buildCompletedLayout(p,patterns,{strategy='original',seed=42}={}){
+ const k=p.kerf,counters=new Map();let rand=seed>>>0;
+ const random=()=>((rand=(Math.imul(rand,1664525)+1013904223)>>>0)/4294967296);
+ const waste=rect=>({kind:'waste',rect:{...rect}});
+ function split(r,axis,size,first,second,phase='layout',allowFinish=false){
+  const v=axis==='V',span=v?r.w:r.h;if(size<0||(size===0&&phase!=='leading-trim')||size>=span)throw Error('Invalid separation span');
+  const used=Math.min(k,span-size),edgeFinish=span-size<=k&&phase!=='trailing-trim';
+  if(edgeFinish&&!allowFinish)throw Error('A retained remainder cannot be promoted to a strip');
+  const pos=(v?r.x:r.y)+size,a=v?{...r,w:size}:{...r,h:size},b=v?{...r,x:pos+used,w:span-size-used}:{...r,y:pos+used,h:span-size-used};
+  const node={kind:'cut',rect:{...r},axis,pos,kerf:k,kerfUsed:used,edgeFinish,phase,first:first(a),second:second(b)};
+  return node;
+ }
+ function leaf(n,r,held){
+  if(r.w===n.w&&r.h===n.h){const instance=n.part.instance??((counters.get(n.part.id)||0)+1);counters.set(n.part.id,Math.max(counters.get(n.part.id)||0,instance));return{kind:'part',rect:{...r},part:{...n.part,instance}};}
+  const bothEdge=r.w>n.w&&r.h>n.h&&r.w-n.w<=k&&r.h-n.h<=k;
+  const axis=bothEdge&&held?held:r.w!==n.w&&(r.w-n.w>k||r.h===n.h||r.h-n.h<=k)?'V':'H';
+  return split(r,axis,axis==='V'?n.w:n.h,rr=>leaf(n,rr,null),waste,'layout',true);
+ }
+ function place(n,r,held=null){
+  if(n.w>r.w||n.h>r.h)throw Error('Pattern exceeds blank');if(n.part)return leaf(n,r,held);
+  const axis=n.axis,dim=axis==='V'?'w':'h',cross=axis==='V'?'h':'w';
+
+  const kids=n.children.slice();if(strategy==='area-desc')kids.sort(compareParts);
+  if(strategy==='size-desc')kids.sort((a,b)=>b[dim]-a[dim]);
+  if(strategy==='size-asc')kids.sort((a,b)=>a[dim]-b[dim]);
+  if(strategy==='shuffle')for(let i=kids.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[kids[i],kids[j]]=[kids[j],kids[i]];}
+  // The final workpiece can continue only after an explicit, replayed END_RIP.
+
+  function line(i,rr){
+   if(i===kids.length)return waste(rr);const c=kids[i],size=c[dim];
+   if(i===kids.length-1&&rr[dim]-size<=k)return place(c,rr,axis);
+   return split(rr,axis,size,a=>place(c,a,axis),b=>line(i+1,b),'layout',!!c.part&&c[cross]===rr[cross]&&i===kids.length-1);
+  }return line(0,r);
+ }
+ function trimEnds(r,axis,next){
+  if(!p.trim)return next(r);
+  const v=axis==='V',far=(v?p.sheetW:p.sheetH)-p.trim;
+  return split(r,axis,p.trim-k,waste,a=>split(a,axis,far-(v?a.x:a.y),b=>next(b),waste,'trailing-trim'),'leading-trim');
+ }
+ const sheets=patterns.map(pattern=>{
+  let n=dimensions(pattern,p.kerf);if(n.part)n={axis:'H',children:[n],w:n.w,h:n.h};
+  const A=n.axis,P=A==='H'?'V':'H',dim=A==='H'?'h':'w',primaryStrips=[];
+  if(n.w>p.sheetW-2*p.trim||n.h>p.sheetH-2*p.trim)throw Error('Pattern exceeds usable sheet');
+  const children=n.children.slice();if(strategy==='size-desc')children.sort((a,b)=>b[dim]-a[dim]);if(strategy==='size-asc')children.sort((a,b)=>a[dim]-b[dim]);
+  function series(i,r,path){
+   if(i===children.length)return waste(r);const c=children[i];
+   function band(rr){primaryStrips.push({index:i+1,rect:{...rr},path});return trimEnds(rr,P,a=>place(c,a,P));}
+   if(i===children.length-1&&r[dim]-c[dim]<=k)return band(r);
+   return split(r,A,c[dim],band,b=>series(i+1,b,path+'/1'),'primary');
+  }
+  const rect={x:0,y:0,w:p.sheetW,h:p.sheetH},tree=trimEnds(rect,A,r=>series(0,r,'r'));
+  return {axis:A,tree,primaryStrips};
+ });
+ const layout=collect({model:'completed-rip-v1',sheets,method:'recursive-strips-with-explicit-series-completion',optimality:'not proven'});
+ // Remnants exposed in the UI are useful intersections, not raw edge trimmings.
+ for(const sh of layout.sheets)sh.remnants=sh.remnants.map(a=>{const x=Math.max(p.trim,a.x),y=Math.max(p.trim,a.y),w=Math.max(0,Math.min(p.sheetW-p.trim,a.x+a.w)-x),h=Math.max(0,Math.min(p.sheetH-p.trim,a.y+a.h)-y);return{x,y,w,h,area:w*h};}).filter(a=>a.area>0);
+ return layout;
+}
+module.exports={buildCompletedLayout};
+
+},
+"src/completed-rip-plan.js":function(module,exports,require){
+'use strict';
+// Compiler only. The independent replay imports neither this file nor the search.
+function makeCompletedPlan(p,layout){
+ const operations=[],outputs=[],primaryStrips=[],groups=[],states=new Map();let active=null,cutIndex=0;
+ const add=o=>operations.push({step:operations.length+1,...o}),dims=b=>b.q%2?{w:b.rect.h,h:b.rect.w}:{w:b.rect.w,h:b.rect.h};
+ function feed(id){const b=states.get(id);if(active===id)return;add({type:'feed',inputBlankId:id,stage:b.stage,machineOrientation:b.q*90,...dims(b),materialRect:{...b.rect},feedMode:b.held?'advance-in-place':'load-detached'});active=id;}
+ function rotate(id){feed(id);const b=states.get(id);if(b.held||b.turnCount>=1)throw Error('Illegal rotation');const beforeSize=dims(b),from=b.q;b.q=(b.q+1)%4;b.turnCount++;b.ancestry++;
+  add({type:'rotate',inputBlankId:id,outputBlankIds:[id],stage:b.stage,angle:90,fromOrientation:from*90,toOrientation:b.q*90,beforeSize,afterSize:dims(b),...dims(b),turnCountBefore:0,turnCountAfter:1,materialRect:{...b.rect}});
+ }
+ function finish(id,n){const b=states.get(id);if(!b)throw Error('Missing output');outputs.push({blankId:id,parentBlankId:b.parent,kind:n.kind==='part'?'part':'waste',materialRect:{...b.rect},machineOrientation:b.q*90,turnCount:b.turnCount,...(n.kind==='part'?{part:{...n.part}}:{})});}
+ function cut(id,n){
+  feed(id);const b=states.get(id);let axis=b.q%2?(n.axis==='H'?'V':'H'):n.axis;
+  if(axis!==b.machineAxis){rotate(id);axis=b.q%2?(n.axis==='H'?'V':'H'):n.axis;}
+  const r=b.rect,v=n.axis==='V',distance=n.pos-(v?r.x:r.y),span=v?r.w:r.h,q=b.q;
+  if(b.held&&b.lock!==n.axis)throw Error('Retained direction changed');
+  const reverse=v?(q===2||q===3):(q===1||q===2),pos=reverse?span-distance-p.kerf:distance,d=dims(b),mv=axis==='V';
+  const ids=[id+'/0',id+'/1'],edge=n.edgeFinish===true,materialIds=edge?[ids[0]]:ids,machineIds=reverse&&!edge?ids.slice().reverse():materialIds;
+  const stage=b.stage+(n.axis===b.lastAxis?0:1);
+  add({type:'cut',cutIndex:++cutIndex,inputBlankId:id,outputBlankIds:machineIds,axis,start:mv?{x:pos,y:0}:{x:0,y:pos},end:mv?{x:pos,y:d.h}:{x:d.w,y:pos},kerf:p.kerf,kerfUsed:n.kerfUsed,edgeFinish:edge,finishesPart:n.first.kind==='part',phase:n.phase,geometryCutNumber:n.number,materialAxis:n.axis,materialPos:n.pos,materialRect:{...r},machineOrientation:q*90,...d,stage,turnCount:b.turnCount,outputTurnCounts:edge?[b.turnCount]:[0,0]});
+  states.delete(id);
+  const lead=n.phase==='leading-trim'||n.phase==='trailing-trim';
+  for(let i=0;i<materialIds.length;i++){
+   const held=edge||i===1||lead,rect=i===0?n.first.rect:n.second.rect;
+   states.set(materialIds[i],{rect:{...rect},q,turnCount:edge?b.turnCount:0,ancestry:b.ancestry,parent:id,held,lock:held?n.axis:null,stage,lastAxis:n.axis,machineAxis:b.machineAxis,primary:lead?b.primary:b.primary&&i===1});
+  }active=null;return materialIds;
+ }
+ function hasParts(n){return n.kind==='part'||n.kind==='cut'&&(hasParts(n.first)||hasParts(n.second));}
+ function walk(node,id){
+  while(node.kind==='cut'&&['leading-trim','trailing-trim'].includes(node.phase)){
+   const ids=cut(id,node),leading=node.phase==='leading-trim';finish(ids[leading?0:1],leading?node.first:node.second);id=ids[leading?1:0];node=leading?node.second:node.first;
+  }
+  if(node.kind!=='cut'){finish(id,node);return;}
+  const primary=!!states.get(id).primary,group={id:'rip-'+groups.length,rootBlankId:id,axis:node.axis,primary,cutSteps:[],children:[]},pending=[];groups.push(group);
+  add({type:'startRip',inputBlankId:id,seriesId:group.id,materialAxis:node.axis,primary,materialRect:{...states.get(id).rect},machineOrientation:states.get(id).q*90,...dims(states.get(id))});
+  let n=node,current=id;
+  while(n.kind==='cut'&&n.axis===group.axis&&!['leading-trim','trailing-trim'].includes(n.phase)){
+   const ids=cut(current,n);group.cutSteps.push(operations.length);pending.push([n.first,ids[0]]);
+   if(n.edgeFinish){n=null;current=null;break;}n=n.second;current=ids[1];
+  }
+  if(n)pending.push([n,current]);group.children=pending.map(a=>a[1]);
+  const lastId=current||pending.at(-1)[1],last=states.get(lastId);
+  add({type:'endRip',seriesId:group.id,inputBlankId:lastId,remainderBlankId:current,outputBlankIds:group.children,materialAxis:group.axis,primary,materialRect:{...last.rect},machineOrientation:last.q*90,...dims(last),turnCountBefore:last.turnCount,turnCountAfter:last.turnCount});
+  if(current){const b=states.get(current);b.held=false;b.lock=null;b.primary=false;}
+  else if(pending.length){const b=states.get(pending.at(-1)[1]);b.held=false;b.lock=null;}
+  if(primary){for(const [child,bid]of pending){states.get(bid).primary=false;if(hasParts(child))primaryStrips.push({sheet:Number(id.split('/')[0].slice(1)),stripIndex:primaryStrips.filter(s=>s.sheet===Number(id.split('/')[0].slice(1))).length+1,blankId:bid,materialRect:{...child.rect},nominalSpan:group.axis==='H'?child.rect.h:child.rect.w});}}
+  active=null;for(const [child,bid]of pending)walk(child,bid);
+ }
+ layout.sheets.forEach((sh,si)=>{
+  const id='s'+si+'/raw',A=sh.axis;
+  states.set(id,{rect:{x:0,y:0,w:p.sheetW,h:p.sheetH},q:0,turnCount:0,ancestry:0,parent:null,held:true,lock:A,stage:1,lastAxis:A,machineAxis:A,primary:true});
+  add({type:'load',sheet:si,blankId:id,w:p.sheetW,h:p.sheetH,machineOrientation:0,initialCutAxis:A,stage:1});active=id;walk(sh.tree,id);
+ });
+ return{version:1,model:'completed-rip-v1',operations,outputs,primaryStrips,groups};
+}
+module.exports={makeCompletedPlan};
+
+},
+"src/completed-rip-validator.js":function(module,exports,require){
+'use strict';
+// Independent replay: no search, compiler, pattern or legacy geometry imports.
+// Coordinates in the material frame are reconstructed from the actual blade stroke.
+function validateCompleted(p,layout,plan,profile){
+ const ok=(yes,message)=>{if(!yes)throw Error('Completed-rip replay: '+message);};
+ const near=(a,b)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<1e-7;
+ const same=(a,b)=>a&&b&&['x','y','w','h'].every(k=>near(a[k],b[k]));
+ const within=(a,b)=>a.x>=b.x-1e-7&&a.y>=b.y-1e-7&&a.x+a.w<=b.x+b.w+1e-7&&a.y+a.h<=b.y+b.h+1e-7;
+ ok(layout.model==='completed-rip-v1'&&plan.model===layout.model,'model');
+ ok(profile.id==='completed-rip-v1'&&profile.retainedSide==='HIGH_MATERIAL'&&profile.seriesCompletionRequired===true&&profile.maxTurnsPerBlank===1&&profile.maxSheetTurns===0,'retained profile');
+ ok(p.kerf>0&&p.trim>=0&&p.sheetW>2*p.trim&&p.sheetH>2*p.trim,'parameters');
+ ok(new Set(p.pieces.map(a=>a.id)).size===p.pieces.length&&p.pieces.every(a=>a.l>0&&a.w>0&&Number.isInteger(a.q)&&a.q>0),'order parameters');
+ const requested=new Map(p.pieces.map(a=>[a.id,a])),seenParts=new Set(),nodes=new Map(),allParts=[],wastes=[];
+ const useful={x:p.trim,y:p.trim,w:p.sheetW-2*p.trim,h:p.sheetH-2*p.trim};
+ let number=0;
+ function inspect(n,r,si,path){
+  ok(same(n.rect,r),'tree rectangle '+path);ok(r.w>=0&&r.h>=0,'negative rectangle');
+  if(n.kind==='part'){
+   const a=requested.get(n.part.id),key=n.part.id+':'+n.part.instance;ok(a&&!seenParts.has(key),'part identity '+key);
+   ok(Number.isInteger(n.part.instance)&&n.part.instance>=1&&n.part.instance<=a.q,'part instance');
+   ok(!n.part.rotated||a.grain===false,'texture');
+   ok(near(r.w,n.part.rotated?a.w:a.l)&&near(r.h,n.part.rotated?a.l:a.w),'part dimensions');ok(within(r,useful),'trim margin');
+   seenParts.add(key);allParts.push({...r,...n.part,sheet:si});return;
+  }
+  if(n.kind==='waste'){wastes.push({sheet:si,...r});return;}
+  ok(n.kind==='cut'&&['H','V'].includes(n.axis),'cut kind');ok(n.number===++number,'tree cut numbering');
+  const v=n.axis==='V',span=v?r.w:r.h,offset=n.pos-(v?r.x:r.y),used=Math.min(p.kerf,span-offset),edge=span-offset<=p.kerf&&n.phase!=='trailing-trim';
+  ok((offset>0||offset===0&&n.phase==='leading-trim'&&p.trim===p.kerf)&&offset<span&&near(n.kerf,p.kerf)&&near(n.kerfUsed,used),'cut position/kerf');
+  ok(n.edgeFinish===edge,'edge finish flag');
+  if(edge)ok(profile.allowTerminalBladeOverhang===true&&n.first.kind!=='waste'&&n.second.kind==='waste','terminal sizing only');
+  const a=v?{...r,w:offset}:{...r,h:offset},b=v?{...r,x:n.pos+used,w:span-offset-used}:{...r,y:n.pos+used,h:span-offset-used};
+  nodes.set(si+':'+n.number,{n,r,a,b,edge});
+
+  inspect(n.first,a,si,path+'/0');inspect(n.second,b,si,path+'/1');
+ }
+ layout.sheets.forEach((sh,si)=>{ok(['H','V'].includes(sh.axis),'initial axis');inspect(sh.tree,{x:0,y:0,w:p.sheetW,h:p.sheetH},si,'s'+si);});
+ ok(seenParts.size===p.pieces.reduce((s,a)=>s+a.q,0),'order incomplete');
+ layout.sheets.forEach((sh,si)=>{
+  const expected=allParts.filter(a=>a.sheet===si);ok(sh.parts.length===expected.length,'map count');
+  for(const a of expected)ok(sh.parts.some(b=>a.id===b.id&&a.instance===b.instance&&same(a,b)&&!!a.rotated===!!b.rotated),'map differs from tree');
+ });
+ const states=new Map(),ever=new Set(),closed=new Set(),loaded=new Set(),bands=new Map(),usedNodes=new Set(),frames=[],partTurns=[],actualStrips=[];
+ const future=new Map();for(const o of plan.operations)if(['cut','rotate'].includes(o.type)){const a=future.get(o.inputBlankId)||[];a.push(o.step);future.set(o.inputBlankId,a);}
+ const outputMap=new Map(plan.outputs.map(o=>[o.blankId,o]));ok(outputMap.size===plan.outputs.length,'duplicate terminal outputs');
+ const contained=(si,r)=>allParts.filter(a=>a.sheet===si&&within(a,r));
+ const dims=b=>b.q%2?{w:b.rect.h,h:b.rect.w}:{w:b.rect.w,h:b.rect.h};
+ const size=(o,b)=>{const d=dims(b);ok(near(o.w,d.w)&&near(o.h,d.h)&&o.machineOrientation===b.q*90,'machine dimensions/orientation');};
+ const add=(id,b)=>{ok(typeof id==='string'&&!ever.has(id),'reused blank id');ever.add(id);states.set(id,b);};
+ let open=null;
+ let active=null,cuts=0,turns=0,feeds=0,cutLength=0,stages=1,edgeFinishingCuts=0;
+ for(let index=0;index<plan.operations.length;index++){
+  const o=plan.operations[index];ok(o.step===index+1,'step numbering');
+  if(o.type==='load'){
+   ok(Number.isInteger(o.sheet)&&layout.sheets[o.sheet]&&!loaded.has(o.sheet),'sheet load');
+   for(const [bid,t]of states)ok(!(future.get(bid)||[]).some(s=>s>o.step),'unfinished previous sheet');
+   ok(o.initialCutAxis===layout.sheets[o.sheet].axis&&profile.initialCutAxes.includes(o.initialCutAxis),'initial loading direction');
+   const b={rect:{x:0,y:0,w:p.sheetW,h:p.sheetH},q:0,local:0,ancestry:0,held:true,lock:o.initialCutAxis,primary:true,sheet:o.sheet,axis:o.initialCutAxis,stage:1,lastAxis:o.initialCutAxis,parent:null,role:'HELD_SHEET',node:layout.sheets[o.sheet].tree};
+   size(o,b);add(o.blankId,b);active=o.blankId;loaded.add(o.sheet);bands.set(o.sheet,[]);continue;
+  }
+  if(o.type==='startRip'){
+   const b=states.get(o.inputBlankId);ok(b&&!open,'overlapping or missing rip');
+   size(o,b);ok(same(o.materialRect,b.rect),'start series geometry');
+   ok(b.node.kind==='cut'&&o.materialAxis===b.node.axis&&o.primary===b.primary,'series root/axis');
+   const expected=[];let n=b.node;
+   while(n.kind==='cut'&&n.axis===o.materialAxis&&!['leading-trim','trailing-trim'].includes(n.phase)){expected.push(n.number);n=n.edgeFinish?null:n.second;if(!n)break;}
+   ok(expected.length>0,'empty rip');open={id:o.seriesId,axis:o.materialAxis,primary:b.primary,sheet:b.sheet,expected,done:0,tail:o.inputBlankId,children:[]};continue;
+  }
+  if(o.type==='endRip'){
+   ok(open&&o.seriesId===open.id&&open.done===open.expected.length,'premature series completion');
+   ok(o.materialAxis===open.axis&&o.primary===open.primary&&o.remainderBlankId===open.tail,'series completion identity');
+   const ids=[...open.children,...(open.tail?[open.tail]:[])];ok(JSON.stringify(ids)===JSON.stringify(o.outputBlankIds),'series output list');
+   const lastId=open.tail||ids.at(-1),last=states.get(lastId);ok(o.inputBlankId===lastId&&o.turnCountBefore===last.local&&o.turnCountAfter===last.local,'completion cannot reset turns');size(o,last);ok(same(o.materialRect,last.rect),'end series geometry');
+   if(open.tail){const b=states.get(open.tail),parts=contained(b.sheet,b.rect),v=open.axis==='V',span=v?b.rect.w:b.rect.h;
+    ok(b.held&&b.lock===open.axis,'last blank not retained');
+    if(parts.length){const extent=Math.max(...parts.map(a=>(v?a.x+a.w-b.rect.x:a.y+a.h-b.rect.y)));
+     ok(span>=extent&&span-extent<=p.kerf,'last blank is oversized remainder, not a completed strip');
+     if(open.primary)ok(parts.some(a=>span-(v?a.w:a.h)>=0&&span-(v?a.w:a.h)<=p.kerf),'last primary strip has no real anchor');
+    }
+    b.held=false;b.lock=null;b.primary=false;b.role=parts.length?'COMPLETED_STRIP':'WASTE';
+   }
+   if(!open.tail&&ids.length){const b=states.get(ids.at(-1));b.held=false;b.lock=null;b.role='COMPLETED_STRIP';}
+   if(open.primary){ok(!closed.has(open.sheet),'duplicate primary completion');closed.add(open.sheet);
+    for(const id of ids){const b=states.get(id);b.primary=false;const parts=contained(b.sheet,b.rect);if(parts.length)actualStrips.push({sheet:b.sheet,stripIndex:actualStrips.filter(s=>s.sheet===b.sheet).length+1,blankId:id,materialRect:b.rect,nominalSpan:open.axis==='V'?b.rect.w:b.rect.h});}
+   }
+   open=null;active=null;continue;
+  }
+  const id=o.inputBlankId,b=states.get(id);ok(b,'missing live blank '+id);
+  if(o.type==='feed'){
+   size(o,b);ok(same(o.materialRect,b.rect),'feed material rectangle');ok(o.feedMode===(b.held?'advance-in-place':'load-detached'),'feed mode');
+   if(open)ok(id===open.tail,'processing a child before series completion');
+   if(!b.held)for(const [bid,t]of states)ok(!(t.held&&(future.get(bid)||[]).some(s=>s>o.step)),'unfinished rip series');
+   active=id;feeds++;continue;
+  }
+  ok(active===id,'blank not loaded');
+  if(o.type==='rotate'){
+   if(open)ok(open.done===0&&id===open.tail,'rotation during unfinished rip');
+   ok(!b.held,'held remainder rotation');ok(!b.primary&&closed.has(b.sheet),'rotation before primary end');ok(b.local===0,'second physical rotation');
+   const before=dims(b);ok(o.angle===90&&o.fromOrientation===b.q*90&&o.beforeSize.w===before.w&&o.beforeSize.h===before.h,'rotation before');
+   b.q=(b.q+1)%4;b.local++;b.ancestry++;turns++;
+   size({...o,machineOrientation:o.toOrientation},b);ok(o.afterSize.w===o.w&&o.afterSize.h===o.h&&same(o.materialRect,b.rect),'rotation after');
+   ok(o.outputBlankIds.length===1&&o.outputBlankIds[0]===id&&o.turnCountBefore===0&&o.turnCountAfter===1,'rotation identity/counters');continue;
+  }
+  ok(o.type==='cut','unsupported operation '+o.type);size(o,b);ok(same(o.materialRect,b.rect),'cut material rectangle');ok(o.axis===b.axis,'fixed machine cut direction');ok(near(o.kerf,p.kerf),'blade width');
+  const mv=o.axis==='V',d=dims(b),pos=mv?o.start.x:o.start.y;
+  ok(mv?near(o.end.x,pos)&&near(o.start.y,0)&&near(o.end.y,d.h):near(o.end.y,pos)&&near(o.start.x,0)&&near(o.end.x,d.w),'full stroke');
+  const axis=b.q%2?(o.axis==='V'?'H':'V'):o.axis,v=axis==='V',r=b.rect,span=v?r.w:r.h,reverse=v?(b.q===2||b.q===3):(b.q===1||b.q===2),offset=reverse?span-pos-p.kerf:pos,materialPos=(v?r.x:r.y)+offset;
+  ok(o.materialAxis===axis&&near(o.materialPos,materialPos),'material coordinates');
+  if(b.held)ok(b.lock===axis,'retained direction changed');
+  const key=b.sheet+':'+o.geometryCutNumber,entry=nodes.get(key);ok(entry&&entry.n===b.node&&!usedNodes.has(key)&&same(entry.r,r)&&entry.n.axis===axis&&near(entry.n.pos,materialPos),'replayed tree cut');usedNodes.add(key);
+  const {a,c}= {a:entry.a,c:entry.b},edge=entry.edge;ok(o.edgeFinish===edge&&near(o.kerfUsed,Math.min(p.kerf,span-offset)),'replayed edge width');
+  if(!edge)ok(pos>=0&&pos+p.kerf<=(mv?d.w:d.h),'blade outside blank');
+  for(const a of contained(b.sheet,r)){const start=v?a.x:a.y,end=start+(v?a.w:a.h);ok(Math.max(start,materialPos)>=Math.min(end,materialPos+p.kerf)-1e-7,'cut crosses ordered part');}
+  const leading=o.phase==='leading-trim',trailing=o.phase==='trailing-trim',trim=leading||trailing;
+  if(trim){ok(!open,'trim inside declared rip');
+   ok(leading?(near(v?r.x:r.y,0)&&near(materialPos,p.trim-p.kerf)&&!contained(b.sheet,a).length):
+    (near(materialPos,(v?p.sheetW:p.sheetH)-p.trim)&&!contained(b.sheet,c).length),'fake edge preparation');
+  }else{
+   ok(open&&id===open.tail&&open.expected[open.done]===o.geometryCutNumber,'cut outside declared rip');
+   const parts=contained(b.sheet,a);if(b.primary){ok(axis===b.axis&&b.q===0&&!edge,'primary direction');ok(parts.some(t=>near(v?t.w:t.h,v?a.w:a.h)),'no real primary strip anchor');}
+   if(!b.primary)ok(closed.has(b.sheet),'secondary before primary end');
+  }
+  const ids=reverse&&!edge?o.outputBlankIds.slice().reverse():o.outputBlankIds;
+  ok(ids.length===(edge?1:2)&&new Set(ids).size===ids.length,'output ids');
+  if(edge){ok(!b.primary&&profile.allowTerminalBladeOverhang===true,'edge sizing only after primary rip');edgeFinishingCuts++;}
+  ok(o.cutIndex===++cuts&&o.turnCount===b.local,'cut counters');const stage=b.stage+(axis===b.lastAxis?0:1);ok(o.stage===stage,'strip stage');stages=Math.max(stages,stage);cutLength+=mv?d.h:d.w;
+  states.delete(id);active=null;const children=[];
+  ids.forEach((child,i)=>{const held=edge||i===1||trim,primary=b.primary&&(i===1||trim),rect=i===0?a:c,local=edge?b.local:0;
+   const t={...b,rect,q:b.q,local,parent:id,held,lock:held?axis:null,primary,stage,lastAxis:axis,role:primary?'HELD_SHEET':held?'HELD_STRIP':'DETACHED',node:i===0?entry.n.first:entry.n.second};
+   add(child,t);children.push({id:child,rect,held,role:t.role});
+   ok(o.outputTurnCounts[i]===local,'child turn reset');
+  });
+  if(!trim){open.done++;open.children.push(ids[0]);open.tail=edge?null:ids[1];}
+  frames.push({step:o.step,cut:o.cutIndex,input:id,inputRole:b.role,axis,outputs:children});
+ }
+ ok(plan.primaryStrips.length===actualStrips.length&&plan.primaryStrips.every((a,i)=>{const b=actualStrips[i];return a.sheet===b.sheet&&a.stripIndex===b.stripIndex&&a.blankId===b.blankId&&same(a.materialRect,b.materialRect)&&near(a.nominalSpan,b.nominalSpan);}), 'primary strip metadata');
+ ok(!open,'unclosed series');
+ ok(loaded.size===layout.sheets.length&&closed.size===loaded.size&&usedNodes.size===nodes.size,'incomplete operations');
+ ok(plan.outputs.length===states.size,'terminal output coverage');const finished=new Set();
+ for(const o of plan.outputs){const b=states.get(o.blankId);ok(b&&same(b.rect,o.materialRect)&&o.machineOrientation===b.q*90&&o.turnCount===b.local&&o.parentBlankId===b.parent,'terminal state');
+  if(o.kind==='part'){const key=o.part.id+':'+o.part.instance,a=allParts.find(a=>a.id===o.part.id&&a.instance===o.part.instance);ok(a&&!finished.has(key)&&b.sheet===a.sheet&&same(a,b.rect)&&!!a.rotated===!!o.part.rotated,'finished part');finished.add(key);partTurns.push({part:o.part,turns:b.ancestry});}
+  else ok(o.kind==='waste'&&!contained(b.sheet,b.rect).length,'lost part in waste');
+ }
+ ok(finished.size===seenParts.size,'missing final parts');
+ const remnants=wastes.map(r=>{const x=Math.max(r.x,useful.x),y=Math.max(r.y,useful.y);return Math.max(0,Math.min(r.x+r.w,useful.x+useful.w)-x)*Math.max(0,Math.min(r.y+r.h,useful.y+useful.h)-y);});
+ return{geometryValid:true,abstractCutTreeValid:true,targetPSSModelValid:true,realMachineFeasibility:'unknown',errors:[],partTurns,roleFrames:frames,primarySnapshots:frames.filter(f=>f.inputRole==='HELD_SHEET'),
+ metrics:{sheets:loaded.size,parts:finished.size,cuts,turns,feeds,cutLength,stages,operations:plan.operations.length,largestWaste:Math.max(0,...remnants),wasteArea:remnants.reduce((a,b)=>a+b,0),edgeFinishingCuts,heldRemainderTurns:0,originalSheetTurns:0,ancestryTurnsMax:Math.max(0,...partTurns.map(a=>a.turns))},
+ assumptions:['Each sheet has a fixed initial loading direction H or V; retained HIGH material never rotates at any level.','Leading/trailing edges are prepared before each rip; the final working blank is released only after all declared cuts.','Edge sizing preserves the physical rotation counter; a subsequent cut is possible only after an explicit completed series.','Clamp, stroke, feed and trim-overhang capability of the actual machine are not confirmed.']};
+}
+module.exports={validateCompleted};
+
+},
+"src/completed-rip.js":function(module,exports,require){
+'use strict';
+const {buildCompletedLayout}=require('./completed-rip-layout'),{makeCompletedPlan}=require('./completed-rip-plan'),{validateCompleted}=require('./completed-rip-validator');
+const profile=()=>({id:'completed-rip-v1',retainedSide:'HIGH_MATERIAL',seriesCompletionRequired:true,maxTurnsPerBlank:1,maxSheetTurns:0,initialCutAxes:['H','V'],allowTerminalBladeOverhang:true,realMachineFeasibility:'unknown'});
+function verifyCompleted(p,layout){const equipmentProfile=profile(),plan=layout.plan||makeCompletedPlan(p,layout),verification=validateCompleted(p,layout,plan,equipmentProfile);return{...layout,parameters:p,equipmentProfile,plan,verification,metrics:verification.metrics};}
+function compileCompleted(p,patterns,options){return verifyCompleted(p,buildCompletedLayout(p,patterns,options));}
+module.exports={profile,compileCompleted,verifyCompleted};
+
+},
 "src/core.js":function(module,exports,require){
 'use strict';
 const {validate}=require('./validator');
@@ -1990,7 +2276,14 @@ const {estimateSheets}=require('../src/sheet-area-estimate');
 const {searchDeferredMargins}=require('../src/deferred-margin-search');
 const {checkInput}=require('../src/core');
 const {arrange:arrangeLayout}=require('../src/ordered-strip-layout');
-function arrange(result,mode){return {...arrangeLayout(result,mode),sheetEstimate:result.sheetEstimate,experienceInfo:result.experienceInfo,learningMove:result.learningMove};}
+function arrange(result,mode){
+ if(result.model==='completed-rip-v1'){
+  if(mode==='optimized')return {...result,ordering:{mode}};
+  try{const patterns=result.sheets.map(s=>require('../src/deferred-strip-patterns').fromTree(s.tree,result.parameters.kerf)),r=require('../src/completed-rip').compileCompleted(result.parameters,patterns,{strategy:'area-desc'});return {...r,ordering:{mode:'descending',applied:true},search:result.search,sheetEstimate:result.sheetEstimate,experienceInfo:result.experienceInfo,learningMove:result.learningMove};}
+  catch(e){return {...result,ordering:{mode:'descending',applied:false,reason:e.message}};}
+ }
+ return {...arrangeLayout(result,mode),sheetEstimate:result.sheetEstimate,experienceInfo:result.experienceInfo,learningMove:result.learningMove};
+}
 const {collect}=require('../src/pss-waste-local');
 const {searchAdaptive,repackAdaptive}=require('../src/adaptive-held-strip');
 const {solveIdenticalTwoSheets}=require('../src/identical-strip-patterns');
@@ -2009,6 +2302,7 @@ function clean(input){
 }
 function profile(axis){return{id:'web-held-'+axis+'-v1',firstCutAxis:axis,machineCutAxes:[axis],maxTurnsPerBlank:1,maxSheetTurns:0,minHoldWidth:0,minHoldHeight:0,maxCutLength:null,maxFeedWidth:null,maxFeedHeight:null,maxStages:null,realMachineFeasibility:'unknown',retainedSide:'HIGH_MATERIAL',terminalPromotionAllowed:false};}
 function verify(p,layout,axis){
+ if(layout.model==='completed-rip-v1')return require('../src/completed-rip').verifyCompleted(p,layout);
  if(layout.model==='deferred-staged-v1')return verifyDeferred(p,JSON.parse(JSON.stringify(layout)));
  const s=collect(JSON.parse(JSON.stringify(layout))),pr=profile(axis||s.sheets[0].axis||'H'),plan=makeHeldPlan(p,s,pr);
  const verification=validateHeld(p,s,plan,pr);
@@ -2198,7 +2492,7 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
   if(op.type==='cut')s+='<line x1="'+op.start.x+'" y1="'+op.start.y+'" x2="'+op.end.x+'" y2="'+op.end.y+'" stroke="#e24a36" stroke-width="'+Math.max(4,op.kerf)+'"/>';
   return s+'</svg>';
  }
- const typeName=o=>({load:'Загрузка листа',feed:o.feedMode==='advance-in-place'?'Продвижение остатка':'Установка полосы',cut:(o.edgeFinish?'Торцовка №':'Пропил №')+o.cutIndex,rotate:'Поворот на 90°',endPrimary:'Первичные полосы отделены'}[o.type]||o.type);
+ const typeName=o=>({load:'Загрузка листа',feed:o.feedMode==='advance-in-place'?'Продвижение остатка':'Установка полосы',cut:(o.edgeFinish?'Торцовка №':'Пропил №')+o.cutIndex,rotate:'Поворот на 90°',endPrimary:'Первичные полосы отделены',startRip:'Начало серии распуска',endRip:'Серия завершена — последняя заготовка свободна'}[o.type]||o.type);
  function draw(){
   const gallery=!!result&&columns>1;
   $('sheetGallery').hidden=!gallery;$('sheetDetail').hidden=gallery;$('drawing').hidden=gallery;$('sheetParts').hidden=!result;$('sheetTabs').hidden=gallery;$('sheetReplay').hidden=!result||gallery;
@@ -2228,7 +2522,7 @@ const engine=load("web/engine.cjs");self.onmessage=({data:m})=>{try{let result;i
   $('prevOp').disabled=step===0;$('nextOp').disabled=step===result.plan.operations.length-1;
   $('physicalDrawing').innerHTML=physicalSVG(op);
   const frame=result.verification.roleFrames.find(f=>f.step===op.step);
-  $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(op.edgeFinish?'<p>Торцовка края: часть ширины диска проходит вне заготовки. Размер детали сохранён.</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(op.edgeFinish?'готовая деталь':c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
+  $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(op.edgeFinish?'<p>Торцовка края: часть ширины диска проходит вне заготовки. Размер детали сохранён.</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(op.edgeFinish&&op.finishesPart!==false?'готовая деталь':c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
  }
  function sheetRows(index){
   const counts=new Map();result.sheets[index].parts.forEach(a=>counts.set(a.id,(counts.get(a.id)||0)+1));

@@ -89,7 +89,7 @@
   if(op.type==='cut')s+='<line x1="'+op.start.x+'" y1="'+op.start.y+'" x2="'+op.end.x+'" y2="'+op.end.y+'" stroke="#e24a36" stroke-width="'+Math.max(4,op.kerf)+'"/>';
   return s+'</svg>';
  }
- const typeName=o=>({load:'Загрузка листа',feed:o.feedMode==='advance-in-place'?'Продвижение остатка':'Установка полосы',cut:(o.edgeFinish?'Торцовка №':'Пропил №')+o.cutIndex,rotate:'Поворот на 90°',endPrimary:'Первичные полосы отделены'}[o.type]||o.type);
+ const typeName=o=>({load:'Загрузка листа',feed:o.feedMode==='advance-in-place'?'Продвижение остатка':'Установка полосы',cut:(o.edgeFinish?'Торцовка №':'Пропил №')+o.cutIndex,rotate:'Поворот на 90°',endPrimary:'Первичные полосы отделены',startRip:'Начало серии распуска',endRip:'Серия завершена — последняя заготовка свободна'}[o.type]||o.type);
  function draw(){
   const gallery=!!result&&columns>1;
   $('sheetGallery').hidden=!gallery;$('sheetDetail').hidden=gallery;$('drawing').hidden=gallery;$('sheetParts').hidden=!result;$('sheetTabs').hidden=gallery;$('sheetReplay').hidden=!result||gallery;
@@ -119,7 +119,7 @@
   $('prevOp').disabled=step===0;$('nextOp').disabled=step===result.plan.operations.length-1;
   $('physicalDrawing').innerHTML=physicalSVG(op);
   const frame=result.verification.roleFrames.find(f=>f.step===op.step);
-  $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(op.edgeFinish?'<p>Торцовка края: часть ширины диска проходит вне заготовки. Размер детали сохранён.</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(op.edgeFinish?'готовая деталь':c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
+  $('opDetails').innerHTML='<strong>'+esc(typeName(op))+'</strong><p>'+esc(op.inputBlankId||op.blankId||'')+'</p>'+(op.materialRect?'<p>Заготовка: '+fmt(op.type==='rotate'?op.beforeSize.w:op.w)+' × '+fmt(op.type==='rotate'?op.beforeSize.h:op.h)+' мм<br>Ориентация: '+(op.fromOrientation??op.machineOrientation??0)+'°'+(op.type==='rotate'?' → '+op.toOrientation+'°':'')+'</p>':'')+(op.type==='cut'?'<p>Ось '+op.axis+' · позиция '+fmt(op.axis==='V'?op.start.x:op.start.y)+' мм · пропил '+op.kerf+' мм</p>':'')+(op.edgeFinish?'<p>Торцовка края: часть ширины диска проходит вне заготовки. Размер детали сохранён.</p>':'')+(frame?'<p>'+frame.outputs.map(c=>esc(c.id)+'<br>'+fmt(op.machineOrientation%180?c.rect.h:c.rect.w)+' × '+fmt(op.machineOrientation%180?c.rect.w:c.rect.h)+' мм в станке · '+(op.edgeFinish&&op.finishesPart!==false?'готовая деталь':c.role==='TRIM'?'обрезок':c.held?'удерживается: только дальнейший распуск':'отделена: допускается один поворот')).join('<br><br>')+'</p>':'');
  }
  function sheetRows(index){
   const counts=new Map();result.sheets[index].parts.forEach(a=>counts.set(a.id,(counts.get(a.id)||0)+1));

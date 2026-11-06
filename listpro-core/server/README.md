@@ -95,3 +95,15 @@ CHROMIUM_PATH=/usr/bin/chromium node server/scripts/browser-timeout-check.cjs
 Регрессия: `server/tests/fixtures/order-229.json`, 100 позиций / 229 деталей, без изменения размеров, с разрешёнными поворотами. Отчёт: `server/reports/order-229/RESULTS.md`. Данные регрессии и отчёты не входят в серверную поставку.
 
 Обновление выполняется повторным запуском `server/scripts/install.sh` из новой версии. Существующий конфиг Nginx, в том числе настроенное доверие к HTTPS-прокси Jino, сохраняется. **Не запускайте `enable-https.sh` повторно на сервере с индивидуальной настройкой прокси**: этот скрипт предназначен для первоначальной настройки прямого HTTPS.
+
+## Профиль завершённых серий (2026-11-07)
+
+Сервер использует `completed-rip-v1`: последняя заготовка после явного END_RIP может требовать дальнейшего раскроя. Во время незавершённой серии удерживаемую часть по-прежнему нельзя поворачивать. Описание: `docs/COMPLETED-RIP.md`.
+
+Новая база: `/var/lib/listpro/experience-completed-v1.json`. Прежняя `/var/lib/listpro/experience-v1.json` остаётся на диске. Проверенную карту нового профиля можно добавить **с объединением, не заменой базы**, от имени пользователя службы:
+
+```
+runuser -u listpro-svc -- /opt/listpro/node/bin/node /opt/listpro/current/server/scripts/import-verified.cjs /tmp/verified-result.json /var/lib/listpro/experience-completed-v1.json
+```
+
+Импорт повторно воспроизводит план независимым валидатором. Runtime release не содержит пользовательские карты и не загружает их скрыто. Контрольный вариант на 15 листах хранится в `benchmarks/order-229-completed-rip/result.json`; он получен из пользовательского PDF, а не общим поиском с нуля.

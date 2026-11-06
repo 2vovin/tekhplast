@@ -1,0 +1,34 @@
+{
+  "profile": {
+    "id": "completed-rip-v1",
+    "retainedSide": "HIGH_MATERIAL",
+    "seriesCompletionRequired": true,
+    "maxTurnsPerBlank": 1,
+    "maxSheetTurns": 0,
+    "initialCutAxes": [
+      "H",
+      "V"
+    ],
+    "allowTerminalBladeOverhang": true,
+    "realMachineFeasibility": "unknown"
+  },
+  "geometryValid": true,
+  "targetPSSModelValid": true,
+  "realMachineFeasibility": "unknown",
+  "metrics": {
+    "sheets": 15,
+    "parts": 229,
+    "cuts": 524,
+    "turns": 200,
+    "feeds": 509,
+    "cutLength": 413355,
+    "stages": 6,
+    "operations": 1678,
+    "largestWaste": 132000,
+    "wasteArea": 2157035,
+    "edgeFinishingCuts": 41,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 5
+  }
+}

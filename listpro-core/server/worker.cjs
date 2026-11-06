@@ -1,5 +1,5 @@
 'use strict';
-const {parentPort,workerData}=require('node:worker_threads'),engine=require('../web/engine.cjs'),learning=require('../src/cutting-experience'),store=require('../desktop-demo/experience-store.cjs');
+const {parentPort,workerData}=require('node:worker_threads'),engine=require('./optimizer.cjs'),learning=require('../src/completed-rip-experience'),store=require('../desktop-demo/experience-store.cjs');
 const started=Date.now(),p=workerData.input,original=engine.clean(p);let best=null;
 const score=r=>p.objective==='cuts'?[r.metrics.sheets,r.metrics.cuts,r.metrics.turns,-r.metrics.largestWaste]:[r.metrics.sheets,-r.metrics.largestWaste,r.metrics.cuts,r.metrics.turns];
 const better=(a,b)=>!b||a.some((v,i)=>v<b[i]&&a.slice(0,i).every((n,j)=>n===b[j]));

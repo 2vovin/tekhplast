@@ -5,7 +5,14 @@ const {estimateSheets}=require('../src/sheet-area-estimate');
 const {searchDeferredMargins}=require('../src/deferred-margin-search');
 const {checkInput}=require('../src/core');
 const {arrange:arrangeLayout}=require('../src/ordered-strip-layout');
-function arrange(result,mode){return {...arrangeLayout(result,mode),sheetEstimate:result.sheetEstimate,experienceInfo:result.experienceInfo,learningMove:result.learningMove};}
+function arrange(result,mode){
+ if(result.model==='completed-rip-v1'){
+  if(mode==='optimized')return {...result,ordering:{mode}};
+  try{const patterns=result.sheets.map(s=>require('../src/deferred-strip-patterns').fromTree(s.tree,result.parameters.kerf)),r=require('../src/completed-rip').compileCompleted(result.parameters,patterns,{strategy:'area-desc'});return {...r,ordering:{mode:'descending',applied:true},search:result.search,sheetEstimate:result.sheetEstimate,experienceInfo:result.experienceInfo,learningMove:result.learningMove};}
+  catch(e){return {...result,ordering:{mode:'descending',applied:false,reason:e.message}};}
+ }
+ return {...arrangeLayout(result,mode),sheetEstimate:result.sheetEstimate,experienceInfo:result.experienceInfo,learningMove:result.learningMove};
+}
 const {collect}=require('../src/pss-waste-local');
 const {searchAdaptive,repackAdaptive}=require('../src/adaptive-held-strip');
 const {solveIdenticalTwoSheets}=require('../src/identical-strip-patterns');
@@ -24,6 +31,7 @@ function clean(input){
 }
 function profile(axis){return{id:'web-held-'+axis+'-v1',firstCutAxis:axis,machineCutAxes:[axis],maxTurnsPerBlank:1,maxSheetTurns:0,minHoldWidth:0,minHoldHeight:0,maxCutLength:null,maxFeedWidth:null,maxFeedHeight:null,maxStages:null,realMachineFeasibility:'unknown',retainedSide:'HIGH_MATERIAL',terminalPromotionAllowed:false};}
 function verify(p,layout,axis){
+ if(layout.model==='completed-rip-v1')return require('../src/completed-rip').verifyCompleted(p,layout);
  if(layout.model==='deferred-staged-v1')return verifyDeferred(p,JSON.parse(JSON.stringify(layout)));
  const s=collect(JSON.parse(JSON.stringify(layout))),pr=profile(axis||s.sheets[0].axis||'H'),plan=makeHeldPlan(p,s,pr);
  const verification=validateHeld(p,s,plan,pr);

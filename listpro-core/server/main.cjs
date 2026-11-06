@@ -4,7 +4,7 @@ const engine=require('../web/engine.cjs'),edges=require('../web/edge-banding.js'
 function createService(config){
  if(!config.user||!/^([a-f0-9]{2}){16}$/i.test(config.salt||'')||!/^([a-f0-9]{2}){64}$/i.test(config.hash||''))throw Error('Configure LISTPRO_USER, LISTPRO_PASSWORD_SALT and LISTPRO_PASSWORD_HASH before starting');
  const jobs=new Map(),queue=[],failedAuth=new Map();let active=null,closing=false,credentialDigest=null;
- const memoryPath=path.join(config.dataDir,'experience-v1.json'),maxQueue=config.maxQueue??3;
+ const memoryPath=path.join(config.dataDir,'experience-completed-v1.json'),maxQueue=config.maxQueue??3;
  const send=(res,code,data,headers={})=>{res.writeHead(code,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...headers});res.end(JSON.stringify(data));};
  function authenticated(req,res){
   const header=req.headers.authorization||'',digest=crypto.createHash('sha256').update(header).digest();if(credentialDigest&&crypto.timingSafeEqual(digest,credentialDigest))return true;
