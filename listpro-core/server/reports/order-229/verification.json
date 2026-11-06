@@ -1,0 +1,24 @@
+{
+  "searchComplete": true,
+  "elapsedMs": 272936,
+  "geometryValid": true,
+  "targetPSSModelValid": true,
+  "realMachineFeasibility": "unknown",
+  "metrics": {
+    "sheets": 16,
+    "parts": 229,
+    "cuts": 450,
+    "turns": 152,
+    "feeds": 434,
+    "cutLength": 369975,
+    "stages": 5,
+    "operations": 1068,
+    "largestWaste": 2389200,
+    "wasteArea": 6990435,
+    "edgeFinishingCuts": 14,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 4
+  },
+  "errors": []
+}

@@ -15,9 +15,10 @@ function createService(config){
  }
  function pump(){if(closing||active||!queue.length)return;const job=queue.shift();active=job;job.status='running';
   const worker=new Worker(path.join(__dirname,'worker.cjs'),{workerData:{input:job.input,memoryPath},resourceLimits:{maxOldGenerationSizeMb:768,stackSizeMb:16}});job.worker=worker;
-  const timer=setTimeout(()=>{job.status='failed';job.error='Истёк лимит расчёта. Уменьшите заказ.';worker.terminate();},config.timeoutMs??300000);
-  worker.on('message',m=>{if(job.status!=='running')return;if(m.type==='progress')job.progress=m.data;else if(m.type==='result'){job.status='done';job.result=m.json;worker.terminate();}else{job.status='failed';job.error=m.message;worker.terminate();}});
-  worker.on('error',e=>{job.status='failed';job.error=e.message;});worker.on('exit',()=>{clearTimeout(timer);if(job.status==='running'){job.status='failed';job.error='Расчёт прерван';}job.finished=Date.now();delete job.worker;delete job.input;active=null;const complete=[...jobs.values()].filter(j=>j.finished).sort((a,b)=>b.finished-a.finished);complete.slice(4).forEach(j=>jobs.delete(j.id));pump();});
+  function interrupted(reason){if(job.status!=='running')return;if(job.checkpoint){job.status='done';job.result=job.checkpoint;job.warning=reason+' Показан лучший сохранённый проверенный раскрой. Оптимизация не завершена; этот промежуточный результат не добавлен в базу опыта.';}else{job.status='failed';job.error=reason+' Проверенная карта ещё не получена.';}}
+  const timer=setTimeout(()=>{interrupted('Достигнут лимит времени расчёта (5 минут).');worker.terminate();},config.timeoutMs??300000);
+  worker.on('message',m=>{if(job.status!=='running')return;if(m.type==='progress')job.progress=m.data;else if(m.type==='checkpoint'){job.checkpoint=m.json;job.bestSheets=m.sheets;}else if(m.type==='result'){job.status='done';job.result=m.json;worker.terminate();}else{interrupted(m.message||'Ошибка оптимизации.');worker.terminate();}});
+  worker.on('error',e=>{interrupted(e.message);});worker.on('exit',()=>{clearTimeout(timer);if(job.status==='running')interrupted('Расчёт прерван.');delete job.checkpoint;job.finished=Date.now();delete job.worker;delete job.input;active=null;const complete=[...jobs.values()].filter(j=>j.finished).sort((a,b)=>b.finished-a.finished);complete.slice(4).forEach(j=>jobs.delete(j.id));pump();});
  }
  const server=http.createServer(async(req,res)=>{try{
   if(req.url==='/healthz'&&req.method==='GET'){send(res,200,{ok:!closing,service:'listpro'});return;}if(!authenticated(req,res))return;
@@ -35,7 +36,7 @@ function createService(config){
   }
   const route=req.url?.match(/^\/api\/jobs\/([0-9a-f-]{36})$/);
   if(route){const job=jobs.get(route[1]);if(!job){send(res,404,{error:'Задача не найдена или срок хранения истёк'});return;}
-   if(req.method==='GET'){if(job.status==='done'){res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end('{"status":"done","result":'+job.result+'}');}else send(res,200,{status:job.status,progress:job.progress,error:job.error});return;}
+   if(req.method==='GET'){if(job.status==='done'){res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end('{"status":"done","searchComplete":'+(!job.warning)+',"warning":'+JSON.stringify(job.warning||null)+',"result":'+job.result+'}');}else send(res,200,{status:job.status,progress:job.progress,bestSheets:job.bestSheets,error:job.error});return;}
    if(req.method==='DELETE'){if(job.status==='queued'){queue.splice(queue.indexOf(job),1);job.status='cancelled';job.finished=Date.now();delete job.input;}else if(job.status==='running'){job.status='cancelled';job.worker.terminate();}send(res,202,{status:job.status});return;}
   }
   send(res,404,{error:'Не найдено'});

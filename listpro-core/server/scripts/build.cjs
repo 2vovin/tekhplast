@@ -2,16 +2,18 @@
 const fs=require('node:fs'),path=require('node:path'),base=path.resolve(__dirname,'../..');
 function build(){let app=fs.readFileSync(path.join(base,'web/app.js'),'utf8'),html=fs.readFileSync(path.join(base,'web/template.html'),'utf8'),css=fs.readFileSync(path.join(base,'web/styles.css'),'utf8');
  function replace(a,b){if(!app.includes(a))throw Error('Server adapter needs update: '+a.slice(0,50));app=app.replace(a,b);}
+ html=html.replace('<div class="progress"', '<p id="serverNotice" role="alert" hidden style="margin:12px 20px;padding:12px;background:#fff1cf;color:#583800"></p><div class="progress"');
  const start=app.indexOf(' function request('),end=app.indexOf(' const sheetOf=',start);if(start<0||end<0)throw Error('Request adapter missing');
  app=app.slice(0,start)+` let requestSerial=0;
- async function api(url,options={}){const response=await fetch(url,{credentials:'same-origin',...options});const data=await response.json();if(!response.ok)throw Error(data.error||'Ошибка сервера');return data;}
- async function request(action,payload){const serial=++requestSerial;let id=null,cancelled=false;setBusy(true);$('progressText').textContent='Отправляем заказ на сервер';
+ function serverNotice(message){$('serverNotice').textContent=message;$('serverNotice').hidden=!message;}
+ async function api(url,options={}){const response=await fetch(url,{credentials:'same-origin',...options});let data;try{data=await response.json();}catch{throw Error('Сервер вернул неожиданный ответ (HTTP '+response.status+'). Повторите запрос позже.');}if(!response.ok)throw Error(data.error||'Ошибка сервера');return data;}
+ async function request(action,payload){const serial=++requestSerial;let id=null,cancelled=false;setBusy(true);serverNotice('');$('progressText').textContent='Отправляем заказ на сервер';
   const stop=()=>{cancelled=true;requestSerial++;if(id)api('/api/jobs/'+id,{method:'DELETE'}).catch(()=>{});};worker={terminate:stop};
   try{const created=await api('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload.input)});id=created.id;if(cancelled){await api('/api/jobs/'+id,{method:'DELETE'});return;}
-   while(serial===requestSerial){const state=await api('/api/jobs/'+id);if(state.progress){$('progressText').textContent=state.progress.text;$('progressFill').style.width=Math.min(98,state.progress.percent)+'%';}
-    if(state.status==='done'){result=state.result;syncEdges();sheet=0;step=0;status('Геометрия и полосная модель проверены. Совместимость со станком требует его параметров.',true);renderResult();return;}
+   while(serial===requestSerial){const state=await api('/api/jobs/'+id);if(state.progress){$('progressText').textContent=state.progress.text+(state.bestSheets?' · Сохранён проверенный вариант: '+state.bestSheets+' лист(а)':'');$('progressFill').style.width=Math.min(98,state.progress.percent)+'%';}
+    if(state.status==='done'){result=state.result;syncEdges();sheet=0;step=0;status('Геометрия и полосная модель проверены. Совместимость со станком требует его параметров.',true);renderResult();serverNotice(state.warning||'');return;}
     if(['failed','cancelled'].includes(state.status))throw Error(state.error||'Расчёт остановлен');await new Promise(resolve=>setTimeout(resolve,700));}
-  }catch(e){if(serial===requestSerial){status(e.message);toast(e.message);}}finally{if(serial===requestSerial){worker=null;setBusy(false);}}
+  }catch(e){if(serial===requestSerial){status(e.message);serverNotice('Расчёт не завершён: '+e.message);toast(e.message);}}finally{if(serial===requestSerial){worker=null;setBusy(false);}}
  }
 `+app.slice(end);
  replace("$('materialBadge').textContent=project.material;", "$('materialBadge').textContent=project.material+' · '+fmt(project.thickness)+' мм';");

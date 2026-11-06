@@ -30,12 +30,12 @@ function verify(p,layout,axis){
  return{...s,parameters:p,equipmentProfile:pr,plan,verification,metrics:verification.metrics};
 }
 function equalOrder(a,b){return ['sheetW','sheetH','kerf','trim'].every(k=>a[k]===b[k])&&a.pieces.length===b.pieces.length&&a.pieces.every((p,i)=>['l','w','q','grain'].every(k=>p[k]===b.pieces[i][k]));}
-function solveBase(input,{objective='remnants',iterations=100,seed=42,examples=[],progress=()=>{}}={}){
+function solveBase(input,{objective='remnants',iterations=100,seed=42,examples=[],progress=()=>{},onBest=()=>{}}={}){
  const p=clean(input);if(!['remnants','cuts'].includes(objective))throw Error('Неизвестная цель расчёта.');
  if(!Number.isInteger(iterations)||iterations<1||iterations>100)throw Error('Бюджет поиска: 1–100.');
  const started=Date.now(),bases=[],trials=[],patternBases=[];let best=null,lastError='';
  const score=s=>objective==='remnants'?[s.metrics.sheets,-s.metrics.largestWaste,s.metrics.cuts,s.metrics.turns]:[s.metrics.sheets,s.metrics.cuts,s.metrics.turns,-s.metrics.largestWaste];
- const keep=s=>{s.sheetEstimate=estimateSheets(p,s.metrics.sheets);const a=score(s),b=best&&score(best);if(!b||a.some((v,i)=>v<b[i]&&a.slice(0,i).every((x,j)=>x===b[j])))best=s;};
+ const keep=s=>{s.sheetEstimate=estimateSheets(p,s.metrics.sheets);const a=score(s),b=best&&score(best);if(!b||a.some((v,i)=>v<b[i]&&a.slice(0,i).every((x,j)=>x===b[j]))){best=s;onBest(s);}};
  for(const e of examples)if(equalOrder(p,clean(e.parameters))){const s=verify(p,e.layout);keep(s);patternBases.push(s);}
  const improve=()=>{if(best&&best.metrics.sheets>estimateSheets(p).minimumSheets){progress({text:'По площади минимум '+estimateSheets(p).minimumSheets+' листов. Перестраиваем весь заказ с отложенной обрезкой',percent:90});const extra=searchDeferredMargins(p,{iterations,seed,accept:keep});patternBases.push(...extra.layouts);trials.push(extra.stats);if(best.metrics.sheets>estimateSheets(p).minimumSheets){progress({text:'Группируем повторяющиеся длинные детали и заполняем соседние полосы',percent:92});const grouped=searchDominantStrips(p,{iterations,seed,accept:keep});patternBases.push(...grouped.layouts);trials.push(grouped.stats);}if(best.metrics.sheets>estimateSheets(p).minimumSheets){progress({text:'Расширяем перебор размеров первичных полос до 48 кандидатов',percent:93});const wide=searchDeferredMargins(p,{iterations,seed,candidates:48,accept:s=>{s.learningMove='wide-48';keep(s);}});patternBases.push(...wide.layouts);trials.push(wide.stats);}}progress({text:'Проверяем торцовку и смешанные направления листов',percent:94});const t=optimizeDeferred(p,patternBases,{objective,seed,accept:keep});trials.push(t.stats);};
  progress({text:'Проверяем детали и допустимые полосы',percent:5});

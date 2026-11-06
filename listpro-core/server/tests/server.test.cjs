@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),crypto=require('node:crypto'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),{once}=require('node:events');
 const {createService}=require('../main.cjs'),{build}=require('../scripts/build.cjs');
-async function fixture(fn){const dataDir=fs.mkdtempSync(path.join(os.tmpdir(),'listpro-server-')),salt=crypto.randomBytes(16).toString('hex'),pass='test-private-owner-password',hash=crypto.scryptSync(pass,Buffer.from(salt,'hex'),64).toString('hex');build();const s=createService({user:'owner',salt,hash,dataDir});s.server.listen(0,'127.0.0.1');await once(s.server,'listening');const url='http://127.0.0.1:'+s.server.address().port,auth='Basic '+Buffer.from('owner:'+pass).toString('base64');try{await fn({url,auth,dataDir});}finally{await s.close();fs.rmSync(dataDir,{recursive:true,force:true});}}
+async function fixture(fn,options={}){const dataDir=fs.mkdtempSync(path.join(os.tmpdir(),'listpro-server-')),salt=crypto.randomBytes(16).toString('hex'),pass='test-private-owner-password',hash=crypto.scryptSync(pass,Buffer.from(salt,'hex'),64).toString('hex');build();const s=createService({user:'owner',salt,hash,dataDir,...options});s.server.listen(0,'127.0.0.1');await once(s.server,'listening');const url='http://127.0.0.1:'+s.server.address().port,auth='Basic '+Buffer.from('owner:'+pass).toString('base64');try{await fn({url,auth,dataDir});}finally{await s.close();fs.rmSync(dataDir,{recursive:true,force:true});}}
 const input={sheetW:1200,sheetH:900,trim:10,kerf:5,thickness:4,material:'Стекло',pieces:[{l:1100,w:800,q:3,grain:false}]};
 test('server UI has no examples or optimizer source; full maps/printing remain available',()=>{const b=build();assert(!b.html.includes('data-example='));assert(!b.app.includes('new Worker('));assert(!b.html.includes('factories='));assert(b.app.includes("fetch(url"));assert(b.app.includes('window.print()'));assert(!b.html.includes('demo-blurred'));});
 test('service refuses to start with missing authentication',()=>assert.throws(()=>createService({}),/Configure/));
@@ -21,3 +21,21 @@ test('queue capacity is bounded and active/queued jobs can be cancelled',async()
 test('release packaging excludes customer datasets and the client cannot fetch source files',()=>{
  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'listpro-stage-'));try{const files=require('../scripts/stage.cjs').stage(tmp);assert(!files.some(f=>f.startsWith('benchmarks/')));assert(files.includes('src/cutting-experience.js'));assert(files.includes('scripts/self-train-experience.js'));assert(!fs.readFileSync(path.join(tmp,'server/dist/index.html'),'utf8').includes('factories='));}finally{fs.rmSync(tmp,{recursive:true,force:true});}
 });
+
+test('large order timeout returns a full independently replayable checkpoint, not an empty screen',async()=>fixture(async({url,auth})=>{
+ const input=require('./fixtures/order-229.json');
+ const response=await fetch(url+'/api/jobs',{method:'POST',headers:{authorization:auth,'content-type':'application/json'},body:JSON.stringify(input)});
+ assert.equal(response.status,202);const {id}=await response.json();let state;
+ for(let i=0;i<400;i++){state=await(await fetch(url+'/api/jobs/'+id,{headers:{authorization:auth}})).json();if(['done','failed'].includes(state.status))break;await new Promise(r=>setTimeout(r,50));}
+ assert.equal(state.status,'done',state.error);assert.equal(state.searchComplete,false);assert.match(state.warning,/Оптимизация не завершена/);
+ const r=state.result;assert.equal(r.sheets.reduce((n,s)=>n+s.parts.length,0),229);assert.equal(r.parameters.pieces.length,100);
+ assert.deepEqual(r.parameters.pieces.map(p=>[p.l,p.w,p.q,p.grain]),input.pieces.map(p=>[p.l,p.w,p.q,p.grain]));
+ assert.equal(r.experienceInfo.saved,false);
+ const engine=require('../../web/engine.cjs');assert.equal(engine.verify(r.parameters,r).metrics.sheets,r.metrics.sheets);
+ if(r.model==='deferred-staged-v1')require('../../src/deferred-strip-validator').validateDeferred(r.parameters,r,r.plan,r.equipmentProfile);
+ else require('../../src/held-strip-validator').validateHeld(r.parameters,r,r.plan,r.equipmentProfile);
+}, {timeoutMs:15000}));
+test('timeout before any valid candidate is an explicit failure',async()=>fixture(async({url,auth})=>{
+ const response=await fetch(url+'/api/jobs',{method:'POST',headers:{authorization:auth,'content-type':'application/json'},body:JSON.stringify(input)});const {id}=await response.json();
+ await new Promise(r=>setTimeout(r,100));const state=await(await fetch(url+'/api/jobs/'+id,{headers:{authorization:auth}})).json();assert.equal(state.status,'failed');assert.match(state.error,/Проверенная карта ещё не получена/);assert.equal(state.result,undefined);
+},{timeoutMs:1}));
