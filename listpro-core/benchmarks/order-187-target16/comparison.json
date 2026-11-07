@@ -1,0 +1,125 @@
+{
+  "rows": 99,
+  "parts": 187,
+  "areaMm2": 74519000,
+  "changesFromPreviousOrder": [
+    {
+      "size": [
+        300,
+        250
+      ],
+      "previousTotal": 4,
+      "currentTotal": 1
+    },
+    {
+      "size": [
+        300,
+        270
+      ],
+      "previousTotal": 4,
+      "currentTotal": 0
+    },
+    {
+      "size": [
+        350,
+        220
+      ],
+      "previousTotal": 4,
+      "currentTotal": 3
+    },
+    {
+      "size": [
+        550,
+        300
+      ],
+      "previousTotal": 4,
+      "currentTotal": 17
+    }
+  ],
+  "nativeTrials": [
+    {
+      "method": "H2",
+      "metrics": {
+        "sheets": 16,
+        "parts": 187,
+        "cuts": 446,
+        "turns": 151,
+        "feeds": 430,
+        "cutLength": 396300,
+        "stages": 4,
+        "operations": 1377,
+        "largestWaste": 1023750,
+        "wasteArea": 3287050,
+        "edgeFinishingCuts": 13,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      },
+      "externalEngine": {
+        "name": "PackingSolver",
+        "version": "0.1.1301",
+        "certificateSheets": 16,
+        "convertedSheets": 16,
+        "axis": "H",
+        "scale": 1,
+        "adaptation": "waste tightened; a new physical plan independently replayed",
+        "realMachineFeasibility": "unknown",
+        "stages": 2,
+        "seconds": 30,
+        "elapsedMs": 30297
+      }
+    },
+    {
+      "method": "V2",
+      "metrics": {
+        "sheets": 17,
+        "parts": 187,
+        "cuts": 465,
+        "turns": 135,
+        "feeds": 448,
+        "cutLength": 396635,
+        "stages": 3,
+        "operations": 1369,
+        "largestWaste": 840500,
+        "wasteArea": 8275325,
+        "edgeFinishingCuts": 12,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      },
+      "externalEngine": {
+        "name": "PackingSolver",
+        "version": "0.1.1301",
+        "certificateSheets": 17,
+        "convertedSheets": 17,
+        "axis": "V",
+        "scale": 1,
+        "adaptation": "waste tightened; a new physical plan independently replayed",
+        "realMachineFeasibility": "unknown",
+        "stages": 2,
+        "seconds": 30,
+        "elapsedMs": 30331
+      }
+    },
+    {
+      "method": "js",
+      "metrics": {
+        "sheets": 17,
+        "parts": 187,
+        "cuts": 453,
+        "turns": 134,
+        "feeds": 436,
+        "cutLength": 412775,
+        "stages": 5,
+        "operations": 1342,
+        "largestWaste": 2932200,
+        "wasteArea": 8172375,
+        "edgeFinishingCuts": 9,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 4
+      },
+      "externalEngine": null
+    }
+  ]
+}

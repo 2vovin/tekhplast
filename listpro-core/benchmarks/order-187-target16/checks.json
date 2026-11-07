@@ -1,0 +1,23 @@
+{
+  "fullSuite": {
+    "command": "npm test",
+    "passed": 10105,
+    "failed": 0,
+    "durationMs": 39581.749713
+  },
+  "orderSuite": {
+    "command": "node --test tests/order-187.test.js",
+    "passed": 3,
+    "failed": 0
+  },
+  "browser": {
+    "sheets": 16,
+    "parts": 187,
+    "frames": 1377,
+    "jsErrors": []
+  },
+  "pdfPages": 16,
+  "minimumSheetsByArea": 16,
+  "sheetCountOptimal": true,
+  "deployedToVPS": false
+}
