@@ -1,0 +1,26 @@
+{"iteration": 0, "patterns": 2711, "LP": 15.655881272911278, "seconds": 0.08332473000336904}
+{"accepted":12,"rejected":10,"patterns":2723}
+{"iteration": 1, "patterns": 2723, "LP": 15.654764200647646, "seconds": 4.3013930520028225}
+{"accepted":3,"rejected":26,"patterns":2726}
+{"iteration": 2, "patterns": 2726, "LP": 15.654043600192521, "seconds": 8.493186980005703}
+{"accepted":5,"rejected":30,"patterns":2731}
+{"iteration": 3, "patterns": 2731, "LP": 15.654043600192523, "seconds": 12.712094344002253}
+{"accepted":0,"rejected":21,"patterns":2731}
+{"iteration": 4, "patterns": 2731, "LP": 15.654043600192523, "seconds": 16.900772426000913}
+{"accepted":0,"rejected":26,"patterns":2731}
+{"iteration": 5, "patterns": 2731, "LP": 15.654043600192523, "seconds": 21.09535123000387}
+{"MIP": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "sheets": null}
+{"accepted":0,"rejected":29,"patterns":2731}
+{"iteration": 6, "patterns": 2731, "LP": 15.654043600192523, "seconds": 40.309715365001466}
+{"accepted":0,"rejected":28,"patterns":2731}
+{"iteration": 7, "patterns": 2731, "LP": 15.654043600192523, "seconds": 44.50694772800489}
+{"accepted":0,"rejected":27,"patterns":2731}
+{"iteration": 8, "patterns": 2731, "LP": 15.654043600192523, "seconds": 48.68910490500275}
+{"accepted":0,"rejected":29,"patterns":2731}
+{"iteration": 9, "patterns": 2731, "LP": 15.654043600192523, "seconds": 52.88235536600405}
+{"accepted":0,"rejected":26,"patterns":2731}
+{"iteration": 10, "patterns": 2731, "LP": 15.654043600192523, "seconds": 57.09636679600226}
+{"accepted":0,"rejected":26,"patterns":2731}
+{"iteration": 11, "patterns": 2731, "LP": 15.654043600192523, "seconds": 61.295073534005496}
+{"MIP": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "sheets": null}
+{"accepted":1,"rejected":25,"patterns":2732}

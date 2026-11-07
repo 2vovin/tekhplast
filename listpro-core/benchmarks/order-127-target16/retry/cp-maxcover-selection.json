@@ -1,0 +1,78 @@
+{
+  "area": 71412000.0,
+  "areaBound": 73000000.0,
+  "status": "FEASIBLE",
+  "seconds": 90.11495507000654,
+  "patterns": 2731,
+  "sheets": 16,
+  "selection": [
+    {
+      "index": 112,
+      "copies": 1
+    },
+    {
+      "index": 373,
+      "copies": 1
+    },
+    {
+      "index": 458,
+      "copies": 1
+    },
+    {
+      "index": 715,
+      "copies": 1
+    },
+    {
+      "index": 741,
+      "copies": 1
+    },
+    {
+      "index": 820,
+      "copies": 1
+    },
+    {
+      "index": 914,
+      "copies": 1
+    },
+    {
+      "index": 1021,
+      "copies": 1
+    },
+    {
+      "index": 1055,
+      "copies": 1
+    },
+    {
+      "index": 1377,
+      "copies": 1
+    },
+    {
+      "index": 1719,
+      "copies": 1
+    },
+    {
+      "index": 2007,
+      "copies": 1
+    },
+    {
+      "index": 2403,
+      "copies": 1
+    },
+    {
+      "index": 2422,
+      "copies": 1
+    },
+    {
+      "index": 2530,
+      "copies": 1
+    },
+    {
+      "index": 2599,
+      "copies": 1
+    }
+  ],
+  "mode": "maxcover",
+  "coversEveryGroup": false,
+  "exactQuantities": false,
+  "technologyChecked": false
+}

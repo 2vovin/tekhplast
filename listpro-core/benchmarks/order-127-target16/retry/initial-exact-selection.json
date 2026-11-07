@@ -1,0 +1,8 @@
+{
+  "status": 2,
+  "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+  "seconds": 16.99519888899522,
+  "patterns": 2200,
+  "sheets": null,
+  "selection": null
+}

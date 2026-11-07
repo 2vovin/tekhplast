@@ -1,0 +1,13 @@
+{"placed":77,"parts":116}
+{"placed":81,"parts":117}
+{"placed":82,"parts":118}
+{"placed":85,"parts":119}
+{"placed":86,"parts":120}
+{"placed":89,"parts":121}
+{"placed":90,"parts":122}
+{"placed":93,"parts":123}
+{"placed":94,"parts":124}
+{"placed":97,"parts":125}
+{"placed":98,"parts":126}
+{"remaining":[[42,1700,420,1]],"probes":13}
+{"sheets":17,"parts":127,"cuts":352,"turns":112,"feeds":335,"cutLength":393895,"stages":4,"operations":1074,"largestWaste":3918500,"wasteArea":9803525,"edgeFinishingCuts":14,"heldRemainderTurns":0,"originalSheetTurns":0,"ancestryTurnsMax":3}

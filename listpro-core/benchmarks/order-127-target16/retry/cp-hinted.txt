@@ -1,0 +1,4 @@
+{"bestArea": 71459500.0, "seconds": 0.6710733529980644}
+{"bestArea": 71951500.0, "seconds": 42.43218840700138}
+{"bestArea": 71956000.0, "seconds": 43.46348893400136}
+{"area": 71956000.0, "areaBound": 73000000.0, "status": "FEASIBLE", "seconds": 180.0777883720002, "patterns": 2732, "sheets": 16, "selection": [{"index": 381, "copies": 1}, {"index": 389, "copies": 1}, {"index": 793, "copies": 1}, {"index": 887, "copies": 1}, {"index": 1021, "copies": 1}, {"index": 1284, "copies": 1}, {"index": 1412, "copies": 1}, {"index": 1549, "copies": 1}, {"index": 1946, "copies": 1}, {"index": 2111, "copies": 1}, {"index": 2275, "copies": 1}, {"index": 2455, "copies": 1}, {"index": 2536, "copies": 1}, {"index": 2587, "copies": 1}, {"index": 2621, "copies": 1}, {"index": 2628, "copies": 1}]}

@@ -1,0 +1,58 @@
+{"iteration": 0, "patterns": 2525, "LP": 15.841924520612668, "seconds": 0.08546153199858963}
+{"MIP": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "sheets": null}
+{"accepted":8,"rejected":0,"patterns":2533}
+{"iteration": 1, "patterns": 2533, "LP": 15.805629084579651, "seconds": 21.258127770997817}
+{"accepted":6,"rejected":0,"patterns":2539}
+{"iteration": 2, "patterns": 2539, "LP": 15.790243832213413, "seconds": 27.418865164996532}
+{"accepted":9,"rejected":0,"patterns":2548}
+{"iteration": 3, "patterns": 2548, "LP": 15.775949667004342, "seconds": 33.582216645998415}
+{"accepted":9,"rejected":0,"patterns":2557}
+{"iteration": 4, "patterns": 2557, "LP": 15.741649275601025, "seconds": 39.75405149300059}
+{"accepted":7,"rejected":0,"patterns":2564}
+{"iteration": 5, "patterns": 2564, "LP": 15.71178537961633, "seconds": 45.91572348799673}
+{"MIP": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "sheets": null}
+{"accepted":5,"rejected":0,"patterns":2569}
+{"iteration": 6, "patterns": 2569, "LP": 15.704848788715333, "seconds": 67.08151985100267}
+{"accepted":8,"rejected":0,"patterns":2577}
+{"iteration": 7, "patterns": 2577, "LP": 15.694266681036108, "seconds": 73.26419792300294}
+{"accepted":7,"rejected":0,"patterns":2584}
+{"iteration": 8, "patterns": 2584, "LP": 15.688439561442944, "seconds": 79.42363888699765}
+{"accepted":9,"rejected":0,"patterns":2593}
+{"iteration": 9, "patterns": 2593, "LP": 15.68200453679898, "seconds": 85.59687819000101}
+{"accepted":6,"rejected":0,"patterns":2599}
+{"iteration": 10, "patterns": 2599, "LP": 15.674987789297422, "seconds": 91.75143748599658}
+{"MIP": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "sheets": null}
+{"accepted":5,"rejected":0,"patterns":2604}
+{"iteration": 11, "patterns": 2604, "LP": 15.672621451166288, "seconds": 112.94098373599991}
+{"accepted":10,"rejected":0,"patterns":2614}
+{"iteration": 12, "patterns": 2614, "LP": 15.669926155119718, "seconds": 119.12090554000315}
+{"accepted":9,"rejected":0,"patterns":2623}
+{"iteration": 13, "patterns": 2623, "LP": 15.667466123037839, "seconds": 125.35025284199946}
+{"accepted":6,"rejected":0,"patterns":2629}
+{"iteration": 14, "patterns": 2629, "LP": 15.666822850811547, "seconds": 131.511125883997}
+{"accepted":7,"rejected":0,"patterns":2636}
+{"iteration": 15, "patterns": 2636, "LP": 15.666535733323123, "seconds": 137.67885475500225}
+{"MIP": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "sheets": null}
+{"accepted":3,"rejected":0,"patterns":2639}
+{"iteration": 16, "patterns": 2639, "LP": 15.666161895734575, "seconds": 158.85299580800347}
+{"accepted":4,"rejected":0,"patterns":2643}
+{"iteration": 17, "patterns": 2643, "LP": 15.663313223405247, "seconds": 165.00537601699762}
+{"accepted":9,"rejected":0,"patterns":2652}
+{"iteration": 18, "patterns": 2652, "LP": 15.65994372613933, "seconds": 171.20964653100236}
+{"accepted":9,"rejected":0,"patterns":2661}
+{"iteration": 19, "patterns": 2661, "LP": 15.658637250020433, "seconds": 177.36584147599933}
+{"accepted":13,"rejected":0,"patterns":2674}
+{"iteration": 20, "patterns": 2674, "LP": 15.657478451631347, "seconds": 183.55563491799694}
+{"MIP": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "sheets": null}
+{"accepted":6,"rejected":0,"patterns":2680}
+{"iteration": 21, "patterns": 2680, "LP": 15.657078694811469, "seconds": 204.75244373400346}
+{"accepted":6,"rejected":0,"patterns":2686}
+{"iteration": 22, "patterns": 2686, "LP": 15.65684803925468, "seconds": 210.924144841003}
+{"accepted":13,"rejected":0,"patterns":2699}
+{"iteration": 23, "patterns": 2699, "LP": 15.65645711437039, "seconds": 217.092332840999}
+{"accepted":7,"rejected":0,"patterns":2706}
+{"iteration": 24, "patterns": 2706, "LP": 15.656234078673023, "seconds": 223.28253609799867}
+{"accepted":5,"rejected":0,"patterns":2711}
+{"iteration": 25, "patterns": 2711, "LP": 15.655881272911278, "seconds": 229.45986142900074}
+{"MIP": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)", "sheets": null}
+{"accepted":9,"rejected":0,"patterns":2720}

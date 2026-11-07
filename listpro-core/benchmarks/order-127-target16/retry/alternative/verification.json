@@ -1,0 +1,21 @@
+{
+  "geometry": true,
+  "pss": true,
+  "realMachine": "unknown",
+  "metrics": {
+    "sheets": 17,
+    "parts": 127,
+    "cuts": 352,
+    "turns": 112,
+    "feeds": 335,
+    "cutLength": 393895,
+    "stages": 4,
+    "operations": 1074,
+    "largestWaste": 3918500,
+    "wasteArea": 9803525,
+    "edgeFinishingCuts": 14,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 3
+  }
+}

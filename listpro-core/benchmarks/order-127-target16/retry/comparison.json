@@ -1,0 +1,64 @@
+{
+  "completeOrderOn16Found": false,
+  "impossibilityProven": false,
+  "sourceRows": 100,
+  "parts": 127,
+  "areaMm2": 73000000,
+  "poolPatterns": 2732,
+  "poolSha256": "82302e08bbdbefb3685b0e4005d918dde28be8f1d58af45622f2726f7cb0ec16",
+  "previous": {
+    "sheets": 17,
+    "parts": 127,
+    "cuts": 342,
+    "turns": 109,
+    "feeds": 325,
+    "cutLength": 381945,
+    "stages": 4,
+    "operations": 1045,
+    "largestWaste": 2552100,
+    "wasteArea": 9850675,
+    "edgeFinishingCuts": 20,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 3
+  },
+  "alternative": {
+    "sheets": 17,
+    "parts": 127,
+    "cuts": 352,
+    "turns": 112,
+    "feeds": 335,
+    "cutLength": 393895,
+    "stages": 4,
+    "operations": 1074,
+    "largestWaste": 3918500,
+    "wasteArea": 9803525,
+    "edgeFinishingCuts": 14,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 3
+  },
+  "first16Parts": 126,
+  "lastSheet": [
+    {
+      "x": 10,
+      "y": 10,
+      "w": 420,
+      "h": 1700,
+      "id": 42,
+      "instance": 1,
+      "rotated": true
+    }
+  ],
+  "tests": {
+    "command": "npm test",
+    "passed": 10099,
+    "failed": 0,
+    "durationMs": 72801.684943
+  },
+  "benchmark": {
+    "command": "npm run benchmark",
+    "exitCode": 0,
+    "historicalExternalComparisonRun": false
+  }
+}
