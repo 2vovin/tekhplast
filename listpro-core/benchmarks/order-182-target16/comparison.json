@@ -1,0 +1,153 @@
+{
+  "trials": [
+    {
+      "name": "JS first complete candidate",
+      "metrics": {
+        "sheets": 17,
+        "parts": 182,
+        "cuts": 442,
+        "turns": 146,
+        "feeds": 425,
+        "cutLength": 410755,
+        "stages": 5,
+        "operations": 1356,
+        "largestWaste": 2597350,
+        "wasteArea": 9697875,
+        "edgeFinishingCuts": 19,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 4
+      },
+      "externalEngine": null
+    },
+    {
+      "name": "PackingSolver H2 5s",
+      "metrics": {
+        "sheets": 17,
+        "parts": 182,
+        "cuts": 459,
+        "turns": 147,
+        "feeds": 442,
+        "cutLength": 412185,
+        "stages": 4,
+        "operations": 1393,
+        "largestWaste": 1965600,
+        "wasteArea": 9702225,
+        "edgeFinishingCuts": 4,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      },
+      "externalEngine": {
+        "name": "PackingSolver",
+        "version": "0.1.1301",
+        "certificateSheets": 17,
+        "convertedSheets": 17,
+        "axis": "H",
+        "scale": 1,
+        "adaptation": "waste tightened; a new physical plan independently replayed",
+        "realMachineFeasibility": "unknown",
+        "stages": 2,
+        "seconds": 5,
+        "elapsedMs": 5338
+      }
+    },
+    {
+      "name": "PackingSolver V2 15s",
+      "metrics": {
+        "sheets": 17,
+        "parts": 182,
+        "cuts": 441,
+        "turns": 123,
+        "feeds": 424,
+        "cutLength": 387945,
+        "stages": 4,
+        "operations": 1285,
+        "largestWaste": 1528800,
+        "wasteArea": 9826775,
+        "edgeFinishingCuts": 5,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      },
+      "externalEngine": {
+        "name": "PackingSolver",
+        "version": "0.1.1301",
+        "certificateSheets": 17,
+        "convertedSheets": 17,
+        "axis": "V",
+        "scale": 1,
+        "adaptation": "waste tightened; a new physical plan independently replayed",
+        "realMachineFeasibility": "unknown",
+        "stages": 2,
+        "seconds": 15,
+        "elapsedMs": 15385
+      }
+    },
+    {
+      "name": "PackingSolver H2 15s",
+      "metrics": {
+        "sheets": 16,
+        "parts": 182,
+        "cuts": 445,
+        "turns": 157,
+        "feeds": 429,
+        "cutLength": 386410,
+        "stages": 4,
+        "operations": 1393,
+        "largestWaste": 1310400,
+        "wasteArea": 4853900,
+        "edgeFinishingCuts": 21,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      },
+      "externalEngine": {
+        "name": "PackingSolver",
+        "version": "0.1.1301",
+        "certificateSheets": 16,
+        "convertedSheets": 16,
+        "axis": "H",
+        "scale": 1,
+        "adaptation": "waste tightened; a new physical plan independently replayed",
+        "realMachineFeasibility": "unknown",
+        "stages": 2,
+        "seconds": 15,
+        "elapsedMs": 15401
+      }
+    },
+    {
+      "name": "PackingSolver H2 15s repeated",
+      "metrics": {
+        "sheets": 16,
+        "parts": 182,
+        "cuts": 445,
+        "turns": 157,
+        "feeds": 429,
+        "cutLength": 386410,
+        "stages": 4,
+        "operations": 1393,
+        "largestWaste": 1310400,
+        "wasteArea": 4853900,
+        "edgeFinishingCuts": 21,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      },
+      "externalEngine": {
+        "name": "PackingSolver",
+        "version": "0.1.1301",
+        "certificateSheets": 16,
+        "convertedSheets": 16,
+        "axis": "H",
+        "scale": 1,
+        "adaptation": "waste tightened; a new physical plan independently replayed",
+        "realMachineFeasibility": "unknown",
+        "stages": 2,
+        "seconds": 15,
+        "elapsedMs": 15357
+      }
+    }
+  ],
+  "jsSearchStoppedAfterFinding16Elsewhere": true
+}

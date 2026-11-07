@@ -1,0 +1,27 @@
+{
+  "fullTestSuite": {
+    "command": "npm test",
+    "passed": 10102,
+    "failed": 0,
+    "durationMs": 37149.09739
+  },
+  "orderTests": {
+    "command": "node --test tests/order-182.test.js",
+    "passed": 2,
+    "failed": 0
+  },
+  "browser": {
+    "sheets": 16,
+    "parts": 182,
+    "frames": 1393,
+    "jsErrors": []
+  },
+  "pdf": {
+    "pages": 16,
+    "format": "A4 landscape"
+  },
+  "independentReplay": "completed-rip-v1",
+  "packingVersion": "0.1.1301",
+  "python": "3.12.14",
+  "deploymentToVPS": false
+}
