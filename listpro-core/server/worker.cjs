@@ -10,6 +10,7 @@ function checkpoint(candidate){
  // Experience search also solves partial orders. Never publish those as a full map.
  if(!engine.equalOrder(original,candidate.parameters))return;
  const r=annotate(engine.arrange(candidate,p.partOrder));
+ if(candidate.recovery)r.recovery={...candidate.recovery,positionsPreserved:candidate.recovery.positionsPreserved&&candidate.sheets.every((sh,i)=>sh.parts.every(a=>r.sheets[i].parts.some(b=>a.id===b.id&&a.instance===b.instance&&['x','y','w','h'].every(k=>a[k]===b[k]))))};
  if(!better(score(r),best&&score(best)))return;
  r.sheetEstimate=estimateSheets(original,r.metrics.sheets);
  r.search={...r.search,nativeEngineAvailable,minimumSheetsByArea:minimum};
@@ -26,8 +27,14 @@ try{
  // Replay a complete matching book before spending time on fresh search.
  const opening=learning.solveWithExperience(original,bank,()=>{throw Error('Opening lookup must not search');},{completeBooksOnly:true,objective:p.objective});
  if(opening)checkpoint(opening);
- let solved=opening;
- if((!opening||opening.metrics.sheets>minimum)&&!shouldStop()){
+ if((!best||best.metrics.sheets>minimum)&&!shouldStop()&&bank.books.length){
+  const recoveryDeadline=Math.min(deadline,Date.now()+5000);
+  progress({text:'Проверяем добавленные детали в остатках сохранённых карт',percent:5});
+  const recovered=require('../src/completed-rip-recovery').extendStoredBooks(original,bank.books,{objective:p.objective,shouldStop:()=>Date.now()>=recoveryDeadline});
+  if(recovered)checkpoint(recovered);
+ }
+ let solved=best||opening;
+ if((!best||best.metrics.sheets>minimum)&&!shouldStop()){
   checkpoint(engine.solve(p,{examples:[],iterations:1,seed:42,objective:p.objective,onBest:checkpoint,progress,shouldStop}));
   if(best?.metrics.sheets>minimum&&!shouldStop()){
    const native=require('./native-search.cjs').searchNative(original,{python,deadline,minimum,getBest:()=>best,onCandidate:checkpoint,progress});

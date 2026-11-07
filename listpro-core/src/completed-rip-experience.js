@@ -19,6 +19,15 @@ function normalize(value){
  return bank;
 }
 function patternsOf(p,result){return result.sheets.map(sh=>fromTree(sh.tree,p.kerf));}
+function diverseBooks(books){
+ const groups=new Map();
+ books.forEach((book,index)=>{
+  const inventory=new Map();function visit(n){if(n.leaf){const key=JSON.stringify([n.l,n.w]);inventory.set(key,(inventory.get(key)||0)+1);}else n.children.forEach(visit);}book.patterns.forEach(visit);
+  const signature=JSON.stringify([...inventory].sort((a,b)=>a[0].localeCompare(b[0]))),group=groups.get(signature)||[];group.push({book,index});groups.set(signature,group);
+ });
+ const keep=new Set();for(const group of groups.values())for(const {book}of group.sort((a,b)=>a.book.patterns.length-b.book.patterns.length||a.index-b.index).slice(0,4))keep.add(book);
+ return books.filter(book=>keep.has(book)).slice(0,16);
+}
 function remember(bank,p,result,{countSolve=true}={}){
  require('./completed-rip-validator').validateCompleted(p,result,result.plan,result.equipmentProfile);
  // Recompile and replay before admitting any move into the database.
@@ -27,7 +36,7 @@ function remember(bank,p,result,{countSolve=true}={}){
  for(const n of raw){const pattern=encode(n),key=JSON.stringify(pattern),old=next.patterns.find(r=>JSON.stringify(r.pattern)===key);if(old)old.uses++;else next.patterns.push({pattern,uses:1});}
  next.patterns.sort((a,b)=>b.uses-a.uses);next.patterns=next.patterns.slice(0,128);
  if(result.learningMove==='wide-48'&&result.metrics.sheets===estimateSheets(p).minimumSheets){const f=features(p),old=next.recipes.find(r=>similarity(f,r.features)<.05);if(old)old.uses++;else next.recipes.push({move:'wide-48',features:f,uses:1});next.recipes.sort((a,b)=>b.uses-a.uses);next.recipes=next.recipes.slice(0,64);}
- const book={patterns:raw.map(encode)},bookKey=JSON.stringify(book);next.books=next.books.filter(b=>JSON.stringify(b)!==bookKey);next.books.unshift(book);next.books=next.books.slice(0,16);
+ const book={patterns:raw.map(encode)},bookKey=JSON.stringify(book);next.books=next.books.filter(b=>JSON.stringify(b)!==bookKey);next.books.unshift(book);next.books=diverseBooks(next.books);
  while(JSON.stringify(next).length>6*1024*1024&&(next.patterns.length>1||next.books.length>1)){if(next.books.length>1)next.books.pop();else next.patterns.pop();}
  return next;
 }
@@ -43,9 +52,15 @@ function solveWithExperience(p,value,baseSolve,options={}){
  }
  function finish(r){stats.used=!!r.experienceOrigin;r.sheetEstimate=estimateSheets(p,r.metrics.sheets);r.experienceInfo=stats;return r;}
  function candidate(patterns,counts){
-  const sub={...p,pieces:p.pieces.map((a,i)=>({...a,q:counts[i]})).filter(a=>a.q)};let tail=[];
+  let recovered=null;if(counts.some(Boolean))try{recovered=require('./completed-rip-recovery').fillExisting(p,patterns,{shouldStop:options.shouldStop});}catch{}
+  const existing=recovered?recovered.patterns:patterns;
+  const sub={...p,pieces:recovered?recovered.remaining:p.pieces.map((a,i)=>({...a,q:counts[i]})).filter(a=>a.q)};let tail=[];
   if(sub.pieces.length){const remaining=baseSolve(sub,{iterations:Math.min(options.iterations||100,30),examples:[]});tail=patternsOf(remaining.parameters,remaining);const rebind=n=>{if(n.part)n.part.id=sub.pieces[n.part.id-1].id;else n.children.forEach(rebind);};tail.forEach(rebind);}
-  const r=verifyDeferred(p,buildRawLayout(p,[...patterns,...tail]));r.learningMove='stored-strip-tree';r.experienceOrigin=true;keep(r);
+  const joined=structuredClone([...existing,...tail]);
+  // A leftover suborder restarts its instance counters. Assign instances over
+  // the final full order so repeated part IDs cannot collide across sheets.
+  function reset(n){if(n.part)delete n.part.instance;else n.children.forEach(reset);}joined.forEach(reset);
+  const r=verifyDeferred(p,buildRawLayout(p,joined));r.learningMove=recovered?.stats.placed?'stored-waste-fill':'stored-strip-tree';r.experienceOrigin=true;if(recovered)r.recovery=recovered.stats;keep(r);
  }
  // A complete opening book preserves combinations between complementary sheets.
  // It avoids greedily using a common pattern twice and starving another sheet.
@@ -66,9 +81,7 @@ function solveWithExperience(p,value,baseSolve,options={}){
   }
  }
  if(prefix.length&&!options.shouldStop?.())try{
-  const sub={...p,pieces:p.pieces.map((a,i)=>({...a,q:available[i]})).filter(a=>a.q)};
-  let tail=[];if(sub.pieces.length){const remaining=baseSolve(sub,{iterations:Math.min(options.iterations||100,30),examples:[]});tail=patternsOf(remaining.parameters,remaining);const rebind=n=>{if(n.part)n.part.id=sub.pieces[n.part.id-1].id;else n.children.forEach(rebind);};tail.forEach(rebind);}
-  const r=verifyDeferred(p,buildRawLayout(p,[...prefix,...tail]));r.learningMove='stored-strip-tree';r.experienceOrigin=true;keep(r);
+  candidate(prefix,available);
  }catch{stats.rejected++;}
  const recipe=bank.recipes.find(r=>similarity(features(p),r.features)<.2);
  if((!best||best.metrics.sheets>min)&&recipe&&!options.shouldStop?.()){stats.recipeUsed=true;options.progress?.({text:'База опыта: пробуем ранее удачный широкий перебор полос',percent:5});searchCompleted(p,{seed:options.seed??42,iterations:options.iterations||100,shouldStop:options.shouldStop,objective,onBest:r=>{r.learningMove='wide-48';r.experienceOrigin=true;keep(r);}});}

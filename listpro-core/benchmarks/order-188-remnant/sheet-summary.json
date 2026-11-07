@@ -1,0 +1,496 @@
+[
+  {
+    "sheet": 1,
+    "parts": 7,
+    "partAreaMm2": 4850400,
+    "grossUtilization": 0.9638152011922504,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 560
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 575,
+        "w": 2750,
+        "h": 620
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1200,
+        "w": 2750,
+        "h": 620
+      }
+    ]
+  },
+  {
+    "sheet": 2,
+    "parts": 5,
+    "partAreaMm2": 4808000,
+    "grossUtilization": 0.9553899652260308,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 650
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 665,
+        "w": 2750,
+        "h": 500
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1170,
+        "w": 2750,
+        "h": 650
+      }
+    ]
+  },
+  {
+    "sheet": 3,
+    "parts": 6,
+    "partAreaMm2": 4766900,
+    "grossUtilization": 0.9472230501738699,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 530
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 545,
+        "w": 2750,
+        "h": 600
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1150,
+        "w": 2750,
+        "h": 660
+      }
+    ]
+  },
+  {
+    "sheet": 4,
+    "parts": 8,
+    "partAreaMm2": 4769800,
+    "grossUtilization": 0.947799304520616,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 580
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 595,
+        "w": 2750,
+        "h": 700
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1300,
+        "w": 2750,
+        "h": 520
+      }
+    ]
+  },
+  {
+    "sheet": 5,
+    "parts": 7,
+    "partAreaMm2": 4777200,
+    "grossUtilization": 0.9492697466467959,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 600
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 615,
+        "w": 2750,
+        "h": 640
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1260,
+        "w": 2750,
+        "h": 560
+      }
+    ]
+  },
+  {
+    "sheet": 6,
+    "parts": 7,
+    "partAreaMm2": 4767000,
+    "grossUtilization": 0.9472429210134128,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 540
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 555,
+        "w": 2750,
+        "h": 710
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1270,
+        "w": 2750,
+        "h": 550
+      }
+    ]
+  },
+  {
+    "sheet": 7,
+    "parts": 8,
+    "partAreaMm2": 4805250,
+    "grossUtilization": 0.954843517138599,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 1100
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 1115,
+        "w": 2750,
+        "h": 705
+      }
+    ]
+  },
+  {
+    "sheet": 8,
+    "parts": 13,
+    "partAreaMm2": 4790000,
+    "grossUtilization": 0.9518132141082961,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 690
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 705,
+        "w": 2750,
+        "h": 600
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1310,
+        "w": 2750,
+        "h": 500
+      }
+    ]
+  },
+  {
+    "sheet": 9,
+    "parts": 8,
+    "partAreaMm2": 4841000,
+    "grossUtilization": 0.9619473422752112,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 640
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 655,
+        "w": 2750,
+        "h": 600
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1260,
+        "w": 2750,
+        "h": 560
+      }
+    ]
+  },
+  {
+    "sheet": 10,
+    "parts": 6,
+    "partAreaMm2": 4720000,
+    "grossUtilization": 0.9379036264282166,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 1200
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 1215,
+        "w": 2750,
+        "h": 580
+      }
+    ]
+  },
+  {
+    "sheet": 11,
+    "parts": 7,
+    "partAreaMm2": 4659000,
+    "grossUtilization": 0.9257824143070045,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 560
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 575,
+        "w": 2750,
+        "h": 620
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1200,
+        "w": 2750,
+        "h": 580
+      }
+    ]
+  },
+  {
+    "sheet": 12,
+    "parts": 14,
+    "partAreaMm2": 4772950,
+    "grossUtilization": 0.9484252359662195,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 740
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 755,
+        "w": 2750,
+        "h": 540
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1300,
+        "w": 2750,
+        "h": 520
+      }
+    ]
+  },
+  {
+    "sheet": 13,
+    "parts": 17,
+    "partAreaMm2": 4656800,
+    "grossUtilization": 0.9253452558370591,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 720
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 735,
+        "w": 2750,
+        "h": 560
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1300,
+        "w": 2750,
+        "h": 500
+      }
+    ]
+  },
+  {
+    "sheet": 14,
+    "parts": 14,
+    "partAreaMm2": 4548000,
+    "grossUtilization": 0.903725782414307,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 750
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 765,
+        "w": 2750,
+        "h": 480
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 1250,
+        "w": 2750,
+        "h": 550
+      }
+    ]
+  },
+  {
+    "sheet": 15,
+    "parts": 26,
+    "partAreaMm2": 4523400,
+    "grossUtilization": 0.8988375558867362,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 460
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 475,
+        "w": 2750,
+        "h": 500
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 980,
+        "w": 2750,
+        "h": 550
+      },
+      {
+        "index": 4,
+        "x": 0,
+        "y": 1535,
+        "w": 2750,
+        "h": 260
+      }
+    ]
+  },
+  {
+    "sheet": 16,
+    "parts": 35,
+    "partAreaMm2": 4462300,
+    "grossUtilization": 0.8866964729259811,
+    "primaryAxis": "H",
+    "primaryStrips": [
+      {
+        "index": 1,
+        "x": 0,
+        "y": 10,
+        "w": 2750,
+        "h": 180
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "y": 195,
+        "w": 2750,
+        "h": 220
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "y": 420,
+        "w": 2750,
+        "h": 260
+      },
+      {
+        "index": 4,
+        "x": 0,
+        "y": 685,
+        "w": 2750,
+        "h": 560
+      },
+      {
+        "index": 5,
+        "x": 0,
+        "y": 1250,
+        "w": 2750,
+        "h": 190
+      },
+      {
+        "index": 6,
+        "x": 0,
+        "y": 1445,
+        "w": 2750,
+        "h": 375
+      }
+    ]
+  }
+]

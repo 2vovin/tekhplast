@@ -1,0 +1,45 @@
+{
+  "before": {
+    "parts": 187,
+    "sheets": 16,
+    "elapsedMs": 299
+  },
+  "after": {
+    "parts": 188,
+    "sheets": 16,
+    "elapsedMs": 277,
+    "metrics": {
+      "sheets": 16,
+      "parts": 188,
+      "cuts": 450,
+      "turns": 151,
+      "feeds": 434,
+      "cutLength": 400235,
+      "stages": 4,
+      "operations": 1385,
+      "largestWaste": 95550,
+      "wasteArea": 2272125,
+      "edgeFinishingCuts": 14,
+      "heldRemainderTurns": 0,
+      "originalSheetTurns": 0,
+      "ancestryTurnsMax": 3
+    },
+    "recovery": {
+      "placed": 1,
+      "attempts": 1,
+      "rejected": 0,
+      "positionsPreserved": true
+    },
+    "learningMove": "stored-waste-fill",
+    "experienceSaved": true,
+    "nativeAttempts": 0
+  },
+  "added": {
+    "sheet": 16,
+    "x": 10,
+    "y": 1445,
+    "w": 2700,
+    "h": 370
+  },
+  "existingGeometryPreserved": true
+}

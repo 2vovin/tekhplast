@@ -1,0 +1,26 @@
+{
+  "fullSuite": {
+    "command": "npm test",
+    "passed": 10119,
+    "failed": 0,
+    "durationMs": 40514.793481
+  },
+  "baselineBenchmark": {
+    "command": "npm run benchmark",
+    "exitCode": 0,
+    "historicalExternalComparisonRun": false
+  },
+  "browser": {
+    "sheets": 16,
+    "parts": 188,
+    "frames": 1385,
+    "jsErrors": []
+  },
+  "pdfPages": 16,
+  "packagedRecovery": true,
+  "seedPlanParts": 187,
+  "newOrderParts": 188,
+  "newOrderSheets": 16,
+  "newNativeAttempts": 0,
+  "deployedToVPS": false
+}
