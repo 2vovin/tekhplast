@@ -1,0 +1,29 @@
+{
+  "fullSuite": {
+    "command": "npm test",
+    "passed": 10110,
+    "failed": 0,
+    "durationMs": 38177.50891
+  },
+  "targetedSuite": {
+    "command": "node --test server/tests/server.test.cjs tests/native-search.test.js",
+    "passed": 16,
+    "failed": 0,
+    "durationMs": 16808.562576
+  },
+  "baselineBenchmark": {
+    "command": "npm run benchmark",
+    "exitCode": 0,
+    "historicalExternalComparisonRun": false
+  },
+  "browserTimeoutAndErrorCheck": true,
+  "bashSyntaxCheck": true,
+  "packagedRelease": {
+    "moduleGraphLoads": true,
+    "explicitImportReplays": true,
+    "parts": 187,
+    "sheets": 16,
+    "nativeAttempts": 0
+  },
+  "deploymentToUserVPS": false
+}

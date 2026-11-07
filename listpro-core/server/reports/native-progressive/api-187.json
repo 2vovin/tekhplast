@@ -1,0 +1,188 @@
+{
+  "health": {
+    "ok": true,
+    "service": "listpro",
+    "searchPipeline": "progressive-native-5-15-30",
+    "nativeInterpreterPresent": true
+  },
+  "elapsedMs": 75672,
+  "minimumSheets": 16,
+  "metrics": {
+    "sheets": 16,
+    "parts": 187,
+    "cuts": 446,
+    "turns": 149,
+    "feeds": 430,
+    "cutLength": 396410,
+    "stages": 4,
+    "operations": 1371,
+    "largestWaste": 1023750,
+    "wasteArea": 3286500,
+    "edgeFinishingCuts": 13,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 3
+  },
+  "checkpoints": [
+    {
+      "ms": 484,
+      "status": "running",
+      "sheets": 18,
+      "saved": true
+    },
+    {
+      "ms": 2357,
+      "status": "running",
+      "sheets": 18,
+      "saved": true
+    },
+    {
+      "ms": 2676,
+      "status": "running",
+      "sheets": 18,
+      "saved": true
+    },
+    {
+      "ms": 9174,
+      "status": "running",
+      "sheets": 17,
+      "saved": true
+    },
+    {
+      "ms": 29928,
+      "status": "running",
+      "sheets": 17,
+      "saved": true
+    },
+    {
+      "ms": 75534,
+      "status": "done",
+      "sheets": 16,
+      "saved": true
+    }
+  ],
+  "search": {
+    "serverElapsedMs": 75393,
+    "budgetExhausted": false,
+    "nativeEngineAvailable": true,
+    "nativeTrials": [
+      {
+        "axis": "H",
+        "stages": 2,
+        "seconds": 5,
+        "status": "PSS-validated",
+        "metrics": {
+          "sheets": 17,
+          "parts": 187,
+          "cuts": 474,
+          "turns": 155,
+          "feeds": 457,
+          "cutLength": 422480,
+          "stages": 3,
+          "operations": 1447,
+          "largestWaste": 778050,
+          "wasteArea": 8138150,
+          "edgeFinishingCuts": 3,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        },
+        "elapsedMs": 5366
+      },
+      {
+        "axis": "V",
+        "stages": 2,
+        "seconds": 5,
+        "status": "PSS-validated",
+        "metrics": {
+          "sheets": 18,
+          "parts": 187,
+          "cuts": 506,
+          "turns": 165,
+          "feeds": 488,
+          "cutLength": 445530,
+          "stages": 4,
+          "operations": 1543,
+          "largestWaste": 3728600,
+          "wasteArea": 12992100,
+          "edgeFinishingCuts": 13,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 3
+        },
+        "elapsedMs": 5326
+      },
+      {
+        "axis": "H",
+        "stages": 2,
+        "seconds": 15,
+        "status": "PSS-validated",
+        "metrics": {
+          "sheets": 17,
+          "parts": 187,
+          "cuts": 434,
+          "turns": 130,
+          "feeds": 417,
+          "cutLength": 392430,
+          "stages": 4,
+          "operations": 1292,
+          "largestWaste": 3180450,
+          "wasteArea": 8285550,
+          "edgeFinishingCuts": 8,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 3
+        },
+        "elapsedMs": 15360
+      },
+      {
+        "axis": "V",
+        "stages": 2,
+        "seconds": 15,
+        "status": "PSS-validated",
+        "metrics": {
+          "sheets": 17,
+          "parts": 187,
+          "cuts": 465,
+          "turns": 135,
+          "feeds": 448,
+          "cutLength": 396635,
+          "stages": 3,
+          "operations": 1369,
+          "largestWaste": 840500,
+          "wasteArea": 8275325,
+          "edgeFinishingCuts": 12,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        },
+        "elapsedMs": 15308
+      },
+      {
+        "axis": "H",
+        "stages": 2,
+        "seconds": 30,
+        "status": "PSS-validated",
+        "metrics": {
+          "sheets": 16,
+          "parts": 187,
+          "cuts": 446,
+          "turns": 151,
+          "feeds": 430,
+          "cutLength": 396300,
+          "stages": 4,
+          "operations": 1377,
+          "largestWaste": 1023750,
+          "wasteArea": 3287050,
+          "edgeFinishingCuts": 13,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 3
+        },
+        "elapsedMs": 30335
+      }
+    ]
+  },
+  "experienceSaved": true,
+  "replayedFromExperience": 16
+}

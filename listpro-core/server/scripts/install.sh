@@ -8,6 +8,8 @@ PROJECT=$(cd "$(dirname "$0")/../.." && pwd)
 PREFIX=/opt/listpro
 CONF="/etc/nginx/sites-available/listpro-${DOMAIN}.conf"
 LINK="/etc/nginx/sites-enabled/listpro-${DOMAIN}.conf"
+LISTPRO_EXISTING_SITE=false
+[[ ! -f "$CONF" ]] || LISTPRO_EXISTING_SITE=true
 for tool in curl tar xz sha256sum python3 nginx systemctl ss; do command -v "$tool" >/dev/null || { echo "Required tool missing: $tool"; exit 1; }; done
 nginx -t
 python3 - "$DOMAIN" "$CONF" <<'PY'
@@ -108,7 +110,12 @@ EOF
  if ! nginx -t; then rm -f "$LINK" "$CONF"; echo 'New config removed; existing sites unchanged.'; exit 1; fi
  systemctl reload nginx
 fi
-printf '\nListPro is ready on loopback. HTTPS must be enabled before login.\n'
-printf 'Domain: %s\n' "$DOMAIN"
-printf 'Next: certbot certonly --webroot -w /var/www/listpro-acme -d %s\n' "$DOMAIN"
-printf 'Then: bash /opt/listpro/admin/enable-https.sh %s\n' "$DOMAIN"
+if [[ "$LISTPRO_EXISTING_SITE" == true ]]; then
+ printf '\nListPro updated. Existing Nginx and HTTPS proxy configuration preserved.\n'
+ printf 'Status: curl -fsS http://127.0.0.1:3127/healthz\n'
+else
+ printf '\nListPro is ready on loopback. HTTPS must be enabled before login.\n'
+ printf 'Domain: %s\n' "$DOMAIN"
+ printf 'Next: certbot certonly --webroot -w /var/www/listpro-acme -d %s\n' "$DOMAIN"
+ printf 'Then: bash /opt/listpro/admin/enable-https.sh %s\n' "$DOMAIN"
+fi
