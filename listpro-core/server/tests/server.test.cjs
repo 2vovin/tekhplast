@@ -19,7 +19,7 @@ test('queue capacity is bounded and active/queued jobs can be cancelled',async()
  for(const id of ids){const r=await fetch(url+'/api/jobs/'+id,{method:'DELETE',headers:{authorization:auth}});assert.equal(r.status,202);const state=await(await fetch(url+'/api/jobs/'+id,{headers:{authorization:auth}})).json();assert.equal(state.status,'cancelled');}
 }));
 test('release packaging excludes customer datasets and the client cannot fetch source files',()=>{
- const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'listpro-stage-'));try{const files=require('../scripts/stage.cjs').stage(tmp);assert(!files.some(f=>f.startsWith('benchmarks/')));assert(files.includes('src/cutting-experience.js'));assert(files.includes('scripts/self-train-experience.js'));assert(!fs.readFileSync(path.join(tmp,'server/dist/index.html'),'utf8').includes('factories='));}finally{fs.rmSync(tmp,{recursive:true,force:true});}
+ const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'listpro-stage-'));try{const files=require('../scripts/stage.cjs').stage(tmp);assert(!files.some(f=>f.startsWith('benchmarks/')));assert(files.includes('src/cutting-experience.js'));assert(files.includes('src/packing-pss.js'));assert(files.includes('server/packing/run.py'));assert(files.includes('server/packing/pin.json'));assert(files.includes('server/scripts/install-packing.sh'));assert(files.includes('scripts/self-train-experience.js'));assert(!fs.readFileSync(path.join(tmp,'server/dist/index.html'),'utf8').includes('factories='));}finally{fs.rmSync(tmp,{recursive:true,force:true});}
 });
 
 test('large order timeout returns a full independently replayable checkpoint, not an empty screen',async()=>fixture(async({url,auth,dataDir})=>{

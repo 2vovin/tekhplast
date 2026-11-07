@@ -2279,7 +2279,7 @@ const {arrange:arrangeLayout}=require('../src/ordered-strip-layout');
 function arrange(result,mode){
  if(result.model==='completed-rip-v1'){
   if(mode==='optimized')return {...result,ordering:{mode}};
-  try{const patterns=result.sheets.map(s=>require('../src/deferred-strip-patterns').fromTree(s.tree,result.parameters.kerf)),r=require('../src/completed-rip').compileCompleted(result.parameters,patterns,{strategy:'area-desc'});return {...r,ordering:{mode:'descending',applied:true},search:result.search,sheetEstimate:result.sheetEstimate,experienceInfo:result.experienceInfo,learningMove:result.learningMove};}
+  try{const patterns=result.sheets.map(s=>require('../src/deferred-strip-patterns').fromTree(s.tree,result.parameters.kerf)),r=require('../src/completed-rip').compileCompleted(result.parameters,patterns,{strategy:'area-desc'});return {...r,ordering:{mode:'descending',applied:true},externalEngine:result.externalEngine,search:result.search,sheetEstimate:result.sheetEstimate,experienceInfo:result.experienceInfo,learningMove:result.learningMove};}
   catch(e){return {...result,ordering:{mode:'descending',applied:false,reason:e.message}};}
  }
  return {...arrangeLayout(result,mode),sheetEstimate:result.sheetEstimate,experienceInfo:result.experienceInfo,learningMove:result.learningMove};

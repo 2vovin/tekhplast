@@ -21,6 +21,7 @@
     "benchmark:brain21": "node scripts/brain21-benchmark.js",
     "benchmark:bands": "node scripts/parallel-bands-benchmark.js",
     "benchmark:held-strips": "node scripts/held-strips-benchmark.js",
-    "benchmark:order-171": "node scripts/order-171-benchmark.js"
+    "benchmark:order-171": "node scripts/order-171-benchmark.js",
+    "benchmark:packing": "node scripts/packing-pss-benchmark.js"
   }
 }

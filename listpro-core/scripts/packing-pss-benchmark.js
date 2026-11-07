@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),{runPacking}=require('../src/packing-pss'),{searchCompleted}=require('../src/completed-rip-search'),{clean}=require('../web/engine.cjs');
+const out=path.resolve(process.argv[2]||path.join(__dirname,'../benchmarks/packing-pss')),seconds=Number(process.env.PACKING_SECONDS||3);fs.mkdirSync(out,{recursive:true});
+let state=7301;const rnd=()=>((state=(Math.imul(state,1664525)+1013904223)>>>0)/4294967296);
+const cases=[{name:'corrected-26',p:clean(require('../benchmarks/bazis-26-corrected.json'))},{name:'order-229',p:clean(require('../server/tests/fixtures/order-229.json'))},... [50,200].map(n=>({name:'random-'+n,p:{sheetW:2750,sheetH:1830,trim:10,kerf:5,pieces:Array.from({length:n},(_,i)=>({id:i+1,l:100+Math.floor(rnd()*1000),w:70+Math.floor(rnd()*500),q:1,grain:i%4===0}))}}))];
+const report={pin:require('../server/packing/pin.json'),node:process.version,seed:7301,host:{cpu:require('node:os').cpus()[0].model,cpuCount:require('node:os').cpus().length},secondsPerAttempt:seconds,records:[]};
+for(const {name,p}of cases){const started=Date.now(),baseline=searchCompleted(p,{iterations:1}),rec={name,parameters:p,baseline:{metrics:baseline.metrics,elapsedMs:Date.now()-started,iterations:1},attempts:[]};let best=null;
+ for(const stages of [2,3,-1])for(const axis of ['H','V']){const start=Date.now();try{const candidate=runPacking(p,{stages,axis,seconds}),r=candidate.result;rec.attempts.push({stages,axis,status:'PSS-validated',metrics:r.metrics,elapsedMs:Date.now()-start});if(!best||r.metrics.sheets<best.result.metrics.sheets||r.metrics.sheets===best.result.metrics.sheets&&r.metrics.cuts<best.result.metrics.cuts)best=candidate;}
+ catch(e){rec.attempts.push({stages,axis,status:'rejected',reason:e.message.slice(-1500),elapsedMs:Date.now()-start});}}
+ if(best){fs.writeFileSync(path.join(out,name+'-certificate.csv'),best.certificate);fs.writeFileSync(path.join(out,name+'-result.json'),JSON.stringify(best.result));rec.bestNative=best.result.metrics;
+  for(const [i,s]of best.result.sheets.entries()){const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+p.sheetW+' '+p.sheetH+'"><rect width="100%" height="100%" fill="#eee"/>'+s.parts.map(a=>'<rect x="'+a.x+'" y="'+a.y+'" width="'+a.w+'" height="'+a.h+'" fill="#bedcf8" stroke="#345"/><text x="'+(a.x+5)+'" y="'+(a.y+20)+'" font-size="20">'+a.id+'</text>').join('')+'</svg>';fs.writeFileSync(path.join(out,name+'-sheet-'+(i+1)+'.svg'),svg);}}
+ report.records.push(rec);fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));console.log(name,JSON.stringify({baseline:rec.baseline.metrics,native:rec.bestNative,accepted:rec.attempts.filter(a=>a.status==='PSS-validated').length}));
+}
