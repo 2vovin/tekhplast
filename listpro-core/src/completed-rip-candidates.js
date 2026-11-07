@@ -122,12 +122,13 @@ function transpose(s){
   walk(sh.tree);sh.primaryStrips.forEach(b=>b.rect=rect(b.rect));sh.axis='V';
  }return collect(s);
 }
-function searchAdaptive(p,{iterations=100,seed=42,axis='H',accept,candidates=12}={}){
+function searchAdaptive(p,{iterations=100,seed=42,axis='H',accept,candidates=12,shouldStop=()=>false}={}){
  if(!['H','V'].includes(axis)||!Number.isSafeInteger(iterations)||iterations<1||!Number.isSafeInteger(seed)||!Number.isSafeInteger(candidates)||candidates<1)throw Error('Search options');
  const pp=axis==='H'?p:{...p,sheetW:p.sheetH,sheetH:p.sheetW,pieces:p.pieces.map(j=>({...j,l:j.w,w:j.l}))};
  const jobs=checkInput(pp).jobs,rng=random(seed),stats={iterations,seed,axis,rectangles:0,dpCalls:0,dpStates:0,prunedDP:0,rejectedBands:0,fallbackBands:0,accepted:0,rejected:0,distribution:{},elapsedMs:0};
  let best=null,score=null;const start=Date.now();
  for(let i=0;i<iterations;i++){
+  if(shouldStop()){stats.budgetExhausted=true;break;}
   const config={delta:[0,.2,.5,.99][i%4],dp:i%3===0,vertical:(i%7)/6,choices:1+i%2,reverse:!!(i%2),candidates,heightPower:[1,.95,.85,.7][i%4],noise:i===0?0:.05};
   let s=trial(pp,jobs,config,rng,stats);if(axis==='V')s=transpose(s);
   const g=validate(p,s),v=[g.sheets,g.cuts,-g.largestWaste,g.cutLength];

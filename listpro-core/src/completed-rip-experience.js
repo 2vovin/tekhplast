@@ -19,10 +19,10 @@ function normalize(value){
  return bank;
 }
 function patternsOf(p,result){return result.sheets.map(sh=>fromTree(sh.tree,p.kerf));}
-function remember(bank,p,result){
+function remember(bank,p,result,{countSolve=true}={}){
  require('./completed-rip-validator').validateCompleted(p,result,result.plan,result.equipmentProfile);
  // Recompile and replay before admitting any move into the database.
- const raw=patternsOf(p,result);verifyDeferred(p,buildRawLayout(p,raw));const next=normalize(bank);next.solves++;
+ const raw=patternsOf(p,result);verifyDeferred(p,buildRawLayout(p,raw));const next=normalize(bank);if(countSolve)next.solves++;
  function encode(n){if(n.part){const a=p.pieces.find(a=>a.id===n.part.id);return{leaf:true,l:a.l,w:a.w,rotated:!!n.part.rotated};}return{axis:n.axis,children:n.children.map(encode)};}
  for(const n of raw){const pattern=encode(n),key=JSON.stringify(pattern),old=next.patterns.find(r=>JSON.stringify(r.pattern)===key);if(old)old.uses++;else next.patterns.push({pattern,uses:1});}
  next.patterns.sort((a,b)=>b.uses-a.uses);next.patterns=next.patterns.slice(0,128);
@@ -35,7 +35,7 @@ function score(r,objective){return objective==='cuts'?[r.metrics.sheets,r.metric
 const better=(a,b)=>!b||a.some((v,i)=>v<b[i]&&a.slice(0,i).every((x,j)=>x===b[j]));
 function solveWithExperience(p,value,baseSolve,options={}){
  const bank=normalize(value),objective=options.objective||'remnants',min=estimateSheets(p).minimumSheets,stats={patterns:bank.patterns.length,solves:bank.solves,matched:0,rejected:0,used:false,nearMatches:0,recipeUsed:false,booksMatched:0};let best=null;
- const keep=r=>{if(better(score(r,objective),best&&score(best,objective)))best=r;};
+ const keep=r=>{if(better(score(r,objective),best&&score(best,objective))){best=r;options.onBest?.(r);}};
  const available=p.pieces.map(a=>a.q),prefix=[];
  function bind(n,counts,near){if(!n.leaf)return {axis:n.axis,children:n.children.map(c=>bind(c,counts,near))};
   const matches=p.pieces.map((a,i)=>({a,i,d:Math.abs(a.l/n.l-1)+Math.abs(a.w/n.w-1)})).filter(({a,i,d})=>counts[i]>0&&(!n.rotated||a.grain===false)&&(near?d<=.08:d<1e-10)).sort((a,b)=>a.d-b.d);
@@ -49,27 +49,30 @@ function solveWithExperience(p,value,baseSolve,options={}){
  }
  // A complete opening book preserves combinations between complementary sheets.
  // It avoids greedily using a common pattern twice and starving another sheet.
- for(const book of bank.books)for(const near of [false,true]){
-  const counts=p.pieces.map(a=>a.q);try{const patterns=book.patterns.map(n=>bind(n,counts,near));candidate(patterns,counts);stats.booksMatched++;break;}catch{stats.rejected++;}
+ for(const book of bank.books)for(const near of (options.completeBooksOnly?[false]:[false,true])){
+  if(options.shouldStop?.())break;const counts=p.pieces.map(a=>a.q);try{const patterns=book.patterns.map(n=>bind(n,counts,near));if(options.completeBooksOnly&&counts.some(Boolean))continue;candidate(patterns,counts);stats.booksMatched++;break;}catch{stats.rejected++;}
  }
+ if(options.completeBooksOnly)return best?finish(best):null;
  if(best&&best.metrics.sheets===min&&!options.forceSearch)return finish(best);
  // Prefer exact openings, then try the same tree with nearby actual dimensions.
  for(const near of [false,true])for(const rec of bank.patterns){
+  if(options.shouldStop?.())break;
   for(let repeats=0;repeats<2500;repeats++){
+   if(options.shouldStop?.())break;
    const counts=available.slice();let pattern;try{pattern=bind(rec.pattern,counts,near);}catch{break;}
    const sub={...p,pieces:p.pieces.map((a,i)=>({...a,q:available[i]-counts[i]})).filter(a=>a.q)};
    try{verifyDeferred(sub,buildRawLayout(sub,[pattern]));}catch{stats.rejected++;break;}
    prefix.push(pattern);available.splice(0,available.length,...counts);stats.matched++;
   }
  }
- if(prefix.length)try{
+ if(prefix.length&&!options.shouldStop?.())try{
   const sub={...p,pieces:p.pieces.map((a,i)=>({...a,q:available[i]})).filter(a=>a.q)};
   let tail=[];if(sub.pieces.length){const remaining=baseSolve(sub,{iterations:Math.min(options.iterations||100,30),examples:[]});tail=patternsOf(remaining.parameters,remaining);const rebind=n=>{if(n.part)n.part.id=sub.pieces[n.part.id-1].id;else n.children.forEach(rebind);};tail.forEach(rebind);}
   const r=verifyDeferred(p,buildRawLayout(p,[...prefix,...tail]));r.learningMove='stored-strip-tree';r.experienceOrigin=true;keep(r);
  }catch{stats.rejected++;}
  const recipe=bank.recipes.find(r=>similarity(features(p),r.features)<.2);
- if((!best||best.metrics.sheets>min)&&recipe){stats.recipeUsed=true;options.progress?.({text:'База опыта: пробуем ранее удачный широкий перебор полос',percent:5});searchCompleted(p,{seed:options.seed??42,iterations:options.iterations||100,onBest:r=>{r.learningMove='wide-48';r.experienceOrigin=true;keep(r);}});}
- if(!best||best.metrics.sheets>min||options.forceSearch)keep(baseSolve(p,options));
+ if((!best||best.metrics.sheets>min)&&recipe&&!options.shouldStop?.()){stats.recipeUsed=true;options.progress?.({text:'База опыта: пробуем ранее удачный широкий перебор полос',percent:5});searchCompleted(p,{seed:options.seed??42,iterations:options.iterations||100,shouldStop:options.shouldStop,objective,onBest:r=>{r.learningMove='wide-48';r.experienceOrigin=true;keep(r);}});}
+ if((!best||best.metrics.sheets>min||options.forceSearch)&&!options.shouldStop?.())keep(baseSolve(p,options));
  if(!best)throw Error('No accepted cutting plan');return finish(best);
 }
 module.exports={empty,normalize,remember,solveWithExperience,VERSION,PROFILE};

@@ -35,3 +35,13 @@ test('independent replay on generated orders, including grain-locked parts',()=>
 test('edge preparation handles zero trim and trim equal to the kerf without altering parts',()=>{
  for(const trim of [0,5,10]){const q={...p,trim};const r=compileCompleted(q,[pattern]);assert.equal(check(r).metrics.parts,4);}
 });
+
+test('complete-book-only lookup never searches for partial or unrelated books',()=>{
+ const learning=require('../src/completed-rip-experience'),bank=learning.remember(learning.empty(),p,result);
+ const unexpected=()=>{throw Error('Must not search');};
+ assert.equal(learning.solveWithExperience({...p,pieces:[...p.pieces,{id:5,l:50,w:40,q:1,grain:false}]},bank,unexpected,{completeBooksOnly:true}),null);
+ assert.equal(learning.solveWithExperience(p,bank,unexpected,{completeBooksOnly:true}).metrics.parts,4);
+});
+test('cooperative budget stops between candidates and retains a replayed full-order result',()=>{
+ let stop=false;const r=require('../src/completed-rip-search').searchCompleted(p,{iterations:100,shouldStop:()=>stop,onBest:()=>{stop=true;}});assert.equal(r.search.budgetExhausted,true);assert.equal(check(r).metrics.parts,4);
+});

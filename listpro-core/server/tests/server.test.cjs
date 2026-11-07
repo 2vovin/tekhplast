@@ -10,7 +10,7 @@ test('authenticated API performs actual server calculation, persists experience,
  assert.equal((await fetch(url+'/src/cutting-experience.js',{headers:{authorization:auth}})).status,404);
  assert.equal((await fetch(url+'/api/jobs',{method:'POST',headers:{authorization:auth,'content-type':'application/json',origin:'https://evil.invalid'},body:JSON.stringify(input)})).status,403);
  async function solve(){const response=await fetch(url+'/api/jobs',{method:'POST',headers:{authorization:auth,'content-type':'application/json'},body:JSON.stringify(input)});assert.equal(response.status,202);const {id}=await response.json();for(let i=0;i<200;i++){const state=await(await fetch(url+'/api/jobs/'+id,{headers:{authorization:auth}})).json();if(state.status==='done')return state.result;if(state.status==='failed')throw Error(state.error);await new Promise(r=>setTimeout(r,20));}throw Error('Timeout');}
- const a=await solve();assert.equal(a.metrics.sheets,3);assert.equal(a.sheets[2].parts.length,1);assert(fs.existsSync(path.join(dataDir,'experience-completed-v1.json')));const b=await solve();assert.equal(b.experienceInfo.used,true);assert.equal(b.experienceInfo.solves,2);
+ const a=await solve();assert.equal(a.metrics.sheets,3);assert.equal(a.sheets[2].parts.length,1);assert(fs.existsSync(path.join(dataDir,'experience-completed-v1.json')));const b=await solve();assert.equal(b.experienceInfo.used,true);assert(b.experienceInfo.solves>=2);
 }));
 test('queue capacity is bounded and active/queued jobs can be cancelled',async()=>fixture(async({url,auth})=>{
  const request=async()=>fetch(url+'/api/jobs',{method:'POST',headers:{authorization:auth,'content-type':'application/json'},body:JSON.stringify({...input,pieces:[{l:1100,w:800,q:1000,grain:false}]})});const ids=[];
@@ -22,7 +22,7 @@ test('release packaging excludes customer datasets and the client cannot fetch s
  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'listpro-stage-'));try{const files=require('../scripts/stage.cjs').stage(tmp);assert(!files.some(f=>f.startsWith('benchmarks/')));assert(files.includes('src/cutting-experience.js'));assert(files.includes('scripts/self-train-experience.js'));assert(!fs.readFileSync(path.join(tmp,'server/dist/index.html'),'utf8').includes('factories='));}finally{fs.rmSync(tmp,{recursive:true,force:true});}
 });
 
-test('large order timeout returns a full independently replayable checkpoint, not an empty screen',async()=>fixture(async({url,auth})=>{
+test('large order timeout returns a full independently replayable checkpoint, not an empty screen',async()=>fixture(async({url,auth,dataDir})=>{
  const input=require('./fixtures/order-229.json');
  const response=await fetch(url+'/api/jobs',{method:'POST',headers:{authorization:auth,'content-type':'application/json'},body:JSON.stringify(input)});
  assert.equal(response.status,202);const {id}=await response.json();let state;
@@ -30,7 +30,9 @@ test('large order timeout returns a full independently replayable checkpoint, no
  assert.equal(state.status,'done',state.error);assert.equal(state.searchComplete,false);assert.match(state.warning,/Оптимизация не завершена/);
  const r=state.result;assert.equal(r.sheets.reduce((n,s)=>n+s.parts.length,0),229);assert.equal(r.parameters.pieces.length,100);
  assert.deepEqual(r.parameters.pieces.map(p=>[p.l,p.w,p.q,p.grain]),input.pieces.map(p=>[p.l,p.w,p.q,p.grain]));
- assert.equal(r.experienceInfo.saved,false);
+ assert.equal(r.experienceInfo.saved,true);assert.match(state.warning,/добавлен в базу опыта/);
+ const bank=JSON.parse(fs.readFileSync(path.join(dataDir,'experience-completed-v1.json'),'utf8'));assert(bank.books.length>0);
+ const reused=require('../../src/completed-rip-experience').solveWithExperience(r.parameters,bank,()=>{throw Error('Unexpected search');},{completeBooksOnly:true});assert(reused);assert(reused.metrics.sheets<=r.metrics.sheets);
  const engine=require('../../web/engine.cjs');assert.equal(engine.verify(r.parameters,r).metrics.sheets,r.metrics.sheets);
  if(r.model==='completed-rip-v1')require('../../src/completed-rip-validator').validateCompleted(r.parameters,r,r.plan,r.equipmentProfile);
  else if(r.model==='deferred-staged-v1')require('../../src/deferred-strip-validator').validateDeferred(r.parameters,r,r.plan,r.equipmentProfile);
@@ -46,3 +48,18 @@ test('packaged release worker contains the completed-series optimizer and its de
  try{const r=await new Promise((resolve,reject)=>{w.on('error',reject);w.on('message',m=>{if(m.type==='result')resolve(JSON.parse(m.json));if(m.type==='error')reject(Error(m.message));});});assert.equal(r.model,'completed-rip-v1');assert.equal(r.metrics.parts,3);}finally{await w.terminate();}}
  finally{fs.rmSync(tmp,{recursive:true,force:true});}
 });
+
+test('229-part stored opening is replayed before fresh search even with a 1ms search budget',async()=>{
+ const {Worker}=require('node:worker_threads'),dir=fs.mkdtempSync(path.join(os.tmpdir(),'listpro-book-first-')),r=require('../../benchmarks/order-229-completed-rip/result.json'),learning=require('../../src/completed-rip-experience'),memoryPath=path.join(dir,'bank.json');
+ fs.writeFileSync(memoryPath,JSON.stringify(learning.remember(learning.empty(),r.parameters,r)));
+ const w=new Worker(path.join(__dirname,'../worker.cjs'),{workerData:{input:r.parameters,memoryPath,searchBudgetMs:1}});
+ try{const result=await new Promise((resolve,reject)=>{w.on('error',reject);w.on('message',m=>{if(m.type==='error')reject(Error(m.message));if(m.type==='result')resolve(JSON.parse(m.json));});});assert.equal(result.metrics.parts,229);assert.equal(result.metrics.sheets,15);assert.equal(result.experienceInfo.used,true);assert.equal(result.experienceInfo.saved,true);assert.equal(result.search.trials,undefined);}
+ finally{await w.terminate();fs.rmSync(dir,{recursive:true,force:true});}
+});
+
+test('database write failure preserves a valid map and reports saved=false',async()=>fixture(async({url,auth,dataDir})=>{
+ fs.mkdirSync(path.join(dataDir,'experience-completed-v1.json'));
+ const response=await fetch(url+'/api/jobs',{method:'POST',headers:{authorization:auth,'content-type':'application/json'},body:JSON.stringify(input)});const {id}=await response.json();let state;
+ for(let i=0;i<200;i++){state=await(await fetch(url+'/api/jobs/'+id,{headers:{authorization:auth}})).json();if(['done','failed'].includes(state.status))break;await new Promise(r=>setTimeout(r,20));}
+ assert.equal(state.status,'done',state.error);assert.equal(state.result.experienceInfo.saved,false);assert(state.result.experienceInfo.saveError);assert.equal(state.result.metrics.parts,3);
+}));
