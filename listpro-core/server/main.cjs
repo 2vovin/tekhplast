@@ -13,11 +13,11 @@ function createService(config){
   let ok=false;if(header.length<2048&&header.startsWith('Basic ')){const decoded=Buffer.from(header.slice(6),'base64').toString('utf8'),colon=decoded.indexOf(':');if(decoded.slice(0,colon)===config.user){const value=crypto.scryptSync(decoded.slice(colon+1),Buffer.from(config.salt,'hex'),64);ok=crypto.timingSafeEqual(value,Buffer.from(config.hash,'hex'));}}
   if(ok){credentialDigest=digest;failedAuth.delete(ip);return true;}limit.n++;if(failedAuth.size>1024)failedAuth.clear();failedAuth.set(ip,limit);send(res,401,{error:'Требуется вход'},{'WWW-Authenticate':'Basic realm="ListPro", charset="UTF-8"'});return false;
  }
- function pump(){if(closing||active||!queue.length)return;const job=queue.shift();active=job;job.status='running';
+ function pump(){if(closing||active||!queue.length)return;const job=queue.shift();active=job;job.status='running';job.started=Date.now();
   const worker=new Worker(path.join(__dirname,'worker.cjs'),{workerData:{input:job.input,memoryPath,searchBudgetMs:config.searchBudgetMs},resourceLimits:{maxOldGenerationSizeMb:768,stackSizeMb:16}});job.worker=worker;
   function interrupted(reason){if(job.status!=='running')return;if(job.checkpoint){job.status='done';job.result=job.checkpoint;const saved=JSON.parse(job.result).experienceInfo?.saved===true;job.warning=reason+' Показан лучший сохранённый проверенный раскрой. Оптимизация не завершена; '+(saved?'проверенный результат добавлен в базу опыта.':'сохранить результат в базу опыта не удалось.');}else{job.status='failed';job.error=reason+' Проверенная карта ещё не получена.';}}
   const timer=setTimeout(()=>{interrupted('Достигнут лимит времени расчёта (5 минут).');worker.terminate();},config.timeoutMs??300000);
-  worker.on('message',m=>{if(job.status!=='running')return;if(m.type==='progress')job.progress=m.data;else if(m.type==='checkpoint'){job.checkpoint=m.json;job.bestSheets=m.sheets;}else if(m.type==='result'){job.status='done';job.result=m.json;if(JSON.parse(m.json).search?.budgetExhausted)job.warning='Достигнут бюджет оптимизации. Показан лучший проверенный раскрой. '+(JSON.parse(m.json).experienceInfo?.saved?'Результат добавлен в базу опыта.':'Сохранить результат в базу опыта не удалось.');worker.terminate();}else{interrupted(m.message||'Ошибка оптимизации.');worker.terminate();}});
+  worker.on('message',m=>{if(job.status!=='running')return;if(m.type==='progress')job.progress=m.data;else if(m.type==='checkpoint'){job.checkpoint=m.json;job.bestSheets=m.sheets;job.revision++;job.firstVerifiedMs??=Date.now()-job.started;}else if(m.type==='result'){job.status='done';job.result=m.json;if(JSON.parse(m.json).search?.budgetExhausted)job.warning='Достигнут бюджет оптимизации. Показан лучший проверенный раскрой. '+(JSON.parse(m.json).experienceInfo?.saved?'Результат добавлен в базу опыта.':'Сохранить результат в базу опыта не удалось.');worker.terminate();}else{interrupted(m.message||'Ошибка оптимизации.');worker.terminate();}});
   worker.on('error',e=>{interrupted(e.message);});worker.on('exit',()=>{clearTimeout(timer);if(job.status==='running')interrupted('Расчёт прерван.');delete job.checkpoint;job.finished=Date.now();delete job.worker;delete job.input;active=null;const complete=[...jobs.values()].filter(j=>j.finished).sort((a,b)=>b.finished-a.finished);complete.slice(4).forEach(j=>jobs.delete(j.id));pump();});
  }
  const server=http.createServer(async(req,res)=>{try{
@@ -32,11 +32,18 @@ function createService(config){
    if(!Number.isFinite(Number(input.thickness))||Number(input.thickness)<=0||Number(input.thickness)>1000)throw Error('Укажите толщину материала');
    p.material=String(input.material||'Листовой материал').slice(0,60);p.thickness=Number(input.thickness);p.objective=input.objective==='cuts'?'cuts':'remnants';p.partOrder=input.partOrder==='optimized'?'optimized':'descending';p.pieces.forEach((a,i)=>a.edges=edges.normalize(input.pieces[i].edges));
    if(closing||queue.length>=maxQueue){send(res,429,{error:'Очередь заполнена. Повторите позже.'});return;}
-   const id=crypto.randomUUID(),job={id,status:'queued',progress:{text:'В очереди',percent:0},input:p};jobs.set(id,job);queue.push(job);pump();send(res,202,{id});return;
+   const id=crypto.randomUUID(),job={id,status:'queued',progress:{text:'В очереди',percent:0},input:p,revision:0,created:Date.now()};jobs.set(id,job);queue.push(job);pump();send(res,202,{id});return;
   }
-  const route=req.url?.match(/^\/api\/jobs\/([0-9a-f-]{36})$/);
+  const route=req.url?.match(/^\/api\/jobs\/([0-9a-f-]{36})(?:\?after=(\d{1,9}))?$/);
   if(route){const job=jobs.get(route[1]);if(!job){send(res,404,{error:'Задача не найдена или срок хранения истёк'});return;}
-   if(req.method==='GET'){if(job.status==='done'){res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end('{"status":"done","searchComplete":'+(!job.warning)+',"warning":'+JSON.stringify(job.warning||null)+',"result":'+job.result+'}');}else send(res,200,{status:job.status,progress:job.progress,bestSheets:job.bestSheets,error:job.error});return;}
+   if(req.method==='GET'){
+    const state={status:job.status,progress:job.progress,bestSheets:job.bestSheets,error:job.error,revision:job.revision,timing:{queueMs:job.started?job.started-job.created:null,firstVerifiedMs:job.firstVerifiedMs??null,elapsedMs:(job.finished||Date.now())-job.created}};
+    // A full independently verified checkpoint is usable before search ends.
+    // Only transfer a large map when the requesting client has an older revision.
+    const preview=job.status==='running'&&route[2]!==undefined&&Number(route[2])<job.revision&&job.checkpoint;
+    if(job.status==='done'||preview){state.searchComplete=job.status==='done'&&!job.warning;state.warning=job.warning||null;res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(state).slice(0,-1)+',"result":'+(job.status==='done'?job.result:job.checkpoint)+'}');}
+    else send(res,200,state);return;
+   }
    if(req.method==='DELETE'){if(job.status==='queued'){queue.splice(queue.indexOf(job),1);job.status='cancelled';job.finished=Date.now();delete job.input;}else if(job.status==='running'){job.status='cancelled';job.worker.terminate();}send(res,202,{status:job.status});return;}
   }
   send(res,404,{error:'Не найдено'});

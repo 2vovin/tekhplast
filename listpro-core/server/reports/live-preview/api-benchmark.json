@@ -1,0 +1,71 @@
+{
+  "host": {
+    "node": "v24.19.0",
+    "cpus": 4,
+    "platform": "linux"
+  },
+  "searchBudgetMs": 8000,
+  "hardTimeoutMs": 12000,
+  "pollMs": 100,
+  "cases": [
+    {
+      "name": "127-cold",
+      "parts": 127,
+      "firstVerifiedMs": 562,
+      "firstMapMs": 720,
+      "legacyMapMs": 8187,
+      "firstSheets": 19,
+      "lastSheets": 18,
+      "unchangedResponseMaxBytes": 241,
+      "checkpoints": [
+        {
+          "ms": 741,
+          "revision": 1,
+          "status": "running",
+          "sheets": 19,
+          "experienceUsed": false
+        },
+        {
+          "ms": 865,
+          "revision": 2,
+          "status": "running",
+          "sheets": 19,
+          "experienceUsed": false
+        },
+        {
+          "ms": 1198,
+          "revision": 3,
+          "status": "running",
+          "sheets": 18,
+          "experienceUsed": false
+        },
+        {
+          "ms": 8187,
+          "revision": 3,
+          "status": "done",
+          "sheets": 18,
+          "experienceUsed": false
+        }
+      ]
+    },
+    {
+      "name": "127-warm",
+      "parts": 127,
+      "firstVerifiedMs": 117,
+      "firstMapMs": 220,
+      "legacyMapMs": null,
+      "firstSheets": 18,
+      "lastSheets": 18,
+      "unchangedResponseMaxBytes": 147,
+      "checkpoints": [
+        {
+          "ms": 232,
+          "revision": 1,
+          "status": "running",
+          "sheets": 18,
+          "experienceUsed": true
+        }
+      ]
+    }
+  ]
+}

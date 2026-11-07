@@ -7,13 +7,15 @@ function build(){let app=fs.readFileSync(path.join(base,'web/app.js'),'utf8'),ht
  app=app.slice(0,start)+` let requestSerial=0;
  function serverNotice(message){$('serverNotice').textContent=message;$('serverNotice').hidden=!message;}
  async function api(url,options={}){const response=await fetch(url,{credentials:'same-origin',...options});let data;try{data=await response.json();}catch{throw Error('Сервер вернул неожиданный ответ (HTTP '+response.status+'). Повторите запрос позже.');}if(!response.ok)throw Error(data.error||'Ошибка сервера');return data;}
- async function request(action,payload){const serial=++requestSerial;let id=null,cancelled=false;setBusy(true);serverNotice('');$('progressText').textContent='Отправляем заказ на сервер';
-  const stop=()=>{cancelled=true;requestSerial++;if(id)api('/api/jobs/'+id,{method:'DELETE'}).catch(()=>{});};worker={terminate:stop};
+ async function request(action,payload){const serial=++requestSerial;let id=null,cancelled=false,revision=0,previewShown=false;setBusy(true);serverNotice('');$('cancel').textContent='Отмена';$('progressText').textContent='Отправляем заказ на сервер';
+  function show(r,newMap=true){result=r;syncEdges();sheet=previewShown?Math.min(sheet,result.sheets.length-1):0;if(!previewShown||newMap)step=0;previewShown=true;status('Геометрия и полосная модель проверены. Совместимость со станком требует его параметров.',true);renderResult();}
+  const stop=()=>{cancelled=true;requestSerial++;if(id)api('/api/jobs/'+id,{method:'DELETE'}).catch(()=>{});if(previewShown)serverNotice('Поиск остановлен. Показанный проверенный раскрой сохранён на экране.');$('cancel').textContent='Отмена';};worker={terminate:stop};
   try{const created=await api('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload.input)});id=created.id;if(cancelled){await api('/api/jobs/'+id,{method:'DELETE'});return;}
-   while(serial===requestSerial){const state=await api('/api/jobs/'+id);if(state.progress){$('progressText').textContent=state.progress.text+(state.bestSheets?' · Сохранён проверенный вариант: '+state.bestSheets+' лист(а)':'');$('progressFill').style.width=Math.min(98,state.progress.percent)+'%';}
-    if(state.status==='done'){result=state.result;syncEdges();sheet=0;step=0;status('Геометрия и полосная модель проверены. Совместимость со станком требует его параметров.',true);renderResult();serverNotice(state.warning||'');return;}
+   while(serial===requestSerial){const state=await api('/api/jobs/'+id+'?after='+revision);if(serial!==requestSerial)break;if(state.progress){$('progressText').textContent=state.progress.text+(state.bestSheets?' · Сохранён проверенный вариант: '+state.bestSheets+' лист(а)':'');$('progressFill').style.width=Math.min(98,state.progress.percent)+'%';}
+    if(state.status==='done'){show(state.result,!previewShown||state.revision!==revision);serverNotice(state.warning||'');return;}
+    if(state.status==='running'&&state.result){show(state.result);revision=state.revision;$('cancel').textContent='Оставить этот раскрой';serverNotice('Проверенный раскрой готов: '+result.sheets.length+' лист(а). Поиск лучшего варианта продолжается. Можно оставить этот раскрой или дождаться улучшений.');}
     if(['failed','cancelled'].includes(state.status))throw Error(state.error||'Расчёт остановлен');await new Promise(resolve=>setTimeout(resolve,700));}
-  }catch(e){if(serial===requestSerial){status(e.message);serverNotice('Расчёт не завершён: '+e.message);toast(e.message);}}finally{if(serial===requestSerial){worker=null;setBusy(false);}}
+  }catch(e){if(serial===requestSerial){status(e.message);serverNotice('Расчёт не завершён: '+e.message+(previewShown?' Последний проверенный раскрой остаётся на экране.':''));toast(e.message);}}finally{if(serial===requestSerial){worker=null;setBusy(false);$('cancel').textContent='Отмена';}}
  }
 `+app.slice(end);
  replace("$('materialBadge').textContent=project.material;", "$('materialBadge').textContent=project.material+' · '+fmt(project.thickness)+' мм';");

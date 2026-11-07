@@ -1,0 +1,21 @@
+{
+  "fullSuite": {
+    "command": "npm test",
+    "passed": 10100,
+    "failed": 0,
+    "durationMs": 43116.990846
+  },
+  "serverSuite": {
+    "command": "node --test server/tests/server.test.cjs",
+    "passed": 11,
+    "failed": 0
+  },
+  "browserRuns": 2,
+  "exportReplay": "completed-rip-v1",
+  "deployment": "not installed on user VPS",
+  "baselineBenchmark": {
+    "command": "npm run benchmark",
+    "exitCode": 0,
+    "historicalExternalComparisonRun": false
+  }
+}

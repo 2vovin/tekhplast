@@ -25,8 +25,18 @@ test('release packaging excludes customer datasets and the client cannot fetch s
 test('large order timeout returns a full independently replayable checkpoint, not an empty screen',async()=>fixture(async({url,auth,dataDir})=>{
  const input=require('./fixtures/order-229.json');
  const response=await fetch(url+'/api/jobs',{method:'POST',headers:{authorization:auth,'content-type':'application/json'},body:JSON.stringify(input)});
- assert.equal(response.status,202);const {id}=await response.json();let state;
- for(let i=0;i<400;i++){state=await(await fetch(url+'/api/jobs/'+id,{headers:{authorization:auth}})).json();if(['done','failed'].includes(state.status))break;await new Promise(r=>setTimeout(r,50));}
+ assert.equal(response.status,202);const {id}=await response.json();let state,preview;
+ for(let i=0;i<400;i++){
+  state=await(await fetch(url+'/api/jobs/'+id+'?after=0',{headers:{authorization:auth}})).json();
+  if(!preview&&state.status==='running'&&state.result){
+   preview=state;assert.equal(state.searchComplete,false);assert(state.revision>0);assert(state.timing.firstVerifiedMs>=0);
+   assert.equal(state.result.metrics.parts,229);require('../../src/completed-rip-validator').validateCompleted(state.result.parameters,state.result,state.result.plan,state.result.equipmentProfile);
+   const unchanged=await(await fetch(url+'/api/jobs/'+id+'?after='+state.revision,{headers:{authorization:auth}})).json();
+   if(unchanged.status==='running'&&unchanged.revision===state.revision)assert.equal(unchanged.result,undefined);
+  }
+  if(['done','failed'].includes(state.status))break;await new Promise(r=>setTimeout(r,50));
+ }
+ assert(preview,'A complete checked map must be available while optimization is running');
  assert.equal(state.status,'done',state.error);assert.equal(state.searchComplete,false);assert.match(state.warning,/Оптимизация не завершена/);
  const r=state.result;assert.equal(r.sheets.reduce((n,s)=>n+s.parts.length,0),229);assert.equal(r.parameters.pieces.length,100);
  assert.deepEqual(r.parameters.pieces.map(p=>[p.l,p.w,p.q,p.grain]),input.pieces.map(p=>[p.l,p.w,p.q,p.grain]));
@@ -38,6 +48,21 @@ test('large order timeout returns a full independently replayable checkpoint, no
  else if(r.model==='deferred-staged-v1')require('../../src/deferred-strip-validator').validateDeferred(r.parameters,r,r.plan,r.equipmentProfile);
  else require('../../src/held-strip-validator').validateHeld(r.parameters,r,r.plan,r.equipmentProfile);
 }, {timeoutMs:15000}));
+test('cancelling after the first preview keeps verified experience and stops the job',async()=>fixture(async({url,auth,dataDir})=>{
+ const response=await fetch(url+'/api/jobs',{method:'POST',headers:{authorization:auth,'content-type':'application/json'},body:JSON.stringify(require('./fixtures/order-229.json'))});
+ const {id}=await response.json();let preview;
+ for(let i=0;i<200;i++){
+  const state=await(await fetch(url+'/api/jobs/'+id+'?after=0',{headers:{authorization:auth}})).json();
+  if(state.status==='running'&&state.result){preview=state.result;break;}
+  if(state.status==='failed')throw Error(state.error);await new Promise(r=>setTimeout(r,30));
+ }
+ assert(preview);assert.equal(preview.metrics.parts,229);
+ assert.equal((await fetch(url+'/api/jobs/'+id,{method:'DELETE',headers:{authorization:auth}})).status,202);
+ const stopped=await(await fetch(url+'/api/jobs/'+id+'?after=0',{headers:{authorization:auth}})).json();assert.equal(stopped.status,'cancelled');assert.equal(stopped.result,undefined);
+ const bank=JSON.parse(fs.readFileSync(path.join(dataDir,'experience-completed-v1.json'),'utf8'));
+ const recovered=require('../../src/completed-rip-experience').solveWithExperience(preview.parameters,bank,()=>{throw Error('Should only replay stored plan');},{completeBooksOnly:true});
+ assert.equal(recovered.metrics.parts,229);
+}));
 test('timeout before any valid candidate is an explicit failure',async()=>fixture(async({url,auth})=>{
  const response=await fetch(url+'/api/jobs',{method:'POST',headers:{authorization:auth,'content-type':'application/json'},body:JSON.stringify(input)});const {id}=await response.json();
  await new Promise(r=>setTimeout(r,100));const state=await(await fetch(url+'/api/jobs/'+id,{headers:{authorization:auth}})).json();assert.equal(state.status,'failed');assert.match(state.error,/Проверенная карта ещё не получена/);assert.equal(state.result,undefined);

@@ -1,0 +1,12 @@
+{
+  "orderParts": 127,
+  "firstVisibleMs": 1062,
+  "firstVerifiedMs": 677,
+  "firstSheets": 19,
+  "retainedSheets": 18,
+  "previewWhileRunning": true,
+  "unchangedPollsOmitMap": true,
+  "cancelKeepsMap": true,
+  "exportIndependentlyValidated": true,
+  "jsErrors": []
+}
