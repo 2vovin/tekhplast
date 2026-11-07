@@ -1,0 +1,3 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),p=require('./input.json'),r=require('./result.json'),{validateCompleted}=require('../../src/completed-rip-validator');
+const rows=fs.readFileSync(path.join(__dirname,'input.tsv'),'utf8').trim().split('\n').map(s=>s.trim().split(/\s+/).map(Number));assert.deepEqual(rows,p.pieces.map(a=>[a.l,a.w,a.q]));assert.deepEqual(r.parameters,p);const report=validateCompleted(p,r,r.plan,r.equipmentProfile);console.log(JSON.stringify({geometry:report.geometryValid,pss:report.targetPSSModelValid,realMachine:report.realMachineFeasibility,metrics:report.metrics},null,2));
