@@ -1,0 +1,363 @@
+{
+  "minimumByArea": 5,
+  "foundSheets": 6,
+  "optimality": "not proven",
+  "externalEngine": {
+    "name": "PackingSolver",
+    "version": "0.1.1301",
+    "certificateSheets": 6,
+    "convertedSheets": 6,
+    "axis": "H",
+    "scale": 1,
+    "adaptation": "waste tightened; a new physical plan independently replayed",
+    "realMachineFeasibility": "unknown",
+    "stages": 2,
+    "seconds": 5,
+    "elapsedMs": 2173,
+    "groupedIdenticalTypes": false,
+    "originalRowCount": 12,
+    "nativeTypeCount": 12
+  },
+  "records": [
+    {
+      "axis": "V",
+      "seconds": 5,
+      "grouped": false,
+      "stages": 2,
+      "elapsedMs": 2210,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 260,
+        "turns": 42,
+        "feeds": 254,
+        "cutLength": 181642,
+        "stages": 3,
+        "operations": 658,
+        "largestWaste": 1694160,
+        "wasteArea": 5920552,
+        "edgeFinishingCuts": 1,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      }
+    },
+    {
+      "axis": "H",
+      "seconds": 5,
+      "grouped": false,
+      "stages": 2,
+      "elapsedMs": 2181,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 248,
+        "turns": 50,
+        "feeds": 242,
+        "cutLength": 180942,
+        "stages": 4,
+        "operations": 658,
+        "largestWaste": 3688230,
+        "wasteArea": 5920096,
+        "edgeFinishingCuts": 4,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "axis": "V",
+      "seconds": 15,
+      "grouped": false,
+      "stages": 2,
+      "elapsedMs": 2185,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 260,
+        "turns": 42,
+        "feeds": 254,
+        "cutLength": 181642,
+        "stages": 3,
+        "operations": 658,
+        "largestWaste": 1694160,
+        "wasteArea": 5920552,
+        "edgeFinishingCuts": 1,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      }
+    },
+    {
+      "axis": "H",
+      "seconds": 15,
+      "grouped": false,
+      "stages": 2,
+      "elapsedMs": 2181,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 248,
+        "turns": 50,
+        "feeds": 242,
+        "cutLength": 180942,
+        "stages": 4,
+        "operations": 658,
+        "largestWaste": 3688230,
+        "wasteArea": 5920096,
+        "edgeFinishingCuts": 4,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "axis": "V",
+      "seconds": 30,
+      "grouped": false,
+      "stages": 2,
+      "elapsedMs": 2184,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 260,
+        "turns": 42,
+        "feeds": 254,
+        "cutLength": 181642,
+        "stages": 3,
+        "operations": 658,
+        "largestWaste": 1694160,
+        "wasteArea": 5920552,
+        "edgeFinishingCuts": 1,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      }
+    },
+    {
+      "axis": "H",
+      "seconds": 30,
+      "grouped": false,
+      "stages": 2,
+      "elapsedMs": 2175,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 248,
+        "turns": 50,
+        "feeds": 242,
+        "cutLength": 180942,
+        "stages": 4,
+        "operations": 658,
+        "largestWaste": 3688230,
+        "wasteArea": 5920096,
+        "edgeFinishingCuts": 4,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "axis": "V",
+      "seconds": 5,
+      "grouped": true,
+      "stages": 2,
+      "elapsedMs": 2179,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 260,
+        "turns": 42,
+        "feeds": 254,
+        "cutLength": 181642,
+        "stages": 3,
+        "operations": 658,
+        "largestWaste": 1694160,
+        "wasteArea": 5920552,
+        "edgeFinishingCuts": 1,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      }
+    },
+    {
+      "axis": "H",
+      "seconds": 5,
+      "grouped": true,
+      "stages": 2,
+      "elapsedMs": 2189,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 248,
+        "turns": 50,
+        "feeds": 242,
+        "cutLength": 180942,
+        "stages": 4,
+        "operations": 658,
+        "largestWaste": 3688230,
+        "wasteArea": 5920096,
+        "edgeFinishingCuts": 4,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "axis": "V",
+      "seconds": 15,
+      "grouped": true,
+      "stages": 2,
+      "elapsedMs": 2189,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 260,
+        "turns": 42,
+        "feeds": 254,
+        "cutLength": 181642,
+        "stages": 3,
+        "operations": 658,
+        "largestWaste": 1694160,
+        "wasteArea": 5920552,
+        "edgeFinishingCuts": 1,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      }
+    },
+    {
+      "axis": "H",
+      "seconds": 15,
+      "grouped": true,
+      "stages": 2,
+      "elapsedMs": 2177,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 248,
+        "turns": 50,
+        "feeds": 242,
+        "cutLength": 180942,
+        "stages": 4,
+        "operations": 658,
+        "largestWaste": 3688230,
+        "wasteArea": 5920096,
+        "edgeFinishingCuts": 4,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "axis": "V",
+      "seconds": 30,
+      "grouped": true,
+      "stages": 2,
+      "elapsedMs": 2175,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 260,
+        "turns": 42,
+        "feeds": 254,
+        "cutLength": 181642,
+        "stages": 3,
+        "operations": 658,
+        "largestWaste": 1694160,
+        "wasteArea": 5920552,
+        "edgeFinishingCuts": 1,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 2
+      }
+    },
+    {
+      "axis": "H",
+      "seconds": 30,
+      "grouped": true,
+      "stages": 2,
+      "elapsedMs": 2178,
+      "metrics": {
+        "sheets": 6,
+        "parts": 130,
+        "cuts": 248,
+        "turns": 50,
+        "feeds": 242,
+        "cutLength": 180942,
+        "stages": 4,
+        "operations": 658,
+        "largestWaste": 3688230,
+        "wasteArea": 5920096,
+        "edgeFinishingCuts": 4,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    },
+    {
+      "axis": "V",
+      "seconds": 5,
+      "grouped": false,
+      "stages": 3,
+      "error": "Completed-rip replay: no real primary strip anchor",
+      "elapsedMs": 2173
+    },
+    {
+      "axis": "H",
+      "seconds": 5,
+      "grouped": false,
+      "stages": 3,
+      "error": "Illegal rotation",
+      "elapsedMs": 3170
+    },
+    {
+      "axis": "V",
+      "seconds": 5,
+      "grouped": true,
+      "stages": 3,
+      "error": "Completed-rip replay: no real primary strip anchor",
+      "elapsedMs": 2172
+    },
+    {
+      "axis": "H",
+      "seconds": 5,
+      "grouped": true,
+      "stages": 3,
+      "error": "Illegal rotation",
+      "elapsedMs": 3172
+    },
+    {
+      "axis": "V",
+      "seconds": 5,
+      "grouped": false,
+      "stages": -1,
+      "error": "Completed-rip replay: last primary strip has no real anchor",
+      "elapsedMs": 3173
+    },
+    {
+      "axis": "H",
+      "seconds": 5,
+      "grouped": false,
+      "stages": -1,
+      "error": "Nonparallel certificate strips",
+      "elapsedMs": 3171
+    },
+    {
+      "axis": "V",
+      "seconds": 5,
+      "grouped": true,
+      "stages": -1,
+      "error": "Completed-rip replay: last primary strip has no real anchor",
+      "elapsedMs": 3173
+    },
+    {
+      "axis": "H",
+      "seconds": 5,
+      "grouped": true,
+      "stages": -1,
+      "error": "Nonparallel certificate strips",
+      "elapsedMs": 3170
+    }
+  ]
+}
