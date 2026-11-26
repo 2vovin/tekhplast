@@ -1,10 +1,5 @@
-// Current 221-part request: use a stored replay, or bootstrap on the isolated CI runner.
-{
- const fs=require('node:fs'),path=require('node:path');
- const fixture=path.join(__dirname,'../benchmarks/order-221-target13');
- if(fs.existsSync(path.join(fixture,'verify.cjs')))require(path.join(fixture,'verify.cjs'))();
- else if(process.env.CI==='true'&&process.env.GITHUB_ACTIONS==='true')require(path.join(fixture,'run-native.cjs'));
-}
+// Exact new user order: replay the saved thirteen-sheet result independently.
+require('../benchmarks/order-221-target13/verify.cjs').check();
 console.log('Historical NON-PSS regressions follow; only the final PANEL_SAW_STAGED 1.2 replay validates current PSS roles and real anchors.');
 'use strict';
 const {pack}=require('../src/core');

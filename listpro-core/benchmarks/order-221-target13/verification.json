@@ -1,0 +1,505 @@
+{
+  "sourceSha256": "34b9df83c8f18ba18a18d9b23db5a9d146ec74587cf3a885929e4e301c05a61d",
+  "parameters": {
+    "sheetW": 2750,
+    "sheetH": 1830,
+    "trim": 10,
+    "kerf": 5,
+    "allPartsMayRotate": true
+  },
+  "geometryValid": true,
+  "abstractCutTreeValid": true,
+  "targetPSSModelValid": true,
+  "realMachineFeasibility": "unknown",
+  "equipmentProfile": {
+    "id": "completed-rip-v1",
+    "retainedSide": "HIGH_MATERIAL",
+    "seriesCompletionRequired": true,
+    "maxTurnsPerBlank": 1,
+    "maxSheetTurns": 0,
+    "initialCutAxes": [
+      "H",
+      "V"
+    ],
+    "allowTerminalBladeOverhang": true,
+    "realMachineFeasibility": "unknown"
+  },
+  "metrics": {
+    "sheets": 13,
+    "parts": 221,
+    "cuts": 476,
+    "turns": 127,
+    "feeds": 463,
+    "cutLength": 398833,
+    "stages": 4,
+    "operations": 1359,
+    "largestWaste": 1352070,
+    "wasteArea": 2660333,
+    "edgeFinishingCuts": 40,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 3
+  },
+  "areaMm2": 60254642,
+  "minimumSheetsByArea": 13,
+  "sheetCountOptimal": true,
+  "twelveSheetUsableAreaMm2": 59295600,
+  "usableAreaUtilization": 0.9380066908583695,
+  "grossAreaUtilization": 0.9210079406931866,
+  "inventory": [
+    {
+      "id": 1,
+      "l": 1168,
+      "w": 623,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 2,
+      "l": 1202,
+      "w": 602,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 3,
+      "l": 1168,
+      "w": 560,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 4,
+      "l": 1168,
+      "w": 553,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 5,
+      "l": 1540,
+      "w": 400,
+      "requested": 4,
+      "placed": 4
+    },
+    {
+      "id": 6,
+      "l": 832,
+      "w": 633,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 7,
+      "l": 782,
+      "w": 633,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 8,
+      "l": 1640,
+      "w": 297,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 9,
+      "l": 1640,
+      "w": 297,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 10,
+      "l": 1204,
+      "w": 400,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 11,
+      "l": 634,
+      "w": 580,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 12,
+      "l": 634,
+      "w": 580,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 13,
+      "l": 900,
+      "w": 400,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 14,
+      "l": 595,
+      "w": 558,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 15,
+      "l": 595,
+      "w": 558,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 16,
+      "l": 866,
+      "w": 377,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 17,
+      "l": 866,
+      "w": 370,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 18,
+      "l": 865,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 19,
+      "l": 860,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 20,
+      "l": 860,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 21,
+      "l": 860,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 22,
+      "l": 860,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 23,
+      "l": 860,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 24,
+      "l": 815,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 25,
+      "l": 810,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 26,
+      "l": 810,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 27,
+      "l": 810,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 28,
+      "l": 810,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 29,
+      "l": 810,
+      "w": 348,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 30,
+      "l": 832,
+      "w": 310,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 31,
+      "l": 866,
+      "w": 297,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 32,
+      "l": 866,
+      "w": 294,
+      "requested": 20,
+      "placed": 20
+    },
+    {
+      "id": 33,
+      "l": 832,
+      "w": 305,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 34,
+      "l": 559,
+      "w": 445,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 35,
+      "l": 559,
+      "w": 445,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 36,
+      "l": 782,
+      "w": 310,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 37,
+      "l": 633,
+      "w": 380,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 38,
+      "l": 633,
+      "w": 380,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 39,
+      "l": 958,
+      "w": 249,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 40,
+      "l": 557,
+      "w": 427,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 41,
+      "l": 557,
+      "w": 427,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 42,
+      "l": 782,
+      "w": 305,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 43,
+      "l": 557,
+      "w": 402,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 44,
+      "l": 557,
+      "w": 402,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 45,
+      "l": 633,
+      "w": 330,
+      "requested": 6,
+      "placed": 6
+    },
+    {
+      "id": 46,
+      "l": 633,
+      "w": 330,
+      "requested": 6,
+      "placed": 6
+    },
+    {
+      "id": 47,
+      "l": 866,
+      "w": 200,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 48,
+      "l": 388,
+      "w": 268,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 49,
+      "l": 388,
+      "w": 268,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 50,
+      "l": 388,
+      "w": 267,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 51,
+      "l": 388,
+      "w": 267,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 52,
+      "l": 388,
+      "w": 267,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 53,
+      "l": 388,
+      "w": 267,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 54,
+      "l": 1168,
+      "w": 68,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 55,
+      "l": 1168,
+      "w": 69,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 56,
+      "l": 400,
+      "w": 170,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 57,
+      "l": 400,
+      "w": 170,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 58,
+      "l": 832,
+      "w": 78,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 59,
+      "l": 782,
+      "w": 78,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 60,
+      "l": 866,
+      "w": 69,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 61,
+      "l": 866,
+      "w": 69,
+      "requested": 5,
+      "placed": 5
+    },
+    {
+      "id": 62,
+      "l": 832,
+      "w": 69,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 63,
+      "l": 782,
+      "w": 69,
+      "requested": 3,
+      "placed": 3
+    },
+    {
+      "id": 64,
+      "l": 1800,
+      "w": 297,
+      "requested": 2,
+      "placed": 2
+    }
+  ],
+  "assumptions": [
+    "Each sheet has a fixed initial loading direction H or V; retained HIGH material never rotates at any level.",
+    "Leading/trailing edges are prepared before each rip; the final working blank is released only after all declared cuts.",
+    "Edge sizing preserves the physical rotation counter; a subsequent cut is possible only after an explicit completed series.",
+    "Clamp, stroke, feed and trim-overhang capability of the actual machine are not confirmed."
+  ]
+}

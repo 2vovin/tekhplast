@@ -1,0 +1,39 @@
+{
+  "runId": 45754937522,
+  "runUrl": "https://github.com/2vovin/tekhplast/actions/runs/45754937522",
+  "headSha": "cc25dd0544aaea94ac6e8f9805506f8f97868211",
+  "tests": {
+    "tests": 10119,
+    "passed": 10119,
+    "failed": 0,
+    "durationMs": 70235.710179
+  },
+  "newNativeBenchmark": {
+    "passed": true,
+    "axis": "V",
+    "seconds": 5,
+    "grouped": false,
+    "stages": 2,
+    "elapsedMs": 5541,
+    "metrics": {
+      "sheets": 13,
+      "parts": 221,
+      "cuts": 476,
+      "turns": 127,
+      "feeds": 463,
+      "cutLength": 398833,
+      "stages": 4,
+      "operations": 1359,
+      "largestWaste": 1352070,
+      "wasteArea": 2660333,
+      "edgeFinishingCuts": 40,
+      "heldRemainderTurns": 0,
+      "originalSheetTurns": 0,
+      "ancestryTurnsMax": 3
+    }
+  },
+  "historicalBenchmark": {
+    "passed": false,
+    "error": "PackingSolver release changed: pinned SHA256 mismatch; never execute an unpinned binary"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "minimum": 13,
+  "records": [
+    {
+      "axis": "V",
+      "seconds": 5,
+      "grouped": false,
+      "stages": 2,
+      "elapsedMs": 5541,
+      "metrics": {
+        "sheets": 13,
+        "parts": 221,
+        "cuts": 476,
+        "turns": 127,
+        "feeds": 463,
+        "cutLength": 398833,
+        "stages": 4,
+        "operations": 1359,
+        "largestWaste": 1352070,
+        "wasteArea": 2660333,
+        "edgeFinishingCuts": 40,
+        "heldRemainderTurns": 0,
+        "originalSheetTurns": 0,
+        "ancestryTurnsMax": 3
+      }
+    }
+  ],
+  "externalEngine": {
+    "name": "PackingSolver",
+    "version": "0.1.1301",
+    "certificateSheets": 13,
+    "convertedSheets": 13,
+    "axis": "V",
+    "scale": 1,
+    "adaptation": "waste tightened; a new physical plan independently replayed",
+    "realMachineFeasibility": "unknown",
+    "stages": 2,
+    "seconds": 5,
+    "elapsedMs": 5516,
+    "groupedIdenticalTypes": false,
+    "originalRowCount": 64,
+    "nativeTypeCount": 64
+  }
+}
