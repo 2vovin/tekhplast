@@ -1,3 +1,5 @@
+// Bootstrap the new nonrotatable order on the isolated CI runner; the saved fixture replaces this once available.
+if(process.env.CI==='true'&&process.env.GITHUB_ACTIONS==='true')require('../benchmarks/order-130-no-rotation/run-native.cjs');
 // Exact new user order: replay the saved thirteen-sheet result independently.
 require('../benchmarks/order-221-target13/verify.cjs').check();
 console.log('Historical NON-PSS regressions follow; only the final PANEL_SAW_STAGED 1.2 replay validates current PSS roles and real anchors.');
