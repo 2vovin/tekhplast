@@ -1,0 +1,370 @@
+{
+  "runId": 45768742194,
+  "headSha": "0b82bf3afffbfc34d8fe13aeab64569facaa6bc0",
+  "tests": {
+    "passed": 10125,
+    "failed": 0
+  },
+  "nativeSearch": {
+    "metrics": {
+      "sheets": 6,
+      "parts": 126,
+      "cuts": 260,
+      "turns": 46,
+      "feeds": 254,
+      "cutLength": 183256,
+      "stages": 3,
+      "operations": 670,
+      "largestWaste": 1929460,
+      "wasteArea": 6266351,
+      "edgeFinishingCuts": 1,
+      "heldRemainderTurns": 0,
+      "originalSheetTurns": 0,
+      "ancestryTurnsMax": 2
+    },
+    "minimum": 5,
+    "records": [
+      {
+        "axis": "V",
+        "seconds": 5,
+        "grouped": false,
+        "stages": 2,
+        "elapsedMs": 2156,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 260,
+          "turns": 46,
+          "feeds": 254,
+          "cutLength": 183256,
+          "stages": 3,
+          "operations": 670,
+          "largestWaste": 1929460,
+          "wasteArea": 6266351,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "H",
+        "seconds": 5,
+        "grouped": false,
+        "stages": 2,
+        "elapsedMs": 2149,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 255,
+          "turns": 50,
+          "feeds": 249,
+          "cutLength": 189440,
+          "stages": 3,
+          "operations": 672,
+          "largestWaste": 644700,
+          "wasteArea": 6247391,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "V",
+        "seconds": 15,
+        "grouped": false,
+        "stages": 2,
+        "elapsedMs": 2146,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 260,
+          "turns": 46,
+          "feeds": 254,
+          "cutLength": 183256,
+          "stages": 3,
+          "operations": 670,
+          "largestWaste": 1929460,
+          "wasteArea": 6266351,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "H",
+        "seconds": 15,
+        "grouped": false,
+        "stages": 2,
+        "elapsedMs": 2148,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 255,
+          "turns": 50,
+          "feeds": 249,
+          "cutLength": 189440,
+          "stages": 3,
+          "operations": 672,
+          "largestWaste": 644700,
+          "wasteArea": 6247391,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "V",
+        "seconds": 30,
+        "grouped": false,
+        "stages": 2,
+        "elapsedMs": 2148,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 260,
+          "turns": 46,
+          "feeds": 254,
+          "cutLength": 183256,
+          "stages": 3,
+          "operations": 670,
+          "largestWaste": 1929460,
+          "wasteArea": 6266351,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "H",
+        "seconds": 30,
+        "grouped": false,
+        "stages": 2,
+        "elapsedMs": 2144,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 255,
+          "turns": 50,
+          "feeds": 249,
+          "cutLength": 189440,
+          "stages": 3,
+          "operations": 672,
+          "largestWaste": 644700,
+          "wasteArea": 6247391,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "V",
+        "seconds": 5,
+        "grouped": true,
+        "stages": 2,
+        "elapsedMs": 2143,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 260,
+          "turns": 46,
+          "feeds": 254,
+          "cutLength": 183256,
+          "stages": 3,
+          "operations": 670,
+          "largestWaste": 1929460,
+          "wasteArea": 6266351,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "H",
+        "seconds": 5,
+        "grouped": true,
+        "stages": 2,
+        "elapsedMs": 2145,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 255,
+          "turns": 50,
+          "feeds": 249,
+          "cutLength": 189440,
+          "stages": 3,
+          "operations": 672,
+          "largestWaste": 644700,
+          "wasteArea": 6247391,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "V",
+        "seconds": 15,
+        "grouped": true,
+        "stages": 2,
+        "elapsedMs": 2148,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 260,
+          "turns": 46,
+          "feeds": 254,
+          "cutLength": 183256,
+          "stages": 3,
+          "operations": 670,
+          "largestWaste": 1929460,
+          "wasteArea": 6266351,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "H",
+        "seconds": 15,
+        "grouped": true,
+        "stages": 2,
+        "elapsedMs": 2144,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 255,
+          "turns": 50,
+          "feeds": 249,
+          "cutLength": 189440,
+          "stages": 3,
+          "operations": 672,
+          "largestWaste": 644700,
+          "wasteArea": 6247391,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "V",
+        "seconds": 30,
+        "grouped": true,
+        "stages": 2,
+        "elapsedMs": 2142,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 260,
+          "turns": 46,
+          "feeds": 254,
+          "cutLength": 183256,
+          "stages": 3,
+          "operations": 670,
+          "largestWaste": 1929460,
+          "wasteArea": 6266351,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "H",
+        "seconds": 30,
+        "grouped": true,
+        "stages": 2,
+        "elapsedMs": 2142,
+        "metrics": {
+          "sheets": 6,
+          "parts": 126,
+          "cuts": 255,
+          "turns": 50,
+          "feeds": 249,
+          "cutLength": 189440,
+          "stages": 3,
+          "operations": 672,
+          "largestWaste": 644700,
+          "wasteArea": 6247391,
+          "edgeFinishingCuts": 1,
+          "heldRemainderTurns": 0,
+          "originalSheetTurns": 0,
+          "ancestryTurnsMax": 2
+        }
+      },
+      {
+        "axis": "V",
+        "seconds": 5,
+        "grouped": false,
+        "stages": 3,
+        "error": "Completed-rip replay: no real primary strip anchor",
+        "elapsedMs": 2136
+      },
+      {
+        "axis": "H",
+        "seconds": 5,
+        "grouped": false,
+        "stages": 3,
+        "error": "Illegal rotation",
+        "elapsedMs": 2134
+      },
+      {
+        "axis": "V",
+        "seconds": 5,
+        "grouped": true,
+        "stages": 3,
+        "error": "Completed-rip replay: no real primary strip anchor",
+        "elapsedMs": 2135
+      },
+      {
+        "axis": "H",
+        "seconds": 5,
+        "grouped": true,
+        "stages": 3,
+        "error": "Illegal rotation",
+        "elapsedMs": 2134
+      },
+      {
+        "axis": "V",
+        "seconds": 5,
+        "grouped": false,
+        "stages": -1,
+        "error": "Nonparallel certificate strips",
+        "elapsedMs": 3137
+      },
+      {
+        "axis": "H",
+        "seconds": 5,
+        "grouped": false,
+        "stages": -1,
+        "error": "Illegal rotation",
+        "elapsedMs": 3135
+      },
+      {
+        "axis": "V",
+        "seconds": 5,
+        "grouped": true,
+        "stages": -1,
+        "error": "Nonparallel certificate strips",
+        "elapsedMs": 3136
+      },
+      {
+        "axis": "H",
+        "seconds": 5,
+        "grouped": true,
+        "stages": -1,
+        "error": "Illegal rotation",
+        "elapsedMs": 3136
+      }
+    ]
+  },
+  "historicalBenchmarkError": "PackingSolver release changed: pinned SHA256 mismatch; never execute an unpinned binary"
+}

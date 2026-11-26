@@ -1,0 +1,140 @@
+{
+  "parameters": {
+    "sheetW": 2750,
+    "sheetH": 1830,
+    "trim": 10,
+    "kerf": 5,
+    "allPartRotationForbidden": true
+  },
+  "geometryValid": true,
+  "abstractCutTreeValid": true,
+  "targetPSSModelValid": true,
+  "realMachineFeasibility": "unknown",
+  "equipmentProfile": {
+    "id": "completed-rip-v1",
+    "retainedSide": "HIGH_MATERIAL",
+    "seriesCompletionRequired": true,
+    "maxTurnsPerBlank": 1,
+    "maxSheetTurns": 0,
+    "initialCutAxes": [
+      "H",
+      "V"
+    ],
+    "allowTerminalBladeOverhang": true,
+    "realMachineFeasibility": "unknown"
+  },
+  "metrics": {
+    "sheets": 6,
+    "parts": 126,
+    "cuts": 228,
+    "turns": 30,
+    "feeds": 222,
+    "cutLength": 173099,
+    "stages": 2,
+    "operations": 558,
+    "largestWaste": 3794700,
+    "wasteArea": 6313752,
+    "edgeFinishingCuts": 0,
+    "heldRemainderTurns": 0,
+    "originalSheetTurns": 0,
+    "ancestryTurnsMax": 1
+  },
+  "areaMm2": 22726713,
+  "minimumSheetsByArea": 5,
+  "sheetCountOptimal": false,
+  "fourSheetUsableAreaMm2": 19765200,
+  "usableAreaUtilization": 0.766556472992937,
+  "grossAreaUtilization": 0.7526647789369101,
+  "inventory": [
+    {
+      "id": 1,
+      "l": 2644,
+      "w": 349,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 2,
+      "l": 2644,
+      "w": 349,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 3,
+      "l": 2512,
+      "w": 349,
+      "requested": 8,
+      "placed": 8
+    },
+    {
+      "id": 4,
+      "l": 1364,
+      "w": 349,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 5,
+      "l": 1364,
+      "w": 349,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 6,
+      "l": 1364,
+      "w": 100,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 7,
+      "l": 1364,
+      "w": 100,
+      "requested": 2,
+      "placed": 2
+    },
+    {
+      "id": 8,
+      "l": 420,
+      "w": 270,
+      "requested": 9,
+      "placed": 9
+    },
+    {
+      "id": 9,
+      "l": 420,
+      "w": 270,
+      "requested": 9,
+      "placed": 9
+    },
+    {
+      "id": 10,
+      "l": 260,
+      "w": 349,
+      "requested": 70,
+      "placed": 70
+    },
+    {
+      "id": 11,
+      "l": 297,
+      "w": 297,
+      "requested": 9,
+      "placed": 9
+    },
+    {
+      "id": 12,
+      "l": 238,
+      "w": 180,
+      "requested": 9,
+      "placed": 9
+    }
+  ],
+  "assumptions": [
+    "Each sheet has a fixed initial loading direction H or V; retained HIGH material never rotates at any level.",
+    "Leading/trailing edges are prepared before each rip; the final working blank is released only after all declared cuts.",
+    "Edge sizing preserves the physical rotation counter; a subsequent cut is possible only after an explicit completed series.",
+    "Clamp, stroke, feed and trim-overhang capability of the actual machine are not confirmed."
+  ]
+}

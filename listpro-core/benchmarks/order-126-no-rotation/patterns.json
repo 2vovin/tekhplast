@@ -1,0 +1,1276 @@
+[
+  {
+    "axis": "H",
+    "children": [
+      {
+        "part": {
+          "id": 3,
+          "instance": 1,
+          "rotated": false
+        },
+        "w": 2512,
+        "h": 349
+      },
+      {
+        "part": {
+          "id": 3,
+          "instance": 2,
+          "rotated": false
+        },
+        "w": 2512,
+        "h": 349
+      },
+      {
+        "part": {
+          "id": 3,
+          "instance": 3,
+          "rotated": false
+        },
+        "w": 2512,
+        "h": 349
+      },
+      {
+        "part": {
+          "id": 3,
+          "instance": 4,
+          "rotated": false
+        },
+        "w": 2512,
+        "h": 349
+      },
+      {
+        "part": {
+          "id": 3,
+          "instance": 5,
+          "rotated": false
+        },
+        "w": 2512,
+        "h": 349
+      }
+    ],
+    "w": 2512,
+    "h": 1765
+  },
+  {
+    "axis": "H",
+    "children": [
+      {
+        "part": {
+          "id": 3,
+          "instance": 6,
+          "rotated": false
+        },
+        "w": 2512,
+        "h": 349
+      },
+      {
+        "part": {
+          "id": 3,
+          "instance": 7,
+          "rotated": false
+        },
+        "w": 2512,
+        "h": 349
+      },
+      {
+        "part": {
+          "id": 3,
+          "instance": 8,
+          "rotated": false
+        },
+        "w": 2512,
+        "h": 349
+      },
+      {
+        "part": {
+          "id": 1,
+          "instance": 1,
+          "rotated": false
+        },
+        "w": 2644,
+        "h": 349
+      },
+      {
+        "part": {
+          "id": 1,
+          "instance": 2,
+          "rotated": false
+        },
+        "w": 2644,
+        "h": 349
+      }
+    ],
+    "w": 2644,
+    "h": 1765
+  },
+  {
+    "axis": "H",
+    "children": [
+      {
+        "part": {
+          "id": 2,
+          "instance": 1,
+          "rotated": false
+        },
+        "w": 2644,
+        "h": 349
+      },
+      {
+        "part": {
+          "id": 2,
+          "instance": 2,
+          "rotated": false
+        },
+        "w": 2644,
+        "h": 349
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 8,
+              "instance": 1,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 8,
+              "instance": 2,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 8,
+              "instance": 3,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 8,
+              "instance": 4,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 8,
+              "instance": 5,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 8,
+              "instance": 6,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          }
+        ],
+        "w": 2545,
+        "h": 270
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 8,
+              "instance": 7,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 8,
+              "instance": 8,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 8,
+              "instance": 9,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 9,
+              "instance": 1,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 9,
+              "instance": 2,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 9,
+              "instance": 3,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          }
+        ],
+        "w": 2545,
+        "h": 270
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 9,
+              "instance": 4,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 9,
+              "instance": 5,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 9,
+              "instance": 6,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 9,
+              "instance": 7,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 9,
+              "instance": 8,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          },
+          {
+            "part": {
+              "id": 9,
+              "instance": 9,
+              "rotated": false
+            },
+            "w": 420,
+            "h": 270
+          }
+        ],
+        "w": 2545,
+        "h": 270
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 12,
+              "instance": 1,
+              "rotated": false
+            },
+            "w": 238,
+            "h": 180
+          },
+          {
+            "part": {
+              "id": 12,
+              "instance": 2,
+              "rotated": false
+            },
+            "w": 238,
+            "h": 180
+          },
+          {
+            "part": {
+              "id": 12,
+              "instance": 3,
+              "rotated": false
+            },
+            "w": 238,
+            "h": 180
+          },
+          {
+            "part": {
+              "id": 12,
+              "instance": 4,
+              "rotated": false
+            },
+            "w": 238,
+            "h": 180
+          },
+          {
+            "part": {
+              "id": 12,
+              "instance": 5,
+              "rotated": false
+            },
+            "w": 238,
+            "h": 180
+          },
+          {
+            "part": {
+              "id": 12,
+              "instance": 6,
+              "rotated": false
+            },
+            "w": 238,
+            "h": 180
+          },
+          {
+            "part": {
+              "id": 12,
+              "instance": 7,
+              "rotated": false
+            },
+            "w": 238,
+            "h": 180
+          },
+          {
+            "part": {
+              "id": 12,
+              "instance": 8,
+              "rotated": false
+            },
+            "w": 238,
+            "h": 180
+          },
+          {
+            "part": {
+              "id": 12,
+              "instance": 9,
+              "rotated": false
+            },
+            "w": 238,
+            "h": 180
+          }
+        ],
+        "w": 2182,
+        "h": 180
+      }
+    ],
+    "w": 2644,
+    "h": 1713
+  },
+  {
+    "axis": "H",
+    "children": [
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 11,
+              "instance": 1,
+              "rotated": false
+            },
+            "w": 297,
+            "h": 297
+          },
+          {
+            "part": {
+              "id": 11,
+              "instance": 2,
+              "rotated": false
+            },
+            "w": 297,
+            "h": 297
+          },
+          {
+            "part": {
+              "id": 11,
+              "instance": 3,
+              "rotated": false
+            },
+            "w": 297,
+            "h": 297
+          },
+          {
+            "part": {
+              "id": 11,
+              "instance": 4,
+              "rotated": false
+            },
+            "w": 297,
+            "h": 297
+          },
+          {
+            "part": {
+              "id": 11,
+              "instance": 5,
+              "rotated": false
+            },
+            "w": 297,
+            "h": 297
+          },
+          {
+            "part": {
+              "id": 11,
+              "instance": 6,
+              "rotated": false
+            },
+            "w": 297,
+            "h": 297
+          },
+          {
+            "part": {
+              "id": 11,
+              "instance": 7,
+              "rotated": false
+            },
+            "w": 297,
+            "h": 297
+          },
+          {
+            "part": {
+              "id": 11,
+              "instance": 8,
+              "rotated": false
+            },
+            "w": 297,
+            "h": 297
+          },
+          {
+            "part": {
+              "id": 11,
+              "instance": 9,
+              "rotated": false
+            },
+            "w": 297,
+            "h": 297
+          }
+        ],
+        "w": 2713,
+        "h": 297
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 4,
+              "instance": 1,
+              "rotated": false
+            },
+            "w": 1364,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 1,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 2,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 3,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 4,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 5,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          }
+        ],
+        "w": 2689,
+        "h": 349
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 4,
+              "instance": 2,
+              "rotated": false
+            },
+            "w": 1364,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 6,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 7,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 8,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 9,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 10,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          }
+        ],
+        "w": 2689,
+        "h": 349
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 5,
+              "instance": 1,
+              "rotated": false
+            },
+            "w": 1364,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 11,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 12,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 13,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 14,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 15,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          }
+        ],
+        "w": 2689,
+        "h": 349
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 5,
+              "instance": 2,
+              "rotated": false
+            },
+            "w": 1364,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 16,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 17,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 18,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 19,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 20,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          }
+        ],
+        "w": 2689,
+        "h": 349
+      }
+    ],
+    "w": 2713,
+    "h": 1713
+  },
+  {
+    "axis": "H",
+    "children": [
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 10,
+              "instance": 21,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 22,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 23,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 24,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 25,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 26,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 27,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 28,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 29,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 30,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          }
+        ],
+        "w": 2645,
+        "h": 349
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 10,
+              "instance": 31,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 32,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 33,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 34,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 35,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 36,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 37,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 38,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 39,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 40,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          }
+        ],
+        "w": 2645,
+        "h": 349
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 10,
+              "instance": 41,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 42,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 43,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 44,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 45,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 46,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 47,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 48,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 49,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 50,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          }
+        ],
+        "w": 2645,
+        "h": 349
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 10,
+              "instance": 51,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 52,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 53,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 54,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 55,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 56,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 57,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 58,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 59,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 60,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          }
+        ],
+        "w": 2645,
+        "h": 349
+      },
+      {
+        "axis": "V",
+        "children": [
+          {
+            "part": {
+              "id": 10,
+              "instance": 61,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 62,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 63,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 64,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 65,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 66,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 67,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 68,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 69,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          },
+          {
+            "part": {
+              "id": 10,
+              "instance": 70,
+              "rotated": false
+            },
+            "w": 260,
+            "h": 349
+          }
+        ],
+        "w": 2645,
+        "h": 349
+      }
+    ],
+    "w": 2645,
+    "h": 1765
+  },
+  {
+    "axis": "H",
+    "children": [
+      {
+        "part": {
+          "id": 6,
+          "instance": 1,
+          "rotated": false
+        },
+        "w": 1364,
+        "h": 100
+      },
+      {
+        "part": {
+          "id": 6,
+          "instance": 2,
+          "rotated": false
+        },
+        "w": 1364,
+        "h": 100
+      },
+      {
+        "part": {
+          "id": 7,
+          "instance": 1,
+          "rotated": false
+        },
+        "w": 1364,
+        "h": 100
+      },
+      {
+        "part": {
+          "id": 7,
+          "instance": 2,
+          "rotated": false
+        },
+        "w": 1364,
+        "h": 100
+      }
+    ],
+    "w": 1364,
+    "h": 415
+  }
+]

@@ -1,0 +1,362 @@
+[
+  {
+    "sheet": 0,
+    "stripIndex": 1,
+    "blankId": "s0/raw/1/0/0",
+    "materialRect": {
+      "x": 0,
+      "y": 10,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 0,
+    "stripIndex": 2,
+    "blankId": "s0/raw/1/0/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 364,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 0,
+    "stripIndex": 3,
+    "blankId": "s0/raw/1/0/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 718,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 0,
+    "stripIndex": 4,
+    "blankId": "s0/raw/1/0/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 1072,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 0,
+    "stripIndex": 5,
+    "blankId": "s0/raw/1/0/1/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 1426,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 1,
+    "stripIndex": 1,
+    "blankId": "s1/raw/1/0/0",
+    "materialRect": {
+      "x": 0,
+      "y": 10,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 1,
+    "stripIndex": 2,
+    "blankId": "s1/raw/1/0/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 364,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 1,
+    "stripIndex": 3,
+    "blankId": "s1/raw/1/0/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 718,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 1,
+    "stripIndex": 4,
+    "blankId": "s1/raw/1/0/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 1072,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 1,
+    "stripIndex": 5,
+    "blankId": "s1/raw/1/0/1/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 1426,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 2,
+    "stripIndex": 1,
+    "blankId": "s2/raw/1/0/0",
+    "materialRect": {
+      "x": 0,
+      "y": 10,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 2,
+    "stripIndex": 2,
+    "blankId": "s2/raw/1/0/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 364,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 2,
+    "stripIndex": 3,
+    "blankId": "s2/raw/1/0/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 718,
+      "w": 2750,
+      "h": 270
+    },
+    "nominalSpan": 270
+  },
+  {
+    "sheet": 2,
+    "stripIndex": 4,
+    "blankId": "s2/raw/1/0/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 993,
+      "w": 2750,
+      "h": 270
+    },
+    "nominalSpan": 270
+  },
+  {
+    "sheet": 2,
+    "stripIndex": 5,
+    "blankId": "s2/raw/1/0/1/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 1268,
+      "w": 2750,
+      "h": 270
+    },
+    "nominalSpan": 270
+  },
+  {
+    "sheet": 2,
+    "stripIndex": 6,
+    "blankId": "s2/raw/1/0/1/1/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 1543,
+      "w": 2750,
+      "h": 180
+    },
+    "nominalSpan": 180
+  },
+  {
+    "sheet": 3,
+    "stripIndex": 1,
+    "blankId": "s3/raw/1/0/0",
+    "materialRect": {
+      "x": 0,
+      "y": 10,
+      "w": 2750,
+      "h": 297
+    },
+    "nominalSpan": 297
+  },
+  {
+    "sheet": 3,
+    "stripIndex": 2,
+    "blankId": "s3/raw/1/0/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 312,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 3,
+    "stripIndex": 3,
+    "blankId": "s3/raw/1/0/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 666,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 3,
+    "stripIndex": 4,
+    "blankId": "s3/raw/1/0/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 1020,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 3,
+    "stripIndex": 5,
+    "blankId": "s3/raw/1/0/1/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 1374,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 4,
+    "stripIndex": 1,
+    "blankId": "s4/raw/1/0/0",
+    "materialRect": {
+      "x": 0,
+      "y": 10,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 4,
+    "stripIndex": 2,
+    "blankId": "s4/raw/1/0/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 364,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 4,
+    "stripIndex": 3,
+    "blankId": "s4/raw/1/0/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 718,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 4,
+    "stripIndex": 4,
+    "blankId": "s4/raw/1/0/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 1072,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 4,
+    "stripIndex": 5,
+    "blankId": "s4/raw/1/0/1/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 1426,
+      "w": 2750,
+      "h": 349
+    },
+    "nominalSpan": 349
+  },
+  {
+    "sheet": 5,
+    "stripIndex": 1,
+    "blankId": "s5/raw/1/0/0",
+    "materialRect": {
+      "x": 0,
+      "y": 10,
+      "w": 2750,
+      "h": 100
+    },
+    "nominalSpan": 100
+  },
+  {
+    "sheet": 5,
+    "stripIndex": 2,
+    "blankId": "s5/raw/1/0/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 115,
+      "w": 2750,
+      "h": 100
+    },
+    "nominalSpan": 100
+  },
+  {
+    "sheet": 5,
+    "stripIndex": 3,
+    "blankId": "s5/raw/1/0/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 220,
+      "w": 2750,
+      "h": 100
+    },
+    "nominalSpan": 100
+  },
+  {
+    "sheet": 5,
+    "stripIndex": 4,
+    "blankId": "s5/raw/1/0/1/1/1/0",
+    "materialRect": {
+      "x": 0,
+      "y": 325,
+      "w": 2750,
+      "h": 100
+    },
+    "nominalSpan": 100
+  }
+]

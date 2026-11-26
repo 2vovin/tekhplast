@@ -51,9 +51,9 @@ subprocess.run([str(root/"venv/bin/python"),"-m","pip","install","--no-index","-
    if(better(r,best)){
     r.externalEngine={...native.result.externalEngine,groupedIdenticalTypes:options.grouped,originalRowCount:p.pieces.length,nativeTypeCount:(options.grouped?grouped:p).pieces.length};
     best=r;
-    fs.writeFileSync(path.join(__dirname,'result.json'),JSON.stringify(r));
-    fs.writeFileSync(path.join(__dirname,'certificate.csv'),native.certificate);
-    fs.writeFileSync(path.join(__dirname,'search.json'),JSON.stringify({minimum,records}));
+    fs.writeFileSync(path.join(__dirname,'native-result.json'),JSON.stringify(r));
+    fs.writeFileSync(path.join(__dirname,'native-certificate.csv'),native.certificate);
+    fs.writeFileSync(path.join(__dirname,'native-search.json'),JSON.stringify({minimum,records}));
     console.log('LISTPRO_126_CHECKPOINT '+JSON.stringify({patterns,metrics:r.metrics,externalEngine:r.externalEngine,certificate:native.certificate,summary:native.summary,records}));
    }
    console.log('LISTPRO_126_TRIAL '+JSON.stringify(record));

@@ -1,5 +1,5 @@
-// Reproduce the new fixed-orientation order on an isolated CI runner before the legacy benchmarks.
-if(process.env.CI==='true'&&process.env.GITHUB_ACTIONS==='true')require('../benchmarks/order-126-no-rotation/run-native.cjs');
+// Reduced fixed-orientation request: independently replay all 126 parts.
+require('../benchmarks/order-126-no-rotation/verify.cjs').check();
 // Current fixed-orientation order: independently replay all 130 parts.
 require('../benchmarks/order-130-no-rotation/verify.cjs').check();
 // Exact new user order: replay the saved thirteen-sheet result independently.
