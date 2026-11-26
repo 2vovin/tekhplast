@@ -31,11 +31,12 @@ subprocess.run([str(root/"venv/bin/python"),"-m","pip","install","--no-index","-
  const grouped={...p,pieces:groups.map(({originals,...a})=>a)};
  const minimum=estimateSheets(p).minimumSheets;
  const schedules=[5,15,30].flatMap(seconds=>['V','H'].map(axis=>({axis,seconds,grouped:false})))
-  .concat([5,15,30].flatMap(seconds=>['V','H'].map(axis=>({axis,seconds,grouped:true}))));
+  .concat([5,15,30].flatMap(seconds=>['V','H'].map(axis=>({axis,seconds,grouped:true}))))
+  .concat([3,-1].flatMap(stages=>[false,true].flatMap(grouped=>['V','H'].map(axis=>({axis,seconds:5,grouped,stages})))));
  for(const options of schedules){
   const start=Date.now();
   try {
-   const native=runPacking(options.grouped?grouped:p,{python,seconds:options.seconds,axis:options.axis,stages:2});
+   const native=runPacking(options.grouped?grouped:p,{python,seconds:options.seconds,axis:options.axis,stages:options.stages??2});
    const patterns=native.result.sheets.map(sh=>fromTree(sh.tree,p.kerf));
    if(options.grouped){
     const queues=groups.map(g=>g.originals.slice());
@@ -43,7 +44,7 @@ subprocess.run([str(root/"venv/bin/python"),"-m","pip","install","--no-index","-
     patterns.forEach(bind);
    } else {function clean(n){if(n.part)delete n.part.instance;else n.children.forEach(clean);}patterns.forEach(clean);}
    const r=compileCompleted(p,patterns);
-   const record={...options,stages:2,elapsedMs:Date.now()-start,metrics:r.metrics};
+   const record={...options,stages:options.stages??2,elapsedMs:Date.now()-start,metrics:r.metrics};
    records.push(record);
    const score=a=>[a.metrics.sheets,-a.metrics.largestWaste,a.metrics.cuts,a.metrics.turns];
    const better=(a,b)=>!b||score(a).some((v,i)=>v<score(b)[i]&&score(a).slice(0,i).every((v,j)=>v===score(b)[j]));
