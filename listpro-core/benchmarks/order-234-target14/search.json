@@ -1,0 +1,183 @@
+{
+  "method": "validated-subset-primary-extension-and-independent-tail-search",
+  "priorSheets": 13,
+  "priorParts": 221,
+  "addedToExisting": 2,
+  "remainingParts": 11,
+  "tailSheets": 1,
+  "additions": [
+    {
+      "sheet": 12,
+      "axis": "V",
+      "part": {
+        "part": {
+          "id": 75,
+          "rotated": true
+        },
+        "w": 297,
+        "h": 1800
+      },
+      "quantity": 2,
+      "gain": 1069200,
+      "pass": 1
+    }
+  ],
+  "rejections": [],
+  "seed": 1127,
+  "iterations": 50,
+  "tailSearch": {
+    "budgetExhausted": false,
+    "model": "completed-rip-v1",
+    "iterations": 50,
+    "seed": 1127,
+    "trials": [
+      {
+        "iterations": 1,
+        "seed": 1127,
+        "axis": "H",
+        "rectangles": 220,
+        "dpCalls": 107,
+        "dpStates": 243,
+        "prunedDP": 0,
+        "rejectedBands": 12,
+        "fallbackBands": 0,
+        "accepted": 1,
+        "rejected": 0,
+        "distribution": {
+          "2": 1
+        },
+        "elapsedMs": 5,
+        "kind": "conservative-seed"
+      },
+      {
+        "iterations": 1,
+        "seed": 1127,
+        "axis": "V",
+        "rectangles": 243,
+        "dpCalls": 115,
+        "dpStates": 253,
+        "prunedDP": 0,
+        "rejectedBands": 16,
+        "fallbackBands": 0,
+        "accepted": 1,
+        "rejected": 0,
+        "distribution": {
+          "2": 1
+        },
+        "elapsedMs": 4,
+        "kind": "conservative-seed"
+      },
+      {
+        "iterations": 1,
+        "seed": 1127,
+        "axis": "H",
+        "rectangles": 240,
+        "dpCalls": 116,
+        "dpStates": 265,
+        "prunedDP": 0,
+        "rejectedBands": 14,
+        "fallbackBands": 0,
+        "accepted": 1,
+        "rejected": 0,
+        "distribution": {
+          "2": 1
+        },
+        "elapsedMs": 3,
+        "kind": "conservative-seed"
+      },
+      {
+        "iterations": 1,
+        "seed": 1127,
+        "axis": "V",
+        "rectangles": 273,
+        "dpCalls": 128,
+        "dpStates": 281,
+        "prunedDP": 0,
+        "rejectedBands": 20,
+        "fallbackBands": 0,
+        "accepted": 1,
+        "rejected": 0,
+        "distribution": {
+          "2": 1
+        },
+        "elapsedMs": 4,
+        "kind": "conservative-seed"
+      },
+      {
+        "iterations": 50,
+        "seed": 1127,
+        "axis": "H",
+        "rectangles": 8098,
+        "dpCalls": 1270,
+        "dpStates": 5104,
+        "prunedDP": 0,
+        "rejectedBands": 547,
+        "fallbackBands": 0,
+        "accepted": 4,
+        "rejected": 0,
+        "distribution": {
+          "2": 50
+        },
+        "elapsedMs": 80
+      },
+      {
+        "iterations": 50,
+        "seed": 1127,
+        "axis": "V",
+        "rectangles": 8791,
+        "dpCalls": 1351,
+        "dpStates": 4676,
+        "prunedDP": 0,
+        "rejectedBands": 733,
+        "fallbackBands": 0,
+        "accepted": 7,
+        "rejected": 0,
+        "distribution": {
+          "2": 50
+        },
+        "elapsedMs": 82
+      },
+      {
+        "iterations": 50,
+        "seed": 1127,
+        "axis": "H",
+        "rectangles": 9483,
+        "dpCalls": 1475,
+        "dpStates": 6426,
+        "prunedDP": 0,
+        "rejectedBands": 629,
+        "fallbackBands": 0,
+        "accepted": 3,
+        "rejected": 0,
+        "distribution": {
+          "1": 2,
+          "2": 48
+        },
+        "elapsedMs": 86
+      },
+      {
+        "iterations": 50,
+        "seed": 1127,
+        "axis": "V",
+        "rectangles": 10117,
+        "dpCalls": 1561,
+        "dpStates": 5316,
+        "prunedDP": 0,
+        "rejectedBands": 871,
+        "fallbackBands": 0,
+        "accepted": 5,
+        "rejected": 0,
+        "distribution": {
+          "1": 1,
+          "2": 49
+        },
+        "elapsedMs": 95
+      }
+    ],
+    "elapsedMs": 361,
+    "optimality": "sheet-count area bound only"
+  },
+  "elapsedMs": 460,
+  "positionsPreserved": true,
+  "optimality": "sheet-count proven by area only"
+}

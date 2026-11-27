@@ -1,3 +1,5 @@
+// Exact 234-part request: independent replay of all fourteen sheets.
+require('../benchmarks/order-234-target14/verify.cjs').check();
 // Reduced fixed-orientation request: independently replay all 126 parts.
 require('../benchmarks/order-126-no-rotation/verify.cjs').check();
 // Current fixed-orientation order: independently replay all 130 parts.

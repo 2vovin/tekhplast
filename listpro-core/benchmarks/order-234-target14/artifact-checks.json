@@ -1,0 +1,27 @@
+{
+  "pdfPages": 14,
+  "pdfObjectCrossReferencesValid": true,
+  "svgSheetMaps": 14,
+  "svgPrimaryMaps": 14,
+  "svgStripMaps": 61,
+  "placedPartRectangles": 234,
+  "localRegressionResults": [
+    {
+      "name": "234 parts from all 75 rows fit fourteen sheets with exact half-millimetre dimensions",
+      "passed": true
+    },
+    {
+      "name": "reusing a validated subset reproduces the fourteen-sheet complete order",
+      "passed": true
+    },
+    {
+      "name": "independent replay rejects rounding each fractional original dimension",
+      "passed": true
+    },
+    {
+      "name": "independent replay rejects a second physical rotation of one blank",
+      "passed": true
+    }
+  ],
+  "oldSourceCommit": "27437e17210f1ed553d461f33d156ca4f4d2a104"
+}
