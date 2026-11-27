@@ -1,0 +1,51 @@
+{
+  "sourceCommit": "de874de511db89d555881c79ff77ca26796436af",
+  "source": "../input.json",
+  "writer": {
+    "name": "SheetJS",
+    "version": "0.18.5",
+    "sourceRepository": "SheetJS/sheetjs",
+    "tag": "v0.18.5",
+    "blob": "16e013fceefc689cabc5be352099199847a0e67f"
+  },
+  "spreadsheets": [
+    {
+      "file": "listpro-234-bazis.xls",
+      "format": "biff8",
+      "rows": 75,
+      "quantity": 234,
+      "areaMm2": 65644689,
+      "numericDimensionsExact": true,
+      "sheets": [
+        "Детали",
+        "Параметры",
+        "Контроль"
+      ],
+      "roundtrip": true,
+      "base64Length": 21848
+    },
+    {
+      "file": "listpro-234-bazis.xlsx",
+      "format": "xlsx",
+      "rows": 75,
+      "quantity": 234,
+      "areaMm2": 65644689,
+      "numericDimensionsExact": true,
+      "sheets": [
+        "Детали",
+        "Параметры",
+        "Контроль"
+      ],
+      "roundtrip": true,
+      "base64Length": 24384
+    }
+  ],
+  "text": {
+    "rows": 75,
+    "roundtrip": true,
+    "delimiter": "tab",
+    "decimalSeparator": ","
+  },
+  "importIntoBASISPerformed": false,
+  "nativeMapTransferPerformed": false
+}
