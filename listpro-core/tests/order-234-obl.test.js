@@ -116,3 +116,20 @@ test('changed decimal dimensions and damaged manufacturing attributes are detect
   sheet.bytes = Buffer.from(decode(out.charset, sheet.bytes).replace('Тестовая кромка', 'Повреждена'));
   assert.throws(() => verifyOblFiles(out, plan, decode), /реквизиты/);
 });
+
+test('five-sheet OBL groups retain the exact source instances and attributes', () => {
+  const document = readFileSync(path.join(folder, 'obl-po-5-listov.html'), 'utf8');
+  const script = document.match(/<script id="obl-core">([\s\S]+?)<\/script>/)[1];
+  const grouped = compileFunction(script +
+    '\nreturn { nativeOblOrder, verifyOblFiles, zipStore, groupSheets };')();
+  const batches = grouped.groupSheets(plan, 5);
+  assert.deepEqual(batches.instances.map(group => group.length), [87, 92, 55]);
+  assert.deepEqual(batches.instances.flat(), plan.instances.flat());
+  const out = grouped.nativeOblOrder(encode1251(source), batches, decode);
+  assert.deepEqual(out.sheets.map(sheet => sheet.units), [87, 92, 55]);
+  assert.deepEqual(grouped.verifyOblFiles(out, batches, decode),
+    { files: 3, instances: 234, positions: 75, area: 65644689 });
+  const archive = readStoredZip(grouped.zipStore(out.sheets));
+  assert.deepEqual([...archive.keys()], ['Group-01.obl', 'Group-02.obl', 'Group-03.obl']);
+  out.sheets.forEach(sheet => assert.deepEqual(archive.get(sheet.name), Buffer.from(sheet.bytes)));
+});

@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src https://raw.githubusercontent.com/2vovin/tekhplast/6e5b11e8cdf02e6f43b086835f947ed58d70227e/listpro-core/benchmarks/order-234-target14/result.json; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>ЛистПро — задания OBL по пяти листам</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; padding: 36px 18px 70px; background: #f3f6f5; color: #19372e; font: 16px/1.5 Inter, "Segoe UI", Arial, sans-serif; }
+main { max-width: 770px; margin: 0 auto; }
+h1 { font-size: clamp(25px, 5vw, 36px); line-height: 1.16; margin: 0 0 12px; }
+h2 { font-size: 22px; margin: 0 0 6px; }
+p { margin: 9px 0; }
+.box { background: #fff; border: 1px solid #cfdcd7; border-radius: 14px; padding: clamp(18px, 4vw, 29px); margin-top: 18px; }
+label { display: block; font-weight: 650; margin: 0 0 6px; }
+input { max-width: 100%; font: inherit; }
+input::file-selector-button, .action { font: inherit; border: 1px solid #126149; background: #126149; color: white; padding: 9px 15px; border-radius: 7px; cursor: pointer; }
+input::file-selector-button { margin-right: 10px; }
+.action { display: inline-block; font-weight: 600; text-decoration: none; margin: 8px 0 12px; }
+.action:hover, input::file-selector-button:hover { background: #0c4d3a; }
+a { color: #126149; }
+a:focus-visible, input:focus-visible { outline: 3px solid #5377d9; outline-offset: 3px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 7px 6px; border-bottom: 1px solid #e2e9e6; }
+td:nth-child(2), td:nth-child(3), th:nth-child(2), th:nth-child(3) { text-align: right; }
+td:last-child { text-align: right; }
+.small { color: #4d655b; font-size: 14px; }
+#status:not(:empty), #orientation:not(:empty) { margin-top: 13px; }
+#status.error { color: #9c2b28; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+<h1>Задания OBL по пяти листам</h1>
+<p>Создаются три задания из сохранённой раскладки на 14 листах: листы 1–5, 6–10 и 11–14. БАЗИС заново рассчитывает каждую группу. При расчёте число листов может отличаться.</p>
+<section class="box" aria-label="Исходный файл">
+<label for="source">Исходный OBL из БАЗИС-Раскрой 10</label>
+<input type="file" accept=".obl" id="source">
+<p class="small">По умолчанию загружается проверенная раскладка на 14 плит. Содержимое OBL обрабатывается на вашем компьютере.</p>
+<details><summary>Раскладка из файла</summary>
+<p class="small">Для работы без интернета заранее сохраните <a id="map-link" href="https://raw.githubusercontent.com/2vovin/tekhplast/6e5b11e8cdf02e6f43b086835f947ed58d70227e/listpro-core/benchmarks/order-234-target14/result.json" rel="noreferrer noopener" target="_blank">раскладку на 14 плит (result.json)</a>. Можно выбрать и другой файл раскладки ЛистПро.</p>
+<label for="map-file">Файл раскладки</label><input type="file" id="map-file" accept=".json">
+</details>
+<div id="status" role="status" aria-live="polite"></div>
+</section>
+<section class="box" id="result" hidden>
+<h2>Готовые задания</h2>
+<p id="summary"></p>
+<a id="download" class="action" download>Скачать архив OBL</a>
+<p class="small">Откройте задание выбранного листа в БАЗИС-Раскрой 10. Расположение деталей внутри плиты программа рассчитывает при раскрое.</p>
+<p class="small" id="orientation"></p>
+<table aria-label="Задания по плитам">
+<thead><tr><th>Файл</th><th>Позиций</th><th>Деталей</th><th></th></tr></thead>
+<tbody id="sheets"></tbody>
+</table>
+</section>
+</main>
+<script id="obl-core">
+"use strict";
+function nativeOblOrder(input, plan, decode) {
+  function must(condition, message) {
+    if (!condition) throw new Error(message);
+  }
+  const bytes = input instanceof Uint8Array ? input : new Uint8Array(input);
+  must(bytes.length > 0, "Выбран пустой файл.");
+  let charset, start = 0;
+  if (bytes[0] === 0xff && bytes[1] === 0xfe) {
+    charset = "utf-16le";
+    start = 2;
+  } else if (bytes[0] === 0xfe && bytes[1] === 0xff) {
+    charset = "utf-16be";
+    start = 2;
+  } else if (bytes[0] === 0xef && bytes[1] === 0xbb && bytes[2] === 0xbf) {
+    charset = "utf-8";
+    start = 3;
+  } else if (bytes[1] === 0 && bytes[3] === 0) {
+    charset = "utf-16le";
+  } else if (bytes[0] === 0 && bytes[2] === 0) {
+    charset = "utf-16be";
+  } else {
+    try {
+      decode("utf-8", bytes, true);
+      charset = "utf-8";
+    } catch {
+      charset = "windows-1251";
+    }
+  }
+  const wide = charset.startsWith("utf-16"),
+    step = wide ? 2 : 1,
+    big = charset === "utf-16be";
+  must(!wide || (bytes.length - start) % 2 === 0, "Повреждена кодировка UTF-16.");
+  const unit = i => !wide ? bytes[i] : big ? bytes[i] * 256 + bytes[i + 1] : bytes[i] + bytes[i + 1] * 256;
+  const lines = [];
+  for (let first = start; first < bytes.length;) {
+    let end = first;
+    while (end < bytes.length && unit(end) !== 13 && unit(end) !== 10) end += step;
+    let next = end;
+    if (next < bytes.length) {
+      const last = unit(next);
+      next += step;
+      if (last === 13 && next < bytes.length && unit(next) === 10) next += step;
+    }
+    const value = decode(charset, bytes.subarray(first, end), charset !== "windows-1251");
+    lines.push({
+      first,
+      end,
+      next,
+      value
+    });
+    first = next;
+  }
+  const number = s => typeof s === "string" && /^\s*\d+(?:[.,]\d+)?\s*$/.test(s) ? Number(s.trim().replace(",",
+    ".")) : NaN;
+  const ordinal = s => typeof s === "string" && /^\s*\d+\s*$/.test(s) ? Number(s.trim()) : NaN;
+  const specs = new Map(plan.job.map(([id, w, h, q]) => [id, {
+    id,
+    w,
+    h,
+    q
+  }]));
+  const expectedUnits = plan.job.reduce((sum, v) => sum + v[3], 0);
+  const sections = [];
+  for (let i = 0; i < lines.length; i++) {
+    const fields = lines[i].value.split("\t");
+    if (fields[0].trim().toLowerCase() === "material" && fields.length >= 3) {
+      if (sections.length) sections[sections.length - 1].end = i;
+      sections.push({
+        begin: i,
+        end: lines.length,
+        fields,
+        rows: [],
+        counts: new Map(),
+        errors: []
+      });
+    }
+  }
+  must(sections.length > 0,
+    "В исходном OBL отсутствует строка Material с разделителями табуляции. Выберите файл, записанный в БАЗИС."
+    );
+  const prefix = lines.slice(0, sections[0].begin).map(l => l.value).join("\n");
+  must(/(?:^|[\r\n])\s*List[ _]+of[ _]+panels[ _]+for[ _]+cutting\b/i.test(prefix) &&
+    /\bVersion[ _\t]+10(?:[.,]0+)?(?:\s|$)/i.test(prefix), "Ожидается список панелей БАЗИС Version 10.0.");
+
+  function panelAt(index) {
+    const fields = lines[index].value.split("\t");
+    if (fields.length < 5) return null;
+    const id = ordinal(fields[0]),
+      w = number(fields[1]),
+      h = number(fields[2]),
+      q = number(fields[3]);
+    if (!fields[0].trim() || !Number.isFinite(w) || !Number.isFinite(h) || !Number.isInteger(q)) return null;
+    return {
+      id,
+      idText: fields[0],
+      w,
+      h,
+      q,
+      index,
+      qtyText: fields[3]
+    };
+  }
+  for (const group of sections) {
+    for (let i = group.begin + 1; i < group.end; i++) {
+      const row = panelAt(i);
+      if (!row) continue;
+      group.rows.push(row);
+      const spec = specs.get(row.id);
+      if (!spec || spec.w !== row.w || spec.h !== row.h || row.q <= 0) {
+        group.errors.push(`Строка ${i+1}, позиция ${row.idText.trim()}: ${row.w} × ${row.h}, ${row.q} шт.`);
+      } else group.counts.set(row.id, (group.counts.get(row.id) || 0) + row.q);
+    }
+    group.matches = plan.job.filter(([id, , , q]) => group.counts.get(id) === q).length;
+  }
+  let valid = sections.filter(g => g.fields[2].trim().toLowerCase() === "slab" && g.matches === specs.size && !g
+    .errors.length);
+  const current = lines.slice(0, sections[0].begin).map(l => l.value.split("\t")).find(a => a[0].trim()
+    .toLowerCase() === "текущий материал")?.[1]?.trim();
+  if (valid.length > 1 && current) {
+    const same = valid.filter(g => g.fields[1].trim() === current);
+    if (same.length === 1) valid = same;
+  }
+  if (!valid.length) {
+    const nearest = sections.toSorted ? sections.toSorted((a, b) => b.matches - a.matches)[0] : [...sections]
+      .sort((a, b) => b.matches - a.matches)[0];
+    const missing = plan.job.filter(([id, , , q]) => nearest.counts.get(id) !== q).slice(0, 4).map(([id, w, h,
+      q]) => `№ ${id} (${w} × ${h}, ${nearest.counts.get(id)||0} из ${q} шт.)`);
+    throw Error(
+      `С исходным заказом совпали ${nearest.matches} из ${specs.size} позиций. ${nearest.errors[0]||""} ${missing.length?"Проверьте "+missing.join(", ")+".":""}`
+      );
+  }
+  must(valid.length === 1,
+    "В нескольких материалах найден полный состав заказа. Сохраните из БАЗИС список выбранного материала.");
+  const group = valid[0],
+    firstRow = group.rows[0].index,
+    lastRow = group.rows[group.rows.length - 1].index;
+  const sourceRows = new Map(group.rows.map(row => [row.index, row]));
+  for (let i = firstRow; i <= lastRow; i++) must(sourceRows.has(i) || !lines[i].value.trim(),
+    `В строке ${i+1} находится дополнительная запись между деталями. Для сохранения привязки этой записи нужен её разбор.`
+    );
+  const tail = [];
+  // In a multi-material export retain the document terminator and trailing whitespace.
+  if (group !== sections[sections.length - 1]) {
+    const last = sections[sections.length - 1];
+    if (last.rows.length) {
+      let firstTail = last.rows[last.rows.length - 1].index + 1;
+      while (firstTail < last.end && lines[firstTail].value.trim() && !/^(?:end|конец)(?:[\s_].*)?$/i.test(
+          lines[firstTail].value.trim())) firstTail++;
+      for (let i = firstTail; i < last.end; i++)
+        if (!lines[i].value.trim() || /^(?:end|конец)(?:[\s_].*)?$/i.test(lines[i].value.trim())) tail.push(i);
+    }
+  }
+  const bytesOf = line => bytes.subarray(line.first, line.next);
+
+  function encodedAscii(s) {
+    const out = new Uint8Array(s.length * step);
+    for (let j = 0; j < s.length; j++) out[j * step + (wide && big ? 1 : 0)] = s.charCodeAt(j);
+    return out;
+  }
+
+  function replaceField(line, column, encoded) {
+    let first = line.first;
+    for (let n = 0; n < column; n++) {
+      while (first < line.end && unit(first) !== 9) first += step;
+      must(first < line.end, "Отсутствует поле в записи OBL.");
+      first += step;
+    }
+    let last = first;
+    while (last < line.end && unit(last) !== 9) last += step;
+    return [bytes.subarray(line.first, first), encoded, bytes.subarray(last, line.next)];
+  }
+
+  function rawField(line, column) {
+    let pos = line.first;
+    for (let c = 0; c < column; c++) {
+      while (pos < line.end && unit(pos) !== 9) pos += step;
+      pos += step;
+    }
+    let last = pos;
+    while (last < line.end && unit(last) !== 9) last += step;
+    return bytes.subarray(pos, last);
+  }
+
+  function countBytes(value, n) {
+    const m = value.match(/^([ \t]*)(\d+)([.,]0+)?([ \t]*)$/);
+    must(!!m, "Неподдерживаемая запись количества " + value);
+    const count = m[2].length > 1 && m[2][0] === "0" ? String(n).padStart(m[2].length, "0") : String(n);
+    return encodedAscii(m[1] + count + (m[3] || "") + m[4]);
+  }
+
+  function concat(chunks) {
+    const data = new Uint8Array(chunks.reduce((a, b) => a + b.length, 0));
+    let p = 0;
+    for (const chunk of chunks) {
+      data.set(chunk, p);
+      p += chunk.length;
+    }
+    return data;
+  }
+  // Source rows can split a single position across different sets of manufacturing attributes.
+  const sourceCopies = new Map(),
+    assigned = new Set();
+  for (const row of group.rows) {
+    if (!sourceCopies.has(row.id)) sourceCopies.set(row.id, []);
+    const copies = sourceCopies.get(row.id);
+    for (let i = 0; i < row.q; i++) copies.push(row);
+  }
+  const sheets = plan.weights.map((demand, idx) => {
+    const picked = new Map();
+    for (const [id, instance] of plan.instances[idx]) {
+      const row = sourceCopies.get(id)?.[instance - 1],
+        token = id + "/" + instance;
+      must(row && !assigned.has(token), "Некорректный экземпляр детали " + token);
+      assigned.add(token);
+      picked.set(row.index, (picked.get(row.index) || 0) + 1);
+    }
+    const unitCount = demand.reduce((n, e) => n + e[1], 0),
+      chunks = [bytes.subarray(0, start)];
+
+    function metadata(line) {
+      const cols = line.value.split("\t"),
+        key = cols[0].trim().toLowerCase();
+      if (key === "текущий материал" && cols.length > 1 && cols[1].trim() !== group.fields[1].trim())
+      return replaceField(line, 1, rawField(lines[group.begin], 1));
+      const knownUnits = /^(?:количество|кол-во) (?:панелей|деталей)$/.test(key);
+      const knownRows = /^(?:количество|кол-во) (?:позиций|строк списка)$/.test(key);
+      const sourceQty = number(cols[1]);
+      if (cols.length >= 2 && (knownUnits || knownRows) && Number.isInteger(sourceQty)) {
+        if (knownUnits && sourceQty === expectedUnits) return replaceField(line, 1, countBytes(cols[1],
+          unitCount));
+        if (knownRows && sourceQty === group.counts.size) return replaceField(line, 1, countBytes(cols[1],
+          demand.length));
+        if (knownRows && sourceQty === group.rows.length) return replaceField(line, 1, countBytes(cols[1],
+          picked.size));
+      }
+      return [bytesOf(line)];
+    }
+    for (let i = 0; i < sections[0].begin; i++) chunks.push(...metadata(lines[i]));
+    for (let i = group.begin; i < group.end; i++) {
+      const row = sourceRows.get(i),
+        line = lines[i];
+      if (!row) {
+        chunks.push(...metadata(line));
+        continue;
+      }
+      const count = picked.get(i);
+      if (!count) continue;
+      if (count === row.q) {
+        chunks.push(bytesOf(line));
+        continue;
+      }
+      chunks.push(...replaceField(line, 3, countBytes(row.qtyText, count)));
+    }
+    if (tail.length)
+      for (const i of tail) chunks.push(bytesOf(lines[i]));
+    return {
+      name: "Group-" + String(idx + 1).padStart(2, "0") + ".obl",
+      bytes: concat(chunks),
+      units: unitCount,
+      positions: demand.length,
+      retained: picked
+    };
+  });
+  must(assigned.size === expectedUnits, "Не все исходные экземпляры распределены.");
+  must(sheets.reduce((sum, s) => sum + s.units, 0) === expectedUnits,
+    "Не совпало общее количество экземпляров.");
+  const fixed = group.rows.filter(r => {
+    const orient = lines[r.index].value.split("\t")[4].trim().toLowerCase();
+    return orient !== "" && orient !== "не задана";
+  }).length;
+  return {
+    sheets,
+    material: group.fields[1].trim(),
+    charset,
+    units: expectedUnits,
+    positions: specs.size,
+    lockedRows: fixed,
+    sourceLines: lines,
+    sourceGroup: group
+  };
+}
+
+function verifyOblFiles(native, plan, decode) {
+  const totalsNative = new Map(),
+    totalsExport = new Map(),
+    spec = new Map(plan.job.map(p => [p[0], p]));
+
+  function stamp(bucket, fields, count) {
+    const key = JSON.stringify([...fields.slice(0, 3), ...fields.slice(4)]);
+    bucket.set(key, (bucket.get(key) || 0) + count);
+  }
+
+  function requireTrue(ok, why) {
+    if (!ok) throw Error("Проверка OBL: " + why);
+  }
+  const header = native.sourceLines[native.sourceGroup.begin].value;
+  for (const row of native.sourceGroup.rows) {
+    const fields = native.sourceLines[row.index].value.split("\t");
+    stamp(totalsNative, fields, row.q);
+  }
+  let total = 0,
+    area = 0;
+  for (const [sheetIndex, sheet] of native.sheets.entries()) {
+    const expected = new Map(plan.weights[sheetIndex]),
+      counts = new Map();
+    const text = decode(native.charset, sheet.bytes, native.charset !== "windows-1251").replace(/^\uFEFF/, "");
+    const records = text.split(/\r\n|\n|\r/);
+    requireTrue(records.filter(line => /^Material\t/i.test(line.trimStart())).length === 1,
+      "лишняя секция материала в " + sheet.name);
+    const start = records.indexOf(header);
+    requireTrue(start !== -1, "изменились реквизиты материала в " + sheet.name);
+    for (const line of records.slice(start + 1)) {
+      const fields = line.split("\t"),
+        id = fields[0].trim();
+      if (!/^\d+$/.test(id) || fields.length < 5) continue;
+      const key = Number(id),
+        p = spec.get(key);
+      const [w, h, q] = fields.slice(1, 4).map(v => Number(v.trim().replace(",", ".")));
+      if (!fields.slice(1, 4).every(v => /^\s*\d+(?:[.,]\d+)?\s*$/.test(v))) continue;
+      requireTrue(p && expected.has(key) && w === p[1] && h === p[2] && Number.isInteger(q) && q > 0,
+        "размер или количество позиции " + id + " в " + sheet.name);
+      stamp(totalsExport, fields, q);
+      counts.set(key, (counts.get(key) || 0) + q);
+      total += q;
+      area += q * w * h;
+    }
+    requireTrue(counts.size === expected.size && [...expected].every(([id, q]) => counts.get(id) === q),
+      "состав " + sheet.name);
+  }
+  requireTrue(totalsNative.size === totalsExport.size && [...totalsNative].every(([k, n]) => totalsExport.get(
+    k) === n), "не совпали реквизиты исходных экземпляров");
+  requireTrue(total === plan.job.reduce((n, p) => n + p[3], 0) && area === plan.job.reduce((n, p) => n + p[1] *
+    p[2] * p[3], 0), "общее количество или площадь заказа");
+  return {
+    files: native.sheets.length,
+    instances: total,
+    positions: spec.size,
+    area
+  };
+}
+
+function zipStore(files) {
+  function block(n) {
+    const data = new Uint8Array(n);
+    return [data, new DataView(data.buffer)];
+  }
+
+  function crc32(data) {
+    let v = 0xffffffff;
+    for (const u of data) {
+      v ^= u;
+      for (let b = 0; b < 8; b++) v = (v >>> 1) ^ ((-(v & 1)) & 0xedb88320);
+    }
+    return (~v) >>> 0;
+  }
+  const chunks = [],
+    directory = [];
+  let offset = 0;
+  for (const file of files) {
+    const name = Uint8Array.from(file.name, c => c.charCodeAt(0)),
+      body = file.bytes,
+      crc = crc32(body);
+    const [local, l] = block(30 + name.length);
+    l.setUint32(0, 0x04034b50, true);
+    l.setUint16(4, 20, true);
+    l.setUint16(12, 33, true);
+    l.setUint32(14, crc, true);
+    l.setUint32(18, body.length, true);
+    l.setUint32(22, body.length, true);
+    l.setUint16(26, name.length, true);
+    local.set(name, 30);
+    chunks.push(local, body);
+    const [central, c] = block(46 + name.length);
+    c.setUint32(0, 0x02014b50, true);
+    c.setUint16(4, 20, true);
+    c.setUint16(6, 20, true);
+    c.setUint16(14, 33, true);
+    c.setUint32(16, crc, true);
+    c.setUint32(20, body.length, true);
+    c.setUint32(24, body.length, true);
+    c.setUint16(28, name.length, true);
+    c.setUint32(42, offset, true);
+    central.set(name, 46);
+    directory.push(central);
+    offset += local.length + body.length;
+  }
+  const size = directory.reduce((s, entry) => s + entry.length, 0);
+  const [end, e] = block(22);
+  e.setUint32(0, 0x06054b50, true);
+  e.setUint16(8, files.length, true);
+  e.setUint16(10, files.length, true);
+  e.setUint32(12, size, true);
+  e.setUint32(16, offset, true);
+  const bytes = new Uint8Array(offset + size + end.length);
+  let pos = 0;
+  for (const c of chunks.concat(directory, [end])) {
+    bytes.set(c, pos);
+    pos += c.length;
+  }
+  return bytes;
+}
+
+function planFromLayout(layout) {
+  if (!Array.isArray(layout?.parameters?.pieces) || !Array.isArray(layout.sheets) || !layout.sheets.length) {
+    throw new Error("Выберите файл result.json с раскладкой ЛистПро.");
+  }
+  const specs = new Map(),
+    seen = new Set();
+  const positive = n => Number.isFinite(n) && n > 0;
+  const job = layout.parameters.pieces.map(({
+    id,
+    l,
+    w,
+    q
+  }) => {
+    if (!Number.isSafeInteger(id) || id < 1 || specs.has(id) || !positive(l) || !positive(w) || !Number
+      .isSafeInteger(q) || q < 1) {
+      throw new Error("Некорректная позиция в исходной раскладке.");
+    }
+    specs.set(id, {
+      l,
+      w,
+      q
+    });
+    return [id, l, w, q];
+  });
+  const weights = [];
+  const instances = layout.sheets.map((sheet, sheetIndex) => {
+    if (!Array.isArray(sheet.parts) || !sheet.parts.length) throw new Error("В раскладке обнаружен пустой лист.");
+    const demand = new Map();
+    const parts = sheet.parts.map(({
+      id,
+      instance,
+      w,
+      h,
+      rotated
+    }) => {
+      const spec = specs.get(id);
+      const key = id + "/" + instance;
+      if (!spec || !Number.isSafeInteger(instance) || instance < 1 || instance > spec.q || seen.has(key) ||
+        typeof rotated !== "boolean" || w !== (rotated ? spec.w : spec.l) || h !== (rotated ? spec.l : spec.w)
+        ) {
+        throw new Error("Некорректные размеры или номер экземпляра в раскладке листа " + (sheetIndex + 1) +
+        ".");
+      }
+      seen.add(key);
+      demand.set(id, (demand.get(id) || 0) + 1);
+      return [id, instance];
+    });
+    weights.push([...demand].sort((a, b) => a[0] - b[0]));
+    return parts;
+  });
+  if (seen.size !== job.reduce((n, p) => n + p[3], 0)) throw new Error("В раскладке отсутствуют экземпляры деталей.");
+  return {
+    job,
+    weights,
+    instances
+  };
+}
+function groupSheets(plan, groupSize) {
+  const weights = [];
+  const instances = [];
+  for (let first = 0; first < plan.instances.length; first += groupSize) {
+    const copies = plan.instances.slice(first, first + groupSize).flat();
+    const quantities = new Map();
+    for (const [id] of copies) quantities.set(id, (quantities.get(id) || 0) + 1);
+    weights.push([...quantities].sort((a, b) => a[0] - b[0]));
+    instances.push(copies);
+  }
+  return { job: plan.job, weights, instances };
+}
+</script>
+<script id="obl-ui">
+"use strict";
+function connectOblPicker() {
+  const el = id => document.getElementById(id);
+  const input = el("source"),
+    download = el("download"),
+    result = el("result"),
+    rows = el("sheets"),
+    status = el("status"),
+    summary = el("summary"),
+    note = el("orientation");
+  const mapInput = el("map-file");
+  const mapUrl = document.getElementById("map-link").href;
+  let referencePlan;
+  async function readPlan(localFile) {
+    if (localFile) return planFromLayout(JSON.parse(await localFile.text()));
+    if (referencePlan) return referencePlan;
+    try {
+      const response = await fetch(mapUrl, {
+        method: "GET",
+        credentials: "omit",
+        referrerPolicy: "no-referrer"
+      });
+      if (!response.ok) throw Error("HTTP " + response.status);
+      referencePlan = planFromLayout(await response.json());
+      return referencePlan;
+    } catch {
+      throw Error(
+        "Не удалось прочитать раскладку. Скачайте result.json по ссылке и выберите его в разделе «Раскладка из файла»."
+        );
+    }
+  }
+  const urls = [];
+  let selection = 0;
+  const decoders = new Map();
+
+  function decode(label, bytes, fatal) {
+    const id = label + ":" + Boolean(fatal);
+    if (!decoders.has(id)) decoders.set(id, new TextDecoder(label, {
+      fatal: Boolean(fatal),
+      ignoreBOM: true
+    }));
+    return decoders.get(id).decode(bytes);
+  }
+
+  function url(bytes, type) {
+    const u = URL.createObjectURL(new Blob([bytes], {
+      type
+    }));
+    urls.push(u);
+    return u;
+  }
+
+  function clear() {
+    for (const u of urls) URL.revokeObjectURL(u);
+    urls.length = 0;
+    rows.replaceChildren();
+    result.hidden = true;
+    download.removeAttribute("href");
+    note.textContent = "";
+  }
+
+  function td(tr, value) {
+    const cell = document.createElement("td");
+    cell.textContent = String(value);
+    tr.append(cell);
+    return cell;
+  }
+  async function prepare() {
+    const run = ++selection;
+    clear();
+    status.classList.remove("error");
+    status.textContent = "";
+    const file = input.files[0];
+    if (!file) return;
+    status.textContent = "Проверка исходного OBL…";
+    try {
+      const [buffer, sheetPlan] = await Promise.all([file.arrayBuffer(), readPlan(mapInput.files[0])]);
+      const plan = groupSheets(sheetPlan, 5);
+      const bytes = new Uint8Array(buffer);
+      if (run !== selection) return;
+      const out = nativeOblOrder(bytes, plan, decode);
+      const totals = verifyOblFiles(out, plan, decode);
+      const zip = zipStore(out.sheets);
+      download.href = url(zip, "application/zip");
+      download.download = "OBL-gruppy-po-5-listov.zip";
+      download.textContent = "Скачать архив с " + totals.files + " заданиями";
+      for (const sheet of out.sheets) {
+        const tr = document.createElement("tr");
+        td(tr, sheet.name);
+        td(tr, sheet.positions);
+        td(tr, sheet.units);
+        const link = document.createElement("a");
+        link.href = url(sheet.bytes, "application/octet-stream");
+        link.download = sheet.name;
+        link.textContent = "Скачать OBL";
+        link.setAttribute("aria-label", "Скачать " + sheet.name);
+        td(tr, "").append(link);
+        rows.append(tr);
+      }
+      summary.textContent = out.material + " · позиций " + totals.positions + " · деталей " + totals.instances;
+      if (out.lockedRows) note.textContent = "В " + out.lockedRows +
+        " исходных строках указана ориентация, отличная от «Не задана». Значения сохранены для расчёта в БАЗИС.";
+      status.textContent = "Проверены все " + totals.files +
+        " списков. Номера, размеры, количества и реквизиты экземпляров совпадают с исходником.";
+      result.hidden = false;
+    } catch (error) {
+      if (run !== selection) return;
+      clear();
+      status.textContent = String(error.message || error);
+      status.classList.add("error");
+    }
+  }
+  input.addEventListener("change", prepare);
+  mapInput.addEventListener("change", prepare);
+}
+connectOblPicker();
+</script>
+</body>
+</html>
